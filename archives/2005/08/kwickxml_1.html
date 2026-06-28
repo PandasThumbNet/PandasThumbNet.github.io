@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KwickXML — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">KwickXML</h1><p class="post-meta">Posted 8 August 2005 by <span class="post-author">Reed A. Cartwright</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2005/08/kwickxml-1.html">https://pandasthumb.org/archives/2005/08/kwickxml-1.html</a></p><div class="post-body"><div class="kw_format">
+
+<p>Hi y&rsquo;all,</p>
+
+<p>We&rsquo;ve made another change to the Thumb.  This time it is how y&rsquo;all mark up your comments.  No longer can you use tags with square brackets to give style to you comments.  Instead you need to use XML tags.  Most of the tags will be the same as you are used to, except you will be using angled brackets instead of square brackets.  Here is a short list of tags to get you going until I can put together complete documentation.</p>
+
+<ol class="kw_list" style="list-style-type: circle;">
+
+<li>Links: &lt;url href=&quot;&hellip;&quot;&gt;&hellip;&lt;/url&gt;</li>
+
+<li>Quotes: &lt;quote author=&quot;&hellip;&quot;&gt;&hellip;&lt;/quote&gt;</li>
+
+<li>Bold: &lt;b&gt;&hellip;&lt;/b&gt;</li>
+
+<li>Italics: &lt;i&gt;&hellip;&lt;/i&gt;</li>
+
+<li>Stricken: &lt;s&gt;&hellip;&lt;/s&gt;</li>
+
+<li>Underlined: &lt;u&gt;&hellip;&lt;/u&gt;</li>
+
+</ol>
+
+<p>Please feel free to experiment in the comments in this thread, but please preview your comments before making them.</p>
+
+</div></div><section class="comments-section"><h2 class="comments-heading">19 Comments</h2>
+<div class="comment" id="comment-39812"><p class="comment-meta"><span class="comment-author">Blarghdude</span> &middot; 8 August 2005</p><div class="comment-body"><p>So how do we put non-markup related angled brackets into our comments? (Such as simple mathematical equations) or do we need to put them in as XML entities?</p></div></div>
+<div class="comment" id="comment-39813"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><p>After hitting Preview, it still says<br>"Use <a href="http://www.pandasthumb.org/archives/2004/04/kwickcode_is_here.html">Kwickcode Formatting</a> to markup your comments."<br>It should say KwickXML, and KwickXML (there and in the initial edit box) should link to an example page like at <br>http://www.dererumnatura.us/archives/2005/07/test.html</p><p>Also, Kwickcode allowed url=address, which was more convenient than url href=address<br>Also, I had to quote the address above, otherwise it says "mismatched tag 'url'"<br>Also, when I hit Preview, it displayed it correctly but removed the url tag from the edit box, so I'm trying it unpreviewed</p></div></div>
+<div class="comment" id="comment-39814"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body"><p>Entities: &lt; (&amp;lt;) &gt; (&amp;gt;)</p></div></div>
+<div class="comment" id="comment-39815"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><p>The Preview problem mentioned above doesn't just apply to &lt;url&gt;.  For instance, try entering<br><blockcode><eqn>x = 1</eqn></blockcode><br>and hitting Preview and then see that the Comments: box only contains<br><blockcode>x = 1</blockcode></p></div></div>
+<div class="comment" id="comment-39817"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body"><p>The message on the preview page has been updated. An example page is comming.  Many of the features of KwickXML are disabled for comments.  The one you link to on my personal blog doesn't mention that.</p><p>Yes the new format is not as lenient as the previous one, but it does make for faster rebuilds and can do somethings that the KwickCode could not like nested quotes and nested lists.</p></div></div>
+<div class="comment" id="comment-39818"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body"><p>Equations are not permitted in comments by design.  It is to limit security risks.</p></div></div>
+<div class="comment" id="comment-39819"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><p>&lt;eqn&gt;&lt;eqn&gt;<br>results in<br>mismatched tag 'kwickxml'<br>instead of<br>mismatched tag 'eqn'</p></div></div>
+<div class="comment" id="comment-39820"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body"><p>Now I see what you are talking about, re missing tags.  I'll look into it.</p></div></div>
+<div class="comment" id="comment-39821"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><blockquote><p>Equations are not permitted in comments by design. It is to limit security risks.</p></blockquote>
+
+I don't understand how it's a security risk, but in any case that doesn't have anything to do with url tags disappearing.  For instance, enter
+
+<blockcode><a href="x">y</a></blockcode>
+
+and then hit Preview, and the edit box only contains
+
+<blockcode>y</blockcode>
+</div></div>
+<div class="comment" id="comment-39822"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body"><blockquote><p>&lt;eqn&gt;&lt;eqn&gt; results in mismatched tag 'kwickxml' instead of mismatched tag 'eqn'</p></blockquote>
+
+That's because the eqn tag isn't the first mismatch.  The kwickxml tag produces the first mismatch.  You don't see the kwickxml tag because it is inserted by the software to wrap your comment to make it suitable for an XML processor.  This is what the processor sees:
+
+<blockcode><kwickxml><eqn><eqn></kwickxml></blockcode>
+
+Which is parsed as
+
+<blockcode><kwickxml>
+  <eqn>
+    <eqn>
+      </kwickxml></blockcode>    
+
+The kwickxml end tag is unmatched because it appears without a preceeding start tag on its level.</div></div>
+<div class="comment" id="comment-39823"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><blockquote><p>Yes the new format is not as lenient as the previous one, but it does make for faster rebuilds and can do somethings that the KwickCode could not like nested quotes and nested lists.</p></blockquote>
+
+Um, yes, of course it has additional features -- I certainly wasn't suggesting going back to the old format.  But your page says it's a port of kwickcode with features added, so why not keep the previous good features like url= and allowing addresses to not be quoted?  In any case,  not quoting the address should give an apt error message, not "mismatched tag 'url'".
+
+Also, it seems to take much longer to post; I (of course) don't know whether than has anything to do with the new format.
+
+Also, since you aren't concerned with eqn, I guess I need to avoid it in examples.  This too says mismatched tag 'kwickxml':
+&lt;url&gt;&lt;url&gt; 
+</div></div>
+<div class="comment" id="comment-39824"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body">The preview issue is fixed.
+
+<blockquote><p>
+Um, yes, of course it has additional features --- I certainly wasn't suggesting going back to the old format. But your page says it's a port of kwickcode with features added, so why not keep the previous good features like url= and allowing addresses to not be quoted? In any case, not quoting the address should give an apt error message, not "mismatched tag 'url'".</p><cite>— ts</cite></blockquote>
+
+This can't be done, since it violates the XML format.  The meat of processing is done by XML::Parser::Lite, and I am not about to write my own pseudo-XML parser just so we can have those features.
+
+<blockquote><p>Also, since you aren't concerned with eqn, I guess I need to avoid it in examples. This too says mismatched tag 'kwickxml':</p></blockquote>
+
+This is because the kwickxml tag is the first one to be mismatched, as I explained above.</div></div>
+<div class="comment" id="comment-39825"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><blockquote><p>The kwickxml end tag is unmatched because it appears without a preceeding start tag on its level.</p></blockquote>
+
+That's akin to a C compiler saying "mismatched ']'" upon encountering "[(]".  That would be very bad from a human engineering standpoint.  The same is true here, but you're probably using a canned XML parser and don't have control over it.
+
+P.S. I see we're posting "simultaneously", which is why it looks like I've ignored answers you've already given.  Sorry about that.
+P.P.S.  Thanks for fixing the preview thing.  And, um, you're welcome for my pointing it out.</div></div>
+<div class="comment" id="comment-39828"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 August 2005</p><div class="comment-body"><p>Backing up to your question as to why eqn tags are security risks,</p><p>To process the equation the software writes files to the server and then runs some programs on them before deleting the files.  Not knowing how secure this process was, I've opted to limit it to crew members.  (It was the same for equation support in KwickCode.)</p></div></div>
+<div class="comment" id="comment-39842"><p class="comment-meta"><span class="comment-author">ts</span> &middot; 8 August 2005</p><div class="comment-body"><p>Reed, may I humbly I suggest that you change "... Wrote:" to "... wrote:".  Thanks.</p></div></div>
+<div class="comment" id="comment-39863"><p class="comment-meta"><span class="comment-author">Savagemutt</span> &middot; 8 August 2005</p><div class="comment-body"><p>Just a <b>test</b>. I'd been unable to post recently.</p></div></div>
+<div class="comment" id="comment-39893"><p class="comment-meta"><span class="comment-author">Matt Young</span> &middot; 8 August 2005</p><div class="comment-body"><blockquote><p>Use KwickXML formatting to markup your comments:</p></blockquote>
+
+Markup or mark-up is a noun.  The verb is mark up, with a space.  You can (usually) tell when to write such a phrase solid, because then it is (usually) accented on the first syllable.
+
+In addition, as anyone who was born in Brooklyn can tell you, the plural of you is youse.</div></div>
+<div class="comment" id="comment-39904"><p class="comment-meta"><span class="comment-author">Michael Hopkins</span> &middot; 8 August 2005</p><div class="comment-body"><p>On the main page, someone needs to delete the link to KwickCode and add a link to an explanation of KwickXML.  The phrase "KwickXML" under "post a comment" might be converted into a link to the complete documentation once it is written.</p></div></div>
+<div class="comment" id="comment-40869"><p class="comment-meta"><span class="comment-author">rrh</span> &middot; 14 August 2005</p><div class="comment-body"><p>test <i>test</i> test</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapping fitness: ribozymes, landscapes, and Seattle — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Mapping fitness: ribozymes, landscapes, and Seattle</h1><p class="post-meta">Posted 30 May 2011 by <span class="post-author">Steve Matheson</span></p><div class="post-body"><img alt="ResearchBlogging.org" src="http://www.researchblogging.org/public/citation_icons/rb2_large_gray.png" align="left" href="http://www.researchblogging.org/" />A few months ago, we were looking at the concept of a fitness landscape and how new technologies are creating opportunities for biologists to look in detail at relationships between genetics and fitness. The <a href="http://pandasthumb.org/archives/2010/11/mapping-fitness.html">first post</a> discussed the concepts of a fitness landscapes and adaptive walks, with some focus on the <a href="http://www.pnas.org/content/107/suppl.1/1747.full">limitations of the metaphor</a>. The <a href="http://pandasthumb.org/archives/2010/11/mapping-fitness-1.html">second post</a> summarized some recent work on bacterial fitness and mutation rates, with the concept of a fitness landscape as a theme, and the <a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html">third post</a> reviewed another recent paper, one that described techniques for studying fitness landscapes in detail by linking protein function (which can be screened and/or selected) and genetic information. Here we'll look at yet another approach to the problem, in which the subject of the analysis is not an organism (as in the first paper) or a protein (as in the second paper) but an RNA molecule.
+
+<a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html">Recall</a> that Fowler et al. set out to design a system in which one can study a protein's function (its "fitness") as it varies in sequence. The idea is to look at all (or at least nearly all) of the variants of a particular protein to see how well each one works, and then to map this measure of fitness onto the sequence space of the protein. Such a map would be a form of fitness landscape. Fowler and colleagues (henceforth called the UW group) used a previously-known technique (protein display) to link each variant of the protein to its gene sequence, then used <a href="http://en.wikipedia.org/wiki/Next-generation_sequencing#High-throughput_sequencing">next-generation gene-sequencing technology</a> to rapidly determine the gene sequences of millions of variants.
+
+Last October, a group at the <a href="http://www.fhcrc.org/">Fred Hutchinson Cancer Research Center</a> in Seattle reported the results of a somewhat similar experimental effort. Jason Pitt and Adrian Ferré-D'Amaré co-authored the paper in <i>Science</i>, and their title identified their research objective: "<a href="http://dx.doi.org/10.1126/science.1192001">Rapid Construction of Empirical RNA Fitness Landscapes</a>." The first couple of sentences of the abstract should sound familiar by now. (The genotype is the gene sequence. The phenotype is the function.)
+
+<blockquote>Evolution is an adaptive walk through a hypothetical fitness landscape, which depicts the relationship between genotypes and the fitness of each corresponding phenotype. We constructed an empirical fitness landscape for a catalytic RNA by combining next-generation sequencing, computational analysis, and "serial depletion," an in vitro selection protocol.</blockquote>
+
+And they identify two major challenges, both of which we have already discussed:
+
+<blockquote>First, even for macromolecules of modest length, the sequence space is vast; a 20-mer RNA or protein has ~10<sup>12</sup> or ~10<sup>26</sup> possible sequences, respectively. Second, to characterize the landscape, the phenotypic fitness of each individual genotype needs to be measured, or an indirect measure of fitness needs to be validated.</blockquote>
+
+The authors tackled the challenges using a strategy very similar to that of the UW group: first they designed a functional screen, a way to subject an enormous population of variants to a gauntlet of selection, so that the population would be altered in structure after each round of selection. Think of it as evolution in a test tube. But the UW group had a problem that Pitt and Ferré-D'Amaré didn't have to worry about: the linkage of protein function with the underlying gene sequence. Why the difference?  Pitt and Ferré-D'Amaré didn't study protein. They studied RNA - specifically, they analyzed the function of a <a href="http://en.wikipedia.org/wiki/Ribozyme">ribozyme</a>, which is a molecule of RNA that is capable of altering chemical reactions the way protein enzymes do. This means that there was no translation problem for them, since the gene sequence (the base sequence of the RNA) also comprises the structure of the molecule that is being functionally assessed.<img alt="EmpiricalFitnessRNAFigure2B.jpg" src="http://pandasthumb.org/archives/2011/05/29/EmpiricalFitnessRNAFigure2B.jpg" width="300" height="454" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" />
+
+So, like the UW group, they took a known molecule and made zillions of variants, through the use of random mutation. Then they assessed the function of the variants by putting them into pools (huge groups) and forcing them to compete with each other. (The competition involved binding to a specific target; the UW group used a similar approach.) Each round of competition (selection) led to the pool being enriched for "functional" molecules. And, importantly, they demonstrated that the binding competition really does select for function; that is, the selection process is enriching for higher "fitness." After selection, they saw the enrichment that they expected: random sequences (added as a control) were depleted, whereas sequences very similar to the known "normal" sequence were enriched. And, interestingly, lots of other sequences were intermediate between those. Now, how can we graphically depict this? Pitt and Ferré-D'Amaré decided to plot the rate of change in frequency over time for each genotype (i.e., for each variant as identified by sequencing) against a representation of genotype space. The challenge of representing genotype space, or sequence space, is daunting: it will hardly do to put every sequence onto the axis of a graph. So the authors devised a similarity score as an indicator of sequence space, with the known normal sequence as the standard for comparison. Their empirical fitness landscape, from Figure 2B, is on the right.
+
+Each dot is a single sequence. (Actually, each dot is a whole set of sequences that have the same similarity to the reference sequence. <a href="http://www.sciencemag.org/content/330/6002/376.figures-only">In Figures 1C and 1E</a> the authors introduce another dimension to show the spread that each dot represents.) The green dots show enrichment of sequences after 1 minute of competition; the reference sequence is on the far right, such that the steeply-sloping peak on the far right represents sequences that are similar to that reference sequence. As we might expect, the more similar a sequence is to the reference sequence, the more "fit" it is (in general). Fitness is indicated by extent of enrichment, which the authors term "fecundity." The magenta dots represent not enrichment, but depletion; in a reciprocal experiment, the investigators removed the most fit molecules from the pool by subtracting the best-binding population from the pool. Notice that the depletion landscape is basically a mirror image of the enrichment landscape, as we would expect if the process is truly selecting based on binding activity.
+
+There's a lot of data in that graph. Here's how the authors describe the result:
+<blockquote>...the fecundity of any individual sequence provides a metric of its fitness, and we can create an experimental fitness landscape composed of ~10<sup>7</sup> different RNA genotypes in a single experiment.</blockquote>
+And yet the picture is a vast oversimplification of that huge data set. For one thing, the graph provides no specific sequence information even though the sequence of every one of those 10 million variants is known.  Pitt and Ferré-D'Amaré write:
+<blockquote>The empirical fitness landscape we generated is a high-dimensional object. We visualized it by computing the information content per residue of the master sequence, in essence projecting the landscape onto the ribozyme sequence.</blockquote>
+<img alt="EmpiricalFitnessRNAFigure4A.jpg" src="http://pandasthumb.org/archives/2011/05/29/EmpiricalFitnessRNAFigure4A.jpg" width="300" height="229" class="mt-image-none" style="float: right; margin: 0 0 20px 20px;" />The resulting visualization (in Figure 4A) is a heat map of the actual structure of the catalytic RNA. It's simpler than it seems: each base in the RNA is colored according to information content as indicated on the color scale. More information means more diversity at that position; low information content means that there is little diversity at that position, indicating strong conservation due to functional constraint. The graph seems utterly unlike the topographical landscape that <a href="http://pandasthumb.org/archives/2010/11/mapping-fitness.html">Sewall Wright sketched</a>, but it's a fitness landscape nonetheless, made possible by the creativity of  Pitt and Ferré-D'Amaré and by the power of next-generation sequencing.
+
+So, we've looked at three significant articles in the last year or so on fitness landscapes, in which talented scientists explored the relationships between genotype and phenotype, on scales barely imaginable just a decade ago. All three studies were carried out in Seattle, Washington, within just a few miles of <a href="http://www.biologicinstitute.org/">Biologic Institute</a>, where the scientists of the intelligent design movement work on questions of the same ilk. If those scientists really want to be taken seriously, if they really seek to understand how structure and function and evolution are related, they'll have to understand fitness landscapes and their experimental applications. Fortunately, they can find some of the world's experts on that very subject right in their own backyard. Whether that amounts to tragic irony or a golden opportunity is a choice for the intelligent design apologists of the Seattle area. May they choose wisely.
+<p>[Cross-posted at <a href="http://sfmatheson.blogspot.com/2011/05/mapping-fitness-ribozymes-landscapes.html">Quintessence of Dust</a>.]
+
+------
+</p>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&rft.jtitle=Science&rft_id=info%3Adoi%2F10.1126%2Fscience.1192001&rfr_id=info%3Asid%2Fresearchblogging.org&rft.atitle=Rapid+Construction+of+Empirical+RNA+Fitness+Landscapes&rft.issn=0036-8075&rft.date=2010&rft.volume=330&rft.issue=6002&rft.spage=376&rft.epage=379&rft.artnum=http%3A%2F%2Fdx.doi.org%2F10.1126%2Fscience.1192001&rft.au=Pitt%2C+J.&rft.au=Ferre-D%27Amare%2C+A.&rfe_dat=bpr3.included=1;bpr3.tags=Biology%2CEvolutionary+Biology%2C+Genetics+%2C+Molecular+Biology">Pitt, J., & Ferre-D'Amare, A. (2010). Rapid Construction of Empirical RNA Fitness Landscapes. <span style="font-style: italic;">Science, 330</span> (6002), 376-379 DOI: <a rev="review" href="http://dx.doi.org/10.1126/science.1192001">10.1126/science.1192001</a></span></div><section class="comments-section"><h2 class="comments-heading">16 Comments</h2>
+<div class="comment" id="comment-258274"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 30 May 2011</p><div class="comment-body"><p>"If those scientists really want to be taken seriously, if they really seek to understand how structure and function and evolution are related, they’ll have to understand fitness landscapes and their experimental applications."</p><p>If those "scientists" want to be taken seriously, they will have to perform experiments like these themselves, demonstrate that they can be interpreted to mean that evolution can't work, then publish them in the scientific literature.  The fact that they are not even attempting to do any of these things shows that even they know that they should not be taken seriously.</p></div></div>
+<div class="comment" id="comment-258279"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 30 May 2011</p><div class="comment-body"><p>Maybe I missed it, but these experiments only test the protein / RNA for a specific fuction, don't they?</p><p>There may be variants that suck at the prescibed task, but rock some "parallel-universe" fitness landscape where they do something else???</p></div></div>
+<div class="comment" id="comment-258281"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 30 May 2011</p><div class="comment-body"><blockquote>
+<strong>fnxtr said:</strong>
+
+Maybe I missed it, but these experiments only test the protein / RNA for a specific fuction, don't they?
+
+There may be variants that suck at the prescibed task, but rock some "parallel-universe" fitness landscape where they do something else???
+</blockquote>
+
+Yes, for sure. I think one of the strengths of these new approaches (besides the fact that they can more thoroughly explore the single-function landscape and characterize the extent of constraint on the structure-function relationship) is the ability to rapidly explore multiple landscapes. So one could repeat the experiment with different tests for fitness, and learn about how the variants in one situation perform in another.
+
+It seems to me that tools like this would be very useful if/when one seeks to understand a postulated transition from one function to another.</div></div>
+<div class="comment" id="comment-258295"><p class="comment-meta"><span class="comment-author"><a href="http://pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 30 May 2011</p><div class="comment-body"><blockquote>
+<strong>Steve Matheson said:</strong>
+It seems to me that tools like this would be very useful if/when one seeks to understand a postulated transition from one function to another.
+</blockquote>That, I think, is an enormously important application of those kinds of tools.
+
+One thing I'm still thinking through are the implications (for interpreting data) of collapsing a very high-dimensioned fitness space into a single metric.  I don't have an easy solution to characterizing that in any more comprehensible way, but I'm thinking about it for my own work.</div></div>
+<div class="comment" id="comment-258300"><p class="comment-meta"><span class="comment-author">Thought Provoker</span> &middot; 30 May 2011</p><div class="comment-body">A COPY OF A TELIC THOUGHT'S COMMENT - <a href="http://telicthoughts.com/teleological-fitness-landscapes/#comment-268169">LINK</a>
+
+
+What I saw that differentiated this article from others isn't the "fitness landscape" but that it involved <strong><em>RNA</em></strong>.
+
+Sorry Salvador, the use of fitness landscapes to explain things like protein evolution is old news.
+
+But if it has been experimentally shown the RNA can evolve in the same way as proteins the concept of an RNA World because more credible than it already is.
+
+But just to show you I'm not totally one-sided on this debate, I found an interesting paper that cited the Pitt and Ferre-D’Amare RNA paper referred to in the OP.
+
+<a href="http://monod.biomath.nyu.edu/index/papdir/fulllengths/2011Curr.pdf"><i>Computational approaches to RNA structure prediction, analysis, and design</i></a>
+
+<blockquote>The ideas of directed evolution, sequence mutation, and tailoring presented above lend naturally to more global concepts of design involving the notion of energy landscapes. For proteins, statistical-mechanic frameworks based on density of states, pioneered by Frauenfelder, Wolynes, Dill, Onuchic, Thirumalai and others (e.g.,[70–72]), have been invaluable in interpreting various protein kinetics and thermodynamic observations such as conformational sub-states, folding mechanisms, and function.
+
+Recently, Pitt and Ferre-D’Amare[73  ] introduced the notion of empirical RNA fitness landscapes by a combination of experiment and computation to analyze the optimization of typical SELEX products in terms of sequence/function relationships for small RNAs (up to 13 nt). Such genotype/phenotype mapping is of general interest and practical importance.</blockquote>
+
+I think it is rather obvious the authors of the paper were thinking along the lines of human "directed evolution" and human "design", but I'm in a bit of a trouble-making mood, so I thought I would stir things up a bit.
+
+I am also posting this on Panda's Thumb.
+
+I'm not an expert here and am willing to have it explained to me how I got this wrong.
+</div></div>
+<div class="comment" id="comment-258305"><p class="comment-meta"><span class="comment-author">Doc Bill</span> &middot; 30 May 2011</p><div class="comment-body"><blockquote>if they really seek to understand how structure and function and evolution are related</blockquote>
+
+Very nice posting, Steve!  I LOL'd at the blockquote above because, well, it's so LOL-ly!
+
+"Intelligent design" creationists, or any creationist, has no interesting in understanding anything!  I think Behe and Dembski have made that abundantly clear over the years;  Behe with his "research would not be fruitful" statement during Kitzmiller and Dembski's famous "pathetic level of detail" comment, easily Googled.
+
+ID has had 20 years do do research and to date they've produced exactly nothing.  Most of the Biologic's budget goes to Meyer's salary, which is a cool gig if you can get it.
+
+Naw, the only thing Biologic is interested in is keeping the donations rolling in.  At least they're successful doing that.</div></div>
+<div class="comment" id="comment-258307"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 30 May 2011</p><div class="comment-body"><blockquote>
+<strong>Doc Bill said:</strong>
+
+ID has had 20 years do do research and to date they've produced exactly nothing.  Most of the Biologic's budget goes to Meyer's salary, which is a cool gig if you can get it.
+
+Naw, the only thing Biologic is interested in is keeping the donations rolling in.  At least they're successful doing that.
+</blockquote>
+
+I haven't seen Biologic's budget but as far as I know Meyer isn't on the payroll there. If you meant Axe, I'm sure Axe makes a lot more than I do, but the budget is supporting real experiments now, and I think it's clear that they are capable of generating data.
+
+I do think it's fair to question Biologic's motives, since they seem to have the means to do informative experiments, and instead are choosing to do experiments that have nothing to do with evolution (or design). In fact, it would be fun to design their next experiment for them and dare them to do it.</div></div>
+<div class="comment" id="comment-258308"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 30 May 2011</p><div class="comment-body"><blockquote>
+<strong>Steve Matheson said:</strong>
+In fact, it would be fun to design their next experiment for them and dare them to do it.
+</blockquote>
+
+Oh ... that's sly.  But you wouldn't want to <i>dare</i> them -- you'd just offer it as a suggestion that they should find interesting.
+
+Y'know, do that with Todd Wood, and he'd take you up on it if he could spare the time.</div></div>
+<div class="comment" id="comment-258311"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 30 May 2011</p><div class="comment-body"><blockquote>
+<strong>Steve Matheson said:</strong>
+
+In fact, it would be fun to design their next experiment for them and dare them to do it.
+</blockquote>
+
+I’ve had this same thought since the 1970s regarding what they could do with Morris’s and Gish’s “laws of thermodynamics.”
+
+In this case I would try not to be in the same building with them. They could really blow things up.
+
+“Beavis and Butthead do physics.”
+</div></div>
+<div class="comment" id="comment-258332"><p class="comment-meta"><span class="comment-author">Alan Fox</span> &middot; 31 May 2011</p><div class="comment-body">Axectly!!!<blockquote>
+<strong>fnxtr said:</strong>
+
+Maybe I missed it, but these experiments only test the protein / RNA for a specific fuction, don't they?
+
+There may be variants that suck at the prescibed task, but rock some "parallel-universe" fitness landscape where they do something else???
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-258419"><p class="comment-meta"><span class="comment-author">Atheistoclast</span> &middot; 31 May 2011</p><div class="comment-body"><p>I think you lot should understand that experiments in "directed evolution" on the subject of fitness landscapes are analogous with intelligent design and not Darwinian mechanisms: natural selection has natural limits.</p><p>The same goes for artificial selection in general. It is really amusing how Darwin was inspired by what man intelligently achieved in increasing the utility of plants and animals.</p></div></div>
+<div class="comment" id="comment-258421"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 31 May 2011</p><div class="comment-body"><p>SM, please don't humor ATOC indefinitely.  His game is entirely familiar and monotonously noxious.</p></div></div>
+<div class="comment" id="comment-258424"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 31 May 2011</p><div class="comment-body"><blockquote>
+<strong>Atheistoclast said:</strong>
+
+I think you lot should understand that experiments in "directed evolution" on the subject of fitness landscapes are analogous with intelligent design and not Darwinian mechanisms: natural selection has natural limits.
+
+The same goes for artificial selection in general. It is really amusing how Darwin was inspired by what man intelligently achieved in increasing the utility of plants and animals.
+</blockquote>
+
+Of course natural selection has limits.  You just don't know what they are.  Apparently, once again, random mutations and natural selection can improve function.  Who woulda thunk it?
+
+It is truly amazing how Darwin was inspired by what man could ignorantly achieve without any understanding at all of the mechanisms of random mutation and natural selection.  It is even more amazing that anyone could ever construe this as somehow being evidence against evolution.
+
+Steve, why wait until this guy disrupts the thread to send him to the bathroom wall?  Warn him once if you must, but after that, don't hesitate get rid of him.  He's just another pseudo wannabe.</div></div>
+<div class="comment" id="comment-258565"><p class="comment-meta"><span class="comment-author"><a href="http://scienceavenger.blogspot.com/" rel="nofollow">Science Avenger</a></span> &middot; 1 June 2011</p><div class="comment-body"><blockquote>
+<strong>Atheistoclast said:</strong>
+
+I think you lot should understand that experiments in "directed evolution" on the subject of fitness landscapes are analogous with intelligent design and not Darwinian mechanisms: natural selection has natural limits.
+
+The same goes for artificial selection in general. </blockquote>
+
+No it doesn't, not unless you are going to claim that the intent of the actor on the phenotypes matters with regard to what happens to the population acted upon.  Whether it is mankind killing off the slow deer because they want fast ones, or wolves doing it because they are hungry, as long as the same deer are killed off, the effect is the same.
+
+This is just a variant of the "experimentors inject intelligence into their subjects" nonsense.</div></div>
+<div class="comment" id="comment-258626"><p class="comment-meta"><span class="comment-author">Rolf Aalberg</span> &middot; 2 June 2011</p><div class="comment-body"><p>The 'best before' date for creationism expired a long time ago. Nothing wrong with criticism of evolution, but the foundation is rock steady. But there's a lot to be discovered and worked out yet. That, I believe, is what will keep the show on the road for a long time yet. Not religion, money - or both, as it is for mainstream creationism. I see no point in responding to the grunts as long as not even remotely valid questions are raised.</p><p>They are in the dark about their own profound ignorance.</p></div></div>
+<div class="comment" id="comment-258813"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 4 June 2011</p><div class="comment-body"><blockquote><p>I do think it’s fair to question Biologic’s motives, since they seem to have the means to do informative experiments, and instead are choosing to do experiments that have nothing to do with evolution (or design). In fact, it would be fun to design their next experiment for them and dare them to do it.</p><cite>— Steve Matheson</cite></blockquote>
+
+I'd recommend devoting no more than 1/2 the effort to questioning BI's (& DI's) motives, if only to remind potential buyers (byers?) of their snake oil what they themselves admit if you look past the "science" veneer - that it's all about promoting unreasonable doubt of "Darwinism" by any means possible, because acceptance of it causes all sorts of evil behavior.
+
+The rest of the time we should humor them, assuming "for the sake of argument" that their motive is strictly an honest belief that they have a better scientific explanation. If they did, then they should be able and willing to answer all sorts of "what," "where," "when" and "how" questions about <b>their</b> "theory," and support it on its own merits, <b>not</b> on the same old long-refuted "weaknesses" of "Darwinism." A great place to start is to ask if the data confirm Behe's long-held conclusion that, regardless of mechanism of species change (or "IC system" change or origin) that the process occurred in a ~4 billion year long biological continuum, or whether they converge on a radically different conclusion. When (not if) they try to weasel out of an answer, they will again reveal their true motives.
+
+There's really no reason whatever to repeat the tired old "lying for Jesus" accusation. Especially when the DI person who "figured it all out" is named Klinghoffer. :-)</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

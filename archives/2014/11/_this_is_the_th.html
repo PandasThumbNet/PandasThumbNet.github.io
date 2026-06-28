@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analyzing the Genome with Statistics — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Analyzing the Genome with Statistics</h1><p class="post-meta">Posted 20 November 2014 by <span class="post-author">Emily Thompson</span></p><div class="post-body"><i> This is the third in a series of articles for the general public focused on understanding how species are related and how genomic data is used in research. Today, we talk about the challenges of using statistics to analyze phylogenomic data.</i>
+
+Suppose you were a door manufacturer trying to figure out the average height of a population living in a certain country. You might conduct an experiment where you ask a group of people to report their height. You would then assemble those measurements in a data set. But in order to study this data set and draw conclusions you would need to analyze it using statistics. For example, how tall should your door be in order to fit 95% of people in the country? How many people do you need to survey to accurately represent the total population? These questions can be answered with statistical analysis.
+
+Because acquiring data from experiments can be costly and time-consuming, we often use small data sets to represent a larger population of interest. In our height experiment, we would not be able to ask every single person in the country his or her height. We would choose a group of people under the assumption that they accurately reflect the population as a whole. However, when we are trying to map out the evolutionary history of organisms using data from sequenced genomes (<a href="http://pandasthumb.org/archives/2014/11/phylogenomics-d.html">phylogenomics</a>, which we talked about last time), we need to change our method of analysis. 
+
+Let's look at the <a href="http://en.wikipedia.org/wiki/Treeshrew">treeshrew</a>, for instance. It looks like a rodent but actually shares some internal similarities with primates (studied by Sir Wilfrid Le Gros Clark in the 1920s), like brain anatomy and reproductive traits. To figure out if the treeshrew is more similar to rodents or primates, we could sequence its genome and, using statistics, compare its genes to those of rodents and primates. But typical statistical models are based on subsets of populations, while by definition, genomic sequencing gives us a complete data set - all of the treeshrew's genes. These typical models may not be suitable for interpreting genomic data.
+
+
+
+
+<figure src="http://pandasthumb.org/archives/2014/11/17/treeshrew.jpg" width="300" height="150" align="left">
+The treeshrew.  Source: <a href="http://en.wikipedia.org/wiki/Treeshrew">Wikipedia</a>
+</figure>
+
+
+Before reaching a conclusion about the tree shrew, or any set of data, scientists must consider <a href="http://en.wikipedia.org/wiki/Accuracy_and_precision">precision and accuracy</a>. Multiple measurements of the same quantity are precise if they are similar to each other. Another way of saying this is that their <a href="http://en.wikipedia.org/wiki/Variance">variance</a> is small. On the other hand, measurements are accurate if they are close to the true value of what they are trying to measure. For genomic data, we need better statistical tools to ensure that the accuracy of our conclusions matches the precision characteristic of these huge data sets. 
+
+Larger data sets provide more precise conclusions than smaller ones. For example, when we ask more people to report their height, we are more confident that our sample represents the variability of the actual population. Similarly, we analyze more genes in the treeshrew's genome to increase our confidence that our conclusion is precise. However, our results might not necessarily be accurate; big data sets may lead us to draw incorrect conclusions with high confidence. The treeshrew's genome contains some genes that are more similar to rodents' genes and some that are more similar to primates' genes (Fan et al., Nie et al., and Xu et al.), and with so much data we could find that the treeshrew is most similar to either group with high confidence. We need analysis tools that will tell us which genes give the correct answer.
+
+Why are conclusions from data sometimes inaccurate? <a href="http://en.wikipedia.org/wiki/Bias_(statistics)">Statistical biases</a> are external factors that produce consistent error in our measurements. Biases have many sources, including faulty experimental design, violation of assumptions made in analyzing the data, and errors in the data collection process. Bias in our height experiment might arise if we unintentionally ask the height of more women than men, causing our estimate of the average height to be lower. But in the case of phylogenomics, we are likely to have biases because of our relative lack of knowledge about the genome: we don't always know which genes to analyze or the correct way to model the data. For example, some models assume that evolution followed the same pattern throughout all time, but this most likely was not the case. 
+
+Furthermore, the process of genome sequencing and analysis itself may create error, especially in the reconstruction of the genome and the alignment of genes for comparison. If we are comparing the genome of the treeshrew to the genomes of primates and rodents, it is difficult for us to know which genes are correlated between species when we are looking at a data set of billions of points. We might use a probability model to determine correlated genes, but all models are at least somewhat incorrect and introduce bias. In smaller data sets, biases are offset by a low precision and relatively small confidence in reaching conclusions. However, in genomic-size data sets, even small biases can be amplified and lead to high confidence in the wrong answer and incorrect phylogenetic trees.
+
+When analyzing phylogenomic datasets, we need to use analyses that are appropriate for large data sets.  This will unlock the potential of phylogenomic research to draw unbiased conclusions, like figuring out the correct phylogenetic classification of the treeshrew (still a topic of controversy among evolutionary biologists).  However, phylogenomics is such a young field that these tools do not yet exist. When they are developed, we can increase our chances of correctly classifying species' relationships and discovering the true history of evolution.
+
+
+For more detail, check out: <a href="http://mbe.oxfordjournals.org/content/29/2/457.full">"Statistics and Truth in Phylogenomics"</a>, Kumar, Sudhir et al. Molecular Biology and Evolution (2011).
+
+References: 
+
+Fan, Yu, et al. "Genome of the Chinese tree shrew." Nature communications 4 (2013): 1426.
+
+Nie, Wenhui, et al. "Flying lemurs-The'flying tree shrews'? Molecular cytogenetic evidence for a Scandentia-Dermoptera sister clade." BMC biology 6.1 (2008): 18.
+
+Xu, Ling, et al. "Evaluating the Phylogenetic Position of Chinese Tree Shrew (<i> Tupaia belangeri chinensis</i>) Based on Complete Mitochondrial Genome: Implication for Using Tree Shrew as an Alternative Experimental Animal to Primates in Biomedical Research." Journal of Genetics and Genomics 39.3 (2012): 131-137.
+
+
+<i> Our next installment will cover some misused terminology in phylogenomics. This series is supported by NSF Grant #DBI-1356548 to RA Cartwright.</i></div><section class="comments-section"><h2 class="comments-heading">19 Comments</h2>
+<div class="comment" id="comment-336507"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 20 November 2014</p><div class="comment-body"><p>Similarity as a measure of phylogenetic relationships is a commonly used shorthand in popular discussions, but I think it's a bad idea. "Fit of a tree to the data" seems almost as simple to me and has the virtue of not being false.</p></div></div>
+<div class="comment" id="comment-336508"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 20 November 2014</p><div class="comment-body"><p>"But typical statistical models are based on subsets of populations, while by definition, genomic sequencing gives us a complete data set - all of the treeshrewâs genes. Itâs like being able to ask the height of every person."</p><p>I applaud the effort to educate the public and I don't mean to be too critical, but once again I think this is just plain wrong.  Sequencing a complete genome is not analogous to getting a complete data set.  Using data for all the genes is more analogous to getting data about height, weight, blood pressure, proportion of body fat, etc.  It is not analogous to measuring the height of every individual in the population.  And once again, a larger data set is not always going to give you a more reliable answer, if genes are not chosen that have an appropriate rate of change.</p><p>For molecular data, intra specific variation can be a big issue.  For some types of genes that undergo concerted evolution it isn't such a big problem, but for other types of genes it certainly can be.  In this case, it would be better to get data from more individuals and fewer genes, providing the genes were chosen carefully.  We do have good a priori reason for choosing certain genes when addressing a certain level of divergence.  We don't always have a good estimate for intra specific variation.</p></div></div>
+<div class="comment" id="comment-336509"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 20 November 2014</p><div class="comment-body"><p>Thanks for the reference on phyologenomics,  It looks great.  I will read it over carefully.  HEre is a quote from the paper:</p><p>"Availability of genome sequences from all species in a group means that we have all of the available data on all observ- able differences to infer patterns of speciation and adaptation, if we assume negligible effect of within-species population variation (and horizontal gene transfer [HGT] events) on long-term historical patterns."</p><p>My point is simply that this is often an unwarranted assumption which can significantly affect results.</p></div></div>
+<div class="comment" id="comment-336512"><p class="comment-meta"><span class="comment-author">rsschwartz</span> &middot; 20 November 2014</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+"But typical statistical models are based on subsets of populations, while by definition, genomic sequencing gives us a complete data set - all of the treeshrewâs genes. Itâs like being able to ask the height of every person."
+
+I applaud the effort to educate the public and I don't mean to be too critical, but once again I think this is just plain wrong.  Sequencing a complete genome is not analogous to getting a complete data set.  Using data for all the genes is more analogous to getting data about height, weight, blood pressure, proportion of body fat, etc.  It is not analogous to measuring the height of every individual in the population.  And once again, a larger data set is not always going to give you a more reliable answer, if genes are not chosen that have an appropriate rate of change.
+
+For molecular data, intra specific variation can be a big issue.  For some types of genes that undergo concerted evolution it isn't such a big problem, but for other types of genes it certainly can be.  In this case, it would be better to get data from more individuals and fewer genes, providing the genes were chosen carefully.  We do have good a priori reason for choosing certain genes when addressing a certain level of divergence.  We don't always have a good estimate for intra specific variation.
+</blockquote>
+
+I thought about this part quite a bit. Obviously if you sample all individuals you know the average height, whereas genomic data has all kinds of problems with alignments, incomplete lineage sorting, inaccurate models, saturation. I am strongly in favor of not using whole genomes for phylogenetics but filtering appropriately, although defining filters is a significant challenge. It was a challenge to explain where the analogy broke down so we relied on later discussion of biases / error for clarification. We are still learning the challenges of blogging - it is difficult to include everything and be completely clear at at a high level while simple enough for a broad audience - somethings things end up being oversimplified.
+
+Re the phylogenomics paper - you will have to take up unwarranted assumptions with the authors.</div></div>
+<div class="comment" id="comment-336515"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 20 November 2014</p><div class="comment-body"><blockquote>
+<strong>rsschwartz said:</strong>
+
+
+I thought about this part quite a bit. Obviously if you sample all individuals you know the average height, whereas genomic data has all kinds of problems with alignments, incomplete lineage sorting, inaccurate models, saturation. I am strongly in favor of not using whole genomes for phylogenetics but filtering appropriately, although defining filters is a significant challenge. It was a challenge to explain where the analogy broke down so we relied on later discussion of biases / error for clarification. We are still learning the challenges of blogging - it is difficult to include everything and be completely clear at at a high level while simple enough for a broad audience - somethings things end up being oversimplified.
+
+Re the phylogenomics paper - you will have to take up unwarranted assumptions with the authors.
+</blockquote>
+
+Thank for responding.  Once again, I applaud your efforts and I hope I am not being too critical.
+
+I agree that it is difficult to come up with appropriate analogies when describing complex concepts.  However, if I might suggest a possible alternative.  Perhaps it would be better to use some trait such a diabetes instead of height.  For example, it would be better to measure a few relevant parameters in many people, (such as blood pressure, blood sugar level, caloric intake, body mass index), than it would be to measure a lot of potentially irrelevant parameters, (such as height, shoe size, eye color, etc.), in a smaller number of people.  I know it still isn't a perfect analogy, but it might be a little better than height analogy.
+
+As for unwarranted assumptions, the authors didn't claim that the assumption was unwarranted, they simply pointed out that it was implicit in their analysis.  Obviously this is not always a good assumption.  However, they do point out the trade-off between increasing the number of representatives of each species as opposed to increasing the number of species represented.</div></div>
+<div class="comment" id="comment-336516"><p class="comment-meta"><span class="comment-author">rsschwartz</span> &middot; 20 November 2014</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+<blockquote>
+<strong>rsschwartz said:</strong>
+
+
+I thought about this part quite a bit. Obviously if you sample all individuals you know the average height, whereas genomic data has all kinds of problems with alignments, incomplete lineage sorting, inaccurate models, saturation. I am strongly in favor of not using whole genomes for phylogenetics but filtering appropriately, although defining filters is a significant challenge. It was a challenge to explain where the analogy broke down so we relied on later discussion of biases / error for clarification. We are still learning the challenges of blogging - it is difficult to include everything and be completely clear at at a high level while simple enough for a broad audience - somethings things end up being oversimplified.
+
+Re the phylogenomics paper - you will have to take up unwarranted assumptions with the authors.
+</blockquote>
+
+Thank for responding.  Once again, I applaud your efforts and I hope I am not being too critical.
+
+I agree that it is difficult to come up with appropriate analogies when describing complex concepts.  However, if I might suggest a possible alternative.  Perhaps it would be better to use some trait such a diabetes instead of height.  For example, it would be better to measure a few relevant parameters in many people, (such as blood pressure, blood sugar level, caloric intake, body mass index), than it would be to measure a lot of potentially irrelevant parameters, (such as height, shoe size, eye color, etc.), in a smaller number of people.  I know it still isn't a perfect analogy, but it might be a little better than height analogy.
+
+As for unwarranted assumptions, the authors didn't claim that the assumption was unwarranted, they simply pointed out that it was implicit in their analysis.  Obviously this is not always a good assumption.  However, they do point out the trade-off between increasing the number of representatives of each species as opposed to increasing the number of species represented.
+</blockquote>
+
+Thank you for your comments and I hope they clarify to readers some of what we have oversimplified.</div></div>
+<div class="comment" id="comment-336518"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 20 November 2014</p><div class="comment-body"><p>My guess, when trying to figure out which one of three species branched diverged first:</p><p>Parts of the DNA that change a <i>lot</i> since the common ancestor of all three will not be useful at all, i.e., noise in the data.</p><p>Parts that are essentially the same in all three won't be overly useful, either. In this case, one of the two closer relatives might have changed in some way while the other two have identical DNA in that area.</p><p>What's needed is sections of DNA that have changed by a few percent in each of the three, and as many of these as can be identified.</p><p>The hard part is classifying sections of DNA into one of those three categories.</p><p>That's my 2 cents. (Hey, it might even be worth the stated price! )</p><p>Henry</p></div></div>
+<div class="comment" id="comment-336520"><p class="comment-meta"><span class="comment-author">rsschwartz</span> &middot; 21 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+My guess, when trying to figure out which one of three species branched diverged first:
+
+Parts of the DNA that change a <i>lot</i> since the common ancestor of all three will not be useful at all, i.e., noise in the data.
+
+Parts that are essentially the same in all three won't be overly useful, either. In this case, one of the two closer relatives might have changed in some way while the other two have identical DNA in that area.
+
+What's needed is sections of DNA that have changed by a few percent in each of the three, and as many of these as can be identified.
+
+The hard part is classifying sections of DNA into one of those three categories.
+
+That's my 2 cents. (Hey, it might even be worth the stated price! )
+
+Henry
+</blockquote>
+
+Exactly! Perfect!  Now you need some of that middle section for each common ancestor of a large tree, and you need the data that work to identify one common ancestor not to affect the identification of other common ancestors.</div></div>
+<div class="comment" id="comment-336521"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 21 November 2014</p><div class="comment-body"><p>Unless you are confident in a very good molecular clock, you need at least four species to do any phylogenetic analysis. To distinguish relationships among humans, chimps, and gorillas, you need an orangutan to root the tree.</p></div></div>
+<div class="comment" id="comment-336522"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 21 November 2014</p><div class="comment-body"><blockquote>
+<strong>rsschwartz said:</strong>
+Exactly! Perfect!  Now you need some of that middle section for each common ancestor of a large tree, and you need the data that work to identify one common ancestor not to affect the identification of other common ancestors.
+</blockquote>
+
+Please explain what that means.</div></div>
+<div class="comment" id="comment-336524"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 21 November 2014</p><div class="comment-body"><p>A great paper on phylogenomics just came out:</p><p>Misof et; al. (2014)  Phylogenomics resolves the timing and pattern of insect evolution.  Science 346(6210):763-767.</p><p>They used 1478 protein-coding genes, mostly single copy genes for basic cellular functions.  They included representatives from key taxa in every extant insect order. They resolved relationships with divergence times between about 50 - 450 million years.  This is a perfect example of the power of such large data sets to resolve phylogenetic issues that had remained unresolved for many decades.</p><p>The paper cites several sources of error that can compromise phylogenetic analysis; sparsely populated data matrices, gene paralogy, sequence misalignment, deviations from the assumptions of applied evolutionary models.  I assume that the first problem cited has to do with the number of species sampled.  They used 144 taxa and they used fossils to calibrate divergence times.</p></div></div>
+<div class="comment" id="comment-336525"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 21 November 2014</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+The paper cites several sources of error that can compromise phylogenetic analysis; sparsely populated data matrices, gene paralogy, sequence misalignment, deviations from the assumptions of applied evolutionary models.  I assume that the first problem cited has to do with the number of species sampled.  They used 144 taxa and they used fossils to calibrate divergence times.                                                                                                                              
+</blockquote>
+Not exactly. They mean a data matrix in which lots of genes are missing for lots of species. This is the sort of thing that often happens when you pull data off GenBank that wasn't gathered with your taxon sample in mind. It can also happen when you're sampling genomes with incomplete coverage, or when genes have been deleted from some lineages, and so on.</div></div>
+<div class="comment" id="comment-336526"><p class="comment-meta"><span class="comment-author">Joel</span> &middot; 21 November 2014</p><div class="comment-body"><p>The insect paper was based on cDNA sequencing. I've done a little mining with it, and it is certainly incomplete in the sense that I've found cDNA sequences that are not full-length. And since this is cDNA, it would be unsurprising if certain rare transcripts (and thus their genes) were not represented.</p></div></div>
+<div class="comment" id="comment-336527"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 21 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>DS said:</strong>
+The paper cites several sources of error that can compromise phylogenetic analysis; sparsely populated data matrices, gene paralogy, sequence misalignment, deviations from the assumptions of applied evolutionary models.  I assume that the first problem cited has to do with the number of species sampled.  They used 144 taxa and they used fossils to calibrate divergence times.                                                                                                                              
+</blockquote>
+Not exactly. They mean a data matrix in which lots of genes are missing for lots of species. This is the sort of thing that often happens when you pull data off GenBank that wasn't gathered with your taxon sample in mind. It can also happen when you're sampling genomes with incomplete coverage, or when genes have been deleted from some lineages, and so on.
+</blockquote>
+
+Thanks for the clarification.</div></div>
+<div class="comment" id="comment-336528"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 21 November 2014</p><div class="comment-body"><p>The paper states that of the 103 newly sequenced genomes, 98% of the 1478 genes were found in all taxa, while only 79% were found in literature searches for in-group taxa and only 62% for out-group taxa.  I don't know if that is considered a "sparsely populated data matrix" or not.  It still seems like a lot of data, but I guess that the reliability of the topology would depend on how much data there was for problematic branch points.</p><p>And of course the issue of number of taxa still remains.  If you only use one species to represent a large group, you might still be missing some important within-group variation.  Still, it's hard to complain that they need more data, when the data set probably contains over 300 million nucleotides.</p></div></div>
+<div class="comment" id="comment-336529"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 21 November 2014</p><div class="comment-body"><p>98% complete is not a sparse matrix; which is good because they're saying that sparse matrices are sources of error. In other words, they're trying to point out problems they have avoided.</p></div></div>
+<div class="comment" id="comment-336534"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 21 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+98% complete is not a sparse matrix; which is good because they're saying that sparse matrices are sources of error. In other words, they're trying to point out problems they have avoided.
+</blockquote>
+
+They do state, rather cryptically:
+
+"We addressed these obstacles by removing confounding factors in our analysis."</div></div>
+<div class="comment" id="comment-336539"><p class="comment-meta"><span class="comment-author">someotherguy86</span> &middot; 22 November 2014</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+98% complete is not a sparse matrix; which is good because they're saying that sparse matrices are sources of error. In other words, they're trying to point out problems they have avoided.
+</blockquote>
+
+They do state, rather cryptically:
+
+"We addressed these obstacles by removing confounding factors in our analysis."
+</blockquote>
+
+There is a lot more detail on the methods in the supplemental information section, if you're interested.  </div></div>
+<div class="comment" id="comment-336542"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 22 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+My guess, when trying to figure out which one of three species branched diverged first:
+
+Parts of the DNA that change a <i>lot</i> since the common ancestor of all three will not be useful at all, i.e., noise in the data.
+
+Parts that are essentially the same in all three won't be overly useful, either. In this case, one of the two closer relatives might have changed in some way while the other two have identical DNA in that area.
+
+What's needed is sections of DNA that have changed by a few percent in each of the three, and as many of these as can be identified.
+
+...
+
+</blockquote>
+
+In my book on phylogenies I have a rough calculation of how far diverged two sequences need to be to minimize the coefficient of variation of the estimate of their divergence time.  (The coefficient of variation is the ratio of the standard deviation to the mean).
+
+It turned out to be 46%, which is considerably greater than a few percent.  The reason for this is that when there is only a few percent divergence, too many sites are not providing much information because they haven't had a chance to change.
+
+This is for the simplest symmetrical model of DNA change, the Jukes-Cantor model.  For more realistic models the number would probably be a bit lower.  This can be found on pages 214-216 of my 2004 book.
+
+There is an active literature on "phylogenetic informativeness".  As far as I can see it mostly asks the wrong question, so it may have to be redone, and if so the calculation I have mentioned may turn out to be a good guide.</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

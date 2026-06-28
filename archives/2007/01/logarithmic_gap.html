@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logarithmic Gap Costs Decrease Alignment Accuracy — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Logarithmic Gap Costs Decrease Alignment Accuracy</h1><p class="post-meta">Posted 18 January 2007 by <span class="post-author">Reed A. Cartwright</span></p><div class="post-body">The second chapter of my dissertation has now been published.  It is freely available from the <a href="http://www.biomedcentral.com/1471-2105/7/527">BMC Bioinformatics</a> website.  In this post I hope to provide you will a short overview of the research. The reference is
+
+<blockquote>
+Cartwright RA (2006) Logarithmic gap costs decrease alignment accuracy. <i>BMC Bioinformatics</i> <b>7</b>:527.
+</blockquote>
+
+Our genomes evolve not only via point mutations (where one base changes into another base) but also via insertions and deletions.  That is the addition or removal of bases.  Collectively insertions and deletions are known as "indels".  Now several studies over the last fifteen years have found that the size of insertions and deletions follows a power law, i.e. a log-log plot of size versus frequency is linear.  However, this observation has had little impact on bioinformatics for various reasons.  Now why is this observation important?  For starters, several scientists have proposed that sequences should be aligned using logarithmic gap costs (w<sub>k</sub>=a + b k + c ln k) instead of the standard affine gap costs (w<sub>k</sub>=a + b k).
+
+Because in my first chapter I created a sequence simulation program, <a href="http://scit.us/projects/dawg/">Dawg</a>, that could simulate evolution using a power law of indel sizes, I felt that it was important to test this suggestion out.  Specifically, whether the slowness of algorithms using logarithmic gap costs are offset by their improved accuracy.  So that is exactly what I did for my second chapter, and the results were surprising.
+
+<a href="http://dererumnatura.us/archives/2007/01/logarithmic_gap_1.html">Finish reading on De Rerum Natura &raquo;</a>  (Comments may be left there.)</div><section class="comments-section"><p><em>No comments were recorded for this post.</em></p></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

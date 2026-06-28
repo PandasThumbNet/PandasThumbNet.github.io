@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EvoMath 2: Testing for Hardy-Weinberg Equilibrium — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">EvoMath 2: Testing for Hardy-Weinberg Equilibrium</h1><p class="post-meta">Posted 8 April 2004 by <span class="post-author">Reed A. Cartwright</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2004/04/evomath-2-testi-1.html">https://pandasthumb.org/archives/2004/04/evomath-2-testi-1.html</a></p><div class="post-body"><div class="kw_format">
+
+<p>In the <a href="http://www.pandasthumb.org/pt-archives/000055.html" rel="external">first installment</a> of EvoMath, I derived the Hardy-Weinberg Principle and discussed its significance to biology.  In the second installment I will demonstrate how to test if a population deviates from Hardy-Weinberg equilibrium.</p>
+
+</div>
+
+ 
+<div class="kw_format">
+
+<h4 class="kw_heading" id="kw-Recap">Recap:</h4>
+
+<p>A population is considered to be in Hardy-Weinberg equilibrium if the allele and genotype frequencies are as follows.</p>
+
+<table class="kw_table">
+<tr><th>Genotype</th><th>Frequency</th></tr>
+<tr><td><em>AA</em></td><td><img src="http://www.pandasthumb.org/archives/images/eqn/+eXIgOlcocX_TlUaYsXsqQ-trans.png" alt="equation" class="kw_eqn" width="80" height="17" /></td></tr>
+<tr><td><em>Aa</em></td><td><img src="http://www.pandasthumb.org/archives/images/eqn/mIQESeIIyj0GLyUBu2fwAw-trans.png" alt="equation" class="kw_eqn" width="93" height="15" /></td></tr>
+<tr><td><em>aa</em></td><td><img src="http://www.pandasthumb.org/archives/images/eqn/BFzLF9UKe6v43sU_SsqMgg-trans.png" alt="equation" class="kw_eqn" width="80" height="17" /></td></tr>
+</table>
+
+<table class="kw_table">
+<tr><th>Allele</th><th>Frequency</th></tr>
+<tr><td><em>A</em></td><td><img src="http://www.pandasthumb.org/archives/images/eqn/2pY+E_YvAUq_5w6T1d6ltg-trans.png" alt="equation" class="kw_eqn" width="71" height="19" /></td></tr>
+<tr><td><em>a</em></td><td><img src="http://www.pandasthumb.org/archives/images/eqn/hZSdChgm7eg7add_ITR7gQ-trans.png" alt="equation" class="kw_eqn" width="122" height="19" /></td></tr>
+</table>
+
+<div class="kw_figure" style="width:330px;"><img src="http://www.pandasthumb.org/archives/images/evomath1_chart2.png" alt="evomath1_chart2.png" width="330" height="214" />
+
+</div>
+
+<h4 class="kw_heading" id="kw-Test_Procedure">Test Procedure:</h4>
+
+<p>A <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm" rel="external">goodness-of-fit test</a> can be used to determine if a population is significantly different from the expections of Hardy-Weinberg equilibrium.  If we have a series of genotype counts from a population, then we can compare these counts to the ones predicted by the Hardy-Weinberg model.  We conclude that the population is not in Hardy-Weinberg equilibrium if the probability that the counts were drawn under the Hardy-Weinberg model is too small for the deviations to be considered due to random chance.  The significance level that is typically used is <img src="http://www.pandasthumb.org/archives/images/eqn/2k+KG9oKdOaEHFO1qg4Pqw-trans.png" alt="equation" class="kw_eqn" width="55" height="13" />, i.e. the genotype counts have less than a one in twenty chance of being caused by a population in Hardy-Weinberg equilibrium.</p>
+
+<p>In order to calculate this probability, we will use a test statistic, <img src="http://www.pandasthumb.org/archives/images/eqn/ak7E6aqeaB76rGLIkbKHAA-trans.png" alt="equation" class="kw_eqn" width="14" height="17" />, which was devised in 1900 by Karl Pearson and has a well characterized distribution.  If <img src="http://www.pandasthumb.org/archives/images/eqn/KuAioLq1y1_dxwsSrYpKGA-trans.png" alt="equation" class="kw_eqn" width="15" height="13" /> are the set of observed counts, and <img src="http://www.pandasthumb.org/archives/images/eqn/iTkZ8p1NJFW1rBlDuSb1nw-trans.png" alt="equation" class="kw_eqn" width="15" height="15" /> are the set of expected counts, then</p>
+
+<p class="kw_dimg"><img src="http://www.pandasthumb.org/archives/images/eqn/S8Jblwjnr2e4dxacha0UvQ-trans.png" alt="equation" class="kw_eqn" width="118" height="23" /></p>
+
+<p>This test statistic has a <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda3666.htm" rel="external">&ldquo;chi-square&rdquo; distribution</a> with <img src="http://www.pandasthumb.org/archives/images/eqn/v22Oh8GMFjE9LFmatO6RSw-trans.png" alt="equation" class="kw_eqn" width="7" height="7" /> degrees of freedom.  Since we are testing Hardy-Weinberg equilibrium with two alleles, <img src="http://www.pandasthumb.org/archives/images/eqn/7NnxG0wgxKFJ3Mt1S6LYnw-trans.png" alt="equation" class="kw_eqn" width="35" height="13" /> (rationale not shown).  Furthermore, it can be shown that if <img src="http://www.pandasthumb.org/archives/images/eqn/g6NDlkZ5KgSz_s56rVTjEA-trans.png" alt="equation" class="kw_eqn" width="69" height="17" /> then <img src="http://www.pandasthumb.org/archives/images/eqn/oCKeshv6QNrLgfCc3vo6BA-trans.png" alt="equation" class="kw_eqn" width="98" height="19" />.  Therefore, if <img src="http://www.pandasthumb.org/archives/images/eqn/g6NDlkZ5KgSz_s56rVTjEA-trans.png" alt="equation" class="kw_eqn" width="69" height="17" /> we will reject the null model and conclude that there is significant statistical support that the population is not in Hardy-Weinberg equilibrium.</p>
+
+<h4 class="kw_heading" id="kw-Example_1">Example 1:</h4>
+
+<p>Consider the following samples from a population.</p>
+
+<table class="kw_table">
+<tr><th>Genotype</th><th>Count</th></tr>
+<tr><td><em>AA</em></td><td>30</td></tr>
+<tr><td><em>Aa</em></td><td>55</td></tr>
+<tr><td><em>aa</em></td><td>15</td></tr>
+</table>
+
+<table class="kw_table">
+<tr><th>Allele</th><th>Frequency</th></tr>
+<tr><td><em>A</em></td><td>0.575</td></tr>
+<tr><td><em>a</em></td><td>0.425</td></tr>
+</table>
+
+<p>Calculate the <img src="http://www.pandasthumb.org/archives/images/eqn/ak7E6aqeaB76rGLIkbKHAA-trans.png" alt="equation" class="kw_eqn" width="14" height="17" /> value.</p>
+
+<table class="kw_table">
+<tr><th>Genotype</th><th>Observed</th><th>Expected</th><th>(O-E)<sup>2</sup>/E</th></tr>
+<tr><td><em>AA</em></td><td>30</td><td>33</td><td>0.27</td></tr>
+<tr><td><em>Aa</em></td><td>55</td><td>49</td><td>0.73</td></tr>
+<tr><td><em>aa</em></td><td>25</td><td>18</td><td>0.50</td></tr>
+<tr><td>Total</td><td>100</td><td>100</td><td>1.50</td></tr>
+</table>
+
+<p>Since <img src="http://www.pandasthumb.org/archives/images/eqn/0n7P75dSzDN2OvvMH24iMg-trans.png" alt="equation" class="kw_eqn" width="116" height="17" />, we conclude that the genotype frequencies in this population are not significantly different than what would be expected if the population is in Hardy-Weinberg equilibrium.</p>
+
+<h4 class="kw_heading" id="kw-Example_2">Example 2:</h4>
+
+<p>Race and Sanger (1975) determined the blood groups of 1000 Britons as follows  (from Hartl and Clarke 1997).</p>
+
+<table class="kw_table">
+<tr><th>Genotype</th><th>Observed</th><th>Expected</th></tr>
+<tr><td><em>MM</em></td><td>298</td><td>294.3</td></tr>
+<tr><td><em>MN</em></td><td>489</td><td>496.4</td></tr>
+<tr><td><em>NN</em></td><td>213</td><td>209.3</td></tr>
+</table>
+
+<p>This results in <img src="http://www.pandasthumb.org/archives/images/eqn/habPaGYbZeUrNZtKZ2hiSQ-trans.png" alt="equation" class="kw_eqn" width="123" height="17" />.  As in the previous example, the measured genotype frequencies are not significantly different from the expectations of Hardy-Weinberg equilibrium.</p>
+
+<h4 class="kw_heading" id="kw-Example_3">Example 3:</h4>
+
+<p>Matthijis et al. (1998) surveyed a group of 54 people suffering from Jaeken syndrome (from Freeman and Herron 2004).</p>
+
+<table class="kw_table">
+<tr><th>Genotype</th><th>Observed</th><th>Expected</th></tr>
+<tr><td><em>OO</em></td><td>11</td><td>19.44</td></tr>
+<tr><td><em>OR</em></td><td>43</td><td>25.92</td></tr>
+<tr><td><em>RR</em></td><td>0</td><td>8.64</td></tr>
+</table>
+
+<p>This results in <img src="http://www.pandasthumb.org/archives/images/eqn/dVugAmUZf7az2799+4tdQQ-trans.png" alt="equation" class="kw_eqn" width="123" height="17" />.  Unlike the previous two examples, the measured genotype frequencies are significantly different from the expectations of Hardy-Weinberg equilibrium.  This indicates that one or more of the Hardy-Weinberg conditions are being violated; although, it does not tell us which ones.</p>
+
+<h4 class="kw_heading" id="kw-Conclusion">Conclusion:</h4>
+
+<p>Although to derive the Hardy-Weinberg principle, we assumed that the size of the population was infinite, these statistical tests demonstrate that finite populations can approximately exist in Hardy-Weinberg equilibrium.</p>
+
+<h4 class="kw_heading" id="kw-References">References</h4>
+
+<ul class="kw_refs">
+
+<li>Freeman S and Herron JC (2004) Evolutionary Analysis 3<sup>rd</sup> ed. Pearson Education, Inc (Upper Saddle River, NJ)</li>
+
+<li>Hartl DL and Clarke AG (1997) Principles of Population Genetics 3<sup>rd</sup> ed. Sinauer Associates, Inc (Sutherland, MA) </li>
+
+<li>Matthijis GE et al. (1998) Lack of homozygotes for the most frequent disease allele in carbohydrate-deficient-glycoprotein syndrome type 1A.  American Journal of Human Genetics 62: 542-550</li>
+
+<li>Race RR and Sanger R (1975) Blood Groups in Man 6<sup>th</sup> ed. JB Lippincott, Philadelphia</li>
+
+</ul>
+
+<h4 class="kw_heading" id="kw-Previous_Installments">Previous Installments:</h4>
+
+<ol class="kw_list">
+
+<li><a href="http://www.pandasthumb.org/pt-archives/000090.html" rel="external">EvoMath 0: An Introduction</a></li>
+
+<li><a href="http://www.pandasthumb.org/pt-archives/000055.html" rel="external">EvoMath 1: The Hardy-Weinberg Principle</a></li>
+
+</ol>
+
+</div></div><section class="comments-section"><p><em>No comments were recorded for this post.</em></p></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

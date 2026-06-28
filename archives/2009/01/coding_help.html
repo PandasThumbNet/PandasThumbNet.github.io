@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coding Help — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Coding Help</h1><p class="post-meta">Posted 17 January 2009 by <span class="post-author">Reed A. Cartwright</span></p><div class="post-body">I'm working on a little education project for this site that requires a good binomial random number generator written in javascript.  I'm having a hard time finding a library written and would rather not write one myself.  So I'm wondering if any of the tech-savvy people who read this blog are willing to port the code for generating a binomial random variable from <a href="http://www.gnu.org/software/gsl/">GSL</a> to javascript.  You can depend on the jQuery library if it helps.
+
+Any takers?</div><section class="comments-section"><h2 class="comments-heading">23 Comments</h2>
+<div class="comment" id="comment-177251"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 17 January 2009</p><div class="comment-body"><p>I used to make my own random number generators for various distributions by employing a uniform random number generator.</p><p>The basic idea is to generage a random number within the range of the distribution you are using.  Then use this random number to calculate the height of the probability density function at that number.</p><p>To decide whether or not to keep this first generated random number, generate a second random number normalized to the maximum height of the probability density function.</p><p>If the second random number falls below the probability calculated using the first random number, keep the first random number.  Otherwise, throw everything away and begin again.</p><p>Thus, the probability of keeping the first random number is the same as the probability that the second random number falls below the corresponting probability density function.</p></div></div>
+<div class="comment" id="comment-177252"><p class="comment-meta"><span class="comment-author">Derek Tattersall</span> &middot; 17 January 2009</p><div class="comment-body"><p>A quick google turned up this page:</p><p>http://www.ciphersbyritter.com/JAVASCRP/BINOMPOI.HTM#Binomial</p><p>Does it do what you want?</p><p>Regards,</p><p>Derek Tattersall</p></div></div>
+<div class="comment" id="comment-177253"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 17 January 2009</p><div class="comment-body"><blockquote>
+<strong>Derek Tattersall said:</strong>
+
+A quick google turned up this page:
+
+http://www.ciphersbyritter.com/JAVASCRP/BINOMPOI.HTM#Binomial
+
+Does it do what you want?
+</blockquote>
+
+No, that page is calculating the shape of the binomial distribution.  I want efficient code that can sample from one.</div></div>
+<div class="comment" id="comment-177254"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 17 January 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+Thus, the probability of keeping the first random number is the same as the probability that the second random number falls below the corresponting probability density function.
+</blockquote>
+
+I'm not asking how to generate a binomial random variable, I'm familiar with the algorithms and the theory.  I just want one in javascript format that I don't have to port myself.  The temporary one that I'm using builds the binomial from a sum of Bernoulli trials, but that's inefficient when population sizes get large.</div></div>
+<div class="comment" id="comment-177255"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 17 January 2009</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+<blockquote>
+<strong>Mike Elzinga said:</strong>
+Thus, the probability of keeping the first random number is the same as the probability that the second random number falls below the corresponting probability density function.
+</blockquote>
+
+I'm not asking how to generate a binomial random variable, I'm familiar with the algorithms and the theory.  I just want one in javascript format that I don't have to port myself.  The temporary one that I'm using builds the binomial from a sum of Bernoulli trials, but that's inefficient when population sizes get large.
+</blockquote>
+
+How about the analysis tools in Microsoft Excel?  Go to Tools and select Add-ins and get the Analysis tools.  There are several random number generators there.  Can you use Excel to do what you want to do?</div></div>
+<div class="comment" id="comment-177257"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 17 January 2009</p><div class="comment-body"><p>Reed,</p><p>From what I can understand from your request and replies, I get the impression that you are having the same problem that I often had.</p><p>I could write a short program or function faster than I could find one.  I needed to sample from various kinds of distributions.</p><p>The method I mentioned requires only a rather short program if you already have access to a uniform random number generator.  Scaling the range of the second random number to the maximum of the probability density function greatly increases efficiency, especially for distributions that extend to very large numbers.  Given the parameters of the density function, it is easy to calculate its height at any particular value as well as its maximum height.</p><p>I certainly agree that using the sum of Bernoulli trials is very inefficient, especially for large numbers.</p></div></div>
+<div class="comment" id="comment-177258"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 17 January 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+How about the analysis tools in Microsoft Excel?  Go to Tools and select Add-ins and get the Analysis tools.  There are several random number generators there.  Can you use Excel to do what you want to do?
+</blockquote>
+
+No.  I need it as a javascript library because the project that I'm working on is a javascript project.  It is a little "game" that will appear on this site, which is why I can't use C or R, where I already have a PRNG library.</div></div>
+<div class="comment" id="comment-177259"><p class="comment-meta"><span class="comment-author">Blaise Pascal</span> &middot; 17 January 2009</p><div class="comment-body"><p>I'm writing this off-the-cuff, with no testing (heck, I'm not even sure it's syntactically correct), but you can use it. It's based off of the ideas at http://www.winlab.rutgers.edu/~rito/ece541p1.pdf, but I think it's the same technique in Knuth (my copy of which is at work).<br><br>I am also assuming that a "binomial random variable" is functionally the same as a normal random variable.<br><br><blockcode><br>// Returns two normal random value with mean 0 and standard deviation 1<br>function get2Normals()<br>{ <br>  var w = 2;<br>  var v = []<br>  while (w &gt; 1) {<br>    var u = [Math.random(), Math.random()];<br>    var v = u.map(function (z) {return 2*z-1});<br>    w = v[0]*v[0] + v[1]*v[1];<br>  }<br>  var y = Math.sqrt(-2*Math.log(w)/w);<br>  var x = v.map(function(z) {return z*y;});<br>  return x;<br>}<br></blockcode><br><br>I can't get that to format properly...</p></div></div>
+<div class="comment" id="comment-177260"><p class="comment-meta"><span class="comment-author">LRM</span> &middot; 17 January 2009</p><div class="comment-body"><p>Reed,</p><p>From what you wrote, you already have a good solution for small population sizes. For large sizes, you can just use a normal approximation. A normal random number generator is very simple to implement in Javascript: see <a href="http://vorlon.case.edu/~vxl11/software/gauss.html">this page</a>, for example. The normal approximation works quite well even for relatively small population sizes, as long as the success probability <i>p</i> is not too small all too large - a useful heuristic is to use the approximation if <i>np</i> &gt; 5 and <i>n</i>(1-<i>p</i>) &gt; 5. Your only difficult case is when <i>n</i> is very large and <i>p</i> is very small, in which case you want to sample from a Poisson distribution with parameter <b><i>Lambda</i></b> = <i>np</i>. A simple algorithm can be found in this <a href="http://en.wikipedia.org/wiki/Poisson_distribution">Wikipedia article</a>.</p></div></div>
+<div class="comment" id="comment-177261"><p class="comment-meta"><span class="comment-author">SMgr78</span> &middot; 17 January 2009</p><div class="comment-body"><p>What kind of resolution do you need? (how many unique values in the domain?)  If the domain is sufficiently small,  one cheap-and-dirty thing that could be done would be to pre-calculate an array containing samples that reflect a binomial distribution frequency of occurance,  then index that table with a non-binomial random number.  However, if the array is too large you are either paying for bandwidth to transmit it or the client is paying to calculate it on every startup.  May not work for your needs... just a thought</p></div></div>
+<div class="comment" id="comment-177266"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 18 January 2009</p><div class="comment-body">I think I need to be more specific.  I'm not asking how to implement a binomial random number generator.  I'm asking for an implementation, because I can't find one and don't have the time to implement one.  I'd love to have the <code>gsl_ran_binomial</code> from <a href="http://www.gnu.org/software/gsl/manual/html_node/The-Binomial-Distribution.html">GSL</a> ported to javascript so I can include it in my project.
+
+<blockquote>
+<strong>Blaise Pascal said:</strong>
+
+I am also assuming that a "binomial random variable" is functionally the same as a normal random variable.
+</blockquote>
+
+Thanks, but I'm going to need a procedure that handles the edge cases eloquently, i.e. when N*p or N*(1-p) is near zero.
+</div></div>
+<div class="comment" id="comment-177270"><p class="comment-meta"><span class="comment-author">Carsten S</span> &middot; 18 January 2009</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+I'd love to have the <code>gsl_ran_binomial</code> from <a href="http://www.gnu.org/software/gsl/manual/html_node/The-Binomial-Distribution.html">GSL</a> ported to javascript so I can include it in my project.
+</blockquote>
+Since you know exactly what you want and you apparently know Javascript, I think you would be better off translating the GSL code instead of discussing here.  It is in randist/binomial_tpe.c
+
+Best,
+
+Carsten
+</div></div>
+<div class="comment" id="comment-177279"><p class="comment-meta"><span class="comment-author">Sean McCorkle</span> &middot; 18 January 2009</p><div class="comment-body"><p>Well I thought, javascript is part of the C syntax phylogenetic tree, and presumably this is mostly numeric calculations (no objects, data structures etc), so how hard can it be?<br>I was just looking gsl-1.12/randist/binomial_tpe.c source, trying to gauge the amount of work. It seems to call three other functions which would require translation or javascript substitutions - Stirling() (I assume Stirling's approximation for n!) which should be no problem, gsl_pow_int() which I assume is x^n, simple enough, and gsl_ran_uniform() which is the usual flat distribution, so translation seemed tractable.</p><p>Then I noticed its loaded with "goto"s! gotos?!!! GOTOS?!!! I thought I was seeing things. Jeez, what century is this? Did these guys just translate a fortran program?! BLECHH</p></div></div>
+<div class="comment" id="comment-177285"><p class="comment-meta"><span class="comment-author">Larry_boy</span> &middot; 18 January 2009</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+I'm asking for an implementation, because I can't find one and don't have the time to implement one.  I'd love to have the <code>gsl_ran_binomial</code> from <a href="http://www.gnu.org/software/gsl/manual/html_node/The-Binomial-Distribution.html">GSL</a> ported to javascript so I can include it in my project.
+
+</blockquote>
+
+I hope to have it done later this afternoon, just giving you a heads up. I'd have it done sooner but I have a bit of a drive... (I'm just porting the GSL functions...)
+
+</div></div>
+<div class="comment" id="comment-177287"><p class="comment-meta"><span class="comment-author">jkc</span> &middot; 18 January 2009</p><div class="comment-body">Reed,
+
+Keep in mind that any algorithm you use other than using multiple Bernoullis is going to be an approximation.  The GSL function is one such approximation (albeit probably a very good one).  
+
+That said, I would be interested in giving it a go; I've been needing an excuse to delve into javascript.  Keep us posted if you find something else that has already been done, or if someone else does it more quickly.
+
+Regards,
+Joe
+
+<blockquote><p>Then I noticed its loaded with “goto”s! gotos?!!! GOTOS?!!! I thought I was seeing things. Jeez, what century is this? Did these guys just translate a fortran program?! BLECHH</p><cite>— Sean McCorkle</cite></blockquote>
+
+You think that's bad?  There's another C library (ranlib.c) that has an implementation of this same algorithm that literally looks like a Fortran program, lots of GOTOs, same variable naming conventions, lots of capital letters, etc.  Keep in mind that back in the day, Fortran was the best tool for the job and when scientists starting porting their functions to C they probably didn't have much incentive to get rid of some of these Fortran quirks.  Converting GOTOs to more modern structures can be a real pain and may not have been worth it from a computational efficiency standpoint.</div></div>
+<div class="comment" id="comment-177290"><p class="comment-meta"><span class="comment-author">Dan Earle</span> &middot; 18 January 2009</p><div class="comment-body"><p>I had a go at doing it, I expect it has errors.</p><p>I haven't had time to work out what this function is all about, plus its my first code in JavaScript.</p><p>I expect you know how to test it (I don't), I don't have anymore time at the moment to look.</p><p>anyway hope its at least a start</p><p>goto:</p><p>http://www.orieladmin.plus.com/JS/</p><p>then right click - view source.</p></div></div>
+<div class="comment" id="comment-177291"><p class="comment-meta"><span class="comment-author">jkc</span> &middot; 18 January 2009</p><div class="comment-body"><blockquote>
+<strong>Dan Earle said:</strong>
+
+I had a go at doing it, I expect it has errors.
+
+I haven't had time to work out what this function is all about, plus its my first code in JavaScript.
+
+I expect you know how to test it (I don't), I don't have anymore time at the moment to look.
+
+anyway hope its at least a start
+
+</blockquote>
+
+Dan (& Reed),
+
+Looks pretty good to me, on superficial inspection anyway. There are two things I would worry about:
+<ol>
+<li>Whether there is any effect of moving from "int" and "double" types in C to "var" in Javascript (which are all floating point). This is a limitation of Javascript not a problem with the port. I don't know enough about how Javascript converts between integers and reals to know whether this is a problem.
+<li>Whether the Javascript math.random() function is a good random number generator. I don't know if there is an alternative (besides porting the GSL uniform random generator as well), but it may be worth a cursory investigation.
+</li></li></ol>
+
+Normally, these concerns could easily be addressed by using the same random number seed in both versions and seeing if they give the same answer, but apparently the Javascript math.random() function does not let you choose a seed, but rather creates one automatically from the date and time.
+
+The next best way to test it is to generate a huge set of random numbers using typical values of n and p and see if the probability distribution obtained matches what was expected.
+
+Happy Trails...
+Joe</div></div>
+<div class="comment" id="comment-177292"><p class="comment-meta"><span class="comment-author">Dan Earle</span> &middot; 18 January 2009</p><div class="comment-body"><p>Made small change:</p><p>realised I could just use some breaks instead of the separate returns on each finish case - just shows you never need to use goto's.</p><p>Joe:<br>Yes it seems JavaScript doesn't have integer types, so I hope I used the Math.floor in the appropriate places...</p></div></div>
+<div class="comment" id="comment-177295"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 18 January 2009</p><div class="comment-body"><p>Thanks, Dan, for doing the heavy lifting.  I haven't tested it, but I will.  I expect that in the end, I'll make some changes to the organization to convert your global functions into member functions of my "game" object.</p></div></div>
+<div class="comment" id="comment-177309"><p class="comment-meta"><span class="comment-author">Dan Earle</span> &middot; 19 January 2009</p><div class="comment-body"><p>Reed:<br>Let me know if you have some test code that finds a problem.<br>Looking forward to the "game" will it be hosted on this site??</p><p>Larry_boy:<br>Sorry for beating you to it, hope you didn't go to too much trouble.</p></div></div>
+<div class="comment" id="comment-177310"><p class="comment-meta"><span class="comment-author">Dan Earle</span> &middot; 19 January 2009</p><div class="comment-body"><p>Oh that was a stupid question!<br>you say it will be on this site in your opening entry.</p></div></div>
+<div class="comment" id="comment-179293"><p class="comment-meta"><span class="comment-author">souji</span> &middot; 20 February 2009</p><div class="comment-body"><p>can you plz send source code for development of lost articles and letters reconciliation system to my mail.technoligies used are java applets,JACOB,Mysql</p></div></div>
+<div class="comment" id="comment-181465"><p class="comment-meta"><span class="comment-author"><a href="http://dangerousrobots.com/" rel="nofollow">That Guy</a></span> &middot; 28 March 2009</p><div class="comment-body"><p>This is just a heads up, seeing as I got here a bit late. I am very good in situations like these and am very available. &lt;one of the joys of bring unemployed.&gt;</p><p>Should anyone find themselves requiring problems solved, drop me a line, and I am sure I can help out. I know enough about js to get great joy in making it sit up like a nice puppy, and play well with others.</p><p>That Guy</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

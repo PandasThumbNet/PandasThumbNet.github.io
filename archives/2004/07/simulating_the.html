@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulating the early evolution of plants — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Simulating the early evolution of plants</h1><p class="post-meta">Posted 20 July 2004 by <span class="post-author">PvM</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2004/07/simulating-the.html">https://pandasthumb.org/archives/2004/07/simulating-the.html</a></p><div class="post-body"><p>An excellent review paper discussing the evolution of evolutionary theory is:</p>
+
+<p>Ulrich Kutschera  Karl J. Niklas <b>The modern theory of biological evolution: an expanded synthesis</b> <i>Naturwissenschaften (2004) 91:255-276</i></p>
+
+<p>While the paper has some very interesting things to say, I will focus on a more narrow issue namely the success of Darwinian simulations of early plant evolution by Karl Niklas. For this we need to go back in time 400 Million years (Ma) to the early Devonian and look at the evolution of ancient vascular plants. </p>
+
+<p>AccessExcellence has an outstanding <a href="http://www.accessexcellence.org/BF/bf04/niklas/" target="_blank">Tutorial</a> by <a href="http://www.plantbio.cornell.edu/people.php?netID=kjn2" target="_blank">Karl Niklas</a> which I will use to clarify some of the issues.</p>
+
+<p>I encourage the reader to first read the Tutorial and then return here.</p>
+
+<p>See also the PBS <a href="http://www.pbs.org/wgbh/evolution/library/01/2/l_012_01.html" target="_blank">Website</a></p>
+
+<p>As a final note, I will compare Niklas&#8217;s findings with some of the claims by ID proponents, largely based on TRIZ that Darwinian evolution cannot be inventive.</p>
+
+ 
+<p>Niklas used computer models to mimic the early evolution of <a href="http://www.anbg.gov.au/PLNTKING/plant002.htm" target="_blank">tracheophytes</a>&nbsp; (ancient vascular plants). The architecture of the early spore producing tracheophytes can be mathematically simulated using relatively few parameters such as axial length, diameter, probability of branching, angle of branching, and the rotation angle. These parameters define the possible morphological variants or morphospace. In addition four very basic functions applicable to all plants can be defined. Namely interception of sunlight, exchange of water and gases and waste, stability, and reproduction.&nbsp; The fitness of these four functions can be evaluated rigorously using concepts of physics and chemistry.</p>
+
+<h4>The model has three components</h4>
+
+<ol style="list-style-type: decimal;"> 
+<li><p>an N-dimensional domain of all mathematically conceivable ancient morphologies (the morphospace for ancient tracheophytes);</p></li>
+<li><p>a numerical assessment of the ability (fitness) of each morphology to intercept light, maintain mechanical stability, conserve water, and produce and disperse spores</p></li>
+<li><p>an algorithm that searches the morphospace for successively more fit variants (an adaptive walk).</p></li> </ol>
+
+<h4>1. Morphological space</h4>
+
+<p>The morphospace, or the multidimensional domain of all mathematically achievable morphologies is determined by a set of parameters and the probabilities&nbsp; assigned to their values. The total number of possibilities is determined by the range of the parameters involved and their increments.</p>
+
+<div>
+<img alt="niklas_morph_sm.jpg" src="http://www.pandasthumb.org/pt-archives/niklas_morph_sm.jpg" width="377" height="460" border="0" />
+
+<a href="http://www.pandasthumb.org/pt-archives/niklas_morph_lg.html">View Larger Image</a>
+</div>
+
+<h4>2. Fitness</h4>
+
+<p>Niklas looked at four biological tasks: </p>
+
+<ul> 
+<li><p>Light interception</p></li>
+<li><p>Mechanical support</p></li>
+<li><p>Hydraulics</p></li>
+<li><p>Reproduction</p></li> </ul>
+
+<p>Let&#8217;s start out with an example of a small spherical cell (the universe of morphologies include shape, size and geometry). How would the shape and geometry of a cell have to change to accomodate two important biological functions. The first function is interception of light, the second is maximization of the surface versus the volume. Light interception is important since plants rely on photosynthesis. The ration of surface versus volume is important since volume of a cell sets its metabolic requirements, while the surface determines how efficiently a cell can absord material and excrete waste to the environment.</p>
+
+<h4>2a. Light interception</h4>
+
+<p>See <a href="http://www.accessexcellence.org/BF/bf04/niklas/bf04b7.html" target="_blank">Access Excellence Webpage</a></p>
+
+<p>The ability to intercept sunlight depends on the size, geometry and frequency of light. For spherical cells the ability to intercept light decreases when its size increases. These data suggest that there is an advantage for remaining small and how geometry may change when size increases from spherical to for instance cylindrical.</p>
+
+<p>Niklas shows how predicted and actual observations coincide nicely. When cells increase in size, they change shape and geometry.</p>
+
+<p>Light interception can be quantified in terms of the surface area projected towards the sun, and how this projection varies as function of time, latitude or seaon. </p>
+
+<h4>2b. Mechanic stability</h4>
+
+<p>Mechanic stability can be quantified in engineering terms of stability, strength, flexibility etc.</p>
+
+<h4>2c. Spore dispersal</h4>
+
+<p>Spore dispersal can be modeled using simple aerodynamic principles.</p>
+
+<h4>2d. Exchange of water</h4>
+
+<p>Exchance of water and other necessary gasses can be quantified in terms of the ratio of surface area to volume and fluid dynamic equations.</p>
+
+<p>It should be obvious by now that evolution has to deal with many contradictory requirements. </p>
+
+<h4>3. Adaptive walk</h4>
+
+<p>Each walk begins at the same location, which corresponds to the morphology of the most ancient vascular plant.&nbsp; From here the algorithm evaluates the fitness of all its neighbors. If one or more neighbors has a higher fitness, the walk moves to their locations in morpho-space. </p>
+
+<h4>The simulations</h4>
+
+<p>On stable landscapes, there are comparatively few morphologies capable of maximizing the performance of any of the four functions. However,&nbsp; when the number of functions to optimize increases, the number of optimal morphologies increases. In addition, the global fitness of these multiple morphologies decreases. This suggests that evolution may proceed easier when it has to optimize for multiple functions.</p>
+
+<div>
+<img alt="niklas_space_sm.jpg" src="http://www.pandasthumb.org/pt-archives/niklas_space_sm.jpg" width="477" height="199" border="0" />
+
+<a href="http://www.pandasthumb.org/pt-archives/niklas_space_lg.html">View Larger Image</a>
+</div>
+
+<p>All four tasks can be rigorously quantified using principles of physics and chemistry. This is important because we can now look at a particular morphology and, using small increments, explore the fitness landscape. Niklas found something very interesting:</p>
+
+<blockquote> <p>Beginning with one of the most ancient plant forms (Cooksonia, Early Devonian; see Fig. 6A), tracheophyte evolution is simulated by locating neighboring morphologies that progressively perform one or more tasks more efficiently. The resulting &#8220;adaptive walks&#8221; indicate that early tracheophyte evolution likely involved optimizing the performance of many tasks simultaneously rather than maximizing the performance of one or only a few tasks individually, and that the requirement for optimization accelerated the tempo of morphological evolution in the Mesozoic (from the Early Devonian to the late Carboniferous;<br />
+see Fig. 6A).</p> </blockquote>
+
+<p>For the next discussion please look at&nbsp; the figures on this page at the <a href="http://www.accessexcellence.org/BF/bf04/niklas/bf04b15.html" target="_blank">Access Excellence website</a>. You can click on the pictures and a larger picture will pop-up.</p>
+
+<h4>Evolution using only one function</h4>
+
+<p>A/R (spores/reproduction), L (light interception), S (water conservation), M (mechanical stability)</p>
+
+<p>Improvement in reproductive function leads to tall plants, improvements in light interception function to tall wide plants, while water conservation leads to small plants with few branches and finally stability leads to tall but narrow plants.</p>
+
+<h4>Evolution using two functions</h4>
+ 
+We see how the combination of two functions leads to more interesting morphologies.
+
+<h4>Evolution using three and four functions</h4>
+
+<p>The trend to see more and more morphologies and morphologies which seem to mimick real plants continues when adding additional functions.</p>
+
+<blockquote> <p>A comparison of the fossil plants depicted in Fig. 6A that evolved over a period of 100 Ma and the &#8220;digital organisms&#8221; (Fig. 6B) reveals a striking<br />
+similarity in form and design.</p> </blockquote>
+
+<p>Niklas points out that addition of more and more functions leads to a need to distinguish between maximization and optimization and <i>&#8220;to the fact that natural selection acts on the phenotype as a whole and not on its individual parts (Mayr 2001). Every organism must perform a wide range of biological functions to grow, survive, and reproduce. No single function is more important than any other, because the phenotype is an integrated functional whole and because<br />
+environmental factors influencing one or more parts of the phenotype indirectly or directly affect the whole organism.&#8221;</i></p>
+
+<p>Niklas concludes with:</p>
+
+<blockquote> <p>Importantly, different biological tasks have different phenotypic requirements and some tasks have antagonistic design requirements. Therefore, although it is possible to maximize the performance of one task, this maximization comes at some expense in terms of performing other tasks.</p> </blockquote>
+
+<div>
+<img alt="Niklas_plant_sm.jpg" src="http://www.pandasthumb.org/pt-archives/Niklas_plant_sm.jpg" width="453" height="472" border="0" />
+
+<a href="http://www.pandasthumb.org/pt-archives/niklas_plant_large.html">View Larger Image</a>
+
+</div>
+
+<blockquote> <p>Fig. 6A, B Reconstruction of the evolution of land plants (tracheophytes) based on the fossil record (A): Cooksonia, Rhynia and Psilophyton from the Early Devonian (~400 Ma ago), Archaeopteris from the Late Devonian (~350 Ma), Calamites and Lepidodendron from the Late Carboniferous (~300 Ma ago). Computer simulation of early vascular land plant evolution (B). The virtual organisms were maximised for water conservation (S), mechnical stability (M), reproductive efficiency (R), and light interception (L) (stages 1-4). The fossils (A) and the digital plants (B) are very similar. (Adapted from Niklas 1992, 2000b)</p> </blockquote>
+
+<p>The earliest vascular plants, the <i>Cocksonia</i> are very similar to morphologies which arise under optimization of a single function namely water conservation. The walk then bifurcates into water conservation and mechanical stability and water conservation and spore dispersal.&nbsp; The next step is a 3 task landscape of water conservation, mechanical stability and spore dispersal.&nbsp; Finally a 4 task landscape includes light interception.</p>
+
+<p>Niklas comments</p>
+
+<blockquote> <p>These two simulations illustrate an important feature, which resurfaces in all similar walks through unstable landscapes. Even though adaptive walks enter the same fitness landscape, they locate different morphological optima depending on how relative fitness was defined in previous portions of walks</p> </blockquote>
+
+<p>Reaching the very important conclusion</p>
+
+<blockquote> <p>If there is a lesson to be learned, it is that we should not expect the mechanisms of adaptive evolution to achieve the best conceivable morphologies but rather only those that are the best relative to what is available based on past history.</p> </blockquote>
+
+<h4>Side step: TRIZ</h4>
+
+<p>Dembski, Bracht&nbsp; and other ID proponents have used TRIZ to suggest that evolution may be uncapable of inventive solutions. One of the main foundations of TRIZ is the existence of contradicting requirements.</p>
+
+<p>Dembski in <a href="http://www.iscid.org/papers/Dembski_TechnologicalEvolution_120901.pdf" target="_blank">ID as a Theory of Technological Evolution </a> writes</p>
+
+<blockquote> <p>TRIZ seeks to resolve these contradictions not so much by balancing&nbsp; advantages against disadvantages, as in constrained optimization, but by novel win-win solutions that maximize useful functions without (ideally) incurring harmful side-effects.</p> </blockquote>
+
+<p>But this is exactly what evolution does quite effectively.</p>
+
+<p>Dembski, who is not a biologist, concludes surprisingly</p>
+
+<blockquote> <p>Sudden innovation, convergence to ideality, and extinction are all part of TRIZ?s <br />
+evolutionary scheme. Now where have we seen that scheme before? The scheme is non-Darwinian. Nor can the Darwinian scheme be easily modified to accommodate it.</p> </blockquote>
+
+<p>Sudden innovation and extinction are hardly non-Darwinian although I can understand why some less familiar with evolutionary theory may reach such a conclusion. Convergent evolution also is hardly non-Darwinian. </p>
+
+<p>And then Dembski states</p>
+
+<blockquote> <p>TRIZ&#8217;s evolutionary scheme fits quite nicely with Eldredge and Gould&#8217;s model of punctuated equilibria.24 Leaving aside their model&#8217;s mechanism of evolutionary change and innovation, the&nbsp; patterns of evolution described by TRIZ and the Eldredge-Gould model are quite similar.[/url]</p>
+
+<p>So on one hand TRIZ evolution is non-Darwinian but on the other hand they fit nicely with Punctuated Equilibria. It&#8217;s sad that despite all the writings on this topic, people still seem to be confused about <a href="http://www.talkorigins.org/faqs/punc-eq.html" target="_blank">Puncatuated equilibria</a> and Darwinism.</p>
+
+<p>Dembski concludes </p>
+
+<p>[quote]<br />
+What&#8217;s more, thanks to TRIZ, a&nbsp; ready-made theory of technological evolution is already in place to interpret biological evolution. Biology confirms the patterns of technological evolution outlined by TRIZ.&nbsp; Significantly, these patterns are non-Darwinian.</p> </blockquote>
+
+<p>Sigh&#8230;</p>
+
+<p>Dembski, W.A., <a href="http://www.arn.org/docs/dembski/wd_disciplinedscience.htm" target="_blank">Becoming a disciplined science: prospects, pitfalls, and a reality check for ID.</a></p>
+
+<p>Dembski, W.A., <a href="http://www.arn.org/docs/dembski/wd_technoevolution.htm" target="_blank">ID as a theory of technological evolution.</a></p>
+
+<p>Bracht <a href="http://www.iscid.org/papers/Bracht_InventionsAlgorithms_112601.pdf" target="_blank">Inventions, Algorithms, and Biological Design</a></p>
+
+<blockquote> <p>It has become evident that large changes and radical re-designs, which require re-working the hypervolume of possibilities, are off-limits to the Darwinian process, but we may expect organisms that differ only slightly, and co-exist within the same hypervolume, to evolve into each other.</p> </blockquote>
+
+<p>Actually such re-working of the hypervolume of possibilities are NOT off limits to Darwinian evolution. Neither are large changes or radical re-designs. Gene duplication and divergence can lead to increased hypervolumes. And large changes refer to phenotype changes not to genotype changes. </p>
+
+<p>An <a href="http://www.iscid.org/boards/ubb-get_topic-f-6-t-000128.html" target="_blank">ISCID discussion</a>. But I digress.</p>
+
+<p>Let&#8217;s have a look at how TRIZ and evolution do map quite nicely:</p>
+
+<p><a href="http://www.bath.ac.uk/mech-eng/biomimetics/TRIZ.pdf" target="_blank">Systematic technology transfer from biology to engineering</a> By Julian F. V. Vincent and Darrell L. </p>
+
+<h4>The tools of TRIZ</h4>
+
+<blockquote> <p>The method uses four main tools: a knowledge database arranged by function, analysis of the technical barriers to progress (contradictions), the way technology develops (ideality) and the maximization of resource usage.</p> </blockquote>
+
+<h4>Contradiction</h4>
+
+<blockquote> <p>In TRIZ, problems are represented by pairs of conflicting parameters enabling us to access the good solutions of inventors who have successfully overcome the contraict in question.</p> </blockquote>
+
+<h4>Ideality</h4>
+
+<blockquote> <p>In analysing the patent database, TRIZ researchers have shown that technical systems evolve in predictable ways, most notably an over-riding trend to increasing `ideality&#8217; (Kowalick 1997). This is very much like biological adaptation in that technology develops towards systems which maximize the good (functional benefits) and minimize the bad (`cost&#8217; and `harm&#8217;).</p> </blockquote>
+
+<p><a href="http://www.triz-journal.com/archives/2003/05/e/05.pdf" target="_blank">Adaptive evolution in biology and technology: Why are parallels expected?</a> by Peter Kaplan.</p>
+
+<p><a href="http://www.triz-journal.com/archives/2001/10/f/" target="_blank">Integrating Knowledge From Biology Into The TRIZ Framework</a> by Darrell Mann</p>
+
+<p>and</p>
+
+<p><a href="http://www.triz-journal.com/archives/2003/01/a/" target="_blank">Complexity Increases And Then&#8230; (Thoughts From Natural System Evolution)</a> by Darrell Mann</p>
+
+<h4>Relevant links</h4>
+
+<p>K Niklas <a href="http://jxb.oupjournals.org/cgi/reprint/50/330/39" target="_blank">Evolutionary walks through a land plant morphospace</a> Journal of Experimental Botany, Vol 50, 39-52, Copyright  1999 by Oxford University Press</p>
+
+<p>KJ Niklas <a href="http://www.pnas.org/cgi/content/abstract/91/15/6772" target="_blank">Morphological Evolution Through Complex Domains of Fitness</a> Proceedings of the National Academy of Sciences, Vol 91, 6772-6779, Copyright  1994 by National Academy of Sciences</p>
+
+<p>Karl J. Niklas <a href="http://arjournals.annualreviews.org/doi/abs/10.1146/annurev.earth.32.092203.122440" target="_blank">COMPUTER MODELS OF EARLY LAND PLANT EVOLUTION</a> Annual Review of Earth and Planetary Sciences May 2004, Vol. 32, pp. 47-66</p>
+
+<p>Gabriela Ochoa <a href="http://www.cs.okstate.edu/~beckw/papers/ochoa98genetic.pdf" target="_blank">On Genetic Algorithms and Lindenmayer Systems</a></p>
+
+<p>James Watson, Janet Wiles, and Jim Hanan <a href="http://www.itee.uq.edu.au/~jwatson/publications/acal-2003.pdf" target="_blank">Towards More Relevant Evolutionary Models: Integrating an Artificial Genome with a Developmental Phenotype</a> </p>
+
+<p>Joanna L. Power A.J. Bernheim Brush Przemyslaw Prusinkiewicz David H. Salesin <a href="http://grail.cs.washington.edu/pub/papers/Power99.pdf" target="_blank">Interactive Arrangement of Botanical L-System Models</a></p>
+
+<p><a href="http://www.cpsc.ucalgary.ca/Research/bmv/papers/biomechanics00.pdf" target="_blank">Integrating biomechanics into developmental plant models expressed using L-systems</a></p></div><section class="comments-section"><h2 class="comments-heading">5 Comments</h2>
+<div class="comment" id="comment-5393"><p class="comment-meta"><span class="comment-author">Mike Hopkins</span> &middot; 21 July 2004</p><div class="comment-body"><p>There are several coding errors in this article.  The Dembski quote starting with "TRIZ's evolutionary scheme" ends with /url and not /quote resulting stuff that Dembski did not write being included in the quote.  There are also several places where links need fixing due to missing an /url: some are missing the backslash and some are simple just plain missing.</p><p>Feel free to delete this message when the problems are corrected.</p><p>---<br>Anti-spam: replace "usenet" with "harlequin2"</p></div></div>
+<div class="comment" id="comment-5403"><p class="comment-meta"><span class="comment-author">God Fearing Atheist</span> &middot; 21 July 2004</p><div class="comment-body"><p>Kutschera & Niklas <i>is</i> a very nice little paper. Folks who dont have access to Naturwissenschaften can email me for a copy of the PDF, if they'd like.</p><p>-Sean</p></div></div>
+<div class="comment" id="comment-6051"><p class="comment-meta"><span class="comment-author">Ayesha Navid</span> &middot; 6 August 2004</p><div class="comment-body"><p>quite informative and useful indeed....!!!!</p></div></div>
+<div class="comment" id="comment-6058"><p class="comment-meta"><span class="comment-author"><a href="http://www.ncseweb.org" rel="nofollow">Glenn Branch</a></span> &middot; 6 August 2004</p><div class="comment-body"><p>A PDF of Kutschera and Niklas's paper is freely available on line <a href="http://www.evolutionsbiologen.de/niklas.pdf">here</a>.</p></div></div>
+<div class="comment" id="comment-6059"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 6 August 2004</p><div class="comment-body"><p>Time to revisit this paper on PT as a separate posting. I was fascinated by the work on modeling plant evolution.</p><p>Kutschera is also a very vocal voice against ID activities in Germany.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

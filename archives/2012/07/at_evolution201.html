@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>At Evolution2012 in spirit — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">At Evolution2012 in spirit</h1><p class="post-meta">Posted 5 July 2012 by <span class="post-author">Nick Matzke</span></p><div class="post-body"><a href="http://www.confersense.ca/Evolution2012/">Evolution 2012</a> is starting tomorrow!  This time it's in Ottawa, representing the First Joint Congress on Evolutionary Biology -- a meeting of the American Society of Naturalists (ASN), the Canadian Society for Ecology and Evolution (CSEE), the European Society for Evolutionary Biology (ESEB), the Society for the Study of Evolution (SSE), and the Society of Systematic Biologists (SSB).  
+
+Sadly, though, I can't go this year.  A good friend of mine is having her wedding right in the middle of the meeting.  There's only one wedding in someone's life (well, hopefully!) and there are a lot of meetings, so I picked the wedding.  I guess the wedding won't be entirely evolution-free, seeing as the bride studies <a href="http://en.wikipedia.org/wiki/Ground_sloth">extinct giant sloths</a>. 
+
+But at the moment I'm looking over the <a href="http://www.confersense.ca/Evolution2012/program.htm">program</a> for Evolution 2012 and experiencing a few missing-the-conference blues.  
+
+Ah, but here's something to cheer me up.  After you've been in science for awhile, you discover that you don't even have to be at a meeting for your name to get into the program, due to the collaborations you are involved with!  Here are the papers I'm a coauthor on:
+
+<blockquote>Sunday, July 8 | 10:30 am - 12:00 noon
+Rm. 203
+
+<b>Session: Biogeography 2</b>
+
+"Treating fossils as terminal taxa in divergence time estimation reveals ancient vicariance patterns in the Palpimanoidea spiders"
+
+Wood, Hannah; Matzke, Nicholas; Gillespie, Rosemary; Griswold, Charles
+</blockquote>
+
+This study derives from the Ph.D. work of spider biologist <a href="http://nature.berkeley.edu/~hannah_marie2/">Hannah Wood</a>* of U.C. Berkeley's ESPM department (Environmental Science, Policy, and Management).  She spent years travelling the world and collecting spiders from the group <a href="http://en.wikipedia.org/wiki/Palpimanoidea">Palpimanoidea</a>, a group that is awesome because it includes assassin spiders.  Assassin spiders have the interesting habit of preying on <i>other spiders</i>, and for this purpose they have long necks and extended jaws that can sweep out and nab another spider before it can bite back.  Here's an example:
+
+<img alt="E. coronutus.jpg" src="http://pandasthumb.org/archives/2012/07/05/E.%20coronutus.jpg" width="257" height="202" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" />
+
+Assassin spiders were first discovered as fossils, in amber in the Baltic in the 1800s.  But the living species, discovered decades later, are mostly in the southern hemisphere.  This raises the question of whether or not they might be an example of biogeographical vicariance.  Vicariance is the process whereby speciation occurs because a formerly continuous species range is split apart by geographical/geological events.  The most famous postulated examples of vicariance involve groups that may have been divided up by the breakup of Gondwanaland in the Mesozoic.
+
+My own Ph.D. work involves the combination of statistical phylogenetics and historical biogeography.  So one day, when Hannah and I were talking (probably over beer or perhaps whiskey) it became obvious that we should collaborate.  Hannah had already done the phylogenetics of her group, but to test the hypothesis of Gondwanaland vicariance, we needed not just a phylogeny but a dated phylogeny.  
+
+Until recently, the standard way to date a phylogeny was to put calibration distributions specifying the possible dates on certain nodes, and use this to estimate some molecular clock (or more commonly, a relaxed clock with variable rates).  However, this method has always had the disadvantage of the subjectivity of translating complex information from the literature about the fossil records (or lack of fossil records) of your group into some kind of statistical distribution of possible times.  It's not a hopeless approach -- certainly everyone would agree that we can say ahead of time that the human-chimp divergence is sometime in the Cenozoic, not before, for instance -- but the subjectivity always bothered people.
+
+Could we do better in dating?  Just last year, a new approach to dating became available, where fossils are input directly into the analysis as dated tips on the tree, with their morphology coded.  Just as with DNA and with the coded morphology data of living species, statistical methods to estimate the rates of transitions between character states can be estimated, along with a relaxed clock model and therefore the dating of the nodes on the tree.  I am convinced that this method will take over the field of divergence-time estimation in the next few years, at least in situations where the fossils are good enough to get a lot of character data.
+
+We ran this analysis for the spiders, and, lo and behold, the divergence times were just about right for a classic Gondwanan vicariance scenario.  Several "classic" cases of Gondwanan vicariance have been overturned in recent years, when molecular dating analyses indicated that the divergence of the groups was far too recent to be caused by Mesozoic continent-splitting events, but in our case the dating analysis confirmed it.
+
+We also ran an ancestral range analysis using the program <a href="http://code.google.com/p/lagrange/">Lagrange</a>.  This program takes a phylogenetic tree and geographic range data and makes a maximum-likelihood estimate of the ancestral geographic ranges and the transitions that occurred.  This also confirmed the vicariance hypothesis, as far as it was able (Lagrange has some quirks that make it difficult to perfectly test a classic vicariance scenario).  We took into account the uncertainty in our phylogeny and dating by running the program on 1000 trees sampled from the Bayesian posterior distribution of trees in the dating analysis.
+
+The second talk I'm on is:
+
+<blockquote>Monday, July 9 | 8:30 - 10:00 am
+Rm. 203
+
+<b>Session: Biogeography, bioinformatics & computational biology</b>
+
+"Statistical analysis of biogeography when the number of areas is large."
+
+Landis, Michael; Matzke, Nick; Moore, Brian; Huelsenbeck, John
+</blockquote>
+
+I mentioned above the biogeography program Lagrange.  One of the limitations of Lagrange, and similar programs, is the complexity of the state space in biogeographic analyses.  In DNA analyses, the "state space" is of size 4, i.e. there are only 4 possible states at any position in the alignment: A, C, G, and T.  Thus a matrix specifying the probability of transitions between these states is only of size 4x4.  Computers can calculate transition probabilities for such a matrix very quickly, which is part of why DNA-based phylogenetics and ancestral sequence estimation is possible.  Amino acid matrices are 20x20, which is bigger, but still not a huge deal.
+
+In biogeography, on the other hand, the size of the state space depends on the number of areas being used in the analysis.  And in the more sophisticated programs (like Lagrange), a species is allowed to live in any number of areas.  If your analysis postulates that your biogeography can be modeled as 2 areas, area A and area B, it's not too bad.  The possible biogeographic ranges for species are A, B, and A+B.  The state spaces is of size 3, and the transition matrix is size 3x3.  No big deal.  
+
+But if there are 7 areas (say, Africa, Madagascar, New Zealand, Australia, South America, and Eurasia, basically what we had in the assassin spider analysis), then there are 7 areas.  The size of the state space is (2^7)-1 -- 2^7 accounts for every combination of presence/absence (2 states) in each region (7 regions), and the -1 is because we exclude the null range (which would mean global extinction).  (2^7)-1 = 127.  A 127x127 matrix is still not a huge deal for a computer, but with 8 areas the size of the state space is 255; with 9 areas it is 511, and with 10 areas it is 1023.  A 1023x1023 matrix has over 1 million cells in it.  A computer can still calculate a transition probability matrix of this size in under a second, but in a maximum likelihood analysis or Bayesian analysis such calculations have to be performed thousands of times as the optimal model is searched for.  So we are getting into serious calculation time.  There are a few tricks that can improve the situation somewhat, but if you get many more areas, your computer will hang and run forever without finishing.
+
+The above is not a problem if you are happy modeling your study group's biogeography as a handful of areas (say, a continent-level analysis).  But if you want to think bigger, there has been no method, until now.  Using a Bayesian technique that samples range evolution histories, we avoid the problem of having to calculate the probability of every possible transition, and thus the problem of dealing with large matrices.  The program is still in development, but Michael Landis (like me, a student of Huelsenbeck) will present the approach and preliminary results.
+
+OK, I think I've gotten the meeting out of my system for a bit at least.  If anyone reading this is at the meeting, take a look at Hannah's and Michael's talks and give us feedback!  Entertaining observations about the meeting also are encouraged.  Usually the twitter feed is pretty good, at <a href="http://ievobio.org/">iEvoBio</a> especially. Sigh.
+
+* No relation to Todd Wood, the creationist at Bryan College who is mildly famous for admitting that evolutionary biologists usually know what they are talking about and creationists usually don't. In part this may derive from the fact that Todd Wood attends the Evolution meeting each year.</div><section class="comments-section"><h2 class="comments-heading">20 Comments</h2>
+<div class="comment" id="comment-288421"><p class="comment-meta"><span class="comment-author">Nick Matzke</span> &middot; 5 July 2012</p><div class="comment-body"><p>#Evol2012 Twitter feed:</p><p>https://twitter.com/#!/search/%23Evol2012</p><p>Evolution 2012 bingo:</p><p>http://nothinginbiology.org/2012/07/05/evolution-2012-bingo/</p></div></div>
+<div class="comment" id="comment-288422"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 6 July 2012</p><div class="comment-body"><p>We'll miss you.  I'm off to the plane to Ottawa in about 6 hours time.  Among the people I expect to see there are Larry Moran, Jerry Coyne, and John Harshman.</p><p>I do have a little inside advance information and can make a prediction, so here's a spoiler: on Jerry Coyne's blog, by some time Saturday, there will appear pictures of ... poutine!</p></div></div>
+<div class="comment" id="comment-288423"><p class="comment-meta"><span class="comment-author">Rolf</span> &middot; 6 July 2012</p><div class="comment-body"><p>Saw an awesome documentary on Animal World just the other day, two spiders of different species engaging in battle; both could have opted to retire but didn't. I guess they both trusted their own strategy but at least in this case sting strategy proved superior to web strategy.</p></div></div>
+<div class="comment" id="comment-288427"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 6 July 2012</p><div class="comment-body"><p>Giant sloths? How cool!!!</p></div></div>
+<div class="comment" id="comment-288432"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 6 July 2012</p><div class="comment-body"><blockquote><p>seeing as the bride studies extinct giant sloths. </p></blockquote>
+That sounds like a slow moving field! :p
+</div></div>
+<div class="comment" id="comment-288478"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/j5i6uksLusgEaijZZYDXbBvVNwGLR34JYQj_JIeOO3eKfg--#35e25</span> &middot; 8 July 2012</p><div class="comment-body"><p>Went to the talk (the first one), and my major impression is that those are some seriously weird spiders. And that it would be nice to have better geographic sampling of the fossils. But a lot of things would be nice, and we aren't going to get many of them. I understand the major message was supposed to be that using characters to infer branch lengths can refine time calibration, which makes a certain amount of sense.</p></div></div>
+<div class="comment" id="comment-288489"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/j5i6uksLusgEaijZZYDXbBvVNwGLR34JYQj_JIeOO3eKfg--#35e25</span> &middot; 8 July 2012</p><div class="comment-body"><p>Wait: how did I turn into a masked panda again? I logged in just like you're supposed to. But that masked panda was John Harshman.</p></div></div>
+<div class="comment" id="comment-288502"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/j5i6uksLusgEaijZZYDXbBvVNwGLR34JYQj_JIeOO3eKfg--#35e25</span> &middot; 8 July 2012</p><div class="comment-body"><p>Harshman again. Not a panda.</p><p>Well, that was fun. You really should have been here for Rosie Redfield's talk. She covered the whole arsenic affair in immense and amusing detail, with valuable life lessons for us all. I'm assuming it will be up on the web in no time; at least they recorded the whole thing.</p></div></div>
+<div class="comment" id="comment-288504"><p class="comment-meta"><span class="comment-author">Nick Matzke</span> &middot; 8 July 2012</p><div class="comment-body"><p>Yeah I've been following the Rosie Redfield talk on twitter and the Open Access piece of the story also...this may end up becoming one of the more famous debunkings in recent history...</p></div></div>
+<div class="comment" id="comment-288544"><p class="comment-meta"><span class="comment-author">Robert Byers</span> &middot; 10 July 2012</p><div class="comment-body"><p>For the record studying fossil sloths is unrelated to evolutionary concepts unless these concepts are displayed by the study of fossil critters.<br>They are in fact a snapshot in time and say no more then about that moment.<br>Its a presumption  only to draw evolutionary connections between fossils.<br>Diversity and fossilization thereof  in a local disaster area would also account for any differences in sloth types.</p><p>Biogeography is subject i like as i think it shows creationist models fit the evidence better then evolutionary ones.</p><p>For these spiders a creationist model of separating the pre flood landmass from the post flood land masses(later that year) suits the evidence better.<br>The spiders were everywhere on the land before the flood, found in fossil below the k-t line, and after the flkood a general tropical climate allowed quick replenishment of earth and then a cooler stage kept them in the south.</p><p>All that is found is fossil spiders in areas. connections come from presumptions already held.</p></div></div>
+<div class="comment" id="comment-288545"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 10 July 2012</p><div class="comment-body"><p>That you like to think that is obvious, Byers, and you like to think it because it fits your insane perversion of geology and history. But that's the only reason. It isn't actually, like, true or anything.</p></div></div>
+<div class="comment" id="comment-288554"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 10 July 2012</p><div class="comment-body"><p>For the record studying fossil sloths is related to evolutionary concepts since these concepts are displayed by the study of fossil critters.<br>They are in fact a snapshot in time and say a lot about that moment.  Putting together many such snapshots give us a fairly clear picture of the past.<br>Its not a presumption  only to draw evolutionary connections between fossils.  Its sound logic and the scientific method.<br>Diversity and fossilization thereof  in a local disaster area would also account for any differences in sloth types.  That's why we have to do the science right and test hypotheses rigorously.</p><p>Biogeography is subject i like as i think it shows creationist models do not fit the evidence better then evolutionary ones.</p><p>For these spiders a creationist model of separating the pre flood landmass from the post flood land masses(later that year) absolutely does not suit the evidence better.<br>The spiders were everywhere on the land before the imaginary flood, found in fossil below the k-t line, and after the imaginary flkood a general tropical climate allowed quick replenishment of earth and then a cooler stage kept them in the south.  And the magic, imaginary flood is found nowhere in the fossil record,  Too bad for creationists.</p><p>All that is found is no flood of any kind in areas. connections come from presumptions already held about magic floods that magically left no evidences.</p></div></div>
+<div class="comment" id="comment-288567"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/j5i6uksLusgEaijZZYDXbBvVNwGLR34JYQj_JIeOO3eKfg--#35e25</span> &middot; 10 July 2012</p><div class="comment-body"><p>So the flood happened at the K-T boundary? Excellent, a testable hypothesis. (Ignoring most of the evidence, we can press on with the fossil record only.) So why were Archaea spiders found only in Europe before the flood but only in widely separated southern continents after it?</p><p>More importantly, why are there no preflood human, brontothere, whale, horse, elephant, ground sloth, etc. fossils, but lots of them at various points after the flood? Why is the pre-flood fossil record so extremely different from the flood and/or post-flood record, such that very few species are found in both?</p><p>And what process produced thousands of feet of pre-flood sediments at many places; e.g. the Grand Canyon, in only a couple of thousand years?</p></div></div>
+<div class="comment" id="comment-288576"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 10 July 2012</p><div class="comment-body"><p>If Creationism explains biogeography better than Evolution, then how come Creationists keep quiet about explaining how sloths got to South America, or how dodos got to Mauritius, or how spiders could get fossilized in a flood violent enough to simultaneously form and erode literally all known geological formations?</p></div></div>
+<div class="comment" id="comment-288582"><p class="comment-meta"><span class="comment-author">Robert Byers</span> &middot; 10 July 2012</p><div class="comment-body"><blockquote>
+<strong>https://me.yahoo.com/a/j5i6uksLusgEaijZZYDXbBvVNwGLR34JYQj_JIeOO3eKfg--#35e25 said:</strong>
+
+So the flood happened at the K-T boundary? Excellent, a testable hypothesis. (Ignoring most of the evidence, we can press on with the fossil record only.) So why were Archaea spiders found only in Europe before the flood but only in widely separated southern continents after it?
+
+More importantly, why are there no preflood human, brontothere, whale, horse, elephant, ground sloth, etc. fossils, but lots of them at various points after the flood? Why is the pre-flood fossil record so extremely different from the flood and/or post-flood record, such that very few species are found in both?
+
+And what process produced thousands of feet of pre-flood sediments at many places; e.g. the Grand Canyon, in only a couple of thousand years?
+</blockquote>
+
+spiders living areas before the flood are what they are. after the flood they might migrate in one direction or generally cover the earth and then went extinct with climate change.
+The pre flood world would be different as a option.
+The bible says creatures were divided into clean and unclean divisions.
+The clean were 12:2 after the flood and so took over the earth.
+before the flood it was the opposite or equal etc.
+Its reasonable to find great divergence after the flood as compared to before.
+
+</div></div>
+<div class="comment" id="comment-288583"><p class="comment-meta"><span class="comment-author">Robert Byers</span> &middot; 10 July 2012</p><div class="comment-body"><blockquote>
+<strong>apokryltaros said:</strong>
+
+If Creationism explains biogeography better than Evolution, then how come Creationists keep quiet about explaining how sloths got to South America, or how dodos got to Mauritius, or how spiders could get fossilized in a flood violent enough to simultaneously form and erode literally all known geological formations?
+</blockquote>
+
+Creationists do explain these minor points.
+Sloths survived better in the americas and dodo's are just atrophied birds and just a recent memory of a common thing in history.
+</div></div>
+<div class="comment" id="comment-288586"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 10 July 2012</p><div class="comment-body"><p>Byers, you babble nonsense, and you don't answer. How did dodos, which can't swim or fly, get to Mauritius? How did moas and kiwis, which can't swim or fly, get to New Zealand? How did koalas get to Australia, and only Australia? Flightless rails to Hawaii? How did it happen?</p><p>Not, "It just happened". That's not an explanation. Evolution expains what happened, and how it happened. You don't. You just say stuff that you make up as you go along.</p><p>Anything will do. Doesn't matter if it's mutually opposed, like animals evolved rapidly, only they didn't evolve. The flood laid down an iridium layer that can only be laid down by dust layering. Spiders got fossilised where they aren't found now, and not where they are found now. Any old garbage will do for you, because your religion has destroyed your capacity to reason, and your education was so poor that you don't even comprehend your own ignorance.</p><p>You're pitiful, Byers. Pity and contempt are the only reasonable reactions to you.</p></div></div>
+<div class="comment" id="comment-288588"><p class="comment-meta"><span class="comment-author">Rolf</span> &middot; 11 July 2012</p><div class="comment-body"><p>RB is a ... case. He is making things up on the fly as it fits his distorted viewpoints. Nothing to be done about it, let the bird fly.</p></div></div>
+<div class="comment" id="comment-288667"><p class="comment-meta"><span class="comment-author">SWT</span> &middot; 12 July 2012</p><div class="comment-body"><p>I've seen some articles about a presentation by Tristan Long and William Rice about "evolving fruit flies that can count".  I would love to hear more about this from someone who saw the presentation!</p></div></div>
+<div class="comment" id="comment-288669"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 12 July 2012</p><div class="comment-body"><blockquote>
+<strong>Robert Byers said:</strong>
+
+<blockquote>
+<strong>apokryltaros said:</strong>
+
+If Creationism explains biogeography better than Evolution, then how come Creationists keep quiet about explaining how sloths got to South America, or how dodos got to Mauritius, or how spiders could get fossilized in a flood violent enough to simultaneously form and erode literally all known geological formations?
+</blockquote>
+
+Creationists do explain these minor points.
+Sloths survived better in the americas and dodo's are just atrophied birds and just a recent memory of a common thing in history.
+
+</blockquote>
+
+So how did sloths and dodos leave Mt Ararat?  You completely avoided explaining how with your inane assertions.</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

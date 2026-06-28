@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talkorigins — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Talkorigins</h1><p class="post-meta">Posted 19 December 2006 by <span class="post-author">Reed A. Cartwright</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2006/12/talkorigins.html">https://pandasthumb.org/archives/2006/12/talkorigins.html</a></p><div class="post-body">Some of you may have noticed that the <a href="http://www.talkorigins.org/">Talk.Origins Archive</a> was not accessible today.  Its hosting company changed the IP address for the server that the Archive is on.  The new IP address is currently propagating through the DNS network and you will be able to access the site again as soon as your ISP updates its records.
+
+Also we've ordered a new server for PT and will have access to more bandwidth soon.
+
+<h>Update:</h>
+
+Current plans have us switching to the new connection tonight.  This means that PT may go offline for you until your ISP picks up the new IP.</div><section class="comments-section"><h2 class="comments-heading">19 Comments</h2>
+<div class="comment" id="comment-106997"><p class="comment-meta"><span class="comment-author">wamba</span> &middot; 19 December 2006</p><div class="comment-body"><p>If you have a notworking perfeshunal, you might have a talk with him about DNS "time-to-live" parameters.</p></div></div>
+<div class="comment" id="comment-106999"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 19 December 2006</p><div class="comment-body"><p>Note that the issue with TOA had to do with a missed email (stupid holidays), which is why TTL wasn't used with it.</p><p>Now, PT uses a DNS provided by the domain name registrar.  I doubt we have TTL for such a budget-friendly service.</p></div></div>
+<div class="comment" id="comment-107004"><p class="comment-meta"><span class="comment-author">Michael Rathbun</span> &middot; 19 December 2006</p><div class="comment-body"><p>Most of the budget DNS providers I've looked at (and definitely the ones I use) give the customer complete control over TTL and nearly every other aspect of your zone(s).  If you'd like lots of free advice on that topic, I'll be only too happy to blather on at length.</p></div></div>
+<div class="comment" id="comment-107007"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 19 December 2006</p><div class="comment-body"><p>Sorry, I was thinking about something else when I made the above post.  Disregard the TTL stuff.</p></div></div>
+<div class="comment" id="comment-107035"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 20 December 2006</p><div class="comment-body"><p>Did it work?</p></div></div>
+<div class="comment" id="comment-107081"><p class="comment-meta"><span class="comment-author">Michael Rathbun, FCD</span> &middot; 20 December 2006</p><div class="comment-body"><blockquote><p>Did it work?</p><cite>— Coin</cite></blockquote>
+
+As far as PT is concerned, the results appear to be mixed.  Bandwidth seems to be good (FIOS is awesome!) but there are still serious backend problems.  Bringing up the top page is generally pretty snappy, but it still may take as long as 15 minutes to view any particular thread or perform some action such as "Preview".  
+
+Sometimes instant, sometimes like plowing feldspar.
+
+And "Check Spelling" is unconditionally busticated, as far as I can tell.
+
+</div></div>
+<div class="comment" id="comment-107095"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 21 December 2006</p><div class="comment-body"><p>I did some more clean up of our backend today.  For a while now, we have been running Lighttpd as our primary webserver, and Apache has been running as well, serving some of our sites via a proxy to lighty.  Tonight I finally moved the rest of the sites to lighttpd, and turned off Apache.  Hopefully, things will be improve on the server without lighty and apache fighting for resources.</p><p>Since we no longer have limited bandwidth, we no longer need to compress our pages, which should also help us serve active threads more quickly.</p><p>I've also turned off some bandwidth logging that I was doing.  This may improve latency.  (It didn't work properly with multiple worker threads anyways.)</p><p>I just heard about the spelling issue today.  I'm looking into it.</p></div></div>
+<div class="comment" id="comment-107098"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 21 December 2006</p><div class="comment-body"><p>Spellcheck is now fixed.  I needed to put the full path for aspell.</p></div></div>
+<div class="comment" id="comment-107099"><p class="comment-meta"><span class="comment-author">Popper&#x27;s ghost</span> &middot; 21 December 2006</p><div class="comment-body"><p>Hi, Reed.  Any chance that Preview will go back to showing the thread, so we can see what we're responding to while drafting our posts?</p></div></div>
+<div class="comment" id="comment-107101"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 21 December 2006</p><div class="comment-body"><p>Probably not.  I think it is too much of a resource hog on the system to generate a huge comment preview page for posts with hundreds of comments.  When I took if away, I didn't think that people used it that much.</p><p>I'll look into the possibility of opening the comment preview in a new window.</p></div></div>
+<div class="comment" id="comment-107102"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 21 December 2006</p><div class="comment-body"><p>I should also add that I've updated my custom javascripts on DRN.  They includes a "quote comment" button implemented in Ajax.  Eventually I'm going to update PT's scripts.</p></div></div>
+<div class="comment" id="comment-107103"><p class="comment-meta"><span class="comment-author">Popper&#x27;s ghost</span> &middot; 21 December 2006</p><div class="comment-body"><p>With AJAX, I would think you could add the preview version of the comment (distinctly marked) to the current page, so there wouldn't be any need to compose a whole new page.</p><p>"quote comment" would be cool, especially if it were possible to quote more than one comment and have each one added to the comment box.  Buttons to insert KwickXML templates, especially url, would also be nice.</p><p>Thanks for the work you've done, and any you might do in the future. :-)</p></div></div>
+<div class="comment" id="comment-107105"><p class="comment-meta"><span class="comment-author">Popper&#x27;s ghost</span> &middot; 21 December 2006</p><div class="comment-body"><blockquote><p>When I took if away, I didn't think that people used it that much.</p></blockquote>
+
+Quite a few people were using it to see the posts that weren't showing up on the page, and to check whether they were double posting.  Since you took it away at the height of those problems, it led to quite a bit a of frustration (not just mine; several people posted to that effect).</div></div>
+<div class="comment" id="comment-107106"><p class="comment-meta"><span class="comment-author">Popper&#x27;s ghost</span> &middot; 21 December 2006</p><div class="comment-body"><p>I tried out the Q button at DCN.  It works just as I would have hoped -- except that, in firefox, it takes 2 seconds for the quote to show up.  That may be a problem with my installation, which has too many weird extensions installed.  However, in IE the text shows up right away, but I get an hourglass icon whenever my mouse is in the text entry box.</p></div></div>
+<div class="comment" id="comment-107107"><p class="comment-meta"><span class="comment-author">Popper&#x27;s ghost</span> &middot; 21 December 2006</p><div class="comment-body"><p>Er, DRN.</p></div></div>
+<div class="comment" id="comment-107111"><p class="comment-meta"><span class="comment-author">bn</span> &middot; 21 December 2006</p><div class="comment-body"><blockquote><blockquote>Hi, Reed. Any chance that Preview will go back to showing the thread, so we can see what we're responding to while drafting our posts?</blockquote>Probably not. I think it is too much of a resource hog on the system to generate a huge comment preview page for posts with hundreds of comments. When I took if away, I didn't think that people used it that much.</blockquote>How about just showing the 10 or so most recent comments, like over at AtBC?  That would usually be good enough.</div></div>
+<div class="comment" id="comment-107126"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 21 December 2006</p><div class="comment-body"><p>The hourglass issue on IE has been fixed in my quote comment script.</p></div></div>
+<div class="comment" id="comment-107134"><p class="comment-meta"><span class="comment-author">Michael Rathbun, FCD</span> &middot; 21 December 2006</p><div class="comment-body"><p>Performance overall appears flawless, except possibly for</p><p>&lt;degas.fdisk.net&gt;</p><p>System error: Aspell program execution failed (`aspell -a --lang=en_US --encoding=utf-8 < /var/tmp/aspell_data_Az75O5 2>&1`)</p></div></div>
+<div class="comment" id="comment-107151"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 21 December 2006</p><div class="comment-body"><p>Okay.  I'll fix the speller on degas.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

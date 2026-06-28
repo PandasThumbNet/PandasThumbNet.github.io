@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagellum evolution kerfluffle continued — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Flagellum evolution kerfluffle continued</h1><p class="post-meta">Posted 24 April 2007 by <span class="post-author">Nick Matzke</span></p><div class="post-body">As the discussion over the <a href="http://www.pnas.org/cgi/content/abstract/0700266104v1">Liu-Ochman flagellum evolution</a> paper continues, it is clear that I need to do a little more arguing to defend my position.  Although some were convinced that skepticism was justified based the previous PT posts (basically: 1. <a href="http://www.pandasthumb.org/archives/2007/04/flagellum_evolu_1.html">this goes against much prior published knowledge</a> and 2. <a href="http://www.pandasthumb.org/archives/2007/04/update_on_pnas.html">just look at the obviously different structures</a>), others have defended the paper or at least suggested that the alleged problems are not as overwhelmingly obvious as they seem to me.  Two primary lines of argument have been raised.  First, some have pointed out, correctly, that the reputation of the authors and journal in question far outweighs the reputation of a blogger like me, so why should readers trust me over <i>PNAS</i>?  I will concede the case when it comes to reputation; all I can say is that over the years I have developed some familiarity with the literature pertinent to flagellum evolution, and as I read through the <i>PNAS</i> paper it became apparent that it was going against much of what was already known.  This is not necessarily bad if a direct attempt is made to rebut conventional wisdom, but if assertions are made without much evidence of awareness that they go against previous work, that is problematic.
+
+Second and more importantly, the Liu-Ochman paper reports reasonably significant e-values (e &lt; 0.0001) for their claimed homologies (all of the lines in Liu-Ochman's Figure 3 represent matches with e-values of 0.0001 or less, in one or more of the 41 bacterial genomes they searched).  I have been hinting that there are more technical problems with the paper, and that I and some others are working on a more detailed critique.  For the moment -- especially to forestall suggestions that we are ignoring Liu and Ochman's BLAST results, and that we don't know how BLAST statistics work, etc., I will post some preliminary results of an attempt to replicate Liu and Ochman's findings. 
+
+<b>A little background on BLAST, e-values, and homology</b>
+
+<b>BLAST</b> stands for Basic Local Alignment Search Tool, a standard program in bioinformatics that is used to find statistically significant matches between two sequences (amino acid or DNA).  It is implemented in numerous web applications that can search massive online databases, and in stand-alone executables that can search local or online databases. 
+
+<b>Homology</b> is similarity due to common ancestry.  In proteins and DNA, this is typically sequence similarity.  As a very rough guide, for protein amino acid sequences, sequence similarity of 30% or more is typically strong evidence of homology, sequence similarity of 20-30% is the "twilight zone" where the assignment of homology typically becomes uncertain, and sequence similarity below 20% can often be due to chance resemblance. (Various details make this picture more complicated, e.g. shorter proteins need higher similarity to confidently assign homology.)  
+
+Structure is more conserved than sequence.  It has been repeatedly observed that proteins down to 30% or 20% similarity will commonly exhibit very similar tertiary structure and folds.  There are ways for mutations to change structures so this is not a universal rule, but it is a very good generalization.  Homology will often be assigned based on detailed structural similarity and weak sequence similarity.  It is thus suspicious if a claim of significant sequence similarity is contradicted by the observation of no structural similarity.
+
+Along with alignments, BLAST produces an <b>e-value</b> statistic, which is a better statistical measure of the significance of an alignment than percent similarity.  The e-value represents the number of times that a given sequence match of a certain length and strength would be expected by chance, given a database of a certain size.  ("e" is for "expected")  The larger the database, the more likely it is that a weak match would occur by chance.  An e-value of 1 indicates that one match of similar length and strength or better would be expected by chance, and therefore the match is clearly not significant.  There is no hard and fast line for significance, and the e-value is not an infallible statistic anyway, but the rules of thumb seem to be that e-values less than 0.01 are interesting, and e-values less than perhaps 10<sup>-8</sup> or so are almost always a good indicator of homology, assuming no human error.  Very close matches -- 50% or more sequence in common -- can have e-values of 10<sup>-30</sup> or less.  Identical proteins, e.g. a protein BLASTed against itself, will have an e-value of 0.
+
+<b>An attempt to replicate the homology hits in Liu and Ochman (2007)</b>
+
+Recall Liu & Ochman's Figure 3:
+
+<img src="http://www.pandasthumb.org/images/Liu_Ochman_fig3.jpg" place="center" />
+
+The lines represent alignments that are significant according to an e-value cutoff of e = 0.0001 or less.  The numbers represent the number of genomes (out of 41) where the homology connection was reported.  The blue lines represent the matches found specifically in the <i>E. coli</i> K12 genome.  According to Figure 3, FliC is homologous to FliD (cap protein), FlgD (rod), FlgE (rod), FlgK (adapter between hook and FlgL), and FlgL (adapter between FlgK and FliC).  Homology between FliC and FlgL seems to be <a href="http://expasy.org/cgi-bin/get-similar?name=bacterial%20flagellin%20family">well-accepted</a> and <a href="http://www.pandasthumb.org/archives/2006/09/flagellum_evolu.html">retrievable with PSI-BLAST</a> (a search more sensitive than regular protein BLAST), but the others are novel, or at least it is novel to claim that a simple BLAST search can detect them with decent significance.
+
+I and others have been attempting to replicate the results in Figure 3.  According to the paper's methods, Figure 3 is based on pairwise comparison using the executable bl2seq (BLAST 2 sequences).  The bl2seq executable can be downloaded from the NCBI <a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables">here</a>. (I got blast-2.2.10-ia32-win32.exe to work on my 2004 windows32 PC; you will have to download other versions for other machines and operating systems.)  The bl2seq documentation is <a href="http://www.ncbi.nlm.nih.gov/staff/tao/URLAPI/bl2seq.html">online here</a>. According to Table 1 of the paper's <a href="http://www.pnas.org/cgi/content/full/0700266104/DC1#T1">Supplementary Material</a>, the <i>E. coli</i> genome was <i>E. coli</i> K12, NC_000913.2, which is <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=genome&amp;cmd=Retrieve&amp;dopt=Overview&amp;list_uids=115">online here</a>.  I downloaded the FASTA-format sequences for the 24 "core" flagellar proteins that the authors identified; I have uploaded them <a href="http://www.pandasthumb.org/sequences/Ecoli_k12.zip">here (right-click to download)</a> as a zipfile if you would like them.
+
+The table below shows the search results for BLASTing <b><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&amp;val=16129870">FliC</a></b> against the 24 flagellar proteins.  The table columns, from left to right, contain:
+
+<html><ul>
+<li><b>1.</b> Protein name</li>
+<li><b>2.</b> Liu-Ochman matches to FliC (from Figure 3)</li>
+<li><b>3.</b> e-values for bl2seq search default filters off<br />
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(example search: bl2seq -p blastp -F F -i FliC.fasta -j FlgD.fasta -o FliCvFlgD.out)</i></li>
+<li><b>4.</b> e-values for bl2seq search default filters on<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>(example search:bl2seq -p blastp -i FliC.fasta -j FlgD.fasta -o FliCvFlgD_filters.out)</i></li>
+<li><b>5.</b> e-values for bl2seq, default filters on, database size = 7163<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>(example search: bl2seq -p blastp -i FliC.fasta -j FlgD.fasta -o FliCvFlgD_filters_db7163.out -d 7163)</i></li>
+<li><b>6.</b> e-values for bl2seq, default filters on, database size = 293683<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>(example search: bl2seq -p blastp -i FliC.fasta -j FlgD.fasta -o FliCvFlgD_filters_db293683.out -d 293683)</i></li>
+</ul></html>
+
+Although the methods section of Liu & Ochman (2007) says that the bl2seq BLAST searches were run with defaults (basically column #4 in the table below), it is apparent that the BLAST searches were actually run in the non-default setting of filters off (column #3).  Through the grapevine I have heard that the authors are telling correspondents about this error in email, and plan to issue a correction, which is good.  
+
+An additional issue is database size.  Searching 23 proteins instead of one means that the database size is not the size of one protein, but the size of all 23 proteins strung together, or 7163 amino acids in length.  Furthermore, the authors actually ran these pairwise searches between the 24 core proteins in each of 41 genomes, so the full size of the database searched is actually approximately 7163 x 41 = 293683.  Columns 5 and 6 show the resultant e-values when bl2seq is run with the -d (database size) parameter set at these values.
+
+<b>Table:</b> e-values resulting from bl2seq search of <i>E. coli</i> K12 <b><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&amp;val=16129870">FliC</a></b> against 23 other core flagellar proteins, using different search options.  <b>ns =</b> no significant hit according to Figure 3 of Liu and Ochman (2007).  <b>na =</b> no significant alignment returned by bl2seq.
+
+<html><table width="80%" align="center" border=2>
+<tr><td><b>Protein</b></td> <td><b>Liu-Ochman hits for <i>E. coli</i> K12 (Figure 3)</b></td> <td><b>default filters off</b></td> <td><b>default filters on</b></td> <td><b>default filters on, database size = 7163</b></td> <td><b>default filters on, database size = 293683</b></td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129036">FlgB</a></td> <td>ns</td> <td>0.2500</td> <td>0.2500</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129037">FlgC</a></td> <td>ns</td> <td>0.3200</td> <td>2.1000</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129038">FlgD</a></td> <td>&lt;0.0001</td> <td>0.0003</td> <td>0.0110</td> <td>2.3000</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129039">FlgE</a></td> <td>&lt;0.0001</td> <td>4e-06</td> <td>0.0110</td> <td>0.2100</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129040">FlgF</a></td> <td>ns</td> <td>0.0120</td> <td>0.0120</td> <td>0.3500</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129041">FlgG</a></td> <td>ns</td> <td>0.1700</td> <td>0.6600</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129045">FlgK</a></td> <td>&lt;0.0001</td> <td>2e-10</td> <td>3e-05</td> <td>0.0100</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129046">FlgL</a></td> <td>&lt;0.0001</td> <td>4e-09</td> <td>0.0250</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129831">FlhA</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129832">FlhB</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129871">FliD</a></td> <td>&lt;0.0001</td> <td>9e-09</td> <td>7e-06</td> <td>0.0080</td> <td>8.0000</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129884">FliE</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129885">FliF</a></td> <td>ns</td> <td>0.0350</td> <td>0.0350</td> <td>0.4600</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129886">FliG</a></td> <td>ns</td> <td>0.8600</td> <td>0.8600</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=90111357">FliH</a></td> <td>ns</td> <td>1.7000</td> <td>1.7000</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129888">FliI</a></td> <td>ns</td> <td>1.2000</td> <td>1.6000</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129892">FliM</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129893">FliN</a></td> <td>ns</td> <td>0.2500</td> <td>0.2500</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129895">FliP</a></td> <td>ns</td> <td>5.2000</td> <td>5.2000</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129896">FliQ</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129897">FliR</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129842">MotA</a></td> <td>ns</td> <td>na</td> <td>na</td> <td>na</td> <td>na</td></tr>
+<tr><td><a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=16129841">MotB</a></td> <td>ns</td> <td>0.6100</td> <td>0.6100</td> <td>na</td> <td>na</td></tr>
+</table></html>
+
+As you can see, with default filters turned on, 5 significant hits become only 2.  With filters on, plus database sizes larger than a single protein, no hits are significant.
+
+Removing filters from a BLAST search is an extremely serious decision with major impacts on an analysis, because the filters prevent spurious matches that are due to similarities that are not phylogenetically informative, such as low-complexity regions and biases in amino acid composition.  Similarly, the database size has a massive impact on e-value.
+
+We have not yet run the same searches systematically through the other flagellar proteins and the other 40 genomes, but it is apparent that the results would be similarly dire, and that most or all of the new significant hits reported in Liu and Ochman's Figure 3 would evaporate.  Thus the only support for the all-flagellum-genes-from-one hypothesis, which was unlikely from the beginning based on background information, also evaporates.
+
+<b>Acknowledgements</b>
+
+Doug Theobald and Ian Musgrave ran some of these searches before me, and Doug educated me on the database size issue and made various other helpful comments.  Any errors are of course mine.
+
+<i>Note:</i> The FliC-FlgD match in Column 3 has an e-value of 0.0003, which is actually higher than the 0.0001 cutoff.  So either there is a slight difference in our databases or techniques, or 0.0003 was mistakenly reported as a hit below 0.0001 in Figure 3.</div><section class="comments-section"><h2 class="comments-heading">55 Comments</h2>
+<div class="comment" id="comment-116301"><p class="comment-meta"><span class="comment-author">Ralf Koebnik</span> &middot; 24 April 2007</p><div class="comment-body"><p>Hi Nick,</p><p>I wonder why there are several cases of "0.0000" in columns 3 and 4 (e.g. FlgK and FliD) ?</p><p>Another comment: for pairwise comparisons, you could also use the PRSS algorithm:</p><p>http://www.ch.embnet.org/software/PRSS_form.html</p><p>To my experience (I was teaching applied bioinformatics for 6 years: http://www2.biologie.uni-halle.de/genet/plant/staff/koebnik/teaching/bioinfo/index.html), this algorithm is superior to BLAST.</p><p>Best regards,<br>Ralf</p></div></div>
+<div class="comment" id="comment-116302"><p class="comment-meta"><span class="comment-author">Ralf Koebnik</span> &middot; 24 April 2007</p><div class="comment-body"><p>Here the (german) Bioinformatics link again (in the link above, there is one bracket at the end which has to de removed):</p><p>http://www2.biologie.uni-halle.de/genet/plant/staff/koebnik/teaching/bioinfo/index.html</p></div></div>
+<div class="comment" id="comment-116303"><p class="comment-meta"><span class="comment-author">Ralf Koebnik</span> &middot; 24 April 2007</p><div class="comment-body"><p>Here is the (German) bioinformatics link again. Above, there is a bracket at the end which one has to remove.</p><p>http://www2.biologie.uni-halle.de/genet/plant/staff/koebnik/teaching/bioinfo/index.html</p></div></div>
+<div class="comment" id="comment-116304"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>Those 0.0000 numbers just mean the e-value is lower than 0.00005 and was cut off in the spreadsheet.  I will post the exponent values in a sec.</p></div></div>
+<div class="comment" id="comment-116307"><p class="comment-meta"><span class="comment-author"><a href="http://danielmorgan.name" rel="nofollow">Daniel Morgan</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>Good job with this.  It is always crucial to show the sequence analysis when criticizing a paper in a journal like PNAS.  While I was sympathetic to your original analysis regarding structure image eyeballing, and was not so harsh as some of your critics in the update thread, you have now laid down the gauntlet and the onus has shifted.</p></div></div>
+<div class="comment" id="comment-116309"><p class="comment-meta"><span class="comment-author"><a href="http://scienceblogs.com/evolgen" rel="nofollow">RPM</a></span> &middot; 24 April 2007</p><div class="comment-body"><blockquote>Homology is similarity due to common ancestry. In proteins and DNA, this is typically sequence similarity. As a very rough guide, for protein amino acid sequences, sequence similarity of 30% or more is typically strong evidence of homology, sequence similarity of 20-30% is the "twilight zone" where the assignment of homology typically becomes uncertain, and sequence similarity below 20% can often be due to chance resemblance. (Various details make this picture more complicated, e.g. shorter proteins need higher similarity to confidently assign homology.)</blockquote>
+
+First off, you mean sequence identity, not sequence similarity. Yes, there is a difference. Secondly, homology is NOT "similarity indicating common ancestry." Sequence identity is used to infer homology (common ancestry).
+
+<blockquote>Removing filters from a BLAST search is an extremely serious decision with major impacts on an analysis, because the filters prevent spurious matches that are due to similarities that are not phylogenetically informative, such as low-complexity regions and biases in amino acid composition. Similarly, the database size has a massive impact on e-value.</blockquote>
+
+I'm not sure what you mean by "phylogenetically informative", but this term usually refers to characters in a parsimony analysis. Your basic point in this paragraph seems solid, but I wouldn't refer to HSPs as "phylogenetically informative". I guess I can kind of see how the matches are due to convergence (rather than common ancestry), and that may be why you'd called them phylogenetically uninformative, but I still don't like that term. I'm not sure what to call spurious matches other than "spurious matches".</div></div>
+<div class="comment" id="comment-116310"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com" rel="nofollow">Dan Gaston</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>Glad you posted the results <b>Nick</b>. As I said in my previous posts I wasn't trying to take up any particular position just yet, I just disliked people saying they thought there were serious methodological problems before they posted their own results showing that. Have you tried contacting the authors about the database size and such? Quickest way to find out is simply to ask.</p></div></div>
+<div class="comment" id="comment-116316"><p class="comment-meta"><span class="comment-author">Unsympathetic reader</span> &middot; 24 April 2007</p><div class="comment-body"><p>Howard Ochman is extremely approachable.</p></div></div>
+<div class="comment" id="comment-116322"><p class="comment-meta"><span class="comment-author">David vun Kannon</span> &middot; 24 April 2007</p><div class="comment-body"><p>Nick, thank you and the others for contributing additional data and helpful explanations.</p><p>I suppose my sanity check for understanding the numbers in the table is the FlgL row, since you say that this is a well accepted homology. Default filters "on", this value is 0.0250. All the Liu & Ochman hits fall below that number in that column. In addition, this homology disappears at the larger database sizes, just like the others. Oh well.</p><p>As I understand your current argument, Liu & Ochman are making an exansive claim based on narrow support - BLAST analysis alone. "All pairwise hits with e values better than FliC/FlgL with default filters" sounds like an intermediate stage of analysis, not the basis of a publishable result.</p><p>I still find your observations on structure somewhat weak. Certainly structural similarity will help the inference of homology, and it is easy to understand that there can be many changes in sequence that do not change structure radically, but the lack of that support does not argue for the negative conclusion. A series of changes that leads to a very different tertiary structure can still be a homology.</p></div></div>
+<div class="comment" id="comment-116331"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body">Responding to comments:
+
+<blockquote><p>I suppose my sanity check for understanding the numbers in the table is the FlgL row, since you say that this is a well accepted homology. Default filters "on", this value is 0.0250. All the Liu & Ochman hits fall below that number in that column. In addition, this homology disappears at the larger database sizes, just like the others. Oh well.</p></blockquote>
+
+The FliC-FlgL homology is consistently retrievable with PSI-BLAST on the full nonredundant database (millions of sequences) with certain settings, you will not necessarily get it in any particular pairwise comparison from a single genome.
+
+<blockquote><p>As I understand your current argument, Liu & Ochman are making an exansive claim based on narrow support - BLAST analysis alone. "All pairwise hits with e values better than FliC/FlgL with default filters" sounds like an intermediate stage of analysis, not the basis of a publishable result.</p></blockquote>
+
+Don't focus on FliC/FlgL comparison in <i>E. coli</i> K12, they didn't use that as the benchmark and neither did I.  They used e &lt; 0.0001.  And my point of course is that default filters were not used and thus most of the hits were spurious.
+
+<blockquote><p>I still find your observations on structure somewhat weak. Certainly structural similarity will help the inference of homology, and it is easy to understand that there can be many changes in sequence that do not change structure radically, but the lack of that support does not argue for the negative conclusion. A series of changes that leads to a very different tertiary structure can still be a homology.</p></blockquote>
+
+Unless you are going to say that any two proteins with alpha helices are homologous or something, there is no way to homologize proteins like FliC and FliI.  You could pick any two random proteins and call them homologous with such criteria.  I agree there are rare cases where small changes in sequence lead to large structural changes, but even here some structural conservation should be evident.  In any case, all I have to establish is the well-known fact that structural similarity very commonly correlates with sequence similarity.
+
+<blockquote><p>First off, you mean sequence identity, not sequence similarity. Yes, there is a difference.</p></blockquote>
+
+I know.  I was trying to keep it simple...
+
+<blockquote><p>Secondly, homology is NOT "similarity indicating common ancestry." Sequence identity is used to infer homology (common ancestry).</p></blockquote>
+
+I prefer to keep homology slightly distinct from common ancestry so that the statement "homology supports common ancestry" does not become a tautology.  This becomes important when you debate creationists who don't believe in that common ancestry nonsense.  Once you accept that common ancestry explains homology it all becomes equivalent anyhow.</div></div>
+<div class="comment" id="comment-116338"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com" rel="nofollow">Dan Gaston</a></span> &middot; 24 April 2007</p><div class="comment-body"><p><b>Nick</b>:</p><p>What did the alignments look like in general with the filters turned off? I know in my own work sometimes it is necessary to turn off the filters in order to retrieve exact matches to the query from a database if those low complexity regions are present. It ends up being a complicated business using BLAST for these sorts of analysis because in general there aren't any hard and fast rules as I am sure you are aware.</p><p>As for the word homology, personally I am of the opinion that as scientists/science-enthusiasts we should be using these terms precisely. An inference of Homology necessarily ties in with an inference of common descent because it is exactly what homology means. It isn't a tautology because the two terms are directly tied to one another. Personally I suggest rephrasing the argument in order to better confront Creationists instead of altering your definition of a precise scientific definition. Remember we get frustrated when the Creationists twist the meanings of things to suit their own ends, and even if in this case it is done for a more benign reason I would shy way from it.</p></div></div>
+<div class="comment" id="comment-116340"><p class="comment-meta"><span class="comment-author">Douglas Theobald</span> &middot; 24 April 2007</p><div class="comment-body"><blockquote><p>
+I still find your observations on structure somewhat weak. Certainly structural similarity will help the inference of homology, and it is easy to understand that there can be many changes in sequence that do not change structure radically, but the lack of that support does not argue for the negative conclusion. A series of changes that leads to a very different tertiary structure can still be a homology.
+</p><cite>— David vun Kannon</cite></blockquote>
+
+Yes, lack of structural similarity does argue against homology, and if we are comparing two wildly different folds, the evidence is very strong against.  You are correct, in principle, that one fold can evolve into another via a very long series of incremental changes in secondary structure elements.  And such things have been proposed in the literature.  But there is currently absolutely no experimental evidence for it -- and even if we were to find a bona fide example tomorrow, the likelihood of homology in the face of fold dissimilarity will still be extremely low.  Extraordinary claims require extraordinary evidence.
+
+Nick Grishin has done basically all of the work on evolution between folds, entirely contained within a few published papers:
+
+Kinch LN, Grishin NV.
+Evolution of protein structures and functions.
+Curr Opin Struct Biol. 2002 12(3):400-8.
+
+Grishin NV.
+Fold change in evolution of protein structures.
+J Struct Biol. 2001 134(2-3):167-85.
+
+Krishna SS, Grishin NV.
+Structural drift: a possible path to protein fold change.
+Bioinformatics. 2005 21(8):1308-10.
+
+Grishin NV.
+KH domain: one motif, two folds.
+Nucleic Acids Res. 2001 29(3):638-43.
+
+Grishin is extremely good, he does incredibly meticulous and careful work.  But note that all of his examples are relatively minor fold changes, insertion and deletion of one or a few secondary structural elements, inversion of direction of a beta-strand, etc.  And they all are corroborated by strong external evidence, like highly significant sequence similarity and functional similarity.
+
+In sum, it is preposterous to postulate homology between two proteins based on very weak sequence similarity (even taking Lui and Ochman's reported evalues uncritically), in spite of extreme structural and functional differences.
+
+</div></div>
+<div class="comment" id="comment-116341"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>Ugh, I was trying to avoid the usual hair-splitting over the definition of "homology." My position is not an arbitrary anti-creationist position.  Homology does not have to be defined by common ancestry: as everyone knows, "homology" was recognized and observed (and defined, by Owen) as a particular kind of similarity long before Darwin published common ancestry as the convincing explanation.</p><p>I think with sequence similarity analysis, common ancestry has been the known explanation from the start, so people make "sequence similarity" or "sequence identity" the observation and "homology (common ancestry)" the conclusion.  There is nothing wrong with this but it doesn't quite match with the original usage of of the term.</p></div></div>
+<div class="comment" id="comment-116344"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>About Homology:</p><p>Mindell and Meyer (2001) defines homology as "relationship between traits of organisms that are shared as a result of common ancestry".</p><p>See <a href="http://www.talkorigins.org/indexcc/CB/CB810.html">IndexCC</a> for the full citation and more discussion.</p></div></div>
+<div class="comment" id="comment-116347"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body"><blockquote><p>What did the alignments look like in general with the filters turned off? I know in my own work sometimes it is necessary to turn off the filters in order to retrieve exact matches to the query from a database if those low complexity regions are present. It ends up being a complicated business using BLAST for these sorts of analysis because in general there aren't any hard and fast rules as I am sure you are aware.</p></blockquote>
+
+The "significant" alignments with filters off in the case of <i>E. coli</i> are mostly the N- and C-term of the axial proteins.  There are some bona fide similarities there -- in all axial proteins those regions probably form alpha helices that make up the inner tube of the axial filament, and they all exhibit heptad repeats -- but the regions are short and heptad repeats can apparently converge so there is hesitancy to assign homology across the axial proteins.  Even if (as I suspect) structural and other evidence eventually makes a convincing case that the N- and C-terminal ends of the axial proteins are homologous, the middle sequences are wildly different -- they are wildly different even within just flagellin proteins -- and so would have to be explained in some other way.
+
+In any event, the N- and C-terminal similarities do not extend to non-axial proteins.</div></div>
+<div class="comment" id="comment-116349"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>According to UCMP, <a href="http://www.ucmp.berkeley.edu/history/owen.html">Owen famously defined homology in 1843 as "the same organ in different animals under every variety of form and function."</a></p></div></div>
+<div class="comment" id="comment-116352"><p class="comment-meta"><span class="comment-author">Douglas Theobald</span> &middot; 24 April 2007</p><div class="comment-body"><p>Nick, I'm going to have to side with the others against you on the homology def.  Pre-Darwin, yes, homology was defined Owen-style.  In evolutionary biology, no-- homology has been redefined as similarity in structure that is due to inheritance from common ancestors.  Homology is no longer an observation; it is an <i>inference</i> based on similar structures.  Homology no longer simply means "the same organ" (where Owen had no etiology for "sameness").  Rather, similar structures can be homologous or not.</p><p>If you want to step outside evolutionary biology (perhaps to talk to a creationist in order to establish the validity of evolutionary bio) and use anachronistic definitions for modern terms, fine -- just make it clear you are doing so.</p><p>The circularity argument is bogus anyway.  Homology as evidence for common ancestry is no more circular than using a line fit to a set of data as evidence for a linear relationship.  Sure, they're both circular in a way, but if the postulated relationship isn't there, then the fit doesn't work well.  A good fit is evidence for the hypothesis.</p></div></div>
+<div class="comment" id="comment-116355"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com" rel="nofollow">Dan Gaston</a></span> &middot; 24 April 2007</p><div class="comment-body"><p><b>Nick</b> Thanks for the info on the alignments, I'm the type who always wants to see alignments in these sorts of studies myself because e-values and scores only tell so much. So thanks, you gave me what I wanted to know.</p><p><b>Douglas</b>Exactly (on both points). Grishin's work is exemplary in terms of structural evolution, which is what I am primarily interested in. The Evolution of protein folds and the mechanisms at play. Fascinating stuff. Lately with all of the work I have been reading I tend to envision sequence/structural space as follows:</p><p>Sequence space as an infinite space (or set depending on how you like to look at these things) with allowed/realistic structures representing anchor points in that space. Sequences can "explore" a great deal of space around an allowed/stable structure with very little variation in the overall structure. Of course there are all sorts of interesting implications when we start talking about marginally stable proteins and intrinsically disordered proteins.</p><p>As for homology, spot on.</p></div></div>
+<div class="comment" id="comment-116356"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>Doug, if I'm remembering correctly, you suggested that specific homology wording to me in email comments on the draft of this post... ;-)</p></div></div>
+<div class="comment" id="comment-116357"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body">In fact, me in the post, I wrote:
+
+<blockquote><p>Homology is similarity due to common ancestry.</p></blockquote>
+
+Doug said in his comment:
+
+<blockquote><p>homology has been redefined as similarity in structure that is due to inheritance from common ancestors</p></blockquote>
+
+Can someone remind me what are we arguing about, again?</div></div>
+<div class="comment" id="comment-116358"><p class="comment-meta"><span class="comment-author">Douglas Theobald</span> &middot; 24 April 2007</p><div class="comment-body"><p>Well, I don't know what RBH is referring to, as you say "Homology is similarity due to common ancestry" in the post, which is what I suggested, and which is correct.</p></div></div>
+<div class="comment" id="comment-116361"><p class="comment-meta"><span class="comment-author"><a href="http://blog.3bulls.net" rel="nofollow">Pinko Punko</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>I'd love for you guys to get to the bottom of this, but if I ever had a problem with someone's work, I'd most likely talk to them first and try to figure things out.  This would not preclude me from talking about things in public, but it is the collegial thing to do.  I think a step back would confirm that this has not really been handled in the optimal way.</p></div></div>
+<div class="comment" id="comment-116363"><p class="comment-meta"><span class="comment-author">Lurker</span> &middot; 24 April 2007</p><div class="comment-body"><p>I second the above: aren't people talking to the authors?</p></div></div>
+<div class="comment" id="comment-116367"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>I have to disagree on the "wait until you've discussed this at length with the authors" angle. While a discussion with the authors is a good thing, that is a separate issue from taking up a matter of public discourse in a timely manner. If we are not prepared to note publicly our disagreements with published work that is simultaneously being lauded publicly elsewhere, we risk being the echo chamber that anti-science advocates have claimed we are.</p><p>I know that Nick and others are also working toward a contribution to the peer-reviewed literature in response. But they would have been shirking a clear responsibility if they had simply sat back, allowed others to praise the paper in public, and said nothing. PT contributors are carving out new roles for the weblog in scientific discourse; Reed's being added to a paper recently demonstrated that early description of a hypothesis via weblog can be noticed, and Nick's criticism in the current case certainly has generated further scrutiny of the work. Maybe this will not become accepted practice in the long run, but I think that scientific discourse has altered appreciably over time and with respect to available means of communication. It is too soon to say whether this is the way the future will run or not, but count me on the side of those who look forward to more discussion of this sort.</p></div></div>
+<div class="comment" id="comment-116368"><p class="comment-meta"><span class="comment-author"><a href="http://www.tencommandments.org" rel="nofollow">Pumpkinhead</a></span> &middot; 24 April 2007</p><div class="comment-body"><blockquote><p>Along with alignments, BLAST produces an e-value statistic, which is a better statistical measure of the significance of an alignment than percent similarity. The e-value represents the number of times that a given sequence match of a certain length and strength would be expected by chance, given a database of a certain size. ("e" is for "expected") The larger the database, the more likely it is that a weak match would occur by chance. </p></blockquote>
+
+Reading such low values for the chance probability of homologies screams intelligent design. (How does these e-values differ from fisherian p-values anyway?) Since evolutionism teaches that chance created everything, such low probabilities support intelligent design.</div></div>
+<div class="comment" id="comment-116369"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 24 April 2007</p><div class="comment-body"><blockquote><p>I'd love for you guys to get to the bottom of this, but if I ever had a problem with someone's work, I'd most likely talk to them first and try to figure things out. This would not preclude me from talking about things in public, but it is the collegial thing to do. I think a step back would confirm that this has not really been handled in the optimal way.</p></blockquote>
+
+Normally I would agree, but this is a unique case.  The paper was clearly attempting to be an authoritative public rebuttal to ID claims, it was released free to the public as <a href="http://www.pnas.org/subscriptions/open-access.shtml"><i>PNAS</i> Open Access</a> which requires a decision and payment from the authors (or maybe special dispensation from the editors), I first heard about it from a major science journalist, and it was immediately getting uncritical praise on the blogs.  But it was clearly an embarrassing paper with an argument that collapsed on careful examination, even before we knew about the filters and database-size issue.  Thus there were really only two options last week: (a) let a large number of people get deluded into thinking that the paper provided a good answer to how the flagellum evolved, resulting in embarassment and confusion for years to come and a general discrediting of the critical scientific judgment of evolutionists or (b) sound the alarm and show that not "anything goes" and that well-informed people can distinguish between rigorous work and baseless speculation in evolutionary science. I was hoping to stop something like the secondary coverage in <i>Science</i> -- it didn't work in the case of <i>Science</i>, but imagine if this had been reported in the <i>New York Times</i> or something, we would be dealing with people on our side mistakenly thinking that "all flagellar genes from one" was a serious idea for years to come.
+
+I am sure that the authors are perfectly nice people and excellent scientists, amenable to criticism, etc., and that this was an anomaly due to hasty work in an unfamiliar area, plus reviewers not in the right specialty and whatever other accidents occurred.  I say we give everyone a mulligan and try again.</div></div>
+<div class="comment" id="comment-116390"><p class="comment-meta"><span class="comment-author"><a href="http://blog.3bulls.net" rel="nofollow">Pinko Punko</a></span> &middot; 24 April 2007</p><div class="comment-body"><p>A little bit Wesley and mostly Nick,</p><p>I understand your points of view, but even a statement in the original or subsequent posts such as "here are our concerns, we have contacted the authors of the study in the hopes that they may enlighten us about these issues.  We understand, of course, if they do not want to join such a public discussion of the work.  To continue..."</p><p>This would have done it for me.  Even though it seems great to strike while the iron is hot, or maybe it is getting discussed in the press, but when does the press get things really right, and what would a day or two matter in the long run.  I don't think it would mean anything in regards to Panda's Thumb readers, but it would be much more seemly.  This is not a plea for false civility or what not, it is merely how I would personally handle an issue like this, given no other backstory/conflicts with the group publishing a problematic paper.  I would go through the motion first, under the odd chance that I could be wrong, or the odd chance that they could be massively wrong and admit to such upon reflection.  I would then diplomatically say whatever it is I was going to say in the first place.  In terms of educating the PT audience, who may not necessarily be able to follow all the scientific ins and outs, false alarms and incomplete arguments would be avoided by this approach.</p></div></div>
+<div class="comment" id="comment-116410"><p class="comment-meta"><span class="comment-author">Kevin</span> &middot; 24 April 2007</p><div class="comment-body"><p>well crap I don't understand more than 36.3% of that and that's because I included stuff like</p><p>Removing filters from a BLAST search is an extremely serious decision with major impacts on an analysis, because the filters prevent spurious matches that are due to similarities that are not phylogenetically informative</p><p>which are somewhat written in english.</p><p>anyway, let me say that this paper must be taught as fact if only to teach the controversy surrounding it.</p></div></div>
+<div class="comment" id="comment-116411"><p class="comment-meta"><span class="comment-author">Kevin</span> &middot; 24 April 2007</p><div class="comment-body"><p>I think a step back would confirm that this has not really been handled in the optimal way.</p><p>WHAT? was someone beat up in the parking lot?></p></div></div>
+<div class="comment" id="comment-116420"><p class="comment-meta"><span class="comment-author">sparc</span> &middot; 25 April 2007</p><div class="comment-body">Pinko Punko in comment #171739:<blockquote>I'd love for you guys to get to the bottom of this, but if I ever had a problem with someone's work, I'd most likely talk to them first and try to figure things out. This would not preclude me from talking about things in public, but it is the collegial thing to do.</blockquote>
+I must second Wesley in this point, especially since Nick discusses the issues carefully. 
+Published data data have been discussed without noticing the authors long before the emergence of the blogosphere. Indeed, it should be the interest of the authors that their data don't pass unnoticed. The only difference today is that these discussions are visible to a broader public rather than taking place within relatively closed circles of scientists. 
+In a biography of Theodor Boveri I've seen some letters that have been exchanged between him and colleagues that had some influence on the careers of other scientists who didn't have the chance to respond to the allegations relevant to their work. I think, these guys would have preferred an open discussion.
+I tend to see Nick's post like a talk on a meeting where opposing opinions on work of absent scientists are regularly discussed. In addition, some journals offer on-line discussion sections themselves: e.g. <i>PLOS one</i> and you can comment there without contacting the authors beforehand.
+One final question: Should one try to contact authors of creationist papers published in <i>Rivista</i> before debunking them?</div></div>
+<div class="comment" id="comment-116422"><p class="comment-meta"><span class="comment-author">Lurker</span> &middot; 25 April 2007</p><div class="comment-body"><p>It bothers me that so much of this is being done because of some whacky perception that we are being scrutinized by Creationists for being ... not scientific enough?  Come on now.  It feels faux and forced, like maybe we have some dirty laundry to hide after all.  Science is being done by the normal reflex action of scientists, and for some reason all of PT wants the Creationists to notice this one instance of it.  Why?</p><p>Nick has found, what, 3 blogs that have talked about this article since its publication, including a blurb in those Science news reports that we know all scientists get wet even thinking about being mentioned in ... And since then, we _know_ to declare that this is a highly visible (for the public!) scientific report? Seriously. This is all funny stuff.</p><p>BTW, bulletin boards have long predated any electronic media.  Trees with stapled notes, even.  I am simply not familiar with the practice of posting long diatribes against a scientific result, so that the public, and the targeted scientist, may read about it on their way to work.  There is nothing "new" about the blogosphere in this regard.  The intent is still the same, though: it is to discredit with a political motivation.  We now have Nick discussing motives of the researchers -- they're trying to be "authoritative", as if no scientist ever wants that -- without contacting the authors even.  If there is ever a valid criticism of scientists, it is they are not naturally a collegiate bunch.</p></div></div>
+<div class="comment" id="comment-116423"><p class="comment-meta"><span class="comment-author">Lurker</span> &middot; 25 April 2007</p><div class="comment-body"><p>"Should one try to contact authors of creationist papers published in Rivista before debunking them?"</p><p>Do you normally go out of your way to talk about Rivista articles by Creationists as they are published?</p></div></div>
+<div class="comment" id="comment-116425"><p class="comment-meta"><span class="comment-author"><a href="http://blog.3bulls.net" rel="nofollow">Pinko Punko</a></span> &middot; 25 April 2007</p><div class="comment-body"><p>sparc,</p><p>None of this is an either/or situation. Given that Nick has published in the field and now someone else is publishing in his field, he has an opportunity for gaining a new colleague, even in disagreement.  There are no hard and fast rules for when you just open a can of whoop ass on someone or when you talk to them.  If someone were to strongly criticize my work, I'd like to hear from them.  It is just a matter of style.  Disagreements can sometimes even turn into collaboration.  What is odd is that I feel like I am arguing for a somewhat obvious course of action, albeit in hindsight.  If people want to treat my comments in the light of a concern troll, that's great, but this isn't high school and there aren't teams here.  I would love to know who is right and I am really proud of Nick for raising his concerns in an open forum like this.  I only wish he also would have opened up a dialog because to me it seems the right thing to do in THIS situation not necessarily other HYPOTHETICAL or STRAW situations.  Not everything in this world is people lobbing poop at one another- not everyone is DaveScot, or thick as a brick.  The internet really taints some forms of interaction.</p></div></div>
+<div class="comment" id="comment-116446"><p class="comment-meta"><span class="comment-author">chunkdz</span> &middot; 25 April 2007</p><div class="comment-body"><b>pinko punko wrote:</b>
+<blockquote><p>Given that Nick has published in the field and now someone else is publishing in his field, he has an opportunity for gaining a new colleague, even in disagreement.</p></blockquote>
+Nick is not interested in gaining a new colleague. That's why he titled his post with the smug, snarky quip about Liu & Ochmann's paper exhibiting "canine qualities". Few professional friendships begin with calling someone else's painstaking research a 'dog'. No, Nick I believe is more interested in being the "top dog".
+<blockquote><p>Not everything in this world is people lobbing poop at one another...</p></blockquote>
+Apparently the temptation to fling poo can be very enticing.</div></div>
+<div class="comment" id="comment-116447"><p class="comment-meta"><span class="comment-author">delphi_ote</span> &middot; 25 April 2007</p><div class="comment-body"><p>"It bothers me that so much of this is being done because of some whacky perception that we are being scrutinized by Creationists for being ... not scientific enough?"</p><p>It is being done in the interest of providing the public with accurate information, which is kind of the point of this whole anti-creationist movement, no?</p></div></div>
+<div class="comment" id="comment-116453"><p class="comment-meta"><span class="comment-author">Mike</span> &middot; 25 April 2007</p><div class="comment-body"><p>I have a question.  I use BLAST on a fairly regular basis to look for a number of things, but I had always read that it is a blunt tool built for speed.  Its optimized for fast comparison to large databases, and is capable of missing relatively weak similarities.  Don't anatomists and paleontologists use other tools?</p></div></div>
+<div class="comment" id="comment-116462"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com" rel="nofollow">Dan Gaston</a></span> &middot; 25 April 2007</p><div class="comment-body"><p><b>Mike</b>: Anatomists and Paleontologists aren't generally working with molecular data, which is what BLAST is intended for. You can in theory translate physical features into a coded alphabet and do alignments and look for similarity but it isn't quite the same thing. BLAST is a blunt tool, but it is also powerful and its optimization parameters don't hamper it much in doing pairwise comparisons. The final stage of the process for good candidate matches is a full smith-waterman alignment correction anyway so what comes out in the end is pretty precise.</p><p>Gross physical feature comparison is even more blunt and open to interpretation than things like BLAST anwyay.</p><p>And on the note that <b>Pinko</b> brought up, as I've said in several posts on this discussion I have no problem with being openly critical, I do think the tone of some of the criticism has been unnecessarily confrontational though, and not collegial at all. I don't think that is very professional but perhaps that is just my opinion. *shrug*</p></div></div>
+<div class="comment" id="comment-116463"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 25 April 2007</p><div class="comment-body"><p>I don't think my critics are fully understanding the scale of the problems with the Liu & Ochman paper.  Imagine if someone published a paper in PNAS claiming that the mammalian middle ear bones evolved by duplication of a finger bone, based on looking at the wrong illustrations in an anatomy book.  It's kind of like that.</p></div></div>
+<div class="comment" id="comment-116468"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com" rel="nofollow">Dan Gaston</a></span> &middot; 25 April 2007</p><div class="comment-body"><p><b>Nick</b> I fully understand why you are being critical, as I said being critical is a good thing. I'm merely commenting on approach towards that criticism, and I think that is all several others are pointing out as well. It looks like you guys are now on the right track with your rebuttal of the findings. I'm just suggesting that in retrospect a little more tact could have perhaps been used in the delivery of said criticism *shrug* just my opinion as I said. Then again as a Grad student perhaps it is just my innate desire to not step on anyones toes at this stage of my hopefully career.</p></div></div>
+<div class="comment" id="comment-116640"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 27 April 2007</p><div class="comment-body"><blockquote><p>Howard Ochman is extremely approachable.</p><cite>— Unsympathetic reader</cite></blockquote>
+
+Given the moniker, this is simply ad hominem.  The other comments about "how this was handled" are more sophisticated variants, but don't really rise any higher -- they don't have anything to do with, and distract from, the substantive content.</div></div>
+<div class="comment" id="comment-116641"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 27 April 2007</p><div class="comment-body"><blockquote><p>I do think the tone of some of the criticism has been unnecessarily confrontational though, and not collegial at all.</p></blockquote>
+
+Yes, that's certainly true of the comments by yourself and "Pinko Punko"; cut it out already.</div></div>
+<div class="comment" id="comment-116642"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 27 April 2007</p><div class="comment-body"><blockquote><p>Well, I don't know what RBH is referring to</p></blockquote>
+
+<a href="http://scienceblogs.com/evolgen/">RPM</a>, not RBH.</div></div>
+<div class="comment" id="comment-116760"><p class="comment-meta"><span class="comment-author"><a href="http://en.wikipedia.org/wiki/User:Thanatos666" rel="nofollow">Thanatos</a></span> &middot; 29 April 2007</p><div class="comment-body"><p>Nick ,I know this thread and part i of it don't fall into the usual category of more or less "popularised" biology <br>posted here to refute ID but is there any chance of a translation of it into plain english or more general science-talk?<br>This thread is better than part i but again is sounds -reads- like chinese to me (being a greek de facto I cannot say like greek :-) )<br>I know I'm coming in late but after part i I waited for a popularisation <br>(as you and all the others biologists were engaged in arguments and counterarguments)       <br>which unfortunately didn't  exactly came with the present though it's more detailed.<br>haven't you noticed that besides the IDiots' I-comment-on-anything-and-everything-since-I've-got-god-on-my-side<br>the rest of the I'm-not-a-biologist crowd has been more or less mute?<br>I know there is the time-issue and obviously you're busy,but if not you ,is there not here some other biologist<br>to do the work?<br>some of us are of other disciplines you know...<br>a priori ,regardless of if it will happen, thanks</p></div></div>
+<div class="comment" id="comment-116783"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 29 April 2007</p><div class="comment-body"><blockquote><p>Nick ,I know this thread and part i of it don't fall into the usual category of more or less "popularised" biology
+posted here to refute ID but is there any chance of a translation of it into plain english or more general science-talk?
+This thread is better than part i but again is sounds -reads- like chinese to me (being a greek de facto I cannot say like greek :-) )
+I know I'm coming in late but after part i I waited for a popularisation
+(as you and all the others biologists were engaged in arguments and counterarguments)
+which unfortunately didn't exactly came with the present though it's more detailed.
+haven't you noticed that besides the IDiots' I-comment-on-anything-and-everything-since-I've-got-god-on-my-side
+the rest of the I'm-not-a-biologist crowd has been more or less mute?
+I know there is the time-issue and obviously you're busy,but if not you ,is there not here some other biologist
+to do the work?
+some of us are of other disciplines you know...
+a priori ,regardless of if it will happen, thanks</p></blockquote>
+
+Hi,
+
+If you have specific questions I would be happy to try to answer them.  You might also look at <a href="http://www.talkdesign.org/faqs/flagellum_background.html">this page</a> to get some general background on the issues, or <a href="http://www.pandasthumb.org/archives/2006/09/flagellum_evolu.html">this page</a> to see the various homologies between flagellar proteins and nonflagellar proteins, which is the main thing that had me concerned in the first post.</div></div>
+<div class="comment" id="comment-116785"><p class="comment-meta"><span class="comment-author"><a href="http://en.wikipedia.org/wiki/User:Thanatos666" rel="nofollow">Thanatos</a></span> &middot; 29 April 2007</p><div class="comment-body"><p>hi Nick,I'm no newcommer to the ID debate,the flagelli alleged IC or  PT.I'm just not a biologist.<br>your excellent posts(and of course not just yours but PT crew's in general) are usually more ''accessible'' and understandable by-to the <br>general scientifically educated (or not) crowd and not just to biologists.that's what I meant.<br>as for specific questions,well,I wouldn't know where to start from.<br>Again,<br>is there no chance of posting some kind if the  usual step by step explanation-popularisation? <br>thanks</p></div></div>
+<div class="comment" id="comment-116786"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 29 April 2007</p><div class="comment-body"><blockquote><p>hi Nick,I'm no newcommer to the ID debate,the flagelli alleged IC or PT.I'm just not a biologist.
+your excellent posts(and of course not just yours but PT crew's in general) are usually more "accessible" and understandable by-to the
+general scientifically educated (or not) crowd and not just to biologists.that's what I meant.
+as for specific questions,well,I wouldn't know where to start from.
+Again,
+is there no chance of posting some kind if the usual step by step explanation-popularisation?
+thanks</p></blockquote>
+
+Um, I guess I'm still confused about what you are looking for.  An explanation of how the flagellum evolved, or an explanation of the debate over the Liu-Ochman paper?
+
+None of it will make sense anyway unless you are somewhat familiar with the 20 or 30 major flagellum proteins, where they are found, what they do in the flagellum, etc.  The TalkDesign intro page is good, particularly <a href="http://www.aip.org/pt/jan00/berg.htm">this 2000 essay by Howard Berg</a>.  
+
+Basically Liu & Ochman proposed that 24 core flagellar proteins are homologous to each other -- "homologous" basically means they evolved by duplication and modification of a single gene.  My argument is that this is idea is unsupported because:
+
+* the known homologies are to several nonflagellar systems and no one else has ever found the new homologies Liu and Ochman report, despite many previous searches (post 1), 
+
+* the protein structures are different, when they should be similar if they are homologous (post 2), and 
+
+* that Liu-Ochman's methods for finding homology with a computer search were flawed (post 3).
+
+There are many other issues but those are the basics.</div></div>
+<div class="comment" id="comment-116789"><p class="comment-meta"><span class="comment-author"><a href="http://en.wikipedia.org/wiki/User:Thanatos666" rel="nofollow">Thanatos</a></span> &middot; 29 April 2007</p><div class="comment-body">well an explanation of the debate over the Liu-Ochman paper is more what I mean,
+ though unfortunately I think,
+ in order for us non biologists to understand, explaining some relevant biology is also needed.
+
+I already understood the above conclusions of yours,the whole procedure is alas to me a little bit foggy, 
+too technical
+(I think I understand the sequence of the steps ,but the steps themselves not enough.)
+<blockquote><p>
+* the known homologies are to several nonflagellar systems and no one else has ever found the new homologies Liu and Ochman report, despite many previous searches (post 1),
+
+* the protein structures are different, when they should be similar if they are homologous (post 2), and
+
+* that Liu-Ochman's methods for finding homology with a computer search were flawed (post 3).
+</p></blockquote>
+
+I also understood (in principle) this
+<blockquote><p>
+Basically Liu & Ochman proposed that 24 core flagellar proteins are homologous to each other --- "homologous" basically means they evolved by duplication and modification of a single gene
+</p></blockquote>
+
+
+ok let's see.
+
+well in general:
+
+Well the blast program should surely be more explained and the relevant terms and variables analysed.
+I don't mean how to set parametres,I mean what it does.
+perhaps an example of "blasting" (gedanken or more analytically-graphically) 2 tiny 
+sequences and "explaining" more explicitly? 
+are other programs in use (first comment by Ralf)?
+if so what are the differences in principle?speed,better-more reliable results?why so?
+
+also the recognising of yours by sight (graphical)of homology   procedure in part i.
+
+figure 3 of course and the therein whole homologising logic procedure.
+is the figure only of results on E.coli or of many organisms?
+if of many explain the logic of combining results.
+if not again explain how to combine results-values to get a general conclusion.
+(I got the key parts of important hits and so on but I think for us non experts
+ more is needed.perhaps two simples (homological and not homological )of 
+let's say a network of 3 proteins.)
+
+Also all the common procedures,problems etc mentioned in the preceding comments by you and others.
+
+and in particular on the table ,do ns and na mean values about 0
+ or that we fully disregard them?
+(i guess the latter but then, what na means,
+what's the value of e,or why don't we get a value for it?)
+
+I understand that fully explaining the above equals to writing a book. :)
+The key-points perhaps ? 
+i have a physics degree and I'm interested in biology 
+but I understood most of what I understood (if indeed I got them right which I really doubt)
+more or less by guessing.
+imagine how much ,people without a degree in science, got. :)
+
+
+<blockquote><p>
+None of it will make sense anyway unless you are somewhat familiar with the 20 or 30 major flagellum proteins, where they are found, what they do in the flagellum
+</p></blockquote>
+the preceding statement is quite disappointing.Do you mean I should go back to university and be a molecular biologist
+in order to get the logic? :-)
+
+</div></div>
+<div class="comment" id="comment-116791"><p class="comment-meta"><span class="comment-author"><a href="http://en.wikipedia.org/wiki/User:Thanatos666" rel="nofollow">Thanatos</a></span> &middot; 29 April 2007</p><div class="comment-body"><p>again thanks a priori for your interest,<br>I'm very much obliged.<br>Chairein!</p></div></div>
+<div class="comment" id="comment-116793"><p class="comment-meta"><span class="comment-author">Thanatos</span> &middot; 29 April 2007</p><div class="comment-body"><p>correction:</p><p>I already understood the <s>above</s> (below) conclusions of yours</p></div></div>
+<div class="comment" id="comment-116794"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 30 April 2007</p><div class="comment-body"><blockquote><p>Well the blast program should surely be more explained and the relevant terms and variables analysed.
+I don't mean how to set parametres,I mean what it does.
+perhaps an example of "blasting" (gedanken or more analytically-graphically) 2 tiny
+sequences and "explaining" more explicitly?
+are other programs in use (first comment by Ralf)?
+if so what are the differences in principle?speed,better-more reliable results?why so?</p></blockquote>
+
+BLAST is the most commonly-used search tool.  The <a href="http://en.wikipedia.org/wiki/BLAST">wikipedia page</a> is a good introduction.
+
+You can do a general web-version BLAST search yourself, just go to the <a href="http://www.ncbi.nlm.nih.gov/BLAST/Blast.cgi?PAGE=Proteins&amp;PROGRAM=blastp&amp;BLAST_PROGRAMS=blastp&amp;PAGE_TYPE=BlastSearch&amp;SHOW_DEFAULTS=on">NCBI Protein BLAST page</a>, and put in:
+
+* this gi number for <a href="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&amp;val=2506213"><i>E. coli</i> FliI</a>: 2506213
+* click "Custom" for organism and put in: <i>Escherichia coli K12</i> to search just the <i>E. coli</i> K12 genome like Liu & Ochman
+* click the BLAST button.  
+
+You can try it for <i>E. coli</i> FliH also: 2506422.  
+
+The program will return the hits for each sequence, plus the alignments and e-values.  You will notice that none of the homologies reported by Liu & Ochman for these two proteins turn up.
+
+<blockquote><p>also the recognising of yours by sight (graphical)of homology procedure in part i.</p></blockquote>
+
+The short version is, once you have done a bunch of BLASTing on certain proteins, you get a very specific sense of what will consistently come up as related proteins.  Liu & Ochman's results in Figure 3 were pretty shocking just on that basis -- they linked all 24 core flagellar proteins with homologies, but anyone who has done those searches before knows that most of those homologies do not turn up on regular searches, and that many of those proteins are not even vaguely similar.
+
+<blockquote><p>figure 3 of course and the therein whole homologising logic procedure.
+is the figure only of results on E.coli or of many organisms?</p></blockquote>
+
+The blue lines are the significant hits for the E. coli K12 genome, the grey lines for all 41 genomes.
+
+<blockquote><p>if of many explain the logic of combining results.
+if not again explain how to combine results-values to get a general conclusion.</p></blockquote>
+
+Not sure what you mean here.
+
+<blockquote><p>(I got the key parts of important hits and so on but I think for us non experts
+more is needed.perhaps two simples (homological and not homological )of
+let's say a network of 3 proteins.)
+
+Also all the common procedures,problems etc mentioned in the preceding comments by you and others.</p></blockquote>
+
+Again, try the web BLAST program and you will see.  When you look at the BLAST output, compare the alignments for good e-values (e less than 0.001 or so) versus really bad (e=1 or greater), it will be obvious.
+
+<blockquote><p>and in particular on the table ,do ns and na mean values about 0
+or that we fully disregard them?
+
+(i guess the latter but then, what na means,
+what's the value of e,or why don't we get a value for it?)</p></blockquote>
+
+<b>ns</b> means not significant -- i.e. that Liu & Ochman's search had a non-signficant e-value of greater than 0.0001.
+<b>na</b> means no aligment -- i.e. that the BLAST search completely failed to return any alignment of any note (e greater than 10 or something)
+
+An e-value of 0 means an exact match (i.e., BLASTing a protein sequence against itself)
+
+<blockquote><p>I understand that fully explaining the above equals to writing a book. :)</p></blockquote>
+
+Not so bad, just make sure you follow the links, it will all make sense.
+
+<blockquote><p>the preceding statement is quite disappointing.Do you mean I should go back to university and be a molecular biologist
+in order to get the logic? :-)</p></blockquote>
+
+No, I meant you just need to know what the flagellar proteins FliF, FliI, etc. do.  Just learn <a href="http://www.aip.org/pt/jan00/berg.htm">Figure 2 here</a> and you are set.
+</div></div>
+<div class="comment" id="comment-116796"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 30 April 2007</p><div class="comment-body"><p>trying to refresh page, ignore this...</p></div></div>
+<div class="comment" id="comment-116801"><p class="comment-meta"><span class="comment-author"><a href="http://en.wikipedia.org/wiki/User:Thanatos666" rel="nofollow">Thanatos</a></span> &middot; 30 April 2007</p><div class="comment-body"><p>Nick,<br>although I needed a theoretical, but in less technical(biological) words, explanation, <br>(ie nature of transformations and correlations that's why i asked for a "gedanken" blast<br>picturesque example of 2 tiny sequences)<br>some of my questions or miscomprehensions were answered or corrected (ie na means e>10)<br>and anyway I can't ask for more,i would be wasting your precious time.<br>perhaps some other time when you or someone else will have time to kill.<br>I was hoping to avoid having to go through all the literature,links etc myself<br>and asking for an in a nutshell but scientific-technical enough walk-through of <br>identifying homologies, in order to appreciate-judge your argument.</p><p>I'm using a 56k dialup modem(time costs and the speed would be awful), so downloading blast <br>and blasting just for fun is out of the question.</p><p>yes there are still places in the world where 56k dialup and time-charge still exist and perhaps rule.<br>furthermore here (Greece) only in the last 1-2 years broadband services' prices <br>(only aDSL) have fallen to a more reasonable price.</p><p>one should notice<br>a.ADSL (broadband in general) has been here (scarcely) available (if I remember correctly) <br>for less than 5 years.<br>b.reasonable prices means 20 euros per month for a 768K line in a country where<br>the minimal per month wage is 600 euros ,where the cost of living has caught up with western europe<br>(after introducing the euro) and where the unemployement rate is 10%.<br>c.due to poor network (DSLam etc) investment programming,<br>if one is lucky one'll get the aDSL line in less than two months after signing up for it,<br>and speed (especially) in rush hours is less than half of nominal.<br>d.only about 5% of the total population (11M) connects via a DSL line.most of the population is <br>internet-wise-digitally illiterate.</p><p>one should notice<br>a.yes I'm unemployed<br>b.yes I'm not rich<br>c.yes life is a bitch</p><p>Nick again,<br>much obliged :-)<br>ci vediamo</p></div></div>
+<div class="comment" id="comment-116833"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick (Matzke)</a></span> &middot; 30 April 2007</p><div class="comment-body"><p>I think you are looking for an explanation of the <a href="http://en.wikipedia.org/wiki/BLAST#Algorithm">BLAST algorithm</a>.</p><p>Running the web BLAST search takes no more bandwith than a standard webpage.  Click BLAST, wait 30 seconds, see the results on a webpage.  It would use less bandwith than the characters you sent for your last comment.</p><p>Or if you just want everything in one click, click <a href="http://www.ncbi.nlm.nih.gov/sutils/blink.cgi?pid=2506422">BLink on the <i>E. coli</i> FliH sequence</a> and look at the results.</p></div></div>
+<div class="comment" id="comment-116868"><p class="comment-meta"><span class="comment-author"><a href="http://en.wikipedia.org/wiki/User:Thanatos666" rel="nofollow">Thanatos</a></span> &middot; 30 April 2007</p><div class="comment-body"><p>Nick<br>I'll check them out<br>I tried to follow long before asking stupid questions, the initial links you had posted<br>but they were downloads of blast(11MB), a help file on blast that wasn't so helpful,etc<br>so I was discouraged on continuing.<br>I didn't wiki or anything else cause I was sure that I would have to go from link to link for ages to get<br>the full picture.usually PT summarises critically all these for us non experts.<br>I hope  my questions will be solved and I'll stop being such a burden.<br>anyway thanks a lot... :-)</p></div></div>
+<div class="comment" id="comment-177490"><p class="comment-meta"><span class="comment-author">scienceminded</span> &middot; 21 January 2009</p><div class="comment-body"><p>I have come across this article from PLoS ONE and I wondered if anyone, much more well read than I, could either explain or direct me to a site that could explain their argument and "probability calculations", and whether they are *ahem* on par, with Dembski's 'work'. Any help is appreciated, thanks.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

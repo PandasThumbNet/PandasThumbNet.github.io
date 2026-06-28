@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search — The Panda's Thumb</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Search preset — pandasthumb.net</span>
+</header>
+<main>
+<h1 class="post-title">Search</h1>
+<p class="post-meta">Default corpora: <span class="post-author">pandasthumb_mt</span> and <span class="post-author">talkorigins_indexcc</span></p>
+<div class="post-body">
+<p>This page marks the site-specific search preset for Panda's Thumb. The local search bundle should include the MT archive corpus and the TalkOrigins Index to Creationist Claims corpus by default.</p>
+<form action="/search/" method="get" class="search-form">
+<input type="hidden" name="site" value="pandasthumb.net">
+<p>
+<label><input type="search" name="q" placeholder="Search the archive"></label>
+</p>
+<fieldset class="search-corpora">
+<legend>Corpora</legend>
+<label><input type="checkbox" name="source" value="talkorigins_indexcc" checked> Index to Creationist Claims</label><br>
+<label><input type="checkbox" name="source" value="pandasthumb_mt" checked> Panda's Thumb MT Archive</label><br>
+<label><input type="checkbox" name="source" value="talkorigins_main"> TalkOrigins.org</label><br>
+<label><input type="checkbox" name="source" value="talkdesign_main"> TalkDesign.org</label><br>
+<label><input type="checkbox" name="source" value="pandasthumb_main"> PandasThumb.org</label>
+</fieldset>
+<p><button type="submit">Search</button></p>
+</form>
+<p>Preset file: <a href="/search/preset.json">/search/preset.json</a></p>
+<p>Search results open from the public-search service at <a href="/search/">/search/</a>.</p>
+</div>
+</main>
+</body>
+</html>

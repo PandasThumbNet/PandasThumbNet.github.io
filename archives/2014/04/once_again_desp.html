@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Once again, desperately dissing Avida — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Once again, desperately dissing Avida</h1><p class="post-meta">Posted 14 April 2014 by <span class="post-author">Richard B. Hoppe</span></p><div class="post-body">One of the characteristics of a pseudoscience is repeating discredited arguments as though they were new. And sure enough, once again an Intelligent Design Creationist is flailing around trying to discredit research in digital evolutionary models that shows that structures displaying IDC's central concept, irreducible complexity, are evolvable via Darwinian processes. I have previously looked at earlier attempts to discredit that research; see <a href="http://www.pandasthumb.org/archives/2004/03/evolving_complex_stuff_darwinian_evolution_and_irreducible_complexity.html">here</a> and <a href="http://www.pandasthumb.org/archives/2005/09/desperately_dis.html">here</a> for examples. 
+
+Now it's happening again. This month, Winston Ewert, affiliated (according to the paper) with the Discovery Institute's Biologic Institute (though he <a href="http://www.biologicinstitute.org/people">doesn't appear</a> on their published list of personnel), <a href="http://bio-complexity.org/ojs/index.php/main/article/viewFile/BIO-C.2014.1/BIO-C.2014.1">published a review</a> and critique of several computer models of evolution in the DI's captive journal <a href="http://bio-complexity.org/ojs/index.php/main/issue/archive">Bio-Complexity</a>. Ewert was a graduate student of Robert Marks at Baylor, where he was associated with Marks' and Dembski's <a href="http://evoinfo.org/index/">Evolutionary Bioinformatics Lab</a>. He now has a Ph.D. from Baylor, the first in Baylor's combined electrical engineering and computer science graduate program.
+
+In his critique Ewert looks at five programs: <a href="http://avida.devosoft.org/">Avida</a>, Tom Schneider's <a href="http://schneider.ncifcrf.gov/paper/ev/">Ev</a>, Dave Thomas's <a href="http://www.csicop.org/si/show/war_of_the_weasels">Steiner tree GA</a>, Suzanne Sadedin's <a href="http://www.csse.monash.edu.au/~suzannes/files/Sadedin2006TR.pdf">geometric model</a>, and Adrian Thompson's "<a href="http://link.springer.com/chapter/10.1007%2F3-540-63173-9_61#page-1">digital ears</a>", a program realized in field programmable gate arrays. Here I will analyze Ewert's critique of Avida; I am less familiar with the other models Ewert discusses. However, given the errors I find in his discussion of Avida, I am very dubious with respect to his analysis of the other programs. If he does so badly with something I know pretty well, why should I trust his judgement in areas I don't know so well?
+
+After repeating an introduction to Avida that I wrote some years ago, I will follow (roughly) Ewert's analysis, in which he first describes all five programs and then criticizes them. Hence, I'll look at Ewert's description of Avida, and in particular note several errors in it, and then I'll evaluate his criticisms. I find that his description is faulty and his critique ill-founded.
+
+<b>Introduction to Avida</b>
+
+I first provide a (lightly edited) description of Avida that I <a href="http://www.pandasthumb.org/archives/2004/03/evolving_complex_stuff_darwinian_evolution_and_irreducible_complexity.html">published on the Thumb</a> 10 years ago. This is the version of Avida used in the Lenski,. et al., research reported in Nature in 2003 and that is discussed below in the context of Ewert's critique. The platform is considerably more elaborate now.<blockquote><b>Brief (!) Intro to the Avida artificial life platform</b>
+
+Avida is an artificial life platform in which digital organisms reproduce, mutate and diversify, and compete on reproductive success in a space-limited context and therefore evolve in a virtual world. Initially, Avida critters can only reproduce; their code contains the instructions necessary to reserve memory, copy themselves into that memory, and divide, placing the newly copied offspring in another cell of the Avida world. The genomes of the digital critters are assembly language programs that can (if the necessary instruction sequences evolve) perform logic functions, mapping inputs to outputs in a manner corresponding to the performance of logic functions like AND, OR, XOR, and so on. (Avida is available free on the Web for Linux, Windows, and Mac platforms.)
+
+An Avida evolutionary run starts with a population of identical Ancestral digital critters that can do nothing but replicate themselves. The Ancestors may or may not have some "junk" instructions appended to their (human-written) replication code. As a run proceeds the Ancestors begin to reproduce, with an occasional mutation occurring during the process. Various kinds of mutations are possible - point mutations (alterations of a single instruction), insertions, and deletions. Replication errors induced by mutations can produce what roughly corresponds to gene duplication or deletion. It is also possible to enable a process that resembles horizontal gene transfer. Another sort of mutation can cause deletion or duplication of sections of a critter's genome instructions during copying.
+
+The digital critters compete on reproductive fitness: better replicators have a relative advantage in the (fixed size) population. If the experimenter has chosen to not provide an extrinsic fitness function (<i>i.e.</i>, the landscape is flat), the critters compete solely on reproductive efficiency, and one can watch lineages within the population compactifying their replication code, getting better and better at reproducing, and often evolving replication code that is tighter and more efficient than even the best human-written code. A more complete introduction to Avida is <a href="http://www.researchgate.net/profile/Christoph_Adami/publication/222666076_The_biology_of_digital_organisms/file/79e4151099b4948f91.pdf">Biology of Digital Organisms</a> (pdf).
+
+More interesting is the situation where an extrinsic fitness function is imposed on the Avida world so the Avida environment is selectively non-neutral. With an extrinsic fitness function, digital organisms can acquire reproductive resources - computer cycles - by performing various logic functions on 32-bit binary strings. The more (different) logic functions a critter performs, and the more complicated the functions, the more reproductive resources it acquires.
+
+Under circumstances where digital organisms can acquire reproductive resources by performing logic operations on inputs, mapping them to appropriate outputs, one sees lineages evolving that perform first one, then two, then a number of different logic functions. After some hundreds of generations (tens of thousands of updates), some lineages of digital organisms may be performing a half dozen or more logic functions, ranging from very simple (AND) to quite complicated (XOR, EQU).
+
+ One advantage of the Avida platform is that one can dump the full evolutionary history of lineages to disk for later analysis.</blockquote>So Avida is a research platform to study certain aspects of evolution. It is not an evolution 'simulator,' but is a platform in which real adaptive evolution--the variation/selection algorithm--occurs. Populations of entities (digital programs) replicate, mutate, and evolve on fitness landscapes controlled by the experimenter.
+
+<b>Ewert's description of the program</b>
+
+Ewert's description of the program has several problems.  The program is described in a way that skips several important aspects and, by implication at least, makes it sound considerably simpler than it actually is. For example, Ewert says<blockquote>However, for the computer model Avida, the EQU func­tion requires nineteen instructions, or separate steps. (p. 2)</blockquote>Actually, that number refers to the shortest known human-written program for EQU (without self-replication code). While it can't be proved to be the shortest possible such program, no one has (so far) written a shorter. However, there is a very large number of programs longer than 19 instructions that can also perform EQU. Presented as it is in the Ewert paper, the implicit subtext is that there is but one specific program that can perform EQU, one 'target' for the digital critters. But in fact there are many many different programs that can do so, and many different programs performing EQU evolved in the research. In fact, in the Lenski, et al, research Ewert later criticizes, the 23 lineages that evolved to perform EQU in the main experimental condition did it in 23 <i>different</i> ways, none of them the 19-step human-written procedure! That, of course, eviscerates any probability statements about evolving EQU the IDists might want to make, since to get a numerator for a probability estimate they would have to first estimate the number of different programs able to perform EQU. Ewert, in common with other ID creationists, has a hard time distinguishing between phenotype (a critter that performs EQU) and genotype (the specific sequence of instructions that enable the performance of EQU by a given critter).
+
+Ewert wrote: <blockquote>Avida begins with simple organisms that can evolve by insert­ing new instructions into their code. Sometimes those new instructions are able to perform a simple task. (p. 2)</blockquote>That's incomplete. Avida allows (and the Lenski, et al. research used) three basic types of mutations: point mutations, insertion mutations, and deletion mutations. In addition, duplications or deletions of multiple instructions could occur as a result of a mutation affecting the division process during replication. 
+
+And no single instruction, when added, can perform a simple task. Even the simplest logic task requires multiple instructions. A single instruction, when added to a critter's genome/instruction string, may <i>in combination with already existing instructions</i> enable the performance of a logic task. Avida evolves programs, not individual instructions in isolation.
+
+Ewert says that<blockquote>A visual depiction of the process of evolving the Avida program is avail­able on the Evolutionary Informatics website<sup>2</sup>.</blockquote>That footnote <a href="http://www.evoinfo.org/minivida/">links</a> to a program called "Minivida" which (allegedly) implements much of (some of?) the functionality of Avida itself. I find no "visual depiction" there on a cursory check. I haven't looked at Minivida very closely yet. Its documentation looks to be pretty sketchy. In any case, I see no "visual depiction" there.
+
+<b>Lenski, et al., "The Evolutionary Origin of Complex Features"</b>
+
+Ewert really wants to discredit <a href="http://ofria.com/pubs/2003LenskiEtAl.pdf
+">Lenski, et al. paper</a>, the research that so itches the ID creationists. Ewert asserted that <blockquote>A paper on Avida did claim to be exploring the "evolution­ary origin of complex features" [14]; however, the published research made no claims to have evolved irreducible complexity. (p. 3)</blockquote>In fact, that paper did show that irreducibly complex programs evolved, without specifically using Behe's term. Using a knockout procedure, the research showed that <blockquote>The genome of the ﬁrst EQU-performing organism had 60 instructions; eliminating any of 35 of them destroyed that function [see Figure 4 of the Lenski, et al., paper]. Although the mutation of only one instruction produced this innovation when it originated, the EQU function evidently depends on many interacting components. (p. 141)</blockquote>Further,<blockquote>The phylogenetic depth at which EQU ﬁrst appeared [across 23 different experimental runs] ranged from 51 to 721 [mutation] steps. In principle, 16 mutations, coupled with three instructions already present in the ancestor, could have produced an EQU-performing organism. The actual paths were much longer and highly variable, indicating the circuitousness and unpredictability of evolution leading to this complex feature. (p. 142)</blockquote>So a knockout analysis showed that 35 instructions were necessary--the irreducible core--to perform EQU in one lineage. Further, the 23 lineages that evolved to perform EQU were all different from one another--there was no single path to the function. Ewert's claim is false.
+
+
+<b>Watch the goal posts move: redefining irreducible complexity</b>
+
+To attempt to escape the implications of Lenski, et al., Ewert moves the goal posts, providing a revised conception of irreducible complexity.  Ewert writes<blockquote>Inspection of the models reveals that almost all of them have parts with a complexity [=improbability] less than even the lower limit derived above. Avida has twenty-six possible instructions. That gives a probability of at least 1/26: insufficiently complex. (p. 6)</blockquote>Recall Behe's definition: <blockquote>By <i>irreducibly complex</i> I mean a single system composed of several well-matched, interacting parts that contribute to the basic function, wherein the removal of any one of the parts causes the system to effectively cease functioning. (Darwin's Black Box, p.39; italics in the original)</blockquote> Ewert now amends that definition to claim that the parts themselves have to be "complex." (Remember, for Ewert, "complex" = "improbable") He says <blockquote>From what is said above, it is clear that parts themselves may be constructed of smaller parts. For example a molecular machine is made of proteins, which are made of amino acids. When we consider the complexity of a part, then, we are consid­ering the complexity of the parts that make up the irreducibly complex system, not just the constituent subcomponents of the parts. <i>While an amino acid by itself is too simple to be a com­ponent in an irreducibly complex system</i>, a protein made up of many amino acids is sufficiently complex." (p. 6; italics added)</blockquote> So now an irreducibly complex system must be composed of parts that are themselves "complex." Let me understand this: a protein is complex enough to be a component of an irreducibly complex system--a "molecular machine"--but the amino acids of which the protein is itself composed are not complex enough to be components of an irreducibly complex system. Oooookey dokie. That means proteins cannot be irreducibly complex. Ewert spends a couple of paragraphs fighting this conclusion, mainly by appealing to the "complexity" (improbability) of long strings of amino acids, each element in the string chosen from a set of 20, but in the end it's plain: proteins cannot be <i>irreducibly</i> complex. Ewert says<blockquote>Although Behe does not argue for the <i>irreducible</i> complex­ity of individual proteins, their complexity [=improbability] is clear. </blockquote>Of course, a range of other creationists claim the opposite, that proteins <i>are</i> irreducibly complex. For example, Institute for Creation Research <a href="http://www.icr.org/article/engineered-protein-evolution-proves/">geneticist Jeffrey Tompkins</a> says <blockquote>Researchers recently announced the first systematic laboratory-induced mutation of successive amino acids in a nearly complete simple bacterial protein.1 The results demonstrated how protein chemistry and structure, in even the most simple of life's proteins, are irreducibly complex.</blockquote>And Answers in Genesis <a href="http://www.answersingenesis.org/articles/tj/v17/n2/admissions">concurs</a>:<blockquote>And, as in all prior discussed instances, speculative outcomes do not begin to explain the origin of irreducibly complex proteins at all. </blockquote>Closer to home (for Ewert, at least), Casey Luskin writes<blockquote>The specified complexity of proteins and protein-protein bonds are other examples [of irreducible complexity]. (Axe, 2000; Axe, 2004; Behe & Snoke, 2004)</blockquote>And still closer to home, <a href="http://www.designinference.com/documents/2004.01.Irred_Compl_Revisited.pdf">William Dembski wrote</a><blockquote>Now it's certainly true that the Darwinian mechanism is capable of tinkering with existing proteins or recruiting them wholesale for new uses. But there is no evidence that it can produce complex specified proteins from scratch (the problem of specified complexity thus arises not just at the level of irreducibly complex molecular machines but even at the level of the individual proteins that make up these machines and constitute their elemental constituents). 
+Moreover, recent work on the extreme functional sensitivity of proteins provides strong evidence that certain classes of proteins are in principle unevolvable by gradual means (and thus a fortiori by the Darwinian mechanism) because small perturbations of these proteins destroy all conceivable biological function (and not merely existing biological function). Thus, it's highly implausible that the Darwinian mechanism can generate the novel proteins (as well as the novel genes coding for them) required in the evolution of the bacterial flagellum. </blockquote>
+
+<b>Pity the poor mouse trap</b>
+
+Given this (re-)definition of irreducible complexity, it's tough for me to see how Behe's iconic example, the mouse trap, is irreducibly complex. Ewert does some squirming around about that, too, but it is fruitless. He claims that Behe <i>really</i> meant that the parts of a mouse trap are themselves "complex". Ewert quotes Behe as writing <blockquote>The hammer [of the mouse trap] is not a simple object. Rather it con­tains several bends. The angles of the bends have to be within relatively narrow tolerances for the end of the hammer to be positioned precisely at the edge of the platform, otherwise the system doesn't work.<sup>7</sup>(pp. 5-6)</blockquote>Baloney. That's ludicrous. The hammer has to be "precisely at the edge of the platform"? Nope. Hammers that extend almost anywhere over the striking platform would do the job of killing mice. Less well than the standard design, perhaps, but with some degree of efficiency. The hammer could be half the length of the platform, extending barely past the bait, in which case it would specialize in head shots. It could have a "V" shape or an "S" curve and still accomplish its role. It could even be a single arm. Imagine a population of mouse traps with varying hammer configurations. Does Ewert (and Behe) think that only the single instance with a hammer shaped in just one way, terminating "precisely at the edge of the platform," would kill mice? That's just silly. It illustrates the ID creationist fixation on ideal types and singular 'targets,' with no conception of population variability.
+
+And I'll observe that footnote 7 cited in the quotation above is to <a href="http://www.arn.org/docs/behe/mb_mousetrapdefended.htm  ">a page</a> on the Access Research Network (ARN) site that is no longer accessible.
+
+<b>Conflating "complexity" and "improbability"</b>
+
+Throughout his paper Ewert conflates "complex" and "improbable." He uses them interchangeably. By "complex" Ewert means <i>nothing more</i> than improbable: the very next sentence following the redefining quotation above is "How rare or improbable does a component have to be?" The full quotation is<blockquote>How rare or improbable does a component have to be? For computer simulations, this depends on the size of the experi­ment. The more digital organisms that live in a model, the more complexity [improbability] can be accounted for by chance alone. For example, suppose that the individual parts in a system each have a proba­bility of one in a hundred. Given a system of three components, the minimum necessary for a system of several components, the probability of obtaining all three components by chance would be one in a million, derived by multiplying the prob­abilities of the three individual components. Given a million attempts, we would expect to find a system with a probability of one in million once on average. To demonstrate that the irreducibly complex system could not have arisen by chance, the level of complexity [improbability, remember] must be such that average number of guesses required to find the element is greater than the number of guesses available to the model.</blockquote>So the elements of an irreducibly complex system have to be themselves improbable (rare) enough that random assembly has too small a probability to occur. For, say, the bacterial flagellum so beloved by ID creationists, the protein constituents are apparently improbable (rare) enough, since there are lots and lots of proteins, but the amino acids of which the proteins are themselves composed aren't improbable (rare) enough, there being just 20 of them. (Ewert later calls the Avida instructions, a set of 26, to be parts "of trivial complexity.") I repeat: that means that proteins are not themselves irreducibly complex. Oops. Foot, meet bullet.
+
+But plowing right along, Ewert calculates some probabilities, or at least calculates some numbers alleged to be probabilities.<blockquote>The largest model considered here, Avida, uses approxi­mately fifty million digital organisms [14]. The smallest model considered, Sadedin's geometric model, uses fifty thousand digital organisms [17]. The individual components should be improbable enough that the average guessing time exceeds these numbers. We can determine this probability [What probability? He just said he was estimating "average guessing time"!] by taking one over the cube root of the number of digital organisms in the model. We are taking the cube root because we are assuming the minimal number of parts to be three. The actual system may have more parts, but we are interested in the level of complex­ity that would make it impossible to produce any system of several parts. Making this calculation gives us minimal required levels for complexity of approximately 1/368 for Avida and 1/37 for Sadedin's model.</blockquote> I'm not sure where that fifty million number comes from. It looks like it might be in the neighborhood of the product of the population size (3,600) times the average number of generations in a run (15,873), or 57,142,800. And I'm not at all sure what that 1/368 is supposed to represent beyond being the cube root of 50 million. Is it the probability of ... um ... well, what? Getting the necessary three instructions by chance? Well, in Avida there are 26 instructions, so the probability of getting some specific trio of them in three random draws with replacement from an urn is 1/26^3, or 1/17,576. Nope, that ain't it. The average number of occurrences of that specific trio in 50 million tries? Nope, that's 57 (50 million over 17,756). Is it some referent such that it marks a boundary beyong which it is too improbable that a specified string could occur by chance?
+
+Or is it that using Ewert's model, given 50,000,000 organisms per run, each organism containing on the order of 50 or more instructions and given that at least three instructions are necessary to be an irreducibly complex structure, the probability of finding that structure of three instructions purely by chance is 1/368? I don't know what that number is actually telling us. It entails some assumptions that badly need defense (independence and uniform pdf, to begin with), and it has a mysterious provenance.
+
+And what happened to Ewert's "average guessing time"? It disappears after that one mention; time is not mentioned again. Again, I have no idea what it is supposed to be, if anything.
+
+And come to think of it, Lenski, et al., actually did 50 runs of a control condition in which the rewards for all less complex tasks were set to zero, with only EQU rewarded, and over those approximately 50,000,000 organisms per run times 50 runs, or 2.5 billion organisms, <i>not once</i> did a critter capable of performing EQU appear. Ewert apparently didn't notice that Lenski, et al., ran the very control necessary to address his concern about the chance occurrence of the 'target' phenotype. If it is too likely that EQU would have occurred by chance, why didn't it appear in the control condition specifically designed to test that possibility? In fact, of course, Ewert's calculation is just hand waving.
+
+As an example of playing with eensy teensy numbers, here's a calculation using Ewert's statistical assumptions and ignoring pleiotropy and epistasis (both of which occur in Avida critters). In one of Lenski, et al.'s lineages (one of the 23 that evolved to perform EQU), 35 instructions were determined to be essential for performing EQU; see Figure 4 in <a href="http://ofria.com/pubs/2003LenskiEtAl.pdf">their paper</a>. That was determined by a knockout procedure: replace an instruction with a null instruction and see whether the function goes away. Given 26 instructions ("parts") and 35 program slots in the irreducible core, the probability (again, recall, on Ewert's assumptions) of assembling just those parts in just those program slots by chance is 1/(26^35), or 2.99E-050. That's an incredibly small number, folks (count the number of zeroes to the right of the decimal place before you encounter a non-zero digit). But of course, it's all irrelevant. In Lenski, et al.'s, work, adaptive evolution could occur by incremental steps since the topography of the fitness landscape was not flat. And that brings me to ...
+
+
+<b>But they rigged the game!</b>
+
+Ewart writes<blockquote>Avida deliberately studied a function that could be gradu­ally constructed by first constructing simpler functions.</blockquote>That's a common ID creationist claim. We hear them shriek <i>They rigged the game by using a fitness landscape that allowed the performance of EQU to evolve!!!</i> 
+
+Well, <i>DUH!</i>  To test the hypothesis at issue, should one ignore the topography and composition of the fitness landscape? Ewert goes on to quote Lenski, et al.:<blockquote>Some readers might suggest that we 'stacked the deck' by studying the evolution of a complex feature that could be built on simpler functions that were also useful. However, that is precisely what evolutionary theory requires, and indeed, our experiments showed that the complex feature never evolved when simpler functions were not rewarded. (p. 143)</blockquote>That is, they used fitness landscapes that potentially allowed simpler functions to evolve, providing code that could subsequently be co-opted to form programs that could perform more complex functions. They also ran appropriate control conditions, 37 of them, in fact. 
+
+Be they biological or digital, populations of replicators with heritable variation adaptively evolve on fitness landscapes that display gradients in relevant aspects. Given a flat fitness landscape, one would still see evolution by genetic drift but not adaptive evolution. Add non-uniform topography to the fitness landscape and by golly, there's adaptive evolution. And Lenski, et al., hypothesized that critters that could peform higher-complexity functions could evolve in populations that included critters able to perform less complex functions, those simpler critters themselves evolved from a population of ancestors that could only replicate. Their research <i>tested</i> that proposition.
+
+Ewert writes<blockquote>Out of all the possible features that could be studied, the developers of Avida chose features that would be evolvable. They have deliberately constructed a system where evolution proceeds easily. They justify this by stating that it is required by evolutionary theory. However, the question is whether this requirement will be met in realistic cases, and Avida has simply assumed an answer to that question. </blockquote> Does Ewert imagine that in order to test a theory, one should <i>ignore</i> variables that the theory identifies as relevant? Ludicrous. Is his question, 'Do realistic cases of biological evolution involve fitness landscapes that display gradients?' If so, then the answer is obvious: of course they do! The real world is full of gradients. And what exactly does Ewert mean by "Out of all the possible features ..."? What features would he prefer? Should we construct a fitness landscape composed of musical phrases and see whether logic functions will evolve? Should we construct fitness landscapes composed of arithmetic problems and see whether dance notation will evolve? Or maybe a ballerina? And I note once again that those "evolvable" features produced results that satisfy Behe's operational definition of irreducible complexity. That's the fundamental itch for Ewert.
+
+<b>Summary</b>
+
+In the end, Ewert concludes<blockquote>Avida fails by three criteria. The parts are of trivial complex­ity. There is no attempt to show that the parts are necessary for the working of the system. Furthermore, the system was deliberately chosen as a subject of study because it would be evolvable.</blockquote>By "the parts are of trivial complexity" (Ewert's amended definition of irreducible complexity) he means that there are only 26 instructions in the instruction set and thus they are not "complex" (=improbable) enough. But he somehow manages to miss the combinatorial explosion as the length of the genome of an Avida critter increases and the number of instructions in the irrreducible core rises. Recall the excruciatingly small probability of chance accounting for the 35 instructions of the irreducible core of the case study lineage. And DNA? Fuggedaboutit. It's composed of only four bases. Now that's <i>real</i> "trivial complexity."
+
+As far as Ewert's "no attempt" claim is concerned, that's flatly false. Lenski, et al., did the knockout analysis necessary to establish which instructions were essential to the performance of EQU and which were not, meeting Behe's operational criterion for determining irreducible complexity.
+
+Finally, his last complaint, that the game was rigged, displays his abject ignorance of how one tests a theory. Apparently he imagines that in order to test a theory, one should ignore the variables the theory identifies as relevant. He complains that the experiment included conditions in which performing logic functions of simple and intermediate complexity was rewarded. But co-option of simpler structures and processes is hypothesized to be an important process in the evolution of complex phenotypic features, and by golly, here we have an experiment that tests that very hypothesis in an evolutionary system and finds it to be supported. The evolution of complex features occurs when simpler features, themselves adaptive in their own right while performing different functions, are present and available for co-option. Note carefully Lenski, et al.'s sentence immediately preceding the 'deck stacking' one Ewert quotes above.<blockquote>Our experiments demonstrate the validity of the hypothesis, first articulated by Darwin and supported today by comparative and experimental evidence, that complex features generally evolve by modifying existing structures and functions. (p. 143)</blockquote>Just so: adaptive evolution by natural selection is descent with modification from existing--and often simpler--structures and processes.
+
+There are other problematic aspects of Ewert's paper. For example, his discussion of the roles of parts, as distinguished from the parts themselves, is vulnerable. But I've written enough. Ewert's critique of the Avida research is fatally flawed. He over-simplifies and misrepresents the program and misrepresents its results. I see no reason to take his critique of Avida seriously, and, by extension, I therefore see no reason to take his critiques of the other programs seriously.</div><section class="comments-section"><h2 class="comments-heading">72 Comments</h2>
+<div class="comment" id="comment-325239"><p class="comment-meta"><span class="comment-author">Doc Bill</span> &middot; 14 April 2014</p><div class="comment-body"><p>For those wondering where creationists come from, here is one hatching out in the wild and testing its wings.  It's definitely of the Galapagos Finch family, Mark II, I believe.</p><p>Let's look at its traits!</p><p>Creationist mentor?  Check.<br>Conformational bias?  Check.<br>Quote mining?  Check.<br>Disco Tute perch?  Check.<br>Credibility?  No check.</p></div></div>
+<div class="comment" id="comment-325241"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 14 April 2014</p><div class="comment-body"><p>That post, Richard B. Hoppe, was delicious.  Thanks for it.</p></div></div>
+<div class="comment" id="comment-325256"><p class="comment-meta"><span class="comment-author">Robert Byers</span> &middot; 14 April 2014</p><div class="comment-body"><p>Evolution is pseudoscience. Creationism is teasing this out.<br>Actually all origin subjects are not easily done using the scientific method. <br>Evolutionary biology has not shown why its a THEORY as opposed to a hypothesis.<br>The show OUR INNER FISH shows the inner flaw in evolution claims to being science.<br>A higher standard of investigation is not being applied before conclusions are drawn.<br>its all lines of reasoning using basic data points.<br>if i'm wrong then prove me and my people we are wrong.<br>Name your top three biological scientific proofs/evidence of why evolution in its great claims counts as a scientific theory?<br>With this rather well endowed thread on this stuff about computers and biology then it shouldn't be too hard for serious thinkers on these things.<br>Ain't seen it yet!!</p></div></div>
+<div class="comment" id="comment-325259"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 14 April 2014</p><div class="comment-body"><blockquote>
+<strong>Robert Byers said:</strong>
+
+ 
+Evolutionary biology has not shown why its a THEORY as opposed to a hypothesis.
+
+</blockquote>
+
+The Theory of Evolution is a theory because it is vast, powerfully explanatory, and extremely well supported with observation and experiment.  It explains everything from sickle cell anemia to why speckled moths change color in the presence of coal dust to why the beaks of the Galapagos finches change size to why bees are social insects. Those widely disparate facts, so evidently unrelated on their faces, are all explained by one Theory: the ToE.
+
+And it is not only those facts.  The ToE explains thousands of other facts which we observe in the real world.  There is literally nothing known about living systems which is not illuminated by the ToE.  It is a towering work of genius.
+
+
+As always, the loons have nothing but denial.  They don't have a unified, self-consistent, testable explanation for anything at all.  They can't even say why they believe in gods.  All they can do is to deny.  
+</div></div>
+<div class="comment" id="comment-325261"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 14 April 2014</p><div class="comment-body"><p>That's Byers' one allowed comment on this thread.</p></div></div>
+<div class="comment" id="comment-325268"><p class="comment-meta"><span class="comment-author">beatgroover</span> &middot; 14 April 2014</p><div class="comment-body"><blockquote>
+<strong>Richard B. Hoppe said:</strong>
+
+That's Byers' one allowed comment on this thread.
+</blockquote>
+
+Good thing he managed to squeeze in his patented "its all lines of reasoning" tagline. By his definitions, anything and everything is a line of reasoning. What a useless argument to make! This is a great article, I always enjoy the longer and more detailed takedowns of the IDiots' garbage. And I learned a little something about Avida too!</div></div>
+<div class="comment" id="comment-325269"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 14 April 2014</p><div class="comment-body"><p><block>By “the parts are of trivial complexity” (Ewert’s amended definition of irreducible complexity) he means that there are only 26 instructions in the instruction set and thus they are not “complex” (=improbable) enough.</block></p><p>Well, there are only 26 letters in the alphabet, but you can still write 'War and Peace'.</p><p>Besides, 26 instructions is downright verbose compared to what Mother Nature uses. She does all <i>her</i> work with DNA codons that can only create <a href="http://en.wikipedia.org/wiki/DNA_codon_table">22 proteins</a>.</p></div></div>
+<div class="comment" id="comment-325271"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 14 April 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+
+The Theory of Evolution is a theory because it is vast, powerfully explanatory, and extremely well supported with observation and experiment. It explains everything from sickle cell anemia to why speckled moths change color in the presence of coal dust to why the beaks of the Galapagos finches change size to why bees are social insects. Those widely disparate facts, so evidently unrelated on their faces, are all explained by one Theory: the ToE.
+
+And it is not only those facts. The ToE explains thousands of other facts which we observe in the real world. There is literally nothing known about living systems which is not illuminated by the ToE. It is a towering work of genius.
+
+
+As always, the loons have nothing but denial. They don't have a unified, self-consistent, testable explanation for anything at all. They can't even say why they believe in gods. All they can do is to deny. 
+
+</blockquote>
+
+The <i>the theory of evolution</i> is a theory in the same way that the <i>theory of flight</i> is a theory, and <i>evolution</i> is something that happens in the same way that <i>flight</i> is something that happens. </div></div>
+<div class="comment" id="comment-325273"><p class="comment-meta"><span class="comment-author">methuseus</span> &middot; 15 April 2014</p><div class="comment-body">I seriously only logged in to mention that I loved reading phht's comment stating that 
+<blockquote>"The ToE explains thousands of other facts which we observe in the real world."</blockquote>
+makes for a deliciously funny statement when you purposely misunderstand ToE as the word toe instead of an acronym for the Theory of Evolution. Sorry for adding some noise. I'm going to check out Avida.</div></div>
+<div class="comment" id="comment-325277"><p class="comment-meta"><span class="comment-author">Patrick May</span> &middot; 15 April 2014</p><div class="comment-body"><blockquote>
+<strong>Doc Bill said:</strong>
+
+For those wondering where creationists come from, here is one hatching out in the wild and testing its wings.  It's definitely of the Galapagos Finch family, Mark II, I believe.
+
+Let's look at its traits!
+
+Creationist mentor?  Check.
+Conformational bias?  Check.
+Quote mining?  Check.
+Disco Tute perch?  Check.
+Credibility?  No check.
+
+
+</blockquote>
+You left out plagiarized thesis:  http://boundedtheoretics.blogspot.com/2011/06/revised-id-thesis-describes-plagiarism.html
+
+I genuinely feel sorry for Ewert, throwing his career away on this nonsense.  He's been led astray by those he trusted.
+</div></div>
+<div class="comment" id="comment-325285"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 15 April 2014</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+...
+
+Well, there are only 26 letters in the alphabet, but you can still write 'War and Peace'.
+
+</blockquote>
+
+There are 32 letters in the alphabet that was used to write <i>War and Peace</i>. (Hint: it wasn't written in the English alphabet).
+
+<blockquote>
+
+Besides, 26 instructions is downright verbose compared to what Mother Nature uses. She does all <i>her</i> work with DNA codons that can only create <a href="http://en.wikipedia.org/wiki/DNA_codon_table" rel="nofollow">22 proteins</a>.
+
+ 
+</blockquote>
+
+22 proteins? I don't know about you but the code machinery in my cells can code for 20 amino acids plus three stop codons, and with these manages to make over 20,000 proteins.</div></div>
+<div class="comment" id="comment-325287"><p class="comment-meta"><span class="comment-author">Helena Constantine</span> &middot; 15 April 2014</p><div class="comment-body"><blockquote>
+<strong>Robert Byers said:</strong>
+
+Evolution is pseudoscience. Creationism is teasing this out.
+Actually all origin subjects are not easily done using the scientific method. 
+Evolutionary biology has not shown why its a THEORY as opposed to a hypothesis.
+The show OUR INNER FISH shows the inner flaw in evolution claims to being science.
+A higher standard of investigation is not being applied before conclusions are drawn.
+its all lines of reasoning using basic data points.
+if i'm wrong then prove me and my people we are wrong.
+Name your top three biological scientific proofs/evidence of why evolution in its great claims counts as a scientific theory?
+With this rather well endowed thread on this stuff about computers and biology then it shouldn't be too hard for serious thinkers on these things.
+Ain't seen it yet!!
+</blockquote>
+
+Oh Robert!
+
+have you forgotten so soon your claim to have expert knowledge in Egyptian Chronology superior to Erik Hornung and other specialists in the field--and without even being to read Hieroglyphs yet! You need to justify that claim before anyone can take your seriously about anything--that or apologize for your sinful lying and boasting.
+
+Now, even a mere Classicist,who can only envy your effortless command of Egyptian history, can see that the statement above can only have been made by someone competently ignorant of evolution. Why don;t you go and read the Wikipedia article on evolution and try to understand it well enough to write out answers for your own questions (that's what the experts call learning). Write out and post your essay here and we'll give you a gold star. maybe a lollipop if you do a good job.
+</div></div>
+<div class="comment" id="comment-325295"><p class="comment-meta"><span class="comment-author">ksplawn</span> &middot; 15 April 2014</p><div class="comment-body"><blockquote><strong>Patrick May said:</strong>
+I genuinely feel sorry for Ewert, throwing his career away on this nonsense.  He's been led astray by those he trusted.</blockquote>
+What are you talking about? He's part of a "research lab" that doesn't actually do any research! No rigorous peer-review, no heavy math, basically just pump out a column to your company's website every now and then. He gets to spew out words and nobody (who matters to his pay check) cares if they're right or not. Even pulp fiction authors don't have such an eager audience ready to lap up whatever pablum you can arrange on a page. Lester Dent <a href="http://www.writerightnow.co.uk/lester-dents-formula-writing-adventure-pulp-fiction/">famously remarked</a> that writing Doc Savage stories entailed "churning out reams and reams of sellable crap." IDists like Ewert don't have the volume requirements, and "sellable" is set to a very, very low bar. Plus, they don't need to be as scientifically-grounded as Doc Savage. 
+
+It's good work if you can get/stomach it. 
+
+</div></div>
+<div class="comment" id="comment-325331"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 15 April 2014</p><div class="comment-body"><p>Perhaps way off topic, but I'm curious about the nuts and bolts of Avida. I'm assuming that the instruction set for Avida is unrelated to the instruction set recognized by the processor the program is running on. In other words, the Avida critters are composed of virtual instructions. Since it's said that there are 26 instructions in this virtual set, I assume that (1) each virtual instruction is 5 bits long, and (2) that the 6 values possible but not used (because 2^5=32) are NOPs - that is, if the random bit changes that create new instructions (point mutations) produce one of the 6 "unknown" values, that the result is a NOP.</p><p>Moving right along, it seems that the "execution" of these virtual instructions would have to happen within a virtual machine, in order to interpret what these "instructions" would actually DO in some logical sense. Is there a handy list of what the 26 instructions are, and how they are encoded? I've never encountered a real-world instruction set where XOR or rotate instructions aren't primitive.</p><p>Finally, I wonder what EQU actually does. I'm not personally familiar with any mnenomic "EQU" in any of the many dozens of instruction sets I'm familiar with - only declarations assigning values to symbols before execution starts, to make the source code more readable. Like group-of-geeks EQU 5, so that the programmer knows what (would otherwise be stated as "5") refers to in the code. So is EQU in the Avida world something like "x=5" in BASIC?</p></div></div>
+<div class="comment" id="comment-325334"><p class="comment-meta"><span class="comment-author">bigdakine</span> &middot; 15 April 2014</p><div class="comment-body"><p>"Inspection of the models reveals that almost all of them have parts with a complexity [=improbability] less than even the lower limit derived above. Avida has twenty-six possible instructions. That gives a probability of at least 1/26: insufficiently complex. (p. 6)"</p><p>Bwahahaha.</p><p>That is too funny.</p></div></div>
+<div class="comment" id="comment-325354"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 15 April 2014</p><div class="comment-body"><p>Flint, I'm on a semi-smart phone for a while. I'll get to your questions in a day or so when I'm near a real computer.</p></div></div>
+<div class="comment" id="comment-325362"><p class="comment-meta"><span class="comment-author">bplurt</span> &middot; 16 April 2014</p><div class="comment-body"><p>Richard, I hope you will write this up in journalese and submit it to Bio-Complexity.</p><p>After all, as an academic publication, they will surely want to stimulate an open and informed debate on this fascinating subject.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>Bueller?</p></div></div>
+<div class="comment" id="comment-325363"><p class="comment-meta"><span class="comment-author">bbigge</span> &middot; 16 April 2014</p><div class="comment-body"><p>I just skimmed the review and, regarding Ewarts references to Adrian Thompsons work, I would say his summary is a little brief but technically correct but he then makes the mistake of picking on one element of the design - a group of isolated gates that contributed to function (by means of parasitic capacitance as far as I remember) but which weren't essential - and then assumes that, because knocking these out didn't stop the system from working, that nothing about the design was irreducibly complex.</p><p>It is likely (but I don't know for sure) that some of the other gates that were less peripheral to the system were essential to its function and would be an example of irreducible complexity - for example the input gate is probably essential, without it the circuit gets no input signal!. Unfortunatly I couldn't track down a non-paywalled copy of Adrians paper to check.</p><p>Ewart does note that the way in which the evolved circuit worked was unknown, but fails to realise the significance of that - evolution generated functional novelty... - and there are other facinating examples from Adrians work of niche exploitation...</p><p>Disclaimer - I worked with Adrian Thompson and he was one of the examiners for my PhD.</p></div></div>
+<div class="comment" id="comment-325364"><p class="comment-meta"><span class="comment-author">bbigge</span> &middot; 16 April 2014</p><div class="comment-body"><p>I just rememberd the buzz that went around our research group when one of the researchers evolved a neural network that showed some superb adaptive behaviour - you could knock out a neuron and the system would adapt and continue to produce the same behaviour - in other words we were excited that someone had come across a way of evolving a neural net that wasn't irreducibly complex!</p></div></div>
+<div class="comment" id="comment-325372"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 16 April 2014</p><div class="comment-body"><p>Am I right to think that Ewert [not spelled Ewart] thinks that as long as there is some mutational path, along which each step is uphill on the fitness surface, that the resulting structure is then not actually an example of one that is Irreducibly complex?</p><p>Early on, people including Jerry Coyne made the point that molecules could interact loosely, then gradually evolve to have tighter and tighter interactions, until finally no molecule could be removed from the structure without having it fail to function.</p><p>If my understanding of Ewert's position is correct, such a case would not actually be IC <i>precisely because</i> there was a way to get into this state with step-by-step selective advantage.</p></div></div>
+<div class="comment" id="comment-325393"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 16 April 2014</p><div class="comment-body"><p>Flint,<br><br>The virtual machine that Avida instructions run on is described <a href="http://authors.library.caltech.edu/13705/1/OFRal04.pdf">here</a>. The instruction set (in the version used in the 2003 Lenski, et al., paper) is <a href="http://myxo.css.msu.edu/papers/nature2003/Supp1.html">here</a>. As you can see, it's at the <a href="http://en.wikipedia.org/wiki/Assembly_language">assembly language</a> (opcode) level. If I were pushed to the wall and required to name the biological level of the instructions, I'd put them roughly at the protein level of analysis. But once again, Avida is not a model of <i>biological</i> evolution in particular; it instantiates evolution in general, the mutation/selection algorithm, independent of the specific platform.<br><br>An example of an Avida program that performs a logic function (OR) is <a href="http://devolab.cse.msu.edu/software/avida/doc/cpu_tour.html">here</a>. The line of descent in the case study lineage that evolved to perform EQU is <a href="http://myxo.css.msu.edu/papers/nature2003/Supp4.html">here</a>. Note that the opcode instructions in the genomes are replaced by alphabetic characters. That's for convenience in reading the genomes; the alphabetic characters do not run on the virtual machines. The key to the alphabetic characters is <a href="http://myxo.css.msu.edu/papers/nature2003/Supp1.html">here</a>.<br><br>To perform EQU, the critter takes two 32-bit strings as inputs and produces a 32-bit output string that has a "1" where the two input bits in a given position are identical (both 1s or both 0s), and "0" where they are different. The shortest hand-written program that performs EQU is <a href="http://myxo.css.msu.edu/papers/nature2003/Supp3.html">here</a>.</p></div></div>
+<div class="comment" id="comment-325397"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 16 April 2014</p><div class="comment-body">Joe asked <blockquote>Am I right to think that Ewert [not spelled Ewart] thinks that as long as there is some mutational path, along which each step is uphill on the fitness surface, that the resulting structure is then not actually an example of one that is Irreducibly complex?</blockquote>That's (one of) the IDists' definitions of irreducible complexity. It used to be available on ISCID's Intelligent Design "Encyclopedia of Science and Philosophy," but that no longer accessible. It's quoted <a href="http://academic.mu.edu/bisc/siebenlistk/3859_Irreducible%20complexity.pdf">here</a>, along with Dembski's new version from <a href="http://www.amazon.com/Free-Lunch-Specified-Complexity-Intelligence/dp/0742512975">No Free Lunch</a>.
+
+The Avida experiments satisfy Behe's 'evolutionary' version as well as his original definition. Some mutational steps in the case study lineage were neutral and some actually reduced fitness. The <a href="http://myxo.css.msu.edu/papers/nature2003/Supp4.html">full lineage</a> shows that 18 of the 111 mutational steps in the lineage leading to the critter that performed EQU were deleterious, mostly mildly deleterious but with two (#63 and #110) being substantially deleterious. 
+
+Behe apparently believes that evolution by selection is a monotonic hill climbing algorithm, when we know ways in which non-lethal deleterious mutations can last for generations in a population. Those deleterious mutation can in fact act as 'stage setters' for subsequent mutations that increase fitness.  For example, insertion mutation #63 in the case study lineage reduced fitness from approximately 1.98 to approximately 0.32. The very next mutation, a substitution (point) mutation, that occurred some generations later and some distance from the deleterious mutation, then increased fitness to 3.19, a sizeable gain. In other words, it appears that a deleterious (but not lethal) change in one part of the genome set the stage for a change in another part that yielded substantially increased fitness.
+
+Note that all the IDist definitions of irreducible complexity require that the function of the final system be constant from the very beginning; no co-option of constituents that perform some other function is allowed. But co-option is exactly what evolutionary theory, starting as far back as Darwin, predicts. And that's what the Lenski, et al., study tested.</div></div>
+<div class="comment" id="comment-325401"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 16 April 2014</p><div class="comment-body">Excellent takedown, RBH. 
+
+Ewert has demolished Irreducible Complexity with his ad hoc "non-trivial part" requirement with which he tries to (silently) revise the definition of Irreducible Complexity.
+
+So, since the Avida instruction set has parts of 26 types, no part of any Avida output can ever be "non-trivial", and thus no Avida output program can be Irreducibly Complex, no matter how complex-- even if it spoke English and wrote ID books and accepted Jesus as its savior.
+
+It has been pointed out above that, in Ewert's frantic desire to kill Avida, he has instead "proven" the following:
+
+1. Now, no English sentence can be irreducibly complex, because the English alphabet has 26 letters. The parts are now "trivial" and thus no arrangement of them can be irreducibly complex. This directly contradicts the countless IDiots assertions that Shakespearean sonnets are obviously "designed". No, not anyomore, according to ID "theory."
+
+2. No gene in any genome can be irreducible complex, because the parts of genes are drawn from an alphabet of four nucleotides. 
+
+3. No protein can ever be irreducibly complex. This directly contradicts Behe's many past assertions that individual proteins are irreducibly complex; that their binding sites, which may consist of a dozen or fewer amino acids, are also irreducibly complex; and Behe's clear statements that <b>disulfide bonds, which have two amino acids, are irreducibly complex.</b>
+
+This last point is what I wish to elaborate upon. 
+
+In the 2002 debate of Behe and Dembski vs. Ken Miller and Pennock at the American Museum of Natural History, Behe stated, clear as day, that disulfide bonds are irreducibly complex. This means that:
+
+1. Behe's definition of "part" includes amino acids. Ewert has declared that an amino acid is a "trivial part" and thus, no protein nor any collection of amino acids, including binding sites and disulfide bonds, can ever be IC.
+
+1. Behe's definition of "several" means two (2) or more. This is important because later, when Joe Thornton started publishing papers on the evolution of growth hormone receptors, Behe dismissed them because "several" meant more than two.
+
+Let's listen again to Behe 2002. There's an MP3 of this around somewhere.
+
+<blockquote>
+
+Drawings of the bacterial flagellum picture proteins as bland spheres or ovals, but each protein in the cell is actually itself very complex. This ribbon drawing of bovine pancreatic trypsin inhibitor gives a little taste of that complexity. 
+
+Now, proteins are polymers of amino acid residues, and some structural features of proteins require the participation of multiple residues. For example [up here, it’s hard to see], this yellow link is called a disulfide bond. <b>A disulfide bond requires two cysteine residues</b> — just one cysteine residue can’t form such a bond. Thus, in order for a protein that did not have a disulfide bond to evolve one, <b>several</b> changes in the same gene have to occur. <b>Thus in a [real] sense the disulfide bond is irreducibly complex</b>, although not nearly to the same degree of complexity as systems made of multiple proteins. [note: in the MP3 audio he does not say “real”, in the Discovery Institute's transcript he writes "real."]
+</blockquote>
+
+Again I emphasize: "several" means 2 or more. He changed this later. Continuing with Behe 2002:
+
+<blockquote>
+[Note: the audio skips over the next bit in brackets, up to “bind” in “binding”]: The problem of irreducibility in protein features is a general one. Whenever a protein interacts with another molecule, as all proteins do, it does so through a binding site, whose shape and chemical properties closely match the other molecule. <b>Binding sites, however, are composed of perhaps a dozen amino acid residues,</b> and <b>bind</b> [audio starts up again here]<b>ing is generally lost if any of the positions are changed.</b> 
+
+[Blind Evolution or Intelligent Design? Address to the American Museum of Natural History. Michael J. Behe. April 23, 2002. http://www.discovery.org/a/1205. Part 2 of the MP3, about 17:40, NCSE Transcript: http://ncse.com/resources/part-6-dr-michael-behe]
+
+</blockquote>
+
+(This last statement, about abolition of binding in binding sites by changing ANY ONE residue, is experimentally bullshit, and has been known to be bullshit since James Wells' late 90's work on alanine scanning mutagenesis of binding sites.)
+
+Is Ewert even aware that his redefinition of IC obliterates everything Behe ever wrote?
+
+As you all recall, on the witness stand at the Dover trial, 2005, Dembski described his paper with Snoke (2004) as describing an Irreducibly Complex system. That system was protein and its ligand, so again, in 2004 a "part" could be a protein or a ligand, while "several" meant 2 or more.
+
+Then in 2006, Joe Thornton started publishing many papers on growth hormone receptors showing how the protein-ligand interaction could evolve step by step. In response, by 2006, <a href="http://www.evolutionnews.org/2006/04/irreducible_complexity_stands.html">Behe began blathering idiotically about how "several" had always meant a lot more than just two parts-- "several" had never meant two! Oh <i>nooo!</i></a>-- and how "part" could never be a ligand, because that's what Thornton had shown could evolve in a protein-ligand interaction, so from now on, "part" could only mean proteins.
+
+Here is an earlier edition of <a href="http://www.pandasthumb.org/archives/2006/04/evolution_of_ic.html">the uncountable, ever-changing definitions of "Irreducible Complexity" deconstructed by Ian Musgrave</a> back in 2006.
+
+The mind boggles. Do IDiots even know they're equivocating? Is it deliberate? To quote the Beatles, <i>"What goes on in your mind?"</i> 
+</div></div>
+<div class="comment" id="comment-325402"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 16 April 2014</p><div class="comment-body"><p>Diogenes, you wrote "As you all recall, on the witness stand at the Dover trial, 2005, Dembski described his paper with Snoke (2004)...". I think you meant Behe and Snoke. Dembski fled the scene before the trial.</p></div></div>
+<div class="comment" id="comment-325407"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 16 April 2014</p><div class="comment-body"><p>Richard,</p><p>Many thanks for these resources. The virtual Avida machine is interesting, and the instruction set is fascinating. The "if true skip next instruction" approach is typical of HP's programmable calculators, and some other indirect-conditional formats.</p><p>I see that EQU is what I'd call an "XNOR" instruction, which some instruction sets implement. The Intel instruction set uses two instructions: XOR (of the two input registers) followed by NOT (to take the ones complement). At least if I'm reading this correctly.</p><p>The feeling of the Avida machine is similar to a RISC processor in that instructions do very little, so it takes a lot of them to do anything useful. But most RISC processors have oodles of registers to work with.</p><p>Good stuff.</p></div></div>
+<div class="comment" id="comment-325455"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 17 April 2014</p><div class="comment-body">The difficulty of calculating a probability for the evolution of EQU on a fitness landscape that is graded deserves a little more attention. Above I wrote<blockquote>In fact, in the Lenski, et al, research Ewert later criticizes, the 23 lineages that evolved to perform EQU in the main experimental condition did it in 23 different ways, none of them the 19-step human-written procedure! That, of course, eviscerates any probability statements about evolving EQU the IDists might want to make, since to get a numerator for a probability estimate they would have to first estimate the number of different programs able to perform EQU.</blockquote>
+
+Behe's <a href="http://academic.mu.edu/bisc/siebenlistk/3859_Irreducible%20complexity.pdf">evolutionary version</a> of irreducible complexity is<blockquote>An irreducibly complex pathway is one that contains one or more unselected steps (that is, one or more necessary-but-unselected mutations). The degree of irreducible complexity is the number of unselected steps in the pathway.</blockquote>Leaving aside the "degree of irreducible complexity" locution, the Lenski, et al., data show that (1) all the lineages that evolved to perform EQU did so in different ways, with different pathways to the function, and (2) some of the instructions that form part of the irreducible core of the case study lineage (by the knockout criterion) were selectively neutral or even deleterious when they first occurred. Some years ago I did a step-by-step analysis of the Lenski, et al., case study lineage in which I traced the prior history of the 35 instructions in the irreducible core of the case study lineage to see how those instructions originated. I found several mutations (that were part of the irreducible core) that were neutral when they first occurred, and several mutations that in fact were deleterious when they first occurred. I have no doubt that the same phenomenon occurs in the other 22 lineages that performed EQU. 
+
+So the Lenski, et al., study disconfirms both of Behe's definitions of irreducible complexity: irreducibly complex structures can evolve by the variation/selection algorithm of Darwinian evolution, and neutral and even deleterious mutations can play a critical role in that evolution. Behe's claim fails on both structural (final product) and evolutionary (dynamics of the pathway) grounds. Ewert's critique touches neither of those conclusions. Calculating the probability of evolving a critter that can perform EQU is impossible, since one cannot know how many different pathways to EQU there are.
+</div></div>
+<div class="comment" id="comment-325480"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 17 April 2014</p><div class="comment-body"><p>While I have not read Ewert's piece, nor the detailed description of Avida (and so may have a biased view point), from Richard's well written summary it sounds like Lenski (et al) did in fact perform the exact experiment(s) that a DI Fellow would be expected to perform, and did in fact demonstrate that novel features cannot (or are very unlikely to) spring de novo from "random" "chance" mutations.  It would seem that Ewert should be thanking Lenski for doing the DI's work for them.  Why is it that an actual scientist can do the work of demonstrating Irreducible Complexity, when ID advocates can't seem to?</p><p>The answer of course is obvious.  The "Scientist" has to actually <i>test</i> his hypotheses, and IC is simply the "null" hypothesis.  (If I'm using the terms correctly.)</p><p>But of course, "random" mutations are only <i>half</i> (or a third??) of the equation of Evolution.  The other part being, of course, Natural Selection.  And, naturally, for Natural Selection to function, you first have to have some features that can be selected for, and you then have to have a "selection" <i>mechanism</i> that can function on the selectable features.  Since neither "Natural" nor "Selection" feature in Intelligent Design, it does seem reasonable for an ID advocate to ignore such processes.</p><p>What Ewert seems to be complaining about (if I may paraphrase Richard) is that Avida demonstrates that if you create a system which has the essential ingredients for Evolution to occur, that (in fact) Evolution of new features happens.  Ewert seems to be conceding that Evolution is entirely possible if conditions are correct, and it's simply not <i>fair</i> to actually set up such an experiment with the necessary preconditions.  "Well, of <i>course</i> evolution is going to happen if you set up a system that is evolvable.  Duh!  You haven't <i>proven</i> anything."  This (to me) seems like a <i>huge</i> concession on the part of any ID advocate.  Isn't their whole schtick that Evolution is physically impossible, no matter <i>what</i> the pre-conditions?  Isn't there's supposed to be that magic barrier that Byers (among others) likes to invoke, which somehow magically stops mutations from accumulating and interacting over time to form novel features?</p></div></div>
+<div class="comment" id="comment-325531"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 18 April 2014</p><div class="comment-body"><blockquote>
+<strong>Richard B. Hoppe said:</strong>
+
+Diogenes, you wrote "As you all recall, on the witness stand at the Dover trial, 2005, Dembski described his paper with Snoke (2004)...". I think you meant Behe and Snoke. Dembski fled the scene before the trial.
+</blockquote>
+
+Yes, I meant Behe and Snoke 2004, not Dembski.</div></div>
+<div class="comment" id="comment-325535"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 18 April 2014</p><div class="comment-body"><blockquote>
+<strong>Richard B. Hoppe said:</strong>
+
+Note that all the IDist definitions of irreducible complexity require that the function of the final system be constant from the very beginning; <b>no co-option of constituents that perform some other function is allowed.</b> 
+</blockquote>
+
+This is not correct. Dembski's definition of IC says "basic function", apparently meaning the the original function. 
+
+<blockquote>
+<b>Dembski, 2004 wrote:</b>
+
+
+A functional system is irreducibly complex if it contains a multipart subsystem (i.e., a set of two or more interrelated parts) that cannot be simplified without destroying the system’s <b>basic function.</b> I refer to this multipart subsystem as the system’s irreducible core.
+
+We can therefore define the core of a functionally integrated system as those parts that are indispensable to the system’s <b>basic function</b>: remove parts of the core, and you can’t recover the system’s <b>basic function</b> from the other remaining parts. To say that a core is irreducible is then to say that no other systems with substantially simpler cores can perform the system’s <b>basic function.</b>
+
+[William Dembski, <a href="http://www.designinference.com/documents/2004.01.Irred_Compl_Revisited.pdf">Irreducible Complexity Revisited</a>, Dembski, 2/23/2004]
+
+</blockquote>
+
+<blockquote>
+
+<b>Dembski and Wells, 2008:</b> 
+
+A functional system is irreducibly complex if it contains a multipart subsystem (i.e. a set of two or more interrelated parts) that cannot be simplified without destroying the system's <b>basic function.</b> We call this multipart subsystem the system's irreducible core. ... We therefore define the core of a functionally integrated system as those parts that are indispensible to the system's <b>basic function</b>: remove parts of the core, and you can't recover the system's <b>basic function</b> from the other remaining parts. 
+
+[Jonathan Wells and William Dembski, The Design of Life: Discovering Signs of Intelligence in Biological Systems, pgs. 146-147 (Foundation for Thought and Ethics, 2008). Cited by <a href="http://www.evolutionnews.org/2008/12/how_kenneth_miller_used_smokea014861.html">Luskin, 2005.</a>]
+
+</blockquote>
+
+Thus, by Dembski and Wells' defintition, if all possible changes to the system abolish the "basic function" but change the system to a <i>different (perhaps older)</i> function, the system could originally have started out with the different function, and evolved in one step to gain the "basic function." Such a system could be arrived at by co-option, but would be truly IC under Dembski and Well's condition.
+
+I think Dembski changed Behe's definition because Dembski knew that IC was vulnerable to challenges based on co-option. But in his attempt to exclude co-option, he actually permitted it. Weird, but that's Dembski.
+
+Behe's definition, by contrast, can be interpreted to mean that a system is IC only if removing any part abolishes all possible functions. That would exclude co-option.
+
+<blockquote>
+<b>Behe wrote:</b> 
+
+A single system which is composed of several interacting parts that contribute to the basic function, and where the removal of any one of the parts <b>causes the system to effectively cease functioning.</b> [Michael Behe, Darwin's Black Box, p.39]
+
+</blockquote>
+
+If any change caused a system to cease ALL functions, then an older system with a different function could not evolve into a truly IC system, at least not by the addition of one part at a time.
+
+Here is Luskin's definition from 2008. This could technically exclude co-option.
+
+<blockquote>
+<b>Casey Luskin wrote:</b>
+
+Also, irreducible complexity can be defined outside of Darwinian evolution: IC just means that a core number of parts are <b>necessary for a system to function.</b> If many parts are necessary for the first self-replicating precursor to modern life to exist, then that poses a serious challenge to chemical origin of life scenarios, many of which require that a simple self-replicating system can spontaneously form via blind chemical processes. In fact, because there is no replication, and thus no Darwinian process of evolution before the origin of life, irreducible complexity poses an even greater challenge to abiogenesis than it does to Darwinian evolution. 
+
+[Casey Luskin at Research Blogging.org, Comment February 5th, 2008 at 8:21 pm, <a href="http://web.archive.org/web/20080408162339/http://bpr3.org/?p=80">Archived at Wayback Machine April 8, 2008</a>.]
+</blockquote>
+</div></div>
+<div class="comment" id="comment-325543"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 18 April 2014</p><div class="comment-body"><p>Slippery Sal Cordova has a strange response to my critique of Ewert <a href="http://www.creationevolutionuniversity.com/idcs/?p=90">here</a>.</p></div></div>
+<div class="comment" id="comment-325548"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 18 April 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+Am I right to think that Ewert [not spelled Ewart] thinks that as long as there is some mutational path, along which each step is uphill on the fitness surface, that the resulting structure is then not actually an example of one that is Irreducibly complex?
+
+Early on, people including Jerry Coyne made the point that molecules could interact loosely, then gradually evolve to have tighter and tighter interactions, until finally no molecule could be removed from the structure without having it fail to function.  
+
+If my understanding of Ewert's position is correct, such a case would not actually be IC <i>precisely because</i> there was a way to get into this state with step-by-step selective advantage.
+</blockquote>
+
+Ewert would assert that the fitness function supplied to the "search" was designed. When he acknowledges emergence of IC in computational evolution, he must conclude either that it could have happened by chance, or that the system (perhaps the fitness function) was designed to produce it.</div></div>
+<div class="comment" id="comment-325567"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 19 April 2014</p><div class="comment-body"><blockquote>
+<strong>Tom English said:</strong>
+
+Ewert would assert that the fitness function supplied to the "search" was designed. When he acknowledges emergence of IC in computational evolution, he must conclude either that it could have happened by chance, or that the system (perhaps the fitness function) was designed to produce it.</blockquote><i>Of course</i> the fitness function in the Lenski, et al., study was designed. That's how one tests models: identify the variable(s) a model defines as relevant to the phenomenon at issue and systematically vary them. In this case, the model asserts that a population's ability to perform complex functions can evolve in circumstances where the fitness landscape includes different functions of lesser complexity that are themselves adaptive. Where those functions of lesser complexity are present but not adaptive--in Lenski, et al.'s flat landscape control condition--we expect that the complex function won't evolve. Run the experiment, varying the topography of the fitness landscape, and see what happens. That's called "doing research", an alien concept to IDC proponents.</div></div>
+<div class="comment" id="comment-325569"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 19 April 2014</p><div class="comment-body"><p>I wonder when Wohler synthesized urea, supposedly breaking the barrier between organic and inorganic, whether there were objections that the urea was the project of an organic agent (Wohler in his lab).</p></div></div>
+<div class="comment" id="comment-325570"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 19 April 2014</p><div class="comment-body"><blockquote>
+<strong>Richard B. Hoppe said:</strong>
+<i>Of course</i> the fitness function in the Lenski, et al., study was designed.
+</blockquote>
+
+Well, not really.
+
+The fitness function was, as it always is, "Go survive".
+
+In Lenski's case "Digest citrate" is the obvious, easy path to get there, but there were other ways that the e-coli could have survived.
+
+They could, for example, have developed a mechanism to metabolize some heretofore-unused waste product, or to eat other e-coli (Or perhaps eat labware or even grad students. But that would be bad, because labware is expense to replace).
+
+As I always point out, evolution doesn't care <i>how</i> you survive, just that you accomplish it.
+
+On the plains of Africa "run very fast" is a good survival strategy. But so is "grow big", "be really spikey", "climb some trees", " work as a pack", "develop such a nasty reputation that nothing is crazy enough to try to eat you" and, our ancestral choice "out-think the predators".
+</div></div>
+<div class="comment" id="comment-325572"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 19 April 2014</p><div class="comment-body"><blockquote><p>and, our ancestral choice “out-think the predators”.</p></blockquote>
+Yeah, that's what Arnold did in the movie!
+
+</div></div>
+<div class="comment" id="comment-325574"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 19 April 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote><p>and, our ancestral choice “out-think the predators”.</p></blockquote>
+
+Yeah, that's what Arnold did in the movie!
+
+</blockquote>
+
+Actually, Arnold just got lucky, after brute strength an bullets failed to work.  But at least he was smart enough to recognize an advantage once he stumbled into it.
+
+Come to think of it, "get lucky" isn't a bad survival strategy either.  I seem to recall several SF books on that very premise.
+</div></div>
+<div class="comment" id="comment-325577"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 19 April 2014</p><div class="comment-body"><blockquote>
+<strong>Scott F said:</strong>
+
+Come to think of it, "get lucky" isn't a bad survival strategy either.  I seem to recall several SF books on that very premise.
+
+</blockquote>
+
+Rincewind?
+
+</div></div>
+<div class="comment" id="comment-325579"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 19 April 2014</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+On the plains of Africa "run very fast" is a good survival strategy. But so is "grow big", "be really spikey", "climb some trees", " work as a pack", "develop such a nasty reputation that nothing is crazy enough to try to eat you" and, our ancestral choice "out-think the predators".
+
+</blockquote>
+
+Actually, our ancestors chose all of those, except for "run very fast", for which they substituted "move at a steady jog for a very long time", which is a mouthful, but which works very nearly as well, when combined with "out-think the <i>prey</i>". It's true the "be really spikey" bit pertained to what they carried in their hands, rather than what grew out of their bodies, but it's the same principle. 
+
+</div></div>
+<div class="comment" id="comment-325584"><p class="comment-meta"><span class="comment-author">AltairIV</span> &middot; 20 April 2014</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+<blockquote>
+<strong>Scott F said:</strong>
+
+Come to think of it, "get lucky" isn't a bad survival strategy either.  I seem to recall several SF books on that very premise.
+
+</blockquote>
+Rincewind?
+</blockquote>
+
+Rincewind isn't all that lucky, just genre-savvy enough to know when to run away (i.e. all the time).
+
+The one I'm reminded of is the heritable luck factor in Niven's Ringworld/Known Space novels.  Except of course that it's an example of artificial selection, since the Puppeteers purposefully bred it into humans.</div></div>
+<div class="comment" id="comment-325585"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 20 April 2014</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+<blockquote>
+<strong>Richard B. Hoppe said:</strong>
+<i>Of course</i> the fitness function in the Lenski, et al., study was designed.
+</blockquote>
+
+Well, not really.
+
+The fitness function was, as it always is, "Go survive".
+
+In Lenski's case "Digest citrate" is the obvious, easy path to get there, but there were other ways that the e-coli could have survived.
+
+They could, for example, have developed a mechanism to metabolize some heretofore-unused waste product, or to eat other e-coli (Or perhaps eat labware or even grad students. But that would be bad, because labware is expense to replace).
+
+As I always point out, evolution doesn't care <i>how</i> you survive, just that you accomplish it.
+
+On the plains of Africa "run very fast" is a good survival strategy. But so is "grow big", "be really spikey", "climb some trees", " work as a pack", "develop such a nasty reputation that nothing is crazy enough to try to eat you" and, our ancestral choice "out-think the predators".
+
+</blockquote>
+
+Isn't "out-think the predators" in fables than in reality, where "out-think the prey" is the rule?</div></div>
+<div class="comment" id="comment-325587"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 20 April 2014</p><div class="comment-body">Ewert has distorted my Steiner algorithm as badly as he did for Avida. He writes 
+<blockquote>It should be noted, however, that obtaining a connected road network is actually trivial—a connected network can be achieved by random chance alone. ... The difficulty in the Steiner tree problem is in trying to minimize the amount of road used, not in getting a connected network. Therefore we can say that there are no intermediate evolutionary stages in obtaining such a network.</blockquote>
+
+Excuse me? Ewert's <a href="http://bio-complexity.org/ojs/index.php/main/article/view/BIO-C.2012.1/BIO-C.2012.1">earlier paper with Dembski and Marks</a> showed that random guessing could at best connect the cities, but it never achieved the formal Steiner Solution.
+
+Their "random chance" networks are <b>not</b> solutions of the Steiner Problem at all!  And solutions to the Steiner DO exhibit "irreducible complexity" - at least in the original 'mousetrap' sense. They also exhibit specified complexity - the Steiner solutions are quite specific and detailed.
+
+A pathetic rebuttal IMHO.  At least we're getting under their skin!</div></div>
+<div class="comment" id="comment-325588"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 20 April 2014</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+Ewert has distorted my Steiner algorithm as badly as he did for Avida. He writes 
+<blockquote>It should be noted, however, that obtaining a connected road network is actually trivial—a connected network can be achieved by random chance alone. ... The difficulty in the Steiner tree problem is in trying to minimize the amount of road used, not in getting a connected network. Therefore we can say that there are no intermediate evolutionary stages in obtaining such a network.</blockquote>
+
+Excuse me? Ewert's <a href="http://bio-complexity.org/ojs/index.php/main/article/view/BIO-C.2012.1/BIO-C.2012.1" rel="nofollow">earlier paper with Dembski and Marks</a> showed that random guessing could at best connect the cities, but it never achieved the formal Steiner Solution.
+
+Their "random chance" networks are <b>not</b> solutions of the Steiner Problem at all!  And solutions to the Steiner DO exhibit "irreducible complexity" - at least in the original 'mousetrap' sense. They also exhibit specified complexity - the Steiner solutions are quite specific and detailed.
+
+A pathetic rebuttal IMHO.  At least we're getting under their skin!
+</blockquote>
+
+Sorry, I have not read any of the relevant texts, comments or rebuttals, just this one comment.  But I'm struck by this:
+
+"Therefore we can say that there are no intermediate evolutionary stages in obtaining such a network."
+
+Huh?  This makes no sense.  First, from the description here I'll assume that a "Steiner" network is an "optimal" network, in some sense.  Second, it would seem to me that either a fully or even partially connected network <i>is</i> (or could be) an "intermediate" stage to achieving an optimal network.
+
+Again, the creationist/IDist seems to be missing the key factor in Evolution: "Selection".  Okay.  They admit that discovering all of the possible connections is "trivial" through "random chance alone".  Now, "just" repeatedly apply the "selection" criteria to trim connections (interspersed with randomly adding new connections) until you arrive at a local minimum.  Why is this a problem for Evolution?
+
+Hmm…  Maybe the creationist/IDist isn't "missing" the notion of "Selection".  Perhaps, instead, it's the whole <i>Natural</i> Selection part that they don't understand.  Perhaps their <s>thought</s> notion is that <i>any</i> kind of "Selection" requires intelligence, and hence can never be "Natural"??
+</div></div>
+<div class="comment" id="comment-325589"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 20 April 2014</p><div class="comment-body"><p>That's pretty close.  Check out the War of the Weasels in 2006.  Poor old Sal Cordova was unable to "design" a solution better than the one evolution came up with.</p><p>See <a href="http://pandasthumb.org/archives/2006/08/design-challeng-1.html"> this post</a> for the nitty-gritty details.</p></div></div>
+<div class="comment" id="comment-325590"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 20 April 2014</p><div class="comment-body">The issue of phenotype vs. genotype deserves a little attention in this context. In passing above I wrote<blockquote>Ewert, in common with other ID creationists, has a hard time distinguishing between phenotype (a critter that performs EQU) and genotype (the specific sequence of instructions that enables the performance of EQU by a given critter).</blockquote>That difference is important, because the phenotype is what is directly exposed to selection, not the genotype. The Avida system neither cares nor even knows <i>how</i> a given phenotypic feature, say the ability to perform AND or OR or EQU, is actually performed in the genomic code--the sequence of instructions--of an Avidian critter. The actual code is never directly exposed to selection. The fitness function--the assessment of a critter's fitness--is wholly ignorant of that code. There is no template or model of the code that performs a logic function in the program. All the fitness function sees is the two inputs and the output, and fitness is evaluated on the relation between inputs and output (along with gestation time).
+
+What is exposed to mutation, though, is a critter's code itself. Mutations directly affect the underlying genomes, not the phenotypes. EQU or AND or OR are not themselves exposed to mutations, but rather the code underlying them is. So mutations work at an underlying genomic level, producing variability, while selection operates at the phenotypic level. Phenotypes can change (or not) as a result of changes in the underlying code caused by mutations, but mutations as such do not directly touch the phenotype.
+
+As a consequence, calculating a number alleged to be the probability of performing EQU or any other logic function is an exercise in futility. As my little exercise in eensy teensy numbers in the OP shows, calculating the probability that a specific sequence of instructions will evolve is possible, given some non-trivial assumptions. One can calculate the probability that any particular sequence of instructions will occur by chance, and it's miniscule. But calculating the global probability that <i>some</i> sequence will occur requires knowing the number of different programs that can perform EQU, and determing that number is an intractable problem. Getting the numerator of a number that allows estimating the probability that some critter will perform EQU in one way or another is impossible: the set of all programs that can perform EQU is limitless. The most we can say based on the Lenski, et al., study is that a bit less than half of the time (23/50 50,000-update runs), some sequence of instructions that can perform EQU will evolve if there are logic functions of lesser complexity in the fitness landscape. Given no logic functions of lesser complexity, 0/50 50,000-update runs happened on to EQU by chance.
+
+
+And just a teaser on another ID creationist shtick, "junk" DNA. In the case study lineage's genome when it first performed EQU, 15 (out of 60) instructions were not necessary for performing any function at all, from replication to EQU (see their <a href="http://ofria.com/pubs/2003LenskiEtAl.pdf">Figure 4</a>). They could be knocked out with no effect on any phenotypic feature. They look a lot like junk instructions to me. :)</div></div>
+<div class="comment" id="comment-325591"><p class="comment-meta"><span class="comment-author">davemullenix</span> &middot; 20 April 2014</p><div class="comment-body"><p>"Richard B. Hoppe | April 18, 2014 3:08 PM | Reply</p><p>Slippery Sal Cordova has a strange response to my critique of Ewert here."</p><p>I remember that episode a little differently than Sal.  He says that he discovered a vital flaw in Avida's documentation that never would have been found without him.</p><p>As I remember it, Sal got a copy of Avida and started screwing around with it and turned the single point mutations up to "11".  Much to everybody's surprise, Avida showed that some of the organisms continued to live and reproduce.</p><p>If I remember right, someone (probably you) had to get someone from the Avida team to figure out what was going on.  It turned out that Sal's "radiation" blew every organism to bits instantly, but Avida continued to churn the debris and whenever it would spot a remnant of an original organism it would somehow count it as alive.  The mistake in the documentation was discovered by the Avida team while investigating this and had nothing to do with the malfunction.</p><p>Unfortunately, ARN is long gone and the original postings are gone with it.  Does anybody have those ten year old postings so we can tell Sal what actually happened?</p><p>I don't think he gets too many points from proving that Avida was not IDiot proof.</p></div></div>
+<div class="comment" id="comment-325592"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 20 April 2014</p><div class="comment-body"><p>That's more or less my memory, too, Dave. I think I have an old copy of that version of Avida somewhere, and if I can find it I'll play around some.</p></div></div>
+<div class="comment" id="comment-325595"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 20 April 2014</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+That's pretty close.  Check out the War of the Weasels in 2006.  Poor old Sal Cordova was unable to "design" a solution better than the one evolution came up with. 
+
+See <a href="http://pandasthumb.org/archives/2006/08/design-challeng-1.html" rel="nofollow"> this post</a> for the nitty-gritty details.
+
+</blockquote>
+
+Thanks Dave.  Now that you point it out, I recall that post.
+
+You had issued another challenge:
+<blockquote><p>
+Before moving on to our other Winners, I’m issuing a Second Challenge, again open to all: using whatever ID theory you need (Explanatory Filter, Design Inference, whatever), show how this theory can be applied to the above two solutions to determine which was actually designed (e.g. “real” Complex Specified Information (CSI)), and which was evolved (and thus in possession of only the “appearance” of CSI).
+
+Anyone can enter, but unlike the previous challenge, all contestants are asked to show their work. Again, e-mail your responses me at nmsrdaveATswcp.com (please replace the AT with an @), and do not post them as comments on this or other blogs. This new contest will be open for as long as needed (i.e. until the ID community makes a formal response), as it might take a couple of years for the top ID theorists to crack the case.
+</p></blockquote>
+
+It's been over 7 years (!!) since then.  Can I assume that you haven't received a single response to your challenge?</div></div>
+<div class="comment" id="comment-325596"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 20 April 2014</p><div class="comment-body"><p>It would be interesting to test Avida again, but to run <i>two</i> GA's simultaneously.  The first would run as before, but the second GA would run at a slower rate, and would evolve the <i>target</i> function.  I'm imagining the second GA as simulating a slowly changing "environment".  There are lot's of potential operations that could be performed on two 32-bit numbers.  This would avoid the IDist's charge of "front loading".  If the designer of the experiment doesn't even know what the target is going to be, it would be impossible to justify a claim of "sneaking in" a solution.</p><p>It might also show how evolution would respond over time to a changing environment.  One could imagine that the "best" organism in a changing environment might not be the one that got the most accurate answer to any particular "target", but rather the one that retained evolvability over time.</p><p>Alternatively, the second GA might receive some feedback from the first, perhaps simulating the co-evolution of a pair of organisms: predator and prey, or parasite and host.  Again, the intent would be to demonstrate an evolutionary process where the "target" isn't known a priori.</p><p>Perhaps one of those two scenarios was already tried?</p></div></div>
+<div class="comment" id="comment-325597"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 20 April 2014</p><div class="comment-body"><p>A couple of science-minded evolution supporters were indeed able to suss it, but no Intelligent designers, as I recall.<br>Dave</p></div></div>
+<div class="comment" id="comment-325599"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 20 April 2014</p><div class="comment-body"><blockquote><p>All the fitness function sees is the two inputs and the output, and fitness is evaluated on the relation between inputs and output (along with gestation time).</p></blockquote>
+Is "gestation time" proportional to the number of instructions in the sequence? (It occurs to me that if there's no cost to larger number of instructions then any number of instructions that don't affect the result might get stuffed in there.)
+
+<blockquote><p>I don’t think he gets too many points from proving that Avida was not IDiot proof.</p></blockquote>
+Yeah, cause anybody who calls a program idiot proof is probably underestimating the ingenuity of idiots.
+
+<blockquote><p>Check out the War of the Weasels in 2006.</p></blockquote>
+Weasels have wars? Who knew!?!
+
+Henry</div></div>
+<div class="comment" id="comment-325600"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 20 April 2014</p><div class="comment-body">Henry asked<blockquote>Is “gestation time” proportional to the number of instructions in the sequence?</blockquote>Gestation time is the number of instructions a critter executes to produce an offspring. However, how many computer cycles are required per update varies as a function of how many (and which) logic operations the critter performs and thereby earns cycles, so its not a simple relation. For a given sequence length, a critter can reproduce faster (in updates) given more cycles per update, which it earns by doing logic operations.</div></div>
+<div class="comment" id="comment-325602"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/UZTyNgIV2NoJdpo6Kaxq0gI.KQ--#90715</span> &middot; 20 April 2014</p><div class="comment-body">meh.  probably not half as much as Sal gets under your(pl) skins.  But Ewert, he doesn't get under your skin.  He's crawlin' inside your head.
+
+As is readily "observed", Ewert and mentor(s) are of a different, say of a more "dangerous" caliber.
+
+Ah, you must miss the good 'ole' days when all you had to do were swat amateurish flies.  Now real predators are lurkin'.
+
+Different animal, Dave.  Different animal.
+
+
+
+ <blockquote> Dave Thomas: A pathetic rebuttal IMHO. At least we’re getting under their skin!</blockquote></div></div>
+<div class="comment" id="comment-325604"><p class="comment-meta"><span class="comment-author">Salvador T Cordova</span> &middot; 20 April 2014</p><div class="comment-body"><p>RBH,</p><p>Profuse apologies for not getting around to releasing your comments at my website for 2 days at the CEU IDCS blog.  I actually didn't visit myself for 2 days.  I think the software should let you through now automatically, if it doesn't I'll have to figure out why.</p><p>The CEU forum is open to you if you want me to set you up an account I can arrange for it.  It is a very low traffic forum by design especially for scholars of your caliber.</p><p>Please accept my apologies again for the delay in releasing your comments there.  I hope you are well.</p></div></div>
+<div class="comment" id="comment-325607"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 21 April 2014</p><div class="comment-body"><blockquote>
+<strong>https://me.yahoo.com/a/UZTyNgIV2NoJdpo6Kaxq0gI.KQ--#90715 said:</strong>
+
+meh.  probably not half as much as Sal gets under your(pl) skins.  But Ewert, he doesn't get under your skin.  He's crawlin' inside your head.
+
+As is readily "observed", Ewert and mentor(s) are of a different, say of a more "dangerous" caliber.
+
+Ah, you must miss the good 'ole' days when all you had to do were swat amateurish flies.  Now real predators are lurkin'.
+
+Different animal, Dave.  Different animal.
+
+
+
+ <blockquote> Dave Thomas: A pathetic rebuttal IMHO. At least we’re getting under their skin!</blockquote>
+</blockquote>
+
+Eh? Mhy 'pathetic' comment was directed at Ewert/Dembski/Marks.  <b>They</b> are the ones claiming that "random chance" can solve the Steiner Problem when it clearly doesn't. They are solving a <i>different</i> problem and pretending that they've solved the Steiner.
+
+Yes, they still have a long road to travel to reach the pathetic depths of someone like Sal Cordova, but they are well on their way.</div></div>
+<div class="comment" id="comment-325608"><p class="comment-meta"><span class="comment-author">Patrick May</span> &middot; 21 April 2014</p><div class="comment-body"><blockquote>
+<strong>Scott F said:</strong>
+. . .
+
+Alternatively, the second GA might receive some feedback from the first, perhaps simulating the co-evolution of a pair of organisms: predator and prey, or parasite and host.  Again, the intent would be to demonstrate an evolutionary process where the "target" isn't known a priori.
+
+Perhaps one of those two scenarios was already tried?
+</blockquote>
+
+I don't know if this has been tried with Avida, but Schneider's ev, also mentioned in Ewert's paper, co-evolves binding sites and receptors.
+</div></div>
+<div class="comment" id="comment-325609"><p class="comment-meta"><span class="comment-author">Patrick May</span> &middot; 21 April 2014</p><div class="comment-body"><blockquote>
+<strong>https://me.yahoo.com/a/UZTyNgIV2NoJdpo6Kaxq0gI.KQ--#90715 said:</strong>
+
+meh.  probably not half as much as Sal gets under your(pl) skins.  But Ewert, he doesn't get under your skin.  He's crawlin' inside your head.
+
+As is readily "observed", Ewert and mentor(s) are of a different, say of a more "dangerous" caliber.
+
+Ah, you must miss the good 'ole' days when all you had to do were swat amateurish flies.  Now real predators are lurkin'.
+
+Different animal, Dave.  Different animal.
+
+</blockquote>
+
+Really?  It seems to me that it's the same old same old, taking potshots at science they don't fully understand without making any testable claims or providing any evidence themselves.
+
+It's too late for Dembski and Marks, but hopefully Ewert will recognize his folly while he still has a career to salvage.
+</div></div>
+<div class="comment" id="comment-325760"><p class="comment-meta"><span class="comment-author">Dale</span> &middot; 30 April 2014</p><div class="comment-body"><blockquote>
+<strong>Salvador T Cordova said:</strong>
+
+RBH,
+
+Profuse apologies for not getting around to releasing your comments at my website for 2 days at the CEU IDCS blog.  I actually didn't visit myself for 2 days.  I think the software should let you through now automatically, if it doesn't I'll have to figure out why.
+
+The CEU forum is open to you if you want me to set you up an account I can arrange for it.  It is a very low traffic forum by design especially for scholars of your caliber.  
+
+Please accept my apologies again for the delay in releasing your comments there.  I hope you are well.
+</blockquote>
+
+If only you would apologize for all the other stunts you have pulled over the years. Creationism is a lie and using it as a defense of Christianity on your lame blog makes it look worthless. You might as well by an atheist already, you hypocrite.</div></div>
+<div class="comment" id="comment-325761"><p class="comment-meta"><span class="comment-author">Dale</span> &middot; 30 April 2014</p><div class="comment-body"><blockquote>
+<strong>Salvador T Cordova said:</strong>
+
+RBH,
+
+Profuse apologies for not getting around to releasing your comments at my website for 2 days at the CEU IDCS blog.  I actually didn't visit myself for 2 days.  I think the software should let you through now automatically, if it doesn't I'll have to figure out why.
+
+The CEU forum is open to you if you want me to set you up an account I can arrange for it.  It is a very low traffic forum by design especially for scholars of your caliber.  
+
+Please accept my apologies again for the delay in releasing your comments there.  I hope you are well.
+</blockquote>
+
+If only you would apologize for all the other stunts you have pulled over the years. Creationism is a lie and using it as a defense of Christianity on your lame blog makes the religion itself look worthless. You might as well by an atheist already, you hypocrite. Until you own up to your lies, I will never trust you at all.</div></div>
+<div class="comment" id="comment-325763"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 30 April 2014</p><div class="comment-body"><blockquote>
+<strong>Scott F said:</strong>
+You had issued another challenge:
+<blockquote><p>
+Before moving on to our other Winners, I’m issuing a Second Challenge, again open to all: using whatever ID theory you need (Explanatory Filter, Design Inference, whatever), show how this theory can be applied to the above two solutions to determine which was actually designed (e.g. “real” Complex Specified Information (CSI)), and which was evolved (and thus in possession of only the “appearance” of CSI).
+
+Anyone can enter, but unlike the previous challenge, all contestants are asked to show their work...</p></blockquote>
+
+It's been over 7 years (!!) since then.  Can I assume that you haven't received a single response to your challenge?
+</blockquote>
+
+Various posters here at PT have issued similar challenges to the resident trolls on semi-regular occasions.  Basically, "here are a bunch of sequences. Tell us which ones were designed; show your work."  We never get an answer.  Design theory seems very good at describing what it can do, but not very good for actually doing it.
+
+<blockquote>It would be interesting to test Avida again, but to run two GA’s simultaneously. The first would run as before, but the second GA would run at a slower rate, and would evolve the target function. I’m imagining the second GA as simulating a slowly changing “environment”.</blockquote>
+
+You could also vary the speed at which the environment changes, and watch how an evolutionary heuristic starts to get worse at producing fitness with a higher pace of environmental change.  The random search heuristic will not be affected by rate of target change, so as the rate of target change is increased, the two heuristics start to produce equal - equally bad - fits.
+
+A nice thing about this test is that it would show that Dawkins' solutions and Dembski's claim of no solution are just extreme cases of a continuum: evolution is highly effective when the environment is stable (the Dawkins' weasel model), but would not be any better than random chance (Dembski's claim) if the environment was changing very rapidly in comparison to the organism's replication cycle.  Which is no comfort to IDers, since empirical observation indicates that we live in a world where the environment does not change radically and rapidly in comparison to organismal generational times.
+
+Now for a thought experiment. The fact that we live in a world where the environment is relatively stable may seem like a happy coincidence (I hear our trolls crying "designed!"), but it isn't. In the real world, critters can evolve <i>the pace of their generational change</i> too.  I would bet that if you added this feature, then you would find that selection favors organisms that keep their generational pace higher than the environmental change pace.  One way to think about this is that feedback loops between environment and organism allows for evolution to determine <i>how effective</i> evolution will be...and it will generally converge on a "fairly effective" result.  IOW natural selection operating on some primordial ecology can be expected to produce ecologies in which natural selection is effective!</div></div>
+<div class="comment" id="comment-325816"><p class="comment-meta"><span class="comment-author">u14006792</span> &middot; 1 May 2014</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:
+
+Besides, 26 instructions is downright verbose compared to what Mother Nature uses. She does all <i>her</i> work with DNA codons that can only create <a href="http://en.wikipedia.org/wiki/DNA_codon_table" rel="nofollow">22 proteins</a>.
+
+ 
+</strong></blockquote><strong>
+
+It was also mentioned in the article that DNA only consists of four base pairs. Yet DNA is considered one of the most complex things in biology as the mere order in which those base pairs are arranged can totally alter the appearance, genetic composition, personality, predisposition to diseases etc. of a human. Thus I think Ewert's logic that a larger number must equal a more complex system is slightly flawed.
+</strong></div></div>
+<div class="comment" id="comment-325820"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 1 May 2014</p><div class="comment-body"><blockquote>
+<strong>u14006792 said:</strong>
+Thus I think Ewert's logic that a larger number must equal a more complex system is slightly flawed.
+
+</blockquote>
+
+There is nothing wrong with developing a definition of complexity in which larger = more complex. After all, Shannon entropy has something like this property (though it doesn't technically measure complexity). The two issues ID confronts are (1) their definitions of complexity provide no reproducible heuristic for calculating it, and (2) whenever they do give a heuristic or mathematical formula (such as negative log probability), its fairly easy to show how nature could produce that complexity. Thus after 20 or so years, they have yet to come up with a definition that scientists outside their little circle can use to reproduce their conclusions about what is complex and what isn't, and they have yet to show any need for a designer to produce what they call complexity.</div></div>
+<div class="comment" id="comment-325823"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 1 May 2014</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+
+<blockquote>
+<strong>u14006792 said:</strong>
+Thus I think Ewert's logic that a larger number must equal a more complex system is slightly flawed.
+
+</blockquote>
+
+There is nothing wrong with developing a definition of complexity in which larger = more complex. After all, Shannon entropy has something like this property (though it doesn't technically measure complexity). The two issues ID confronts are (1) their definitions of complexity provide no reproducible heuristic for calculating it, and (2) whenever they do give a heuristic or mathematical formula (such as negative log probability), its fairly easy to show how nature could produce that complexity. Thus after 20 or so years, they have yet to come up with a definition that scientists outside their little circle can use to reproduce their conclusions about what is complex and what isn't, and they have yet to show any need for a designer to produce what they call complexity.
+</blockquote>
+
+Nor, I dare say, any description of how a designer can produce complexity. (All the designers that we know of work on .material which contributes to the product - is this true of the designers that ID discovers?) Is a designer either needed or sufficient for complexity?</div></div>
+<div class="comment" id="comment-325827"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 1 May 2014</p><div class="comment-body"><blockquote>
+<strong>TomS said:</strong>
+Nor, I dare say, any description of how a designer can produce complexity. (All the designers that we know of work on .material which contributes to the product - is this true of the designers that ID discovers?) Is a designer either needed or sufficient for complexity?
+</blockquote>
+
+Of the three problems, I find my (1) to be the worst.  That's because they run around issuing conclusions about what things are complex/designed.  A conclusion implies they either have a methodology or they didn't use one.  So, share it or quit claiming to have one.  Its not like science is asking Behe to <i>develop</i> a heuristic for determining the IC in flagella. We are basically just asking him to show us how he determined <i>twenty years ago</i> that the flagella has IC. 
+
+Its something like the Hooke-Newton cartoon Cosmos depicted in one of the earlier episodes (I make no claim that it's historically accurate, just that the vignette makes a good analogy for the Behe case): "I discovered it! But I can't tell you how to calculate orbits, Let me find my notes...." is what liars say. "I discovered it! You use 1/r^2 to calculate orbits, notes to follow" is what actual discoverers say. If Behe had a method for calculating IC, it would be trivial for him to tell us what it is.
+
+
+
+</div></div>
+<div class="comment" id="comment-325841"><p class="comment-meta"><span class="comment-author">Aceofspades25</span> &middot; 1 May 2014</p><div class="comment-body"><p>Aaah, Jeffrey Thomkins... The guy that wrote this gem of a paper:</p><p>http://legacy-cdn-assets.answersingenesis.org/contents/379/arj/v7/human_GULO_pseudogene.pdf</p><p>Possibly the most dishonest paper I've read.</p><p>See here for my critique (in the comments)</p><p>http://www.uncommondescent.com/human-evolution/evolutionary-convergence-saves-creationist-hypothesis-over-gulo/</p></div></div>
+<div class="comment" id="comment-325849"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 1 May 2014</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+Its something like the Hooke-Newton cartoon Cosmos depicted in one of the earlier episodes (I make no claim that it's historically accurate, just that the vignette makes a good analogy for the Behe case): "I discovered it! But I can't tell you how to calculate orbits, Let me find my notes...." is what liars say. "I discovered it! You use 1/r^2 to calculate orbits, notes to follow" is what actual discoverers say. If Behe had a method for calculating IC, it would be trivial for him to tell us what it is.
+</blockquote>
+
+Rather than, "I can't tell you ...", it is more like, "I feel no need to do like naturalists and obsess about piddling details."
+
+And I'd rather say it is the behavior of a salesforce.  "Chocolate frosted sugar bombs are the cereal for you." Don't ask what it means.
+</div></div>
+<div class="comment" id="comment-325851"><p class="comment-meta"><span class="comment-author">Alan Fox</span> &middot; 2 May 2014</p><div class="comment-body"><p>@ Aceofspades25</p><p>Excellent work!</p></div></div>
+<div class="comment" id="comment-325900"><p class="comment-meta"><span class="comment-author">AltairIV</span> &middot; 4 May 2014</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+
+Which is no comfort to IDers, since empirical observation indicates that we live in a world where the environment does not change radically and rapidly in comparison to organismal generational times.
+
+</blockquote>
+
+Well, except when a supervolcano erupts; or a giant comet hits; or a particularly clever species of ape breeds out of control, over-stresses the food chain, dumps its waste everywhere, tears everything up to build places to live, pulls gigatons of sequestered carbon out of the ground and pumps it into the air, and otherwise just generally makes a mess of things.  But yeah. :^)
+
+</div></div>
+<div class="comment" id="comment-325997"><p class="comment-meta"><span class="comment-author">Roy</span> &middot; 6 May 2014</p><div class="comment-body"><blockquote>The one I’m reminded of is the heritable luck factor in Niven’s Ringworld/Known Space novels. Except of course that it’s an example of artificial selection, since the Puppeteers purposefully bred it into humans.</blockquote>In Ringworld it's explained that the selection for luck was via human-introduced lotteries for breeding opportunities.
+
+Roy (DT challenge winner)</div></div>
+<div class="comment" id="comment-326048"><p class="comment-meta"><span class="comment-author">AltairIV</span> &middot; 7 May 2014</p><div class="comment-body"><blockquote>
+<strong>Roy said:</strong>
+
+<blockquote>The one I’m reminded of is the heritable luck factor in Niven’s Ringworld/Known Space novels. Except of course that it’s an example of artificial selection, since the Puppeteers purposefully bred it into humans.</blockquote>
+
+In Ringworld it's explained that the selection for luck was via human-introduced lotteries for breeding opportunities.
+
+Roy (DT challenge winner)
+</blockquote>
+
+Yes, and it was also revealed that it was the Puppeteers who were behind the changes to the laws that led to the lottery system.  Remember that the "cowardly" Puppeteers very rarely did anything overtly.  If I recall correctly, they wanted to breed luck (which in Niven's universe is a psychic ability to control probability) into humans as a counter-balance to more aggressive species like the Kzin, and a breeding lottery was the perfect way to institute such a selection.
+
+It also turns out that they sparked, or at least encouraged, the Man-Kzin wars as a way to weed out the more aggressive and irrational Kzin and make the species a bit more peaceful.  (Although that may have been added by some other author in <i>The Man-Kzin Wars</i> anthologies, and not by Niven himself.)
+
+Damn, now I want to go back and read the series again, not to mention whatever new ones that have come out since my last reading.  If only I didn't have several years' worth of books on the waiting list already...
+</div></div>
+<div class="comment" id="comment-326049"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 7 May 2014</p><div class="comment-body"><blockquote>
+<strong>AltairIV said:</strong>
+
+<blockquote>
+<strong>Roy said:</strong>
+
+<blockquote>The one I’m reminded of is the heritable luck factor in Niven’s Ringworld/Known Space novels. Except of course that it’s an example of artificial selection, since the Puppeteers purposefully bred it into humans.</blockquote>
+
+In Ringworld it's explained that the selection for luck was via human-introduced lotteries for breeding opportunities.
+
+Roy (DT challenge winner)
+</blockquote>
+
+Yes, and it was also revealed that it was the Puppeteers who were behind the changes to the laws that led to the lottery system.  Remember that the "cowardly" Puppeteers very rarely did anything overtly.  If I recall correctly, they wanted to breed luck (which in Niven's universe is a psychic ability to control probability) into humans as a counter-balance to more aggressive species like the Kzin, and a breeding lottery was the perfect way to institute such a selection.
+
+It also turns out that they sparked, or at least encouraged, the Man-Kzin wars as a way to weed out the more aggressive and irrational Kzin and make the species a bit more peaceful.  (Although that may have been added by some other author in <i>The Man-Kzin Wars</i> anthologies, and not by Niven himself.)
+
+Damn, now I want to go back and read the series again, not to mention whatever new ones that have come out since my last reading.  If only I didn't have several years' worth of books on the waiting list already...
+
+</blockquote>
+
+Good luck.  The conclusion is thrilling and surprising.  More than that I dare not say.</div></div>
+<div class="comment" id="comment-327208"><p class="comment-meta"><span class="comment-author">Wesley R. Elsberry</span> &middot; 3 June 2014</p><div class="comment-body"><p>Flint, the instruction set is handled as a list, and random selection of a new instruction is done by selection from the instruction set list. It is not bit-twiddling. See "GetRandomInst" in cInstSet.cc.</p><p>It is possible to use Avida for tasks unrelated to the usual manipulations of 32-bit input numbers. It required a good deal of retooling, though, and I don't think all of that has survived the various code changes since I left the DevoLab in 2009. I have an Avida fork that permits movement of digital organisms and accrual of merit based on the "concentration" of resources in the environment. My work at the time was based on a (mostly) static environment, but I was (and still am) interested in ramping that up to including both appetitive and aversive resources, plus having the resource gradients change over the runs. Where I had gotten to in 2009 was a demonstration that starting from an initial digital organism that only includes the self-replication functionality and an instruction set that is the usual Avida instruction set and virtual hardware with three additional instructions, populations do evolve gradient ascent programs. (The three added instructions are "move" to put the digital organism in the cell it is facing, "tumble" to randomly change the facing, and "sense-diff" that puts the difference in a selected resource concentration between the occupied cell and the faced celll in a register.) It's just tough putting aside time to work on these things.</p></div></div>
+<div class="comment" id="comment-327215"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 3 June 2014</p><div class="comment-body"><blockquote>
+<strong>AltairIV said:</strong>
+
+<blockquote>
+<strong>eric said:</strong>
+
+Which is no comfort to IDers, since empirical observation indicates that we live in a world where the environment does not change radically and rapidly in comparison to organismal generational times.
+
+</blockquote>
+
+Well, except when a supervolcano erupts; or a giant comet hits; or a particularly clever species of ape breeds out of control, over-stresses the food chain, dumps its waste everywhere, tears everything up to build places to live, pulls gigatons of sequestered carbon out of the ground and pumps it into the air, and otherwise just generally makes a mess of things.  But yeah. :^)
+</blockquote>
+
+Yup, and in those cases evolution can't keep pace and massive extinction results. Which is exactly what I said: "an evolutionary heuristic starts to get worse at producing fitness with a higher pace of environmental change."</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

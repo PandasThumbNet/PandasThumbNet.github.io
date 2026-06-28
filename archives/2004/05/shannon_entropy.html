@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shannon entropy applied — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Shannon entropy applied</h1><p class="post-meta">Posted 27 May 2004 by <span class="post-author">PvM</span></p><div class="post-body"><div class="kw-format"><h4 class="kw-heading" id="kw-Introduction-to-Shannon-entropy">Introduction to Shannon entropy</h4><p>Motivated by what I perceive to be a deep misunderstanding of the concept of entropy I have decided to take us onto a journey into the world of entropy. Recent confusions as to how to calculate entropy for mutating genes have will be addressed in some detail.</p><p>I will start with referencing Shannon’s seminal paper on entropy and slowly  expand the discussion to include the formulas relevant for calculating the  entropy in the genome.</p><p>But first some warnings</p><ul class="kw-list"><li><a href="http://www.lecb.ncifcrf.gov/~toms/information.is.not.uncertainty.html" rel="external ">Information Is Not Entropy, Information Is Not Uncertainty! </a>
+</li><li><a href="http://www.lecb.ncifcrf.gov/~toms/pitfalls.html" rel="external ">Pitfalls in information theory</a>
+</li></ul></div><section class="comments-section"><h2 class="comments-heading">7 Comments</h2>
+<div class="comment" id="comment-2994"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 28 May 2004</p><div class="comment-body">In <a href="http://www.warwick.ac.uk/~phscz/teach/px366/handout1.pdf">this handout</a> the same formula is derived starting from Boltzmann entropy
+
+S_B= k_b log W
+
+Where W refers to the number of microstates. 
+
+<blockquote><p>
+The entropy can also be related to the probability distribution that the system
+is in the ith state, written P_i.Consider a large system consisting of N_v subsystems.
+These subsytems might be particles, if we are interested in excitations in a crystal, or
+subvolumes if we are interested dilute gas particles in a box. Each of the subsytems can
+be in any one of several states, e.g. quantum states (particles) or occupied/unoccupied
+(subvolumes). The total number of ways of arranging N_v indistinguishable particles in
+one of two states is a result from the Binomial distribution
+
+W= N_v! /(N_v-n_1)!n_1!
+
+where N_v −n_1 is the number in the zeroth state and n_1 is the number in the first state.
+</p></blockquote>
+
+For an arbitrary number of states this becomes:
+
+W = N_v!/(n_1!n_2!n_3!...) and using the Stirling approximation we recover
+
+S = - k_b Sum p_i log p_i
+
+Simple. Well not really and this is where people tend to incorrectly apply entropy.
+</div></div>
+<div class="comment" id="comment-3024"><p class="comment-meta"><span class="comment-author">Erik 12345</span> &middot; 28 May 2004</p><div class="comment-body"><p>The following points cannot be emphasized forcefully enough:<br>1. <i>Every</i> quantity to which we can associate a probability distribution has its own Shannon entropy. Every time we see the term "Shannon entropy" we must therefore ask "Shannon entropy of <i>what</i>, i.e. to which quantity does this Shannon entropy refer?".<br>2. The Shannon entropy of a quantity is only as meaningful as the probabilities used to compute it. In the case when the quantity is a gene sequence, the probabilities may represent the researcher's subjective knowledge about the gene sequence of a particular individual. Another possibility is that the probabilities represent the relative frequencies with which particular gene sequences occur in a given population.<br>3. <i>There is nothing magical about weighted sums of logarithms that make them automatically relevant to the application you are interested in!</i> If there is to be any point in computing the Shannon entropy of a quantity, one must first figure out its significance for the particular application. For instance, communication engineers study the Shannon entropy of messages because it provides a lower bound on the number of data symbols that must be transmitted for messages to be fully recoverable at the receiving end. Proponents of Maximum Entropy Inference, on the other hand, take interest in Shannon entropies for a completely different reason, namely because they think the right way translate knowledge into probabilities is to choose, of all probability distributions consistent with what is known, the one that maximizes the Shannon entropy. It is unfortunate that the theoretical framework used by communication engineers, the philosophy of Maximum Entropy Inference, as well as other kinds of frameworks all claim to be named "Information Theory".</p><p>The last point should be reinforced by the existence of (infinitely many!) generalizations of the expression for the Shannon entropy. One such generalization is the Tsallis entropy. The Tsallis entropy of the quantity X, with the associated probability distribution p, is defined as</p><p>S(X; q) = (1 - SUM p(k)^q) / (q - 1).</p><p>With the choice q = 1 we recover the Shannon entropy of X (the expression looks mathematically nasty, since we divide by zero, but the limit is well-defined and equal to the Shannon entropy). Other choices of the value of q give other "entropies". Interdisciplinary researchers should ask themselves: "Assuming for the sake of the argument that an 'entropy' is relevant to my application, why is the relevant entropy the Tsallis entropy with q = 1 (aka 'Shannon entropy') rather than, say, the Tsallis entropy with q = 2.378?"</p><p>Excercise: Investigate Schneider's and Adami's articles with respect 1-3 above. The reader will find that their different answers to the questions raised in 1-3 are not entirely transparent in their papers (personally, I had to read Schneider's Ev paper several times). Bonus excercise: Is there any particular reason why Schneider should make use of the Tsallis entropy with the particular choice q = 1? Same question for Adami?</p></div></div>
+<div class="comment" id="comment-3031"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 28 May 2004</p><div class="comment-body"><p>Thanks for your comments Erik. I have to admit that I am not familiar with "Tsallis entropy" but some searching uncovered an interesting issue indeed.</p><p><a href="http://www.santafe.edu/sfi/publications/Bulletins/bulletinFall00/features/tsallis.html">Tsallis Entropy</a></p><p>As I understand, the reason for chosing q=1 is that Tsallis entropy is only additive for q=1.</p></div></div>
+<div class="comment" id="comment-3034"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 28 May 2004</p><div class="comment-body"><p>In addition the probability distribution function for q=1 seems to be Gaussian while the probability distribution for the Tsallis entropy can be used in cases where the probability distribution functions have different tails.</p><p>Although I understand that a transformation exists which turns Tsallis into additive entropy, or Renyi entropy</p><p>However for Tsallis entropy we find</p><p>S(AB:q)= S(A:q)+S(B:q)+(1-q)S(A:q)S(B:q)</p></div></div>
+<div class="comment" id="comment-3050"><p class="comment-meta"><span class="comment-author">Erik 12345</span> &middot; 28 May 2004</p><div class="comment-body"><blockquote><p>: As I understand, the reason for chosing q=1 is that Tsallis entropy is only additive for q=1.</p><cite>— Pim van Meurs</cite></blockquote>
+That, of course, immediately raises another question: Why is additivity so essential? Or is it?
+
+The communication theorist is interested in obtaining useful theoretical limits for the efficiency of data transmission and could not care less whether a function that provides such a bound is additive or not. It just so happens that the most famous such bound, the Shannon entropy, is additive, but this additivity is not the reason for the communication theorist's interest.
+
+The supporter of Maximum Entropy Inference has in one way or another been convinced that of all probability distributions consistent with what you know, the one that maximizes the Shannon entropy is the rational choice. Some of the arguments in favour of this position starts with the stipulation that the probability distribution of rational choice should maximize "unbiasedness" or "uncertainty", and then it is postulated that any "unbias measure" or "uncertainty measure" should satisfy certain desiderata, of which additivity may be one. For the supporters of Maximum Entropy Inference that became convinced by such arguments, it probably is important not to violate additivity. (Although I note that some Tsallis entropy enthusiasts prefer to generalize the Maximum Entropy Inference philosophy to maximize Tsallis entropy instead of Shannon entropy.)
+
+The bottom line is that whether or not additivity is important depends entirely on what you are trying to do. The many publications on Tsallis entropy indicate that not all researchers find additivity essential for all problems.
+<blockquote><p>: In addition the probability distribution function for q=1 seems to be Gaussian while the probability distribution for the Tsallis entropy can be used in cases where the probability distribution functions have different tails.</p><cite>— Pim van Meurs</cite></blockquote>
+The Tsallis can be computed for any probability distribution, so I assume that you are here specifically referring to the probability distributions which maximize the Tsallis entropy. The probability distribution that maximizes the Tsallis entropy for q = 1, subject to the constraint that certain expectation values must take on given values, is an exponentional distribution similar to the Maxwell-Boltzmann distribution (although it isn't restricted to thermodynamic quantities, of course), not a Gaussian. Changing the exponential in that distribution to something called a q-exponential will give you the probability distribution that maximizes the general Tsallis entropy, subject to the same constraints. (A Gaussian probability distribution does maximize a continuous version of the Shannon entropy, subject to the constraint that the variance should take on a given value.)
+
+It is unclear to me why you regard the form of the probability distributions that maximize (subject to certain constraints) the Tsallis entropy with q != 1 as an argument in favour of the choice q = 1. In any case, my reason for mentioning the Tsallis entropy is not to convince people to change from q = 1 to some other choice. Rather, I want people to evaluate the use of Shannon entropy on a case-by-case basis with attention to the significance (or lack thereof) of the Shannon entropy of a quantity in the particular application. There seems to be fairly widespread, tacit assumption that the Shannon entropy is somehow almost universally relevant no matter what the application is. Knowing that there are infinitely many other entropies may help to challenge that assumption.
+
+Misc: The Rényi entropy is indeed additive, as you note. There is a sign error in the last term in your equation expressing the non-additivity of the Tsallis entropy.</div></div>
+<div class="comment" id="comment-3051"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 28 May 2004</p><div class="comment-body"><p>Erik got me thinking, in fact another assumption made was that the nucleotides were uncorrelated. This does not seem to be a very good approximation and I wonder if other entropy forms would 'work better'.</p><p><refs><br>Bioinformatic Principles Underlying the Information Content of Transcription Factor Binding Sites Jan Kim, Thomas Martinetz and Daniel Polani, Journal of theoretical Biology 2003 (220) 529-544)<br></li></refs></p><p>This paper addresses some additional issues with Rseq and Rfreq.</p></div></div>
+<div class="comment" id="comment-3070"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 28 May 2004</p><div class="comment-body"><p>Erik: The bottom line is that whether or not additivity is important depends entirely on what you are trying to do.</p><p>Your words of warning are well taken and in fact I appreciate you pointing out to me one of the many facts of entropy I have yet to become aware of.</p><p>As far as additivity is concerned, while under certain circumstances I can see why this may be of less interest, for an uncorrelated genome it certainly seems to make sense. I am wondering though if the same holds for a genome where nucleotide sequences are correlated.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

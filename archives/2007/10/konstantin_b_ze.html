@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multiple codes in DNA — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Multiple codes in DNA</h1><p class="post-meta">Posted 8 October 2007 by <span class="post-author">PvM</span></p><div class="post-body">In an earlier posting, I promised to provide an overview of alternative codes in DNA. Such examples include alternative splicing and alternative reading frames (ARFs) which I will discuss here
+
+The classical view of DNA was straightforward, DNA gets transcribed into RNA, introns get removed and the resulting exons form a protein. Exons are coding sequences in genes, introns are pieces of DNA/RNA that interrupt exons. The first step involves RNA synthesis (transcription) where the DNA is transcribed into RNA and exons and introns are still present, the next step is RNA splicing where introns are being removed. Alternative splicing causes different exons to be combined into messenger RNA (mRNA). These mRNA are translated into proteins in a step called protein synthesis.
+
+<form mt:asset-id="7" class="mt-enclosure mt-enclosure-image"><img alt="tradgene.jpg" src="http://pandasthumb.org/images/tradgene.jpg" width="370" height="317" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;"/></form>
+
+Alternative splicing involves different exons and result in different proteins from the same gene
+
+<form mt:asset-id="6" class="mt-enclosure mt-enclosure-image"><img alt="altsplice.jpg" src="http://pandasthumb.org/images/altsplice.jpg" width="391" height="259" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;"/></form>
+
+<a href="http://publications.nigms.nih.gov/thenewgenetics/thenewgenetics.pdf">Source: The New Genetics</a> NIH Publication No. 07-662
+
+Alternative reading frames (ARFs) are overlapping stretches of DNA which encode for different proteins. 
+Alternative reading frames are offset +1 or +2 and read in the same direction. 
+
+In general there are <a href="http://www.ebi.ac.uk/2can/tutorials/transcription.html">6 reading frames</a>
+
+<blockquote><p>Once the RNA has been transcribed, it travels from the DNA template to the ribosome on the endoplasmic reticulum to be translated for protein synthesis. Each 3 bases in the RNA sequence codes for 1 amino acid. As you may not be sure what position to start at when predicting what protein sequence may be produced by this code, you could start with one of 3 positions from either end of the RNA sequence. Thus there are 6 possible predicted protein sequences resulting from such a piece of code. These are known as the 6 possible reading frames. There are 3 forward frames and 3 reverse sense frames.</p></blockquote>
+
+
+Let's perform an example
+
+Assume you have just found a new stretch of DNA and you need to determine where to find an Open Reading Frame (ORF). An open reading frame starts with an atg (Met) in most species and ends with a stop codon (taa, tag or tga). 
+
+<blockquote><p>
+5'  TCAATGTAACGCGCTACCCGGAGCTCTGGGCCCAAATTTCATCCACT  3'
+</p></blockquote>
+
+There are six possible interpretations, from right to left and left to right and with an offset of 0, 1 and 2.
+
+<a href="http://workbench.sdsc.edu/">Biology WorkBench</a> is a tool which allows you to enter DNA sequences and find the ORF which has the longest frame.
+
+Frame 1 start from left to right with zero offset
+
+<blockquote><p>
+S  M *  R  A  T  R  S  S  G  P  K  F  H  P<br />
+tca<u>atg</u><b>taa</b>cgcgctacccggagctctgggcccaaatttcatccact
+</p></blockquote>
+
+Note the <u>atg</u> which is a start codon and <b>taa</b> which is a stop codon
+
+Frame 2, offset 1
+
+<blockquote><p>
+ Q  C  N  A  L  P  G  A  L  G  P  N  F  I  H <br />
+caatgtaacgcgctacccggagctctgggcccaaatttcatccact 
+</p></blockquote>
+
+No start or stop codon
+
+Frame 3, offset 2
+
+<blockquote><p>
+N  V  T  R  Y  P  E  L  W  A  Q  I  S  S  T<br />
+aatgtaacgcgctacccggagctctgggcccaaatttcatccact  47
+</p></blockquote>
+
+No start or stop codon
+
+Frame 4, right to left zero offset
+<blockquote><p>
+S  G  *  N  L  G  P  E  L  R  V  A  R  Y  I<br />
+agtgga<b>tga</b>aatttgggcccagagctccgggtagcgcgttacattga
+</p></blockquote>
+
+One stop codon, no start codon
+
+Frame 5, right to left one offset
+<blockquote><p>
+V  D  E  I  W  A  Q  S  S  G  *  R  V  T  L<br />
+gtggatgaaatttgggcccagagctccggg<b>tag</b>cgcgttacattga 
+</p></blockquote>
+
+One stop codon, no start codon
+
+Frame 6, right to left two offset
+
+<blockquote><p>
+   W  M  K  F  G  P  R  A  P  G  S  A  L  H  *<br />
+tgg<u>atg</u>aaatttgggcccagagctccgggtagcgcgttacat<b>tga</b>
+</p></blockquote>
+
+The sixth ORF is the longest one.
+
+In "A First Look at ARFome: Dual-Coding Genes in Mammalian Genomes", Chung et al, show that dual coding genes are not as rare in mammals as initially expected.
+
+<blockquote><p>Coding of multiple proteins by overlapping reading frames is not a feature one would associate with eukaryotic genes. Indeed, codependency between codons of overlapping protein-coding regions imposes a unique set of evolutionary constraints, making it a costly arrangement. Yet in cases of tightly coexpressed interacting proteins, dual coding may be advantageous. Here we show that although dual coding is nearly impossible by chance, a number of human transcripts contain overlapping coding regions. Using newly developed statistical techniques, we identified 40 candidate genes with evolutionarily conserved overlapping coding regions. Because our approach is conservative, we expect mammals to possess more dual-coding genes. Our results emphasize that the skepticism surrounding eukaryotic dual coding is unwarranted: rather than being artifacts, overlapping reading frames are often hallmarks of fascinating biology.
+</p></blockquote>
+
+Remember this paper which was <a href="http://www.pandasthumb.org/archives/2007/06/luskin_dualcodi.html">quote-mined by Casey Luskin</a>?
+
+The paper shows the following figure (click to enlarge) which is Figure 2 in the original paper)
+
+<form mt:asset-id="1" class="mt-enclosure mt-enclosure-image"><a href="http://pandasthumb.org/archives/ARF1.html"><img src="http://pandasthumb.org/assets_c/2007/10/ARF-thumb-300x87.jpg" width="300" height="87" alt="ARF.jpg" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></form>
+
+Notice how there is and ORF and an ARF, where ORF is the larger reading frame and ARF a subset, both ORF and ARF have a start and stop codon.
+
+<b>Addition</b>
+
+The ENCODE project proposes a new definition of gene
+
+<form mt:asset-id="8" class="mt-enclosure mt-enclosure-image"><a href="http://pandasthumb.org/images/def_gene.html"><img src="http://pandasthumb.org/images/def_gene-thumb-400x286.jpg" width="400" height="286" alt="def_gene.JPG" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></form>
+
+<blockquote><p>
+Figure 5. How the proposed definition of the gene can be applied to a sample case. A genomic region produces three primary transcripts. After alternative splicing, products of two of these encode five protein products, while the third encodes for a noncoding RNA (ncRNA) product. The protein products are encoded by three clusters of DNA sequence segments (A, B, and C; D; and E). In the case of the three-segment cluster (A, B, C), each DNA sequence segment is shared by at least two of the products. Two primary transcripts share a 5 untranslated region, but their translated regions D and E do not overlap. There is also one noncoding RNA product, and because its sequence is of RNA, not
+protein, the fact that it shares its genomic sequences (X and Y) with the protein-coding genomic segments A and E does not make it a co-product of these protein-coding genes. In summary, there are
+four genes in this region, and they are the sets of sequences shown inside the orange dashed lines: Gene 1 consists of the sequence segments A, B, and C; gene 2 consists of D; gene 3 of E; and gene 4 of X and Y. In the diagram, for clarity, the exonic and protein sequences A  have been lined up vertically, so the dashed lines for the spliced transcripts and functional products indicate connectivity between the proteins sequences (ovals) and RNA sequences (boxes). (Solid boxes on transcripts) Untranslated sequences, (open boxes) translated sequences.
+</p></blockquote>
+
+Mark B. Gerstein, Can Bruce, Joel S. Rozowsky, Deyou Zheng, Jiang Du, Jan O. Korbel, Olof Emanuelsson, Zhengdong D. Zhang, Sherman Weissman, and Michael Snyder What is a gene, post-ENCODE? History and updated definition Genome Res., Jun 2007; 17: 669 - 681.</div><section class="comments-section"><h2 class="comments-heading">81 Comments</h2>
+<div class="comment" id="comment-131015"><p class="comment-meta"><span class="comment-author">Bond, James Bond, Bornagain77</span> &middot; 8 October 2007</p><div class="comment-body"><p>Thanks for bringing this topic up PvM<br>But To give a little more background to the Complexity of Human Genome let's look at the ENCODE work:</p><p>In a group paper published in the June 14, 2007 issue of Nature and in 28 companion papers published in the June issue of Genome Research, the ENCyclopedia Of DNA Elements (ENCODE) consortium, which is organized by the National Human Genome Research Institute (NHGRI), part of the National Institutes of Health (NIH), reported results of its exhaustive, four-year effort to build a parts list of all biologically functional elements in 1 percent of the human genome. Carried out by 35 groups from 80 organizations around the world, the research served as a pilot to test the feasibility of a full-scale initiative to produce a comprehensive catalog of all components of the human genome crucial for biological function. The ENCODE consortium's major findings include the discovery that the majority of DNA in the human genome is transcribed into functional molecules, called RNA, and that these transcripts extensively overlap one another. This broad pattern of transcription challenges the long-standing view that the human genome consists of a relatively small set of discrete genes, along with a vast amount of so-called junk DNA that is not biologically active. The new data indicate the genome contains very little unused sequences and, in fact, is a complex, interwoven network. In this network, genes are just one of many types of DNA sequences that have a functional impact.<br>The revelation of a complex interwoven network is a major blow to evolutionists. Now bear in mind, this is only a “feasibility study” of 1% of the Genome. The interwoven complexity is sure to be multiplied exponentially as the effort extends to decipher the remaining 99% of the DNA. This preliminary study, of how DNA is actually encoded, clearly indicates that most, if not the entire 100%, of the DNA is “poly-functional”. Poly-functional simply means the DNA exhibits extreme data compression in its character. “Poly-functional” DNA sequences will exhibit several different meanings on several different levels. For instance, if you were to write a (very large) book similar to the DNA code, you could read many parts of the book normally and it would have one meaning, you could read the same parts of the book backwards and it would have another completely understandable meaning. Yet then again, a third equally coherent meaning would be found by reading every other letter of the same parts. A fourth level of meaning could be found by using a simple encryption program to get yet another meaning. A fifth and sixth level of meaning could be found in the way you folded the parts of the book into specific two and three dimensional shapes. Please bear in mind, this is just the very beginning of the mind bending complexity scientists are finding in the DNA code. Indeed, a study by Trifonov in 1989 has shown that probably all DNA sequences in the genome encrypt for up to 12 different codes of encryption!! No sentence, paragraph, book or computer program man has ever written comes close to that staggering level of poly-functional encryption we find in the DNA code of man. Here is a quote on the poly-functional nature of the DNA from renowned Cornell Geneticist and inventor Dr. John Sanford from his landmark book, “Genetic Entropy”:<br> There is abundant evidence that most DNA sequences are poly-functional, and therefore are poly-constrained. This fact has been extensively demonstrated by Trifonov (1989). For example, most human coding sequences encode for two different RNAs, read in opposite directions i.e. Both DNA strands are transcribed ( Yelin et al., 2003). Some sequences encode for different proteins depending on where translation is initiated and where the reading frame begins (i.e. read-through proteins). Some sequences encode for different proteins based upon alternate mRNA splicing. Some sequences serve simultaneously for protein-encoding and also serve as internal transcriptional promoters. Some sequences encode for both a protein coding, and a protein-binding region. Alu elements and origins-of-replication can be found within functional promoters and within exons. Basically all DNA sequences are constrained by isochore requirements (regional GC content), “word” content (species-specific profiles of di-, tri-, and tetra-nucleotide frequencies), and nucleosome binding sites (i.e. All DNA must condense). Selective condensation is clearly implicated in gene regulation, and selective nucleosome binding is controlled by specific DNA sequence patterns - which must permeate the entire genome. Lastly, probably all sequences do what they do, even as they also affect general spacing and DNA-folding/architecture - which is clearly sequence dependent. To explain the incredible amount of information which must somehow be packed into the genome (given that extreme complexity of life), we really have to assume that there are even higher levels of organization and information encrypted within the genome. For example, there is another whole level of organization at the epigenetic level (Gibbs 2003). There also appears to be extensive sequence dependent three-dimensional organization within chromosomes and the whole nucleus (Manuelides, 1990; Gardiner, 1995; Flam, 1994). Trifonov (1989), has shown that probably all DNA sequences in the genome encrypt multiple “codes” (up to 12 codes).<br>Dr. John Sanford (PhD in Genetics; inventor of the biolistic “gene gun” process! Holds over 25 patents! If you ate today you probably ate some food that has been touched by his work in manipulating the genetics of food crops!)<br> Though the ENCODE consortium is about to undertake the task of deciphering the remaining 99% of the humane genome, I firmly believe that they, and all their super-computers, are soon to be dwarfed by the sheer and awesome complexity at which that much required information is encoded into the three billion letters of the DNA code of man. As a sidelight to this, it takes the most powerful super-computer in the world an entire year just to calculate how a single 100 amino acid protein sequence will fold into a 3-dimensional shape from its 1-dimensional starting point. Needless to say, this impressive endeavor by ENCODE to decipher the entire genome of man will be very, very interesting to watch. Hopefully ENDODE’s research will enable doctors to treat a majority of the over 3500 genetic diseases (mutational disorders) that afflict man without having to fully understand that much apparent complexity in the DNA of man.</p><p>How's that for a Theistic prediction for ID?</p></div></div>
+<div class="comment" id="comment-131016"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body"><p>It's neither a prediction nor relevant to ID. So let's address some of your misconceptions. These multiple coding levels in DNA are in many cases neither unexpected, nor a problem for evolutionary theory. Now I understand that complexity may seem to ID creationist to be an insurmountable problem, but that does not mean that these are problems for evolutionary theory.</p><p>For instance, the alternative splicing allows new proteins to be encoded without affecting the original protein. In other words, just like gene duplication, alternative splicing allows new information to be added to the genome. In fact, research already suggests some correlations between gene duplication and alternative splicing.</p><p>Gene duplication is not only an excellent source of new genetic information but also lies at the foundation of the evolution of scale free networks.<br>Scale free networks are both robust and highly evolvable. Sounds contradictory doesn't it. Science however has shown that contrary to 'common sense' the 'devil' is in the details.</p><p>Sanford's book is neither a landmark book nor particularly relevant and cut-and-pasting your comments does not help you case. Yes, in addition to these alternative reading and splicing, there are other ways to add information to the genome. Of course, you nor Sanford have really shown that this is a problem and I have shown in several comments and postings how these multiple levels of coding hardly need to be problematic.</p><p>Are you willing to discuss these findings or is this yet another hit and run posting?</p><p>Is that the Christian way to resolve these issue?</p></div></div>
+<div class="comment" id="comment-131017"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body">As Carporale explains
+
+<blockquote><p>A nucleotide sequence can encode more information than that of a single protein coding sequence. This is illustrated by many examples (Trifonov 1989, Normark et al. 1983), from the overlap of codons of two prokaryotic viral genes (Sanger et al. 1977), to the presence of sequences regulating gene expression within the protein coding region of eukaryotic genes (Ficzycz et al, 1997).
+
+The degeneracy of the genetic code allows additional information to be transmitted through the protein coding region of the gene (Caporale, 1984). A protein coding sequence evolves under selective pressure to encode more optimal amino acids at a given position. The degeneracy of the code gives the underlying nucleotide sequence the flexibility to evolve to encode information that increases the likelihood of genetic alteration at those sites at which variation could create a new useful function, and decreases the likelihood of alteration at those sites at which variation would disturb the active scaffold or other essential residues.</p></blockquote>
+
+It is the degeneracy of the genetic code which allows the genetic code to carry additional information. In other words, the degeneracy which provides robustness to the genome also provides for evolvability.
+
+I do not yet have access to the Trifonov 1998 paper (do you?) but I have found a very similar paper 
+
+E. N. Trifonov
+Interfering contexts of regulatory sequence elements
+Bioinformatics Volume 12, Number 5 Pp. 423-429, 1996
+
+
+
+<blockquote><p>
+MOTIVATION: Although one would normally expect a given regulatory element to perform best when it fully matches its consensus sequence, this is generally far from being the case. Usually, almost none of the actual sites fits the consensus exactly, and some of those that do fit do not perform well. The main reason for that is the very nature of the sequences and the messages (codes) they contain. Normally, any given stretch of the sequence with one or another regulatory site not only carries this regulatory message, but several more messages of various types as well. These messages overlap with the regulatory element in such a way that the letter (base) which actually appears in any given sequence position simultaneously belongs to one or more additional codes. Apart from numerous individual codes (sequence patterns) specific for a given species or gene, there are many different general (universal) sequence codes all interacting with one another. These are the classical triplet code, DNA shape code, chromatin code, gene splicing code, modulation code and many more, including those that have not yet been discovered. Examples of overlapping of different codes and their interaction are discussed, as well as the role of degeneracy of the codes and the sequence complexity as a function of code density.
+</p></blockquote>
+
+PS: When you mention that DNA can encode for up to 12 different codes, one should make it clear that these 12 different codes seldomly occur for the same stretch of the genome. Actually, the overlap of codes was an evolutionary prediction made in 1968 by Holliday. Doolittle used the term 'molecular opportunism' to describe crystallins (eye lens proteins) which serve as different enzymes in different tissues, unrelated to the eye...
+</div></div>
+<div class="comment" id="comment-131018"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 8 October 2007</p><div class="comment-body"><p>If I follow PvM's post correctly, the whole multiple codes stuff is perfectly consistent with evolution but NOT with ID. ID chaps are always inferring by analogy, particularly to human design and human programs - and humans don't write code like DNA. We write lines that have a single meaning. A blind process, however, that is simply picking up bits of code that it finds improves itself, would have no problem with picking up a dual coding system.</p></div></div>
+<div class="comment" id="comment-131021"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body">
+<blockquote>
+<strong>Venus Mousetrap:</strong>
+
+If I follow PvM's post correctly, the whole multiple codes stuff is perfectly consistent with evolution but NOT with ID. ID chaps are always inferring by analogy, particularly to human design and human programs - and humans don't write code like DNA. We write lines that have a single meaning. A blind process, however, that is simply picking up bits of code that it finds improves itself, would have no problem with picking up a dual coding system.
+</blockquote>
+
+Of course, anything is consistent with ID since it predicts really nothing. If however ID is that which cannot be explained by evolutionary theory then it is clear that these multiple codes are not really relevant to ID since it neither explains them nor can it prevent science from exploring explanations.
+
+In the end, all it comes down to is: Look at this 'complexity' which needs an explanation, and the 'best' explanation is 'design', whatever that may mean. As I have shown, design has no real meaning in ID either, only through conflation can ID pretend to have a case.</div></div>
+<div class="comment" id="comment-131022"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body"><p>See addition to my original posting for ENCODE's perspective</p></div></div>
+<div class="comment" id="comment-131026"><p class="comment-meta"><span class="comment-author">Dan Gaston</span> &middot; 8 October 2007</p><div class="comment-body">
+<blockquote>
+<strong>Venus Mousetrap:</strong>
+
+If I follow PvM's post correctly, the whole multiple codes stuff is perfectly consistent with evolution but NOT with ID. ID chaps are always inferring by analogy, particularly to human design and human programs - and humans don't write code like DNA. We write lines that have a single meaning. A blind process, however, that is simply picking up bits of code that it finds improves itself, would have no problem with picking up a dual coding system.
+</blockquote>
+
+I just wanted to say that in terms of evolution it doesn't even have to be an improvement for that "pick-up" to remain, it just can't be too detrimental. An important distinction frequently overlooked.</div></div>
+<div class="comment" id="comment-131028"><p class="comment-meta"><span class="comment-author"><a href="http://tinyfrog.wordpress.com" rel="nofollow">tinyfrog</a></span> &middot; 8 October 2007</p><div class="comment-body">While this doesn't address BornAgain77's post directly, it would be nice if he would better identify which sections of his post were original, rather than plagiarized.
+
+For example, his comment block:
+<blockquote>In a group paper published in the June 14, 2007 issue of Nature and in 28 companion papers published in the June issue of Genome Research, the ENCyclopedia Of DNA Elements (ENCODE) consortium, which is organized by the National Human Genome Research Institute (NHGRI), part of the National Institutes of Health (NIH), reported results of its exhaustive, four-year effort to build a parts list of all biologically functional elements in 1 percent of the human genome. Carried out by 35 groups from 80 organizations around the world, the research served as a pilot to test the feasibility of a full-scale initiative to produce a comprehensive catalog of all components of the human genome crucial for biological function.  The ENCODE consortium'Âs major findings include the discovery that the majority of DNA in the human genome is transcribed into functional molecules, called RNA, and that these transcripts extensively overlap one another. This broad pattern of transcription challenges the long-standing view that the human genome consists of a relatively small set of discrete genes, along with a vast amount of so-called junk DNA that is not biologically active. The new data indicate the genome contains very little unused sequences and, in fact, is a complex, interwoven network. In this network, genes are just one of many types of DNA sequences that have a functional impact.</blockquote>
+
+Comes directly from here: http://www.cbse.ucsc.edu/news/2007/06/13/encode_pilot/index.shtml
+</div></div>
+<div class="comment" id="comment-131030"><p class="comment-meta"><span class="comment-author">richCares</span> &middot; 8 October 2007</p><div class="comment-body"><p>BornAgain77 identifies himself as a born again, therefore it is natural for him to lie and plagerize, that's what a good Christian does. Quite simple, really. Irember one christian that didn't lie, but he died.</p></div></div>
+<div class="comment" id="comment-131032"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body"><blockquote><p>I just wanted to say that in terms of evolution it doesn’t even have to be an improvement for that “pick-up” to remain, it just can’t be too detrimental. An important distinction frequently overlooked.</p></blockquote>
+
+Yes, such as near-neutral mutations or detrimental mutations which can become fixated by chance in small populations.
+
+Understanding that evolution includes a multitude of effects makes speaking of neutral and beneficial only mutations evolving, a caricature of evolutionary science. 
+Sadly enough, creationists will quickly quote mine this to show that evolution is devolution</div></div>
+<div class="comment" id="comment-131034"><p class="comment-meta"><span class="comment-author">Bond, James Bond, Bornagain77</span> &middot; 8 October 2007</p><div class="comment-body"><p>I respectfully disagree with you PvM,</p><p>Contrary to what you now seem to be claiming, Evolutionary thought was completely blindsided by the revelation that the genome carries very little unused sequences,,,for you to deny that this was/is very problematic to RM/NS is, to put it mildly, glossing over a severe mis-prediction of the Darwinian camp...Whereas, you well know, many prominent IDers predicted that the junk DNA would be found to have function! Indeed,,the level of complexity even surpassed many ID proponents predictions and really only fits into the specific Theistic predictions made for ID... As for myself, I remember very well being chastised by your guest on this very blog, last spring, for predicting that the genome would be found to have virtually 100% functionality!!! (I was pressed by one of your guest for a specific prediction that ID makes and I quoted 100% functionality!) I was vindicated in short order when the ENCODE paper came out a short while later.</p><p>Your are a good PR man with a lot of talent for spin PvM, and I'm sure you will find a way to deny that Intelligence is required to explain this complexity in the Genome.... But believe me when I predict this following prediction PvM...The complexity that will be found in the remaining 99% of the genome will far, far surpass in complexity what we are looking at right now!!!!!!! If you are a betting man PvM, this is sure money, so if I were you I would hedge my bets against any of your evolutionary predictions!!!! You don't want to be burned this badly again!</p><p>By the way...I'm not perfect by any means...Just forgiven!!!</p></div></div>
+<div class="comment" id="comment-131035"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 8 October 2007</p><div class="comment-body"><blockquote>Whereas, you well know, many prominent IDers predicted that the junk DNA would be found to have function!</blockquote>
+And yet, they can not explain why the pufferfishes of the family Tetraodontidae have been so successful with so little "Junk DNA"</div></div>
+<div class="comment" id="comment-131036"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body"><blockquote><p>
+Contrary to what you now seem to be claiming, Evolutionary thought was completely blindsided by the revelation that the genome carries very little unused sequences,,,for you to deny that this was/is very problematic to RM/NS is, to put it mildly, glossing over a severe mis-prediction of the Darwinian campâ¦Whereas, you 
+</p></blockquote>
+
+Again, the predictions of junk were not Darwinian predictions as much as explanations leading neutralists to make their claims. Were the findings of ENCODE surprising, sure, I believe that the work showed that increased scientific scrutiny will help us better understand what is going on. 
+
+Btw, I assume that you are also familiar with the pseudogenes detected by the ENCODE project. Since you seem to be so enamoured by its findings, I am sure you can appreciate these evolutionary relics.
+
+
+<blockquote><p>well know, many prominent IDers predicted that the junk DNA would be found to have function! Indeed,,the level of complexity even surpassed many ID proponents predictions and really only fits into the specific Theistic predictions made for IDâ¦ As for myself,
+</p></blockquote>
+
+Nonsense. ID never predicted complexity. Complexity in ID speak is a measure of ignorance. Did you not know? As to theistic predictions, they lack any scientific foundations. While theists may find the fact that less of the genome is junk, the presence of pseudogenes and other junk still seems to bother them. But why...
+
+
+<blockquote><p> I remember very well being chastised by your guest on this very blog, last spring, for predicting that the genome would be found to have virtually 100% functionality!!! (I was pressed by one of your guest for a specific prediction that ID makes and I quoted 100% functionality!) I was vindicated in short order when the ENCODE paper came out a short while later.
+</p></blockquote>
+
+Again you are wrong, the ENCODE paper does not claim 100%
+
+<blockquote><p>
+Your are a good PR man with a lot of talent for spin PvM, and Iâm sure you will find a way to deny that Intelligence is required to explain this complexity in the Genomeâ¦. But believe me when I predict this following prediction PvMâ¦The complexity that will be found in the remaining 99% of the genome will far, far surpass in complexity what we are looking at right now!!!!!!! If you are a betting man PvM, this is sure money, so if I were you I would hedge my bets against any of your evolutionary predictions!!!! You donât want to be burned this badly again!
+</p></blockquote>
+
+Again, anyone familiar with the science will know that many of these were predicted by evolutionary science. It was evolutionary science which discovered these additional levels of encodings, it was evolutionary science who is using these new data to show how evolution happened. Remember the Cambrian? It now seems that it was the existence of hox genes, duplication of said hox genes and the evolution of regulatory genes which is the best explanation for the Cambrian. Since the early 90's much has changed that allows science to explain the Cambrian explosion. You would not get this from reading ID literature.
+
+I myself have been looking at neutrality, evolvability and scale free networks for more than a decade now and it pleases me to find that science is uncovering more and more that the many networks in nature are indeed scale free, and share similar motifs. This shows not only a common origin/process but also helps understand why evolution has been so succesful. Complexity, as found in the genome is indeed fascinating, but lets not confuse the term complexity with how ID uses it.
+
+Surely you are familiar with ID's definition of complexity? Or are you? Will you finally present us with what you believe is the definition of complexity in ID speak?
+
+In the mean time, science has shown how evolutionary theory explains the evolution of complexity and information in nature. What has ID done so far? Other than claiming it made 'predictions' where these predictions are not only oversold but also have little or no relevance to the foundations of ID. As far as complexity being a prediction of theism, I find that hard to believe, since simplicity is the virtue of a good designer.
+
+<blockquote><p>
+By the wayâ¦Iâm not perfect by any meansâ¦Just forgiven!!! </p></blockquote>
+
+Does that mean you can lie and misrepresent without repercussion? Is that what Born Again really means?</div></div>
+<div class="comment" id="comment-131037"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body"><p>You claim I am a good PR person, and while I appreciate your flattery, the truth is that I am a far better science person. I try to familiarize myself with the science as well as the musings of ID. Based on the limited original contributions by you as well as some continued ignorant comments about evolution, I seem to be safe to conclude that your understanding of evolution is shaped by such sites as AIG and other anti-science sites. See the problem is not that AIG is anti-science, but rather that they like ID are trying to sell their nonsense as science. As such they make Christians look foolish and people will reject Christians' claims about their faith as foolish as well.</p><p>Is that what you have in mind? You have been forgiven and nothing else matters? Do you really believe that such a position serves God best?</p><p>Why not amaze yourself, others and God with a true attempt at educating yourself. And I am saying this in the nicest way since I am convinced that your ignorance is not by your own chosing. As an ex Young Earth Creationist, I used to be much like you, convinced by the righteousness of my fellow Christians, only to find out how I had been lied to.</p><p>Let's try this once more and see if you can learn or at least educate yourself. Explain how ID defines complexity, explain how ID defines 'design'.</p><p>Simple or at least important concepts and still I bet you have no idea how ID deals with them.</p></div></div>
+<div class="comment" id="comment-131038"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 8 October 2007</p><div class="comment-body"><blockquote><blockquote>By the way... I'm not perfect by any means... Just forgiven!!! </blockquote>
+Does that mean you can lie and misrepresent without repercussion? Is that what Born Again really means?</blockquote>
+Yes, Jesus died for James Bond so James can embrace and masturbate to his own ignorance and call that "faith."</div></div>
+<div class="comment" id="comment-131039"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body">A quick trip in history shows that for instance Trifonov understood that DNA has many different 'codes'. He was hardly unique here, as he was reviewing 'current' knowledge at that time.
+Trifonov himself referenced the work by Holliday, 1968.
+
+All ENCODE did was to show that these codes were more pervasive than previously thought. Simple genes became open reading frames became introns and exons became alternative reading frames, alternative splicing. Genes became regulatory genes, 
+
+Since you read the ENCODE papers, you surely are familiar with the timeline
+
+<blockquote><p>
+Gene location and structure Intronic genes A gene exists within an intron of another (Henikoff et al. 1986)
+
+Genes with overlapping reading frames A DNA region may code for two different protein products in different reading frames (Contreras et al. 1977) <b>Issue</b> No one-to-one correspondence between DNA and protein sequence
+
+Enhancers, silencers Distant regulatory elements (Spilianakis et al. 2005) <b>Issue:</b> DNA sequences determining expression can be widely separated from one another in genome. Many-to-many relationship between genes and their enhancers.
+
+Structural variation Mobile elements Genetic element appears in new locations over generations (McClintock 1948)  <b>Issue:</b> A genetic element may be not constant in its location
+
+Gene rearrangements/structural variants DNA rearrangement or splicing in somatic cells results in many alternative gene
+products (Early et al. 1980)  <b>Issue:</b> Gene structure is not hereditary, or structure may differ across individuals or cells/tissues
+
+Copy-number variants Copy number of genes/regulatory elements may
+differ between individuals (Iafrate et al. 2004; Sebat et al. 2004; Tuzun et al. 2005)  <b>Issue:</b> Genetic elements may differ in their number 
+
+Epigenetics and chromosome structure Epigenetic modifications, imprinting Inherited information may not be DNA-sequence
+based (e.g., Dobrovic et al. 1988);  <b>Issue:</b>  a geneâs expression depends on whether it is of paternal or maternal origin (Sager and Kitchin 1975)
+
+Phenotype is not determined strictly by genotype Effect of chromatin structure Chromatin structure, which does influence gene
+expression, only loosely associated with particular DNA sequences (Paul 1972)  <b>Issue:</b> Gene expression depends on packing of DNA. DNA sequence is not enough to predict gene product.
+
+Post-transcriptional events Alternative splicing of RNA One transcript can generate multiple mRNAs, resulting in different protein products (Berget et al. 1977; Gelinas and Roberts 1977)
+Multiple products from one genetic locus;  <b>Issue:</b> information in DNA not linearly related to that on protein
+
+Alternatively spliced products with alternate reading frames Alternative reading frames of the INK4a tumor suppressor gene encodes two unrelated proteins (Quelle et al. 1995) <b>Issue:</b>  Two alternative splicing products of a pre-mRNA produce protein products with no sequence in common
+
+RNA trans-splicing, homotypic trans-splicing Distant DNA sequences can code for transcripts ligated in various combinations (Borst 1986). <b>Issue:</b>  Two identical transcripts of a gene can
+trans-splice to generate an mRNA where the same exon sequence is repeated (Takahara et)  <b>Issue:</b> A protein can result from the combined information encoded in multiple transcripts
+</p></blockquote></div></div>
+<div class="comment" id="comment-131040"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body">A lovely 2001 review article by Mattick et al argues
+
+<blockquote><p>Eukaryotic phenotypic diversity arises from multitasking of a core proteome of limited size. Multitasking is routine in computers, as well as in other sophisticated information systems, and requires multiple inputs and outputs to control and integrate network activity. Higher eukaryotes have a mosaic gene structure with a dual output, mRNA (protein-coding) sequences and introns, which are released from the pre-mRNA by posttranscriptional processing. Introns have been enormously successful as a class of sequences and comprise up to 95% of the primary transcripts of protein-coding genes in mammals. In addition, many other transcripts (perhaps more than half) do not encode proteins at all, but appear both to be developmentally regulated and to have genetic function. We suggest that these RNAs (eRNAs) have evolved to function as endogenous network control molecules which enable direct gene-gene communication and multitasking of eukaryotic genomes. Analysis of a range of complex genetic phenomena in which RNA is involved or implicated, including co-suppression, transgene silencing, RNA interference, imprinting, methylation, and transvection, suggests that a higher-order regulatory system based on RNA signals operates in the higher eukaryotes and involves chromatin remodeling as well as other RNA-DNA, RNA-RNA, and RNA-protein interactions. The evolution of densely connected gene networks would be expected to result in a relatively stable core proteome due to the multiple reuse of components, implying that cellular differentiation and phenotypic variation in the higher eukaryotes results primarily from variation in the control architecture. Thus, network integration and multitasking using trans-acting RNA molecules produced in parallel with protein-coding sequences may underpin both the evolution of developmentally sophisticated multicellular organisms and the rapid expansion of phenotypic complexity into uncontested environments such as those initiated in the Cambrian radiation and those seen after major extinction events.
+</p></blockquote>
+
+</div></div>
+<div class="comment" id="comment-131041"><p class="comment-meta"><span class="comment-author">David Stanton</span> &middot; 8 October 2007</p><div class="comment-body"><p>BJ Bond wrote:</p><p>"By the way…I’m not perfect by any means…Just forgiven!!!"</p><p>NOT BY ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p></div></div>
+<div class="comment" id="comment-131042"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 8 October 2007</p><div class="comment-body"><blockquote><p>Alternative splicing causes different exons to be combined into messenger RNA (mRNA).</p></blockquote>
+
+That appears to be loosely analogous to subroutines in computer code.
+
+Henry
+</div></div>
+<div class="comment" id="comment-131043"><p class="comment-meta"><span class="comment-author">rog</span> &middot; 8 October 2007</p><div class="comment-body"><p>PvM,</p><p>You patience is Christian is scope.  Thank you for your clear refutations of the sad troll BJB.</p><p>rog</p></div></div>
+<div class="comment" id="comment-131044"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 October 2007</p><div class="comment-body">
+<blockquote>
+<strong>rog:</strong>
+
+PvM,
+
+You patience is Christian is scope.  Thank you for your clear refutations of the sad troll BJB.
+
+rog
+</blockquote>
+
+Thanks, you know, the good thing about rebutting anyone is that it allows me to learn so much new exciting topics. Remember I am not an expert in these matters, just someone who reads a lot and understands a bit.
+
+</div></div>
+<div class="comment" id="comment-131050"><p class="comment-meta"><span class="comment-author"><a href="http://www.randi.org" rel="nofollow">Cedric Katesby</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>PvM,  I'm curious about your YEC background.</p><p>I'd be interested to here what made you leave it behind.<br>Was there something specific that made you reject YECism or was it a slow process?<br>Did people around you react negatively to your rejection of YECism?</p><p>If this is covering old ground or it's too personal, then apologies in advance.</p></div></div>
+<div class="comment" id="comment-131053"><p class="comment-meta"><span class="comment-author"><a href="http://sfish.blog.hr" rel="nofollow">Toni Petrina</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>So, this breaks down the potential human intelligence analogy since most computer code is relatively straightforward and imperative, note interleaved and interpretative (in sense that same sequence can be read differently with different results)?</p><p>Than equivocation between human design and DNA is absolutely false?</p></div></div>
+<div class="comment" id="comment-131055"><p class="comment-meta"><span class="comment-author">Bond, James Bond: bornagain77</span> &middot; 9 October 2007</p><div class="comment-body"><p>Interesting references PvM</p><p>Of special note;</p><p>Eukaryotic phenotypic diversity arises from multitasking of a core proteome of limited size. Multitasking is routine in computers, as well as in other sophisticated information systems, and requires multiple inputs and outputs to control and integrate network activity.</p><p>Big glitch in reasoning in this remark,,as it is with all your other references,,,He PRESUMES that evolution is true and then goes about to prove it...This is clearly the practice of very bad science when he presumes the answer prior to investigation! I'm sure I don't have to remind you of the lack of evidence for beneficial mutations (Including your highly touted HOX genes!) If you can find some observational evidence showing the origination of complexity, instead of degradation of preexisting genomes of parent species, this might be more impressive for IDers!</p><p>I find his reference to computer programs very interesting...How many computer programmers do you think,,think it is possible for a computer program, that far, far surpasses in complexity any computer program written in man (Bill Gates), to arise by accident?</p><p>Not many I would think,,,But hey ..Like I said earlier you are very good at spin,,,so I'm sure you can sell it to the gullible!</p><p>By the way Stanton,,, Though I don't mean to sound rude to you,,,It is definitely not you that I am worried about receiving forgiveness from!!</p></div></div>
+<div class="comment" id="comment-131056"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>Given as how you are a smug, arrogant idiot, I have no reason to give you any forgiveness in the first place: in fact, I make it a point to dislike people who use their faith in God act like Godless assholes.</p><p>Can you explain why IDiots have not explained why pufferfish have survived and prospered so well without Junk DNA, or can you not find any sites to copy and paste from?</p></div></div>
+<div class="comment" id="comment-131057"><p class="comment-meta"><span class="comment-author"><a href="http://sciencethegapfiller.blogspot.com" rel="nofollow">JM Ridlon</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>B,JB,BA77 said:</p><p>"I respectfully disagree with you PvM,</p><p>Contrary to what you now seem to be claiming, Evolutionary thought was completely blindsided by the revelation that the genome carries very little unused sequences,,,for you to deny that this was/is very problematic to RM/NS is, to put it mildly, glossing over a severe mis-prediction of the Darwinian camp…Whereas, you well know, many prominent IDers predicted that the junk DNA would be found to have function!"</p><p>Maybe he should read this paper:</p><p>Nobrega MA, et al. Megabase deletions of gene deserts result in viable mice. Nature 2004; 431:988-993.</p><p>This study deleted 845 thousand bases and 1.5 million bases from mESC (2). The deleted regions, known as "gene deserts" are devoid of protein coding sequences and are what has been referred to as "junk DNA". Thus, deleting these segments in the embryonic stem cell line will result in adult mice (if they survive) lacking these segments of the genome (homozygous deletions) in all of their cells. If these sequences are necessary for building and maintaining the adult mouse, these deletions should be lethal or greatly affect the phenotype compared to wild-type. The results, you ask? Well, the mice were "indistinguishable from wildtype littermates with regard to morphology, reproductive fitness, growth, longevity, and a variety of parameters assaying general homeostasis." They conclude, "these studies further support the existence of potentially 'disposable DNA' in the genome of mammals."</p><p>So, large stretches can be deleted without obvious phenotypic effects in mammals, at least mice.  Also, saying that ""junk DNA" will be found to have some function" is different than predicting an actual function and discovering it. Also, in what way would functionality of "junk DNA" somehow provide evidence that we were supernaturally created?</p></div></div>
+<div class="comment" id="comment-131059"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 October 2007</p><div class="comment-body"><blockquote>So, large stretches can be deleted without obvious phenotypic effects in mammals, at least mice. Also, saying that ““junk DNA” will be found to have some function” is different than predicting an actual function and discovering it. Also, in what way would functionality of “junk DNA” somehow provide evidence that we were supernaturally created?</blockquote>
+Don't worry, JM, James Bond will think of something to plagiarize in response, eventually.</div></div>
+<div class="comment" id="comment-131061"><p class="comment-meta"><span class="comment-author">Bond, James Bond; bornagain77</span> &middot; 9 October 2007</p><div class="comment-body"><p>Ridlon and Stanton,<br> How much do you want to bet that genetic diversity and/or overall viability/fitness of the offspring of such "knockout mice" is indeed limited and noticeable as far as the diversity and viability/fitness that is present in the parent species? My bet is that it will definitely be less than the parent species!..For example, I could remove major portions of a car and still have a car that performed its basic functions, Yet it would suffer in other areas noticeable areas when rigorously tested!...Thus, this example is a lot different than proving that the genome that was removed is absolutely and totally useless in its overall fitness in life! Plus, as someone mentioned before, I'm enamored by ENCODE!<br> <br>....The ENCODE consortium’s major findings include the discovery that the majority of DNA in the human genome is transcribed into functional molecules, called RNA, and that these transcripts extensively overlap one another....</p><p>Thus I have hard scientific evidence that the majority of the Genome does indeed have some type of unknown function! Whereas, you have a superfluous example (an example by the way, which actually may be a very useful diagnostic technique in studying the genetic diseases of man) in which you claim absolutely no function is present in genome, for large swaths of the genome were removed and BEHOLD THE MICE LIVE!!!) Excuse me for being underwhelmed by your evidence for the non-functionality of the genome!</p></div></div>
+<div class="comment" id="comment-131062"><p class="comment-meta"><span class="comment-author">David Stanton</span> &middot; 9 October 2007</p><div class="comment-body"><p>BJ Bond wrote:</p><p>"By the way Stanton,,, Though I don’t mean to sound rude to you,,,It is definitely not you that I am worried about receiving forgiveness from!!"</p><p>Obviously!!!!!!</p><p>This is the problem with holier-than-thous.  They lie and insult people deliberately, repeatedly and unrepentenly and then claim that their conscience is clear because God forgives them.  Well BJ, I would be more than happy to forgive you if you would just respond to some of my questions.  I would be more than happy to forgive even your immense ignorance if you at least showed the slightest inclination to read the real scientific literature.  I would even be willing to forgive your arrogance and condescending tone if you were willing to engage in some meaningful conversation instead of cut-and-paste nonresponses.  You claim that you don't mean to be rude, but how can such behavior reasonably be interpreted in any other way?</p><p>And by the way, I am not "Stanton".  I am using the name "David Stanton" exclusively.  This does not however imply that I disagree with the postings of "Stanton" in any way.  It just means that I use one handle consistently, unlike yourself.  And just for the record, using the name of someone with a lisence to kill and claiming divine forgiveness is almost as hypocritical as claiming that you have all of the answers and not even bothering to read the relevant literature.</p></div></div>
+<div class="comment" id="comment-131064"><p class="comment-meta"><span class="comment-author"><a href="http://sciencethegapfiller.blogspot.com" rel="nofollow">JM Ridlon</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>"The ENCODE consortium’s major findings include the discovery that the majority of DNA in the human genome is transcribed into functional molecules, called RNA, and that these transcripts extensively overlap one another."</p><p>Reread the paper, there were something like 120 pseudogenes, 19% of which were expressed. Many RNA's were expressed, but whether they are indeed "functional" is another matter. This can not be determined from the ENCODE data.</p><p>Also, you were "underwhelmed" by this data?  The mice didn't just live.  I will repeat, "[the knockout mice]indistinguishable from wildtype littermates with regard to morphology, reproductive fitness, growth, longevity, and a variety of parameters assaying general homeostasis."</p><p>Bond then said: "For example, I could remove major portions of a car and still have a car that performed its basic functions, Yet it would suffer in other areas noticeable areas when rigorously tested!…"</p><p>The point of this study was that "major portions" were not removed.  You can bet all you want, but the fact is that these mice appeared completely normal.  In the end, this DNA was not necessary for a mouse to develop to adulthood and live a normal life.....it was "junk DNA".</p></div></div>
+<div class="comment" id="comment-131066"><p class="comment-meta"><span class="comment-author"><a href="http://sciencethegapfiller.blogspot.com" rel="nofollow">JM Ridlon</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>I don't want to appear to be defending "junk DNA". I definitely think that we will be finding more and more functions, indeed some novel types of regulation.  However, Bond is ignoring data to support his erroneous conclusion.  Even if every base was found to be functional, this in no way provides any evidence for intelligent design, or for that matter evolution. The question is, how did this function arise?  Unfortunately for Bond and other ID advocates, there are no credible tools by which one could establish whether ANYTHING is designed by a supernatural being. Your extraordinary claim will require extraordinary evidence.</p></div></div>
+<div class="comment" id="comment-131068"><p class="comment-meta"><span class="comment-author">Bond, James Bond; bornagain77</span> &middot; 9 October 2007</p><div class="comment-body"><p>Ridlon you stated:<br>Reread the paper, there were something like 120 pseudogenes, 19% of which were expressed. Many RNA’s were expressed, but whether they are indeed “functional” is another matter. This can not be determined from the ENCODE data.</p><p>Man,,You got to love this science stuff!...So are you really saying that the genome will actually be found to have pseudo-functionality????</p><p>Well, if you are, I firmly disagree. As I stated in my original post....</p><p>....Though the ENCODE consortium is about to undertake the task of deciphering the remaining 99% of the humane genome, I firmly believe that they, and all their super-computers, are soon to be dwarfed by the sheer and awesome complexity at which that much required information is encoded into the three billion letters of the DNA code of man. As a sidelight to this, it takes the most powerful super-computer in the world an entire year just to calculate how a single 100 amino acid protein sequence will fold into a 3-dimensional shape from its 1-dimensional starting point. Needless to say, this impressive endeavor by ENCODE to decipher the entire genome of man will be very, very interesting to watch....</p><p>So Mr. Ridlon my prediction is the exact opposite of yours....</p><p>But alas, We will both have to await future developments in the deciphering of the human genome. But in the mean time please keep saying over and over again "The majority of the Genome is useless...The majority of the genome is useless...The majority of the Genome is useless,,,and please do spread it all over the web ...Hey even publish some peer reviewed papers if you can....Because, believe me when I tell you this...The complexity that will be found in the remaining 99% of the genome will DEFINITELY far, far surpass in complexity what we are looking at right now!!!!!!!</p></div></div>
+<div class="comment" id="comment-131069"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote>âA First Look at ARFome: Dual-Coding Genes in Mammalian Genomesâ, Chung et al,:
+
+Using newly developed statistical techniques, we identified 40 candidate genes with evolutionarily conserved overlapping coding regions.</blockquote>
+
+Two comments.
+1.  These ORF/ARFS are only candidates, possibilities picked up by a computer screen.  This is no where near enough evidence to say that the human genome has 40 overlapping genes.  Proof is when you identify the protein products in vivo and characterize them.
+
+A colleague once identified an ARF in a newly cloned gene, evolutionarily conserved, intriguing tissue distribution, structure suggestive of a hormone or morphogen function.  Despite a huge amount of work, was never able to demonstrate that the ARF was translated to make anything.
+
+2.  Forty maybe ARFs for a genome of 3 billion nukes and 20-30,000 proteins isn't much.  Any constraints on evolution are going to be low.</div></div>
+<div class="comment" id="comment-131070"><p class="comment-meta"><span class="comment-author">rog</span> &middot; 9 October 2007</p><div class="comment-body"><p>BJB</p><p>DaveScot over at Uncommon Descent is clear that there is likely to be non-functional DNA and offers a theory.</p><p>DaveScot: "I still fail to see how ID predicts no junk DNA. Random mutation definitely happens and if it’s good at *anything* it’s good at producing unorganized, non-functional crappola. It can produce crap out of nothing and it’s even better at making crap out of stuff that wasn’t crap to begin with."</p><p>Also, from the Onion Test http://genomicron.blogspot.com/2007/04/onion-test.html</p><p>Why does the Onion need about 5 times the non-coding DNA that a human does?</p><p>rog</p></div></div>
+<div class="comment" id="comment-131071"><p class="comment-meta"><span class="comment-author"><a href="http://sciencethegapfiller.blogspot.com" rel="nofollow">JM Ridlon</a></span> &middot; 9 October 2007</p><div class="comment-body">
+<blockquote>
+<strong>Bond, James Bond; bornagain77:</strong>
+
+Ridlon you stated:
+Reread the paper, there were something like 120 pseudogenes, 19% of which were expressed. Many RNA’s were expressed, but whether they are indeed “functional” is another matter. This can not be determined from the ENCODE data.
+
+Man,,You got to love this science stuff!...So are you really saying that the genome will actually be found to have pseudo-functionality????
+
+So Mr. Ridlon my prediction is the exact opposite of yours....
+
+ But alas, We will both have to await future developments in the deciphering of the human genome. But in the mean time please keep saying over and over again "The majority of the Genome is useless...The majority of the genome is useless...The majority of the Genome is useless,,,and please do spread it all over the web ...Hey even publish some peer reviewed papers if you can....Because, believe me when I tell you this...The complexity that will be found in the remaining 99% of the genome will DEFINITELY far, far surpass in complexity what we are looking at right now!!!!!!!
+</blockquote>
+
+Wow, where did I say that the majority of the genome would be "pseudofunctional"? I did say that experimental evidence in mice demonstrated that chunks as large as 1.5 Mb in "gene deserts" could be removed without loss in fitness or viability. I did say that novel function/regulation would be found in "junk DNA" and that some of the ncRNA's would have function.  However, I am being objective; you are not.  The ENCODE data only shows that ncRNA is more widespread than previously demonstrated experimentally.  However, the percentage of ncRNA actually doing something is another matter. If I recall, there was a transcriptome study done in mice where many ncRNA's were knocked down without effect.  I will try and locate the paper.  
+
+Again, Bond, answer me this:  If some "junk DNA" is found to be functional, how is this evidence that an intelligent designer created DNA in the first place?
+</div></div>
+<div class="comment" id="comment-131072"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>Not many I would think,,,But hey ..Like I said earlier you are very good at spin,,,so I’m sure you can sell it to the gullible!</p></blockquote>
+
+Yes, I mentioned the term multitasking and ID ers are immediately interpreting this as evidence of a programmer.
+
+What shallow faith you have.</div></div>
+<div class="comment" id="comment-131073"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body"><p>The term 'multitasking' is uses in much the same way as others have referenced the existence of multiple codes in the genome. Although Bond asserts that this was a surprise to evolutionists and that evolution cannot explain it, I have shown that both statements were erroneous.</p><p>In fact, as I have shown, alternative splicing is very similar to gene duplication in that an alternative splice can evolve without much impact to the original splicing. <br>So what is left for Bond to do? Take my challenge and explain how ID defines complexity and design?</p><p>Or run...</p><p>What would be the Christian response?</p></div></div>
+<div class="comment" id="comment-131076"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body"><p>What we know is that about 1.5% of the genome is transcribed into proteins, that about 5% of the genome is under selection although this is based on reference sections being under neutral selection. ENCODE already found stretches of pseudogenes, and although the majority of DNA, not all, DNA is transcribed, there will always remain junk DNA.<br>That some junk DNA would have function or that non-protein encoding DNA would have a function were all evolutionary predictions and NOTHING was based on novel research or hypotheses from ID creationists</p></div></div>
+<div class="comment" id="comment-131085"><p class="comment-meta"><span class="comment-author">Erasmus, FCD</span> &middot; 9 October 2007</p><div class="comment-body"><p>Hey, bornagain.</p><p>Show us some of that good tard you save for UD.  I wanna see the fortyeleven reasons why materialism is dead and what theism predicted first.</p><p>Cause, uh, when you actually start making an attempt to discuss biology it's kinda sad and disappointing.  Like watching a clown get beat up by a ninja.  You should stick to your element.</p><p>C'mon, don't let me down old buddy.  You can't buy that stuff in stores, and I bet there is a lot of chaps here who have never been exposed to that particular flavor of the Deep Tard.</p></div></div>
+<div class="comment" id="comment-131087"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 October 2007</p><div class="comment-body"><blockquote>Thus I have hard scientific evidence that the majority of the Genome does indeed have some type of unknown function! Whereas, you have a superfluous example (an example by the way, which actually may be a very useful diagnostic technique in studying the genetic diseases of man) in which you claim absolutely no function is present in genome, for large swaths of the genome were removed and BEHOLD THE MICE LIVE!!!) Excuse me for being underwhelmed by your evidence for the non-functionality of the genome!</blockquote>
+
+In James Bond's typical divinely inspired, yet Unchristian asshattery, he fails to identify what specific or even general functions Intelligent Design has predicted Junk DNA as having, and he has also conviently ignored addressing my question on, if Junk DNA is so important, why have the tetraodontid pufferfishes have prospered with so little Junk DNA, and what Intelligent Design proponents have to explain about that.</div></div>
+<div class="comment" id="comment-131100"><p class="comment-meta"><span class="comment-author">Mike</span> &middot; 9 October 2007</p><div class="comment-body"><p>Careful.  Just because you find an ORF doesn't mean that you have a transcript.  Unless you have some RNA, and know which strand its coded on, you don't have jack.  Take the sad, sad case of EPR-1, still messing up the database as accession # L26245.  The author fished it out with sloppy probing, looked at it in the wrong orientation, and for years thought they had a gene for a cell surface receptor.</p><p>You folks, especially Bornagain, are getting way, way, ahead of yourselves.  Ascribing a function to any particular stretch of DNA takes much more work than I see acknowledged here.  Can't be done by computer.  Best that can be done is prediction, most of which will be wrong.  We have absolutely no idea how much of the mammalian genome is filler, or not, won't know for quite some time, and anyone who tells you they know is a fool, or lying.</p></div></div>
+<div class="comment" id="comment-131104"><p class="comment-meta"><span class="comment-author">CJO</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>anyone who tells you they know is a fool, or lying.</p></blockquote>
+More likely, both.
+And we have right here, in the person of BornAgain007, an excellent example of the intersection of those two sets.
+</div></div>
+<div class="comment" id="comment-131105"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>Careful. Just because you find an ORF doesn’t mean that you have a transcript. Unless you have some RNA, and know which strand its coded on, you don’t have jack. </p></blockquote>
+
+Good warning. An ORF is a first step towards a potential transcript. Fascinating stuff though.</div></div>
+<div class="comment" id="comment-131106"><p class="comment-meta"><span class="comment-author"><a href="http://sciencethegapfiller.blogspot.com" rel="nofollow">JM Ridlon</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>Why are the IDers so against DNA not having function anyways?  Is it the "God don't make no junk" line?  This should be obvious to them that their designer does in fact make tons of junk...just look at all the failed human experiments for starters.</p></div></div>
+<div class="comment" id="comment-131111"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>Why does the Onion need about 5 times the non-coding DNA that a human does?</p></blockquote>
+
+Maybe it's trying to defend itself against people who like onion on their hamburgers?</div></div>
+<div class="comment" id="comment-131115"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 9 October 2007</p><div class="comment-body"><b>Bornagain77:</b>
+
+I will adress one of your claims, that you must be able to defend. I will also ask you an important question, that you must be able to answer.
+
+<blockquote author="JB Again">
+Whereas, you well know, many prominent IDers predicted that the junk DNA would be found to have function! Indeed,,the level of complexity even surpassed many ID proponents predictions and really only fits into the specific Theistic predictions made for ID… As for myself, I remember very well being chastised by your guest on this very blog, last spring, for predicting that the genome would be found to have virtually 100% functionality!!! (I was pressed by one of your guest for a specific prediction that ID makes and I quoted 100% functionality!) I was vindicated in short order when the ENCODE paper came out a short while later.
+</blockquote>
+
+Let us see how your claim of 100 % functionality of "junk DNA", and so the whole genome, stacks up against <a href="http://genomicron.blogspot.com/2007/06/more-about-encode-from-scientific.html">the science results from ENCODE</a>:
+
+<blockquote author="TR Gregory">
+Here are the pertinent sections from the article:
+<blockquote>
+The consortium found that 5 percent of the studied sequence has been conserved among 23 mammals, suggesting that it plays an important enough role for evolution to preserve while species have evolved. But of all the new ENCODE sequences identified as potentially important, only half fall into the conserved group.
+
+These unconserved sequences may be "bystanders, Birney says"—consequences of the genome's other functions—that neither help nor hurt cells and may have provided fodder for past evolution.
+
+They could also simply maintain a useful DNA structure or spacing between pieces of DNA regardless of their particular sequence, says genomics researcher T. Ryan Gregory of the University of Guelph in Ontario, who was not part of the consortium.
+</blockquote>
+</blockquote>
+
+So the ENCODE project confirmed earlier predictions based on evolutionary theory, that about 5 % of the genome is conserved. 
+
+They also identified 5 % <i>potentially important</i> transcribed sequences, at least 50 % of which have unknown function. With the overlap, it would mean at the most 7.5 % important sequences.
+
+<blockquote author="TR Gregory">
+A large fraction of the sequences analyzed, both in introns and intergenic regions, appears to be transcribed. However, most of this DNA is not conserved and there is no clear indication of function.</blockquote>
+
+The ENCODE project identified transcripts <i>constrained by the level of sensitivity of the used methods</i>. It is unclear where the functional level of transcripts are, and what function they have.
+
+<blockquote author="TR Gregory">
+5% of the genome sequence is conserved across mammals, and for about 60% of this (i.e., 3% of the genome) there is additional evidence of function. This includes the protein-coding exons as well as regulatory elements and other functional sequences. So, at this stage, we have increasingly convincing evidence of function for about 3% of the genome, with another 2% likely to fall into this category as it becomes more thoroughly characterized.
+</blockquote>
+
+Evolutionary biologists have yet to find function for 40 % of the predicted 5 % functional DNA. This means the ENCODE findings are likely to contribute less than the possible extra 2.5 %. Elsewhere Gregory notes that the wildest estimates are all within 20 % functionality.
+
+Unless I am mistaken (IANAB), this means in short that we have direct evidence that 3 % of the genome is functional, indirect evidence (from evolutionary theory, I might add) that 5 % of the DNA is functional, and we have direct evidence that at most 7.5 % is as transcription is needed in any feasible scenario of expressed functionality.
+
+This is a far cry from 100 % functionality. This means the current version of IDC, according to you, is falsified.
+
+Now we have the important question, is IDC as vacuous as we have found it elsewhere, or can you tell us how it predicts 100 % functionality? </div></div>
+<div class="comment" id="comment-131116"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 9 October 2007</p><div class="comment-body"><p><b>JM Ridlon:</b></p><p>Yes, good design is an emotional question for many of IDCers. I think PvM refers to "perfect design" (100 % functionality) vs "intelligent design" (no priors, because no description of the designer).</p><p>But there is also a persistent belief among people like Behe that "information" (IDC sense, ie unspecified nonsense) is "preloaded". Behe admits to common descent, but he thinks the mechanism is a preloaded mechanism that evolution doesn't describe. (So no "macroevolution", again in IDC sense with "kinds" and all that unspecified nonsense.)</p><p>I don't think they envision any particular amount of non-functional DNA, as they probably think it is created by evolution. They must have some 100 % perfect code corrector for their preloaded mechanism, seeing that mutations wreak havoc in any sequence that evolution doesn't conserve. But as always, they don't want to put that to paper or test, because it could prove them wrong.</p></div></div>
+<div class="comment" id="comment-131117"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>He PRESUMES that evolution is true and then goes about to prove it…This is clearly the practice of very bad science when he presumes the answer prior to investigation!</p></blockquote>
+
+Wouldn't that be like chemists spending their time trying to "prove" that atoms exist for the 117 so far observed elements?
+
+Why should current researchers be expected to be trying to prove conclusions that are accepted as beyond reasonable doubt?
+
+Henry
+</div></div>
+<div class="comment" id="comment-131126"><p class="comment-meta"><span class="comment-author"><a href="http://www.care2.com/c2c/group/evolution_education" rel="nofollow">Dale Husband</a></span> &middot; 9 October 2007</p><div class="comment-body"><blockquote>
+<strong>Bond, James Bond; bornagain77:</strong>
+
+Thus I have hard scientific evidence that the majority of the Genome does indeed have some type of unknown function! Whereas, you have a superfluous example (an example by the way, which actually may be a very useful diagnostic technique in studying the genetic diseases of man) in which you claim absolutely no function is present in genome, for large swaths of the genome were removed and BEHOLD THE MICE LIVE!!!) Excuse me for being underwhelmed by your evidence for the non-functionality of the genome! 
+
+</blockquote>
+
+Excuse ME while I am dying of laughter at your phony rhetoric!</div></div>
+<div class="comment" id="comment-131142"><p class="comment-meta"><span class="comment-author">realpc</span> &middot; 9 October 2007</p><div class="comment-body"><p>"humans don’t write code like DNA. We write lines that have a single meaning."</p><p>So, that's supposed to be an argument against ID? Because the intelligent universe is infinitely better than any human programmer, that means DNA must have just fallen together by chance? I am not able to follow the logic there.</p><p>Please, someone explain to me how these amazing programs get written by chance. Please don't say "given long periods of time and an infinity of parallel universes." I want a serious answer.</p></div></div>
+<div class="comment" id="comment-131144"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>Please, someone explain to me how these amazing programs get written by chance. Please don’t say “given long periods of time and an infinity of parallel universes.” I want a serious answer.</p></blockquote>
+
+Then you should ask a serious question. Hint, chance and regularity, not just chance. Surely you must realize by now that chance is not claimed to be the only 'player'?
+
+If you are really interested in how real science explains these codes, then I suggest you go do a simple search, even a google search, and follow the links to pages which outline papers or even contain papers, which provide details as to plausible pathways.
+
+Remind me again, how does ID explain it? Poof ....
+</div></div>
+<div class="comment" id="comment-131147"><p class="comment-meta"><span class="comment-author">realpc</span> &middot; 9 October 2007</p><div class="comment-body"><p>"If you are really interested in how real science explains these codes"</p><p>I am familiar with the standard explanations. They are ridiculous. Parallel universes, natural selection over millions of years. The same old tired BS.</p></div></div>
+<div class="comment" id="comment-131151"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body"><blockquote><p>
+
+“If you are really interested in how real science explains these codes”
+
+I am familiar with the standard explanations. They are ridiculous. Parallel universes, natural selection over millions of years. The same old tired BS.
+</p></blockquote>
+
+I am glad to hear that you are familiar with the standard explanations and thus a bit puzzled about your use of the word chance? Had you somehow forgotten that standard explanations include more than chance alone?
+
+Which scenario do you find particularly BS? Perhaps an example scenario which you explain to us and show why it is 'the same old tired BS'?
+
+Or will you reject this opportunity to show your familiarity with these scenarios?
+
+And no I am not talking about parallel universes, which are of course not really BS but based on the standard cosmology. 
+
+And remind me again, how does ID explain this? Do you happen to know?
+
+</div></div>
+<div class="comment" id="comment-131163"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 9 October 2007</p><div class="comment-body"><b>realpc:</b>
+
+<blockquote>
+Parallel universes, natural selection over millions of years. 
+</blockquote>
+
+Nothing in biology uses models of parallel universes. 
+
+And you present an incomplete picture of a minimal model for evolution. ("Hereditary variation with selection".) This makes me suspect you have read nothing of the material PvM suggested you should.
+
+If you are interested in how evolution is defined, see <a href="http://sandwalk.blogspot.com/2007/01/what-is-evolution.html">here</a>. A minimal definition for evolution is:
+
+<blockquote>
+Evolution is a process that results in heritable changes in a population spread over many generations.</blockquote>
+
+This is the basic observational fact that we can see by observing different lineages. If your model, sets of mechanisms, can predict this behavior it is a model for evolution. 
+
+Saying "Parallel universes, natural selection over millions of years" doesn't cover this. "Natural selection" by itself  doesn't result in any changes, it is based on them. "Millions of years" describes that we should observe "many generations" but it isn't a mechanism.
+
+Notice how "hereditary variation with selection" nicely fit (when observed over many generations). It takes observable hereditary changes, passes them through observable selection, and results by way of population genetics math in predictions of the above noted observable spread over generations.
+
+If you read as per PvM suggestions you can find the scientific evidence biologists have found for these claims.</div></div>
+<div class="comment" id="comment-131184"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 October 2007</p><div class="comment-body">A good paper <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&amp;pubmedid=17540026">On the origin of the translation system and the genetic code in the RNA world by means of natural selection, exaptation, and subfunctionalization</a> by Wolf and Koonin shows some of the latest ideas.
+
+With some useful pointers to ID
+
+<blockquote><p>The origin of complex biological systems is a classical topic in evolutionary biology and, probably, the principal object of attacks of anti-darwinists of all ilk, including the notorious Intelligent Design movement. The gist of the criticisms is that many biological systems are not just complex but "irreducibly complex" and, as such, could never evolve via the Darwinian mechanism of gradual, stepwise adaptive change because intermediate stages of evolution would have no selective value and so could not be fixed. Darwin himself was perfectly aware of the problem and its dimensions and addressed it in one of the most famous passages of the Origin, the one on the evolution of the vertebrate eye [1]. The solution offered by Darwin and developed ever since in numerous works of evolutionary biology was straightforward in principle and extremely ingenious when it came to details.</p></blockquote>
+
+and
+
+<blockquote><p>Here, however, we address the formidable problem of the origins of translation within the Continuity Principle, by harnessing evidence from comparative analysis of the translation system components, theoretical and experimental work on the hypothetical primordial RNA world, and the experimental study of interactions between amino acids and their codons and anticodons. After synthesizing the evidence from all these lines of enquiry, we embark on evolutionary modeling, with its unavoidable element of speculation, in an attempt to construct a sequence of plausible, incremental stages each of which is associated with a selective advantage to the evolving pre-biological entities – in accordance with the Continuity Principle.</p></blockquote>
+
+While Koonin is clear that science has yet to answer many questions, he is not letting our ignorance prevent us from doing science.
+
+It's this part which I believe many ID proponents fail to appreciate.
+</div></div>
+<div class="comment" id="comment-131192"><p class="comment-meta"><span class="comment-author"><a href="http://www.randi.org" rel="nofollow">Cedric Katesby</a></span> &middot; 10 October 2007</p><div class="comment-body"><p>BJ Bond and RealPC on the same thread.</p><p>The gift that keeps on giving.</p></div></div>
+<div class="comment" id="comment-131211"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>
+
+BJ Bond and RealPC on the same thread.
+
+The gift that keeps on giving.</p></blockquote>
+
+Can we give it back? ;)
+
+</div></div>
+<div class="comment" id="comment-131213"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 October 2007</p><div class="comment-body"><p>ID is a gift that keeps on giving. One can bring up so much research to show that ID has no content compared to science.. Of course, IDists are conditioned to marvel that anytime a gap is filled, two new ones arise.</p></div></div>
+<div class="comment" id="comment-131222"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 10 October 2007</p><div class="comment-body"><p>And realpc's question shows exactly why we don't want ID in science classes - the same reason that I don't ask six year olds to examine my teeth and replace my fillings.</p><p>I mean, this really is not difficult. I understood the very basic concept of evolution when I was sixteen and in school, and creationists can't manage even that? Frankly, the people who carry on this idiocy about evolution being 'random chance' should be ashamed of themselves - when they are corrected on it every single time they say it! I learned the first time - why can't they?</p><p>Under these circumstances it's difficult not to see creationists as dishonest - but we try, because we're the good guys. That's the only reason you get to debate in the first place - you know full well if the situation were the other way, you would not be so keen to teach the controversy. And this is not an empty claim. You see Uncommon Descent? Ever seen a good honest debate there? It's like Orwell City. If you want evidence of that,  feel free to take a peek at After the Bar Closes.</p></div></div>
+<div class="comment" id="comment-131256"><p class="comment-meta"><span class="comment-author">realpc</span> &middot; 10 October 2007</p><div class="comment-body"><p>I always say random mutations PLUS NATURAL SELECTION, PLUS SOME OTHER NONSENSE. But it's still basically chance throwing complex machinery together. Codes with different meanings depending on where you start or what direction you read them. Thrown together by chance. Yes, of course it seems obvious to you if you are determined to deny intelligence in nature. Sure, anything can happen by chance given infinite time and an infinite number of parallel universes. You can talk yourself into any kind of irrational nonsense. Creationists talk themselves into believing irrational nonsense, so why can't you?</p><p>Any human being who wants to believe something can talk him/herself into believing it. All evidence and logic can be easily swept aside by the desire to believe.</p><p>You Darwinists (or whatever you prefer to call yourselves these days) are every bit as irrational and unscientific as Christian Creationists.</p></div></div>
+<div class="comment" id="comment-131258"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote>
+<strong>realpc:</strong>
+
+I always say random mutations PLUS NATURAL SELECTION, PLUS SOME OTHER NONSENSE. 
+</blockquote>
+
+Except when you don't of course such as in
+
+<blockquote><p>Please, someone <b>explain to me how these amazing programs get written by chance</b>. Please don’t say “given long periods of time and an infinity of parallel universes.” I want a serious answer.</p><cite>— realpc</cite></blockquote>
+
+<blockquote><p>But it's still basically chance throwing complex machinery together. 
+</p><cite>— Realpc</cite></blockquote>
+
+Nope. There you go again...
+
+
+<blockquote><p>Codes with different meanings depending on where you start or what direction you read them. Thrown together by chance. 
+</p><cite>— realpc</cite></blockquote>
+
+Nope, that's thrown together by regularity. It's a simple fact that the genetic code can have six different interpretations. Surely you are familiar with this basic fact? If not, study how science unraveled the genetic code.
+
+
+<blockquote><p>Yes, of course it seems obvious to you if you are determined to deny intelligence in nature. 
+</p><cite>— realpc</cite></blockquote>
+
+Where did I deny intelligence in nature (other than perhaps doubting yours?)
+
+
+</div></div>
+<div class="comment" id="comment-131278"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 10 October 2007</p><div class="comment-body"><p>You just said it again, realpc. Thrown together by chance. In your case you're a troll and just pretending stupidity to bait people (or you wouldn't repeat the nonsense about parallel universes, which isn't even slightly connected to evolution, after being corrected - and I note also, like all creationists, you didn't explain that point, you probably just threw it in there because it causes doubt), but sadly, genuinely stupid creationists also do this - even on UD, where the phrase 'chance worshippers' often appears. It's a strawman, no better than the stupid tornado-in-a-junkyard (but hey, don't take OUR word that ID is creationism recycled).</p><p>If you have an alternative explanation than 'creationists are too stupid to learn' or 'creationists are too dishonest to tell the truth', feel free to drop it here.</p></div></div>
+<div class="comment" id="comment-131283"><p class="comment-meta"><span class="comment-author">realpc</span> &middot; 10 October 2007</p><div class="comment-body"><p>"the nonsense about parallel universes, which isn’t even slightly connected to evolution"</p><p>Of course it is. Parallel universes are used to explain how utterly unlikely things can nevertheless happen. The origin of life and the origin of new species are problems for MET. The parallel universe idea is used to explain away the origin of life. It had to happen, given an infinite number of universes. EVERYTHING had to happen, no matter how impossible.</p><p>And yes, the origin of life is a problem for MET. If you are claiming that intelligence is something generated by brains, and is not a property of nature in general, then you MUST believe life originated by chance. And if you have no plausible theory about how this could happen, then the contempt you express for ID is not justifiable.</p></div></div>
+<div class="comment" id="comment-131284"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>And yes, the origin of life is a problem for MET. If you are claiming that intelligence is something generated by brains, and is not a property of nature in general, then you MUST believe life originated by chance. And if you have no plausible theory about how this could happen, then the contempt you express for ID is not justifiable.</p></blockquote>
+
+Only a few problems here. Intelligence is likely to be a property of nature, in the sense that it can be reduced to regularity and chance. But I still fail to see how you reached your conclusion.
+
+Origin of life is a problem for science mostly because we know so little about it, however, as any cursory look at the scientific literature shows, our ignorance while still vast, is quickly diminishing in some very relevant areas.
+
+The real problem is for ID which, in case of multiverses, stands no chance because it cannot even exclude pure chance. But even in a singular universe, ID stands no chance since science provides some tentative hypotheses. And ID has nothing to offer.</div></div>
+<div class="comment" id="comment-131285"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>Of course it is. Parallel universes are used to explain how utterly unlikely things can nevertheless happen. The origin of life and the origin of new species are problems for MET. The parallel universe idea is used to explain away the origin of life. It had to happen, given an infinite number of universes. EVERYTHING had to happen, no matter how impossible.</p></blockquote>
+
+Since the existence of multiverses follows from the same cosmological theory which has been quite successful, it is scientific to explore its impact.
+
+I believe to correctly understand Koonin's papers, he addresses both regularity and chance hypotheses, the existence of either one is sufficient to undermine the ID hypothesis. While the multiverse approach fully disables ID, the regularity approach (or perhaps regularity and chance) approach in the Wolf and Koonin paper shows the scientific vacuity of ID.</div></div>
+<div class="comment" id="comment-131291"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>Parallel universes are used to explain how utterly unlikely things can nevertheless happen. </p></blockquote>
+
+Nothing other than basic semantics is needed to explain how utterly unlikely things can nevertheless happen -- the distinction between "utterly unlikely" and "impossible" is precisely that the former "can nevertheless happen". And by basic probability arithmetic, the likelihood of possible but individually unlikely events assymptotically approaches 1 as the number of trials increases. And if the later occurrence of events is not unrelated to the prior occurrence of events, the approach may be far faster than if the events are mutually independent.
+
+<blockquote><p>EVERYTHING had to happen, no matter how impossible.</p></blockquote>
+
+a) No one claims that everything had to happen -- that's a stupid strawman.
+b) There are no degrees of impossible -- you are a stupid person.</div></div>
+<div class="comment" id="comment-131292"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>If you are claiming that intelligence is something generated by brains</p></blockquote>
+
+Intelligence isn't "generated", it's a property of goal-seeking systems, and characterizes how effective the system is in reaching its goals. Brains are not the only goal-seeking systems, nor are they the only goal-seeking systems that could possibly be characterized as "intelligent". And of course not all brains can be characterized as intelligent -- consider yours, for instance.
+
+<blockquote><p>and is not a property of nature in general</p></blockquote>
+
+That would be a radical category mistake.
+
+<blockquote><p>then you MUST believe life originated by chance.</p></blockquote>
+
+Non sequitur, but in any case, so what?
+
+<blockquote><p>And if you have no plausible theory about how this could happen</p></blockquote>
+
+"It happened by chance" is plausible, especially when "it" hat not been precisely specified and the probability of "it" happening has not been calculated, but lacks detail -- the sort of detail science seeks.
+
+<blockquote><p>then the contempt you express for ID is not justifiable.</p></blockquote>
+
+This, like any ad hominem argument, is a non sequitur. The validity of the arguments against ID have nothing to with whether Pim or anyone else has a plausible theory for something or other.</div></div>
+<div class="comment" id="comment-131293"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>Yes, of course it seems obvious to you</p></blockquote>
+
+It's not obvious, it's the result of huge amounts of work by many scientists over many decades.
+
+<blockquote><p>if you are determined to deny intelligence in nature.</p></blockquote>
+
+intelligencedidit isn't science.
+
+<blockquote><p>Sure, anything can happen by chance given infinite time and an infinite number of parallel universes. You can talk yourself into any kind of irrational nonsense.</p></blockquote>
+
+Events with a non-zero probability will have an infinite number of occurrences over infinite time. Declaring a tautology to be "irrational nonsense" certainly <i>seems</i> irrational and lacking in intelligence.
+</div></div>
+<div class="comment" id="comment-131314"><p class="comment-meta"><span class="comment-author"><a href="http://www.randi.org" rel="nofollow">Cedric Katesby</a></span> &middot; 11 October 2007</p><div class="comment-body"><p>RealPC is a very special person.</p><p>According to her, Science is really Art.</p><p>Claims to have a Phd in something or other.</p><p>Oh, and she likes 'negative theories'.</p><p>http://ambivablog.typepad.com/ambivablog/2007/09/not-random.html</p></div></div>
+<div class="comment" id="comment-131352"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 11 October 2007</p><div class="comment-body"><b>realpc:</b>
+
+<blockquote>
+Parallel universes are used to explain how utterly unlikely things can nevertheless happen. The origin of life and the origin of new species are problems for MET.
+</blockquote>
+
+As always, abiogenesis isn't a problem for evolutionary theory because it isn't part of the theory. 
+
+What you are saying is analogous to claiming that not having a good description of how a particular drainage basin is sourced, say the sources of the Nile, is a problem for hydrodynamic theory to explain water flows. Do you see how stupid you look?
+
+And origin of species are explained by evolutionary theory entirely without invoking parallel universes or even unlikely things. Mutation and fixation rates are measurable statistics.
+
+If you ask where parallel universes are discussed, it is usually in cosmology where two independent theories (inflation theory and string theory) predict them independently or in concert. 
+
+Another use you can see is that it is easy to explain why creationists conflation between a priori probability and a posteriori likelihoods are wrong. (Though as PG notes, it brings unnecessary baggage for that purpose.) Finally it is used to show why finetunings are natural consequences.</div></div>
+<div class="comment" id="comment-132268"><p class="comment-meta"><span class="comment-author">Anna</span> &middot; 19 October 2007</p><div class="comment-body"><p>Abiogenesis is chap 1 in a wholly natural evolution of life process. Evolutionists cannot be wholly credible unless they can demonstrate that abiogenesis is actually possible. I don't think that has been demonstated yet,though obviouly most evolutioninsts believe it is possible.Thus, at present, there is room for other theories. Evolutioninsts should not be so harsh and judgemental about people who are sceptical that something so bizarre and complex as life is a result of spontaneously forming self-reproducing proto-cell gradually mutating into a conscious, thinking, feeling person. And yes, people like realpc and bjb have a right to voice their beliefs, even if they are wrong, without being constantly belittled and insulted. They can read, they can write, i.e. they are not morons, and I see no reason for calling them liars, unless you guys possess supernatural psychic powers and can divine their true beliefs.</p></div></div>
+<div class="comment" id="comment-132271"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 19 October 2007</p><div class="comment-body"><blockquote><p>.Thus, at present, there is room for other theories</p></blockquote>
+
+Tell us, what theory do you have in mind?</div></div>
+<div class="comment" id="comment-132280"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 19 October 2007</p><div class="comment-body"><p>Re "Evolutionists cannot be wholly credible unless they can demonstrate that abiogenesis is actually possible."</p><p>There was a time before which life dind't exist.</p><p>Life exists now.</p><p>Therefore life began in a place that had no life before that.</p><p>Q.E.D.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-132287"><p class="comment-meta"><span class="comment-author">Anna</span> &middot; 19 October 2007</p><div class="comment-body"><p>To: pvm. I was referring to ID, although there are others. For ex, DNA structure discoverer, Watson, I think, believes life was seeded by aliens, and I vaguely recall reading something about some sort of self-organization theory in some Santa Fe's institute. You probably know a lot more about this than I do. I am not a scientist(obviously), and though I always revered science and scientists, and had taken many courses in college, it is the ID/evolution contoversy that I only recently discovered existed, that now makes learning scientific facts exciting for me.</p><p>To Henry: what you say is logical, and yet can only be true if we exclude a priory (is this the right spelling?) the influence of some sort of "power" beyond our knowlege or comprehension.<br> The point that I learned from IDists that I found to be a very good one is that life by en large is a mystery. There is a lot we don't know. To the best of my knowledge life does not self-assemble under various laboratory conditions tried. Whether that's simply a temporary lack of success, or a result of an actual impossibility, sans the above mentioned "power", I have absolutely no idea. But it's fun to speculate.</p></div></div>
+<div class="comment" id="comment-132306"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 20 October 2007</p><div class="comment-body"><blockquote><p>To Henry: what you say is logical, and yet can only be true if we exclude a priory (is this the right spelling?) the influence of some sort of “power” beyond our knowledge or comprehension.</p></blockquote>
+
+Nope. What I said doesn't depend on excluding anything a priory. It holds even if the beginning of life was engineered by a "power".
+
+Henry
+</div></div>
+<div class="comment" id="comment-132307"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 20 October 2007</p><div class="comment-body"><blockquote><p>it is the ID/evolution contoversy that I only recently discovered existed, that now makes learning scientific facts exciting for me.</p></blockquote>
+
+Why? There is no real scientific ID/Evolution controversy. ID merely is the claim that we do not understand all and thus this should be considered to be 'design'. WHat's so exciting about that?
+
+Sure, science is exciting but it hardly needs ID to make it so. </div></div>
+<div class="comment" id="comment-132308"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 20 October 2007</p><div class="comment-body"><blockquote><p>But it’s fun to speculate.</p></blockquote>
+
+Sure, but what else is there to speculate when you admit a supernatural designer? It's a scientific dead end</div></div>
+<div class="comment" id="comment-132330"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 20 October 2007</p><div class="comment-body"><b>Anna:</b>
+
+<blockquote>
+Evolutionists cannot be wholly credible unless they can demonstrate that abiogenesis is actually possible. 
+</blockquote>
+
+All scientific theories live and die by the data they describe, no more no less. For example, Newton's gravity theory was wholly credible, describing how gravity behaves, without being able to describe <i>what</i> gravity is, how it originates. 
+
+When general relativity later replaced Newton's theory, it was because there was types of observations where Newton's theory predicted wrong. (Strong fields, for example.) But it still doesn't explain the microscopic fundamental mechanisms that are responsible for gravitation, its quantum nature. This is a task for later theories.
+
+Your claim implies a serious misunderstanding of how science works and what scientific theories are.
+
+We can turn this around - why should evolutionary biology of all sciences be tasked to provide a complete understanding when no other science has to? 
+
+And how do you envision how this will be possible? Science works by piecemeal gathering new data and refining the description with new theories replacing old incomplete. How do we jump from no understanding of nature to a complete understanding? Is it even possible to have a complete understanding?
+
+All these are questions you have to provide answer to, if you aren't satisfied in the way scientists are satisfied. You must answer them and then show that your method of science is better than the current one.
+
+<blockquote>
+Thus, at present, there is room for other theories.
+</blockquote>
+
+There is always room for other theories, since current theories doesn't give a complete picture or may be wrong. 
+
+Except of course if you believe the task for science is to immediately jump to complete knowledge. Perhaps you even believe in Truth, as opposed to observable facts and predictive theories which is all science can ever provide. 
+
+<blockquote>
+i.e. they are not morons, 
+</blockquote>
+
+Very funny. :-) They have showed themselves over and over to be reading and writing morons. You can be highly intelligent and still be dysfunctional in many things. And these guys aren't even close to that.</div></div>
+<div class="comment" id="comment-132332"><p class="comment-meta"><span class="comment-author"><a href="http://tinyurl.com/b8ykm" rel="nofollow">Glen Davidson</a></span> &middot; 20 October 2007</p><div class="comment-body"><blockquote><p>To: pvm. I was referring to ID, although there are others. For ex, DNA structure discoverer, Watson, I think, believes life was seeded by aliens, and I vaguely recall reading something about some sort of self-organization theory in some Santa Fe’s institute.</p></blockquote>
+
+That's Francis Crick who went for panspermia.
+
+<blockquote><p>You probably know a lot more about this than I do. I am not a scientist(obviously), and though I always revered science and scientists, and had taken many courses in college, it is the ID/evolution contoversy that I only recently discovered existed, that now makes learning scientific facts exciting for me.</p></blockquote>
+
+There's no ID/evolution controversy in science, only in politics and religion.
+
+<blockquote><p>To Henry: what you say is logical, and yet can only be true if we exclude a priory (is this the right spelling?) the influence of some sort of “power” beyond our knowlege or comprehension.</p></blockquote>
+
+It's spelled "a priori", and would be italicized in formal writing (I often don't on the forums either).
+
+And who <i>a priori</i> excludes the influence of a "power" beyond our knowledge or comprehension?  Who's telling the theistic evolutionists that they need to quit worshipping God (I know a few names, but they're relatively few, indeed)?  In other words, quit believing the lies of the IDists.  The only reason they tell you that we exclude God or some other designer a priori is that they wouldn't have anything to complain about if they were simply being honest.
+
+<blockquote><p>The point that I learned from IDists that I found to be a very good one is that life by en large is a mystery.</p></blockquote>
+
+How did you find that to be a good point?  You're no scientist, as you said, and you seem not to know a great deal about it.  
+
+Life has a great many mysteries which have not been explained.  There is, however, a very good explanation for the hierarchies that we see, for the relationships between organisms (differing between asexual and sexual organisms, btw), for the fossil record, and for why organs, organelles, and biological machines happen to be derived.  Just because some egregiously dishonest people tell you otherwise does not make this untrue.
+
+<blockquote><p>There is a lot we don’t know.</p></blockquote>
+
+And who is it that is finding out more and more?  The hint is, it is not the IDists who are.
+
+<blockquote><p>To the best of my knowledge life does not self-assemble under various laboratory conditions tried. Whether that’s simply a temporary lack of success, or a result of an actual impossibility, sans the above mentioned “power”, I have absolutely no idea.</p></blockquote>
+
+Science explains what it can.  It does not look at what has not been explained and say that some magic must be responsible, since we don't know.  Hence science explains fossils and living organisms by the highly evident processes of evolution.  What is not explained, such as life's origin prior to evolution, is simply that, the unexplained.  
+
+Science does not rule out higher power or anything like that for whatever has not been explained.  All it does is to note that it cannot investigate a power for which it has no evidence, and it (as such) sensibly does not speculate beyond the evidence.  This is quite unlike ID, which claims that an unknown cause producing unpredictable effects caused life to appear.  Such an idiotic claim would be thrown out of court, and in fact has been.
+
+<blockquote><p>But it’s fun to speculate.</p></blockquote>
+
+And that is all that ID can do (which would be fine, if they didn't make unsupported claims of being science).  Science has to do something different, at least at the "methods" stage.
+
+Glen D
+http://tinyurl.com/2kxyc7
+</div></div>
+<div class="comment" id="comment-169150"><p class="comment-meta"><span class="comment-author">saher</span> &middot; 5 October 2008</p><div class="comment-body"><p>welll it was a good article <br>. it has answered several of my questions but if u <br>  plzzzz answer one of question ..plzzzzzzzzzzzzzz.<br> i shall really appreciate it .<br>  what would u say about one gene one enzyme hypothesis????<br>   doesnt this theory of multiple transcripts negate it???<br>   was that one gene one polypeptide hypoyhesis wrong ???<br>    a gene may form many mRnas i.e it can also form amny <br>   polypepptides?????<br>  plzzz plzzz reply as soon as possible on my  E-mail<br>  address.. plzzzz</p></div></div>
+<div class="comment" id="comment-219497"><p class="comment-meta"><span class="comment-author"><a href="http://www.lowest-rate-loans.com" rel="nofollow">Marissa26Sims</a></span> &middot; 11 June 2010</p><div class="comment-body"><p>I strictly recommend not to hold back until you earn big sum of cash to order different goods! You should just get the <a href="http://lowest-rate-loans.com/topics/personal-loans">personal loans</a> or just auto loan and feel yourself free</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

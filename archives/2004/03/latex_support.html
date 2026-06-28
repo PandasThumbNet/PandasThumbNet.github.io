@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LaTeX Support — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">LaTeX Support</h1><p class="post-meta">Posted 27 March 2004 by <span class="post-author">Reed A. Cartwright</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2004/03/latex-support.html">https://pandasthumb.org/archives/2004/03/latex-support.html</a></p><div class="post-body">The Panda's Thumb now has $\mbox{\LaTeX}$ support based on a plugin I developed.  I chose to go with converting the equations to pngs because MathML support is not where I'd like it in today's browsers.  I'd like to thank Wesley for updating some software on the server to allow this to work.
+
+*Mutation-Selection Balance*
+
+$${\Delta}q   \approx \mu-sq^{* 2} \approx 0 \Rightarrow \mu \approx sq^{* 2} \Rightarrow q^* \approx    \sqrt{\frac{\mu}{s}}$$</div><section class="comments-section"><h2 class="comments-heading">11 Comments</h2>
+<div class="comment" id="comment-310"><p class="comment-meta"><span class="comment-author">D. Eppstein</span> &middot; 27 March 2004</p><div class="comment-body"><p>The background color of the equation doesn't match the background on the rest of the page in my browser (Safari) -- it's a little darker than it should be.  I assume this is the usual problem with pngs and gamma settings, e.g. see http://www.hut.fi/u/hsivonen/png-gamma.html</p></div></div>
+<div class="comment" id="comment-311"><p class="comment-meta"><span class="comment-author">Nomen Nescio</span> &middot; 27 March 2004</p><div class="comment-body"><p>FWIW, that background looks fine on my machine (galeon 1.3.8/linux), which is rather surprising because my monitor is so decrepit and dark that the hardware alone usually screws up gamma settings beyond all repair for me. the wonders of web technology, i suppose...</p></div></div>
+<div class="comment" id="comment-313"><p class="comment-meta"><span class="comment-author">Nix</span> &middot; 27 March 2004</p><div class="comment-body"><p>Aaah, it's nice indeed to see Computer Modern again. :)</p></div></div>
+<div class="comment" id="comment-320"><p class="comment-meta"><span class="comment-author"><a href="http://blog.rufus.ws" rel="nofollow">Reed A. Cartwright</a></span> &middot; 27 March 2004</p><div class="comment-body"><p>Eppstein,</p><p>I'm sorry that Safari doesn't work for you.  I looked at the link and counldn't figure out what the solution would be.  Do you know of one, especially if it can be done with Image::Magick?</p></div></div>
+<div class="comment" id="comment-321"><p class="comment-meta"><span class="comment-author">Loren Petrich</span> &middot; 28 March 2004</p><div class="comment-body"><p>I'm also using Safari, and I also find a faint difference. I took a screenshot and examined it with Photoshop, and I found:</p><p>Page bkgd color: 255,255,204 - #FFFFCC<br>Equation bkgd color: 255,255,194 - #FFFFC2</p><p>The page bkgd color agrees with what's in the styles file styles-site.css</p><p>The text colors were more difficult to verify, because of their antialiasing, but the page text color was consistent with the styles-file value of 102,51,0 - #663300</p><p>However, the equation color seems to be 82,35,0 - #522300</p></div></div>
+<div class="comment" id="comment-323"><p class="comment-meta"><span class="comment-author"><a href="http://blog.rufus.ws" rel="nofollow">Reed A. Cartwright</a></span> &middot; 28 March 2004</p><div class="comment-body"><p>Safari apparantly doesn't render the colors equally.  The png's background is really #FFFFCC.  I'm working on changing the tex2png plugin so the background is transparent.  However, that will require a workaround for IE.  There might be a way to compromise.</p></div></div>
+<div class="comment" id="comment-372"><p class="comment-meta"><span class="comment-author">Matt</span> &middot; 28 March 2004</p><div class="comment-body"><p>Funny, but the background looks fine on my OS X machine running Safari, but it's BLACK on my Windows machine running IE.</p><p>But anyway, how would I use the LaTeX capability?</p></div></div>
+<div class="comment" id="comment-373"><p class="comment-meta"><span class="comment-author"><a href="http://blog.rufus.ws" rel="nofollow">Reed A. Cartwright</a></span> &middot; 28 March 2004</p><div class="comment-body"><p>Matt,</p><p>IE has a bug.  It doesn't render transparent png's correctly.  There is a workaround javascript, I just haven't implemented it yet.</p><p>When I'm done with this latest update, I'll explain LaTeX syntax to the authors.</p></div></div>
+<div class="comment" id="comment-428"><p class="comment-meta"><span class="comment-author"><a href="http://www.rigoletto.com/blogger.html" rel="nofollow">Mike</a></span> &middot; 29 March 2004</p><div class="comment-body"><p>Windows 2000, IE 5:  Dark brown (?) characters on a black background.  At least, the ALT tag works, and you can sort of figure out what it is.</p><p>For laughs, I brought it up in Netscape 4.7.  The entire background is black, but the text is almost readabe.</p></div></div>
+<div class="comment" id="comment-441"><p class="comment-meta"><span class="comment-author"><a href="http://blog.rufus.ws" rel="nofollow">Reed A. Cartwright</a></span> &middot; 29 March 2004</p><div class="comment-body"><p>You need atleast IE 5.5 to render the pngs correctly.</p></div></div>
+<div class="comment" id="comment-35432"><p class="comment-meta"><span class="comment-author"><a href="http://pizdec.porkyhost.com/" rel="nofollow">old slut nude</a></span> &middot; 8 July 2005</p><div class="comment-body"><p>Thanks!</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

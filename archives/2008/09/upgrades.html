@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Upgrades — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Upgrades</h1><p class="post-meta">Posted 7 September 2008 by <span class="post-author">Reed A. Cartwright</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2008/09/upgrades.html">https://pandasthumb.org/archives/2008/09/upgrades.html</a></p><div class="post-body">I've upgraded the software and plugins on this site.  Some files have changed and you may need to clear your cache to get the new files.  <b>If you have problems commenting, clear your browser cache.</b>
+
+The most noticeable new feature is client-side validation of comment format.  If your comment is not properly formed, changes will be made to it and you will be notified of the differences before you submit.  It's not perfect or smart, but it gets the job done.  I will implement "give me original comment" and "don't validate" options if it becomes a burden to anyone.</div><section class="comments-section"><h2 class="comments-heading">88 Comments</h2>
+<div class="comment" id="comment-166221"><p class="comment-meta"><span class="comment-author">Aerik</span> &middot; 7 September 2008</p><div class="comment-body"><p>Check, check 1.</p><p>"Your comment submisson failed for the following reasons: Invalid request"</p><p>I'm seeing an interesting "update" button that appears between the comment count and "leave a comment" , but it disappears just before the whole page finishes rendering.</p><p>Firefox 3.01<br>WinXP SP2</p><p>fresh cache</p><p>possible clash: Noscript 1.8.0.2</p></div></div>
+<div class="comment" id="comment-166222"><p class="comment-meta"><span class="comment-author">Aerik</span> &middot; 7 September 2008</p><div class="comment-body"><p>Hey, that one went through when I disabled "redirect remover" actually.  That usually doesn't apply to submission buttons.  It shouldn't.</p><p>And now the update button is below my comment, presumably below the entire thread?  That's a nifty lil thing.</p></div></div>
+<div class="comment" id="comment-166227"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><p>Testing. New paragraph. Another new paragraph. Comment submission or preview failed: Invalid format detected. Please review the following corrections that have been made to your comment. Note: Apparently blank lines are not being converted to paragraphs.</p></div></div>
+<div class="comment" id="comment-166228"><p class="comment-meta"><span class="comment-author"><a href="http://circleh.wordpress.com/" rel="nofollow">Dale Husband</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><strong>Mike Elzinga said:</strong> Testing. New paragraph. Another new paragraph. Comment submission or preview failed: Invalid format detected. Please review the following corrections that have been made to your comment. Note: Apparently blank lines are not being converted to paragraphs. </blockquote>Testing! You have to hit Preview twice and then the Submit button. Every time! </div></div>
+<div class="comment" id="comment-166229"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><strong>Dale Husband said:</strong> <blockquote><strong>Mike Elzinga said:</strong> Testing. New paragraph. Another new paragraph. Comment submission or preview failed: Invalid format detected. Please review the following corrections that have been made to your comment. Note: Apparently blank lines are not being converted to paragraphs. </blockquote>Testing! You have to hit Preview twice and then the Submit button. Every time! </blockquote>Exactly! Here is another attempt at a new paragraph after clearing cookies. Nope. Same problem.</div></div>
+<div class="comment" id="comment-166231"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>The update button has been there for a while.</p><p>Test newlines</p></div></div>
+<div class="comment" id="comment-166232"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Newlines work here, with Firefox 3 on Windows vista.</p><p>What browser, version, and OS are you using?</p></div></div>
+<div class="comment" id="comment-166233"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>As I explained when we were testing this out on my blog, validation is completely dependent on your browser.  The comment is not sent to PT until it is validated.</p><p>Therefore, when reporting bugs I need to know what you are running.</p><p>This is the expected behavior:</p><p>A well-formed comment should go through fine, either with preview or a direct submission.</p><p>A comment that doesn't obey XHTML semantics will cause your browser to stop the preview/submission.  Your browser will tidy the comment and report the differences between your original comment and the tidy, so you can adjust the tidy if necessary.  You should then be able to submit it.</p><p>If you are being told that valid comments are invalid, please give me all the details possible on what you are trying to do.</p></div></div>
+<div class="comment" id="comment-166234"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Aerik said:</strong>
+
+Hey, that one went through when I disabled "redirect remover" actually.  That usually doesn't apply to submission buttons.  It shouldn't.
+
+And now the update button is below my comment, presumably below the entire thread?  That's a nifty lil thing.
+</blockquote>
+
+We're using a bunch of javascript and Web 2.0 stuff on the site now, so NoScript can break a lot of things if you are not careful.</div></div>
+<div class="comment" id="comment-166235"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>I just realized that I left out the "Check Spelling" feature during the upgrade.  It is now in the templates, and will appear on the pages as they are rebuilt/commented on.  I'll run another full site rebuild next weekend.</p></div></div>
+<div class="comment" id="comment-166236"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 8 September 2008</p><div class="comment-body"><p>Well, let's check this thing.</p><p>And Aerik, I had much the same problem previously (because I had downgraded NoScript's whack-a-script messages).</p><p>Bad XHMTL: <b>bold <i>italics</i></b></p><p>... it works like a beaut!</p></div></div>
+<div class="comment" id="comment-166237"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 8 September 2008</p><div class="comment-body"><p>Reed, seeing how much (excellent) work you put into this, isn't it time to cut the site's spell checker? Dunno about other browsers, but Firefox provides (real time) checking.</p><p>Btw, it may even have an XHMTL checker plugin, for all I know. (Quick browsing shows at least one HTML checker, but on whole page basis I think.) This integrated one may offer better functionality though.</p><p>[Alas, as I'm a non-user my opinion isn't carrying much weight. Perhaps the site's checker is larger, and correct, on biology. I have to train mine, and with a non-biologist at the keys I have a lousy 'expert' on the job...]</p></div></div>
+<div class="comment" id="comment-166248"><p class="comment-meta"><span class="comment-author"><a href="http://www.vectorsite.net" rel="nofollow">iml8</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>On upgrades:  any thought on going to a registration<br>requirement for posting?  It is normal for forums and<br>does a lot to slow down malicious posters (who have<br>to register with a new email every time they get run out)<br>while being little problem for legitimate posters (who<br>only have to do it once).</p><p>White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html</p></div></div>
+<div class="comment" id="comment-166249"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net" rel="nofollow">iml8</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Just a test, disregard.  GVG</p></div></div>
+<div class="comment" id="comment-166252"><p class="comment-meta"><span class="comment-author"><a href="http://flickr.com/photos/sedary_raymaker/" rel="nofollow">Naked Bunny with a Whip</a></span> &middot; 8 September 2008</p><div class="comment-body"><p><i>If your comment is not properly formed, changes will be made to it</i></p><p>What if the logic in my comment isn't properly formed?  Can you make me seem smart?  Please?</p></div></div>
+<div class="comment" id="comment-166254"><p class="comment-meta"><span class="comment-author">Ian</span> &middot; 8 September 2008</p><div class="comment-body"><p>I noticed in posting a comment just now in another thread that your handy-dandy parser called me on putting two spaces following a period (full stop). Rather than argue, I let it have its way, knowing I could comment on it here. I know that HTML seems to like removing what it considers to be extraneous spaces, but wikipedia seems to think that two spaces is the appropriate method: http://en.wikipedia.org/wiki/Full_stop I happen to agree, if for no other reason than for clarity, which is something we should strive for in writing. Just my too sense (how about that for weird grammar? Let's see what your parser does with it shall we?!)</p></div></div>
+<div class="comment" id="comment-166255"><p class="comment-meta"><span class="comment-author"><a href="http://www.paulburnett.com/creation.htm" rel="nofollow">Paul Burnett</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><strong>Naked Bunny with a Whip said:</strong> <i>If your comment is not properly formed, changes will be made to it</i> What if the logic in my comment isn't properly formed? Can you make me seem smart? Please? </blockquote>Or if you sign in with a name like, say, "jobby," could it convert snarky comments into Considerate Christian(TM) comments? </div></div>
+<div class="comment" id="comment-166256"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Paul Burnett said:</strong>
+
+<blockquote><strong>Naked Bunny with a Whip said:</strong> <i>If your comment is not properly formed, changes will be made to it</i> What if the logic in my comment isn't properly formed? Can you make me seem smart? Please? </blockquote>Or if you sign in with a name like, say, "jobby," could it convert snarky comments into Considerate Christian(TM) comments? 
+</blockquote>
+
+Would this be a variant of the software they use over at Uncommon Dissent?
+
+</div></div>
+<div class="comment" id="comment-166257"><p class="comment-meta"><span class="comment-author">jobby</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Paul Burnett said:</strong>
+
+<blockquote><strong>Naked Bunny with a Whip said:</strong> <i>If your comment is not properly formed, changes will be made to it</i> What if the logic in my comment isn't properly formed? Can you make me seem smart? Please? </blockquote>Or if you sign in with a name like, say, "jobby," could it convert snarky comments into Considerate Christian(TM) comments? 
+</blockquote>
+
+Seems to me any comment that is less than complete worship of Darwinism is consideted 'snarky'.
+
+Scientists are objective. Not pre-judging.
+
+</div></div>
+<div class="comment" id="comment-166258"><p class="comment-meta"><span class="comment-author">David Stanton</span> &middot; 8 September 2008</p><div class="comment-body"><p>Ban the boob.</p></div></div>
+<div class="comment" id="comment-166261"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 September 2008</p><div class="comment-body">We are presently working on a more appropriate manner to address Bobby's abuse of service attacks. Please stand by.
+
+<blockquote>
+<strong>David Stanton said:</strong>
+
+Ban the boob.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-166262"><p class="comment-meta"><span class="comment-author">Frank B</span> &middot; 8 September 2008</p><div class="comment-body">Testing, Testing, number 9, number 9
+<blockquote>Did anyone notice that someone made the biggest policy change of their administration without hardly a comment from the media.  See: Timetable for withdrawal.
+</blockquote>
+Testing again.  Jobby sighted, SECURITY BREACH!!!</div></div>
+<div class="comment" id="comment-166264"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>On my browser, Firefox 3 / Vista, double spaces don't cause a problem for the validator.  What browser are you using?</p><p>However, using two spaces, which is appropriate for writing, is not going to show up any differently than one space on the website.</p></div></div>
+<div class="comment" id="comment-166265"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 8 September 2008</p><div class="comment-body"><p>sentence one.  sentence two. sentence three.</p><p>paragraph two.</p></div></div>
+<div class="comment" id="comment-166266"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote author="Reed A. Cartwright">Therefore, when reporting bugs I need to know what you are running.</blockquote><br/><br/>I’m using Internet Explorer 7.0.5730.11, Windows XP, Service Pack 3.<br/><br/>I also have to use tags to get paragraphs.<br/><br/>Have to hit Preview twice before submitting. </div></div>
+<div class="comment" id="comment-166267"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 8 September 2008</p><div class="comment-body">I wish to report a downgrade: the main page no longer shows which thread "Recent Comments" belongs to.
+
+<blockquote>
+<strong>Ian said:</strong>
+
+two spaces following a period (full stop)
+
+</blockquote>
+
+I've never heard of double spacing or full stops before, and the short Wikipedia example seemed harder to read due to uneven word spacing. Punctuation is, after all, contextual and not necessarily noticed at high reading speeds. 
+
+But the Wikipedia article referred to some empirical research or surveys (didn't check) that presumably indicates it <i>is</i> helpful for readers. Unfortunately the software industry doesn't acknowledge this.</div></div>
+<div class="comment" id="comment-166268"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>I've confirmed the problem with IE, and I think I know where it is.  I'll work on a solution later this afternoon.</p></div></div>
+<div class="comment" id="comment-166270"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Torbjörn Larsson, OM said:</strong>
+
+I wish to report a downgrade: the main page no longer shows which thread "Recent Comments" belongs to.
+</blockquote>
+
+It's in a tool tip if you hover over the [read more] link.
+
+<blockquote>
+I've never heard of double spacing or full stops before, and the short Wikipedia example seemed harder to read due to uneven word spacing. Punctuation is, after all, contextual and not necessarily noticed at high reading speeds. 
+</blockquote>
+
+It's the English standard.  That's what I was always taught.
+
+<blockquote>
+But the Wikipedia article referred to some empirical research or surveys (didn't check) that presumably indicates it <i>is</i> helpful for readers. Unfortunately the software industry doesn't acknowledge this.
+</blockquote>
+
+I know LaTeX has a bunch of logic for determining and using full-stop spaces.
+</div></div>
+<div class="comment" id="comment-166271"><p class="comment-meta"><span class="comment-author">Wheels</span> &middot; 8 September 2008</p><div class="comment-body"><p>Test:</p>
+For some reason, hitting Preview randomly moves the <code>target="_blank"</code> attribute <b>in front</b> of the <code>href</code> in my link tags and then has the gall to tell <i>me</i> "ur doin it rong." If I accept the correction and hit Preview again, it moves them back around and still tells me I'm making a mistake.
+
+Something up with the linking process?<br/>
+Using <a href="http://www.mozilla.com/en-US/firefox/2.0.0.16/releasenotes/">Firefox 2</a> on <a href="http://www.ubuntu.com/getubuntu/releasenotes/710tour">Ubuntu Gutsy</a>, without the NoScripts extension. </div></div>
+<div class="comment" id="comment-166273"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Why are you using <code>target="_blank"</code> tags in your comments?  They are not supported and get stripped by KwickXML.</p></div></div>
+<div class="comment" id="comment-166274"><p class="comment-meta"><span class="comment-author">Wheels</span> &middot; 8 September 2008</p><div class="comment-body"><p>They always seemed to worked before, and I use them out of habit.</p></div></div>
+<div class="comment" id="comment-166275"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>I've fixed two reported problems in IE.  (Tested with 7).</p><p>IE still does some really odd things with tags.</p></div></div>
+<div class="comment" id="comment-166276"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Wheels said:</strong>
+
+They always seemed to worked before, and I use them out of habit. 
+</blockquote>
+
+They were ignored before.  KwickXML adds <code>rel="external"</code> to all external links, and there is a short piece of javascript that sets the target of such links to be "_blank".  So you were seeing what we were doing with the links, not what you were doing with the links.</div></div>
+<div class="comment" id="comment-166277"><p class="comment-meta"><span class="comment-author">Wheels</span> &middot; 8 September 2008</p><div class="comment-body"><p>Alright, well, I knew the comments were formatted with some form of XMLese, I just didn't know about Transitional stuff. Although I guess I should have checked out <a href="http://dererumnatura.us/archives/2008/02/external-linkin.html">De Rerum Natura</a> a few months back to learn that. :) Still puzzled about the recommended rearrangement of it instead inside the tag, though. <br/><br>D'oh well, that's what feedback is for. Now I know not to type out those attributes only to have them ignored.</p></div></div>
+<div class="comment" id="comment-166278"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Validation is accomplished by getting the browser to parse your comment into an html tree object via DOM.  The parsed tree is then read back into a string and the strings are compared.  If your browser is swapping tags around, there is not much I can do, except add a force validation feature.</p></div></div>
+<div class="comment" id="comment-166282"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body">Testing; sentence 1. Sentence 2.
+
+Double enter to start a new paragraph.
+
+Looks like it is now working with double enters.
+
+<blockquote author="Mike Elzinga">I’m using Internet Explorer 7.0.5730.11, Windows XP, Service Pack 3.</blockquote>
+
+The above quote went through ok with <b>blockquote</b>, but not with <i>quote</i>. The quote tag got reformatted and produced an error.
+
+Here is the quote tag again.
+
+<blockquote><p></p><cite>— Mike Elzinga</cite></blockquote> Testing quote tag.
+
+Yup.  Had to hit preview twice and the "Testing quote tag" sentence fell outside the box.  Reformatting moved the end tag right up against the start tag.</div></div>
+<div class="comment" id="comment-166283"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>It looks like IE, unlike Firefox, does not preserve tags it doesn't understand.  Where were all you people when we were testing this out?</p></div></div>
+<div class="comment" id="comment-166285"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>I changed a few lines, and stopped using the browser's default parsing algorithm because IE sucks big time.</p><p>Did I mention how much I hate IE?</p></div></div>
+<div class="comment" id="comment-166287"><p class="comment-meta"><span class="comment-author"><a href="http://circleh.wordpress.com/" rel="nofollow">Dale Husband</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+I changed a few lines, and stopped using the browser's default parsing algorithm because IE sucks big time.
+
+Did I mention how much I hate IE?
+</blockquote>
+
+Must I mention how much I hate Microsoft and its dictator, Bill Gates? He is proof that slavery is still a problem, viturally speaking.
+
+</div></div>
+<div class="comment" id="comment-166288"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><p>Testing;</p><cite>— Mike Elzinga</cite></blockquote>
+
+<a href="http://www.youtube.com/watch?v=myfifz3C0mI">Also testing.</a>
+
+Sorry, the link is not to Ray's paper.</div></div>
+<div class="comment" id="comment-166289"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+I changed a few lines, and stopped using the browser's default parsing algorithm because IE sucks big time.
+
+Did I mention how much I hate IE?
+</blockquote>
+
+Now try the quote tag:
+
+Nope, can't do it.  When trying to run the quote tag I get the following message:
+
+"The script is causing IE to run slowly.  If it continues to run, your computer may become unresponsive."
+
+Guess I'll stick with blockquote.</div></div>
+<div class="comment" id="comment-166290"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Frank J said:</strong>
+
+<blockquote><p>Testing;</p><cite>— Mike Elzinga</cite></blockquote>
+
+<a href="http://www.youtube.com/watch?v=myfifz3C0mI">Also testing.</a>
+
+Sorry, the link is not to Ray's paper.
+</blockquote>
+
+
+You must not be running Internet Explorer.  Your quote tag worked.  Mine didn't.
+</div></div>
+<div class="comment" id="comment-166291"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Did you try a hard refresh (Ctrl-R)?  "Quote" tags to work of me in IE 7 on vista.</p></div></div>
+<div class="comment" id="comment-166292"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+Did you try a hard refresh (Ctrl-R)?  "Quote" tags to work of me in IE 7 on vista.
+</blockquote>
+
+Here goes;
+
+Now we see what happens.
+
+Nope; still the same problem and same message.  Had to erase the quote tag to make it go.
+
+I just tried it with <b>blockquote</b> and that is also giving the same problem now.</div></div>
+<div class="comment" id="comment-166293"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Can you email me the comment that you are trying to use?  (See the contact us button at the top right.)</p></div></div>
+<div class="comment" id="comment-166294"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+Can you email me the comment that you are trying to use?  (See the contact us button at the top right.)
+
+
+</blockquote>
+
+OK; will do.
+
+</div></div>
+<div class="comment" id="comment-166295"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><p>
+test
+</p></blockquote>
+
+<blockquote><p>
+test
+</p></blockquote>
+
+The following works for me in IE:
+
+<blockcode>
+<blockquote><p>
+test
+</p></blockquote>
+
+<blockquote><p>
+test
+</p></blockquote>
+</blockcode>
+
+</div></div>
+<div class="comment" id="comment-166296"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><p>Well, maybe this is quicker.  The Contact Us button doesn't put in a recognizable address.</p><p>I'll replace the angle brackets with curly brackets.</p><p>{blockquote author = "Mike"}This is a blockquote.{/blockquote}</p><p>{quote author = "Mike"}This is a quote.{/quote}</p><p>Maybe it doesn't like my name. :-)</p></div></div>
+<div class="comment" id="comment-166297"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><p>You must not be running Internet Explorer. Your quote tag worked. Mine didn’t.</p></blockquote>
+
+It says "Upgrades - The Panda's Thumb - Windows Internet Explorer" on the top bar (title bar?). That plus the fact that I click on the IE icon to get to the Internet tells me (correctly?) that I am running IE. Beyond that my understanding of computers drops off faster than the understanding of evolution by a YEC who flunked biology.
+
+</div></div>
+<div class="comment" id="comment-166298"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>I fixed the email address.  Now to your comment.</p><p>I can confirm that it breaks the script on both IE and Firefox.</p><p>However if I use <code>author="Mike"</code> instead of <code>author = "Mike"</code> it works.</p><p>I'll look at one of the libraries I'm using to see where that error is occurring.</p></div></div>
+<div class="comment" id="comment-166299"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote><p>Test quote</p></blockquote>
+<blockquote>Test blockquote</blockquote>
+
+That worked.
+
+Now try with author =
+
+Same error.
+
+
+Ah ha!  It really doesn't like names! :-)</div></div>
+<div class="comment" id="comment-166300"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+I fixed the email address.  Now to your comment.
+
+I can confirm that it breaks the script on both IE and Firefox.
+
+However if I use <code>author="Mike"</code> instead of <code>author = "Mike"</code> it works.
+
+I'll look at one of the libraries I'm using to see where that error is occurring.
+
+</blockquote>
+
+
+Might this then occur for any case of <i>attrib = "value"</i> when spaces are put around the equal sign?
+</div></div>
+<div class="comment" id="comment-166301"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 September 2008</p><div class="comment-body"><p>Yes.  I've identified the problem and can fix it, but I haven't yet.</p></div></div>
+<div class="comment" id="comment-166302"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+Yes.  I've identified the problem and can fix it, but I haven't yet.
+</blockquote>
+
+
+Glad to help out.  Hope I haven't been a pest.  I'd hate to be viewed as a bobby troll.
+</div></div>
+<div class="comment" id="comment-166303"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 September 2008</p><div class="comment-body"><blockquote>
+<strong>Frank J said:</strong>
+
+<blockquote><p>You must not be running Internet Explorer. Your quote tag worked. Mine didn’t.</p></blockquote>
+
+It says "Upgrades - The Panda's Thumb - Windows Internet Explorer" on the top bar (title bar?). That plus the fact that I click on the IE icon to get to the Internet tells me (correctly?) that I am running IE. Beyond that my understanding of computers drops off faster than the understanding of evolution by a YEC who flunked biology.
+
+
+</blockquote>
+
+<b>LOL!</b>
+
+</div></div>
+<div class="comment" id="comment-166306"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 September 2008</p><div class="comment-body"><p>I've uploaded a modified version of one of the Javascript libraries that I'm using.  I made it handle malformed text better, and improved its detection of attributes.</p></div></div>
+<div class="comment" id="comment-166307"><p class="comment-meta"><span class="comment-author">Ian</span> &middot; 9 September 2008</p><div class="comment-body"><p>Reed -</p><p>I'm usually using Microsoft's (Ian spits) IE.  Current version is 6.0.  I have to use this at work.  At home I use Firefox.  (Here comes a paragraph...)</p><p>Im my first comment, I also paragraphed and dropped down a line right after the wikipedia URL, but the parser seems to have attached the second para right onto the end of the first!</p></div></div>
+<div class="comment" id="comment-166308"><p class="comment-meta"><span class="comment-author">Ian</span> &middot; 9 September 2008</p><div class="comment-body"><p>Well that one worked fine!  Note that the spelling errors ('Im' instead of 'In' are all my own!</p></div></div>
+<div class="comment" id="comment-166309"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 9 September 2008</p><div class="comment-body"><p>(testing from a different computer)</p><p>The irony is that I got an A in the only computer course I ever took. That was Drexel U., 1972. I may have passed by Michael Behe once or twice while taking my punch cards to the reader in a different building.</p></div></div>
+<div class="comment" id="comment-166310"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 9 September 2008</p><div class="comment-body"><p>No replies since 7 this morning? Is something broke, or is everybody just busy elsewhere?</p></div></div>
+<div class="comment" id="comment-166311"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 9 September 2008</p><div class="comment-body"><p>Well, that posted, so it must be the second hypothesis.</p></div></div>
+<div class="comment" id="comment-166313"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 September 2008</p><div class="comment-body"><p>testing</p></div></div>
+<div class="comment" id="comment-166314"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 September 2008</p><div class="comment-body"><p>testing again</p></div></div>
+<div class="comment" id="comment-166315"><p class="comment-meta"><span class="comment-author"><a href="http://car54.wordpress.com/" rel="nofollow">Stacy S.</a></span> &middot; 10 September 2008</p><div class="comment-body"><p>I have something interesting for you Henry!</p><p>http://www.opposingviews.com/</p><p>Were We Created By Design?<br> Discovery Institute<br>vs.<br> National Center for Science Education<br>(About 4 tabs down)</p><p>Stacy</p></div></div>
+<div class="comment" id="comment-166316"><p class="comment-meta"><span class="comment-author"><a href="http://car54.wordpress.com/" rel="nofollow">Stacy S.</a></span> &middot; 10 September 2008</p><div class="comment-body"><p>Oops! I forgot to mention that there is a poll there.</p><p>"Does Intelligent Design have merit?"</p></div></div>
+<div class="comment" id="comment-166317"><p class="comment-meta"><span class="comment-author">jobby</span> &middot; 10 September 2008</p><div class="comment-body"><p>You need to hire some 'creationists' to help you with your site. You seem to be over your head.</p></div></div>
+<div class="comment" id="comment-166319"><p class="comment-meta"><span class="comment-author">Mike</span> &middot; 10 September 2008</p><div class="comment-body"><p>Why is PT silent while Palin and the creationists are getting away with murder claiming that she didn't "really push" creationism in Alaska, as though she had to do something other than voice support for it?  FactCheck has decided, for no readily apparent reason, that since Palin didn't do something that remains undefined (demand a law, teach a biology class, donate textbooks, who knows) she didn't "really" support teaching creationism.  All the newspapers are dutifully repeating their conclusion.  There's something fishy going on since any moron would realize that all the chief executive has to do is voice support, which she has done many times.  What the hell is going on?</p></div></div>
+<div class="comment" id="comment-166320"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 10 September 2008</p><div class="comment-body"><p>PT is connected to a non-profit.  We have to be careful when dealing with news about political candidates so as not to hurt that non-profit.  We're working on something, but have opted to wait to see if new information gets revealed.</p></div></div>
+<div class="comment" id="comment-166321"><p class="comment-meta"><span class="comment-author">GuyeFaux</span> &middot; 10 September 2008</p><div class="comment-body"><blockquote><p>PT is connected to a non-profit. We have to be careful when dealing with news about political candidates so as not to hurt that non-profit.</p></blockquote>
+Seems absurd (IANAL). If she "didn't really do anything" when she voiced her support, can't PT also "not really do anything" by voicing disapproval for a Creationist candidate?</div></div>
+<div class="comment" id="comment-166322"><p class="comment-meta"><span class="comment-author">Mike</span> &middot; 10 September 2008</p><div class="comment-body"><p>This is nuts.  Any NCSE affiliated email list is also muzzled.  With "teach the controversy" turning into a widely accepted political compromise PT is going to have to be able to discuss political candidates.</p></div></div>
+<div class="comment" id="comment-166323"><p class="comment-meta"><span class="comment-author">Frank B</span> &middot; 10 September 2008</p><div class="comment-body"><p>I am not computer saive at all, so all this talk is way over my head. However, for some guy ( or girl) to post a comment about PT having trouble is absurd.  He (or she) must be jealous of all the expertise shown on ths site.</p></div></div>
+<div class="comment" id="comment-166324"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 10 September 2008</p><div class="comment-body"><p>I didn't say that we had to say silent.  I'm just saying that we are tying to be careful about when/how we mention candidates stances on education.</p><p>Lots of our crew members talk politics on their personal blogs that are not affiliated with us.  Keep up with them, and you will be well served.</p></div></div>
+<div class="comment" id="comment-166326"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 10 September 2008</p><div class="comment-body"><p>So what's the verdict on the new validation feature?</p></div></div>
+<div class="comment" id="comment-166327"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 10 September 2008</p><div class="comment-body"><p>Reed A. Cartwright asked:</p><p>"So what’s the verdict on the new validation feature?"</p><p>I'm finding now, whenever I try to either Preview or Submit, if there are tags of any kind, it gets me to a white screen on which the stuff is printed, but there are no instructions on where to go from there.</p><p>This is also the case with the tags that are automatically placed in the comment to which I am replying.</p><p>If I back up and hit Submit, I am sent to the same screen.  No instructions or buttons to Submit or Preview.<br>I have to remove all tags in order to Preview or Submit.</p><p>Otherwise nothing Posts or Previews.</p></div></div>
+<div class="comment" id="comment-166329"><p class="comment-meta"><span class="comment-author">Wheels</span> &middot; 10 September 2008</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+I'm finding now, whenever I try to either Preview or Submit, if there are tags of any kind, it gets me to a white screen on which the stuff is printed, but there are no instructions on where to go from there.
+
+This is also the case with the tags that are automatically placed in the comment to which I am replying.
+
+If I back up and hit Submit, I am sent to the same screen.  No instructions or buttons to Submit or Preview.
+I have to remove all tags in order to Preview or Submit.
+
+Otherwise nothing Posts or Previews.</blockquote>
+Let me try. 
+
+<i>Italics</i>, then linebreak.<br/> <strong>Strong</strong>, then a new paragraph.
+<p><a href="http://upload.wikimedia.org/wikipedia/en/0/0e/Link_LOZ_with_items.png">Link</a></p>
+
+Preview works fine here.
+
+
+By the way, any preference about using 'a' instead of 'url'? 
+
+</div></div>
+<div class="comment" id="comment-166331"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 10 September 2008</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+I'm finding now, whenever I try to either Preview or Submit, if there are tags of any kind, it gets me to a white screen on which the stuff is printed, but there are no instructions on where to go from there.
+</blockquote>
+
+That screen shows up because javascript threw an error and terminated early.  Things still got submitted, and what you see is the response that javascript would have caught and inserted into the submission page.
+
+I fixed the bug you were encountering.  Apparently for some tags, IE adds extra attributes which was causing my script to crash.  Use ctrl-R to get the latest files.</div></div>
+<div class="comment" id="comment-166332"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 10 September 2008</p><div class="comment-body"><blockquote>
+<strong>Wheels said:</strong>
+
+By the way, any preference about using 'a' instead of 'url'? 
+
+</blockquote>
+
+'a' has been supported for a long time.  We are using a different spam control technique that doesn't force us to abandon 'a'.  'url' is still supported. </div></div>
+<div class="comment" id="comment-166338"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 11 September 2008</p><div class="comment-body">Testing using a copy/paste from Microsoft Word.
+
+<blockquote><p>Here is a quote tag <b>with</b> spaces around the attributes equal sign.</p><cite>— Mike</cite></blockquote>
+
+<blockquote><p>Here is a quote <b>without</b> spaces around the attributes equal sign.</p><cite>— Mike</cite></blockquote>
+
+<blockquote author="Mike">Here is a blockquote <b>with</b> spaces around the attributes equal sign.</blockquote>
+
+<blockquote author="Mike">Here is a blockquote <b>without</b> spaces around the attributes equal sign.</blockquote>
+
+Here is a link to <a href="http://www.natcenscied.org/">NCSE</a> <b>with</b> spaces around the attributes equal sign.
+
+Here is a link to <a href="http://www.natcenscied.org/">NCSE</a> <b>without</b> spaces around the attributes equal sign.
+
+The only other issue I have seen actually has something to do with copy/pasting from Microsoft Word; the quotation marks in the <i>attributes = “value” part of the tag</i> have to be redone when pasting into the comment box. Somehow, the parser doesn’t recognize the quotation marks from Word when they are in the attributes. Elsewhere in the comment they seem to be ok.
+
+Don’t bother to fix it. It’s not a serious issue. One can always use something like Notepad to compose comments offline. 
+
+When I tried the attributes <b>with</b> spaces around the equal sign, I got an error, but after pressing Preview again, everything was fixed (the spaces were removed).
+
+Looks like it is working the way you want.  I like it.
+</div></div>
+<div class="comment" id="comment-166341"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 11 September 2008</p><div class="comment-body"><p>If you have autoquotes turned on in Word, then it will replace straight quotes with curly quotes.  It is not possible to define attributes using curly quotes.  Use a normal text editor instead of Word.</p></div></div>
+<div class="comment" id="comment-166342"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 11 September 2008</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+If you have autoquotes turned on in Word, then it will replace straight quotes with curly quotes.  It is not possible to define attributes using curly quotes.  Use a normal text editor instead of Word.
+</blockquote>
+
+Yeah; I figured it was something like that.  I shouldn't have even mentioned it.  I was simply retyping the quotes after I pasted the comment.  No big deal.
+
+</div></div>
+<div class="comment" id="comment-166357"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 11 September 2008</p><div class="comment-body">This is a test of copy/paste from Notepad.
+
+<blockquote><p>This is a quote tag, <b>no spaces</b> around the atributes equal sign.</p><cite>— Mike</cite></blockquote>
+
+OK; that works.</div></div>
+<div class="comment" id="comment-166358"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 11 September 2008</p><div class="comment-body">This is a test of copy/paste from WordPad
+
+<blockquote author="Mike">This is a blockquote tag, <b>no spaces</b> around the attributes equal sign.</blockquote>
+
+OK; that works also.
+
+So both Notepad and WordPad are good text editors for offline composition.  They produce no unexpected character conversions that bomb the KwickXML syntax.</div></div>
+<div class="comment" id="comment-166385"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 11 September 2008</p><div class="comment-body"><p>test</p></div></div>
+<div class="comment" id="comment-166387"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 11 September 2008</p><div class="comment-body"><p>test #2</p></div></div>
+<div class="comment" id="comment-166389"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 11 September 2008</p><div class="comment-body"><p>Testing...</p><p>1</p><p>2</p><p>3</p></div></div>
+<div class="comment" id="comment-166472"><p class="comment-meta"><span class="comment-author"><a href="http://onlyaerik.blogspot.com/" rel="nofollow">Aerik</a></span> &middot; 12 September 2008</p><div class="comment-body">Testing if it's still compatible with CoComment.
+
+<blockquote cite="Aerik">Also, do you kill the [cite] tag in blockquotes?  Test.</blockquote>
+
+Invalid request again.  Disabling coComment here.
+
+Damnit.</div></div>
+<div class="comment" id="comment-166475"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 12 September 2008</p><div class="comment-body"><p>what is cocomment?</p><p>What cite tag?</p></div></div>
+<div class="comment" id="comment-171169"><p class="comment-meta"><span class="comment-author"><a href="http://www.johnhacking.com/" rel="nofollow">Brisbane web designer</a></span> &middot; 27 October 2008</p><div class="comment-body"><p>A Stumble for your efforts :)</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

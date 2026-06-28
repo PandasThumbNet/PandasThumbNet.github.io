@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server Issues — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Server Issues</h1><p class="post-meta">Posted 2 November 2006 by <span class="post-author">Reed A. Cartwright</span></p><div class="post-body">When we switched to our new server software, it appears to have screwed up how some browsers manage their cache.  This means that some browsers are stuck on outdated pages.
+
+To fix this issue, you need to clean out your cache (or temporary internet files).
+
+If you are using Internet Explorer please make sure all the patches have been applied.  Microsoft has fixed some bugs relating to compressed content.
+
+I also recommend that you upgrade to a modern browser like <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a> if possible.
+
+<strong>Update:</strong>
+
+I've added some directives to the html header that tell browsers to only cache PT html pages for a maximum of one hour.  Hopefully, that will limit the scope of the problem.
+
+<strong>Update:</strong>
+
+Another fix for Internet Explorer is to do a full refresh, "CTRL-F5".  Pressing the refresh button is not enough.
+
+I spend many hours last night trying to figure out the problem.  For MSIE the problem has to do with some odd interaction between our web server software and MSIE when MSIE has cached a compressed page.  I can't replicate the problem on my personal server, so it may depend on some subtle configuration issue or the version of FreeBSD the PT server runs.  When I get a chance, I'll try to debug the server software to see if I can find anything.
+
+For now, I've disabled page compression, and after a single cache clear everything should work fine.  However, it's going to hurt our bandwidth.</div><section class="comments-section"><p><em>No comments were recorded for this post.</em></p></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

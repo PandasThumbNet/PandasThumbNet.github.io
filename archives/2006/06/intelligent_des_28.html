@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intelligent Design explained: Part 2 random search — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Intelligent Design explained: Part 2 random search</h1><p class="post-meta">Posted 21 June 2006 by <span class="post-author">PvM</span></p><div class="post-body"><h>Random Search and No Free Lunch</h>
+
+In his book "No Free Lunch", Dembski argues that, based upon the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a>,  finding an optimal solution via "random search" is virtually impossible because no evolutionary algorithm is superior to random search. And while various authors have shown the many problems with Dembski's arguments, I intend to focus on a relatively small but devastating aspect of the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a>.
+
+First I will explain what the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a> are all about, subsequently I will show how Dembski uses the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a> and finally I will show that the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a> show how a random search, perhaps counterintuitively, is actually quite effective.
+
+<h>No Free Lunch (NFL) Theorems</h>
+
+The <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a>, after which Dembski named his book, are based on a set of papers  by Wolpert and MacReady which basically state that:
+
+<blockquote><p>"[...] all algorithms that search for an extremum of a cost function perform exactly the same, when averaged over all possible cost functions." (Wolpert and Macready, 1995)</p></blockquote>
+
+<h>Dembski and the NFL</h>
+
+Dembski argued, based on the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">No Free Lunch Theorems</a>, that evolutionary algorithms could not perform better than a random search.
+
+<blockquote><p>It's against this backdrop of displacement that I treat the No Free Lunch theorems. These theorems say that when averaged across all fitness functions of a given class (each fitness function being an item of information that constrains an otherwise unconstrained search), no evolutionary algorithm is superior to blind or random search.</p><cite>— Dembski</cite></blockquote>
+
+and
+
+<blockquote><p>In general, arbitrary, unconstrained, maximal classes of fitness functions each seem to have a No Free Lunch theorem for which evolutionary algorithms cannot, on average, outperform blind search.</p><cite>— Dembski</cite></blockquote>
+
+
+<b>Source</b>: Dembski <a href="http://acs.ucsd.edu/~idea/dembskiorr.htm">Evolution's Logic of Credulity: An Unfettered Response to Allen Orr</a>
+
+While Dembski's treatment of the "No Free Lunch" theorems was, according to mathematician David Wolpert, mostly <a href="http://www.talkreason.org/articles/jello.cfm">written in Jello</a>, it is still interesting to pursue some of Dembski's claims. As I will show, not only do the No Free Lunch theorems fail to support Dembski's thesis, but in fact the No Free Lunch theorems show that such optimization is child's play.
+
+The question really becomes: Is it really that hard to find an optimal solution using random search under the assumptions of the No Free Lunch Theorems?
+
+The answer may be a surprise to many and it is 'not really'. 
+
+<h>Random Search</h>
+
+Finding the optimum value may be  hard but finding a solution which is almost as good, is actually reasonably simple. And since evolution does not necessarily search for the best solution, it quickly becomes clear that Dembski's 'No Free Lunch" may have little relevance to evolutionary theory.
+
+In 2002, on the ISCID boards, Erik provided the following calculations:
+
+<blockquote><p>
+Ironically, even if we grant that the prior over the set of all cost functions is uniform, the NFL theorem does not say that optimization is very difficult. <b>It actually says that, when the prior is uniform, optimization is child's play!</b> I mean that almost literally. Almost any strategy no matter how elaborate or crude will do. If the prior over the set of cost functions is uniform, then so is the prior over the set of cost values. That means that if we sample a point in the search space we are equally likely to get a low cost value as a high cost value. Suppose that there are Y possible cost values. Then the probability a sampled point will have one of the L lowest cost values is just
+
+r = L / Y,
+
+regardless of which strategy that was used to decide which point to sample. The probability s that at least one of N different sampled points will have a cost value among the L best is given by
+
+s = 1 - (1 - r)^N,
+
+again independently of the strategy used. Is that good or bad performance? The number of points required to achieve a given performance and confidence level is
+
+N = ln(1 - s) / ln(1 - r) ~ - ln(1 - s) / r.
+
+After sampling 298 points the probability that at least one of them is among the best 1% is 0.95. After 916 sampled points the same probability is 0.9999. If instead we want a point among the best 0.1% we need to sample 2994 points to find one with probability 0.95, or approximately 9206 points to find one with probability 0.9999. That kind of performance may not be satisfactory when the optimization must be done very fast in real-time under critical conditions, but it is good for most purposes. Certainly our universe would seem to be able to spare the time necessary to sample 9206 points. 
+
+This is why Thomas English wrote
+
+<blockquote><p>"The maligned uniform distribution is actually benign. The probability of finding one of the better points with n evaluations does not depend on the size of the domain [7]. For instance, 916 evaluations uncover with 99.99% certainty a point that is better than 99% of the domain. What is remarkable about NFL and the uniform is not just that simple enumeration of points is optimal, but that it is highly effective." (see below for a reference)
+</p><cite>— Erik</cite></blockquote>
+
+<b>Source</b>: English T. (1999) "Some Information Theoretic Results On Evolutionary Optimization", Proceedings of the 1999 Congress on Evolutionary Computation: CEC99, pp. 788-795
+
+The inference is never better than the assumption of a uniform prior that it relies on, however. It would seem that in most non-trivial optimization problems the number of good points in the search space are not as frequent as the number of bad points, meaning that the corresponding cost functions are not drawn uniformly from the set of all possible cost functions.
+</p></blockquote>
+
+As Erik pointed out, as early as 1996, Tom English derived how relatively simple optimization really is:
+
+<blockquote><p>The obvious interpretation of "no free lunch" is that no optimizer is faster, in general, than any other. This  misses some very important aspects of the result, however. One might conclude that all of the optimizers  are slow, because none is faster than enumeration. And one might also conclude that the unavoidable slowness derives from the perverse difficulty of the uniform distribution of test functions. Both of these conclusions would be wrong. 
+If the distribution of functions is uniform, the optimizer's best-so-far value is the maximum of n realizations of a uniform random variable. The probability that all n values are in the lower q fraction of the codomain is p = q<sup>n</sup>. Exploring n = log2 p points makes the probability p that all values are in the lower q  fraction. Table 1 shows n for several values of q and p. 
+It is astonishing that in 99.99% of trials a value better than 99.999% of those in the codomain is obtained with fewer than one million evaluations. This is an average over all functions, of course. It bears mention that one of them has only the worst codomain value in its range, and another has only the best  codomain value in its range. 
+</p><cite>— Tom English</cite></blockquote>
+
+Thomas M. English  <b>Evaluation of Evolutionary and Genetic Optimizers:  No Free Lunch</b> Evolutionary Programming V: Proceedings of the Fifth Annual Conference on Evolutionary Programming, L. J. Fogel, P. J. Angeline, and T BÃ¤ck, Eds., pp. 163-169. Cambridge, Mass: MIT Press, 1996. 
+
+<table>
+<tr>
+	<th rowspan="2">Fraction</th>
+	<th colspan="3">Probability</th>
+</tr>
+<tr>
+	<th>0.01</th>
+	<th>0.001</th>
+	<th>0.0001</th>
+</tr>
+<tr>
+	<th>0.99</th>
+	<td>458</td>
+	<td>678</td>
+	<td>916</td>
+</tr>
+<tr>
+	<th>0.999</th>
+	<td>4603</td>
+	<td>6904</td>
+	<td>9206</td>
+</tr>
+<tr>
+	<th>0.9999</th>
+	<td>46049</td>
+	<td>69074</td>
+	<td>929099</td>
+</tr>
+<tr>
+	<th>0.99999</th>
+	<td>460515</td>
+	<td>690772</td>
+	<td>921029</td>
+</tr>
+</table>
+
+Tom English repeated these facts on a posting to PandasThumb
+
+<blockquote><p>In 1996 I showed that NFL is a symptom of conservation of information in search. Repeating a quote of Dembski above:
+
+<blockquote><p>The upshot of these theorems is that evolutionary algorithms, far from being universal problem solvers, are in fact quite limited problem solvers that depend crucially on additional information not inherent in the algorithms before they are able to solve any interesting problems. This additional information needs to be carefully specified and fine-tuned, and such specification and fine-tuning is always thoroughly teleological.
+</p><cite>— Dembski</cite></blockquote>
+
+Under the theorems' assumption of a uniform distribution of problems, an uninformed optimizer is optimal. To be 99.99% sure of getting a solution better than 99.999% of all candidate solutions, it suffices to draw a uniform sample of just 921,029 solutions. Optimization is a benign problem with rare instances that are hard. Dembski increases the incidence of difficult instances by stipulating "interesting problems." At that point it is no longer clear which NFL theorems he believes apply. Incidentally, an optimizer cannot tune itself to the problem instance while solving it, but its parameters can be tuned to the problem distribution from run to run. It is possible to automate adaptation of an optimizer to the problem distribution without teleology.
+</p></blockquote>
+<b>Source</b>: Tom English  <a href="http://www.pandasthumb.org/archives/2004/06icons_of_id_no.html#comment-3883">Pandasthumb Comment</a>
+
+
+I cannot emphasize strongly enough how wrong Dembski is in his comments on random search as these almost trivial calculations reveal. While Dembski is correct that finding <b>the</b> optimal solution may be extremely hard, finding a solution which is arbitrarily close to the solution is actually quite straightforward.
+
+It should not come as a surprise that the "No Free Lunch Theorems" have more unfortunate surprises in store for Intelligent Design. More on that later...
+
+<h>No Free Lunch Theorems</h>
+<list type="1">
+<li>Dembski, <a href="http://www.arn.org/docs/dembski/wd_nfl_intro.htm">Introduction to No Free Lunch</a></li>
+<li>Richard Wein, <a href="http://www.talkorigins.org/design/faqs/nfl/">Not a Free Lunch But a Box of Chocolates A critique of William Dembski's book No Free Lunch</a></li>
+<li>Wesley Elsberry, <a href="http://www.antievolution.org/people/dembski_wa/nflbook.html">No Free Lunch, The Book</a></li>
+<li>English, <a href="http://citeseer.ist.psu.edu/english00optimization.html">Optimization Is Easy and Learning Is Hard In the Typical Function (2000)</a>, Proceedings of the 2000 Congress on Evolutionary Computation </li>
+<li><a href="http://talkreason.org/index.cfm?category=10">Critique of Intelligent Design</a> Talk Reason</li>
+<li><a href="http://www.cs.uwyo.edu/~wspears/yin-yang.html">Yin-Yang: No-Free-Lunch Theorems for Search</a> Discussion at the 1995 International Conference on Genetic Algorithms</li>
+<li><a href="http://www.no-free-lunch.org/">No Free Lunch Theorems</a></li>
+<li><a href="http://en.wikipedia.org/wiki/No-free-lunch_theorem">Wikipedia: No Free Lunch Theorem</a></li>
+<li><a href="http://evolutionary.martinsewell.com/nfl/">The No Free Lunch Theorems, Evolution and Evolutionary Algorithms</a></li>
+<li><a href="http://www.talkorigins.org/indexcc/CF/CF011.html">Index to Creationist Claims</a></li>
+<li>Wolpert and MacReady, <a href="http://citeseer.ist.psu.edu/wolpert96no.html">No Free Lunch Theorems for Optimization (1996)</a></li>
+<li>Wolpert and MacReady <a href="http://citeseer.ist.psu.edu/wolpert95no.html">No Free Lunch Theorems for Search (1995)</a></li>
+<li>Wolpert <a href="http://talkreason.org/articles/jello.cfm">William Dembski's treatment of the
+No Free Lunch theorems is written in jello</a></li>
+<li>Mark Toussaint <a href="http://homepages.inf.ed.ac.uk/mtoussai/publications/index.html">Homepage Publications</a></li>
+<li>Marc Toussaint, Christian Igel <a href="http://citeseer.ist.psu.edu/toussaint02neutrality.html">Neutrality: A Necessity for Self-Adaptation (2002)  </a>, 2002</li>
+<li>Toussaint, <a href="http://citeseer.ist.psu.edu/sieber91phd.html">PhD thesis  The evolution of genetic representations and modular adaptation</a></li> 
+<li>Toussaint, <a href="http://citeseer.ist.psu.edu/toussaint03evolution.html">On the Evolution of Phenotypic Exploration Distributions (2003)</a></li>
+</list></div><section class="comments-section"><h2 class="comments-heading">81 Comments</h2>
+<div class="comment" id="comment-88872"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 21 June 2006</p><div class="comment-body"><p>The Anti-Science League really does seem to miss the point that evolution doesn't "seek the optimal solution", or anthing so anthropomorphically deliberate; it is a *result* of the range of the available options at the time. "Best" is constantly in flux. Hence the title of this website.</p></div></div>
+<div class="comment" id="comment-88885"><p class="comment-meta"><span class="comment-author">PaulC</span> &middot; 21 June 2006</p><div class="comment-body">Dembski: <blockquote>The upshot of these theorems is that evolutionary algorithms, far from being universal problem solvers,</blockquote>
+
+I must have missed the memo where somebody claimed that evolutionary algorithms are universal problem solvers.
+
+Actually, it's easy to write a "universal" problem solver if you're not in a hurry to see it get an answer (e.g. dove-tailing: just enumerate all possible solutions starting from the smallest ones first). But usually we are interested in an optimization method that comes up with good results in a feasible time frame. Evolutionary algorithms are generally applicable to domains in which we do not have a deep knowledge of structure that would lead to a better optimization (unlike, say, bipartite matching, network flow, or linear programming, for which there are domain-specific algorithms). However, evolutionary algorithms are not "universal". Evolution itself is not capable of optimizing all objective functions. Arguably, it does not <i>optimize</i> anything, though it does a fine job of satisficing fitness criteria in natural ecologies.
+
+Dembski's take on NFL is that it somehow proves that evolutionary algorithms are a waste of time. But I fail to see how he distinguishes between these and other very general methods--e.g. hill-climbing and fixed-point methods--that are also not "universal" but often give useful results when one applies them to an appropriate kind of objective function. </div></div>
+<div class="comment" id="comment-88891"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 21 June 2006</p><div class="comment-body"><p>I will discuss both the concept of evolvability (why evolution works so well) and the concept of displacement in later postings. Little steps... Otherwise there may be too much information to deal with.</p><p>Evolvability, or as I see it the co-evolution of mechanisms of variation, helps understand how and why evolution can 'learn from the past' and how it can be successful.</p><p>Displacement is a whole can of worms and I believe that Dembski's approach fails to explain why/how natural intelligence can circumvent this problem, if it even is a real problem. Since evolution is not a global optimizer, I find his displacement problem of limited interest.</p></div></div>
+<div class="comment" id="comment-88896"><p class="comment-meta"><span class="comment-author">William E Emba</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>While Dembski's treatment of the "No Free Lunch" theorems was, according to mathematician David Wolpert, mostly written in Jello,</p><cite>— PvM</cite></blockquote>Wolpert stated that the mathematical part of Dembski's treatment of NFL was hopelessly mistaken. "Jello" referred to the wooziness of Dembski's philosophy.</div></div>
+<div class="comment" id="comment-88898"><p class="comment-meta"><span class="comment-author">Moses</span> &middot; 21 June 2006</p><div class="comment-body"><p>Poof!  I say!  Poof!</p></div></div>
+<div class="comment" id="comment-88900"><p class="comment-meta"><span class="comment-author">secondclass</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>Displacement is a whole can of worms and I believe that Dembski's approach fails to explain why/how natural intelligence can circumvent this problem, if it even is a real problem.</p><cite>— Pim</cite></blockquote>
+That's why Dembski sees all intelligence as ultimately supernatural.  But that doesn't solve the problem either.
+
+His thinking is:  (1) X is impossible, or virtually impossible, according to established science.  (2) Therefore, X is designed.
+
+Even if he could establish his premise, which he can't, his conclusion is a non sequitur.  According to his logic, if we were to discover a particle that moves faster than the speed of light, we should just label it "designed" instead of adjusting our understanding of physics.</div></div>
+<div class="comment" id="comment-88901"><p class="comment-meta"><span class="comment-author">GuyeFaux</span> &middot; 21 June 2006</p><div class="comment-body"><p>Very nice, succinct post.</p><p>I really liked  Wolfram's <a href="http://www.talkreason.org/articles/jello.cfm">jello</a> article, and thought that it was good enough to blow the whole "Evolution-eats-a-free-lunch" thing out of the water. Basically, it points out that</p><p>1) Dembski knows what he wants to prove: evolution is insufficient to produce complexity,</p><p>2) Knows how he wants to prove it: show that evolution purports to be an algorithm which performs better over all problem spaces.</p><p>3) Does not in fact prove it.</p><p>In the world of formal logic and math, there's no such thing as a partially proved theorem.</p></div></div>
+<div class="comment" id="comment-88903"><p class="comment-meta"><span class="comment-author">Alann</span> &middot; 21 June 2006</p><div class="comment-body">The No Free Lunch theorem seems essentially pointless.
+
+First if limit the domain <i>in any way</i> (like to planets with water, or to carbon based life) the theorem is no longer applicable.
+Try the <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">wikipedia entry</a>
+<blockquote><p>
+Although mathematically sound, the fact that NFLT cannot be applied to arbitrary subsets of cost functions limits its applicability in practice
+</p></blockquote>
+
+Second if I understand it correctly the idea is that over all theoretical math problems any two search algorithms are equally effective. So in principle if you can create a search algorithm that is inherently less efficient the theorem would be disproved.
+
+Maybe this is an oversimplification but doesn't this disprove the NFLT?
+
+<b>Search A: (0,-1,+1,-2,+2,-3,+3,...)</b>
+&nbsp;&nbsp;&nbsp;&nbsp;if LastResult is nothing then return 0
+&nbsp;&nbsp;&nbsp;&nbsp;elseif LastResult>=0 return -(LastResult+1)
+&nbsp;&nbsp;&nbsp;&nbsp;else return -LastResult
+<b>Search B: (0, 0, 0,-1, 0,+1, 0,...)</b>
+&nbsp;&nbsp;&nbsp;&nbsp;IterationCount = IterationCount +1
+&nbsp;&nbsp;&nbsp;&nbsp;if IsEven(IterationCount) return Search A
+&nbsp;&nbsp;&nbsp;&nbsp;else return 0
+
+or how about this:
+
+<b>Search C: (0, 0, 0, 0, 0, 0, 0, ...)</b>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0
+
+While A,B,C may be equal for the subset of mathematical problems which result in zero, for anything else B will automatically take twice as many iterations, while C will never find the answer.
+
+Could someone tell me if I am missing something here?
+
+
+</div></div>
+<div class="comment" id="comment-88905"><p class="comment-meta"><span class="comment-author">GuyeFaux</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>
+Could someone tell me if I am missing something here?
+</p></blockquote>
+You would have to apply Search A and Search B over <b>all</b> possible sequences and average their effectiveness. If either A or B performed better, we'd have a problem.</div></div>
+<div class="comment" id="comment-88913"><p class="comment-meta"><span class="comment-author">Grey Wolf</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>While Dembski is correct that finding the optimal solution may be extremely hard, finding a solution which is arbitrarily close to the solution is actually quite straightforward.</p></blockquote>
+
+Yes, but see, Dembski knows that *he* is the perfect man. Consequently, evolution, if it exists, has had to produce the optimal solution (i.e. him). Since that is impossible, evolution cannot have happened.
+
+Never ignore sublime egotism as the basis for creationism drivel.
+
+Hope that helps,
+
+Grey Wolf</div></div>
+<div class="comment" id="comment-88936"><p class="comment-meta"><span class="comment-author">Sir_Toejam</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>Poof! I say! Poof!</p></blockquote>
+
+"rule #1:
+
+No Pooftas!"</div></div>
+<div class="comment" id="comment-88938"><p class="comment-meta"><span class="comment-author">Sir_Toejam</span> &middot; 21 June 2006</p><div class="comment-body"><p>ya know, sometimes I think Dembski made up this stuff just to piss off his old alma mater.</p><p>One does wonder how on earth he could have presented a defendable thesis, if his NFL drivel represents the way his mind actually works.</p></div></div>
+<div class="comment" id="comment-88940"><p class="comment-meta"><span class="comment-author">secondclass</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>Second if I understand it correctly the idea is that over all theoretical math problems any two search algorithms are equally effective.</p><cite>— Alann</cite></blockquote>
+
+My understanding is that any two <i>non-repeating</i> search algorithms are equally effective, so this would not apply to your algorithms B and C.  Hope this helps.</div></div>
+<div class="comment" id="comment-88944"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>While A,B,C may be equal for the subset of mathematical problems which result in zero, for anything else B will automatically take twice as many iterations, while C will never find the answer.
+
+Could someone tell me if I am missing something here?</p><cite>— Alann</cite></blockquote>
+Alann, my understanding is that the 'no free lunch' theorems only consider algorithms which (1) never visit the same point twice, and (2) eventually visit every single point in the space. In other words insofar as the 'no free lunch' theorems are concerned, your algorithms B and C do not exist.</div></div>
+<div class="comment" id="comment-88959"><p class="comment-meta"><span class="comment-author">ttw</span> &middot; 21 June 2006</p><div class="comment-body"><p>Evolution is surivial of the adequate.</p><p>If there is some "structure" on the problem space, the iterated nature of evolutionary algorithms (putting the next generation's samples in the "better" region) can give a very fast convergence rate.</p></div></div>
+<div class="comment" id="comment-88972"><p class="comment-meta"><span class="comment-author"><a href="http://www.geocities.com/lflank" rel="nofollow">&#x27;Rev Dr&#x27; Lenny Flank</a></span> &middot; 21 June 2006</p><div class="comment-body"><blockquote><p>His thinking is: (1) X is impossible, or virtually impossible, according to established science. (2) Therefore, X is designed.</p></blockquote>
+
+Indeed. "God of the Gaps".
+
+That, of course, is precisely why his "filter" consists of three steps ihn a specified order:  (1) rule out chance, (2) rule out law, (3) therefore design.
+
+Why doesn't Dembski follow the sequence (1) rule out design, (2) rule out chance, (3) therefore law, or some other sequence?  Because, of all the possible sequences to his "filter", he has chosen one that absolutely positively negates any need whatsoever for design "theory" to present anything, offer anything, test anything, or demonstrate anything.  His whole argumetn boils down to nothing more than "if evolution can't explain it, then godiddit".  Or, "God of the Gaps".
+
+
+I suspect that is not a coincidence.
+
+</div></div>
+<div class="comment" id="comment-88977"><p class="comment-meta"><span class="comment-author"><a href="http://scientianatura.blogspot.com" rel="nofollow">Shalini, BBWAD</a></span> &middot; 21 June 2006</p><div class="comment-body"><p>Notice how Dembski hurries to wash his hands from providing any substance whatsoever to his beloved theory?</p><p>This from the 'Issac Newton of information theory'.</p><p>(snicker)</p></div></div>
+<div class="comment" id="comment-89006"><p class="comment-meta"><span class="comment-author">djlactin</span> &middot; 21 June 2006</p><div class="comment-body">sez Dembski:  <blockquote> finding an optimal solution via "random search" is virtually impossible because no evolutionary algorithm is superior... </blockquote>
+
+This very premise reveals a gross lack of understanding of evolution on Dembski's part. 
+
+[Name an 'optimal' organism, Mr. Bill!]
+
+Evolution does not optimize. At best, it results in gene pools becoming better adapted to local conditions, subject to available genetic variability combined with phenotypic, genotypic, and developmental constraints.
+
+
+Hmmm...
+1) Only guided search results in optimal solutions.
+
+2) Evolution doesn't result in optimal solutions.
+
+3) Therefore, evolution is not a 'guided search'.
+
+"Oh dear," says the Designer, and disappears in a puff of logic.
+</div></div>
+<div class="comment" id="comment-89017"><p class="comment-meta"><span class="comment-author"><a href="http://www.greythumb.org/people/api" rel="nofollow">Adam Ierymenko</a></span> &middot; 22 June 2006</p><div class="comment-body"><p>Wow... I already knew that Dembski's NFL drivel was bad... but this thread seems to have torn it a few new ones.</p><p>I continue to be held speechless by both the intellectual vacuity and the amoralism (lying, deceptive use of fallacies, etc.) of today's religious apologists.</p><p>If there's a God, how come his followers behave as if there isn't?</p></div></div>
+<div class="comment" id="comment-89024"><p class="comment-meta"><span class="comment-author"><a href="http://evilution-is-good-for-you.blogspot.com/" rel="nofollow">pwe</a></span> &middot; 22 June 2006</p><div class="comment-body"><blockquote><p>Wow... I already knew that Dembski's NFL drivel was bad... but this thread seems to have torn it a few new ones.
+
+I continue to be held speechless by both the intellectual vacuity and the amoralism (lying, deceptive use of fallacies, etc.) of today's religious apologists.
+
+If there's a God, how come his followers behave as if there isn't?</p><cite>— Adam Ierymenko</cite></blockquote>
+
+If cows had gods, ...
+
+The IDists are not followers of any ethic god, but of the DESIGNER. It's frequently claimed that the purpose of the Wedge Strategy is to introduce a theocrazy (mis-spelling intentional), but really it is a technocrazy (mis-spelling intentional).
+
+How often do you find anything about ethics in ID articles? Very rarely! It's mostly engineers claiming that the Designer designs like an engineer.
+
+</div></div>
+<div class="comment" id="comment-89042"><p class="comment-meta"><span class="comment-author"><a href="http://www.srcf.ucam.org/~ajl59/" rel="nofollow">Corkscrew</a></span> &middot; 22 June 2006</p><div class="comment-body"><p>What if the domain is infinite and the cost function goes to infinity somewhere? If I'm understanding correctly, that sort of situation wouldn't allow you to apply this result in any meaningful sense.</p><p>Am I horribly missing the point here?</p></div></div>
+<div class="comment" id="comment-89043"><p class="comment-meta"><span class="comment-author"><a href="http://www.srcf.ucam.org/~ajl59/" rel="nofollow">Corkscrew</a></span> &middot; 22 June 2006</p><div class="comment-body"><blockquote><p>Search A: (0,-1,+1,-2,+2,-3,+3,...)
+    if LastResult is nothing then return 0
+    elseif LastResult>=0 return -(LastResult+1)
+    else return -LastResult</p></blockquote>
+
+IIRC, NFL only applies to blind algorithms. Your algorithm actually looks at its results, hence is not blind, hence can be better or worse than average at optimising in all situations. </div></div>
+<div class="comment" id="comment-89044"><p class="comment-meta"><span class="comment-author">PaulC</span> &middot; 22 June 2006</p><div class="comment-body">Corkscrew: <blockquote>What if the domain is infinite and the cost function goes to infinity somewhere? If I'm understanding correctly, that sort of situation wouldn't allow you to apply this result in any meaningful sense.</blockquote>
+
+Since the result applies to averaging over all fitness functions, I don't see how to handle it in this context. For a function to have an infinite limit somewhere as you describe, I think it has to satisfy at least some conditions of continuity. "Most" fitness functions are not continuous. So I can see how to average over fitness functions that map the domain to a finite interval, but if there's a way to include functions with infinite limits, then my math skills are completely inadequate. Maybe someone else can help. It is also true that the functions with limits are going to have measure 0 in the space of all possible functions to real values, for instance, so maybe we can just ignore them in the average (but I will not go out on a limb and say we can).
+
+Finally, I think the comments about random search still apply. If I have a fitness function, whether or not it has some range values that are much higher than the others (outliers) or even has some infinite limits in places, it is still relatively easy to find values in the 99%tile, 99.9%tile etc. just by random sampling. My result may turn out to be very small compared to the actual maximum, but it will still be much higher than most other values of the fitness function.</div></div>
+<div class="comment" id="comment-89045"><p class="comment-meta"><span class="comment-author">PaulC</span> &middot; 22 June 2006</p><div class="comment-body"><p>Correction: when I wrote "but it will still be much higher than most other values of the fitness function" I should have said "but it will still have a high probability of being greater than or equal to most other values of the fitness function." There's no guarantee that it will be "much higher."</p><p>Actually, many optimization problems look a lot like this. Almost all randomly chosen solutions have an objective function that could just as well be set at 0 (alternatively, they violate constraints and are infeasible). You can easily find the 99.9%tile value, but it will be 0. The useful solutions are a vanishingly small percentage of the sample space, so you will need some other kind of optimization to find them. It still might not be hard; for instance if the objective function is convex, some kind of hill-climbing will take you to the solution once you find a feasible starting point.</p></div></div>
+<div class="comment" id="comment-89049"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 22 June 2006</p><div class="comment-body"><p>Let me see if I get the story so far.</p><p>English notes that the averaging complaint should be dropped. I don't understand why it doesn't apply, since usually evolution should see a gradient or else be momentarily happy or slowly drift.</p><p>Anyway, he notes that those complementary random instances doesn't fit in the world, as Alann says, and that he has in fact proved it, but that "it remains possible that the "real-world" distribution approximates an NFL distribution closely".</p><p>*But* he also notes that "Under the theorems' assumption of a uniform distribution of problems, an uninformed optimizer is optimal" and sufficiently fast for a population. So No Free Lunch for Dembski.</p><p>Furthermore, if NFL assumes "(1) never visit the same point twice, and (2) eventually visit every single point in the space" it doesn't necessarily apply to evolution. Populations are related (duh!) and doesn't cover the whole space they are evolving through.</p><p>And since it assumes optimality it doesn't apply to evolution anyway. Furthermore it doesn't apply for since genes and species coevolve. NFL also seems to assume conservation of information. (Perhaps that is why coevolution dropkicks it, as PvM hints.) Since we have an inflow of information from the nonclosed environment on the properties of newly realised features and from changes in the environment affecting these properties, it also breaks NFL assumptions on the fitness landscape.</p><p>I'm eager to see the rest of this story!</p></div></div>
+<div class="comment" id="comment-89050"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 22 June 2006</p><div class="comment-body"><p>"What if the domain is infinite and the cost function goes to infinity somewhere?"</p><p>What does that mean? If you look at fitness instead I guess you have 0-100 % of the population reproducing with on average n children. How is fitness defined, do you need to invoke cost, and how do you map between?</p></div></div>
+<div class="comment" id="comment-89067"><p class="comment-meta"><span class="comment-author">Mike Rogers</span> &middot; 22 June 2006</p><div class="comment-body"><blockquote><p>If there's a God, how come his followers behave as if there isn't?</p><cite>— Adam Ierymenko</cite></blockquote>
+
+I get the impression that the ID people are <i>far</i> more concerned about the perceived <i>consequences</i> of whether or not people believe in God than they are about the actual truth of the matter.  
+
+I think that they believe in God in the much same way some older children believe in Santa Claus. In latter case, the child has pretty much figured out what's really going on but still chooses to feign belief a little longer because it's fun.  In the case of ID, they firmly believe, regarding themselves, that disbelief in God will consign them to unmitigated existential angst and a loss of meaning or purpose to life and, regarding others, that disbelief in God will inevitiably lead to cultural decline and moral chaos. 
+
+But they still have enough of a lurking intellectual conscience to crave some balance between their desire to believe in God and the values of reason and science via <i>some</i> kind of rationalization. They also often have scientistic leanings, since modern science has been so successful.  The resulting inner tension, combined with their own repressed nihilism, makes fideism, or else just belief based on non-scientific grounds, seems psycholgically unaccepatble.  So to them the truth isn't really what counts.  It's just about having a (pseudo-) scientific justification for their faith and convincing everyone else of its truth.  To them, that end justify any means.
+</div></div>
+<div class="comment" id="comment-89081"><p class="comment-meta"><span class="comment-author"><a href="http://www.srcf.ucam.org/~ajl59/" rel="nofollow">Corkscrew</a></span> &middot; 22 June 2006</p><div class="comment-body"><blockquote><p>For a function to have an infinite limit somewhere as you describe, I think it has to satisfy at least some conditions of continuity.</p></blockquote>
+
+Good point. I'd note, however, that there are other functions that would mess things up - for example, if for any n there exists an infinite number of elements of the set of genotypes/phenotypes such that the cost function evaluates to greater than n. This wouldn't necessarily need to be continuous. Consider, for example, the markings on a ruler, where the length is more or less proportional to int(log10(x)). That sure as hell ain't continuous, but still has an infinite number of elements of cost > any given value.
+
+<blockquote><p>Finally, I think the comments about random search still apply. If I have a fitness function, whether or not it has some range values that are much higher than the others (outliers) or even has some infinite limits in places, it is still relatively easy to find values in the 99%tile, 99.9%tile etc. just by random sampling.</p></blockquote>
+
+Gah, you're right, I need to read up on my measure theory. My problem was I was having trouble seeing how percentages could be usefully defined on certain sets.
+
+<blockquote><p>Furthermore, if NFL assumes "(1) never visit the same point twice, and (2) eventually visit every single point in the space" it doesn't necessarily apply to evolution.</p><cite>— TL</cite></blockquote>
+
+And the second point, although incidental, puts the nail in my objection's coffin - obviously you can't visit every single point of an infinite space.</div></div>
+<div class="comment" id="comment-89089"><p class="comment-meta"><span class="comment-author">Donald M</span> &middot; 22 June 2006</p><div class="comment-body">In another thread PvM wrote: <blockquote>What a little critical thinking and access to google can do...</blockquote>
+
+Apparently, Pim, you didn't heed your own advice in this post (or your earlier one on this subject for that matter).  Besides the fact that you remove your quotes from Dembski from their full context in order to create your pretext, you don't even cite the correct source.  Instead of using a brief summary statement from the response to Orr, why didn't you quote directly from the book <i>No Free Lunch</i>?  I presume you've read it, since you participated in the ISCID online study/disucssion group with Dembski a couple years back.  Also, you completely ignore Dembski's further eloborations and development of his concepts in <a href="http://www.designinference.com/documents/2006.05.conservation_of_information.pdf">this article</a> and <a href="http://www.designinference.com/documents/2005.10.fitness_among_competitive_agents.pdf">this one</a> as well as <a href="http://www.designinference.com/documents/2005.03.Searching_Large_Spaces.pdf">this one</a>, all of which are relevant to your project of trying to dismantle Dembski.
+
+Further, you're careful to footnote the source for the Dembski quote from the Orr paper, but you don't bother to reference where we can find the original ISCID discussion that contains the elaborate quote from Erik. Given how out of context so much else of your ramblings seem to be, I have to wonder if this oversight was because you didn't want anyone to see the rest of the ISCID discussion.
+
+If I didn't know better, I'd say you were attempting to carefully construct an elborate straw man, complete with select-o-quotes and other misrepresentations.  You'll have to do better than that.
+
+
+
+
+
+</div></div>
+<div class="comment" id="comment-89097"><p class="comment-meta"><span class="comment-author">Ken Kelly</span> &middot; 22 June 2006</p><div class="comment-body"><p>Donald,</p><p>Which of the two Dembski quotes in PvM's post do you consider to be misleading, absent their full context?</p></div></div>
+<div class="comment" id="comment-89099"><p class="comment-meta"><span class="comment-author">secondclass</span> &middot; 22 June 2006</p><div class="comment-body"><blockquote><p>...you don't even cite the correct source.</p><cite>— Donald M</cite></blockquote>
+Um, yes he did.
+
+<blockquote><p>Instead of using a brief summary statement from the response to Orr, why didn't you quote directly from the book No Free Lunch?</p><cite>— Donal M</cite></blockquote>
+How about if you tell us how No Free Lunch and subsequent papers mitigate the problems that PvM outlines?  If you're going to accuse Pim of mining quotes that misrepresent Dembski, then at least provide us with some evidence.
+</div></div>
+<div class="comment" id="comment-89101"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 22 June 2006</p><div class="comment-body"><p>Donald seems to go for the ad hominem approach. Seems that ID is even more vacuous than I had imagined.</p><p>Still embarassed for accusing me erroneously of leaving out 16 paragraphs of text?</p><p>Sometimes it's best to remain silent Donald, unless you can really contribute something to the really devastating finding that random search under NFL assumptions is trivial.</p><p>Care to defend Dembski ?</p><p>Thought so...</p></div></div>
+<div class="comment" id="comment-89102"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 22 June 2006</p><div class="comment-body"><p>As far as not addressing all the work of Dembski, don't worry I am working my way slowly through the more obvious and damning errors and mistakes. <br>I can understand the shock to some who actually took all Dembski said as the gospel, so to speak</p></div></div>
+<div class="comment" id="comment-89104"><p class="comment-meta"><span class="comment-author">Sir_Toejam</span> &middot; 22 June 2006</p><div class="comment-body"><p>poor ducky is a masochist; he never tires of being wrong.</p><p>no such thing as bad publicity, eh Donald?</p></div></div>
+<div class="comment" id="comment-89109"><p class="comment-meta"><span class="comment-author"><a href="http://www.geocities.com/lflank" rel="nofollow">&#x27;Rev Dr&#x27; Lenny Flank</a></span> &middot; 22 June 2006</p><div class="comment-body"><p>Wow, Donald, has it been a whole month already?  Is FL standing by, waiting for his turn?</p><p>Yes, yes, yes, Donald ---- science doesn't pay any attention to your religious opinions, and you don't like that. Right. We got it. Really. We heard you the first hundred times.</p><p>Of course, weather forecasting or accident investigation or medical practice or the rules of basketball also don't pay any attention to your religious opinions, do they.</p><p>If it makes you feel any better, Donald, none of them pay any attention to MY religious opinions either. Of course, I don't throw tantrums over it, like you do. (shrug)</p></div></div>
+<div class="comment" id="comment-89151"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 22 June 2006</p><div class="comment-body">Since Donald seems to be unable to address the demolition of Dembski's argument I am more than willing to present to him the following challenge
+
+Show support for your claim that
+
+<blockquote><p>Given how out of context so much else of your ramblings seem to be, I have to wonder if this oversight was because you didn't want anyone to see the rest of the ISCID discussion.
+
+If I didn't know better, I'd say you were attempting to carefully construct an elborate straw man, complete with select-o-quotes and other misrepresentations. You'll have to do better than that.</p><cite>— Donald M</cite></blockquote>
+
+I encourage you to document
+
+1. That I quote out of context
+2. That I create Strawmen
+3. That I selectively quote
+4. That I misrepresent
+
+Or be known for spreading unsupported assertions.
+
+Fair enough eh Donald. Surprise us with some independent thought. If you need to ask Dembski for guidance, realize his poor performance in this area.
+
+What is it going to be... yes or ... 
+Or do you need to sleep on it for a while.</div></div>
+<div class="comment" id="comment-89152"><p class="comment-meta"><span class="comment-author">steve s</span> &middot; 22 June 2006</p><div class="comment-body"><p>Donald doesn't waste time fact-checking the posts at UD. It would only slow him down. <a href="http://www.uncommondescent.com/index.php/archives/1240#comment-44769">He finds it much easier to just accept what they say is true.</a> I mean, why bother checking? You'll just find out that <a href="http://www.pandasthumb.org/archives/2006/06/evolution_of_co_2.html#comment-105031">they misled you.</a></p></div></div>
+<div class="comment" id="comment-89160"><p class="comment-meta"><span class="comment-author">SPARC</span> &middot; 23 June 2006</p><div class="comment-body"><p>Nobody needs NFL, irreducible or specified complexity to prove creation. Actually we can observe it every day. We are just a few clicks away from an obviously created parallel world and we can easily identify the creators as being Behe, Demski and others heavenly supported by the DI. However, due to its redundancy it may not be unreducible complex (taking away one part will not mean the armagedon for this world). Thus , it remains to be proven that this creation involved some intelligence.</p></div></div>
+<div class="comment" id="comment-89161"><p class="comment-meta"><span class="comment-author">SPARC</span> &middot; 23 June 2006</p><div class="comment-body"><p>Nobody needs NFL, irreducible or specified complexity to prove creation. Actually we can observe it every day. We are just a few clicks away from an obviously created parallel world and we can easily identify the creators as being Behe, Dembski and others heavenly supported by the DI. However, due to its redundancy it may not be irreducible complex (taking away one part will unfortunazely not mean the Armageddon for this world). Thus , it remains to be proven that this creation involved some intelligence.</p></div></div>
+<div class="comment" id="comment-89162"><p class="comment-meta"><span class="comment-author">SPARC</span> &middot; 23 June 2006</p><div class="comment-body"><p>Nobody needs NFL, irreducible or specified complexity to prove creation. Actually we can observe it every day. We are just a few clicks away from an obviously created parallel world and we can easily identify the creators as being Behe, Dembski and others heavenly supported by the DI. However, due to its redundancy it may not be irreducible complex (taking away one part will unfortunately not mean the Armageddon for this world). Thus , it remains to be proven that this creation involved some intelligence.</p></div></div>
+<div class="comment" id="comment-89172"><p class="comment-meta"><span class="comment-author">SPARC</span> &middot; 23 June 2006</p><div class="comment-body"><p>BTW, they have created another new <br><a href="http://www.researchintelligentdesign.org/wiki/Main_Page/">world</a>, have a look</p></div></div>
+<div class="comment" id="comment-89179"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote>BTW, they have created another new
+world, have a look</blockquote>
+
+OK, I just blew out my irony meter on that one.
+
+For those who haven't looked, the page is the research intelligent design.org wiki homepage.
+
+At least in my browser, it comes up as...
+
+<blockquote>
+  > Main Page
+  
+  > There is currently no text in this page</blockquote>
+
+Yes, I understand it's a work in progress, but it speaks volumes anyhow.</div></div>
+<div class="comment" id="comment-89193"><p class="comment-meta"><span class="comment-author">Alann</span> &middot; 23 June 2006</p><div class="comment-body"><p>I'd like to thank secondclass and Coin for explaining the criteria for a search algorithm that I had missed.<br>(That it must never repeat a point (no inherent inefficiency) and must eventually hit every point (eventually will get it right))<br>I think I understand the NFLT now:</p><p>1) There are an infinite number of math problems<br>2) For any given value there are an infinite number of math problems which return that value<br>3) Since each given value has an infinite number of problems all values are equally likely <br>4) In effect this says that the average of all math problems is essentially picking a random number<br>5) Since the result is essentially random no search algorithm can be better than another.</p><p>It is pure garbage. Its like an elaborate proof that 1 = 1 by starting with (A x 0) + 1 = (B x 0) + 1, and implying that this somehow infers something about A and B.<br> <br>First its an attempt to trick you by starting with the hidden premise that your solution is purely random. Well duh, if your solution is random of course you cannot search for it effectively. They want to gloss over the step where in order to apply the NFLT you must first prove the problem is purely random. Yes just try and explain that there are equally as many scenarios where the life form would be a fire breathing dragon or a unicorn, as there are where the life form would be a fish or a goat.</p><p>Second even in mathematics step 3 is just plain wrong. If there is an infinite number of A and an infinite number of B. <br>It DOES NOT hold true that there are as many A as B. Infinity does not behave like a normal number:</p><p>&nbsp;&nbsp;&nbsp;&nbsp;infinity * infinity = infinity (not infinity squared)<br>&nbsp;&nbsp;&nbsp;&nbsp;infinity/infinity=infinity (not one)<br>&nbsp;&nbsp;&nbsp;&nbsp;infinity + infinity = infinity (not two infinity) <br>&nbsp;&nbsp;&nbsp;&nbsp;infinity - infinity = infinity (not zero)</p><p>In fact it should be obvious that certain numbers have special properties making them more or less likely than others. For example Zero would be more likely because any number times zero is zero, at the same time prime numbers would be rarer because they are less likely though multiplication.</p></div></div>
+<div class="comment" id="comment-89196"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote><p>Second even in mathematics step 3 is just plain wrong. If there is an infinite number of A and an infinite number of B, it DOES NOT hold true that there are as many A as B. Infinity does not behave like a normal number.</p><cite>— Alann</cite></blockquote>
+
+I'm know very little about mathematics, but isn't it also the case that there are different orders of infinity. The natural numbers and the odd numbers, for example, are both infinite, but there are "more" (in some sense that I don't understand; infinity is a bizarre concept after all) of the former than the latter. Right?</div></div>
+<div class="comment" id="comment-89200"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 23 June 2006</p><div class="comment-body"><p>Alann,<br>Re "Infinity does not behave like a normal number:"</p><p>Not to mention that some infinities are larger than others, so much so that there can't be a set of all cardinal numbers (a.k.a. sizes of sets).</p><p>Gray,<br>Re "The natural numbers and the odd numbers, for example, are both infinite, but there are "more" (in some sense that I don't understand; infinity is a bizarre concept after all) of the former than the latter. Right?"</p><p>I think you mean integers as compared to real numbers. There's more real numbers than integers. Though otoh, the set of rational numbers is the same size as the set of integers.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-89205"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 23 June 2006</p><div class="comment-body">Alann,
+
+Not exactly.
+
+Basically, if you ever find yourself treating "infinity" like a number, just assume you're doing something wrong. In equations, infinity is something that should only be dealt with in the limit (and you have to follow the rules that limits bring with them). Infinity is not a number.
+
+(Full disclosure: There <i>are</i> these things often called "transfinite numbers", which come in two flavors, "infinite ordinals" and "infinite cardinals". These are technically "infinite numbers" and they're sometimes <i>called</i> that, but you can't treat them like numbers. You're only allowed to use them for certain things, and a lot of the normal nice polite things that numbers do don't exist when we're talking about infinite ordinals and cardinals. For example, if we are talking about infinite ordinals (ordinals are the ones that are more like "numbers" as we think of them-- they're numbers that you can count to), the operation of division is not universally defined.)
+
+Where I'm going with this is that:
+
+<blockquote><p>3. Since each given value has an infinite number of problems all values are equally likely ... Second even in mathematics step 3 is just plain wrong. </p></blockquote>
+The mathematics are fine, you just understand them incorrectly. There are accepted methods for taking averages over infinite areas, or working with probabilities in infinite spaces, and they don't look anything like "infinity / infinity". I haven't read the original proofs of Wolpert and Macready, the people who invented NFL, but I am quite confident they followed the rules and did their "equally likely" calculation in the correct way. From the way the NFL proofs have been described to me, one way you can look at them as working is something like: if you have an algorithm A and an algorithm B, for any given problem algorithm A performs better at, you can go and find a problem that algorithm B will perform better at. The things algorithm A is good at cancel out the things algorithm B is good at exactly, eventually leaving the two exactly evenly matched. There's an <a href="http://en.wikipedia.org/wiki/No-Free-Lunch_theorems">enlightening graph</a> on wikipedia showing how this works-- an algorithm A is optimized such that it's really really good at a small set of things, but as a result it gets ever so slightly worse at everything else, leaving it on average just as good as universally-mediocre algorithm B.
+
+The NFL theorems of Wolpert and Macready are quite mathematically sound. What is not so sound is some of the extra-mathematical pronouncements some persons have made about the importance and consequences of the NFL theorems, in particular the pronouncements made by Mr. William Dembski. You are quite right when you say:
+<blockquote><p>First its an attempt to trick you by starting with the hidden premise that your solution is purely random. Well duh, if your solution is random of course you cannot search for it effectively. They want to gloss over the step where in order to apply the NFLT you must first prove the problem is purely random.</p></blockquote>
+Wolpert and Macready didn't have this problem, since they were talking about search algorithms in an extremely general sense, and even "purely random" cost functions absolutely do matter in that context. Dembski however is ultimately trying to talk about the suitibility of a specific set of search algorithms (evolutionary ones) for a specific set of problems (allowing a biological organism to survive in the physical universe), which means NFL hardly has any relevance at all anymore.
+
+<blockquote><p>The natural numbers and the odd numbers, for example, are both infinite, but there are "more" (in some sense that I don't understand; infinity is a bizarre concept after all) of the former than the latter. Right?</p><cite>— Gray</cite></blockquote>
+The way math people look at it, there are the same number (this would be a cardinal number, here) of natural numbers as odd numbers, even though the odd numbers are a subset of the natural numbers. The reason for looking at things this way is that you can line up the natural numbers with the odd numbers (pair 1 with 1, 2 with 3, 3 with 5, 4 with 7...) and the way you've lined them up, there's exactly one natural number for every odd number and exactly one odd number for every natural number. This is what math requires to consider two sets to be the "same size" or same cardinality.</div></div>
+<div class="comment" id="comment-89211"><p class="comment-meta"><span class="comment-author">Alann</span> &middot; 23 June 2006</p><div class="comment-body"><p>There are an infinite number of:<br>Prime Numbers (2,3,5,7,...)<br>Natural Numbers (+1,+2,+3,...): positive integers (sometimes zero is included)<br>Integers (...,-2,-1, 0,+1,+2,...)<br>Rational Numbers (x/y): All integers plus all possible fractions.<br>Irrational Numbers: Decimal numbers with non-repeating digits, including Pi, the square root of 2, etc.<br>Real Numbers: All Rational and Irrational Numbers<br>Imaginary numbers: Any Real number plus a real number times the imaginary number (square root of -1).</p><p>While each may be a bigger set than the last, there is no term for bigger or smaller infinity.</p><p>In this case the infinity represented in the biological sense used here says all environments and conditions are equally possible, little details like "on Earth" which make things finite just tend to get in the way of what is otherwise perfectly acceptable Mad Science.</p></div></div>
+<div class="comment" id="comment-89214"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote><p>While each may be a bigger set than the last, there is no term for bigger or smaller infinity.</p></blockquote>
+As far as mathematics has been concerned ever since Cantor's work in the late 1800s, actually, there are quite a lot of terms for bigger or smaller infinities (an infinite number of them, as it happens). 
+
+For example, two important terms for bigger or smaller infinities are "Aleph-null" and "Aleph-one". In your "there are an infinite number of" list there, the first four items are the same size as each other, and that size is "aleph-null". The last three items are the same size as each other, and that size is larger (a larger infinity) than "aleph-null".
+
+(While we know the size of the real numbers is larger than aleph-null, there is a big messy argument that has been going on in math for about 130 years, about whether or not the size of the real numbers is the same as "aleph-one". I can't tell who's winning.) 
+
+These are cardinal infinities, of course. "Infinity" by itself doesn't really mean much of anything, and its use is maybe to be avoided, because there are so many different kinds of infinities and some of them have so little to do with one another. Really when you get down to it saying that something is "infinite" is like saying that it is "not blue". What does this tell us?</div></div>
+<div class="comment" id="comment-89228"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 23 June 2006</p><div class="comment-body">Coin,
+
+Thanks for the explanation. If you wouldn't mind indulging the mathematically challenged, I could use a little more clarification. You write,
+
+<blockquote><p>The way math people look at it, there are the same number ... of natural numbers as odd numbers, even though the odd numbers are a subset of the natural numbers. The reason for looking at things this way is that you can line up the natural numbers with the odd numbers (pair 1 with 1, 2 with 3, 3 with 5, 4 with 7...), and the way you've lined them up, there's exactly one natural number for every odd number and exactly one odd number for every natural number. This is what math requires to consider two sets to be the "same size" or same cardinality.</p></blockquote>
+
+That's pretty baffling. The comparison with finite number series keeps leading me astray. For any <i>finite</i> series of successive natural numbers, there are more natural numbers than odd numbers. i.e., when members of the two sets are paired, there are "extra" natural numbers. That, combined with a conception of an infinite series as a strange sort of finite one that "keeps going and going," leads me to conclude that there are "more" natural numbers than odd ones.
+
+What about this: is the idea that the odd numbers are a subset of the natural numbers formally at odds with the idea that both sets have an equal number of members. What is the definition of "subset"? </div></div>
+<div class="comment" id="comment-89229"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 23 June 2006</p><div class="comment-body"><p>Addendum to my question: For any sets A and B, where B is a subset of A, it seems that the following two statements are true: (i) A contains every member than B contains, (ii) A contains some members that B does not contain. Don't (i) and (ii) support the conclusion that A has more members than B?</p></div></div>
+<div class="comment" id="comment-89234"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote><p>That's pretty baffling. The comparison with finite number series keeps leading me astray.</p><cite>— Gray</cite></blockquote>
+It might help keep your mind clear if, just for the moment, you try to think of <i>numbers</i> and <i>quantities</i> as different things.
+
+<blockquote><p>What about this: is the idea that the odd numbers are a subset of the natural numbers formally at odds with the idea that both sets have an equal number of members. What is the definition of "subset"?</p><cite>— Gray</cite></blockquote>
+"A is a subset of B" just means that every member of A is also a member of B. This means that <i>any</i> two equal sets are subsets of one another-- A is always a subset of A.
+
+There's also a concept of "proper subset" that says that if "A is a proper subset of B", then every member of A is also a member of B <i>and</i> B contains at least one member that A does not. This is what you were thinking of in your addendum post-- the odd numbers are a proper subset of the natural numbers.
+
+But by itself the fact that A is a proper subset of B tells us nothing about sizes. It just says there exists an element which is in B but not in A. That's it. Sizes are a different issue.
+
+So <i>formally</i>, no, there's nothing problematic about this, even if <i>intuitively</i> it seems horribly wrong.
+
+<blockquote><p>For any finite series of successive natural numbers, there are more natural numbers than odd numbers. i.e., when members of the two sets are paired, there are "extra" natural numbers. That, combined with a conception of an infinite series as a strange sort of finite one that "keeps going and going," leads me to conclude that there are "more" natural numbers than odd ones. ... Don't (i) and (ii) support the conclusion that A has more members than B?</p><cite>— Gray</cite></blockquote>
+
+The thing is that the way we define the "size" (cardinality) of a set is done not in absolute terms, but only in relation to other sets. This is why removing an element from an infinite set B (and thus creating proper subset A) does not reduce the size of B-- size isn't some kind of absolute counter, it's something that's <i>measured</i>, sort of, by cardinal relationships with other sets.
+
+The way we measure this relationship is using functions. Two sets are of equal size if there is a "bijection" between them-- this is just a function that maps from A to B such that the function produces exactly one member of B for each member of A, and the function can be reversed to produce exactly one member of A for each member of B. I described this process as "pairing up" in an earlier post, but this is really a very bad way of putting it because it makes you think as if you were walking alongside a wall with a huge group of natural numbers and a huge group of odd numbers and telling them to stand next to each other. In this metaphor, as you walked along the wall you'd <i>think</i> you've always got more natural numbers left than odd numbers, because you're moving through the group of natural numbers "slower". This is just a metaphor, though, and if you ignore the metahor and look at things in terms of functions they make much more sense.
+
+The bijection (the mapping, the function) from the odd numbers to the natural numbers is f(x) = 2x - 1. Instead of walking along a wall and lining up numbers, imagine you just stood at the beginning of the wall with all of these numbers with a bullhorn and just yelled "hey, natural numbers! find the odd number equal to yourself plus two minus one, and stand next to it!". This function neatly pairs up every odd number with a natural number and vice versa, even though there's an infinite quantity of both.
+
+Strange as this is, it's <i>necessary</i>. Imagine if math had taken a different path, and defined things such that there were "more" natural numbers than odd numbers. Now let's say you took the set of natural numbers, multiplied everything in the set by 2, and subtracted 1 from everything in the set. This new set is the same "size" as it was before you applied the function f(x)=2x-1, right? It has to be, you didn't take anything out. But even though this new set is the same "size" as the natural numbers, it's <i>equal</i> to the odd numbers, and didn't we just say there are more natural numbers than odd numbers..? This doesn't work at all.
+
+It may help to read <a href="http://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel">this</a>. Or it may make things worse, I don't know. Anyway, the important thing to keep in mind is that not everything in math has to have a physical analogy. When we use a word in math, like <i>infinity</i>, we're not necessarily using it to mean <i>exactly</i> the same thing it would mean in normal english. More often we're using the word to describe some logical entity which was constructed to have a number of properties that it would be fundamentally necessary for the english-language equivalent to have. </div></div>
+<div class="comment" id="comment-89241"><p class="comment-meta"><span class="comment-author">Tom Curtis</span> &middot; 23 June 2006</p><div class="comment-body"><p>Gray, there are two definitions of the notion of "bigger than" for quantities.  Definition one, which you allude to is that if A is a proper subset of B, than set B is bigger than A.  The other definition is that if every member of A can be uniquely correlated with a member of B, but not every member of B can be uniquely correlated with a member of A, than B is bigger than A.  For finite sets, both definitions are equivalent.</p><p>For infinite sets, <b>most</b> mathemeticians treat the definitions as independant, and the second definition as more fundamental.  As coin has shown, it is easy to show that if you treat the "size" of the set of natural numbers as a quantity, then by the second definition the set of odd numbers has the same size as the set of natural numbers.  IN fact, by that definition, the set or rational numbers is also the same size, and so also is the set of computable numbers.  But the set of real numbers is larger.</p><p><b>Some</b> mathemeticians dispute this.  The claim that the set of computable numbers is the set or real numbers; and that talk about the size of infinite sets is nonsense.  I think they're right, but I don't have anywhere near enough mathematical knowledge to justify that opinion.  (On the other hand, if they are wrong, Platonism is true, and there is a God, and wishes are horses.)</p><p>http://en.wikipedia.org/wiki/Aleph-null<br>http://en.wikipedia.org/wiki/Constructive_logic<br>http://en.wikipedia.org/wiki/Computable_number<br>http://en.wikipedia.org/wiki/Supertask</p></div></div>
+<div class="comment" id="comment-89244"><p class="comment-meta"><span class="comment-author"><a href="http://12tutufondue.blogspot.com" rel="nofollow">Doc Bill</a></span> &middot; 23 June 2006</p><div class="comment-body"><p>Where's Donald?</p><p>Alas, another mindless, baseless, clueless creationist tossing out Coulteresque assertions as if they were rare gems and not the paste of wishful thinking.</p><p>Good-bye, Donald.</p></div></div>
+<div class="comment" id="comment-89245"><p class="comment-meta"><span class="comment-author"><a href="http://www.geocities.com/lflank" rel="nofollow">&#x27;Rev Dr&#x27; Lenny Flank</a></span> &middot; 23 June 2006</p><div class="comment-body"><p>Donald will be back next month for another drive-by.</p></div></div>
+<div class="comment" id="comment-89248"><p class="comment-meta"><span class="comment-author">Sir_Toejam</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote><p>Donald will be back next month for another drive-by.
+</p></blockquote>
+
+and very likely will say exactly the same thing, yet again, redardless of being proven wrong by Pim no less than 3 times, and even Dembski admitting the error in accusing Pim of quote mining.
+
+It's exactly why i say it simply isn't worth bothering to respond to him.
+
+heck, just post the links to the previous times he was shown to be wrong and have done with it.
+
+</div></div>
+<div class="comment" id="comment-89253"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 23 June 2006</p><div class="comment-body"><p>Coin,</p><p>At some point you will have to say to me what Socrates says to Glaucon, "You won't be able to follow me any longer," but hopefully we're not there quite yet. So let me take one more stab at this.</p><p>If B is a proper set of A, can there ever be a bijection of A and B? Based on the summary definitions you've provided, it seems not. If A contains every member of B, then can't every member of B be "paired" with the same member in A without remainder in B? But A also contains at least one member, that B does not. If all the same members of A and B have been paired, aren't any members of A that are not contained in B without a "partner"?</p><p>Let A be the natural numbers, and B the odd numbers. Every member of B can be paired with the same member in A (1 with 1, 3 with 3, 5 with 5, <i>ad infinitum</i>) without remainder in B. But A also contains all the even numbers that do not have a "partner" in B; all the members of B are already "taken" by the odd members in A.</p><p>The wikipedia entry for Hilbert's Hotel is interesting. I'm actually familiar with the proof for the existence of God that denies the possibility of an actual infinite. It's called the Kalam cosmological argument (a friend of mine wrote his dissertation on it). At present, the whole business strikes me as a bit nonsensical. I wonder whether that sentiment would disappear with a few graduate level courses in mathematics. Isn't there a school of mathematics that rejects all of this talk about "infinite" series? The intuitionists?</p></div></div>
+<div class="comment" id="comment-89258"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote><p>Definition one, which you allude to is that if A is a proper subset of B, then set B is bigger than A. The other definition is that if every member of A can be uniquely correlated with a member of B, but not every member of B can be uniquely correlated with a member of A, then B is bigger than A. For finite sets, both definitions are equivalent. For infinite sets, most mathemeticians treat the definitions as independant, and the second definition as more fundamental.</p><cite>— Tom Curtis</cite></blockquote>
+
+Thanks. That's a helpful distinction. However, I wonder if the natural and odd numbers are the same "size" under the second definition. It seems to me that if the members are not anonymous, so to speak, but are indexed, then perhaps it is not the case that every natural number can be uniquely correlated with an odd number.
+
+Isn't the <i>way</i> that members are correlated both arbitrary and significant. If, for example, I correlate the first natural with the first odd, the second natural with the second odd, etc., then each natural number would be uniquely correlated with an odd number. If, on the other hand, I correlate only the odd natural numbers with the odd numbers, then the even natural numbers would not be correlated to the odd numbers. Does that make any sense at all?
+</div></div>
+<div class="comment" id="comment-89278"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 23 June 2006</p><div class="comment-body"><p>Gray,</p><p>Re "(i) A contains every member than B contains, (ii) A contains some members that B does not contain. Don't (i) and (ii) support the conclusion that A has more members than B?"</p><p>If both are finite it does - that's the mathematical definition of "finite set": that all proper subsets of a set S are smaller than the set itself. If S has a proper subset the same size as itself then S is infinite.</p><p>(Note - Proper subset of a set S = subset of S that doesn't contain all the elements of S.)<br>(Note - sets S1 and S2 are the same size if there exists a one-to-one mapping between their elements.)</p><p>-----------</p><p>Tom,<br>What's a computable number? Does that include all algebraic numbers plus some that aren't algebraic?</p><p>(Note - algrebraic number = solution to a single-variable polynomial with integer coefficients.)</p><p>Henry</p></div></div>
+<div class="comment" id="comment-89282"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 23 June 2006</p><div class="comment-body"><blockquote><p>
+If B is a proper set of A, can there ever be a bijection of A and B? Based on the summary definitions you've provided, it seems not. If A contains every member of B, then can't every member of B be "paired" with the same member in A without remainder in B? But A also contains at least one member, that B does not. If all the same members of A and B have been paired, aren't any members of A that are not contained in B without a "partner"?</p><cite>— Gray</cite></blockquote>
+
+Sure, but that just shows that there exists a function between sets--the identity in this case--which is not a bijection.  (You can always find such a function unless both sets are the empty set.)  That doesn't mean there isn't also a function which <i>is</i> a bijection, which is the criterion for equality.
+
+What you've demonstrated above, incidentally, is the existence of a surjective mapping from A to B.  That proves that the size of B is <i>not greater than</i> the size of A, so it does in itself tell you something about the relation between the two numbers.  It just doesn't tell you whether size(B) is actually less than size(A), or merely equal.
+
+<blockquote><p>Let A be the natural numbers, and B the odd numbers. Every member of B can be paired with the same member in A (1 with 1, 3 with 3, 5 with 5, ad infinitum) without remainder in B. But A also contains all the even numbers that do not have a "partner" in B; all the members of B are already "taken" by the odd members in A.</p></blockquote>
+You could also pair every member n of A with the member (2n+1) of B; that would take care of every element in A but now <i>B</i> has an element, 1, which is left over.
+
+<blockquote><p>Isn't there a school of mathematics that rejects all of this talk about "infinite" series? The intuitionists?</p></blockquote>
+I don't think so--AFAIK even the hardcore constructivists are still happy with infinite series/sequences, though they're less inclined to grant them certain properties.  I think I count as an intuitionist, and I'm happy with them, anyway. :)</div></div>
+<div class="comment" id="comment-89285"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 June 2006</p><div class="comment-body"><p>Re "Isn't the way that members are correlated both arbitrary and significant."</p><p>Arbitrary, since the question is simply whether or not a one-to-one mapping exists at all. It doesn't really matter which such mapping gets demonstrated, and also it doesn't matter if there are other mappings that aren't one-to-one.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-89296"><p class="comment-meta"><span class="comment-author">Marek 14</span> &middot; 24 June 2006</p><div class="comment-body"><p>As for the aleph-null and aleph-one: it was proven that the continuum hypothesis (essentially whether the cardinality of real numbers is aleph-one or higher) is undecidable in standard set theory, so whether you want to accept it or not, you won't hit any contradictions.</p></div></div>
+<div class="comment" id="comment-89298"><p class="comment-meta"><span class="comment-author"><a href="http://prime.gushi.org/~kd/ProfessionalWebPage/about.html" rel="nofollow">Keith Douglas</a></span> &middot; 24 June 2006</p><div class="comment-body"><p>A computable (real) number is one that can be generated by a turing machine (or a markov algorithm, post system, lambda calculus, etc.). Since there are only countably many turing machines, there are only countably many such numbers and whence "most" real numbers are uncomputable.</p></div></div>
+<div class="comment" id="comment-89301"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 24 June 2006</p><div class="comment-body"><p>Allright, I may have it. The "size" of a set is not absolute but is <i>relative</i> to another set, and the relation between the two is established by a function that correlates the members of one with members of the other. So any set can be larger, smaller or equal to any other set depending on the function used. Right?</p><p>If so, is it the case that the odd numbers are smaller than, larger than, or equal to the natural numbers depending on the function used? That doesn't sound quite right.</p></div></div>
+<div class="comment" id="comment-89319"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 24 June 2006</p><div class="comment-body"><blockquote><p>
+
+Allright, I may have it. The "size" of a set is not absolute but is relative to another set, and the relation between the two is established by a function that correlates the members of one with members of the other. So any set can be larger, smaller or equal to any other set depending on the function used. Right?</p><cite>— Gray</cite></blockquote>
+
+Er...no. :)  Whether one set is larger, smaller or equal to another depends on whether functions between the sets and with certain properties <i>exist</i>; but it is not dependent on exactly what those functions are or which one you're talking about at the moment.
+
+By analogy, a number is square if (say) there exists an integer whose square is that number.  If there was no such integer, it wouldn't be square; but you don't have to reference that integer to say it's square.  You don't have to say "25 is square relative to 5 or -5, but not relative to 7;" 25 is a square number period.
+
+The sets {1,2,3} and {a,b,c} are equal in size because there exists a one-to-one function from each set into the other.  For instance, the function f, with f(1)=a, f(2)=b, f(3)=c; and the function g, with g(a)=1, g(b)=2, g( c)=3.  These aren't the <i>only</i> functions which do the job; you could replace f with F, F(1)=b, F(2)=c, F(3)=a.  There are also lots of functions which <i>don't</i> do the job: for instance, h with h(1)=a, h(2)=a, h(3)=a.  But the mere existence of f and g is all you need to say the sets are equal in size.
+
+By contrast, take the sets {1,2,3} and <b>N</b>={natural numbers}:
+
+There's still a one-to-one function from {1,2,3} into <b>N</b>--for instance, f with f(1)=10, f(2)=300, f(3)=1.  That proves that the size of {1,2,3} is less than or equal to to the size of <b>N</b>.  
+
+On the other hand, there is <i>no</i> one-to-one function from <b>N</b> into {1,2,3}.  (This is easy to see.  Take any function h from <b>N</b> into {1,2,3}.  h(1), h(2), h(3) and h(4) cannot all have different values; therefore h is not one-to-one).  That proves that the size of <b>N</b> is <i>not</i> less than or equal to the size of {1,2,3}.  
+
+Put them together, and they prove that the size of <b>N</b> must be greater than the size of {1,2,3}.
+</div></div>
+<div class="comment" id="comment-89323"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 24 June 2006</p><div class="comment-body"><p>O.K. So <b>N</b> (natural numbers) and <b>O</b> (odd numbers) are equal in size because there exists at least one function that uniquely correlates all the members of <b>N</b> with all the members of <b>O</b>.</p><p>Assuming that I've got that right, my difficulty is as follows. For sets with finite numbers of members, if two sets are of equal size, and all of the members of the first set are correlated to members of the second set by a one-to-one function (<i>any</i> one-to-one function), the second set cannot have members that are <i>not</i> correlated to members of the first set. But for sets with infinite numbers of members, that's not the case.</p><p>It's possible to correlate all of the members of <b>O</b> with members in <b>N</b>, but leave some (an infinite number) of the members of <b>N</b> with no correlate in <b>O</b>. It's also possible to correlate all of the members of <b>N</b> with members in <b>O</b>, but leave some (an infinite number) of the members of <b>O</b> with no correlate in <b>N</b>. It follows, paradoxically, that it's possible for a one-to-one function between sets of equal size to leave "extras," as it were.</p></div></div>
+<div class="comment" id="comment-89432"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 June 2006</p><div class="comment-body"><p>Re "It follows, paradoxically, that it's possible for a one-to-one function between sets of equal size to leave "extras," as it were."</p><p>That's essentially a rephrasing of the definition of infinite set - it can have the same size as some proper subset of itself.</p><p>Ergo, don't expect infinite sets to "act like" finite sets; they don't.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-89445"><p class="comment-meta"><span class="comment-author">Gray</span> &middot; 24 June 2006</p><div class="comment-body"><blockquote><p>That's essentially a rephrasing of the definition of infinite set -- it can have the same size as some proper subset of itself.</p><cite>— Henry J</cite></blockquote>
+
+Now that I understand what is meant by the claim that two infinite sets are the "same" size or "equal" is size, I am of the opinion that it is a complete misuse of those words. What the are used for in this context has nothing to do with the word's normal meaning. And while normal usage may be refined for technical applications, the core of the normal meaning cannot be abandoned, much less contradicted. It would be better if mathematicians coined a word (perhaps they already have and we havnt been using it). At any rate, talk of "equality" or "sameness" of size should be abandoned. 
+
+</div></div>
+<div class="comment" id="comment-89583"><p class="comment-meta"><span class="comment-author">SPARC</span> &middot; 25 June 2006</p><div class="comment-body"><p><quote stevaroni="OK, I just blew out my irony meter on that one.</p><p>For those who haven't looked, the page is the research intelligent design.org wiki homepage.</p><p>At least in my browser, it comes up as..."></p><p>Sorry, my mistake use <br><a href="http://www.researchintelligentdesign.org/wiki/Main_Page">this</a> instead of<br><a href="http://www.researchintelligentdesign.org/wiki/Main_Page/">that</a></p><p>Still, it remains a vacuum filled with emptiness</p></div></div>
+<div class="comment" id="comment-89584"><p class="comment-meta"><span class="comment-author">SPARC</span> &middot; 25 June 2006</p><div class="comment-body"><p>Stevaroni: <b>OK, I just blew out my irony meter on that one.</p><p>For those who haven't looked, the page is the research intelligent design.org wiki homepage.</p><p>At least in my browser, it comes up as...</b></p><p>Sorry, that was my mistake, one slas too much at the end of the URL.</p><p>Click <a href="http://www.researchintelligentdesign.org/wiki/Main_Page">here and you will still find a vacuum filled with emptiness</a></p></div></div>
+<div class="comment" id="comment-89605"><p class="comment-meta"><span class="comment-author">William E Emba</span> &middot; 25 June 2006</p><div class="comment-body"><blockquote><p>Basically, if you ever find yourself treating "infinity" like a number, just assume you're doing something wrong. In equations, infinity is something that should only be dealt with in the limit (and you have to follow the rules that limits bring with them). Infinity is not a number.</p><cite>— Coin</cite></blockquote>
+Infinity is not a number, except when it is.
+
+In modern mathematics, the word "number" is used as is convenient, so arguing about it is pointless. Infinity can be dealt with directly, or as code for certain kinds of limits. There are numerous situations where treating infinity like a finite number is encouraged, even rigorous. Abraham Robinson's nonstandard analysis is the most famous instance of this.
+
+For millennia, philosophers owned the concept of infinity, and talked about it <i>ad infinitum</i>, but since Cantor, it's been discovered that most of what they said was arrant nonsense, or at best of very limited application. Not all philosophers have noticed, however. This is like philosophers claiming relativity is wrong because of Kant. Or denying stellar astrophysics because of Comte.</div></div>
+<div class="comment" id="comment-89634"><p class="comment-meta"><span class="comment-author">Donald M</span> &middot; 25 June 2006</p><div class="comment-body">Pim snarls: <blockquote>I encourage you to document
+
+1. That I quote out of context
+2. That I create Strawmen
+3. That I selectively quote
+4. That I misrepresent
+
+Or be known for spreading unsupported assertions.
+
+Fair enough eh Donald. Surprise us with some independent thought. If you need to ask Dembski for guidance, realize his poor performance in this area.
+
+What is it going to be... yes or ...
+Or do you need to sleep on it for a while.</blockquote>
+
+I already did 1-4.  I referenced two additional articles that eloborate on the subject.  You can do your own homework.  Trying to make it appear as if a summary paragraph out of one article, one that pre-dates the two papers that provide far more detail, as well ignoring <i>NFL</i>, represents the whole of the argument is simply misleading.  You don't even reference any of these in your reference list.  Instead you only reference critiques.  Nor do you reference any of the responses that Dembski himself has made to some of his critics.  IN other words, you're being very careful to select only what makes the case the you want to make, and compeltely ignore anything that might call that case into question.  This comes directly from the "How to Build A Straw Man in 5 Easy Steps" manual.  You see, Pim, in order to refute Dembski's arguments, you have to consider the actual arguments in total...not the bits and pieces that suit your purpose, which is all you're doing here.   </div></div>
+<div class="comment" id="comment-89635"><p class="comment-meta"><span class="comment-author"><a href="http://www.geocities.com/lflank" rel="nofollow">&#x27;Rev Dr&#x27; Lenny Flank</a></span> &middot; 25 June 2006</p><div class="comment-body"><p>Hey Donald, why won't you answer the simple questions I keep asking you?</p><p>What, again, did you say the scientific theory of ID is? How, again, did you say this scientific theory of ID explains these problems? What, again, did you say the designer did? What mechanisms, again, did you say it used to do whatever the heck you think it did? Where, again, did you say we can see the designer using these mechanisms to do ... well . . anything?</p><p>Or is "POOF!! God --- uh, I mean, The Unknown Intelligent Designer --- dunnit!!!!" the extent of your, uh, scientific theory of ID .... ?</p><p>How does "evolution can't explain X Y or Z, therefore goddidit" differ from plain old ordinary run-of-the-mill "god of the gaps?</p><p>Here's *another* question for you to not answer, Donald: Suppose in ten years, we DO come up with a specific mutation by mutation explanation for how X Y or Z appeared. What then? Does that mean (1) the designer USED to produce those things, but stopped all of a sudden when we came up with another mechanisms? or (2) the designer was using that mechanism the entire time, or (3) there never was any designer there to begin with.</p><p>Which is it, Donald? 1, 2 or 3?</p><p>Oh, and if ID isn't about religion, Donald, then why do you spend so much time bitching and moaning about "philosophical materialism"?</p><p>(sound of crickets chirping)</p><p>You are a liar, Donald. A bare, bald-faced, deceptive, deceitful, deliberate liar, with malice aforethought. Still.</p></div></div>
+<div class="comment" id="comment-89636"><p class="comment-meta"><span class="comment-author">psychologist</span> &middot; 25 June 2006</p><div class="comment-body"><p>Donald, you should have asked Pim for his source if you doubted his quote. Instead you called him a liar. You owe Pim an apology.</p></div></div>
+<div class="comment" id="comment-89637"><p class="comment-meta"><span class="comment-author"><a href="http://www.geocities.com/lflank" rel="nofollow">&#x27;Rev Dr&#x27; Lenny Flank</a></span> &middot; 25 June 2006</p><div class="comment-body"><blockquote><p>in order to refute Dembski's arguments</p></blockquote>
+
+Dembski himself has already given up on his, uh, arguments, Donald.  He and his fellow IDers have already declared that there isn't any scientific theory of ID, probably won't ever be any, and that he is returning to his "first love", apologetics.  Because, after all, ID isn't about religion.  No sirree Bob.
+
+Didn't you get that memo, Donald?
+
+
+</div></div>
+<div class="comment" id="comment-89639"><p class="comment-meta"><span class="comment-author">Barley Zagner</span> &middot; 25 June 2006</p><div class="comment-body"><blockquote><p>I also don't think that there is really a theory of intelligent design at the present time to propose as a comparable alternative to the Darwinian theory, which is, whatever errors it might contain, a fully worked out scheme. There is no intelligent design theory that's comparable. Working out a positive theory is the job of the scientific people that we have affiliated with the movement. Some of them are quite convinced that it's doable, but that's for them to prove...No product is ready for competition in the educational world.
+
+--Philip Johnson, 2006
+</p></blockquote>
+
+*Go get the reference yourself, DonaldM. Nobody's obliged to do your research for you. </div></div>
+<div class="comment" id="comment-89673"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 25 June 2006</p><div class="comment-body"><blockquote><p>
+<blockquote><p>    
+I encourage you to document
+
+    1. That I quote out of context
+    2. That I create Strawmen
+    3. That I selectively quote
+    4. That I misrepresent
+
+    Or be known for spreading unsupported assertions.
+
+    Fair enough eh Donald. Surprise us with some independent thought. If you need to ask Dembski for guidance, realize his poor performance in this area.
+
+    What is it going to be... yes or ...
+    Or do you need to sleep on it for a while.
+</p><cite>— Donald M</cite></blockquote>
+I already did 1-4. I referenced two additional articles that eloborate on the subject. You can do your own homework.
+</p></blockquote>
+
+In other words, Donald did not really do 1-4 but referenced to additional articles that elaborate on the topic and expect me to make his arguments to support 1-4. It should be clear by now that Donald M is once again making unsupported accusations. Has he not learned from the past?
+
+<blockquote><p>
+
+ Trying to make it appear as if a summary paragraph out of one article, one that pre-dates the two papers that provide far more detail, as well ignoring NFL, represents the whole of the argument is simply misleading. 
+</p><cite>— Donald M</cite></blockquote>
+
+In order for my argument to be misleading you have to show that it does not address the two papers that followed my references. In addition, if Donald believes that my references were so inadequate, why Dembski has not publicly withdrawn them as being insufficient>?
+
+<blockquote><p>
+You don't even reference any of these in your reference list. Instead you only reference critiques. Nor do you reference any of the responses that Dembski himself has made to some of his critics. IN other words, you're being very careful to select only what makes the case the you want to make, and compeltely ignore anything that might call that case into question.
+</p><cite>— Donald M</cite></blockquote>
+
+Perhaps Donald M can show us what Dembski has contributed that address my arguments? That Dembski has 'responded' to his critics is a far cry from Dembski admitting his errors and or Dembski actually addressing his critics main objections.
+
+<blockquote><p>
+ This comes directly from the "How to Build A Straw Man in 5 Easy Steps" manual. You see, Pim, in order to refute Dembski's arguments, you have to consider the actual arguments in total...not the bits and pieces that suit your purpose, which is all you're doing here.
+</p><cite>— Donald M</cite></blockquote>
+
+That is what you claim and yet you have failed to provide any detailed examples. Come on Donald, do some research and show that by not addressing these two papers I somehow misrepresented Dembski's argument and/or created a strawman.
+
+You have again made several unsupported accusations... Why is it so hard to defend them? Let alone present them with sufficient supporting data? What arguments did I miss Donald? Show us that you are familiar with Dembski's own arguments. If you were, I doubt you would be making these accusations.
+
+I understand that Donald may be going through the typical steps of recovery, and denial and anger are high on the list. After all, to find out that ID is without clothes must come as quite a shock to the faithful. </div></div>
+<div class="comment" id="comment-89680"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 25 June 2006</p><div class="comment-body">Donald M's references, help further show how Dembski seems to be unfamiliar with the effectiveness of random search under NFL...
+
+<blockquote><p>The upshot of the NoFree Lunch theorems is that averaged over all fitness functions, evolutionary computation does no better than blind search (see Dembski 2002, ch 4 as well as  Dembski 2005 for an overview). But this raises a question: How does evolutionary computation obtain its power since, clearly, it is capable of doing better than blind search?</p><cite>— Dembski</cite></blockquote>
+
+And yet blind search itself performs quite well as I and others have shown. Dembski clearly 'does not get it'
+
+
+Dembski does end up with an excellent question
+
+<blockquote><p>The  question therefore remains: Insofar as evolutionary computation does better than blind search,  what is its source of power? That's a topic for another paper.  
+</p></blockquote>
+
+The answer is relatively simple 'evolvability'. The details are even more interesting as they show how neutrality itself is a selectable trait and how self-evolution requires neutrality (Toussaint). The idea that evolution can 'adapt its variation' based on fitness, helps understand the answer to Dembski's question.
+
+What is Dembski's answer? I mean scientifically relevant answer... Poof just does not do it. His articles on 'conservation of information' and 'searching large spaces' fail to show much relevance to evolutionary processes. But perhaps Donald can make his case based on these three papers?
+
+Well Donald? Can you?</div></div>
+<div class="comment" id="comment-89718"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 25 June 2006</p><div class="comment-body"><p>Re "Now that I understand what is meant by the claim that two infinite sets are the "same" size or "equal" is size, I am of the opinion that it is a complete misuse of those words."</p><p>Well, the technical term is "cardinality of the set", or "cardinal number". Which for finite sets is essentially the same thing as the size of the set, so I don't generally bother distinguishing the terms. I don't know if mathematicians limit the use of the word "size" to finite sizes or not.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-89844"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 25 June 2006</p><div class="comment-body"><blockquote><p>
+It's possible to correlate all of the members of O with members in N, but leave some (an infinite number) of the members of N with no correlate in O. It's also possible to correlate all of the members of N with members in O, but leave some (an infinite number) of the members of O with no correlate in N. It follows, paradoxically, that it's possible for a one-to-one function between sets of equal size to leave "extras," as it were.</p><cite>— Gray</cite></blockquote>
+Correct.  But it's not really paradoxical unless you consider "a one-to-one function between sets of equal size must always be surjective" to be self-evident, which AFAIK most people don't.
+
+Note, too, that just about <i>any</i> formalization of "size" or "number of elements" for infinite sets would feature the same oddness.  However you formalize set size, a set obviously ought to have the same size as itself; yet you can have a one-to-one function from (say) <b>N</b> to <i>itself</i> which leaves some elements left over.  f(n)=n+5, for example. 
+<blockquote><p>
+Now that I understand what is meant by the claim that two infinite sets are the "same" size or "equal" is size, I am of the opinion that it is a complete misuse of those words. What the are used for in this context has nothing to do with the word's normal meaning. And while normal usage may be refined for technical applications, the core of the normal meaning cannot be abandoned, much less contradicted. It would be better if mathematicians coined a word (perhaps they already have and we havnt been using it). At any rate, talk of "equality" or "sameness" of size should be abandoned.
+</p></blockquote>
+As Henry noted, the formal term is "cardinality."  Which <i>is</i> necessary to use sometimes so that  it's clear you're talking about "size" as in number of elements, and not "size" as in "extent" or length/width/area/volume.  (The latter is formalized as "measure;" that's the measure theory Robert O'Brien keeps going on about.)
+
+But I doubt people will ever abandon "size" or "number of elements" as a shorthand for cardinality.  Why should they? As Henry said, set cardinality is precisely the same thing as size for all finite sets, which is all the "normal meaning" of the latter word covers anyway.  Beyond that, cardinality has the following properties for finite and infinite sets alike:
+
+The cardinality of a union of sets is never less than the cardinality of any individual set;
+The cardinality of an intersection of sets is never greater than the cardinality of any individual set;
+The cardinality of a set is never less than the cardinality of any subset;
+Reflexivity:  card(A)=card(A);
+Transitivity:  If card(A) â‰¤ card(B) and card(B) â‰¤ card(<C), then card(A) â‰¤ card(<C);
+If card(A) â‰¤ card(B) and card(B) â‰¤ card(A), then card(A) = card(B);
+
+all of which are intuitively properties "size" should have.
+
+So cardinality, in the opinion of pretty much every math guy I've ever asked on the subject, is the ideal way of being able to talk about set size for infinite sets.</div></div>
+<div class="comment" id="comment-90173"><p class="comment-meta"><span class="comment-author">William E Emba</span> &middot; 27 June 2006</p><div class="comment-body"><blockquote><p>Now that I understand what is meant by the claim that two infinite sets are the "same" size or "equal" is size, I am of the opinion that it is a complete misuse of those words.</p><cite>— Gray</cite></blockquote>Well, you can complain all you like. No one will care.<blockquote><p>What they are used for in this context has nothing to do with the word's normal meaning.</p></blockquote>This is rank nonsense. It obviously has something to do with the word's normal meaning.<blockquote><p>And while normal usage may be refined for technical applications, the core of the normal meaning cannot be abandoned, much less contradicted.</p></blockquote>The core of the normal meaning has been retained. Tell me, how would you define two disjoint sets, say points on one line versus points on a parallel line, to be the "same size", except by setting up a correspondence in the first place?<blockquote><p>It would be better if mathematicians coined a word (perhaps they already have and we havnt been using it).</p></blockquote>The word "equipollent" is out there, but is very rarely used. There's a reason: the simpler terminology does just fine.<blockquote><p>At any rate, talk of "equality" or "sameness" of size should be abandoned.</p></blockquote>Why? Because you're stupid?
+
+</div></div>
+<div class="comment" id="comment-90893"><p class="comment-meta"><span class="comment-author">miriam</span> &middot; 5 July 2006</p><div class="comment-body"><p>Sorry for this</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

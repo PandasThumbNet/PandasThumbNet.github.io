@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Red Lynx: A Population Genetics Simulator — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Red Lynx: A Population Genetics Simulator</h1><p class="post-meta">Posted 7 March 2009 by <span class="post-author">Reed A. Cartwright</span></p><div class="post-body">I've been building this simulator off and on for a few months.  It is called Red Lynx and is written completely in client-side javascript using <a href="http://jquery.com/">jQuery</a>, <a href="http://ui.jquery.com/">jQuery UI</a>, and <a href="http://keith-wood.name/svg.html">jQuery SVG plugin</a>.
+
+My goal is to host several of these javascript toys and teaching tools on PT and allow our readers to experiment with them.  I'll be back later to explain the model, but I want to give y'all the chance to play with it and try to deduce the model beforehand.  (Of course, you can look at the code, but that's cheating.)
+
+This simulation is inspired by a few <a href="http://darwin.eeb.uconn.edu/simulations/simulations.html">Java applets</a> written by Kent Holsinger at the University of Connecticut.  <a href="http://pandasthumb.org/archives/2009/01/coding-help.html">Dan Earle</a> came through big time by porting the binomial random number generator from GSL to javascript.
+
+Internet Explorer does not have native support for SVG graphics.  You can install  <a href="http://www.adobe.com/svg/viewer/install/main.html">Adobe SVG viewer</a> or the
+<a href="http://www.examotion.com/index.php?id=product_player">Renesis Player</a> to use the simulator.
+
+<html>
+ 
+
+
+
+
+<div id="red-lynx-den">
+  <p class="ui-widget"><a href="#" class="ui-redlynx-on ui-state-default ui-corner-all">
+    <span class="ui-icon ui-icon-power"></span>Start Red Lynx Simulator
+  </a></p>
+</div>
+
+</html>
+
+<b>Update:</b>  I've made some changes based on feed back that I've received and some new ideas I had.</div><section class="comments-section"><h2 class="comments-heading">28 Comments</h2>
+<div class="comment" id="comment-180120"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 7 March 2009</p><div class="comment-body"><p>Cool and fast!</p></div></div>
+<div class="comment" id="comment-180121"><p class="comment-meta"><span class="comment-author"><a href="http://www.monkeytrials.blogspot.com" rel="nofollow">Scott Hatfield, OM</a></span> &middot; 7 March 2009</p><div class="comment-body"><p>I agree with TL:  it's cool, and it's smoking!  I like twiddling with the backward mutation slider especially.</p></div></div>
+<div class="comment" id="comment-180127"><p class="comment-meta"><span class="comment-author"><a href="http://meinwords.wordpress.com/" rel="nofollow">Edwin Palathinkal</a></span> &middot; 8 March 2009</p><div class="comment-body"><p>Nazi Eugenics would have never worked!</p><p>See link: http://meinwords.wordpress.com/2008/12/12/nazi-eugenics-would-have-never-worked/</p></div></div>
+<div class="comment" id="comment-180132"><p class="comment-meta"><span class="comment-author"><a href="http://darwin.eeb.uconn.edu/uncommon-ground" rel="nofollow">Kent Holsinger</a></span> &middot; 8 March 2009</p><div class="comment-body"><p>I'm delighted to see that you've made these simulations available in Javascript. I've been meaning to convert mine from Java to Javascript for a <em><strong>long</strong></em> time. Now I can just put a pointer to these pages instead.</p><p>Keep up the good work</p></div></div>
+<div class="comment" id="comment-180135"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 8 March 2009</p><div class="comment-body"><p>Reed,</p><p>Can I get permission from Kent and yourself to use these simulations as classroom exercises?  They are beautiful illustrations of basic population genetics principles.  I'm sure that students would benefit greatly from such a great program, (especially future doctors).  I assume that that is why you made the programs available for download, but I thought I would ask just to be sure.  Thanks in advance.</p></div></div>
+<div class="comment" id="comment-180148"><p class="comment-meta"><span class="comment-author">Dave C</span> &middot; 8 March 2009</p><div class="comment-body"><p>This is very cool.</p></div></div>
+<div class="comment" id="comment-180149"><p class="comment-meta"><span class="comment-author">DistendedPendulusFrenulum</span> &middot; 8 March 2009</p><div class="comment-body"><p>OK, I am an English teacher.<br>So what am I looking at?</p></div></div>
+<div class="comment" id="comment-180153"><p class="comment-meta"><span class="comment-author">Sam N</span> &middot; 8 March 2009</p><div class="comment-body"><p>Looking at the labels of the graph, I am guessing that this simulates the frequency of 1 particular allele among many variants in a population, over generations, based on various properties of that allele, such as how likely it is to be expressed, how much it helps an organism survive, or how rapidly the allele mutates.</p><p>If I am correct, I do not understand how the simulation works since I would think it would also depend on the parameters of the competing alleles in that population.</p><p>One suggestion, it would be nice to be able to specify a number, especially when concerned at the low end of the ranges. For example, I can not select 2 alleles, initially, because the slider is not sensitive enough. Maybe this does not matter if the mutation rates are high because that will rapidly increase the number of alleles anyway?</p></div></div>
+<div class="comment" id="comment-180154"><p class="comment-meta"><span class="comment-author"><a href="http://www.mines.edu/~mmyoung" rel="nofollow">Matt Young</a></span> &middot; 8 March 2009</p><div class="comment-body"><p>I kind of agree with the English teacher DPF - can you define some of the terms, in particular, Mut?  As is, it is too much like an in-joke.</p></div></div>
+<div class="comment" id="comment-180156"><p class="comment-meta"><span class="comment-author">tresmal</span> &middot; 8 March 2009</p><div class="comment-body"><p>Let me see if I've got it. Population size is self explanatory.<br><br>Initial allele number is the number of copies of that allele in the population. In the initial population of 800 there would be 1600 hundred copies of the gene (2 for each organism), of which 400 are of the allele in question.Allele number expressed as a percentage is the vertical axis.<br> Fitness is a relative number. It measures the effect of an allele on an organisms reproductive success compared to the average. A fitness of 1 means it is a neutral mutation, a fitness of .99 means it is slightly disadvantageous, and a fitness of 1.01 means it is slightly favored.<br>Dominance is a measure of how strong the effect of an allele is when it is heterozygous, that is when there is one copy of the allele in the organism. A dominance of 0 means that it is completely recessive and there must be 2 copies of the allele for there to be an effect. A dominance of 1 means it is dominant and that 1 copy of the gene produces the full effect.Something in between results in something in between<br> Forward mutation is a measure of how often that mutation occurs e.g. 1.000e-6 means it happens 1 time out of a million.<br> Backward mutation measures how often it mutates back to the original allele.<br> Generations is also self explanatory. It is the horizontal axis.<br><br>The results are randomly generated, using the appropriate and accepted equations. Thus multiple runs for any given setting produces different results. The tendency is towards 0 or 100%.</p><p></br></br></br></br></br></br></br></p></div></div>
+<div class="comment" id="comment-180158"><p class="comment-meta"><span class="comment-author">tresmal</span> &middot; 8 March 2009</p><div class="comment-body"><p>Well, I see that I got one thing wrong. Allele number seems to be the number of organisms in the population that have the allele since the simulation doesn't allow a greater number than the population size.</p></div></div>
+<div class="comment" id="comment-180160"><p class="comment-meta"><span class="comment-author">Dave C</span> &middot; 8 March 2009</p><div class="comment-body"><p>Is there a reason that if you leave the  inputs the same and run the simulation a couple of times, you don't always get the same exact graph?  Is that an error, or is it just a way of showing how chance affects the process?</p></div></div>
+<div class="comment" id="comment-180161"><p class="comment-meta"><span class="comment-author"><a href="http://www.paulburnett.com/creation.htm" rel="nofollow">Paul Burnett</a></span> &middot; 8 March 2009</p><div class="comment-body"><p>I get a message under the graph:  "Error: Your browser does not support SVG. Try Firefox."</p><p>I'm using the latest Internet Explorer in Windows Vista.</p><p>But the graph works in the Apple Safari and Google Chrome browsers.</p></div></div>
+<div class="comment" id="comment-180162"><p class="comment-meta"><span class="comment-author">david w</span> &middot; 8 March 2009</p><div class="comment-body"><p>Dave C,</p><p>Try running a simulation with pop size at 10 a few times, then change the pop to 30 000.</p><p>Then add some weak selection (like fitness ~ 0.98) and fiddle with the population sizes again.</p><p>Reed,</p><p>Very nice work! Do you one that includes heterozygote fitnesses? Or can I do that by playing the the sliders somehow?</p></div></div>
+<div class="comment" id="comment-180163"><p class="comment-meta"><span class="comment-author"><a href="http://www.mines.edu/~mmyoung" rel="nofollow">Matt Young</a></span> &middot; 8 March 2009</p><div class="comment-body"><blockquote>Let me see if I've got it. Population size is self explanatory ...</blockquote>
+
+Good, thanks!  But it looks like dominance goes from -1 to +2.  Don't understand what that means.  
+
+The results I get are somewhat Greek to me, but I'll keep hacking.
+</div></div>
+<div class="comment" id="comment-180164"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 8 March 2009</p><div class="comment-body"><p>I'm going to answer several points in one comment.  (I just got in from doing some field work and are tired.)</p><p><b>Population Size</b>: Right now "pop size" = number of genes, while it should equal number of diploid individuals.  I'll fix that bug when I get a chance.</p><p><b>Dominance</b>: [-1,0) = underdominance, heterozygote is less fit than either homozygote. (0,1) = incomplete dominance, heterozygote is intermediate of the two fitnesses. (0,2] = overdominance, heterozygote is more fit than both homozygotes.  0 = recessive.  1 = dominant.  0.5 = codominant.  Note that the limit of [-1,2] in this app is not necessarily the full range of the values from the more.</p><p><b>Internet Explorer</b>: I've used the <a href="http://www.examotion.com/index.php?id=product_player_download">Renesis player</a> to get svg to display right in IE.</p><p><b>Teaching</b>: Feel free to use this in class, but it is not bug free or documented.  If you don't want to direct your students to PT, I can stick a version up on its own sub site of http://scit.us/.</p></div></div>
+<div class="comment" id="comment-180169"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 March 2009</p><div class="comment-body"><p>Updates have been made.</p></div></div>
+<div class="comment" id="comment-180173"><p class="comment-meta"><span class="comment-author"><a href="http://www.gs.washington.edu/faculty/felsenstein.htm" rel="nofollow">Joe Felsenstein</a></span> &middot; 9 March 2009</p><div class="comment-body"><p>A great job, Reed.  Of course I cannot resist pointing out that if people want a very similar standalone program (just ordinary executables, not Javascript) they can download our program PopG:<br><a href="http://evolution.gs.washington.edu/popgen/">from this web page</a>.  It is designed for classroom use and available for Windows, for Mac OS X, and for Linux.</p><p>The two are quite similar (except I have multiple simultaneous populations and allow migration between them as well).  I like the curves of changing color.  But you really need to add another slider to allow us to change the initial gene frequency and not always use 0.5.</p></div></div>
+<div class="comment" id="comment-180174"><p class="comment-meta"><span class="comment-author"><a href="http://www.gs.washington.edu/faculty/felsenstein.htm" rel="nofollow">Joe Felsenstein</a></span> &middot; 9 March 2009</p><div class="comment-body"><p>Oops!  I just saw that you <i>do</i> have a slider to set initial gene frequency.</p></div></div>
+<div class="comment" id="comment-180176"><p class="comment-meta"><span class="comment-author">Larry_boy</span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+0.5 = codominant.
+</blockquote>
+
+Minuscule nit-pick, but shouldn't you say 0.5 = incomplete dominance? Since fitness is the phenotype, in the heterozygous state we do not see expression of both phenotypes, but rather see expression of a single intermediate phenotype which is different from either of the homozygous phenotypes. 
+
+I don't think it is a very useful to distinguish between co-dominance and incomplete dominance, but when I see something to complain about, I just can't help myself...
+
+Good work on including over and under dominance.</div></div>
+<div class="comment" id="comment-180181"><p class="comment-meta"><span class="comment-author">Wheels</span> &middot; 9 March 2009</p><div class="comment-body"><p>This is a nifty little simulator. I notice funny things happen if you only adjust the population size. Right around a pop of 65-70, you can either get complete saturation of the allele or it drops out entirely after only a few hundred generations.</p><p>Thanks to Firefox, it works "right out of the box," but also thanks for linking to Renesis for IE. I thought Adobe SVG Viewer was being abandoned a couple of years ago, but it seems they kept pushing the date back. I might switch to Renesis on my XP partition just so that I have something current. But who knows when I'll be using IE again on that anyway? :)</p></div></div>
+<div class="comment" id="comment-180182"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+The two are quite similar (except I have multiple simultaneous populations and allow migration between them as well).  I like the curves of changing color.
+</blockquote>
+
+I think that I'm going to add a continent and an immigration rate to this population at some point.<blockquote>
+
+<strong>Larry_boy said:</strong>
+
+Minuscule nit-pick, but shouldn't you say 0.5 = incomplete dominance? 
+</blockquote>
+
+I was saying that co-dominance was a specific form of incomplete dominance.  But you may be correct that it might be better to ignore co-dominance in this model since the only phenotype is fitness.</div></div>
+<div class="comment" id="comment-180184"><p class="comment-meta"><span class="comment-author"><a href="http://www.anevolvingcreation.net/standup/blog.htm" rel="nofollow">Jeremy Mohn</a></span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+<b>Teaching</b>: Feel free to use this in class, but it is not bug free or documented.  If you don't want to direct your students to PT, I can stick a version up on its own sub site of http://scit.us/.
+</blockquote>
+
+That would be great, Reed.
+
+When you do, could you post the URL here?
+</div></div>
+<div class="comment" id="comment-180185"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wheels said:</strong>
+
+This is a nifty little simulator. I notice funny things happen if you only adjust the population size. Right around a pop of 65-70, you can either get complete saturation of the allele or it drops out entirely after only a few hundred generations. 
+</blockquote>
+
+That sounds like the expected behavior if you don't have mutation.  Try decreasing the length of the simulation (generations slider), if you want to run very low population sizes.</div></div>
+<div class="comment" id="comment-180188"><p class="comment-meta"><span class="comment-author"><a href="http://www.anevolvingcreation.net/standup/blog.htm" rel="nofollow">Jeremy Mohn</a></span> &middot; 9 March 2009</p><div class="comment-body"><p>Two questions for Reed-</p><p>How many offspring are born each generation? Is there a way that the number of offspring could be included as another variable?</p></div></div>
+<div class="comment" id="comment-180190"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+<strong>Jeremy Mohn said:</strong>
+
+How many offspring are born each generation? Is there a way that the number of offspring could be included as another variable?
+</blockquote>
+
+The population size stays constant, but it can be varied.
+
+I do have plans to produce a population ecology simulator, that would allow the birth rate to vary, and thus the population size to fluctuate.</div></div>
+<div class="comment" id="comment-180192"><p class="comment-meta"><span class="comment-author"><a href="http://www.anevolvingcreation.net/standup/blog.htm" rel="nofollow">Jeremy Mohn</a></span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+<blockquote>
+<strong>Jeremy Mohn said:</strong>
+
+How many offspring are born each generation? Is there a way that the number of offspring could be included as another variable?
+</blockquote>
+
+The population size stays constant, but it can be varied.
+
+I do have plans to produce a population ecology simulator, that would allow the birth rate to vary, and thus the population size to fluctuate.
+</blockquote>
+OK, thanks Reed.
+
+The reason I asked is that I am thinking of using your simulator in my classroom during a discussion of the rock pocket mouse example of natural selection from Sean Carroll's book "<i>The Making of the Fittest</i>." However, I think those calculations assume a constant population size due to predation, so it should work for my purposes. The number of offspring comes into play when calculating the likelihood of the mutation arising in the population, so I can simply adjust the forward mutation slider to get what I need.</div></div>
+<div class="comment" id="comment-180206"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 March 2009</p><div class="comment-body"><blockquote>
+<strong>Jeremy Mohn said:</strong>
+
+That would be great, Reed.
+
+When you do, could you post the URL here?
+
+</blockquote>
+
+http://scit.us/redlynx/</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

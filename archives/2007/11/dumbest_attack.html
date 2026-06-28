@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dumbest Attack on Genetic Algorithms. Ever. — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Dumbest Attack on Genetic Algorithms. Ever.</h1><p class="post-meta">Posted 2 November 2007 by <span class="post-author">Dave Thomas</span></p><div class="post-body">Last summer, I had it out with Uncommon Descent's Salvador Cordova on the topic of Genetic Algorithms (GA's).  During this series of posts, I explained that Dawkin's use of a Targeted genetic algorithm - one that looks for the specific phrase "Methinks it is like a weasel" in simulations of selection and reproduction - was intended as a tutorial example only, and does <strong>not </strong>(as Dawkins himself pointed out way back in 1986) provide a rigorous simulation of evolution.  Since then, creationists of all stripes have tried time and again to smear <strong>all </strong>Genetic Algorithms with the "They Need a Specified Target - just like Dawkins' Weasel" argument.
+
+During the series of posts, which began <a href="http://pandasthumb.org/archives/2006/07/target-target-w-1.html">here</a>, and ended <a href="http://pandasthumb.org/archives/2006/09/genetic-algorit.html">here </a>(the latter having links to the summer's salvos from both sides), Cordova said I was just sneaking in the answer to difficult math questions (involving Steiner Trees, an NP-hard math problem) instead of having the genetic algorithm "evolve" them properly.  Cordova presented an algorithm he claimed could do math problems without specifying an answer, just like mine, but I proved that his algorithm did indeed inevitably converge to an exact, specified result, quite unlike my GA for Steiner.
+
+I posed an open, unsolved Steiner problem for the <a href="http://www.pandasthumb.org/archives/2006/08/take_the_design.html">Design Challenge</a>.  Dozens of math buffs responded, with <a href="http://www.pandasthumb.org/archives/2006/08/design_challeng_1.html">about half of them finding the exact answer to the problem, and the other half deriving viable (but less-than-optimal) solutions</a>.  
+
+Even with a week's time, and the libraries and websites of the whole world available to him, Cordova failed to derive as good an answer to the given challenge as my evolution-based GA did in just a couple of hours.
+
+About this time, Cordova stopped railing about Dawkins, Weasels, Selection, and Targets, and started saying that computers are just plain faster than humans at solving math problems.
+
+While Cordova's attack on GA's in defense of ID was feeble at best, at least he was trying to keep up with parts of the discussion.
+
+Not so Uncommon Descent contributor Patrick, who recently posted a little gem titled <a href="http://www.uncommondescent.com/intelligent-design/ga-this/">"GA This!"</a> 
+
+Rather than focusing on how new information might emerge from evolutionary processes, Patrick steps into the Wayback machine, demanding that GA's produce not just a specified phrase a la "Weasel," but instead a complete (and completely insipid) anti-evolutionary "poem."
+
+I kid you not.  I wonder if Dembski even knows what his silly monkeys are doing on his blog.  I guess ID theorists are never critical to each other, for the same reason you rarely hear harsh words exchanged publicly between members of the same church.
+
+Hat tip: Richard Hughes</div><section class="comments-section"><h2 class="comments-heading">34 Comments</h2>
+<div class="comment" id="comment-133809"><p class="comment-meta"><span class="comment-author">BlackGriffen</span> &middot; 2 November 2007</p><div class="comment-body"><p>What if the fitness function was a checksum that was demonstrably too short to contain all the information in the text? For instance, take Moby Dick as the "target," compress it to have some idea of it's actual information content, then make, say, a check sum with a result smaller than the compressed version by a factor of 1000 or more. Then have your fitness function be defined by: how close the check sum of the evolved text is, the number of words in the text found in a spellcheck dictionary, and maybe something for grammar.</p><p>I would also be tempted to say that the mutations should function similarly to how mutations work in our own genetic code with duplication of subsections, sexual reproduction that involves mixing of gene sections, random tweaking of letters, etc.</p><p>Granted, even though you can mathematically demonstrate that the sum cannot contain enough information to specify the text the denier likely won't be convinced. Might be an interesting exercise anyway, especially since the fittest text may not be the original, especially if the author got creative with the grammar or spelling (think Dr. Seuss or Lewis Carroll).</p></div></div>
+<div class="comment" id="comment-133810"><p class="comment-meta"><span class="comment-author">BlackGriffen</span> &middot; 2 November 2007</p><div class="comment-body"><p>Just wanted to add that the check sum should probably be sensitive to the order of the text, otherwise you might as well cutout the word of the text, jumble them in a pile, and make nonsense sentences out of them randomly because the result would likely be the same.</p></div></div>
+<div class="comment" id="comment-133811"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 2 November 2007</p><div class="comment-body"><p><b>Dumbest Attack on Genetic Algorithms. Yet.</b></p></div></div>
+<div class="comment" id="comment-133812"><p class="comment-meta"><span class="comment-author"><a href="http://mrmud@msn.com" rel="nofollow">George Mudrovich</a></span> &middot; 2 November 2007</p><div class="comment-body"><p>Just a point of grammar. I think you should write GAs, not GA's. It's like referring to decades: it's correct to write 1980s, not 1980's. Keep up the good work.</p></div></div>
+<div class="comment" id="comment-133813"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 2 November 2007</p><div class="comment-body">I think the problem over at UD stems from the creo strategy of smearing all GAs (thanks George) as <b>needing</b> the exact answer specified right from the very beginning of the simulation, a la Dawkins' Weasel.
+
+This "framing" is so pervasive that when ID 'theorists' study GAs, they almost always (I suspect "Always" is the case, comment on counterexamples if they exist) consider algorithms focused on single specified Targets, just like "Weasel."
+
+For example, check out Dembski et. al.'s <a href="http://www.iscid.org/mesa/about.php">MESA (Monotonic Evolutionary Simulation Algorithm)</a> program.  It is based on convergence to single, specified targets.
+
+Then there's Baylor's Robert J. Marks II, who wrote in "Active Information in Evolutionary Search" the following:
+<blockquote><p>In the field of evolutionary computing, to which the weasel example belongs,
+targets are given extrinsically by programmers who attempt to solve problems of
+their choice and preference...
+</p></blockquote>
+
+And then there's poor Patrick, asking for a whole poem instead of a single phrase.
+
+IDers are so wedded to Weasel that they cannot even comprehend that the great majority of genetic algorithms employed in research and industry are indeed used to develop novel solutions to difficult problems for which no "Target" is even available.
+
+I don't think it's worth much effort to try to generate a specified poem via checksums or whatever.  Even if successful, such an effort wouldn't say anything about evolution, or how it occurs.
+
+IDers don't give a hoot about actually understanding evolution science.  All they really want is a set of scientific-sounding bites that supposedly challenge evolution.  Their attention is not on the science, but only on how well their polemics play in the pews.
+
+Cheers, Dave</div></div>
+<div class="comment" id="comment-133814"><p class="comment-meta"><span class="comment-author"><a href="http://msm.grumpybumpers.com" rel="nofollow">Coin</a></span> &middot; 2 November 2007</p><div class="comment-body"><p><i>otherwise you might as well cutout the word of the text, jumble them in a pile, and make nonsense sentences out of them randomly</i></p><p>...and Uncommon Descent would probably still print it.</p></div></div>
+<div class="comment" id="comment-133817"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 2 November 2007</p><div class="comment-body"><p>To assume the result is conventional for IDC.</p><p>To explicitly demand it is however a major retreat. The answer would sensibly be that GAs with random targets will converge on all targets. Inclusive the ones creationist points to as "*functioning*", usually a negligible zero measure set.</p><p>And as an aside, biological evolution has demonstrably no problem evolving their sacred IC or any other target observed in real life. Rhetorically, why do they demand an ad hoc and non-biological restriction on the experiment?</p><p>Alas, we still find that IDC proponents "has no *functioning* precursors" to empiricism, in spite of arrogantly claiming superior methods based on no verifiable results whatsoever. I guess we can define their religion as Irreducibly Confabulated.</p></div></div>
+<div class="comment" id="comment-133826"><p class="comment-meta"><span class="comment-author"><a href="http://exploringourmatrix.blogspot.com" rel="nofollow">James McGrath</a></span> &middot; 2 November 2007</p><div class="comment-body"><p>Your reference to monkeys at Uncommon Descent cracked me up, since this is the famous 'monkeys with typewriters' problem. I think it was my pointing out that <a href="http://exploringourmatrix.blogspot.com/2007/09/monkeys-and-typewriters-on-edge-of.html">the simulation would need to have an alphabet of only four letters, and words of exactly three letters, in order to come close</a>, that got me <a href="http://exploringourmatrix.blogspot.com/2007/11/banned-from-uncommon-descent.html">banned from posting over there any more</a>.</p></div></div>
+<div class="comment" id="comment-133828"><p class="comment-meta"><span class="comment-author"><a href="http://www.greythumb.org/people/api" rel="nofollow">Adam Ierymenko</a></span> &middot; 2 November 2007</p><div class="comment-body"><p>Wait a few more years. Evolutionary computation is at a kind of tipping point right now as computing power goes multi-core, multi-threaded, and continues to grow exponentially. As harnessed evolution becomes a standard part of engineering practice, you're going to see these guys go through utterly insane intellectual contortions even worse than this to deny the obvious implications of this.</p></div></div>
+<div class="comment" id="comment-133831"><p class="comment-meta"><span class="comment-author">snaxalotl</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote><p>I think you should write GAs, not GA’s</p><cite>— George Mudrovich</cite></blockquote>
+Disagree. It's a little known fact that it's always been correct to use apostrophes for things that are difficult to pluralize. This is the norm for single letters (minding your P's and Q's), but whether it applies to GA's and the 1980's depends upon which style guide you are using. Upshot: this usage is optional but in decline, but the reason for the decline is likely to be the assumption that "apostrophes are never used to form plurals". After all, people do love zealously applying the rules they learned in grade school. </div></div>
+<div class="comment" id="comment-133832"><p class="comment-meta"><span class="comment-author">snaxalotl</span> &middot; 2 November 2007</p><div class="comment-body"><p><i>Weasel</i> is a topic where it seems necessary to be very blunt. When a creationist mentions Weasel, I say something along the lines of "That isn't a simulation of evolution. It's an <i>illustration</i> that shouldn't even exist; except that creationists were too stupid or deliberately obtuse to grasp the extremely simple concept of <i>cumulative selection</i>".</p></div></div>
+<div class="comment" id="comment-133833"><p class="comment-meta"><span class="comment-author"><a href="http://jmarley42.blogspot.com" rel="nofollow">John Marley</a></span> &middot; 2 November 2007</p><div class="comment-body"><p>In <i>The Blind Watchmaker</i>, Dawkins specifically stated that the WEASEL example was meant to demonstrate the power of cumulative selection <b><i>only</i></b>, nothing else. I'm not sure it even qualifies as a GA.  It irritates me when IDiots bring WEASEL into an argument.</p></div></div>
+<div class="comment" id="comment-133834"><p class="comment-meta"><span class="comment-author">Braxton Thomason</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote>
+<strong>snaxalotl:</strong>
+
+<blockquote><p>I think you should write GAs, not GA’s</p><cite>— George Mudrovich</cite></blockquote>
+Disagree. It's a little known fact that it's always been correct to use apostrophes for things that are difficult to pluralize. This is the norm for single letters (minding your P's and Q's), but whether it applies to GA's and the 1980's depends upon which style guide you are using. Upshot: this usage is optional but in decline, but the reason for the decline is likely to be the assumption that "apostrophes are never used to form plurals". After all, people do love zealously applying the rules they learned in grade school. 
+</blockquote>
+Speaking of which, the picture of Steve Steve on the left side of the web page, in front of the sign "Panda's Only" really bugs me.
+
+</div></div>
+<div class="comment" id="comment-133837"><p class="comment-meta"><span class="comment-author">GSLanb</span> &middot; 2 November 2007</p><div class="comment-body"><p>It doesn't bug me.  Must be a panda's only sign.  Seriously, how many road signs does the average panda have, anyway?</p></div></div>
+<div class="comment" id="comment-133839"><p class="comment-meta"><span class="comment-author"><a href="http://anewsabbathschool.blogspot.com" rel="nofollow">perpetualstudent</a></span> &middot; 2 November 2007</p><div class="comment-body"><p><a href="http://ti.arc.nasa.gov/projects/esg/research/antenna.htm">This</a> is probably my favorite example of a GA application.  I am sure most of you have seen it.  The GA was used to design an antenna and I am quite sure the end result was not programmed in.  The picture is of the antenna is towards the bottom of the page.</p></div></div>
+<div class="comment" id="comment-133841"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 2 November 2007</p><div class="comment-body"><p>Does Dembski know that Patrick has defined 'complexity' as the total amount of bits in a word or phrase (which basically equates to 'complexity = length of word')? Because that's not how Dembski defines complexity.</p><p>Sheesh. If he can't even teach the people closest to him, and most supportive of him (these are the ones that aren't banned from his site, remember!) what exactly is he doing? They whine about censorship of ID, when it's clear that they don't even know the stuff that's being 'censored'!</p><p>If they won't take ID seriously, why should we?</p></div></div>
+<div class="comment" id="comment-133842"><p class="comment-meta"><span class="comment-author">neo-anti-luddite</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote>
+<strong>snaxalotl:</strong>
+
+<blockquote><p>
+I think you should write GAs, not GA’s</p><cite>— George Mudrovich</cite></blockquote>
+
+Disagree. It's a little known fact that it's always been correct to use apostrophes for things that are difficult to pluralize. This is the norm for single letters (minding your P's and Q's), but whether it applies to GA's and the 1980's depends upon which style guide you are using. Upshot: this usage is optional but in decline, but the reason for the decline is likely to be the assumption that "apostrophes are never used to form plurals". After all, people do love zealously applying the rules they learned in grade school. 
+</blockquote>
+
+Finally, an issue on PT that's actually within my area of expertise!  As a professional editor for more than a decade and an adjunct instructor of English Composition at the local community college, I have to agree with <b>snaxalotl</b>; indeed, a rather surprising number of "rules" in English are actually a matter of personal preference (especially comma use, or the use of passive voice by writers [intentional grammar joke]).
+
+It's just one of the things that makes English one of the most complex languages on the planet...I wonder how specified that complexity is, and whether or not the collective effect of generations of incremental change would count as "intelligent" design. Although the evolution of languages seems quite similar to the evolution of species (albeit orders of magnitude simpler), I'm sure any passing IDiot would note with glee that the "random mutation" in languages actually <b>does</b> occur through inteligent input (as does the "natural selection").  Nevertheless, taken collectively, the drift of language over the course of centuries can hardly be considered "intelligently designed," since it wasn't drifting towards any particular goal beyond "survival of the useful" (rather like evolution, if one considers reproduction "useful").
+
+Wow.  My longest substantive post to date, and it has nothing to do with the thread topic.  There's a lesson in this, somewhere....
+
+[jefffoxworthy]If you post a diatribe that turns a minor gaffe into a tangent entirely unrelated to the topic at hand, you might be a troll...[/jefffoxwothry]
+
+Consider myself warned.</div></div>
+<div class="comment" id="comment-133843"><p class="comment-meta"><span class="comment-author">AR</span> &middot; 2 November 2007</p><div class="comment-body"><p>Dumber than Cordova? Tom, you must be kidding. Also, while pouncing upon Dawkins's weasel algorithm for having a target, the cordovas <i>et al</i> avoid mentioning that the same Dawkins, in the same book, also described a "biomorph" algorithm that works without a target. While "wiesel" algorithm illustrates the immence acceleration of evolution if mutations are combined with a law (in that case selection) the biomorph algorithm illustrates the spontaneous generation of unlimited complexity from a simple progenitor. (These points, <i>inter alia</i>, have been discussed in chapter 11 of the "Why Intelligent Design Fails" which is also available online <a href="http://www.talkreason.org/articles/Chap11.pdf">(see here)</a>.</p></div></div>
+<div class="comment" id="comment-133844"><p class="comment-meta"><span class="comment-author">neo-anti-luddite</span> &middot; 2 November 2007</p><div class="comment-body">
+<blockquote>
+<strong>Braxton Thomason:</strong>
+
+Speaking of which, the picture of Steve Steve on the left side of the web page, in front of the sign "Panda's Only" really bugs me.</blockquote>
+
+Ironically, that picture is right next to this line in your post...more evidence of intelligent design!</div></div>
+<div class="comment" id="comment-133850"><p class="comment-meta"><span class="comment-author">Bill Gascoyne</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote>
+<strong>neo-anti-luddite:</strong>
+
+
+<blockquote>
+<strong>Braxton Thomason:</strong>
+
+Speaking of which, the picture of Steve Steve on the left side of the web page, in front of the sign "Panda's Only" really bugs me.</blockquote>
+
+Ironically, that picture is right next to this line in your post...more evidence of intelligent design!
+</blockquote>
+
+Sorry, no, that's a function of the width of your browser window. You've recognized a pattern that only <i>appears</i> designed... ;-)</div></div>
+<div class="comment" id="comment-133853"><p class="comment-meta"><span class="comment-author">neo-anti-luddite</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote>
+<strong>Bill Gascoyne:</strong>
+
+Sorry, no, that's a function of the width of your browser window. You've recognized a pattern that only <i>appears</i> designed... ;-)
+</blockquote>
+
+
+[creationism filter]
+So you're saying I just <b>happened</b> to set my borwser window to the <b>exact</b> size needed to place the picture next to the line?  Shannon's theories clearly state that the odds of that happening randomly are approximately 1.694377821 x 10<sup>666</sup>.
+
+So obviously it's the work of the Devil.
+[/creationism filter]</div></div>
+<div class="comment" id="comment-133855"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 2 November 2007</p><div class="comment-body"><p>I suppose GA's could be considered a contraction, with all the trailing letters contracted out?</p></div></div>
+<div class="comment" id="comment-133856"><p class="comment-meta"><span class="comment-author">Siamang</span> &middot; 2 November 2007</p><div class="comment-body"><p>We all know that possibilities with long odds never occur.  Like it's impossible to shuffle two decks of cards together.  Can't be done.  The odds against the resulting configuration are greater than the number of atoms in the universe.</p><p>http://goodmath.blogspot.com/2006/03/messing-with-big-numbers-using.html</p><p>So you clearly could never have gotten that panda image next to your post.  Liar.</p></div></div>
+<div class="comment" id="comment-133857"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 2 November 2007</p><div class="comment-body"><blockquote>
+<strong>BlackGriffen:</strong>
+
+Just wanted to add that the check sum should probably be sensitive to the order of the text, otherwise you might as well cutout the word of the text, jumble them in a pile, and make nonsense sentences out of them randomly because the result would likely be the same. 
+</blockquote>
+
+Evolving a string that fits a checksum would be a rather difficult task for a standard evolutionary algorithm.  Checksum algorithms are designed so that there is low 'correlation' between strings and checksums, i.e. a small modification to the string will produce a widely different checksum. A standard mutation+selection regime would have problems optimizing the checksum because nearly no mutant string would have a checksum phenotype near its parent.  The 'heritability' is very low.
+</div></div>
+<div class="comment" id="comment-133858"><p class="comment-meta"><span class="comment-author">neo-anti-luddite</span> &middot; 2 November 2007</p><div class="comment-body"><p>blockquote><br><strong>Siamang:</strong></p><p>So you clearly could never have gotten that panda image next to your post.  Liar.<br></blockquote></p><p>Waah!  I'm being censored!</p><p>Oh, wait; wrong thread.  ;)</p></div></div>
+<div class="comment" id="comment-133859"><p class="comment-meta"><span class="comment-author">neo-anit-luddite</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote>
+<strong>Siamang:</strong>
+
+So you clearly could never have gotten that panda image next to your post.  Liar.
+</blockquote>
+
+Waaah!  I'm being censored!
+
+Oh, wait...worng thread.  ;)</div></div>
+<div class="comment" id="comment-133861"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote author = "perpetualstudent"> This is probably my favorite example of a GA application. I am sure most of you have seen it. The GA was used to design an antenna and I am quite sure the end result was not programmed in. The picture is of the antenna is towards the bottom of the page.</blockquote>
+
+That is indeed a nice example.
+
+What often surprises me about the ignorance of Dembski and his cohorts in their attempts to write algorithms that they claim disprove evolution is that they don’t even know the history of genetic algorithms.  Just knowing that should have alerted them that something is amiss in their own work.  It is especially egregious when they have hundreds of examples right in front of them in the form of working programs in a wide variety of scientific and engineering applications.
+
+The basic ideas go back even to the early days of computing in the 1930s and 40s (with roots in mathematical ideas going back even farther). The ideas behind Monte Carlo techniques (with potential functions being analogous to a "landscape") contain the seeds of genetic algorithms.  Adaptive learning, adaptive optics, early analog simulations using  colored water flow to build the most efficient vacuum tubes, all these relied on allowing the rapid computational speed of a "computer" to find randomly the best solution to a complicated set of  criteria.  I suspect a larger historical search would bring up many other examples used by "relatively unsophisticated" technicians and tradesmen in the past.  These are not "esoteric" ideas. Clever; yes indeed.
+</div></div>
+<div class="comment" id="comment-133863"><p class="comment-meta"><span class="comment-author"><a href="http://tinyurl.com/b8ykm" rel="nofollow">Glen Davidson</a></span> &middot; 2 November 2007</p><div class="comment-body"><p>It seems worth asking again:  where are GAs* typically used?  And it so happens that they're used mostly where complexity abounds, where rational design processes don't work because of too many possible pathways.</p><p>Indeed, we (imperfectly--of course, since we don't wish to use non-teleological means for our telic aims) mimic evolution because we have trouble dealing with biocomplexity (for instance, in tweaking enzymes), while evolutionary methods excel in coming up with acceptable methods of performing tasks in just those situations.</p><p>So, not only GAs they tend to suggest what we already know, that evolutionary methods are up to the task of evolving life, they are exactly the sorts of processes that we adopt to step in where intelligent design typically fails--in the regime of complexity that the IDiots wish to claim came from "intelligent design."</p><p>OK, I know that I'm saying the obvious, that IDists either can't or won't think.</p><p>Glen D<br>http://tinyurl.com/2kxyc7</p><p>*With something like "x's" it makes sense to pluralize using an apostrophe, but an apostrophe is not needed for "GAs", and merely introduces ambiguity)</p></div></div>
+<div class="comment" id="comment-133889"><p class="comment-meta"><span class="comment-author">snaxalotl</span> &middot; 2 November 2007</p><div class="comment-body"><p>just remember, in English making sense and being correct are not the same thing</p></div></div>
+<div class="comment" id="comment-133893"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 2 November 2007</p><div class="comment-body"><blockquote><p>*With something like “x’s” it makes sense to pluralize using an apostrophe, but an apostrophe is not needed for “GAs”, and merely introduces ambiguity)</p></blockquote>
+
+But without an apostrophe, it looks too much like "GAS" or "gas", which could also cause some confusion.
+
+Henry
+</div></div>
+<div class="comment" id="comment-133895"><p class="comment-meta"><span class="comment-author">BlackGriffen</span> &middot; 2 November 2007</p><div class="comment-body">
+<blockquote>
+<strong>Reed A. Cartwright:</strong>
+
+Evolving a string that fits a checksum would be a rather difficult task for a standard evolutionary algorithm.  Checksum algorithms are designed so that there is low 'correlation' between strings and checksums, i.e. a small modification to the string will produce a widely different checksum. A standard mutation+selection regime would have problems optimizing the checksum because nearly no mutant string would have a checksum phenotype near its parent.  The 'heritability' is very low.
+
+</blockquote>
+
+Yeah, I had thought of that. That's why the checksum was only part of the fitness function. What I wasn't sure on was how sensitive checksums were to transposition errors. Regardless, I had in mind that some kind of custom check sum would be made, like a string of numbers that tells you the number of words between each punctuation mark, the total character count, and a traditional checksum, or something like that.
+
+And as far as teaching you something about evolution - it wouldn't. It would be an interesting experiment in compression/information theory, though, because it would be a way to compress a text to smaller than the size of whatever the comparison compression algorithm is, if it could be made to work.</div></div>
+<div class="comment" id="comment-133898"><p class="comment-meta"><span class="comment-author"><a href="http://pseudonoise.livejournal.com/" rel="nofollow">PseudoNoise</a></span> &middot; 3 November 2007</p><div class="comment-body"><p>Just a note -- I remember fondly your original posts on this; as a programmer and just a fan of biology, I thought it was a blast.  Even without going back, I can remember how you encoded the "gene" and how having a good fitness function was critical (and very simple to calculate in your case).  I learned a whole lot from that series, just wanted to say thanks.</p></div></div>
+<div class="comment" id="comment-133926"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 3 November 2007</p><div class="comment-body"><p>I don't know, Dave; I still think that Stephen Meyer's offhand dismissal of the entirety of evolutionary computation based upon nothing more than what he heard from his fellow IDC advocates ranks right up there.</p></div></div>
+<div class="comment" id="comment-134097"><p class="comment-meta"><span class="comment-author">David vun Kannon</span> &middot; 5 November 2007</p><div class="comment-body"><p>I think some of the recent WEASEL bites on UcD relate to some unfortunate student pages. I'm not sure their teacher grasped the concept too well either.</p><p>Also the amazing GilDodgen makes some comments as an "expert" on what GA can't do. (See, I avoid the pluralisation issue by using the singular as the plural...) This from a guy who thought simulations had to include the possibility of the hardware being dropped out of an airplane in order to simulate being dropped out of an airplane.</p><p>I recently went looking for a good fisking of MESA but couldn't find anything that directly addressed it.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

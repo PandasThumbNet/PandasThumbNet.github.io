@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The ENCODE delusion — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">The ENCODE delusion</h1><p class="post-meta">Posted 23 September 2012 by <span class="post-author">PZ Myers</span></p><div class="post-body"><p class="lead">I can take it no more. I wanted to dig deeper into the good stuff done by the ENCODE consortium, and have been working my way through some of the papers (not an easy thing, either: I have a very high workload this term), but then I saw this <a href="https://www.eff.org/deeplinks/2012/09/new-research-on-junk-dna-raises-questions">declaration from the Electronic Frontier Foundation</a>.</p>
+
+<blockquote><p>On September 19, the Ninth Circuit is set to hear new arguments in Haskell v. Harris, a case challenging California's warrantless DNA collection program. Today EFF asked the court to consider ground-breaking new research that confirms for the first time that <em>over 80% of our DNA that was once thought to have no function, actually plays a critical role in controlling how our cells, tissue and organs behave.</em></p></blockquote>
+
+<p>I am sympathetic to the cause the EFF is fighting for: they are opposing casual DNA sampling from arrestees as a violation of privacy, and it is. The forensic DNA tests done by police forces, however, do not involve sequencing the DNA, but only look at the arrangement of known variable stretches of repetitive DNA by looking at just the length of fragments cut by site-specific enzymes; they can indicate familial and even to some degree ethnic relationships, but not, as the EFF further claims, "behavioral tendencies and sexual orientation". Furthermore, the claim that 80% of our genome has critical functional roles is outrageously bad science.</p>
+
+<p>This hurts <i>because</i> I support the legal right to genetic privacy, and the EFF is trying to support it in court with hype and noise; their opposition should be able to easily find swarms of scientists who will demolish that argument, and any scientifically knowledgeable judge should be able to see right through the exaggerations (maybe they're hoping for an ignorant judge?). That conclusion, that 80% of the genome is critical to function, is simply false, and it's the notorious dishonest heart of ENCODE's conclusions.</p>
+
+<p>And then there is this lovely little commercial for ENCODE, narrated by Tim Minchin, and portraying ENCODE as a giant cancer-fighting robot.</p>
+
+<div class="center"><iframe width="500" height="281" src="http://www.youtube.com/embed/TwXXgEz9o4w" frameborder="0" allowfullscreen></iframe></div>
+
+<p>Oh, jebus&hellip;that was terrible and cringeworthy. Not just the ridiculous exaggerations &hellip; the Human Genome Project also claimed that it would provide the answers to all of human disease, as has, to a lesser degree, most every biomedical grant proposal, it seems &mdash; but that they invested in some top-notch voice talent and professional animation to promote some fundamentally esoteric science to the general public as a magic bullet&hellip;I mean, robot.</p>
+
+<p>Scientists, don't do this. Do make the effort to communicate your work to the public, but don't do it by talking down to them and by portraying your work in a way that is fundamentally dishonest and misleading. If you watch that video, ask yourself afterward: if I hadn't read any of the background on that project, would I have the slightest idea what ENCODE was about from that cartoon? There was no usable information in there at all.</p>
+
+<p>So what is ENCODE, actually? The name stands for Encyclopedia of DNA Elements, and it's the next step beyond the Human Genome Project. The HGP assembled a raw map of the genome, a stream of As and Gs and Cs and Ts, and dumped it in our lap and told us that now we have to figure out what it means. ENCODE attempts to break down that stream, reading it bit by bit, and identifying what each piece does; this part binds to a histone, for instance, or this chunk is acetylated in kidney cells, or this bit is a switch to turn expression of Gene X off or on. It tries to identify which genes are active or inactive in various cell types. It goes beyond the canonical sequence to look at variation between individuals and cell types. It identifies particular genetic sequences associated with Crohn's Disease or Multiple Sclerosis or that are modified in specific kinds of cancers.</p>
+
+<p>ENCODE also looks at other species and does evolutionary comparisons. We can identify sequences that show signs of selection within the mammals, for instance, and ENCODE then maps those sequences onto proposed functions.</p>
+
+<p>You know what? This is really cool and important stuff, and I'm genuinely glad it's being done. It's going to be incredibly useful information. But there are some unfortunate realities that have to be dealt with.</p>
+
+<p>It's also drop-dead <i>boring</i> stuff.</p>
+
+<p>I remember my father showing me a pile of maintenance manuals for some specific aircraft at a Boeing plant when I was a kid; these were terrifyingly detailed, massive books that broke down, bit by bit, exactly what parts were present in each sub-assembly, how to inspect, remove, replace, repair, and maintain a tire on the landing gear, for instance. It's all important and essential, but&hellip;you wouldn't read it for fun. When you had a chore to do, you'd pull up the relevant reference and be grateful for it.</p>
+
+<p>That's ENCODE. It's a gigantic project to build a reference manual for the genome, and the papers describing it are godawful tedious exercises in straining to reduce a massive data set to a digestible message using statistics and arrays of multicolored data visualization techniques that will give you massive headaches just looking at them. That is the nature of the beast. It is, by necessity and definition, a huge reference work, not a story. It is the antithesis of that animated cartoon.</p>
+
+<p>I'm uncomfortable with the inappropriate PR. The data density of the results makes reading the work a hard slog&hellip;but that's the price you have to pay for the volume of information delivered. But then&hellip;<i>disaster</i>: a misstep so severe, it makes me mistrust the entire data set &mdash; not only are the papers dense, but I have no confidence in the interpretations of the authors (which, I know, is terribly unfair, because there are hundreds of investigators behind this project, and it's the bizarre interpretations of the lead that taints the whole).</p>
+
+<p>I refer to the third sentence of the abstract of the initial overview paper published in Nature; the first big razzle-dazzle piece of information the leaders of the project want us to take home from the work. That 80%:</p>
+
+<blockquote><p>These data enabled us to assign biochemical functions for 80% of the genome.</p></blockquote>
+
+<p>Bullshit.</p>
+
+<p>Read on into the text and you discover how they came to this startling conclusion:</p>
+
+<blockquote><p>The vast majority (80.4%) of the human genome participates in at least one biochemical RNA- and/or chromatin-associated event in at least one cell type.</p></blockquote>
+
+<p>That isn't function. That isn't even <i>close</i>. And it's a million light years away from "a critical role in controlling how our cells, tissue and organs behave". All that says is that any one bit of DNA is going to have something bound to it at some point in some cell in the human body, or may even be transcribed. This isn't just a loose and liberal definition of "function", it's an utterly useless one.</p>
+
+<p>Now this is all anyone talks about when describing this research: that it has found a 'function' for nearly all of human DNA (not true, and not supported by their data at all) and that it spells the demise of junk DNA, also not true. We know, for example, that over 50% of the human genome has a known origin as transposable elements, and that those sequences are basically parasitic, and has no recognizable effect on the phenotype of the individual.</p>
+
+<p>I don't understand <i>at all</i> what was going through the head of the author of that paper. Here's this awesome body of work he's trying to summarize, he's representing a massive consortium of people, and instead of focusing on the useful, if rather dry, data the work generated, he decides to hang it all on the sensationalist cross of opposing the junk DNA concept and making an extravagant and unwarranted claim of 80 going on 100% functionality for the entire genome.</p>
+
+<p>Well, we can at least get a glimpse of what's going on in that head: <a href="http://genomeinformatician.blogspot.co.uk/">Ewan Birney has a blog</a>. It ended up confusing me worse than the paper.</p>
+
+<p>For instance, he has a <a href="http://genomeinformatician.blogspot.co.uk/2012/09/encode-my-own-thoughts.html">Q&amp;A in which he discusses some of the controversy</a>.</p>
+
+<blockquote><p>Q. Hmmm. Let's move onto the science. I don't buy that 80% of the genome is functional.<br />
+A. It's clear that 80% of the genome has a specific biochemical activity - whatever that might be. This question hinges on the word "functional" so let's try to tackle this first. Like many English language words, "functional" is a very useful but context-dependent word. Does a "functional element" in the genome mean something that changes a biochemical property of the cell (i.e., if the sequence was not here, the biochemistry would be different) or is it something that changes a phenotypically observable trait that affects the whole organism? At their limits (considering all the biochemical activities being a phenotype), these two definitions merge. Having spent a long time thinking about and discussing this, not a single definition of "functional" works for all conversations. We have to be precise about the context. Pragmatically, in ENCODE we define our criteria as "specific biochemical activity" - for example, an assay that identifies a series of bases. This is not the entire genome (so, for example, things like "having a phosphodiester bond" would not qualify). We then subset this into different classes of assay; in decreasing order of coverage these are: RNA, "broad" histone modifications, "narrow" histone modifications, DNaseI hypersensitive sites, Transcription Factor ChIP-seq peaks, DNaseI Footprints, Transcription Factor bound motifs, and finally Exons.</p></blockquote>
+
+<p>Oh, jeez, straining over definitions&mdash;ultimately, what he ends up doing is redefining "functional" to not mean functional at all, but to mean simply anything that their set of biochemical assays can measure. It would have been far more sensible to use a less semantically over-loaded word or phrase (like "specific biochemical activity") than to court confusion by charging into a scientific debate about functionality that he barely seems to comprehend. It would have also conformed to the goals he <a href="http://genomeinformatician.blogspot.co.uk/2012/09/response-on-encode-reaction.html">claims to have wanted to achieve with public education</a>.</p>
+
+<blockquote><p>ENCODE also had the chance of making our results comprehensible to the general public: those who fund the work (the taxpayers) and those who may benefit from these discoveries in the future. To do this we needed to reach out to journalists and help them create engaging stories for their readers and viewers, not for the readers of Nature or Science. For me, the driving concern was to avoid over-hyping the medical applications, and to emphasize that ENCODE is providing a foundational resource akin to the human genome. </p></blockquote>
+
+<p>Uh, "giant cancer-fighting robot", anyone? Ewan Birney's name is right there in the credits to that monument to over-hyping the medical applications.</p>
+
+<p>I'll be blunt. I don't think Birney has a clue about the biology. So much of what he has said about this project sounds human-centered and biased towards gross misconceptions about our place in biology. "We are the most complex things we know about," <a href="http://blogs.discovermagazine.com/notrocketscience/2012/09/05/encode-the-rough-guide-to-the-human-genome/">he says</a>, and seems to think that there is a hierarchy of complexity that correlates with the phylogenetic series leading to humans, where, for instance, fugu are irrelevant to the argument because they're <a href="http://www.genomicron.evolverzone.com/2012/09/the-encode-view-of-genome-size-diversity-simple-and-silly/">not a mammal</a>. This is all nonsense. I would not be at all surprised to learn that the complexity of the teleost genome is significantly greater than that of the tetrapod genome; and there's nothing more complex about our genetics than that of a mouse. I get the impression of an extremely skilled technologist with almost certainly some excellent organizational skills, who is completely out of his depth on the broader conceptual issues of modern biology. And also, someone who is a total media disaster.</p>
+
+<p>But I'm just a guy with a blog.</p>
+
+<p>There is a mountain of material on ENCODE on the web right now &mdash; I've come late to the table. Here are a few reading recommendations:</p>
+
+<p><a href="http://sandwalk.blogspot.com/search/label/Genome">Larry Moran</a> has been on top of it all from day one, and has been cataloging not just the scientific arguments against ENCODE's over-interpretation, but some of the ridiculous enthusiasm for bad science by creationists.</p>
+
+<p><a href="http://www.genomicron.evolverzone.com/tag/encode/">T. Ryan Gregory</a> has also been regularly commenting on the controversy, and has been confronting those who claim junk DNA is dead with the evidence: if organisms use 100% of their genome, why do salamanders have 40 times as much as we do, and fugu eight times less?</p>
+
+<p>Read <a href="http://selab.janelia.org/people/eddys/blog/?p=683">Sean Eddy</a> for one of the best summaries of junk DNA and how ENCODE hasn't put a dent in it. Telling point: a random DNA sequence inserted into the human genome would meet ENCODE's definition of "functional".</p>
+
+<p><a href="http://blogs.plos.org/thepanicvirus/2012/09/14/the-state-of-science-writing-circa-2012/">Seth Mnookin</a> has a pithy but thoughtful summary, and <a href="http://arstechnica.com/staff/2012/09/most-of-what-you-read-was-wrong-how-press-releases-rewrote-scientific-history/">John Timmer</a>, as usual, marshals the key evidence and makes a comprehensible overview.</p>
+
+<p><a href="http://thefinchandpea.com/2012/09/06/encode-media-fail/">Mike White</a> summarizes the ENCODE projects abject media failure. If one of Birney's goals was to make ENCODE "comprehensible to the general public", I can't imagine a better example of a colossal catastrophe. Not only does the public and media fail to understand what ENCODE was about, but they've instead grasped only the completely erroneous misinterpretation that Birney put front and center in his summary.</p>
+
+<p>You'll be hearing much more about ENCODE in the future, and unfortunately it will be less about the power of the work and more about the sensationalistic and misleading interpretation. The creationists are overjoyed, and regard Birney's bogus claims about the data as a vindication of their belief that every scrap of the genome is flawlessly designed.</p></div><section class="comments-section"><h2 class="comments-heading">123 Comments</h2>
+<div class="comment" id="comment-292516"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/JxVN0eQFqtmgoY7wC1cZM44ET_iAanxHQmLgYgX_Zhn8#57cad</span> &middot; 23 September 2012</p><div class="comment-body"><p>It's like they googled "functional," hit the DI (re)definition of it, and just went with it.</p><p>There's nothing new about the fact that much "junk DNA" interacts with something or other (hence this review of papers found as much), it just wasn't clear if that "junk DNA" was truly functional.  And it still isn't.</p><p><a href="http://tinyurl.com/mxaa3p">Glen Davidson</a></p></div></div>
+<div class="comment" id="comment-292517"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawm-WhebH0itIDDTj06EQo2vtiF0BBqF10Q</span> &middot; 23 September 2012</p><div class="comment-body"><p>It would have helped a lot if ECODE had considered where the activity of a biochemical reaction resides and what DNA actually is in the reactions they describe: sustrate, enzyme, co-enzymes, product?</p></div></div>
+<div class="comment" id="comment-292518"><p class="comment-meta"><span class="comment-author">mandyvarda</span> &middot; 23 September 2012</p><div class="comment-body"><p>It seems possible to me that the ENCODE hierarchy chose the misleading phrasing on purpose to increase the size of their media splash thinking that they benefit when random citizens recognize their acronym. The Kardashian family certainly operates on this thesis.</p></div></div>
+<div class="comment" id="comment-292519"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawm-WhebH0itIDDTj06EQo2vtiF0BBqF10Q</span> &middot; 24 September 2012</p><div class="comment-body"><blockquote>
+<strong>mandyvarda said:</strong>
+It seems possible to me that the ENCODE hierarchy chose the misleading phrasing on purpose to increase the size of their media splash thinking that they benefit when random citizens recognize their acronym. The Kardashian family certainly operates on this thesis. 
+</blockquote>
+This is exactly what ENCODE did according to Ewan Birney's own blog:<blockquote> However, on the other end of the scale – using very strict, classical definitions of “functional” like bound motifs and DNaseI footprints; places where we are very confident that there is a specific DNA:protein contact, such as a transcription factor binding site to the actual bases – we see a cumulative occupation of 8% of the genome. With the exons (which most people would always classify as “functional” by intuition) that number goes up to 9%. Given what most people thought earlier this decade, that the regulatory elements might account for perhaps a similar amount of bases as exons, this is surprisingly high for many people – certainly it was to me!
+
+[...]
+
+A conservative estimate of our expected coverage of exons + specific DNA:protein contacts gives us 18%, easily further justified (given our sampling) to 20%</blockquote>
+Note that he is blaming readers for choosing 80% rather than realistic estimates based on a solid definition of function:
+<blockquote>
+Originally I pushed for using an “80% overall” figure and a “20% conservative floor” figure, since the 20% was extrapolated from the sampling. But putting two percentage-based numbers in the same breath/paragraph is asking a lot of your listener/reader – they need to understand why there is such a big difference between the two numbers, and that takes perhaps more explaining than most people have the patience for. We had to decide on a percentage, because that is easier to visualize, and we choose 80% because (a) it is inclusive of all the ENCODE experiments (and we did not want to leave any of the sub-projects out) and (b) 80% best coveys the difference between a genome made mostly of dead wood and one that is alive with activity. We refer also to “4 million switches”, and that represents the bound motifs and footprints.
+
+<b>We use the bigger number because it brings home the impact of this work to a much wider audience.</b> But we are in fact using an accurate, well-defined figure when we say that 80% of the genome has specific biological activity.</blockquote></div></div>
+<div class="comment" id="comment-292522"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 24 September 2012</p><div class="comment-body"><p>If we define junk DNA as sequence whose change is not affected by natural selection because it has so little fitness effect, then ENCODE has not shown that most of its "functional" sequences are anything but junk.  Which makes the Birney announcement of "functional" sequences misleading in a major way.<br><br>I am encouraged that quite a few researchers who have serious experience with molecular evolution have now weighed in saying that junk DNA is alive and well. <br><br>It is going to be a long, hard struggle to get to the point where the popular science press declares junk DNA to be back in the genome.  But the initial steps have been taken.</p></div></div>
+<div class="comment" id="comment-292523"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 24 September 2012</p><div class="comment-body"><p>Maybe what they should do is concentrate on the twenty percent that does absolutely nothing at all.  Maybe they should explain what all of this junk is and how it got there.  After all, this is some of the most powerful evidence that we have for evolution.  The first priority should be to make sure that the creationists cannot misrepresent this to their own advantage.  The next step should be to explain very carefully that about three quarters of the eighty percent doesn't really do anything important either.  Make sure the science is sound, then make sure you are presenting it in the right way.</p><p>Of course, no matter what you do, the creationist will always say that they predicted that result all along.  But then again, everyone will see that they didn't actually do any of the work or any of the analysis.  So no one is going to be fooled by their hollow claims.  If they really thought that the human genome provided evidence for creationism, they would have done the work themselves.  The fact that they did not is all you need to know.</p></div></div>
+<div class="comment" id="comment-292525"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 24 September 2012</p><div class="comment-body"><p>Just out of curiosity (and I probably have a distorted view of this because I'm not in it), do research proposals that aren't cool (dinosaurs, lasers, etc) or have plan to save humans/the world/the environment ever get funded?</p><p>I know, in my company, if you want funding for a project, then the research had better result in a marketable product or a method for saving large sums of money.</p></div></div>
+<div class="comment" id="comment-292530"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 24 September 2012</p><div class="comment-body"><p>The know nothing Wells spews forth on ENV:</p><p>"The recent findings from ENCODE and related projects are significant for several reasons. First, the results from over a thousand experiments -- involving dozens of laboratories and hundreds of scientists on three continents, published simultaneously in dozens of articles in five different journals -- are remarkably consistent."</p><p>That's funny, so are the over one million articles published by hundreds of thousands of scientists in hundreds of journals over the last one hundred and fifty years.  They demonstrate conclusively that descent with modification is real.  Funny how he isn't willing to accept that conclusion.</p><p>"Second, by providing abundant evidence that 80% or more of our DNA is functional, the results have greatly expanded our biological knowledge and may shed valuable light on some diseases."</p><p>It's not 80% or more, it's 80% absolute maximum.  He conveniently left out the part that, even according to the most liberal definition of "functional" possible, 20% is still junk.  Now why do you suppose that is?</p><p>"Third, the results demolish the argument used by Richard Dawkins and some other Darwinists that most of our DNA is "junk," proving we could not have originated by design. As the journal Science put it, "Encode Project Writes Eulogy for Junk DNA."</p><p>So, if at least 20% is still junk, then intelligent design is falsified!  That doesn't even incluide the result that nearly 60% doesn't seem to do anything important.</p></div></div>
+<div class="comment" id="comment-292531"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawm-WhebH0itIDDTj06EQo2vtiF0BBqF10Q</span> &middot; 24 September 2012</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Maybe what they should do is concentrate on the twenty percent that does absolutely nothing at all.</blockquote>
+
+According to Ed Young's blog at Discover Magazine Ewan Birney beleaves that it will turn out that these 20% are functional as well (unde ENCODE's definition of course) once more cell types and developmental stages have been analyzed:
+<blockquote>And what’s in the remaining 20 percent? Possibly not junk either, according to Ewan Birney, the project’s Lead Analysis Coordinator and self-described “cat-herder-in-chief”. He explains that ENCODE only (!) looked at 147 types of cells, and the human body has a few thousand. A given part of the genome might control a gene in one cell type, but not others. If every cell is included, functions may emerge for the phantom proportion. “It’s likely that 80 percent will go to 100 percent,” says Birney. “We don’t really have any large chunks of redundant DNA. This metaphor of junk isn’t that useful.”</blockquote></div></div>
+<div class="comment" id="comment-292534"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 24 September 2012</p><div class="comment-body"><blockquote>
+<strong>https://www.google.com/accounts/o8/id?id=AItOawm-WhebH0itIDDTj06EQo2vtiF0BBqF10Q said:</strong>
+
+<blockquote>
+<strong>DS said:</strong>
+
+Maybe what they should do is concentrate on the twenty percent that does absolutely nothing at all.</blockquote>
+
+According to Ed Young's blog at Discover Magazine Ewan Birney beleaves that it will turn out that these 20% are functional as well (unde ENCODE's definition of course) once more cell types and developmental stages have been analyzed:
+<blockquote>And what’s in the remaining 20 percent? Possibly not junk either, according to Ewan Birney, the project’s Lead Analysis Coordinator and self-described “cat-herder-in-chief”. He explains that ENCODE only (!) looked at 147 types of cells, and the human body has a few thousand. A given part of the genome might control a gene in one cell type, but not others. If every cell is included, functions may emerge for the phantom proportion. “It’s likely that 80 percent will go to 100 percent,” says Birney. “We don’t really have any large chunks of redundant DNA. This metaphor of junk isn’t that useful.”</blockquote>
+</blockquote>
+
+Speaking of which, wouldn't it be a much more intelligent design to give cells only those genes they need and not the other 90% that they don't?  That should be easy for any real intelligence.  Maybe the intelligent designer just wanted to make it easier to do human cloning.</div></div>
+<div class="comment" id="comment-292536"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 24 September 2012</p><div class="comment-body"><blockquote>And what’s in the remaining 20 percent? Possibly not junk either, according to Ewan Birney, the project’s Lead Analysis Coordinator and self-described “cat-herder-in-chief”. He explains that ENCODE only (!) looked at 147 types of cells, and the human body has a few thousand. A given part of the genome might control a gene in one cell type, but not others. If every cell is included, functions may emerge for the phantom proportion. “It’s likely that 80 percent will go to 100 percent,” says Birney. “We don’t really have any large chunks of redundant DNA. This metaphor of junk isn’t that useful.”</blockquote>
+
+Really. Well let's see. 
+
+The human genome contains about 6% simple repetitive DNA, most of which does absolutely nothing. This is in fact the basis of human DNA fingerprinting techniques. DNA transposons constitute about 3%. LTR retrotransposons 8%, LINEs 21%, SINEs 13% and processed pseudogenes 0.4%. So that's over 50% right there. 
+
+Now of course you could always argue that this could be raw material that will eventually become functional, but then I guess you pretty much have to admit that evolution is real to do that.</div></div>
+<div class="comment" id="comment-292546"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 24 September 2012</p><div class="comment-body">I posted the following comment at <a href="http://genomeinformatician.blogspot.co.uk/2012/09/response-on-encode-reaction.html">Ewan's blog</a>. I'm betting he will never answer.
+
+--------------------------------------------------------
+
+<blockquote>Birney: "For me, the driving concern was to avoid over-hyping the medical applications..."</blockquote>
+
+Really? You mean like when you helped <i>Nature</i> produce a video cartoon in which ENCODE is presented as a mega-robot that destroys cancer and heart disease by punching it very hard?
+
+Is that what you meant by avoiding over-hyping of medical applications? What, then, WOULD be hype by your definition? Immortality? Free nose jobs for ugly children? The ability to fly? What?
+
+<blockquote>Birney: "With hindsight, we could have used different terminology to convey the concepts..."</blockquote>
+
+True, you could have used accurate terminology.
+
+<blockquote>Birney: "I do think we got our point to the general public: that there is a staggering amount of activity in the genome..."</blockquote>
+
+No, no. You told the general public that there was <b>80% FUNCTION</b> in the genome, FUNCTION not activity, and you told Ed Yong at Discover that would go to 100%. And almost all of the media interpreted function to mean "necessary", "needed", "essential". Was that accurate?
+
+NPR reported John Stamatoyonnopoulis as saying:
+
+<blockquote>NPR: <b>“Most of the human genome is out there mainly to control the genes,” said John Stamatoyannopoulis,</b> a geneticist at the University of Washington School of Medicine, who also participated in the project.</blockquote>
+
+Was John Stam telling the truth or lying, Ewan?
+
+This is from the Independent:
+
+<blockquote>The Independent: "Scientists have once and for all swept away any notion of “junk DNA” by showing that that <b>the vast majority of the human genome does after all have a vital function by regulating the genes</b> that build and maintain the body."</blockquote>
+
+Does the vast majority of the human genome have a vital function by regulating the genes, Ewan?
+
+This is from the New York Times:
+
+<blockquote>NY Times: "As scientists delved into the “junk” — parts of the DNA that are not actual genes containing instructions for proteins — they discovered a complex system that controls genes. <b>At least 80 percent of this DNA is active and needed.</b>"</blockquote>
+
+Is 80% of human DNA active and needed, Ewan?
+
+This is from the Washington Post:
+
+<blockquote>Wash Post: "Indeed, <b>the vast majority of human DNA seems to be involved in maintaining individuals’ well being</b> — a view radically at odds with what biologists have thought for the past three decades"</blockquote>
+
+Is the vast majority of human DNA involved in maintaining individuals’ well being, Ewan?
+
+This is from USA Today:
+
+<blockquote>USA Today: "International research teams have junked the notion of “junk” DNA, reporting that <b>at least 80% of the human genetic blueprint contains gene switches, once thought useless, that control the genes</b> that make us healthy or sick."</blockquote>
+
+Is 80% of human DNA genome "switches" that control genes, Ewan?
+
+<blockquote>Birney: "ENCODE also had the chance of making our results comprehensible to the general public..."</blockquote>
+
+Ewan, did you succeed of fail?
+</div></div>
+<div class="comment" id="comment-292547"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 September 2012</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+I am encouraged that quite a few researchers who have serious experience with molecular evolution have now weighed in saying that junk DNA is alive and well. 
+
+It is going to be a long, hard struggle to get to the point where the popular science press declares junk DNA to be back in the genome.  But the initial steps have been taken.
+</blockquote>
+
+It is reminiscent of the long hard slog with entropy and the second law in popular literature.  I can sympathize.</div></div>
+<div class="comment" id="comment-292550"><p class="comment-meta"><span class="comment-author">bigdakine</span> &middot; 24 September 2012</p><div class="comment-body"><p>It seems to me the results of the ENCODE study spell even more doom for ID<br>if anything. The fact that much of the "junk" is transcribed means that there<br>is an awful lot of biochemical *noise* in the cell which has no function.</p><p>Which seems to me an even bigger problem for ID</p></div></div>
+<div class="comment" id="comment-292552"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 24 September 2012</p><div class="comment-body">DS said -
+
+<blockquote>“Third, the results demolish the argument used by Richard Dawkins and some other Darwinists that most of our DNA is “junk,” proving we could not have originated by design. As the journal Science put it, “Encode Project Writes Eulogy for Junk DNA.”
+
+So, if at least 20% is still junk, then intelligent design is falsified! That doesn’t even incluide the result that nearly 60% doesn’t seem to do anything important.</blockquote>
+
+It's unfortunate that Ewan Birney has to some degree misunderstood or misrepresented the important and powerful results of the ongoing ENCODE project, but as DS implies, even if Ewan Birney's hype, which is far less dishonest than creationist hype, were all 100% accurate, ID/creationism would still be wrong.
+
+Creationists are like Charles Manson obsessively claiming that one of his fingerprints on one of his victims' walls doesn't incriminate him.  First of all it isn't true, and second of all, if it were true the evidence against him would still be overwhelming.
+
+<b>Any DNA in the human genome whatsoever that is viral in origin, a pseudogene, a repetitive element that can differ widely among individuals with no effect, etc, is a severe problem, essentially a death knell for ID</b>.  
+
+But it doesn't follow that ID would be "true" if they could get rid of that one death knell.  There are many other death knells tolling.
+
+ID is in the somewhat unique position of making no potentially useful predictions or testable claims whatsoever, and yet <b>still being easy to falsify</b>.  It's internally incoherent, and many of its arguments are grounded in patently false analogies.
+
+It's a childish word game played by a motley crew of wealthy conniving scoundrels and wretched academic failures, each group making far more money by pandering to the fantasies of despicable, deluded, unhappy billionaires, than they could otherwise.
+
+Bacteria have very little "junk" DNA.  Certainly, the common strains studied by humans as pathogens or lab organisms tend to have far less than 20% "junk" DNA.  Yet efforts to present bacteria as the products of "intelligent design" meet with richly deserved jeering ridicule.
+
+Just because junk DNA makes ID look stupid, does not mean that ID would stop looking stupid if junk DNA went away.
+
+</div></div>
+<div class="comment" id="comment-292554"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 24 September 2012</p><div class="comment-body"><p>At any rate, ENCODE has great professional marketing. It's the greatest thing since sliced bread!  Now what about social media?  How many Facebook "likes" do they have?</p></div></div>
+<div class="comment" id="comment-292562"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+
+
+That's like saying, why bother having books on biology, car repair, and home improvement in your possession when you take a bus from your rented efficiency apartment to your job at 7-11.   Maybe upon investigation we would find that this person once drove to his job at a lab from his house but due a bad economy, lost it all and is now struggling to hold on, waiting for better times.  Why chuck the books when hope is not lost?  No, holding on to your information is the smart play.
+
+Likewise, wouldn't orgainisms having a library of historical environmental records help in their survival?  Wouldn't calling upon old records of climate change come in handy when a millennium long climate cycle is starting to repeat itself?
+
+
+<blockquote>
+
+Speaking of which, wouldn't it be a much more intelligent design to give cells only those genes they need and not the other 90% that they don't?  That should be easy for any real intelligence.  Maybe the intelligent designer just wanted to make it easier to do human cloning.
+</blockquote>
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292866">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292563"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Well bigdakine,
+
+My wife thinks Mahavishnu Orchestra is noise.
+
+To me, its an unbelievably sophisticated amalgamation of jazz, rock, funk, new age and classical music.
+
+Awesome creativity but still noise to the wife.
+
+So contrary to your assertions that ENCODE's work is a problem for ID, rather the trend is in ID's favor.  
+
+The more we look and think, the more we see through the noise and see the function.
+
+
+
+<blockquote>It seems to me the results of the ENCODE study spell even more doom for ID if anything. The fact that much of the “junk” is transcribed means that there is an awful lot of biochemical *noise* in the cell which has no function.
+
+Which seems to me an even bigger problem for ID</blockquote>
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292865">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292566"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Does a car's cigarette lighter affect the function of the car? I could rip out the lighter, the radio, the air conditioning, the rear view mirror, all the seats, the tissue dispenser, the gps, the visors, the ash tray, the glove compartment, the shitload of maps and guidebooks and sunglasses in the center armrest, cup holder, etc. etc and could still drive my car without a hitch. 
+
+but that is what you would expect if genome's came with lots of bells and whistles!
+
+
+
+<blockquote>Any DNA in the human genome whatsoever that is viral in origin, a pseudogene, a repetitive element that can differ widely among individuals with no effect, etc, is a severe problem, essentially a death knell for ID.</blockquote>
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292864">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292567"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 25 September 2012</p><div class="comment-body"><p>We here see illustrated the dangers of thinking by analogy.</p></div></div>
+<div class="comment" id="comment-292568"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>Mahavishnu Orchestra</blockquote>
+
+They're not bad, but John McLaughlin did his best work with Miles Davis.
+
+Anyway, Steve P. is of course partly correct that "bad design" can be explained away by resorting to "the mysterious ways of the designer".  
+
+If "bad design" were the ONLY issue that argument would work.  It looks subjectively "bad" to us but the designer is so all-powerful and inscrutable that we can't understand it's work, and so on.
+
+The thing about ERVs, LINES, SINES, pseudogenes, and other things that are quite reasonably labeled "junk" DNA is that they are not <b>only</b> "bad design" to the human eye.
+
+They are <b>also</b> strong positive evidence for, and well explained by, the theory of evolution.
+
+In placental development in humans and some but not all other placental mammals, an ERV gene is co-opted for an important function.  You can't get more functional than that.  It's "junk" DNA that became functional in a true sense, but the situation is still strong evidence for evolution and poorly explained by ID/creationism.  Any sequence of DNA could hypothetically do something, or mutate into something that does something, harmful, neutral or beneficial, from the human perspective, but a good amount of it doesn't right now - twenty percent at a minimum, even by the incredibly loose definition of "function" being used by Ewan Birney.</div></div>
+<div class="comment" id="comment-292570"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+
+
+That's like saying, why bother having books on biology, car repair, and home improvement in your possession when you take a bus from your rented efficiency apartment to your job at 7-11.   Maybe upon investigation we would find that this person once drove to his job at a lab from his house but due a bad economy, lost it all and is now struggling to hold on, waiting for better times.  Why chuck the books when hope is not lost?  No, holding on to your information is the smart play.
+
+Likewise, wouldn't orgainisms having a library of historical environmental records help in their survival?  Wouldn't calling upon old records of climate change come in handy when a millennium long climate cycle is starting to repeat itself?
+
+
+<blockquote>
+
+Speaking of which, wouldn't it be a much more intelligent design to give cells only those genes they need and not the other 90% that they don't?  That should be easy for any real intelligence.  Maybe the intelligent designer just wanted to make it easier to do human cloning.
+</blockquote>
+</blockquote>
+
+That's exactly the point.  You have all this junk you are holding onto.  You have copies of all of this junk in every room in your house.  You have the junk not because it is useful or ever will be, you have it because of your past history.  That is the only way it makes any sense at all.  You not only have books on car repair, you have them in every room in your house, including outdated books, books filled with typos, parts of books, books with stuff that doesn't have anything to do with modern cars but antique cars that you don't own and can't afford.  And the thing is that you still want people to believe that your house was built from scratch yesterday, without any past history!  Someone who built a modern house wouldn't fill every room with old useless junk, at least not it they were intelligent.  Or are you advocating the "intelligent hoarder" hypothesis?</div></div>
+<div class="comment" id="comment-292571"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Does a car's cigarette lighter affect the function of the car? I could rip out the lighter, the radio, the air conditioning, the rear view mirror, all the seats, the tissue dispenser, the gps, the visors, the ash tray, the glove compartment, the shitload of maps and guidebooks and sunglasses in the center armrest, cup holder, etc. etc and could still drive my car without a hitch. 
+
+but that is what you would expect if genome's came with lots of bells and whistles!
+
+
+
+<blockquote>Any DNA in the human genome whatsoever that is viral in origin, a pseudogene, a repetitive element that can differ widely among individuals with no effect, etc, is a severe problem, essentially a death knell for ID.</blockquote>
+</blockquote>
+
+Bullshit.  Your car has twenty five radios, many of them without transistors and none of them work.  That ain't bells and whistles, that's stark raving insanity.  You can't even use the sixteen broken cigarette lighters to burn a cross into your arm cause they don't work either.  Your car was not intelligently designed.  Deal with it.</div></div>
+<div class="comment" id="comment-292572"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>Dave Luckett said:</strong>
+
+We here see illustrated the dangers of thinking by analogy.
+</blockquote>
+
+Exactly: Intelligent Design proponents, like SteveP, also readily demonstrate how they are too arrogant to care/realize that they simultaneously use inaccurate analogies, and use analogies inaccurately.</div></div>
+<div class="comment" id="comment-292573"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 25 September 2012</p><div class="comment-body">@SteveP:
+
+<blockquote>Likewise, wouldn’t orgainisms having a library of historical environmental records help in their survival? </blockquote>
+
+SteveP has brilliantly explained what evolution is, and its relationship to the genome. Evolution is a long history of experiments. Records are only kept of the successful experiments; the failed experiments are not recorded. The records are, therefore, biased.
+
+Nevertheless the genome is, as SteveP says, "a library of historical environmental records [that helps] in their survival," thanks to evolution. 
+
+<blockquote> Maybe upon investigation we would find that this person once drove to his job at a lab from his house but due a bad economy, lost it all and is now struggling to hold on, waiting for better times. Why chuck the books when hope is not lost? No, holding on to your information is the smart play.</blockquote>
+
+Correct again! Yes, that is "the smart play", as Steve says-- but only if evolution is real. An organism may evolve to make crucial use of a tiny fraction of all that junk. See, SteveP is useful for something. He has re-stated Sydney Brenner's distinction between "garbage" and "Junk DNA."
+
+It only takes 6-8 bp to make a TF binding site. TF binding sites are so small they evolve in and out, accessible to mutation and selection. Viral DNA (ERV's) comes with powerful promoters that promote transcription. A genome can evolve to make use of those tiny bits 6 to 8 base pairs at a time.
+
+But unfortunately for us, some of those "experiments" recorded in the genome involve parasitic elements duplicating themselves out of control. The "records" of that make up about half of the genome. 
+
+Most of your genome is still junk, and ID is still dead.</div></div>
+<div class="comment" id="comment-292574"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Does a car's cigarette lighter affect the function of the car? I could rip out the lighter, the radio, the air conditioning, the rear view mirror, all the seats, the tissue dispenser, the gps, the visors, the ash tray, the glove compartment, the shitload of maps and guidebooks and sunglasses in the center armrest, cup holder, etc. etc and could still drive my car without a hitch. 
+
+but that is what you would expect if genome's came with lots of bells and whistles!
+
+
+
+<blockquote>Any DNA in the human genome whatsoever that is viral in origin, a pseudogene, a repetitive element that can differ widely among individuals with no effect, etc, is a severe problem, essentially a death knell for ID.</blockquote>
+</blockquote>
+
+Bullshit.  Your car has twenty five radios, many of them without transistors and none of them work.  That ain't bells and whistles, that's stark raving insanity.  You can't even use the sixteen broken cigarette lighters to burn a cross into your arm cause they don't work either.  Your car was not intelligently designed.  Deal with it.
+</blockquote>
+Furthermore, SteveP doesn't remember that, according to Intelligent Design as argued by Behe, if a single component is missing, the whole system stops functioning.
+</div></div>
+<div class="comment" id="comment-292575"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 25 September 2012</p><div class="comment-body">@DS:
+<blockquote>
+<strong>DS said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Does a car's cigarette lighter affect the function of the car? I could rip out the lighter, the radio, the air conditioning, the rear view mirror, all the seats, the tissue dispenser, the gps, the visors, the ash tray, the glove compartment, the shitload of maps and guidebooks and sunglasses in the center armrest, cup holder, etc. etc and could still drive my car without a hitch. 
+
+</blockquote>
+
+Bullshit.  Your car has twenty five radios, many of them without transistors and none of them work.  That ain't bells and whistles, that's stark raving insanity.  You can't even use the sixteen broken cigarette lighters to burn a cross into your arm cause they don't work either.
+</blockquote>
+
+Bwa ha ha. But they're not radios-- they're toy robots that can reproduce themselves, using your car's machinery to make copies of themselves, so they did. Many many copies of toy robots that once had the ability to reproduce, but are broken now.
+
+ENCODE picked through all those toy robots and found, here and there, a working transistor or an LED light that still works, and they tell the Muggle press, "80% of the genome has function!" In the sense that tiny bits of things that used to be able to reproduce themselves, still have parts that can interact.
+
+Most of your genome is still junk, and ID is still dead.
+</div></div>
+<div class="comment" id="comment-292580"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Wait, let me get this straight.  A biology book, a book on car repair, and a book on home maintenence sitting on a shelf is junk???
+
+I could see if you had those book sitting under a lamp to make the appropriate adjustment in height so you could see your facebook page a bit better would constitute a book left for dead (junk) but then resurrected by the power of human ingenuity (design, baby) and put back in circulation, so to speak :P Thats the kind of book you (pl) are all talking about.
+
+What I am talking about is a book that has been sitting on a shelf for a good while, seldom used, but nonetheless dusted and adjusted.
+
+Different animals.  Which is which?
+
+
+
+
+
+
+<blockquote>
+<strong>DS said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+
+
+That's like saying, why bother having books on biology, car repair, and home improvement in your possession when you take a bus from your rented efficiency apartment to your job at 7-11.   Maybe upon investigation we would find that this person once drove to his job at a lab from his house but due a bad economy, lost it all and is now struggling to hold on, waiting for better times.  Why chuck the books when hope is not lost?  No, holding on to your information is the smart play.
+
+Likewise, wouldn't orgainisms having a library of historical environmental records help in their survival?  Wouldn't calling upon old records of climate change come in handy when a millennium long climate cycle is starting to repeat itself?
+
+
+<blockquote>
+
+Speaking of which, wouldn't it be a much more intelligent design to give cells only those genes they need and not the other 90% that they don't?  That should be easy for any real intelligence.  Maybe the intelligent designer just wanted to make it easier to do human cloning.
+</blockquote>
+</blockquote>
+
+That's exactly the point.  You have all this junk you are holding onto.  You have copies of all of this junk in every room in your house.  You have the junk not because it is useful or ever will be, you have it because of your past history.  That is the only way it makes any sense at all.  You not only have books on car repair, you have them in every room in your house, including outdated books, books filled with typos, parts of books, books with stuff that doesn't have anything to do with modern cars but antique cars that you don't own and can't afford.  And the thing is that you still want people to believe that your house was built from scratch yesterday, without any past history!  Someone who built a modern house wouldn't fill every room with old useless junk, at least not it they were intelligent.  Or are you advocating the "intelligent hoarder" hypothesis?
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292863">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292582"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 25 September 2012</p><div class="comment-body">@SteveP:
+
+<blockquote>A biology book, a book on car repair, and a book on home maintenence sitting on a shelf is junk???</blockquote>
+
+How is this a good analogy for transposons? Books can't copy themselves. Transposons can. Maybe that explains why half your genome is copies of transposons, but half your attic is not books.
+
+Add some ERV's and pseudogenes, and most of your genome is still junk and ID is still dead.</div></div>
+<div class="comment" id="comment-292584"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 25 September 2012</p><div class="comment-body"><p>SteveP.</p><p>Honestly, if you want to talk about evolution, biology, the genome or the ENCODE project, why don't you just talk about them?  There is SO much information that we could discuss.</p><p>Instead you want to play word games with stupid analogies that don't even work.  An analogy is a teaching tool.  It's a device used to explain something that is difficult to someone without sufficient background.  I used analogies in my classroom all the time, with the provision that they were analogies and that students should strive to understand the actual concepts.  Very often, analogies were useful to my students to see relationships that they didn't have the content background to understand with the analogy.</p><p>You, however, are speaking to a bunch of people who have a very, very good understanding of science in general and biology and evolution in particular.  Some of the people in this website are published scientists who do evolutionary work for a living.  The rest are people who bother to study and learn about science, biology, biochemistry, evolution, population ecology and all that other stuff that is required to make valid judgments on the science.</p><p>You, however, are trying to make ridiculous analogies that you then use to dismiss the results of actual experiments.  There are several words for that.  The nicest I can come up with is "lame".</p><p>DNA is not a bookshelf, or a car, or spaghetti.  It is DNA.  People who know what they are talking about can discuss DNA as it is.  We can talk about introns, exons, histones, translation, functions, repeats, ERVs, SINEs, etc. etc. etc.</p><p>When you use an analogy that has been proven wrong by experiment, the only thing you are accomplishing is to expose your own ignorance.</p><p>Now, do you want to talk about the ENCODE project?  Or do you want to blather on about cars and books?</p></div></div>
+<div class="comment" id="comment-292585"><p class="comment-meta"><span class="comment-author">John</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Several days ago Max Libbrecht from ENCODE stopped by Mike White's blog and posted this:
+
+"Max Libbrecht from ENCODE and the ENCODE AMA on reddit here. Since I'm mentioned in the comments, I thought I'd put in that I essentially agree with this article: ENCODE did not debunk the idea of "junk" DNA, contrary to many news outlets. Here is one summary of the true results and their misinterpretation &ndash; there are many others:
+ http://selab.janelia.org/people/eddys/blog/?p=683"
+
+You can read his and other comments, especially Diogenes', here:
+
+http://www.huffingtonpost.com/michael-white/media-genome-science_b_1881788.html
+
+Meanwhile James Shapiro has been claiming how much the ENCODE results vindicate what he and Rick (von) Sternberg proposed back in 2005 here:
+
+http://www.huffingtonpost.com/james-a-shapiro/bob-dylan-encode-and-evol_b_1873935.html
+
+and here:
+
+http://www.huffingtonpost.com/james-a-shapiro/further-thoughts-on-the-e_b_1893984.html
+
+and finally here:
+
+http://www.huffingtonpost.com/james-a-shapiro/mobile-dna-repeats-and-tr_b_1906135.html
+
+I have to commend Diogenes for his tenacity in critiquing Shapiro.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292862">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292586"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Be careful here Diogenes.  You advocate an evolutionary narrative not supported here.  Evolution records jack shit.  It has no goals, no purpose. Its pay as you go.  There is no insurance plan, no pension plan, nada.
+
+Evolution as explained on this board has no way of recording anything.  How could it? Its not in the business of planning ahead.  Recording and remembering is an intelligent act of foresight...knowing bad times could be ahead so right it down and get ready for next seasons's drought or hurricane.
+
+As for making use of anything, this is also an intelligent act.  something can't confer an advantage unless it is recognized as such.  If an organism grew a bud on its cell surface that changed the tragectory of its movement, how would it know?  The fact that the tragectory landed it square into a jackpot of nutrients would be only a moments glory because without the ability to record and remember the consequence of the appearance of that outgrowth, it wouldn't make a difference.
+
+We've had this conversation before.  You can't outflank the above reality with some counter-intuitive lob-fumble-pass-fumble-fumble-fumble-lateral-fumble-fumble -end run touchdown scenario.
+
+Conferring an advangtage, evolving the ability to.... etc. etc mean diddly from a goalless, purposeless POV.  Rather these concepts are dependent on intelligence.
+
+Something curious you said here Diogenes - parasitic elements duplicating themselves out of control.  How is this the case?  Its obvious the duplication is under control or we would go extinct in a heartbeat.
+
+You've never thought that our genome, having the smarts to 'evolve' defect detection, analysis, and repair capabilities couldn't 'evolve' the ability to invite parasitic elements to duplicate in our genome for our own purposes?  Its amazing how people on this board compartmentalize genome function; its at once brilliant and a dullard, a genius and insane.
+
+It seems this shtick about its all junk and our genome is hapless to do anything about it is pretty lame.  Even making a distinction between junk and garbage doesn't help.  Junk has its limits.  Its a cut above garbage, but eventually junk drags you down, just a lot slower than garbage.  So to say that our genome is full of junk, floating around waiting for a seat at the blackjack table says we are living on a dime.  I doubt that's the case right now.
+
+By the way, here's a tidbit from the business world.  The 80/20 rule.  80% of sales come from 20% of the products.  That is exactly the case in by company.  But i never consider the 80% of products that have little quantities behind them junk.  They don't drag my company down.  Rather, that 80% serves an essential function.  We need the 80% just as much as the 20%.  Why, because the 20% provides the bread but the 80% provides the innovation.  If I don't have innovation, I wont be able to score the next big hit that becomes a core item, a new member of the 20% team.  The 20% is born and nurtured by the 80%.
+
+Food for thought.
+
+
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+@SteveP:
+
+<blockquote>Likewise, wouldn’t orgainisms having a library of historical environmental records help in their survival? </blockquote>
+
+SteveP has brilliantly explained what evolution is, and its relationship to the genome. Evolution is a long history of experiments. Records are only kept of the successful experiments; the failed experiments are not recorded. The records are, therefore, biased.
+
+Nevertheless the genome is, as SteveP says, "a library of historical environmental records [that helps] in their survival," thanks to evolution. 
+
+<blockquote> Maybe upon investigation we would find that this person once drove to his job at a lab from his house but due a bad economy, lost it all and is now struggling to hold on, waiting for better times. Why chuck the books when hope is not lost? No, holding on to your information is the smart play.</blockquote>
+
+Correct again! Yes, that is "the smart play", as Steve says&ndash; but only if evolution is real. An organism may evolve to make crucial use of a tiny fraction of all that junk. See, SteveP is useful for something. He has re-stated Sydney Brenner's distinction between "garbage" and "Junk DNA."
+
+It only takes 6-8 bp to make a TF binding site. TF binding sites are so small they evolve in and out, accessible to mutation and selection. Viral DNA (ERV's) comes with powerful promoters that promote transcription. A genome can evolve to make use of those tiny bits 6 to 8 base pairs at a time.
+
+But unfortunately for us, some of those "experiments" recorded in the genome involve parasitic elements duplicating themselves out of control. The "records" of that make up about half of the genome. 
+
+Most of your genome is still junk, and ID is still dead.
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292861">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292587"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Be careful here Diogenes.  You advocate an evolutionary narrative not supported here.  Evolution records jack shit.  It has no goals, no purpose. Its pay as you go.  There is no insurance plan, no pension plan, nada.
+
+Evolution as explained on this board has no way of recording anything.  How could it? Its not in the business of planning ahead.  Recording and remembering is an intelligent act of foresight...knowing bad times could be ahead so right it down and get ready for next seasons's drought or hurricane.
+
+</blockquote>
+
+Once again, totally wrong.  I said, SteveP., you really should try to understand what you're talking about before you talk about it.  Analogies are no substitute for knowledge. 
+
+Perhaps this might interest you: http://www.wired.com/medtech/health/news/2005/01/66198?currentPage=all
+
+HIV immunity is due to a mutation in a particular protein.  There is a miniscule population of people that are immune to HIV.  The mutation is totally neutral, except when HIV is around, then it's massively beneficial.
+
+Of course, the mutation occurred in the Middle Ages and HIV has only been around since the mid-1950s or so.  
+
+Was the DNA 'planning for the future'.  Of course not.
+
+But you need to be very careful too.  The entire Intelligent Design notion is based around the information content of DNA.  If you accept that, then you must accept that changes to that information can be propagated throughout populations (as we see with HIV immunity).  Of course, you don't think that DNA stores information, so you might want to go explain that to Bill Dembski, help him see where he is wrong.
+
+And then you just go into your ridiculous spiel about how only intelligence can make use of things.  Let me ask this: Are termites intelligent?  (BE careful, because one of your fellow ID proponents thinks that they are.)  Are ants intelligent?
+
+I predict you will ignore my questions, preferring to remain in comfortable ignorance.
+
+</div></div>
+<div class="comment" id="comment-292588"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><p>Look dipstick, I don't know how I can make this any clearer. You have a book on repair of Edsel Fords in every room in the house. Some are missing covers, some have lots of mistakes, some are missing pages, some are missing chapters. None of them are gong to do you any good whatsoever, even if you ever read them. And you are claiming not only that they are not junk, but that the house was built yesterday and nobody put any books in the house since! Gert a clue.</p></div></div>
+<div class="comment" id="comment-292589"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Be careful here Diogenes.  You advocate an evolutionary narrative not supported here.  Evolution records jack shit.  It has no goals, no purpose. Its pay as you go.  There is no insurance plan, no pension plan, nada.
+
+
+</blockquote>
+
+Steve,
+
+Where did your genome come from?  Was it magically poofed into existence yesterday?  Could we tell anything about your parents or your racial history if we used DNA fingerprinting on you?  Get your nose out of the old car repair books and look at reality, dpstick.</div></div>
+<div class="comment" id="comment-292591"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+That's the problem you have Ogre.  To you, DNA is a molecule.  But it could very well be a friggin' library.  You just can't wrap you're brain around such a notion.
+
+As i've said and asked before - Man designs.  He is a product of nature.  He is embedded in nature.  Therefore nature designs.  If Man designs libraries, how does it follow that nature could not design libraries?  If Man records and remembers, how is it that nature cannot?
+
+Don't you think its the height of arrogance to suggest only Man designs but not nature in general.  How are we greater than nature, our creator?  You (pl) keep wanting to downgrade Man to a humble position; not much different than the rest of nature.  Then, here is a golden opportunity.  Subordinate Man to nature's influence.  Nature drives us.  It is nature that 'evolved' design.  So DNA must in fact be a designed object; the consequence of foresight.
+
+Or does that magic word emergence resolve the conundrum in your favor?
+
+
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+SteveP.
+
+Honestly, if you want to talk about evolution, biology, the genome or the ENCODE project, why don't you just talk about them?  There is SO much information that we could discuss.
+
+Instead you want to play word games with stupid analogies that don't even work.  An analogy is a teaching tool.  It's a device used to explain something that is difficult to someone without sufficient background.  I used analogies in my classroom all the time, with the provision that they were analogies and that students should strive to understand the actual concepts.  Very often, analogies were useful to my students to see relationships that they didn't have the content background to understand with the analogy.
+
+You, however, are speaking to a bunch of people who have a very, very good understanding of science in general and biology and evolution in particular.  Some of the people in this website are published scientists who do evolutionary work for a living.  The rest are people who bother to study and learn about science, biology, biochemistry, evolution, population ecology and all that other stuff that is required to make valid judgments on the science.
+
+You, however, are trying to make ridiculous analogies that you then use to dismiss the results of actual experiments.  There are several words for that.  The nicest I can come up with is "lame".
+
+DNA is not a bookshelf, or a car, or spaghetti.  It is DNA.  People who know what they are talking about can discuss DNA as it is.  We can talk about introns, exons, histones, translation, functions, repeats, ERVs, SINEs, etc. etc. etc. 
+
+When you use an analogy that has been proven wrong by experiment, the only thing you are accomplishing is to expose your own ignorance.  
+
+Now, do you want to talk about the ENCODE project?  Or do you want to blather on about cars and books? 
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292860">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292592"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Ogre, of course termites and ant are intelligent.  In fact bacteria are intelligent as well.  Im sure you have heard of the case where bacteria wait to attack until they have sufficent numbers to be successful- quorum sensing is the term I think.
+
+Its a no brainer, pardon the pun.
+
+The question is what makes you think termites are not intelligent?  
+
+
+
+
+
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Be careful here Diogenes.  You advocate an evolutionary narrative not supported here.  Evolution records jack shit.  It has no goals, no purpose. Its pay as you go.  There is no insurance plan, no pension plan, nada.
+
+Evolution as explained on this board has no way of recording anything.  How could it? Its not in the business of planning ahead.  Recording and remembering is an intelligent act of foresight...knowing bad times could be ahead so right it down and get ready for next seasons's drought or hurricane.
+
+</blockquote>
+
+Once again, totally wrong.  I said, SteveP., you really should try to understand what you're talking about before you talk about it.  Analogies are no substitute for knowledge. 
+
+Perhaps this might interest you: http://www.wired.com/medtech/health/news/2005/01/66198?currentPage=all
+
+HIV immunity is due to a mutation in a particular protein.  There is a miniscule population of people that are immune to HIV.  The mutation is totally neutral, except when HIV is around, then it's massively beneficial.
+
+Of course, the mutation occurred in the Middle Ages and HIV has only been around since the mid-1950s or so.  
+
+Was the DNA 'planning for the future'.  Of course not.
+
+But you need to be very careful too.  The entire Intelligent Design notion is based around the information content of DNA.  If you accept that, then you must accept that changes to that information can be propagated throughout populations (as we see with HIV immunity).  Of course, you don't think that DNA stores information, so you might want to go explain that to Bill Dembski, help him see where he is wrong.
+
+And then you just go into your ridiculous spiel about how only intelligence can make use of things.  Let me ask this: Are termites intelligent?  (BE careful, because one of your fellow ID proponents thinks that they are.)  Are ants intelligent?
+
+I predict you will ignore my questions, preferring to remain in comfortable ignorance.
+
+
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292859">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292593"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Ah, but DS, if I have a book on Edsel Fords in every room with some missing pages, and some missing chapters, I could go through all of them and paste together a minimum of one complete book.  Remember I have that capability.  Redundency solves the problem.
+
+Your attempt to knock this analogy down fails.  In fact, my scenario is more than likely a truer picture than what you paint.  
+
+We didn't start from scratch building up a Ford piece by piece, mistake by mistake.  More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit.  So started all the repair jobs to fix the defects.  
+
+Still here though, scars and all.
+
+
+
+<blockquote>
+<strong>DS said:</strong>
+
+Look dipstick, I don't know how I can make this any clearer. You have a book on repair of Edsel Fords in every room in the house. Some are missing covers, some have lots of mistakes, some are missing pages, some are missing chapters. None of them are gong to do you any good whatsoever, even if you ever read them. And you are claiming not only that they are not junk, but that the house was built yesterday and nobody put any books in the house since! Gert a clue.
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292858">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292595"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 25 September 2012</p><div class="comment-body"><p>Steve P.</p><p>1) I think I said that yes, DNA stores information.  It stores the information to make a complete organism.  Sometimes that information changes and sometimes it affects what the organism looks like and does.  It's called evolution.</p><p>2) Nature does not equal God.</p><p>3) Yes, emergent properties (behavior, shapes, etc) do resolve the 'conundrum' in the favor of the current understanding of the universe.  An overriding intelligence is not needed.  Since it is not needed, it is up to you to provide sufficient evidence that A) one exists and B) it is directly involved in such things as you claim (like making DNA, controlling body forms, performing miracles, etc.)  Since everything that I mentioned (and all the other claims of deity that I've ever heard) is either done by scientifically observed natural processes (like body plans) or do not exist (like miracles), then there is zero evidence of a supernatural designer.</p><p>4) So you agree with JoeG that termites are intelligent.  Since, I don't want to fall into the trap I accuse you of, I need to define intelligence.  Here, I'm using intelligence as advanced cognitive skills such as, planning, innovation, abstract knowledge, sense of self, and problem solving.  Just to clarify, is a single termite intelligent based on that definition of intelligence?  Is a termite colony intelligent based on that definition?</p><p>BTW: I use that definition because that is what is required for the supernatural designer (aka God).  If you claim that the designer can be a swarm intelligence, then I will claim that evolution is just as valid a designer in that case as God.  You won't be able to tell the difference.</p><p>Of course, in your first reply, you say the exact same thing.  Evolution 'designed' us.  That's the problem with you guys, you never define anything.  First design is used because it's implied that massively complex things can't evolve.  Now you say that evolution results in the massively complex systems that are living things.</p><p>You really need to get together with Dembski and Behe and JoeG and hash out what you really think. One of these days, you are going to need to actually sit down and explain what you think and why.  Until then, we just have to respond to your comments... which, on the face, seem to be contradictory.</p><p>BTW: Thanks for actually answering the questions.</p></div></div>
+<div class="comment" id="comment-292596"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Ah, but DS, if I have a book on Edsel Fords in every room with some missing pages, and some missing chapters, I could go through all of them and paste together a minimum of one complete book.  Remember I have that capability.  Redundency solves the problem.
+
+Your attempt to knock this analogy down fails.  In fact, my scenario is more than likely a truer picture than what you paint.  
+
+We didn't start from scratch building up a Ford piece by piece, mistake by mistake.  More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit.  So started all the repair jobs to fix the defects.  
+
+Still here though, scars and all.
+
+
+
+<blockquote>
+<strong>DS said:</strong>
+
+Look dipstick, I don't know how I can make this any clearer. You have a book on repair of Edsel Fords in every room in the house. Some are missing covers, some have lots of mistakes, some are missing pages, some are missing chapters. None of them are gong to do you any good whatsoever, even if you ever read them. And you are claiming not only that they are not junk, but that the house was built yesterday and nobody put any books in the house since! Gert a clue.
+</blockquote>
+</blockquote>
+
+Books and cars DON'T SELF REPRODUCE!!!!!
+</div></div>
+<div class="comment" id="comment-292601"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Ah, but DS, if I have a book on Edsel Fords in every room with some missing pages, and some missing chapters, I could go through all of them and paste together a minimum of one complete book.  Remember I have that capability.  Redundency solves the problem.
+
+Your attempt to knock this analogy down fails.  In fact, my scenario is more than likely a truer picture than what you paint.  
+
+We didn't start from scratch building up a Ford piece by piece, mistake by mistake.  More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit.  So started all the repair jobs to fix the defects.  
+
+Still here though, scars and all.
+
+
+
+<blockquote>
+<strong>DS said:</strong>
+
+Look dipstick, I don't know how I can make this any clearer. You have a book on repair of Edsel Fords in every room in the house. Some are missing covers, some have lots of mistakes, some are missing pages, some are missing chapters. None of them are gong to do you any good whatsoever, even if you ever read them. And you are claiming not only that they are not junk, but that the house was built yesterday and nobody put any books in the house since! Gert a clue.
+</blockquote>
+
+
+</blockquote>
+
+Sure you could.  But what you couldn't do was claim that you put those nonfunctional copies there on purpose.  What you couldn't do was claim that it was an intelligent thing to do.  You just can't seem to grasp analogies can you?
+
+Your car didn't start out a a shiny new Ford, it started out with twenty five broken radios and sixteen broken cigarette lighters.  Your genome didn't start out a bright shiny new genome.  It started out with millions of years of baggage.  Get a clue already.</div></div>
+<div class="comment" id="comment-292603"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><p>Steve wrote:</p><p>"We didn’t start from scratch building up a Ford piece by piece, mistake by mistake. More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit. So started all the repair jobs to fix the defects."</p><p>So we've gone from the "intelligent genome" hypothesis to the "fall caused it" hypothesis.  Do you ever think before you write anything?  Sorry to break it to you Stevie, but if you had bothered to ever learn anything about genetics you would know that some of the mistakes happened before there were humans.  That's how we know the mistakes were copied.  No magic apples, no magic floods, just descent with modification.  Deal with it.</p></div></div>
+<div class="comment" id="comment-292605"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Steve wrote:
+
+"We didn’t start from scratch building up a Ford piece by piece, mistake by mistake. More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit. So started all the repair jobs to fix the defects."
+
+So we've gone from the "intelligent genome" hypothesis to the "fall caused it" hypothesis.  Do you ever think before you write anything?  Sorry to break it to you Stevie, but if you had bothered to ever learn anything about genetics you would know that some of the mistakes happened before there were humans.  That's how we know the mistakes were copied.  No magic apples, no magic floods, just descent with modification.  Deal with it.
+</blockquote>
+
+yep, good old vitamin C for example.  Why is it that almost every other mammal on the planet can synthesize their own vitamin C, except for a very small group of primates that just happens to include chimps, humans, and gorillas.  And isn't it curious that all three have exactly the same change, in exactly the same place that results the inability to synthesize vitamin C?
+
+Here's a good place to actually do those "magic" possibility calculations that you creationists are so fond of.
+
+What are the odds, that every single animal, in every single species in every one of these groups has exactly the same mutation that results in the loss of vitamin C?
+Family Tarsiidae: tarsiers
+Family Callitrichidae: marmosets and tamarins
+Family Cebidae: capuchins, squirrel monkeys
+Family Aotidae: night or owl monkeys (douroucoulis)
+Family Pitheciidae: titis, sakis, uakaris
+Family Atelidae: howler, spider, and woolly monkeys
+Family Cercopithecidae: baboons and macaques
+Family Hylobatidae: lesser apes (gibbons)
+Family Hominidae: great apes and humans
+
+Now, compare that to the odds of a single mutation occurring once and that all these species are descendants of that one.
+</div></div>
+<div class="comment" id="comment-292607"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>ogremk5 said:</strong>
+yep, good old vitamin C for example. Why is it that almost every other mammal on the planet can synthesize their own vitamin C, except for a very small group of primates that just happens to include chimps, humans, and gorillas. 
+</blockquote>
+
+<strong>mrg said:</strong> An' guinea pigs ... but before creationists shout "AHA! GOTCHA!" ...
+
+<blockquote>
+And isn't it curious that all three have exactly the same change, in exactly the same place that results the inability to synthesize vitamin C?
+</blockquote>
+
+... entirely different disabling mutations in the guinea pig.
+
+I keep thinking that, if we get to the point of being able to precision tinker with the human genome, while it would obviously be dodgy to make any real changes when we don't have a solid handle on the effects, I think it would be relatively straightforward to fix GULO, and also all our broken smell genes. Might be cool to be able to smell as well as a dog ... though it might be a liability for really funky smells.
+
+Dang, I drop back in momentarily after many moons and people are still arguing with the same old gibberish generators like SteveP. I got way too bored to read them it long ago. I glanced at his stuff, then realized who it was and stopped immediately.
+
+"We don't really know what the Designer would do."
+
+"Drop everything after WE DON'T REALLY KNOW and see if it makes a difference."
+
+This ENCODE fluff was annoying enough so that I had to update the evo intro on my site and reflect T. Ryan Gregory's annoyed criticisms of it.
+
+PS:  I am not the same "mrg" as the nut who used to make a nuisance of himself on
+PZM's blog.  I am a different nut.</div></div>
+<div class="comment" id="comment-292609"><p class="comment-meta"><span class="comment-author">Gary_Hurd</span> &middot; 25 September 2012</p><div class="comment-body"><p>This was a welcome presentation, PZ. Thanks.</p></div></div>
+<div class="comment" id="comment-292610"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 25 September 2012</p><div class="comment-body">@SteveP:
+
+Which idiot should I argue with first?
+
+
+<blockquote>
+<b>Idiot #1 writes:</b>
+
+Be careful here Diogenes. You advocate an evolutionary narrative not supported here. <b>Evolution records jack shit...Recording and remembering is an intelligent act of foresight.</b>
+</blockquote>
+
+<blockquote>
+<b>Idiot #2 writes:</b>
+
+If Man records and remembers, how is it that nature cannot?
+</blockquote>
+
+So should I argue with the idiot who says natural processes can record and remember, or with the idiot who says natural processes cannot record nor remember?
+
+And is SteveP capable of remembering... what he himself wrote 30 goddamn seconds ago?
+
+<blockquote>
+<b>Idiot #1 writes:</b>
+
+Be careful here Diogenes. You advocate an evolutionary narrative not supported here. <b>Evolution records jack shit.</b> It has no goals, no purpose...
+
+Evolution as explained on this board has no way of recording anything. How could it? Its not in the business of planning ahead. Recording and remembering is an intelligent act of foresight…
+</blockquote>
+
+<blockquote>
+<b>Idiot #2 writes:</b>
+
+If Man designs libraries, how does it follow that nature could not design libraries? If Man records and remembers, how is it that nature cannot?
+
+Don’t you think its the height of arrogance to suggest only Man designs but not nature in general... It is nature that ‘evolved’ design. So DNA must in fact be a designed object; the consequence of foresight.
+</blockquote>
+
+So should I argue with the idiot who says natural processes can do nothing, or with the idiot who says natural processes can do everything?
+
+Whatevah. There are ten million refutations of this trash. But just one, chosen at random, should suffice. I present the following evidence that evolution records and remembers; in this case, the evolution of HIV from SIV. I choose this one at random not because it is the only possible refutation of creationist stupidity, but for the titillation and entertainment of the scientists here. Enjoy.
+
+<blockquote>
+Bette Korber, a staff scientist at the Los Alamos National Laboratory in New Mexico, has "collaborated" with a supercomputer named Nirvana to chart the genetic history of HIV. Looking at the mutations the virus experienced from the mid-1980s to 1999, Korber created a molecular clock to determine the rate at which HIV changes.
+
+Using that rate and calculating backward, she and Nirvana dated the last common ancestor of HIV, the virus from which all present variations descended, to 1931. If Korber is right, the virus must have jumped from monkeys to humans before that date and well before Koprowski was trying out his vaccine. Korber published her results in the journal Nature in 2000.
+
+While Korber and her computer contributed a time line to the debate, Hahn's team has traipsed through the jungles of Africa picking up chimp feces and urine. Analyzing those samples for genetic traces of SIV, they have found that different subspecies of chimpanzees harbor different variants of SIV, and only one of those variants is the likely ancestor of HIV-1, the virus responsible for infecting more than 60 million people worldwide.
+
+"In 1999 we published a paper in Nature that said that not all chimpanzee viruses are the likely source of HIV-1, only those found in West Central Africa are," said Hahn. 
+
+[Wired Magazine, http://www.wired.com/medtech/health/news/2004/05/63424?currentPage=2]
+</blockquote></div></div>
+<div class="comment" id="comment-292611"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 25 September 2012</p><div class="comment-body">@John:
+
+<blockquote>
+<strong>John said:</strong>
+
+Several days ago Max Libbrecht from ENCODE stopped by Mike White's blog and posted this:
+
+"Max Libbrecht from ENCODE and the ENCODE AMA on reddit here. Since I'm mentioned in the comments, I thought I'd put in that I essentially agree with this article: ENCODE did not debunk the idea of "junk" DNA, contrary to many news outlets. Here is one summary of the true results and their misinterpretation -- there are many others:
+ http://selab.janelia.org/people/eddys/blog/?p=683"
+
+You can read his and other comments, especially Diogenes', here:
+
+http://www.huffingtonpost.com/michael-white/media-genome-science_b_1881788.html
+
+Meanwhile James Shapiro has been claiming how much the ENCODE results vindicate what he and Rick (von) Sternberg proposed back in 2005 here:
+
+http://www.huffingtonpost.com/james-a-shapiro/bob-dylan-encode-and-evol_b_1873935.html
+
+and here:
+
+http://www.huffingtonpost.com/james-a-shapiro/further-thoughts-on-the-e_b_1893984.html
+
+and finally here:
+
+http://www.huffingtonpost.com/james-a-shapiro/mobile-dna-repeats-and-tr_b_1906135.html
+
+I have to commend Diogenes for his tenacity in critiquing Shapiro.
+</blockquote>
+
+John,
+thanks for bringing Max Libbrecht's recent comments to our attention.
+
+I stopped commenting against Shapiro when many of my comments, full of meticulous links and references, just vanished into the galactic singularity.</div></div>
+<div class="comment" id="comment-292613"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 25 September 2012</p><div class="comment-body"><p>If any of you would like to view an argument with a less tedious creationist Junk-killer, who is announcing the 999th. "Death of Junk DNA" at the blog of Ewan Birney (Lead Analysis Coordinator of ENCODE), the argument between this creationist genius vs. the mighty blogger T. Ryan Gregory and my humble self is <a href="http://genomeinformatician.blogspot.co.uk/2012/09/response-on-encode-reaction.html">found here.</a></p></div></div>
+<div class="comment" id="comment-292616"><p class="comment-meta"><span class="comment-author">John</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+John,
+thanks for bringing Max Libbrecht's recent comments to our attention.
+
+I stopped commenting against Shapiro when many of my comments, full of meticulous links and references, just vanished into the galactic singularity.
+</blockquote>
+
+Yeah, I've tried posting links to Gregory's commentary and others over at Shapiro's blog but they've vanished, thanks no doubt to the zealous activities of Shapiro's delusional fans (I'll let you guess whether I've told Mike White what has been going on. All I will say here is that I neither confirm nor deny it.). The only good news is that Shapiro's number one delusional creationist fan, Wendell Read (who makes Stevie Pee look sane by comparison) had his latest diatribe against me removed by HuffPo for violating its community guidelines. 
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292857">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292618"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Ogre, of course termites and ant are intelligent.  In fact bacteria are intelligent as well.  Im sure you have heard of the case where bacteria wait to attack until they have sufficent numbers to be successful- quorum sensing is the term I think.</blockquote>Have you done research to determine that ants, termites and bacteria are intelligent?  If they are, then wouldn't using pesticides and antibiotics be considered genocide?
+
+Oh, wait, no, you're just pulling stuff out of your ass.
+
+<blockquote>Its a no brainer, pardon the pun.
+
+The question is what makes you think termites are not intelligent?  
+
+</blockquote>
+Actually, SteveP, the onus is on you to demonstrate to us that termites, ants and bacteria are intelligent.  You have not done that, beyond to confuse and conflate instinct and levels of increasing pathogenicity with intelligence, then insult us for being idiots simply because we do not share your crippling pareidolia.</div></div>
+<div class="comment" id="comment-292619"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>apokryltaros said:</strong>
+You have not done that, beyond to confuse and conflate instinct and levels of increasing pathogenicity with intelligence, then insult us for being idiots simply because we do not share your crippling pareidolia.
+</blockquote>
+
+<strong>mrg said:</strong>  Stanton, still not taking any prisoners I see.Not that I'm criticizing you.  These guys have an act:  "I'd never admit it, but I'm just trying to talk you in circles."
+
+"I figured that out a long time ago.  You're no more competent at con jobs than you are at science."
+
+"Well of COURSE it doesn't work if you don't play along!  How DARE you be so uncooperative!"
+
+I'm not really joking here.  They don't even try to convince anyone that they're on the level."</div></div>
+<div class="comment" id="comment-292621"><p class="comment-meta"><span class="comment-author">bigdakine</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Well bigdakine,
+
+My wife thinks Mahavishnu Orchestra is noise.
+
+To me, its an unbelievably sophisticated amalgamation of jazz, rock, funk, new age and classical music.
+
+Awesome creativity but still noise to the wife.
+
+So contrary to your assertions that ENCODE's work is a problem for ID, rather the trend is in ID's favor.  
+
+The more we look and think, the more we see through the noise and see the function.
+
+
+
+<blockquote>It seems to me the results of the ENCODE study spell even more doom for ID if anything. The fact that much of the “junk” is transcribed means that there is an awful lot of biochemical *noise* in the cell which has no function.
+
+Which seems to me an even bigger problem for ID</blockquote>
+</blockquote>
+
+Steve, your analogy is lame.
+
+Whether or not an Orchestra is pleasing to the ear is not something that can be formally quantified. It is subjective.
+
+Whether or not junk DNA has a function is not subjective. The gene that is critical for manufacture of vitamin-C for example doesn't work in primates. What's more, its broken in the same place.
+
+If ENCODE is suggesting this gene, or genes like it, are  still transcribed, than I reiterate, it is a bigger problem for ID. Not only do we have broken genes, but they are transcribed perhaps ultimately producing proteins/enzymes that don't do anything besides clutter up the cell and waste the energy needed to make them.
+
+If you're claiming the designer purposely broke the primate vitamin-C gene and other such genes, only to have them transcribed anyway... You might as well claim it is all do to the inscrutable will of the deisgner. Which is fine, just don't claim that is a scientific argument.
+
+Unlike your orchestra analogy, we can determine with some precision the nature of the activity of broken genes.</div></div>
+<div class="comment" id="comment-292623"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+If any of you would like to view an argument with a less tedious creationist Junk-killer, who is announcing the 999th. "Death of Junk DNA" at the blog of Ewan Birney (Lead Analysis Coordinator of ENCODE), the argument between this creationist genius vs. the mighty blogger T. Ryan Gregory and my humble self is <a href="http://genomeinformatician.blogspot.co.uk/2012/09/response-on-encode-reaction.html" rel="nofollow">found here.</a>
+</blockquote>
+
+Thanks for that link.  That's almost the funniest line from a creationist I've ever seen.  Using text that you wrote to refute you.</div></div>
+<div class="comment" id="comment-292628"><p class="comment-meta"><span class="comment-author">Tenncrain</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>ogremk5 said:</strong>
+
+<blockquote>
+<strong>DS said:</strong>
+
+<i>Steve wrote:
+
+"We didn’t start from scratch building up a Ford piece by piece, mistake by mistake. More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit. So started all the repair jobs to fix the defects."</i>
+
+So we've gone from the "intelligent genome" hypothesis to the "fall caused it" hypothesis. Do you ever think before you write anything? Sorry to break it to you Stevie, but if you had bothered to ever learn anything about genetics you would know that some of the mistakes happened before there were humans. That's how we know the mistakes were copied. No magic apples, no magic floods, just descent with modification. Deal with it.
+</blockquote>
+
+yep, good old vitamin C for example. Why is it that almost every other mammal on the planet can synthesize their own vitamin C, except for a very small group of primates that just happens to include chimps, humans, and gorillas. And isn't it curious that all three have exactly the same change, in exactly the same place that results the inability to synthesize vitamin C?
+
+Here's a good place to actually do those "magic" possibility calculations that you creationists are so fond of.
+
+What are the odds, that every single animal, in every single species in every one of these groups has exactly the same mutation that results in the loss of vitamin C?
+Family Tarsiidae: tarsiers
+Family Callitrichidae: marmosets and tamarins
+Family Cebidae: capuchins, squirrel monkeys
+Family Aotidae: night or owl monkeys (douroucoulis)
+Family Pitheciidae: titis, sakis, uakaris
+Family Atelidae: howler, spider, and woolly monkeys
+Family Cercopithecidae: baboons and macaques
+Family Hylobatidae: lesser apes (gibbons)
+Family Hominidae: great apes and humans
+
+Now, compare that to the odds of a single mutation occurring once and that all these species are descendants of that one.
+
+</blockquote>
+
+<a href="http://www.youtube.com/watch?v=b_HxiUwf4Eg&amp;list=UUorbfAa5HvC8yjlICw6NNbw&amp;index=12&amp;feature=plcp">Here's a video</a> that explains for laypersons the Vitamin C pseudogene. And the video is not by gnu atheists, so perhaps Steve P and other conservative theists might be more apt to check it out. 
+
+The Vitamin C pseudogene is far from being the only example of exact copied mistakes among closely related but different species. The hemoglobin pseudogene is also in the same exact place in humans, chimps and gorillas - with <i><u>exact matching defects</u></i> at that (among humans/chimps/gorillas). Indeed, Dr Francis Collins has often mentioned that the human genome is full of such examples. Collins probably should know better than most, as he of course was head of the Human Genome Project. 
+
+</div></div>
+<div class="comment" id="comment-292637"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Ogre, from your POV you should be able to see that in fact books and cars do replicate themselves.  
+
+They use humans to replicate. Books are parasites lurking in the human genome wanting to break out and infect other humans.  So they come out through human fingertips.
+
+Now they are everywhere; infecting countless millions of humans.  
+
+
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Ah, but DS, if I have a book on Edsel Fords in every room with some missing pages, and some missing chapters, I could go through all of them and paste together a minimum of one complete book.  Remember I have that capability.  Redundency solves the problem.
+
+Your attempt to knock this analogy down fails.  In fact, my scenario is more than likely a truer picture than what you paint.  
+
+We didn't start from scratch building up a Ford piece by piece, mistake by mistake.  More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit.  So started all the repair jobs to fix the defects.  
+
+Still here though, scars and all.
+
+
+
+<blockquote>
+<strong>DS said:</strong>
+
+Look dipstick, I don't know how I can make this any clearer. You have a book on repair of Edsel Fords in every room in the house. Some are missing covers, some have lots of mistakes, some are missing pages, some are missing chapters. None of them are gong to do you any good whatsoever, even if you ever read them. And you are claiming not only that they are not junk, but that the house was built yesterday and nobody put any books in the house since! Gert a clue.
+</blockquote>
+</blockquote>
+
+Books and cars DON'T SELF REPRODUCE!!!!!
+
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292856">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292640"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+You miss the point.  Its not comparing Mahavishnu to broken genes but our ability to understand what we see (and hear).
+
+You (pl) keep saying that there is no apparent function in most of the non-coding DNA segments.  This is not to say that the function is not there, but you haven't yet figured out what they do yet.  So I think with all the effort ENCODE has made, its being a tad bit pedantic to argue that what they have discovered cannot be considered to have function.  These guys aren't stupid and for a select few internet bloggers to criticize 400+ scientists trying to decipher the genome is prettly lame.
+
+What Encode and Shapiro are saying is lets spend much more of our time digging in the direction of function for these supposedly functionless bits of DNA because thats where the payoff will be.  You think they are jumping the gun?  You want to do some semantic shadow boxing with the word function? Fine. 
+
+I think ENCODE smells blood.  My money is on ENCODE swiftly satisfying your definition of function for all that DNA flotsam.
+
+A hint to ENCODE.  There is 'light' at the end of the tunnel.
+
+
+
+<blockquote>
+<strong>bigdakine said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Well bigdakine,
+
+My wife thinks Mahavishnu Orchestra is noise.
+
+To me, its an unbelievably sophisticated amalgamation of jazz, rock, funk, new age and classical music.
+
+Awesome creativity but still noise to the wife.
+
+So contrary to your assertions that ENCODE's work is a problem for ID, rather the trend is in ID's favor.  
+
+The more we look and think, the more we see through the noise and see the function.
+
+
+
+<blockquote>It seems to me the results of the ENCODE study spell even more doom for ID if anything. The fact that much of the “junk” is transcribed means that there is an awful lot of biochemical *noise* in the cell which has no function.
+
+Which seems to me an even bigger problem for ID</blockquote>
+</blockquote>
+
+Steve, your analogy is lame.
+
+Whether or not an Orchestra is pleasing to the ear is not something that can be formally quantified. It is subjective.
+
+Whether or not junk DNA has a function is not subjective. The gene that is critical for manufacture of vitamin-C for example doesn't work in primates. What's more, its broken in the same place.
+
+If ENCODE is suggesting this gene, or genes like it, are  still transcribed, than I reiterate, it is a bigger problem for ID. Not only do we have broken genes, but they are transcribed perhaps ultimately producing proteins/enzymes that don't do anything besides clutter up the cell and waste the energy needed to make them.
+
+If you're claiming the designer purposely broke the primate vitamin-C gene and other such genes, only to have them transcribed anyway... You might as well claim it is all do to the inscrutable will of the deisgner. Which is fine, just don't claim that is a scientific argument.
+
+Unlike your orchestra analogy, we can determine with some precision the nature of the activity of broken genes.
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292855">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292641"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Ogre, from your POV you should be able to see that in fact books and cars do replicate themselves.  
+
+They use humans to replicate. Books are parasites lurking in the human genome wanting to break out and infect other humans.  So they come out through human fingertips.
+
+Now they are everywhere; infecting countless millions of humans.  
+
+
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Ah, but DS, if I have a book on Edsel Fords in every room with some missing pages, and some missing chapters, I could go through all of them and paste together a minimum of one complete book.  Remember I have that capability.  Redundency solves the problem.
+
+Your attempt to knock this analogy down fails.  In fact, my scenario is more than likely a truer picture than what you paint.  
+
+We didn't start from scratch building up a Ford piece by piece, mistake by mistake.  More likely we started out a bright shiny new Ford with all the bells and whistles in place and along the way, started breaking down, bit by bit.  So started all the repair jobs to fix the defects.  
+
+Still here though, scars and all.
+
+
+
+<blockquote>
+<strong>DS said:</strong>
+
+Look dipstick, I don't know how I can make this any clearer. You have a book on repair of Edsel Fords in every room in the house. Some are missing covers, some have lots of mistakes, some are missing pages, some are missing chapters. None of them are gong to do you any good whatsoever, even if you ever read them. And you are claiming not only that they are not junk, but that the house was built yesterday and nobody put any books in the house since! Gert a clue.
+</blockquote>
+</blockquote>
+
+Books and cars DON'T SELF REPRODUCE!!!!!
+
+</blockquote>
+
+
+</blockquote>
+
+Your problem, that is, your specific problem in this particular context, is that you just don't know jack shit about evolution, or in fact, any aspect of biomedical science broadly defined.
+
+You're probably smart enough to learn.  You come across as extremely dense fairly often, but that's because you have some unhealthy emotional obsession with denying a neutral scientific reality that in no way whatsoever makes your life any worse.  At least the climate change denialists are biased by financial ties to the petroleum industry.  You haven't even got that excuse.
+
+All you ever do is argue against little pieces of the obvious arguments against your position.
+
+Like I said, it's like Charles Manson obsessively arguing against all the evidence, one fingerprint at a time.  Even if he could make one fingerprint go away, and he never can, it would just be one fingerprint.
+
+Now you'll obsessively grab ahold of <b>that</b> analogy.
+
+Instead of wasting your time doing that, why don't you actually learn some simple facts about DNA?
+
+It's mildly hard work.  You need to know some basic general chemistry and general physics before you can start with molecular biology.  But if you devoted a fraction of the time you spend defensively obsessing, you could get there.</div></div>
+<div class="comment" id="comment-292642"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+Stanton,  quorum sensing is not evidence of intelligence?  Mile long ant trails laid down with chemical tracers is not an act of intellignece?
+
+You (pl) are comparing bacteria to yourselves.  What is so hypocritical is you (pl) wanting to humble humanity by claiming we aren't better than ants, just different.  Then, you turn around and say only humans are intelligent but termites are not.
+
+What? You don't think bacteria analyzed their situation before deciding they needed to wait before making their move?  If making their move was based on physics and chemistry only, then, following Elzinga's logic, how is anything Man does any different?  What we do is based on what we need to survive.  All physics and chemistry.  Its a quantitative difference rather than a qualitative difference.
+
+Anyway, if quorum sensing is not an act of intelligence, then what is it?  And if its not an act of intelligence, then why is radio technology an act of intelligence?
+
+
+
+<blockquote>
+<strong>apokryltaros said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Ogre, of course termites and ant are intelligent.  In fact bacteria are intelligent as well.  Im sure you have heard of the case where bacteria wait to attack until they have sufficent numbers to be successful- quorum sensing is the term I think.</blockquote>Have you done research to determine that ants, termites and bacteria are intelligent?  If they are, then wouldn't using pesticides and antibiotics be considered genocide?
+
+Oh, wait, no, you're just pulling stuff out of your ass.
+
+<blockquote>Its a no brainer, pardon the pun.
+
+The question is what makes you think termites are not intelligent?  
+
+</blockquote>
+Actually, SteveP, the onus is on you to demonstrate to us that termites, ants and bacteria are intelligent.  You have not done that, beyond to confuse and conflate instinct and levels of increasing pathogenicity with intelligence, then insult us for being idiots simply because we do not share your crippling pareidolia.
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292854">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292644"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 25 September 2012</p><div class="comment-body"><p>Well at least he does make termites look intelligent.</p></div></div>
+<div class="comment" id="comment-292645"><p class="comment-meta"><span class="comment-author">John</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>DS said:</strong>
+
+Well at least he does make termites look intelligent.
+</blockquote>
+
+No, that's an insult to termites. Heaven forbid!
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292685">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292646"><p class="comment-meta"><span class="comment-author">John</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+If any of you would like to view an argument with a less tedious creationist Junk-killer, who is announcing the 999th. "Death of Junk DNA" at the blog of Ewan Birney (Lead Analysis Coordinator of ENCODE), the argument between this creationist genius vs. the mighty blogger T. Ryan Gregory and my humble self is <a href="http://genomeinformatician.blogspot.co.uk/2012/09/response-on-encode-reaction.html" rel="nofollow">found here.</a>
+</blockquote>
+
+Thanks for that link.  That's almost the funniest line from a creationist I've ever seen.  Using text that you wrote to refute you.
+</blockquote>
+
+Themayan happens to be a delusional fan of James A. Shapiro's over at HuffPo. He's been one of Shapiro's staunchest supporters and has criticized me for being "mean" to Shapiro. 
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292684">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292647"><p class="comment-meta"><span class="comment-author">John</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>Stevie Pee the delusional creotard rug merchant based in Taiwan croaked:</strong>
+
+That's the problem you have Ogre.  To you, DNA is a molecule.  But it could very well be a friggin' library.  You just can't wrap you're brain around such a notion.
+
+As i've said and asked before - Man designs.  He is a product of nature.  He is embedded in nature.  Therefore nature designs.  If Man designs libraries, how does it follow that nature could not design libraries?  If Man records and remembers, how is it that nature cannot?
+
+Don't you think its the height of arrogance to suggest only Man designs but not nature in general.  How are we greater than nature, our creator?  You (pl) keep wanting to downgrade Man to a humble position; not much different than the rest of nature.  Then, here is a golden opportunity.  Subordinate Man to nature's influence.  Nature drives us.  It is nature that 'evolved' design.  So DNA must in fact be a designed object; the consequence of foresight.
+
+Or does that magic word emergence resolve the conundrum in your favor?
+
+
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+SteveP.
+
+Honestly, if you want to talk about evolution, biology, the genome or the ENCODE project, why don't you just talk about them?  There is SO much information that we could discuss.
+
+Instead you want to play word games with stupid analogies that don't even work.  An analogy is a teaching tool.  It's a device used to explain something that is difficult to someone without sufficient background.  I used analogies in my classroom all the time, with the provision that they were analogies and that students should strive to understand the actual concepts.  Very often, analogies were useful to my students to see relationships that they didn't have the content background to understand with the analogy.
+
+You, however, are speaking to a bunch of people who have a very, very good understanding of science in general and biology and evolution in particular.  Some of the people in this website are published scientists who do evolutionary work for a living.  The rest are people who bother to study and learn about science, biology, biochemistry, evolution, population ecology and all that other stuff that is required to make valid judgments on the science.
+
+You, however, are trying to make ridiculous analogies that you then use to dismiss the results of actual experiments.  There are several words for that.  The nicest I can come up with is "lame".
+
+DNA is not a bookshelf, or a car, or spaghetti.  It is DNA.  People who know what they are talking about can discuss DNA as it is.  We can talk about introns, exons, histones, translation, functions, repeats, ERVs, SINEs, etc. etc. etc. 
+
+When you use an analogy that has been proven wrong by experiment, the only thing you are accomplishing is to expose your own ignorance.  
+
+Now, do you want to talk about the ENCODE project?  Or do you want to blather on about cars and books? 
+</blockquote>
+
+
+</blockquote>
+
+Hey dumbass, yeah, you who wanted to have a meal with me over at the Metropolitan Museum of Art the last time you came to the Big Apple. You've been demonstrating here that you're almost as demented as Wendell Read.
+
+Read looked up my e-mail address online and opted to write this delusional breathtaking inanity that I received in my inbox on August 29th:
+
+
+John:
+
+ 
+ 
+ 
+
+Above all, I want to express my gratitude to you for having made it possible for me to have my own law.  I never imagined such a thing would could happen.  I will refer to it by the acronym RLBI.  Now let me explain how it works:  Marginally inane material gets a RLBI rating of 1.  Truly far out totally inane material gets a RLBI rating of 10.  The value of this law is obvious.  Prior to its formulation an inanity rating was subjective.  Now however, by use of my law we can evaluate material objectively as to its degree of inanity.
+ 
+ 
+
+ 
+No doubt, many practitioners, unfamiliar with my law, will not be able to apply it accurately.  This is to be expected; I of course will be happy to guide such sincere yet inexperienced users of the law along a path that will eventually lead to  their acquiring an ability to accurate use of it.  Again, my thanks for providing me with my own law.  I look forward to applying my law  to the many topics in Shapiro’s blogs.  No doubt you will want to join me in thanking Prof. Shapiro for the insightful and thought provoking material he has already provided.
+ 
+ 
+ 
+
+Wendell
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292683">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292648"><p class="comment-meta"><span class="comment-author">John</span> &middot; 25 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+If any of you would like to view an argument with a less tedious creationist Junk-killer, who is announcing the 999th. "Death of Junk DNA" at the blog of Ewan Birney (Lead Analysis Coordinator of ENCODE), the argument between this creationist genius vs. the mighty blogger T. Ryan Gregory and my humble self is <a href="http://genomeinformatician.blogspot.co.uk/2012/09/response-on-encode-reaction.html" rel="nofollow">found here.</a>
+</blockquote>
+
+Here's an earlier comment from themayan condemning me for not being "nice" to James Shapiro:
+
+
+
+Commented Apr 29, 2012 at 20:54:48 in Science
+
+“John you wrote...
+ "James Shapiro is "dangerously misleading others" when those who support his views here are Intelligent Design creationists Lee Bowman, Perry Marshall, Peter Rivera and THEMAYAN, and other creationists like Wendell Read. Several of us, including Scott Hatfield, myself and Allen MacNeill find this association both problematic and worrisome"
+ 
+I know the man is not an ID'er or a creationist. I heard him speak on this issue in a lecture and he made this clear. This goes back to the point that I made earlier, that if in someway an IDer agrees, then the information no matter how relevant becomes spoiled goods, and the originator of the data becomes a persona non grata. In my opinion, this kind of "a friend of my enemy is no friend of mine" attitude does not belong in science. Politics yes. Science no. I think this also says volumes about the kind of mindset that seems so pervasive today concerning this subject. By the way, I also agree with many things that Darwinist have said including Darwin himself. I spoke earlier of his great work showing how finch beaks could vary through the process of natural selection.
+ 
+I continue to notice how you are more prone to insult or question the intelligence (and to be more concerned with the perceived motives) of others than to respond to any points in a logical fashion. My motive is to search for truth and accuracy in science even if it's politically incorrect.”
+
+His remarks are from this earlier blog of Shapiro's:
+
+http://www.huffingtonpost.com/james-a-shapiro/natural-genetic-engineeri_b_1442309.html
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292682">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292649"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 25 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Stanton,  quorum sensing is not evidence of intelligence?  Mile long ant trails laid down with chemical tracers is not an act of intellignece?</blockquote>No, they're not.  It's instinct.  Of course, you could try doing research to determine if such things are intelligent, but, you've repeatedly made it clear that you would sooner commit suicide by systematic self-mutilation that do research.
+<blockquote>
+You (pl) are comparing bacteria to yourselves.  What is so hypocritical is you (pl) wanting to humble humanity by claiming we aren't better than ants, just different.  Then, you turn around and say only humans are intelligent but termites are not.</blockquote>And now you're whining about how terrible we are because we do not share your crippling pareidolia.
+
+If eusocial insects and bacteria really are intelligent, then why can't you go out and do <b>scientific research</b> to confirm this?
+
+All I'm trying to tell you is that you will never get any recognition, never get anywhere, and never amount to anything if the only things you do are to express your irrational hatred of science and scientists and students of science, and whine at, scream at, rant at, and insult us for not mindlessly agreeing with your worthless and evidence-free claims.
+<blockquote>
+What? You don't think bacteria analyzed their situation before deciding they needed to wait before making their move? </blockquote>Show me evidence that bacteria are capable of analyzing their situation in the first place. If you are capable of remembering anything, SteveP, remember that extraordinary claims require extraordinary supporting evidence.  <blockquote>If making their move was based on physics and chemistry only, then, following Elzinga's logic, how is anything Man does any different?  What we do is based on what we need to survive.  All physics and chemistry.  Its a quantitative difference rather than a qualitative difference.</blockquote>If you hate physics and chemistry, then why do you use the Internet and work with synthetic fabrics?  Hypocrite, much?
+<blockquote>
+Anyway, if quorum sensing is not an act of intelligence, then what is it?</blockquote>It's instinct.<blockquote>And if its not an act of intelligence, then why is radio technology an act of intelligence?
+</blockquote>
+Because radios are artificial devices that are constructed by humans.  Or, do you believe that radios are like books and cars, who are really mystical magic parasites that have been waiting in the fringes of human minds waiting for thousands of years before their hosts could develop the ability to magically grant them physical forms?</div></div>
+<div class="comment" id="comment-292655"><p class="comment-meta"><span class="comment-author">tomh</span> &middot; 26 September 2012</p><div class="comment-body"><blockquote>
+<strong>John said:</strong>
+
+Read looked up my e-mail address online and...blah, blah, blah.
+</blockquote>
+
+Oh, for the old days, when PZ Myers would automatically send Kwok to the BW when he poked into one of Myers' posts.  </div></div>
+<div class="comment" id="comment-292656"><p class="comment-meta"><span class="comment-author">Malcolm</span> &middot; 26 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+
+Anyway, if quorum sensing is not an act of intelligence, then what is it?  And if its not an act of intelligence, then why is radio technology an act of intelligence?
+
+
+</blockquote>
+
+People don't excrete radios</div></div>
+<div class="comment" id="comment-292661"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+OK Stanton I'll play.
+
+Define instinct.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292853">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292662"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+Mya I have your attention please?!  
+
+We need a Klingonese translator in lane 8.
+
+
+
+<blockquote>
+<strong>John said:</strong>
+
+<blockquote>
+<strong>Stevie Pee the delusional creotard rug merchant based in Taiwan croaked:</strong>
+
+That's the problem you have Ogre.  To you, DNA is a molecule.  But it could very well be a friggin' library.  You just can't wrap you're brain around such a notion.
+
+As i've said and asked before - Man designs.  He is a product of nature.  He is embedded in nature.  Therefore nature designs.  If Man designs libraries, how does it follow that nature could not design libraries?  If Man records and remembers, how is it that nature cannot?
+
+Don't you think its the height of arrogance to suggest only Man designs but not nature in general.  How are we greater than nature, our creator?  You (pl) keep wanting to downgrade Man to a humble position; not much different than the rest of nature.  Then, here is a golden opportunity.  Subordinate Man to nature's influence.  Nature drives us.  It is nature that 'evolved' design.  So DNA must in fact be a designed object; the consequence of foresight.
+
+Or does that magic word emergence resolve the conundrum in your favor?
+
+
+<blockquote>
+<strong>ogremk5 said:</strong>
+
+SteveP.
+
+Honestly, if you want to talk about evolution, biology, the genome or the ENCODE project, why don't you just talk about them?  There is SO much information that we could discuss.
+
+Instead you want to play word games with stupid analogies that don't even work.  An analogy is a teaching tool.  It's a device used to explain something that is difficult to someone without sufficient background.  I used analogies in my classroom all the time, with the provision that they were analogies and that students should strive to understand the actual concepts.  Very often, analogies were useful to my students to see relationships that they didn't have the content background to understand with the analogy.
+
+You, however, are speaking to a bunch of people who have a very, very good understanding of science in general and biology and evolution in particular.  Some of the people in this website are published scientists who do evolutionary work for a living.  The rest are people who bother to study and learn about science, biology, biochemistry, evolution, population ecology and all that other stuff that is required to make valid judgments on the science.
+
+You, however, are trying to make ridiculous analogies that you then use to dismiss the results of actual experiments.  There are several words for that.  The nicest I can come up with is "lame".
+
+DNA is not a bookshelf, or a car, or spaghetti.  It is DNA.  People who know what they are talking about can discuss DNA as it is.  We can talk about introns, exons, histones, translation, functions, repeats, ERVs, SINEs, etc. etc. etc. 
+
+When you use an analogy that has been proven wrong by experiment, the only thing you are accomplishing is to expose your own ignorance.  
+
+Now, do you want to talk about the ENCODE project?  Or do you want to blather on about cars and books? 
+</blockquote>
+
+
+</blockquote>
+
+Hey dumbass, yeah, you who wanted to have a meal with me over at the Metropolitan Museum of Art the last time you came to the Big Apple. You've been demonstrating here that you're almost as demented as Wendell Read.
+
+Read looked up my e-mail address online and opted to write this delusional breathtaking inanity that I received in my inbox on August 29th:
+
+
+John:
+
+ 
+ 
+ 
+
+Above all, I want to express my gratitude to you for having made it possible for me to have my own law.  I never imagined such a thing would could happen.  I will refer to it by the acronym RLBI.  Now let me explain how it works:  Marginally inane material gets a RLBI rating of 1.  Truly far out totally inane material gets a RLBI rating of 10.  The value of this law is obvious.  Prior to its formulation an inanity rating was subjective.  Now however, by use of my law we can evaluate material objectively as to its degree of inanity.
+ 
+ 
+
+ 
+No doubt, many practitioners, unfamiliar with my law, will not be able to apply it accurately.  This is to be expected; I of course will be happy to guide such sincere yet inexperienced users of the law along a path that will eventually lead to  their acquiring an ability to accurate use of it.  Again, my thanks for providing me with my own law.  I look forward to applying my law  to the many topics in Shapiro’s blogs.  No doubt you will want to join me in thanking Prof. Shapiro for the insightful and thought provoking material he has already provided.
+ 
+ 
+ 
+
+Wendell
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292852">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292663"><p class="comment-meta"><span class="comment-author">John</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>tomh said:</strong>
+
+<blockquote>
+<strong>John said:</strong>
+
+Read looked up my e-mail address online and...blah, blah, blah.
+</blockquote>
+
+Oh, for the old days, when PZ Myers would automatically send Kwok to the BW when he poked into one of Myers' posts.  
+</blockquote>
+
+I suppose you missed the point that Diogenes and T. Ryan Gregory, among others, have had to do deal with the online malignant cancer that's been festering over at James Shapiro's Huffington Post blogs, especially now that Shapiro has been crowing that ENCODE "proves" what he and Rick (von) Sternberg (Yes folks, the same Sternberg of "EXPELLED: NO INTELLIGENCE ALLOWED" fame) predicted in the 2005 papers that they had written together.
+
+Regarding Rick (von) Sternberg, Shapiro had this to say:
+
+"In 2005, I published two articles on the functional importance of repetitive DNA with Rick von Sternberg. The major article was entitled "'Why repetitive DNA is essential to genome function.'"
+
+"These articles with Rick are important to me (and to this blog) for two reasons. The first is that shortly after we submitted them, Rick became a momentary celebrity of the Intelligent Design movement. Critics have taken my co-authorship with Rick as an excuse for 'guilt-by-association' claims that I have some ID or Creationist agenda, an allegation with no basis in anything I have written."
+
+and then finally, he said this:
+
+"Although we could not predict in detail all the ways repeated DNA would serve genome functions, I think our statements stand up well in light of the recent data. Without knowing the specifics, we were correct in asserting that the genome had to be highly formatted to serve as the marvelous information organelle it is in every living cell and organism."
+
+"So, while Rick's choice of evolutionary philosophies is different from mine, I am grateful to him for doing so much work on a paper that remains a source of justified scientific pride. Thinking of the genome informatically and of mobile DNA as a potent force for genome organization are central to the arguments presented on this blog and in my book."
+
+
+http://www.huffingtonpost.com/james-a-shapiro/bob-dylan-encode-and-evol_b_1873935.html
+
+(As an aside, I know Mike White isn't amused by Shapiro's blogging or the obnoxious behavior of Shapiro's delusional creationist fans. I think he's stunned that Shapiro still has HuffPo blogging privileges.)
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292681">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292664"><p class="comment-meta"><span class="comment-author">John</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>tomh said:</strong>
+
+<blockquote>
+<strong>John said:</strong>
+
+Read looked up my e-mail address online and...blah, blah, blah.
+</blockquote>
+
+Oh, for the old days, when PZ Myers would automatically send Kwok to the BW when he poked into one of Myers' posts.  
+</blockquote>
+
+The only one who should be sent authomatically now to the BW is Stevie Pee. I am surprised Myers is still tolerating Stevie's excessively juvenile behavior.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292680">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292667"><p class="comment-meta"><span class="comment-author">John</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>SteveP. said:</strong>
+
+Mya I have your attention please?!  
+
+We need a Klingonese translator in lane 8.
+
+</blockquote>
+
+You need to grow up and stop acting like the dumbass that you are. I am sure you don't act this way with your Taiwanese colleagues. Maybe you need to spend more time singing karaoke in one of the strip-tease bars in downtown Taipei.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292679">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292668"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 26 September 2012</p><div class="comment-body"><p>SteveP.</p><p>For the purposes of our discussion, (and since you have not provided your own definition) we are using the definition of intelligence I have provided.  That is: advanced cognitive skills including, planning, creative thought, knowledge of self, and one critical one, the ability to overcome instinct.</p><p>By that definition, no insects are intelligent, no bacteria are intelligent.  And no, a reaction to an input is not a sign of intelligence, planning, forethought, etc.  Sigh.</p><p>Once again, we see SteveP. would rather try anything than discuss the actual science of what's going on.  He desperately clings to his pathetic little analogy and refuses to actual discuss the concept of ERVs for example.</p><p>ERVs instantly destroy the notion that all DNA has a useful function (even if that 'function' is merely an 'action').  Why?  Because ERVs are not human DNA.  They are viral DNA.  If they had any function or action left, it would be to promote the viral DNA in our genomes instead of human DNA.  Up to 8% of the human genome is ERVs.</p><p>Now, ERVs also completely destroy your notion that I think that DNA can't act as a memory system.  Because I, personally, was not infected by thousands of different viruses that inserted some DNA into my genome and then shutdown.  I received all those ERVs from my parents who got them from their parents, etc on down the line until we find one of the people who actually was infected with one of the viruses.</p><p>In fact, if you claim to support the notion that DNA does store information, then you absolutely must accept all of the conclusions that result from that notion.  Such as, the genetic history of an organism can be extracted from the DNA.  For example, why human fetuses have gill arches and what those gill arches become in the human body.  Why chicken embryos have teeth.  And many, many other avatisms that result from genetic information leftover from the organisms ancestors.</p><p>Further, all of these things support evolutionary notions.  For example, both chicken and human embryos have gill arches.  However, no human embryo has ever had (or will ever have) feathers.  Evolutionary theory explains that perfectly, ID has no comment on that.</p><p>So you can blather on about the magical books that replicate themselves (I note that you don't actually have one) and intelligent termites and bacteria, but it's utterly meaningless to the actual discussion (and reality for that matter).</p></div></div>
+<div class="comment" id="comment-292669"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 26 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+OK Stanton I'll play.
+
+Define instinct.
+</blockquote>
+
+You still don't get it, SteveP: You need to A) stop insulting and belittling us because we do not share your pareidolia and your irrational hatred of science, B) you need to explain to us what evidence you have to support your claim.
+
+But, you've repeatedly made it clear that you would sooner commit suicide than do either.</div></div>
+<div class="comment" id="comment-292670"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 26 September 2012</p><div class="comment-body"><p>Here is a question for you Steve, since you don't know anything about science and are incapable of understanding an analogy.  All you seem to want to do is to play word games, demanding definitions from others and refusing to provide them yourself.  All right then, how about this, is the human genome irreducibly complex?  In other words, using the definition proposed by Dembski, could you remove any part of it and still have it function properly?  If the answer is yes, the according to Dembski, it could not have evolved.  If the answer is no, it could have evolved.  So which is it.</p><p>Still waitin for a response on the questions about DNA fingerprinting Steve.  Here's a hint, it's the basis of forensics, paternity testing, etc.</p></div></div>
+<div class="comment" id="comment-292673"><p class="comment-meta"><span class="comment-author">Matt Bright</span> &middot; 26 September 2012</p><div class="comment-body"><p>A question: if I’ve read this right, then ENCODE has used the broadest possible criterion of ‘chemically active’ to come to it’s 80% figure. Does this mean that the remaining 20% is about as junky as junk can be – it’s literally not doing anything – useful, meaningful or otherwise (apart, possibly, from providing some sort of inert structural support)?</p></div></div>
+<div class="comment" id="comment-292676"><p class="comment-meta"><span class="comment-author">John</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>Matt Bright said:</strong>
+
+A question: if I’ve read this right, then ENCODE has used the broadest possible criterion of ‘chemically active’ to come to it’s 80% figure. Does this mean that the remaining 20% is about as junky as junk can be – it’s literally not doing anything – useful, meaningful or otherwise (apart, possibly, from providing some sort of inert structural support)?
+</blockquote>
+
+I think it depends on who you talk to on the ENCODE team. I think Birney - one of the lead authors in the most important papers - is making that claim, but apparently quite a few of the others aren't.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292678">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292692"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 26 September 2012</p><div class="comment-body"><blockquote>
+<strong>Matt Bright said:</strong>
+
+if I’ve read this right, then ENCODE has used the broadest possible criterion of ‘chemically active’ to come to it’s 80% figure. </blockquote>
+
+You read that right.
+
+<blockquote>
+Does this mean that the remaining 20% is about as junky as junk can be – it’s literally not doing anything – useful, meaningful or otherwise (apart, possibly, from providing some sort of inert structural support)?
+</blockquote>
+
+It means it's biochemically inert-- nothing binds to it, so far as we know. However, ENCODE did not test all transcription factors (TF's) that might bind DNA-- just a large sample of TF's. That's why Ewan Birney told Ed Yong at Discover Magazine that "function" by their definition (activity/protein-binding and/or transcription into RNA) could go to 100%-- perhaps if you test all possible TF's, there's always a TF that will bind somewhere in the DNA.
+
+The counter-argument raised by critics is that there's a high rate of false positives.
+
+To use an analogy: suppose you want to catch terrorists. The traditional way is to start with someone you know who's an extremist, and examine his associates and contacts. Many of those will be real terrorists, so you have a low rate of false positives.
+
+That's like the traditional way to investigate genomic function-- start with something you know is functional, like a gene, then work outward, and try to find out what interacts with or affects it, or what interacts with the things that affect it. Most of that stuff really will be functional-- if you work outward from known function.
+
+But suppose you wanted to catch terrorists in the reverse way. You tot up a list of all Muslims in the United States. Then, you just assume all Muslims are terrorists. Inevitably, there will be a bunch of terrorists on that list, but you'll have a very high rate of false positives-- Muslims who are not terrorist. 
+
+That's like what ENCODE did-- they went backwards, totting up all protein-binding sites in the genome, and then just *assuming* they were all "functional" and all regulated gene expression.
+
+The problem comes when you talk to the press. If the FBI gathered a list of, say, four million Muslims in the US, they wouldn't tell the press it's a list of four million Muslims. They'd say it's a list of four million people "associated with terrorism", or use some kind of weasel words. That sounds great, but it's based on a huge assumption, and leads to many false accusations.
+
+That's like what the ENCODE press release did. They don't tell the press they found four million protein binding sites. They told the press they found four million "switches" that all regulate genes. That sounds great, and you get media saturation, but it's based on a huge assumption, that gives you a very high rate of false positives.
+</div></div>
+<div class="comment" id="comment-292693"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 26 September 2012</p><div class="comment-body"><p>I note that some comments from John Kwok, that were quite substantial and useful (to me), have been moved to the BW.</p><p>Could we see more discernment in which comments get moved to the BW?</p></div></div>
+<div class="comment" id="comment-292714"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+Stanton, does your repetitiveness act as some sort of security blanket?
+
+It was a simple question?  If you know insects aren't intelligent because what we see is just instinct, then I'd like to know what you mean by instinct.  I don't think its too much to ask.  I mean folks on another board TSZ are adamant ID defines information, arbitrary, function.
+
+Anyway, its alright if you are not able to precisely define instinct.  I understand.  Its not easy to do.
+
+
+
+<blockquote>
+<strong>apokryltaros said:</strong>
+
+<blockquote>
+<strong>SteveP. said:</strong>
+
+OK Stanton I'll play.
+
+Define instinct.
+</blockquote>
+
+You still don't get it, SteveP: You need to A) stop insulting and belittling us because we do not share your pareidolia and your irrational hatred of science, B) you need to explain to us what evidence you have to support your claim.
+
+But, you've repeatedly made it clear that you would sooner commit suicide than do either.
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292851">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292716"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 26 September 2012</p><div class="comment-body"><p>Instinct is behaviour that is not learned, nor is it the result of cognition, but occurs in response to specific stimuli. That it is not cognitive is demonstrated when the behaviour is repeated whether that specific stimulus does or does not have survival value in that particular instance, or even is contrary to survival. That it is not learned is demonstrated when it occurs in species where there is no opportunity to learn, yet the behaviour appears spontaneously, fully developed. Spiders, for example, spin webs. Ants follow chemical trails. They don't practice these behaviours, they simply perform them. Further, all defined members of the species follow that behaviour. It must follow that the behaviours are innate and therefore inherited. Exactly how that works is not known in detail, but the principle is clear.</p><p>Because it is not cognitive, instinctive behaviour is not a measure of intelligence, no matter how complex the behaviour may be.</p><p>All right, Steve. Have a go at that.</p></div></div>
+<div class="comment" id="comment-292717"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 26 September 2012</p><div class="comment-body"><p>Sorry, the second sentence of the above should read:</p><p>"That it is not cognitive is demonstrated when the behaviour is repeated whether or not that specific <i>behaviour</i> does or does not have survival value..."</p></div></div>
+<div class="comment" id="comment-292720"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+Dave, if that is the case then instinct supports intelligent design.  Your definition below simply states that the ability to spin a web has always been with the spider; i.e. front-loaded.
+
+The alternative is that the spider did learn to spin a web in the past.  So at one time the spider possessed at the least a rudimentary level of cognition.  The fact that it may not now show any new cognitive skills does not say it hasn't the capability.  It only says it has not had occasion to develop new skills as it already has a skill set suitable to its survival.  It's like stunted intellectual growth.  No survival pressure to expand its intellectual skills.
+
+Lenski's experiments could seemingly confirm this.  E coli was put under heavy strain to survive.  It found a way by modifying its genome to metabolize citrate.  A new skill.  Wouldn't this qualify as an act of intelligence?
+
+
+
+<blockquote>
+<strong>Dave Luckett said:</strong>
+
+Instinct is behaviour that is not learned, nor is it the result of cognition, but occurs in response to specific stimuli. That it is not cognitive is demonstrated when the behaviour is repeated whether that specific stimulus does or does not have survival value in that particular instance, or even is contrary to survival. That it is not learned is demonstrated when it occurs in species where there is no opportunity to learn, yet the behaviour appears spontaneously, fully developed. Spiders, for example, spin webs. Ants follow chemical trails. They don't practice these behaviours, they simply perform them. Further, all defined members of the species follow that behaviour. It must follow that the behaviours are innate and therefore inherited. Exactly how that works is not known in detail, but the principle is clear.
+
+Because it is not cognitive, instinctive behaviour is not a measure of intelligence, no matter how complex the behaviour may be.
+
+All right, Steve. Have a go at that. 
+</blockquote>
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292850">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292723"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 26 September 2012</p><div class="comment-body"><p>You might as well give up on Steve P. For him, it's teleology all the way down. No facts, no tests, no experiments, no mountains of data will ever convince him otherwise.</p></div></div>
+<div class="comment" id="comment-292724"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 26 September 2012</p><div class="comment-body"><p>SteveP:</p><p>In the first place, you have now shifted ground. You were arguing that there is an intelligence behind animal behaviour that the <i>animals</i> possess. I have shown that this is not the case. By removing the action of this now-unspecified intelligence to some unspecified time in the distant past, you have conceded the point, and further conceded that the assertion is void of useful information. What intelligence? When? How?</p><p>In the second place, neither of your alternatives, with regard to spiders and their webs, is necessary. Neither is actually indicated. All spiders, and many insects, have the ability to use specialised body fluids that harden in air to make threads. The glands that excrete them, and the fluids themselves, are similar. The structures so produced - coccoons, egg sacs, flying threads, traps, nets, etcetera - are as diverse in form as the purposes to which they are put. An intelligent designer would have had to make separate decisions in each case. Evolution makes no such "decision". The diversity is explained by natural selection, operating blindly.</p><p>There never was a spider that created the first spiderweb, any more than there was a prehuman who had the first abstract thought. There never was any cognitive thought by spiders. The physical organs, the behaviours, and the structures they produced, were selected from very basal properties, and gradually emerged and specialised, in a mutual feedback loop, with the ineffective changes ruthlessly culled.</p><p>Evolution explains this without reference to intelligence, either in the organisms or external to them. None is required. All that is required is a fundamental property on which natural selection can and must act. An arthropod's chances of surviving injuries are enhanced if its body fluids are self-sealing. Merely a thin place in the exoskeleton of the abdomen would allow sticky body fluids to be spread on, say, a leaf or bark. Small insects could be trapped, providing rewards. Feedback does the rest. Each step in the process improves the fitness of the organism <i>in a specific environment and niche</i>. Complexity emerges from simple natural causes, just as it does with snowflakes.</p><p>If an explanation accounts adequately for the observations, no further explanation need be sought. Evolution by (mostly, but not exclusively) natural selection accounts for the observations. There is simply no need to posit an intelligence in addition. None should therefore be posited.</p><p>It's as simple as that.</p></div></div>
+<div class="comment" id="comment-292725"><p class="comment-meta"><span class="comment-author">SteveP.</span> &middot; 26 September 2012</p><div class="comment-body"><!--
+Shit Ogre, by your definition, only Man is intelligent. How does this help anyone?  In fact, lots of folk on this board want to make Man out to be just a cut above the rest.  But defining Man this way you are putting us on a pedestal.  Is that what you want to do?
+
+
+<blockquote>For the purposes of our discussion, (and since you have not provided your own definition) we are using the definition of intelligence I have provided. That is: advanced cognitive skills including, planning, creative thought, knowledge of self, and one critical one, the ability to overcome instinct. 
+
+By that definition, no insects are intelligent, no bacteria are intelligent. And no, a reaction to an input is not a sign of intelligence, planning, forethought, etc. Sigh.
+
+</blockquote>
+
+But you don't know that.  Its an assumption on your part; an assumption you believe is justified.  However, you have not demonstrated that our genome is not making us of the ERVs.  You assume they fought their way into our genome and we have no way to expel them.  Yet we know the extraordinary capabilities cells have of detecting problems in DNA structure and making appropriate repairs.  This knowledge alone destroys your assertion that our genome does not have the capability to recognize foreign DNA and expel it.
+
+Rather, it is quite plausible that cells do recognize the invader and make use of it.  One possible use is assembling a library of viruses for reference purposes.  But of course if you think only Man in particular is intelligent, but simple organisms and individual cells could not possible possess intelligence, then you wouldn't consider this line of reasoning.
+
+Thats why ID has the conceptual advantage.  Start with the assumption that intelligence is embedded in life and run with it.  See where it leads.  Testing it is very difficult but like one of adidas' mottos goes - Impossible is nothing.
+
+So my money is on the 80/20 rule.  20% does all the work, but 80% provides the variation/innovation.
+
+
+<blockquote> Once again, we see SteveP. would rather try anything than discuss the actual science of what’s going on. He desperately clings to his pathetic little analogy and refuses to actual discuss the concept of ERVs for example.
+
+ERVs instantly destroy the notion that all DNA has a useful function (even if that ‘function’ is merely an ‘action’). Why? Because ERVs are not human DNA. They are viral DNA. If they had any function or action left, it would be to promote the viral DNA in our genomes instead of human DNA. Up to 8% of the human genome is ERVs. </blockquote>
+
+
+Actually, ID some have something to say about it.  Common design.
+
+By the way, your explanation may be very plausible while still being completely wrong, like 3 blind men inspecting an elephant.  And conversely, my take may be very implausible but right on the money.  Yet, ID gets the short end of the stick as testing and supporting an implausible yet correct position is much harder than supporting a plausible yet wrong explanation.
+
+
+<blockquote>In fact, if you claim to support the notion that DNA does store information, then you absolutely must accept all of the conclusions that result from that notion. Such as, the genetic history of an organism can be extracted from the DNA. For example, why human fetuses have gill arches and what those gill arches become in the human body. Why chicken embryos have teeth. And many, many other avatisms that result from genetic information leftover from the organisms ancestors.
+
+Further, all of these things support evolutionary notions. For example, both chicken and human embryos have gill arches. However, no human embryo has ever had (or will ever have) feathers. Evolutionary theory explains that perfectly, ID has no comment on that.</blockquote>
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292849">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292726"><p class="comment-meta"><span class="comment-author">Dave Luckett</span> &middot; 27 September 2012</p><div class="comment-body"><p>Citrate. E coli. No, this is not intelligence. Most of the e-coli starved. But a chance mutation turned up in one or a very few. This mutation - which Lenski precisely defined and documented - enabled the organism to metabolise citrate in a citrate-rich environment. The mutation occurred entirely by chance, with a probability that could be computed from an accurate understanding of exactly what it entailed.</p><p>The organism that expressed the mutation survived and thrived, <i>in that specific environment</i>. However, neither it, nor its descendents, thought or intended anything. Natural selection and random variation were sufficient. There was no other cause, and none was needed. And neither was intelligence.</p></div></div>
+<div class="comment" id="comment-292729"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 27 September 2012</p><div class="comment-body"><p>SteveP, why should we trust you and your worthless word?  You have earned a reputation here for being a liar who hates and scoffs at science, and who makes up all sorts of excuses to avoid supporting your inane claims.  You refuse to show us or even explain to us how or why you came up with your latest moronic claim, yet you want us to accept it without question.</p><p>I only sound repetitive because you keep saying the same stupid things, and keep demanding of us the same stupid demands.</p></div></div>
+<div class="comment" id="comment-292730"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+
+Actually, ID some have something to say about it.  Common design.
+
+By the way, your explanation may be very plausible while still being completely wrong, like 3 blind men inspecting an elephant.  And conversely, my take may be very implausible but right on the money.  Yet, ID gets the short end of the stick as testing and supporting an implausible yet correct position is much harder than supporting a plausible yet wrong explanation.</blockquote>Have you done any research to prove that you/Intelligent Design is right?
+
+Oh, wait, no, you haven't.  No Intelligent Design proponent has ever done any research, not you, not Behe, not Dembski, not Johnson, not anyone.
+
+You're just lying out of your ass while simultaneously whining about how we're so mean and stupid for not swallowing your bullshit without question.</div></div>
+<div class="comment" id="comment-292731"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>fnxtr said:</strong>
+
+You might as well give up on Steve P. For him, it's teleology all the way down. No facts, no tests, no experiments, no mountains of data will ever convince him otherwise.
+</blockquote>
+
+It would be of greater help if SteveP were to somehow realize his own futility and stop trying to convince us of the illusionary worth of his bullshit.
+
+But, SteveP will never stop trolling here of his own volition.</div></div>
+<div class="comment" id="comment-292733"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>apokryltaros said:</strong>
+It would be of greater help if SteveP were to somehow realize his own futility and stop trying to convince us of the illusionary worth of his bullshit.
+</blockquote>
+
+<strong>mrg said:</strong>
+
+Come now, Stanton.  He's not trying to convince anyone of anything.  He's just baring his arse in your face and giggling.
+</div></div>
+<div class="comment" id="comment-292734"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0 said:</strong>
+
+<blockquote>
+<strong>apokryltaros said:</strong>
+It would be of greater help if SteveP were to somehow realize his own futility and stop trying to convince us of the illusionary worth of his bullshit.
+</blockquote>
+
+<strong>mrg said:</strong>
+
+Come now, Stanton.  He's not trying to convince anyone of anything.  He's just baring his arse in your face and giggling.
+
+</blockquote>
+
+Agreed.  This jackass han't defined his terms, hasn't answered any questions, has never admitted when he is wrong, has changed subjects and even reversed his previous positions, all in the process of making no discernible point whatsoever.  He is just her to mack and jeer, that's all he is capable of.  Well, in the words of Dr. Sheldon Cooper:  "If you are going to mock me, at least get your facts straight."
+
+I have no idea why PZ has allowed this dipstick to take over a thread about ENDOCE with bullshit about intelligent bacteria.  He should be sent to the bathroom wall until he can learn to have an adult conversation.</div></div>
+<div class="comment" id="comment-292736"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>SteveP. said:</strong>
+
+Shit Ogre, by your definition, only Man is intelligent. 
+</blockquote>
+
+Sigh... it's not "my" definition Steve.  It's THE definition.
+
+<blockquote>
+How does this help anyone?  In fact, lots of folk on this board want to make Man out to be just a cut above the rest.  But defining Man this way you are putting us on a pedestal.  Is that what you want to do?
+
+</blockquote>
+No, I know that there are many other species besides humans that exhibit these types of behaviors.  Unfortunately, insects are not one of them.
+
+As Dave explained, your notion that insects are intelligent is wrong.  Therefore, non-intelligence makes complex structures all the time.  Thereby defeating on the primary notions of ID.
+
+<blockquote>
+
+<blockquote>For the purposes of our discussion, (and since you have not provided your own definition) we are using the definition of intelligence I have provided. That is: advanced cognitive skills including, planning, creative thought, knowledge of self, and one critical one, the ability to overcome instinct. 
+
+By that definition, no insects are intelligent, no bacteria are intelligent. And no, a reaction to an input is not a sign of intelligence, planning, forethought, etc. Sigh.
+
+</blockquote>
+
+But you don't know that.
+</blockquote>
+Actually, I do know that.  It's the definition of intelligence.  It's also trivial to show that insects don't learn.
+
+<blockquote>
+
+  Its an assumption on your part; an assumption you believe is justified.  However, you have not demonstrated that our genome is not making us of the ERVs.  
+
+</blockquote>
+And the red-herring, goal-post shift award goes to Steve P.
+
+First, this sentence doesn't even parse.  I never said that it is not possible that our genome isn't making use of the ERVs... though I believe it highly unlikely.  Why?  Because there is sufficient evidence that 1) mutations to ERVs has zero impact on the organism 2) ERVs while not highly conserved do not show selection.  In other words it doesn't matter what happens to the ERVs, the organism/population continues on just fine.  That's a bit of a hint that they aren't being used.
+
+Of course, we could actually take them out of an organism and then activate them.  Do you know what we get?  Viruses.  Not human activation proteins, not human functional proteins, just viruses.
+
+<blockquote>
+
+You assume they fought their way into our genome and we have no way to expel them.  
+</blockquote>
+
+No.  It's known that this is true.
+
+<blockquote>
+
+Yet we know the extraordinary capabilities cells have of detecting problems in DNA structure and making appropriate repairs.
+</blockquote>
+
+Do you know how a virus works?
+
+<blockquote>
+
+This knowledge alone destroys your assertion that our genome does not have the capability to recognize foreign DNA and expel it.
+</blockquote>
+
+And yet, 8% of the human genome is foreign DNA that has never been expelled.  I love it when you people make assertions that have been proven false long ago.  It's so funny.
+
+<blockquote>
+
+Rather, it is quite plausible that cells do recognize the invader and make use of it. 
+</blockquote>
+
+And you evidence for this is?  You made the claim, back it up.
+
+<blockquote>
+
+One possible use is assembling a library of viruses for reference purposes.  But of course if you think only Man in particular is intelligent, but simple organisms and individual cells could not possible possess intelligence, then you wouldn't consider this line of reasoning.
+</blockquote>
+
+Do you know how the immune system works?  I guess not...
+
+Intelligence is not required for an organisms immune system to alter itself in response to a foreign body.  And perhaps you've heard of 'anti-bodies'?  That's the 'library' of viruses and bacteria... not actual copies of the virus in our DNA.
+
+I mean, seriously, you're just making shit up now.  You really have no idea how our bodies work do you?
+
+<blockquote>
+
+Thats why ID has the conceptual advantage.  Start with the assumption that intelligence is embedded in life and run with it.  See where it leads.  Testing it is very difficult but like one of adidas' mottos goes - Impossible is nothing.
+</blockquote>
+
+So you start with assumptions too... and they lead where exactly? 
+
+ID has a fantastic conceptual advantage in that it ignores the reality of our world for make believe.  People like you can say anything and have it fall under the Big Tent (tm) of ID.  It doesn't matter if dozens of experiments over the last 150 years have proven your concepts to be incorrect, you can still say them.  
+
+They are totally meaningless, but you are free to say them.
+
+<blockquote>
+So my money is on the 80/20 rule.  20% does all the work, but 80% provides the variation/innovation.
+</blockquote>
+
+More just making stuff up.
+
+<blockquote>
+
+<blockquote> Once again, we see SteveP. would rather try anything than discuss the actual science of what’s going on. He desperately clings to his pathetic little analogy and refuses to actual discuss the concept of ERVs for example.
+
+ERVs instantly destroy the notion that all DNA has a useful function (even if that ‘function’ is merely an ‘action’). Why? Because ERVs are not human DNA. They are viral DNA. If they had any function or action left, it would be to promote the viral DNA in our genomes instead of human DNA. Up to 8% of the human genome is ERVs. </blockquote>
+
+Actually, ID some have something to say about it.  Common design.
+</blockquote>
+
+Provide a detailed explanation of the notion of 'common design' and how it is different from common descent and how it can be tested.
+
+<blockquote>
+
+By the way, your explanation may be very plausible while still being completely wrong, like 3 blind men inspecting an elephant.  And conversely, my take may be very implausible but right on the money.  Yet, ID gets the short end of the stick as testing and supporting an implausible yet correct position is much harder than supporting a plausible yet wrong explanation.
+</blockquote>
+
+Sure, you very well might be right... but (and this is one of the main points) YOU DON'T ACTUALLY KNOW because Intelligent Design proponents NEVER DO RESEARCH.
+
+That's why we ignore ID.  It's not that it's always wrong. (You are frequently wrong, however.)  It's that no one has bothered to even figure out a testable hypothesis much less go to the trouble to test it.
+
+Go ahead, present you ID based hypothesis about DNA function in human beings.  Explain why ID supports this hypothesis.  Then do the work and see.
+
+<blockquote>
+
+<blockquote>In fact, if you claim to support the notion that DNA does store information, then you absolutely must accept all of the conclusions that result from that notion. Such as, the genetic history of an organism can be extracted from the DNA. For example, why human fetuses have gill arches and what those gill arches become in the human body. Why chicken embryos have teeth. And many, many other avatisms that result from genetic information leftover from the organisms ancestors.
+
+Further, all of these things support evolutionary notions. For example, both chicken and human embryos have gill arches. However, no human embryo has ever had (or will ever have) feathers. Evolutionary theory explains that perfectly, ID has no comment on that.</blockquote>
+</blockquote>
+
+So, in these few paragraphs we see that SteveP does not understand how the immune system works.  He does not understand how viruses work.  He does not understand or accept the definitions of scientific terms.  He does not understand the scientific method.  And he does not accept peer-reviewed research.
+
+Instead, he (like all other creationists) makes up stories and analogies and think that it's somehow useful to their cause.
+
+So Steve, tell us, using the principles of ID (whatever they are) what are the expected findings of functional genes in the human genome.  Here's your big chance to make a prediction, explain why ID predicts it, and then use the ENCODE data to verify the prediction.  That's how the rest of us do things... why don't creationists?</div></div>
+<div class="comment" id="comment-292737"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 27 September 2012</p><div class="comment-body"><p>Steve wrote:</p><p>"But you don’t know that. Its an assumption on your part; an assumption you believe is justified. However, you have not demonstrated that our genome is not making us of the ERVs. You assume they fought their way into our genome and we have no way to expel them. Yet we know the extraordinary capabilities cells have of detecting problems in DNA structure and making appropriate repairs. This knowledge alone destroys your assertion that our genome does not have the capability to recognize foreign DNA and expel it."</p><p>This is all completely wrong, but at least it has something to do with the topic of the thread.</p><p>First, we know exactly what ERVs are, where they came from, how they got into the cell, how they increase in copy number and why they are deleterious.  If Steve wants to know the details he can look them up for himself, but first he is going to have to find out what ERV stands for, apparently he doesn't know.  Second, there is no known mechanism be which ERVs can be precisely excised, the cell doesn't recognize them as foreign, that is why they persist for millions of years.  They can sometimes be excised by recombination, usually mediated by the insertion sequences, but this is a random process and not very efficient, that is why ERVs tend to increase in copy number and why there are millions of them in the human genome.  Third, the insertions sometimes cause disease and death, this means that it is a random accident, no intelligence involved on anyones part.  I would suggest that Steve take a course in molecular biology, but what's the point?</p><p>Steve is trapped in his own little world of magically thinking.  Everything must have intelligence and everything must happen for a reason.  Like a three year old trapped in a world of make believe, he simply cannot conceive of the fact that natural laws and random processes happen all around him, degrading his genome and making it possible for spiders to spin webs.  He literally can't conceive of the process of random mutation and natural selection.  His twisted mind will go through any contortions necessary to deny reality and cling to his fantasy world, where he feels safe and secure.</p><p>Look Steve, I suggest you actually read the Lenski papers.  The author did NOT conclude that the bacteria were intelligent, quite the opposite in fact.  You are free to distort and misinterpret his results any way you want, but you aren't gong to convince anyone who is actually aware of the experiments.  There is no rational definition of intelligence that includes bacteria, that's why you haven't provided one.  The only one you are fooling is yourself.</p></div></div>
+<div class="comment" id="comment-292738"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 27 September 2012</p><div class="comment-body"><p>Steve wrote:</p><p>"Its an assumption on your part; an assumption you believe is justified. However, you have not demonstrated that our genome is not making us of the ERVs."</p><p>Actually, it's true, the human genome has made use of some ERVs, eventually.  A few have changed into regulatory sequences over millions of years.  Of course this does absolutely nothing for the intelligent  design hypothesis.  What it means is that  any sequences can serve as raw material on which random mutation and natural selection can act.  No intelligence would generate regulatory sequences this way, it could just produce them from scratch.  Why dump millions of useless copies of broken genes into the genome, causing death and disease all the while, just on the off chance that someday some of them might somehow do something useful?  Unintelligent design isn't going to get you anywhere.</p><p>And don't forget, since they persist through speciation events, specific insertions are strong evidence for common descent.  No creationist has any convincing alternative explanation for this evidence.  All they can do is make up crap about intelligent spiders and hope nobody notices.</p></div></div>
+<div class="comment" id="comment-292739"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 27 September 2012</p><div class="comment-body"><p>I have a question, and let me use an analogy.  Let's say I have an old junky radio. I plug it in and it lights up but all I can hear is static--I can't get any station. According to ENCODE, is it considered functional?</p></div></div>
+<div class="comment" id="comment-292740"><p class="comment-meta"><span class="comment-author">ogremk5</span> &middot; 27 September 2012</p><div class="comment-body"><p>hey Steve, you might want to wander over to Uncommon Descent and explain to them that bacteria and insects are intelligent.</p><p>Torley over there is flatly denying that crows are intelligent. Personally, I'd be willing to argue that crows meet the definition of intelligence I used.  But since he thinks that crows aren't intelligent, surely bacteria and insects are even less so.</p><p>Go set him straight.</p></div></div>
+<div class="comment" id="comment-292752"><p class="comment-meta"><span class="comment-author">tomh</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+I have no idea why PZ has allowed this dipstick to take over a thread 
+</blockquote>
+
+It's more like replies to SteveP have taken over the thread.  People seem to enjoy engaging with him.</div></div>
+<div class="comment" id="comment-292753"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 27 September 2012</p><div class="comment-body"><p>I'd like to hear what the knowledgeable people have to say about the Wikipedia article <a href="http://en.wikipedia.org/wiki/Noncoding_DNA">Noncoding DNA</a></p></div></div>
+<div class="comment" id="comment-292758"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>tomh said:</strong>
+It's more like replies to SteveP have taken over the thread.  People seem to enjoy engaging with him.
+</blockquote>
+
+<strong>mrg said:</strong>
+
+Yep.  It's a mutual amusement.  If that's what folks think is fun, nothing I can say, but personally I regard it as not worth my while to try to unravel SP's gibberish -- "looks like gibberish, I'll leave it at that and move on" -- and beneath me to deal with him.</div></div>
+<div class="comment" id="comment-292760"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 27 September 2012</p><div class="comment-body"><p>The author of the original post is PZ Myers.  It is cloned from his own blog and he is obviously not actively moderating this discussion.  It seems not to be being moderated enough, and it has degenerated into the favorite total waste of time at PT, troll-chasing.</p></div></div>
+<div class="comment" id="comment-292761"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/KirCgV93wJhLm65myiH0mSwTlWCQuwnMxlI4xKqx#26847</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+The author of the original post is PZ Myers.  It is cloned from his own blog and he is obviously not actively moderating this discussion.  It seems not to be being moderated enough, and it has degenerated into the favorite total waste of time at PT, troll-chasing.
+</blockquote>
+
+"favorite total waste of time"
+
+pray tell how one measures the value of time spent at PT since you have determined that troll chasing is a waste of it.</div></div>
+<div class="comment" id="comment-292762"><p class="comment-meta"><span class="comment-author">John</span> &middot; 27 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+The author of the original post is PZ Myers.  It is cloned from his own blog and he is obviously not actively moderating this discussion.  It seems not to be being moderated enough, and it has degenerated into the favorite total waste of time at PT, troll-chasing.
+</blockquote>
+
+Not only that, Joe, but I had some substantial comments - Diogenes thinks so - regarding James Shapiro's gross misunderstanding of what the ENCODE results mean and the pathetically stupid behavior of his delusional Huffington Post creationist fans elsewhere in the scientific blogosphere and because PZ doesn't like me, he opted to flush mine to the Bathroom Wall, while allowing Steve Proulx to take over this thread. Please do me a favor and complain to the PT crew, requesting that my comments be moved back from the Bathroom Wall. Thank you.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292767">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292769"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0</span> &middot; 27 September 2012</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+It seems not to be being moderated enough ...
+</blockquote>
+
+Well, PZM seems to be consistently bopping JK -- as most Pandas know, some history there -- but possibly that's automated.
+</div></div>
+<div class="comment" id="comment-292777"><p class="comment-meta"><span class="comment-author">John</span> &middot; 27 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>https://www.google.com/accounts/o8/id?id=AItOawkqPIHF5zvWlUzSyYRWDkEN1Z0BiuSxKF0 said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+It seems not to be being moderated enough ...
+</blockquote>
+
+Well, PZM seems to be consistently bopping JK &ndash; as most Pandas know, some history there &ndash; but possibly that's automated.
+
+</blockquote>
+It's not automated and I wish the moron would just grow up for once. Joe Felsenstein if you can complain to the PT crew I'd be most appreciative.
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292847">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292790"><p class="comment-meta"><span class="comment-author">diogeneslamp0</span> &middot; 27 September 2012</p><div class="comment-body"><p>It is insane that Kwok gets blocked while Steve gets to troll out of control. Steve should be permitted one comment per thread then off to the BW. This idiot ruins every thread here, and the troll feeding is cited by the DI as typical of Darwinist immaturity.</p></div></div>
+<div class="comment" id="comment-292801"><p class="comment-meta"><span class="comment-author">John</span> &middot; 28 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+It is insane that Kwok gets blocked while Steve gets to troll out of control. Steve should be permitted one comment per thread then off to the BW. This idiot ruins every thread here, and the troll feeding is cited by the DI as typical of Darwinist immaturity.
+</blockquote>
+
+Agreed, what could have been an excellent discussion on whether the ENCODE results support the inane claims of the DI Ministry of Propaganda and its useful idiots like James A. Shapiro that ENCODE has "refuted" the existence of Junk DNA has been derailed not only by Steve Proulx's infantile behavior, but also by Myers' infantile behavior in sending my comments to the Bathroom Wall. I opted to post here only because he was the only one commenting on the latest with regards to the ENCODE media hype, not because I really wanted to post at one of his blogs.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292846">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292803"><p class="comment-meta"><span class="comment-author">John</span> &middot; 28 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+It is insane that Kwok gets blocked while Steve gets to troll out of control. Steve should be permitted one comment per thread then off to the BW. This idiot ruins every thread here, and the troll feeding is cited by the DI as typical of Darwinist immaturity.
+</blockquote>
+
+On an entirely different, more promising note, I think we may be hearing more from Mike White about the ENCODE media hype. I can't say more, but I think what he is working on is rather promising. Stay tuned.
+
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292845">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292806"><p class="comment-meta"><span class="comment-author">dalehusband</span> &middot; 28 September 2012</p><div class="comment-body"><blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+I note that some comments from John Kwok, that were quite substantial and useful (to me), have been moved to the BW.
+
+Could we see more discernment in which comments get moved to the BW?
+</blockquote>
+
+Simple. Any comments made by John Kwok, no matter what they say, are moved to the Bathroom Wall by P Z Myers because of an longstanding grudge between them over politics which has nothing to do with science.
+
+Such prejudicial behavior destroyed Myers' credibility long ago. Being a Republican does not mean you are anti-science. He should grow up!</div></div>
+<div class="comment" id="comment-292811"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 28 September 2012</p><div class="comment-body"><p>Well, I'm a moderate Republican, and I LOVE science.</p></div></div>
+<div class="comment" id="comment-292816"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 28 September 2012</p><div class="comment-body"><blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+It is insane that Kwok gets blocked while Steve gets to troll out of control. Steve should be permitted one comment per thread then off to the BW. This idiot ruins every thread here, and the troll feeding is cited by the DI as typical of Darwinist immaturity.
+</blockquote>
+
+SteveP should be permitted 0 comments before being sent to the Bathroom Wall.</div></div>
+<div class="comment" id="comment-292817"><p class="comment-meta"><span class="comment-author">apokryltaros</span> &middot; 28 September 2012</p><div class="comment-body"><blockquote>
+<strong>dalehusband said:</strong>
+
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+I note that some comments from John Kwok, that were quite substantial and useful (to me), have been moved to the BW.
+
+Could we see more discernment in which comments get moved to the BW?
+</blockquote>
+
+Simple. Any comments made by John Kwok, no matter what they say, are moved to the Bathroom Wall by P Z Myers because of an longstanding grudge between them over politics which has nothing to do with science.
+
+Such prejudicial behavior destroyed Myers' credibility long ago. Being a Republican does not mean you are anti-science. He should grow up!
+</blockquote>
+
+To be fair, Prof. Myers' antipathy against John Kwok has nothing to do with John's political leanings or any imagined anti-science feelings.
+
+Having said that, I agree that it is grossly unfair that John's comments get flushed, while the troll remains free to crap on this and other threads.</div></div>
+<div class="comment" id="comment-292818"><p class="comment-meta"><span class="comment-author">John</span> &middot; 28 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>apokryltaros said:</strong>
+
+<blockquote>
+<strong>dalehusband said:</strong>
+
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+I note that some comments from John Kwok, that were quite substantial and useful (to me), have been moved to the BW.
+
+Could we see more discernment in which comments get moved to the BW?
+</blockquote>
+
+Simple. Any comments made by John Kwok, no matter what they say, are moved to the Bathroom Wall by P Z Myers because of an longstanding grudge between them over politics which has nothing to do with science.
+
+Such prejudicial behavior destroyed Myers' credibility long ago. Being a Republican does not mean you are anti-science. He should grow up!
+</blockquote>
+
+To be fair, Prof. Myers' antipathy against John Kwok has nothing to do with John's political leanings or any imagined anti-science feelings.
+
+Having said that, I agree that it is grossly unfair that John's comments get flushed, while the troll remains free to crap on this and other threads.
+</blockquote>
+
+I respectfully disagree. Dale's assessment of Myers is fair and accurate. (He persuaded me of this privately, after I brought this thread to his attention. Instead, you opted to indulge in further troll feeding of Steve Proulx instead of condemning Myers immediately - as Diogenes and Dale have - for exhibiting his pathetically juvenile behavior by sending my comments to the Bathroom Wall, especially when Diogenes - who has been effective in refuting Shapiro's breathtakingly inane claim that the ENCODE results "refute" junk DNA over at HuffPo - felt that my comments were noteworthy and useful to him.)
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292844">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292822"><p class="comment-meta"><span class="comment-author">FL</span> &middot; 28 September 2012</p><div class="comment-body"><blockquote><p>Well, I’m a moderate Republican, and I LOVE science.
+</p></blockquote>
+I used to be a Democrat, but they STOPPED loving science.</div></div>
+<div class="comment" id="comment-292825"><p class="comment-meta"><span class="comment-author">tomh</span> &middot; 28 September 2012</p><div class="comment-body"><blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+It is insane that Kwok gets blocked while Steve gets to troll out of control. Steve should be permitted one comment per thread then off to the BW. This idiot ruins every thread here, and the troll feeding is cited by the DI as typical of Darwinist immaturity.
+</blockquote>
+
+Amusing, that people think it is SteveP who "ruins" threads.  Comments replying to SteveP, quoting him, arguing with him, and complaining about him, far outweigh, both in number and volume, SteveP's own comments.  As for Kwok, as with every thread, he makes it All About Kwok.</div></div>
+<div class="comment" id="comment-292826"><p class="comment-meta"><span class="comment-author">John</span> &middot; 28 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>tomh said:</strong>
+
+<blockquote>
+<strong>diogeneslamp0 said:</strong>
+
+It is insane that Kwok gets blocked while Steve gets to troll out of control. Steve should be permitted one comment per thread then off to the BW. This idiot ruins every thread here, and the troll feeding is cited by the DI as typical of Darwinist immaturity.
+</blockquote>
+
+Amusing, that people think it is SteveP who "ruins" threads.  Comments replying to SteveP, quoting him, arguing with him, and complaining about him, far outweigh, both in number and volume, SteveP's own comments.  As for Kwok, as with every thread, he makes it All About Kwok.
+</blockquote>
+
+Bullshit, about "All About Kwok". If that was indeed the case, Diogenes wouldn't have noted that he regarded my comments as "quite substantial and useful". 
+
+I am certain if Joe Felsenstein didn't see the need to complain about how Steve Proulx's behavior - and the replies to it - are derailing this thread, then he wouldn't have complained. He, Diogenes, Dale, and others are right. This thread was supposedly about commenting on the media hype with regards to the ENCODE results. As for my comments, I thought it was necessary and useful to point out to Diogenes and others that Diogenes has dealt with some of Shapiro's most delusional creationist fans not only at the Huffington Post but elsewhere in the scientific blogosphere.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292843">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292833"><p class="comment-meta"><span class="comment-author">JMeyers</span> &middot; 28 September 2012</p><div class="comment-body"><p>I’m  grateful to ogremk5, Dave Luckett and others for patiently taking pains to explain elementary genetics and biology and concepts of natural selection to trolls: There have been breakthrough moments just in the last week when I’ve suddenly learned something about these subjects that was, for me, painfully hard to grasp.  Thanks – I go back to Conway Morris, Coyne,  Shubin, and all the others with renewed enthusiasm.</p></div></div>
+<div class="comment" id="comment-292834"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 28 September 2012</p><div class="comment-body"><p>At least John Kwok is on the side of science, that much is sure!</p></div></div>
+<div class="comment" id="comment-292835"><p class="comment-meta"><span class="comment-author">John</span> &middot; 28 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>JMeyers said:</strong>
+
+I’m  grateful to ogremk5, Dave Luckett and others for patiently taking pains to explain elementary genetics and biology and concepts of natural selection to trolls: There have been breakthrough moments just in the last week when I’ve suddenly learned something about these subjects that was, for me, painfully hard to grasp.  Thanks – I go back to Conway Morris, Coyne,  Shubin, and all the others with renewed enthusiasm.
+</blockquote>
+
+We're wasting our time doing just that, when the ENCODE results have been touted by the Discovery Institute Ministry of Propaganda as offering "proof" that Junk DNA doesn't exist, when some of the ENCODE scientists have asserted correctly that they haven't refuted the existence of Junk DNA.
+
+What could have been an interesting thread discussing the media hype behind ENCODE and how its results have been grossly misinterpreted by the DI and its useful idiots like James Shapiro has instead degenerated into yet another thread replete in troll baiting and feeding. If nothing else, as Diogeneslamp0 has noted, "...troll feeding is cited by the DI as typical of Darwinist immaturity" that occurs all too frequently here. 
+
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292842">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292836"><p class="comment-meta"><span class="comment-author">John</span> &middot; 28 September 2012</p><div class="comment-body"><!--
+<blockquote>
+<strong>John said:</strong>
+
+<blockquote>
+<strong>JMeyers said:</strong>
+
+I’m  grateful to ogremk5, Dave Luckett and others for patiently taking pains to explain elementary genetics and biology and concepts of natural selection to trolls: There have been breakthrough moments just in the last week when I’ve suddenly learned something about these subjects that was, for me, painfully hard to grasp.  Thanks – I go back to Conway Morris, Coyne,  Shubin, and all the others with renewed enthusiasm.
+</blockquote>
+
+We're wasting our time doing just that, when the ENCODE results have been touted by the Discovery Institute Ministry of Propaganda as offering "proof" that Junk DNA doesn't exist, when some of the ENCODE scientists have asserted correctly that they haven't refuted the existence of Junk DNA.
+
+What could have been an interesting thread discussing the media hype behind ENCODE and how its results have been grossly misinterpreted by the DI and its useful idiots like James Shapiro has instead degenerated into yet another thread replete in troll baiting and feeding. If nothing else, as Diogeneslamp0 has noted, "...troll feeding is cited by the DI as typical of Darwinist immaturity" that occurs all too frequently here. 
+
+</blockquote>
+
+I, for one, would have preferred reading commentary here of the kind Mike White and T. Ryan Gregory, among others, have been posting about the ENCODE results and their media hype, including substantive commentary from Joe Felsenstein, since he has done so elsewhere in the scientific blogosphere. That this hasn't happened is, as Joe Felsenstein has noted earlier, PZ Myers' fault. There is absolutely no good, legitimate reason why this blog couldn't have been as good as those elsewhere in the scientific blogosphere with regards to commenting on the ENCODE results and their abysmal reporting by many science journalists.
+
+Troll baiting and feeding should be sent to the BW, not comments of a substantive nature about ENCODE and its media hype that I was making here, as Diogenes has acknowledged here more than once.
+-->
+
+<div class="moved"><p>This comment has been moved to <a href="http://pandasthumb.org/bw/index.html#comment-292841">The Bathroom Wall</a>.</p></div></div></div>
+<div class="comment" id="comment-292837"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 28 September 2012</p><div class="comment-body"><p>BioLogos also had 2 good posts on ENCODE by Dennis Venema.</p></div></div>
+<div class="comment" id="comment-292887"><p class="comment-meta"><span class="comment-author">dalehusband</span> &middot; 29 September 2012</p><div class="comment-body"><blockquote>
+<strong>FL said:</strong>
+
+<blockquote><p>Well, I’m a moderate Republican, and I LOVE science.
+</p></blockquote>
+I used to be a Democrat, but <b>they STOPPED loving science.</b>
+</blockquote>
+
+And that's another one of your damned lies.</div></div>
+<div class="comment" id="comment-292888"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 29 September 2012</p><div class="comment-body"><blockquote>I used to be a Democrat, but they STOPPED loving science.</blockquote>
+
+Huh? Then explain why most of the people here seem to be Democrats.</div></div>
+<div class="comment" id="comment-292905"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 30 September 2012</p><div class="comment-body"><blockquote>
+<strong>Karen S. said:</strong>
+
+
+
+Huh? Then explain why most of the people here seem to be Democrats.
+</blockquote>
+
+Simple. They follow, contribute to, and discuss science (at a cost of time and effort) because they hate science.  Just like the President of the United States of America hates America.
+
+Beckthink.</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KwickCode is Here — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">KwickCode is Here</h1><p class="post-meta">Posted 26 April 2004 by <span class="post-author">Reed A. Cartwright</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2004/04/kwickcode-is-he.html">https://pandasthumb.org/archives/2004/04/kwickcode-is-he.html</a></p><div class="post-body"><p>I have developed a revision of the MovableType plugin <a href="http://mt-stuff.fanworks.net/plugin/quick_code_version_10.phtml" target="_blank">QuickCcode</a>, named KwickCode, to suit the needs of our blog.&nbsp; The syntax should be familiar to anyone used to posting on web bbses.&nbsp; It comes in two flavors, one for posts and a restricted one for comments.</p>
+
+ 
+<h4>KwickCode for Comments</h4>
+
+<p>KwickCode recognizes separate paragraphs as blocks of texts separate by two newlines (enters/returns).&nbsp; It will auto-link any urls or email address that it finds.&nbsp; It also auto-discovers acronyms, preserves double spaces (for sentence separation), and uses <a href="http://daringfireball.net/projects/smartypants/" target="_blank">SmartyPants</a> for&nbsp; typographic punctuation.&nbsp; KwickCode uses tags designated by square brackets to markup and beautify the text.</p>
+
+<p>The following tags are available in comments.</p>
+
+<p><b>&#91;b&#93;<i>text</i>&#91;/b&#93;</b> &#8212; Embolden &#8220;text.&#8221;</p>
+
+<p><b>&#91;i&#93;<i>text</i>&#91;/i&#93;</b> &#8212; Italcize &#8220;text.&#8221;</p>
+
+<p><b>&#91;u&#93;<i>text</i>&#91;/u&#93;</b> &#8212; Undlerline &#8220;text.&#8221;</p>
+
+<p><b>&#91;s&#93;<i>text</i>&#91;/s&#93;</b> &#8212; Strikethrough &#8220;text.&#8221;</p>
+
+<p><b>&#91;sub&#93;<i>text</i>&#91;/sub&#93;</b> &#8212; Subscript &#8220;text.&#8221;</p>
+
+<p><b>&#91;sup&#93;<i>text</i>&#91;/sup&#93;</b> &#8212; Superscript &#8220;text.&#8221;</p>
+
+<p><b>&#91;url&#93;<i>address</i>&#91;/url&#93;</b> &#8212; Link &#8220;address.&#8221;</p>
+
+<p><b>&#91;url=<i>address</i>&#93;<i>text</i>&#91;/url&#93;</b> &#8212; Link &#8220;text&#8221; to &#8220;address.&#8221;</p>
+
+<p><b>&#91;email&#93;<i>address</i>&#91;/email&#93;</b> &#8212; Link email &#8220;address&#8221; with spambot protection.</p>
+
+<p><b>&#91;email=<i>address</i>&#93;<i>text</i>&#91;/email&#93;</b> &#8212; Link &#8220;text&#8221; to email &#8220;address&#8221; with spambot protection.</p>
+
+<p><b>&#91;hr&#93;</b> &#8212; Insert horizontal rule.</p>
+
+<p><b>&#91;hr=<i>width</i>&#93;</b> &#8212; Insert horizontal rule with specified width (<a href="http://www.htmlhelp.com/reference/css/units.html#length" target="_blank">length</a> or <a href="http://www.htmlhelp.com/reference/css/units.html#percentage" target="_blank">percentage</a>).</p>
+
+<p><b>&#91;h&#93;<i>text</i>&#91;/h&#93;</b> &#8212; Insert &#8220;text&#8221; as a header.</p>
+
+<p><b>&#91;quote&#93;<i>text</i>&#91;/quote&#93;</b>&nbsp; &#8212; Quote &#8220;text.&#8221;</p>
+
+<p><b>&#91;quote=<i>author</i>&#93;<i>text</i>&#91;/quote&#93;</b>&nbsp; &#8212; Quote &#8220;text&#8221; from &#8220;author.&#8221;</p>
+
+<p><b>&#91;ref&#93;<i>text</i>&#91;/ref&#93;</b>&nbsp; &#8212; Use in quotes to specify &#8220;text&#8221; as a reference.</p>
+
+<p><b>&#91;code&#93;<i>text</i>&#91;/code&#93;</b>&nbsp; &#8212; Treat &#8220;text&#8221; as programming code and preserve space.</p>
+
+<p><b>&#91;list&#93;<i>list</i>&#91;/list&#93;</b> &#8212; Create bulleted list.&nbsp; Lists do not nest.</p>
+
+<p><b>&#91;list=<i>style</i>&#93;<i>list</i>&#91;/list&#93;</b> &#8212; Create ordered list with specified style:</p>
+
+<ul> 
+<li><p><b>1</b>: 1,2,3,&#8230;</p></li>
+<li><p><b>A</b>: A,B,C,&#8230;</p></li>
+<li><p><b>a</b>: a,b,c,&#8230;</p></li>
+<li><p><b>I</b>: I,II,III,&#8230;</p></li>
+<li><p><b>i</b>: i,ii,iii,&#8230;</p></li> </ul>
+
+<p><b>&#91;refs&#93;<i>list</i>&#91;/refs&#93;</b>&nbsp; &#8212; Create list of references.</p>
+
+<p><b>&#91;*&#93;<i>text</i></b> &#8212; Create &#8220;text&#8221; as list item.&nbsp; Stops at next &#91;*&#93, &#91;/list&#93, or &#91;/refs&#93.</p>
+
+<h4>KwickCode for Posts</h4>
+
+<p>In addition to the tags available for comments, the following tags are available to blog authors.</p>
+
+<p><b>&#91;font=<i>font</i>&#93;<i>text</i>&#91;/font&#93;</b> &#8212; Display &#8220;text&#8221; using &#8220;<a href="http://www.htmlhelp.com/reference/css/font/font-family.html" target="_blank">font</a>.&#8221;</p>
+
+<p><b>&#91;color=<i>font</i>&#93;<i>text</i>&#91;/color&#93;</b> &#8212; Display &#8220;text&#8221; using &#8220;<a href="http://www.htmlhelp.com/reference/css/units.html#color" target="_blank">color</a>.&#8221;</p>
+
+<p><b>&#91;img&#93;<i>address</i>&#91;/img&#93;</b> &#8212; Insert image, specified by &#8220;address.&#8221;</p>
+
+<p><b>&#91;img=l&#93;<i>address</i>&#91;/img&#93;</b> &#8212; Insert image, specified by &#8220;address.&#8221;&nbsp; Align to the left. </p>
+
+<p><b>&#91;img=r&#93;<i>address</i>&#91;/img&#93;</b> &#8212; Insert image, specified by &#8220;address.&#8221;&nbsp; Align to the right.</p>
+
+<p><b>&#91;eqn&#93;<i>equation</i>&#91;/eqn&#93;</b> &#8212; Insert LaTeX equation into the post.&nbsp; Uses my Tex2Png MT plugin.</p>
+
+<p><b>&#91;html&#93;<i>code</i>&#91;/html&#93;</b>&nbsp; &#8212; Pass html markup, &#8220;code,&#8221; directly to the post bypassing Kwickcode&#8217;s processing.</p></div><section class="comments-section"><h2 class="comments-heading">3 Comments</h2>
+<div class="comment" id="comment-1525"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 26 April 2004</p><div class="comment-body"><p><b>Many</b> <i>thanks</i></p><p>~DS~</p></div></div>
+<div class="comment" id="comment-1702"><p class="comment-meta"><span class="comment-author">Moron</span> &middot; 30 April 2004</p><div class="comment-body">This is great.
+
+<blockquote><p>Hopefully I can figure out how to work it.</p></blockquote></div></div>
+<div class="comment" id="comment-4229"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 28 June 2004</p><div class="comment-body"><p>And here I am trying to type in HTML like a chump.  Next time, I promise.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

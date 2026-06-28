@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weasles on Parade — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Weasles on Parade</h1><p class="post-meta">Posted 19 March 2009 by <span class="post-author">Ian Musgrave</span></p><div class="post-body">It is now  62 hours since William Dembski posted that the Evolutionary Informatics lab was going to try and reproduce <a href="http://pandasthumb.org/archives/2009/03/dembski-weasels.html">Dawkins Weasel Program</a> according to how it was actually written, as opposed to <a href="https://webmail.adelaide.edu.au/horde/util/go.php?url=http%3A%2F%2Faustringer.net%2Fwp%2Findex.php%2F2007%2F10%2F09%2Ftoday-is-a-fine-day-for-a-woollen-kettle-or-a-copper-sweater%2F&Horde=d05da374ed3b6fae1488aa30a855d6b7">their fantasy version</a>. In that time I've resurrected an elderly program, and several readers have made their own weasels from scratch. Commenter Anders has even made a <a href="http://www.cbs.dtu.dk/courses/27615.mol/weasel.php">Python version</a> that puts "freely mutating" and "locking versions" head to head with great graphs. (<strong>Update:</strong> Wes Elsberry did a head to head comparison last year, <a href="http://austringer.net/wp/index.php/2008/10/19/dembski-and-marks-are-still-mischaracterizing-dawkins-weasel/">see here</a> for his comparison [scroll down], it differs from my implementation but the basic message is the same). 
+
+I've gone back and done a head to head comparison myself between a program with no "locking" (all letters in any given string have a chance to be mutated) and one with "<a href="https://webmail.adelaide.edu.au/horde/util/go.php?url=http%3A%2F%2Faustringer.net%2Fwp%2Findex.php%2F2007%2F10%2F09%2Ftoday-is-a-fine-day-for-a-woollen-kettle-or-a-copper-sweater%2F&Horde=d05da374ed3b6fae1488aa30a855d6b7">locking</a>" (where the matching letters are preserved against mutation). Trying to implement "locking" <em>al la</em> Dembski proved too hard. You have to keep indices of the letter locations and keep updating them. It is such a pain in the bottom to try and do this that I cannot imagine Dawkins even wanting to try and program a "Locking" implementation in GBASIC. Remember, Dawkins weasel was a quick and dirty program bashed out in a short time. To implement "locking" I just kept a copy of the parent string unmutated (after all, in the real world not every offspring has mutations in genes of interest).
+
+So what happened?
+
+<form mt:asset-id="345" class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://pandasthumb.org/archives/2009/03/19/images/weasel_dynamics.png"><img alt="weasel_dynamics.png" src="http://pandasthumb.org/archives/2009/03/19/images/weasel_dynamics.png" width="360" height="298" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></form> 
+
+As you can see they were much the same (mean and standard error of an average of 4 independent runs per condition shown, click to embiggen). "Locked" runs finished earlier, on average but most of the trajectory of the run was determined by mutation supply. As you can see, runs done with locked and unlocked versions fell within the error bars of each other, for runs that set the Offspring number at either 100 or 30. 
+
+This is easy to understand. Early on, virtually any mutation is of big benefit, while later on most mutations are of small benefit. Only in the final stages that there was any significant backing and forthing, and then only in the 30 Offspring case. In the 100 offspring case, the population was so large that the probability was high that even in the final stages a beneficial mutation would be acquired. Wesley Elsberry has done the mathematics explicitly (go to <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=6034;st=0">this link</a> and scroll down). Only in the 30 offspring case was the last 10 or so generations in an "unlocked" run spent bouncing from 3-1 differences. 
+
+So Dembski's claims that a list of every 10th output string shows that Dawkins is using a "locking" program are nonsense, Dawkins results are exactly what we would expect to see when sampling sparsely from a high population "freely mutating" weasel run. 
+
+<form mt:asset-id="347" class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://pandasthumb.org/archives/2009/03/19/images/weasel_convergance_time.png"><img alt="weasel_convergance_time.png" src="http://pandasthumb.org/archives/2009/03/19/images/weasel_convergance_time.png" width="360" height="304" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></form>
+
+Slightly more surprisingly, the median time to convergence (when the program finally reached the target string), was not actually statistically significantly different. I suspect when enough runs are accumulated (say around 20), they will be, but the "locked" runs are only about 20% faster.
+
+So, summary. Whether you "lock" your strings, or allow them to mutate at all positions freely, a weasel program will converge on a solution. The for most of the time, mutation supply dominates, and whether you lock your strings or not there is rapid accumulation of beneficial mutations. Only at the very end run does "locking" matter, and then only for small populations where the probability of a beneficial mutation is low.
+
+But even then, "unlocked", freely mutating programs will converge on a solution in less than a minute (and only 20% slower than the "locking" programs), when simple random sampling will take longer than the lifespan of the Universe to converge.
+
+Still, the point is that against all evidence, Dembski believes that Dawkins wrote a overly complicated program in GBASIC, and then reverted to a simple one for a TV show, and can't be bothered to get around to writing the code that would show him wrong (and show that freely mutating programs converge rapidly on the target string). Again, this shows that cdesign proponetists don't understand the "test your hypothesis" part of science. I'm currently <a href="http://astroblogger.blogspot.com/2009/03/blogging-starry-messenger-stars.html">reading Galileo's "Starry Messenger"</a>, and the debate over at Uncommon Descent  reminds me of Francesco Sizzi, who declared that Galileo really couldn't have seen Moons around Jupiter, as metaphysics demands there only be 7 planets. 
+
+Now If only they would put the same degree of effort that they put into critiquing the weasel program, a toy demonstration of selection the same importance as the <a href="http://www.icp.org.nz/html/drug_clearance_1.html">measuring cylinder/running tap model</a> of drug clearance, into doing some real science.
+
+<hr></hr>
+The freely mutating QBASIC program is <a href="http://home.mira.net/~reynella1/weasle2b.bas">here</a>, the "locked" version is <a href="http://home.mira.net/~reynella1/WEASLE2E.BAS">here</a> (both write strings to a log file).
+
+Feel free to submit your own weasels, especially ones that compare freely mutating vs "locking" versions of the code, and the PT crew could do with a java applet version if you could do one. A weasel for every 6 hours the Uncommon Descent people do nothing would be great!
+
+See Wesley Elsberries superb <a href="http://www.antievolution.org/features/ec/weasel102.html">Java Weasel</a> as an example!</div><section class="comments-section"><h2 class="comments-heading">159 Comments</h2>
+<div class="comment" id="comment-180783"><p class="comment-meta"><span class="comment-author">Giljorak</span> &middot; 19 March 2009</p><div class="comment-body"><p>Does anyone have the original Apple Basic source code? I found many versions on the web but can't seem to find the original version.</p><p>I still have a functioning Apple ][ computer that I would love to put the source code on.</p></div></div>
+<div class="comment" id="comment-180785"><p class="comment-meta"><span class="comment-author">k,e,,</span> &middot; 19 March 2009</p><div class="comment-body"><p>Weasels are weasley recognizable but stoats are stoatally different</p></div></div>
+<div class="comment" id="comment-180787"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 19 March 2009</p><div class="comment-body"><p>Now we know why Dawkins called it a weasel program.  We're all waiting to see Dembski try to weasel out of this again.</p></div></div>
+<div class="comment" id="comment-180789"><p class="comment-meta"><span class="comment-author">Bethor</span> &middot; 19 March 2009</p><div class="comment-body"><p>Thanks for the link to the Python version by Anders, I spent some time making pretty much the same thing yesterday out of curiosity (and as a way to teach myself Python :p).</p><p>One big caveat, however : if I understand Dawkins' original description correctly "[...] each position [in each offspring] has a chance of randomly mutating, based upon a set mutation rate." (from http://www.antievolution.org/features/ec/weasel102.html).</p><p>Anders' version, however, seems to randomly pick a single position in each offspring to be mutated. This seems to be a pretty different algorithm, unless I'm completely misunderstanding either the original idea or his code.</p><p>This doesn't really invalidate the conclusions regarding locking / non-locking versions but I thought this was worth pointing out (even though the resulting graphs tracking progression towards maximum fitness look much the same in my version with a possibility of mutation on each position of each offspring).</p></div></div>
+<div class="comment" id="comment-180790"><p class="comment-meta"><span class="comment-author">Rolf Aalberg</span> &middot; 19 March 2009</p><div class="comment-body"><p>This may be entirely irrelevant but here’s what I did many years ago:</p><p>When playing a computer game, I think it was ‘Shivers’, one of the hurdles was a game consisting of a horizontal row of ‘holes’, with a number of balls that based on certain rules could be flipped back or forth between vacant holes.</p><p>After playing for a while I decided I was lost and wanted to restart - but I had not saved the start configuration of balls so I decided to let the computer solve it for me.</p><p>So I wrote a simulation program to toss the balls around according to the rules, and stop at the pre-determined target configuration.</p><p>I must have use a randomiser of some sort and the program found the solution for me.</p><p>When I examined a printout I found many long repeating and re-repeating sequences that I could eliminate until what was left was a straight sequence that I then entered in the game to move the balls from their present position to the desired end positions. Bingo.</p><p>If the program’s output could have been linked to the game it would of course have done the job all by itself, with a lot of redundant, insignificant steps in between.</p><p>I don’t remember whether I used assembler, Pascal, Qbasic or Foxbase.</p></div></div>
+<div class="comment" id="comment-180793"><p class="comment-meta"><span class="comment-author">Anders</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Bethor said:</strong>
+
+Thanks for the link to the Python version by Anders, I spent some time making pretty much the same thing yesterday out of curiosity (and as a way to teach myself Python :p).
+
+One big caveat, however : if I understand Dawkins' original description correctly "[...] each position [in each offspring] has a chance of randomly mutating, based upon a set mutation rate." (from http://www.antievolution.org/features/ec/weasel102.html).
+
+Anders' version, however, seems to randomly pick a single position in each offspring to be mutated. This seems to be a pretty different algorithm, unless I'm completely misunderstanding either the original idea or his code.
+
+[...]
+
+</blockquote>
+
+Yep - that's correct. My python version picks exactly one position in each offspring. I think I'll change it to the mutation rate version and update the graphs.
+
+Oh - and excellent choice with the python by the way!</div></div>
+<div class="comment" id="comment-180797"><p class="comment-meta"><span class="comment-author">Anders</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Bethor said:</strong>
+
+[...]
+
+One big caveat, however : if I understand Dawkins' original description correctly "[...] each position [in each offspring] has a chance of randomly mutating, based upon a set mutation rate." (from http://www.antievolution.org/features/ec/weasel102.html).
+
+Anders' version, however, seems to randomly pick a single position in each offspring to be mutated. This seems to be a pretty different algorithm, unless I'm completely misunderstanding either the original idea or his code.
+
+This doesn't really invalidate the conclusions regarding locking / non-locking versions but I thought this was worth pointing out (even though the resulting graphs tracking progression towards maximum fitness look much the same in my version with a possibility of mutation on each position of each offspring).
+</blockquote>
+
+OK, I've now modified my 
+<a href="http://www.cbs.dtu.dk/courses/27615.mol/weasel.php">programs</a> 
+so they follow the original Dawkin's description more closely: in each generation each position in each offspring has some probability of mutating (so offspring can now have zero, one, or more mutations compared to their parent). I've also updated the 
+<a href="http://www.cbs.dtu.dk/courses/27615.mol/weasel.php#fitplot">plots</a>
+and links to downloadable software.
+
+Incidentally, I might note that with this setup it is possible to set the mutation rate so low that  some offspring in each generation will be the same as their parent. In this case fitness will never decrease (the worst case is to stick with the parental genotype thus maintaining fitness).</div></div>
+<div class="comment" id="comment-180801"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 19 March 2009</p><div class="comment-body"><p>It’s great that Ian has posted the discussion of Weasel.  It is one of the best pedagogical tools for illustrating the effects of selection without requiring an extensive mathematical or physics background.</p><p>If I may summarize a few points I made in some of my previous comments on the other thread covering this, those interested in how this exercise can be integrated into a bigger picture might want to try a few tests with their programs.</p><p><b>One.</b>  The selection process represented here is only one of literally thousands of ways to cause a random process to converge to an equilibrium state.  In this case, the fact that the string has “meaning” as a recognizable sentence is irrelevant.  <i>Any</i> target string could be used.</p><p><b>Two.</b> The solutions to equations (e.g., roots that set the equation equal to zero) are mathematical examples of looking for an “equilibrium” condition.  Randomly throwing numbers at the equation is highly unlikely to produce a root.  However, pulling candidate roots from domains that are restricted according to how close the equation approached zero when a candidate was selected from a prior set produces a sudden and dramatic convergence to “equilibrium” (locating the root).</p><p><b>Three</b> Physical processes in which matter condenses into self-organized patterns already has a “built-in mechanism” for selecting candidates for the next round of trials; namely, the second law of thermodynamics.</p><p><b>Four</b> There are some tests that one can do on any selection model to see if it has any characteristics of physical reality.  These rely on some general characteristics of physical systems that are not necessarily characteristic of some artificial or mathematical algorithms.  If the outcomes of these tests indicate some of the features of real, physical systems, then the algorithm can be place in a set of candidate algorithms for use in a more sophisticated model.</p><p><b>Five</b> A caveat in this process is that some algorithms can mimic physical reality closely enough that they are difficult to distinguish from actual physical mechanisms in a stochastic set of tests.</p><p>Given these general notions, here is the general recipe for exploring whether or not an algorithm captures any physical reality.</p><p><b>A</b> Something in the model has to be identified as what physicists refer to as a “generalized force” that drives the system toward equilibrium.  It could be a “potential energy” or some kind of mechanism that “pushes” the system in the direction of equilibrium.</p><p><b>B</b>  The larger this “generalized force”, the more rapidly the system proceeds toward equilibrium.  As the system approaches equilibrium, the generalized force diminishes until it becomes zero at equilibrium.</p><p><b>C</b> In any stochastic process, there are fluctuations in the generalized force.  These fluctuations generally increase with the magnitude of the generalized force.</p><p><b>C</b> In realistic systems, one expects the ratio of the magnitude of the fluctuations in the generalized force to the magnitude of the generalized force itself to go like the reciprocal of the square-root of the number of contributors to the generalized force. (This assumes that the magnitude of the generalized force is linearly proportional to the number of “carriers” of unit quantities of this generalized force.)</p><p><b>D</b> Therefore, in running the model, it is necessary to capture data on not only the magnitude of the generalized force at each point in the system’s evolution, but also data on how it fluctuates at each point.  This means collecting a representative ensemble of the values of the generalized force at each point and calculating its mean and standard deviation.</p><p><b>E</b> Plotting the magnitudes of the fluctuations against the magnitudes of the generalized force itself on a log-log plot will produce a straight line with a slope of negative one-half if the model is behaving anything like physical reality.</p><p>There are many other tests one can make that get into the fractal natures of physical systems, but this is a start for those beginning to play around with these kinds of models.</p><p>More generally, however, it is probably better to try to build a model from the ground up based on known or suspected physical mechanisms.  However, the exercise with Dawkins’ Weasel program is a legitimate form of investigation because it approaches the problem from the perspective of cataloguing candidate models for later use.</p></div></div>
+<div class="comment" id="comment-180802"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 19 March 2009</p><div class="comment-body"><p>The <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=6034;st=#entry140135">graph shown here</a> plots the probability that a population will have at least one candidate that preserves all the correct characters from the parent string. The graph shows population sizes from 1 to 500, mutation probabilities from 0.0 to 1.0, and is done for the case where the number of correct characters in the parent is 27. Once the population is around fifty, increases in population size make very little difference.</p><p>If one runs a "weasel" with a reasonable population size and mutation rate, it is highly likely that there will be some candidate in the population that at least keeps the correct characters from the parent, and without the use of elitism (where an unmutated daughter copy is inserted into the next generation). The breakover point for the mutation rate is where it starts becoming likely that more than one character will be changed per candidate.</p></div></div>
+<div class="comment" id="comment-180804"><p class="comment-meta"><span class="comment-author">Bethor</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Anders said:</strong>
+OK, I've now modified my 
+<a href="http://www.cbs.dtu.dk/courses/27615.mol/weasel.php">programs</a> 
+so they follow the original Dawkin's description more closely: in each generation each position in each offspring has some probability of mutating (so offspring can now have zero, one, or more mutations compared to their parent).
+</blockquote>
+
+Great ! Thank you :)
+
+I've been playing around with my version of this (it beats fixing bugs in my C++ code for work ;)) and I've come to an interesting (to me, at least) observation regarding the mutation rate.
+
+Predictably, increasing the mutation rate increases the "speed" of the algorithm (i.e. fitness increases faster), decreasing the mutation rate slows down the process.
+
+What surprised me however was how quickly a higher mutation rate becomes detrimental (at least on longer target phrases than the fairly simple "methinks it is like a weasel"). I haven't implemented tracking of beneficial and negative mutations like you have but I suspect they simply cancel each other out in this case.
+
+In retrospect I suppose this should have been obvious; it certainly is if you try and imagine the edge case of 100% mutation chance : this would essentially eliminate the effects of selection and return us to the "monkeys and typewriters" algorithm.
+
+Anyways, I know this is too contrived and simple an algorithm to draw any parallels to actual biology, but it sure is fun to play with !</div></div>
+<div class="comment" id="comment-180806"><p class="comment-meta"><span class="comment-author">Bethor</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+The breakover point for the mutation rate is where it starts becoming likely that more than one character will be changed per candidate. 
+</blockquote>
+
+Looks like you answered my implicit question while I was trying to make my previous post readable... thanks ! :)
+</div></div>
+<div class="comment" id="comment-180807"><p class="comment-meta"><span class="comment-author">Bruce</span> &middot; 19 March 2009</p><div class="comment-body"><p>Should that headline refer to "Weasles" or "Weasels"? <br>Or is that an intelligently-designed typo?</p></div></div>
+<div class="comment" id="comment-180808"><p class="comment-meta"><span class="comment-author">Anders</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+The <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=6034;st=#entry140135">graph shown here</a> plots the probability that a population will have at least one candidate that preserves all the correct characters from the parent string. The graph shows population sizes from 1 to 500, mutation probabilities from 0.0 to 1.0, and is done for the case where the number of correct characters in the parent is 27. Once the population is around fifty, increases in population size make very little difference.
+
+[...]
+</blockquote>
+
+Excellent - I'd love to see this analysis. But I seem not to be able to view the plots on this page? (I tried with two different browsers on my mac). Am I lacking some plug-in?
+</div></div>
+<div class="comment" id="comment-180810"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 19 March 2009</p><div class="comment-body"><p>72 hours and still no weasels over at uncommon dissent.</p></div></div>
+<div class="comment" id="comment-180811"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote><p>72 hours and still no weasels over at uncommon dissent.</p></blockquote>
+
+Bill's a busy man. Soooo much simple evidence to ignore, so little time...</div></div>
+<div class="comment" id="comment-180812"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Anders said:</strong>
+Excellent - I'd love to see this analysis. But I seem not to be able to view the plots on this page? (I tried with two different browsers on my mac). Am I lacking some plug-in?</blockquote>
+
+No, the graphs are blocks of black with white areas and fuzzy grey bits at the interface. They might need a border to make them clearer.
+
+</div></div>
+<div class="comment" id="comment-180814"><p class="comment-meta"><span class="comment-author"><a href="http://blog.revealedsingularity.net" rel="nofollow">Philip Kahn</a></span> &middot; 19 March 2009</p><div class="comment-body"><p>Heads-up: on the Python program, it works for 2.7, but on the final line, the print statement should be enclosed in parentheses if you're running Python 3.0.</p></div></div>
+<div class="comment" id="comment-180815"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Ian Musgrave said:</strong>
+
+72 hours and still no weasels over at uncommon dissent.
+</blockquote>
+
+<blockquote><p> I’m currently reading Galileo’s “Starry Messenger”, and the debate over at Uncommon Descent reminds me of Francesco Sizzi, who declared that Galileo really couldn’t have seen Moons around Jupiter, as metaphysics demands there only be 7 planets. </p></blockquote>
+
+I looked at the conversation over there.  It’s like being in a hermetically sealed room in which all the air has been sucked out and you can’t find the door.
+</div></div>
+<div class="comment" id="comment-180820"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 19 March 2009</p><div class="comment-body"><p>The graphs are in PNG format. I'm not positive what browsers know about PNG, but Firefox 3 on Mac OS X certainly does.</p></div></div>
+<div class="comment" id="comment-180821"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+<blockquote><p>72 hours and still no weasels over at uncommon dissent.</p></blockquote>
+
+Bill's a busy man. Soooo much simple evidence to ignore, so little time...
+</blockquote>
+
+Perhaps he's using the Darwinian programming methodology. (This is the one where you start with a BASIC program of about the right number of lines, and just change statements at random until it produces the right output :)
+
+</div></div>
+<div class="comment" id="comment-180822"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+The graphs are in PNG format. I'm not positive what browsers know about PNG, but Firefox 3 on Mac OS X certainly does.
+</blockquote>
+
+I’m going over your calculations to see if I can work out what the fluctuations will be.  I noticed a probability calculation that might be incorrect but doesn’t appear to play a part in your overall calculation.
+
+Shouldn’t P<sub>try is all correct</sub> = (1/K)<sup>L</sup> = K<sup>-L</sup> instead of L<sup>-K</sup>?
+
+
+Similarly for P<sub>a try in population all correct</sub> which just multiplies the above by N.
+</div></div>
+<div class="comment" id="comment-180823"><p class="comment-meta"><span class="comment-author">Dean Wentworth</span> &middot; 19 March 2009</p><div class="comment-body"><p>Maybe writing even simple programs requires a "pathetic level of detail" that the folks at the Evolutionary Informatics lab are unable to match.</p></div></div>
+<div class="comment" id="comment-180824"><p class="comment-meta"><span class="comment-author">angst</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Now we know why Dawkins called it a weasel program.  We're all waiting to see Dembski try to weasel out of this again.
+</blockquote>
+
+"Marge, dont discourage the boy. Weaseling out of things is important to learn.  Its what separates us from the animals...except the weasel."                       Homer Simpson
+</div></div>
+<div class="comment" id="comment-180825"><p class="comment-meta"><span class="comment-author">Roy</span> &middot; 19 March 2009</p><div class="comment-body"><p>Answers in Genesis implemented a fancy version of weasel &lt;note spelling&gt; several years ago, complete with options for population size, fixed vs variable mutation rates, modelling amino-acids, etc. The program worked well (as long as you didn't mind the copious garbage in the accompanying text) and I still have a copy.</p><p>AFAICT AiG did this to 'demonstrate' that in reality, you'd never ever reach any optimal solution because after a while the probability of the next generation containing a fitter individual was the same as the probability that all members of the next generation were less fit than the parent, at which point the simulation would simply oscillate back-nd forth, and never reach the set target. They called this 'error catastrophe'. (They cheated, of course, by selecting a set of options that didn't reflect real life; however, I don't think the person who developed the program got the memo, since everything AiG claimed could rapidly be refuted simply by choosing more appropriate options).</p><p>So... why didn't Dembski just use AiG's implementation, since it manifestly does not include locking?</p><p>Roy</p></div></div>
+<div class="comment" id="comment-180826"><p class="comment-meta"><span class="comment-author">MememicBottleneck</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Bruce said:</strong>
+
+Should that headline refer to "Weasles" or "Weasels"? 
+Or is that an intelligently-designed typo?
+</blockquote>
+
+That's a random mutation.  Selection hasn't acted on it yet.</div></div>
+<div class="comment" id="comment-180827"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net/tadarwinw.html" rel="nofollow">mrg</a></span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>MememicBottleneck said:</strong>
+
+That's a random mutation.  Selection hasn't acted on it yet.
+</blockquote>
+
+With just one more mutation, Measles will have evolved from Weasels.  Yet another example, of course, that Darwinian evolution can only produce degeneration -- it cannot innovate.
+
+I'd add a smiley but I hate those things.
+</div></div>
+<div class="comment" id="comment-180828"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 19 March 2009</p><div class="comment-body"><p>Thanks, Mike. I've edited the page.</p><p>I checked most things I put up via Monte Carlo, but I apparently thought those were OK as they were.</p></div></div>
+<div class="comment" id="comment-180832"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 19 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+Thanks, Mike. I've edited the page.
+
+I checked most things I put up via Monte Carlo, but I apparently thought those were OK as they were.
+</blockquote>
+
+One would think with all the discretionary time one has in retirement that it would be easy to find big enough blocks of time to work on it.  But my schedule always seems to be full.
+
+But playing around with this and some theory is now on my agenda.  It has given me some other generalized ideas to pursue also.  Good for the brain.
+</div></div>
+<div class="comment" id="comment-180834"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 19 March 2009</p><div class="comment-body"><p>Mike,</p><p>None of the probability stuff was complex, but after a while of raising complements to powers it all gets prone to error. Obviously I was prone to error to begin with, but at least for the stuff related to the "locking/latching" issue I was really cautious and made sure that the calculation and the simulation agreed over a range of parameters. At least I think I did... let me know if you see anything else dodgy.</p></div></div>
+<div class="comment" id="comment-180835"><p class="comment-meta"><span class="comment-author">Wheels</span> &middot; 19 March 2009</p><div class="comment-body"><p>A noble click embiggens the smallest thumbnail?</p></div></div>
+<div class="comment" id="comment-180836"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+Mike,
+
+None of the probability stuff was complex, but after a while of raising complements to powers it all gets prone to error. Obviously I was prone to error to begin with, but at least for the stuff related to the "locking/latching" issue I was really cautious and made sure that the calculation and the simulation agreed over a range of parameters. At least I think I did... let me know if you see anything else dodgy.
+
+</blockquote>
+
+Wesley,
+
+I thought perhaps it could be just a typo interchanging K and L.  But your general approach looks fine to me.
+
+But this discussion triggered memories of some old theoretical stuff I was working on many years ago, and it set off some ideas about biological systems that I once thought about but never had the time to pursue in any depth.  It had not occurred to me then that this simple little program of Dawkins’s could be a toy model that I could bootstrap off from.
+
+But systems like this might have some general behaviors recognizable to physicists when they are slightly perturbed from equilibrium, and then they could eventually go chaotic as they are stressed farther from an equilibrium state.  If my hunch is correct, I think the math may ultimately turn out to be simple enough to be usable for pedagogical purposes, yet be able to illustrate some deeper concepts linking the biology and the physics.  That is where I am hoping to end up
+
+I’ll keep you posted on that Evolutionary Computation thread.  It may be a few days or a couple of weeks depending on how some of my other projects fall out.
+</div></div>
+<div class="comment" id="comment-180837"><p class="comment-meta"><span class="comment-author">Anders</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Ian Musgrave said:</strong>
+
+<blockquote>
+<strong>Anders said:</strong>
+Excellent - I'd love to see this analysis. But I seem not to be able to view the plots on this page? [...]
+</blockquote>
+
+No, the graphs are blocks of black with white areas and fuzzy grey bits at the interface. They might need a border to make them clearer.
+
+</blockquote>
+
+Aha! OK, I (finally) get it. 
+
+<blockquote>
+<strong>Kevin B said:</strong>
+
+[...]
+
+Perhaps he's using the Darwinian programming methodology. (This is the one where you start with a BASIC program of about the right number of lines, and just change statements at random until it produces the right output :)
+
+</blockquote>
+
+Hey - don't put down <a href="http://en.wikipedia.org/wiki/Evolutionary_algorithm">Evolutionary Programming"</a> - it works! Actually, now that I think about it perhaps Dembski has in fact hired a team of monkey programmers that are now hammering away at their typewriters trying to randomly hit on a working weasel program?
+
+
+</div></div>
+<div class="comment" id="comment-180838"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 20 March 2009</p><div class="comment-body"><p>82 hours and still no weasel programs over at uncommon dissent.</p></div></div>
+<div class="comment" id="comment-180843"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 20 March 2009</p><div class="comment-body">Ooh, more eye (and brain) candy! 
+
+Unfortunately I dunno yet if I'll have time to make a contribution. Meanwhile it seems the thread is converging on an interesting target.
+
+<blockquote>
+<strong>Anders said:</strong>
+
+Actually, now that I think about it perhaps Dembski has in fact hired a team of monkey programmers that are now hammering away at their typewriters trying to randomly hit on a working weasel program?
+
+</blockquote>
+
+So you are saying that he is actually trying to ferret out a solution?
+
+[Btw, I believe it when I see it, Dembski is known for his ineffectual brooding over matters beyond his ken.]</div></div>
+<div class="comment" id="comment-180847"><p class="comment-meta"><span class="comment-author">Sander van Driel</span> &middot; 20 March 2009</p><div class="comment-body"><p>
+Yay! Programming! This whole discussion inspired me to make my own <a href="http://www.subco.org/tripwire/weasel/">Weasel implementation in C#</a>. This was REALLY, REALLY easy (45 minutes). I can’t wrap my head around it how Dembski c.s. don’t just DO IT.
+</p></div></div>
+<div class="comment" id="comment-180848"><p class="comment-meta"><span class="comment-author">Porlock Junior</span> &middot; 20 March 2009</p><div class="comment-body"><p>Sizzi being mentioned, I can't resist a footnote. This was one of the people whom Galileo declined to fight with; OK, the guy had made a fool of himself, but who needed to make an enemy? The result was that some years later Sizzi told him of an anomalous motion of sunspots, which still later Galileo used to show a nasty problem with geocentric systems, whether Ptolemy's or Tycho's.</p><p>And the moral of that is -- something about turning the other cheek or casting bread upon the waters, though it's hard to see how it applies to the die-hard creationists. Maybe upstart creationists still capable of redemption?</p></div></div>
+<div class="comment" id="comment-180850"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote><p>And the moral of that is – something about turning the other cheek or casting bread upon the waters</p></blockquote>
+
+True, it is written that when you cast your bread upon the waters it shall return a thousandfold, but sadly, all you ever get back from Dembski is a thousand soggy loaves of bread.</div></div>
+<div class="comment" id="comment-180852"><p class="comment-meta"><span class="comment-author">Sander van Driel</span> &middot; 20 March 2009</p><div class="comment-body"><p>
+<a href="http://www.subco.org/tripwire/weasel/">Weasel in C# (small update)</a>
+</p>
+<p>
+I corrected the mutation mechanism so it matches the original algorithm (e.g. with a mutation rate). For an offspring count of 30 and a mutation rate of 4%, the last lines show that the M does not lock in this test run:
+</p>
+Generation      103 - Fitness  85.7% - METHINKS IT IC YIKE A WEQSCL<br/>
+Generation      123 - Fitness  89.3% - DEDHINKS IT IC LIKE A WEASEL<br/>
+Generation      146 - Fitness  92.9% - PETHINKS IT IQ LIKE A WEASEL<br/>
+Generation      150 - Fitness  96.4% - PETHINKS IT IS LIKE A WEASEL<br/>
+Generation      186 - Fitness 100.0% - METHINKS IT IS LIKE A WEASEL<br/></div></div>
+<div class="comment" id="comment-180853"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><p><b>Anders, Ian, Wesley, and Sander:</b></p><p>I see I have a few commitments that will keep me busy for the next day, but here are some thoughts I am working on.</p><p>These curves are extremely reminiscent of a number of well-known processes in physics and they can be checked with your programs very easily.</p><p>Simply change to a semi-log plot and plot your decaying curve directly against the logarithm of the generations.  Then take your increasing data and subtract it from 1 and plot it on the semi-log plot (data vs log of generations).  If you get a roughly straight line, we have a winner.</p><p>Here are some examples of processes this reminds me of in the stochastic regime:</p><p>Radioactive decay in the presence of radioactivation.  In this case, a sample of atoms are sitting in a field of neutrons or gammas and being excited into higher energy states from which they decay.</p><p>The decay of voltage in a capacitor discharging through a resistor.</p><p>A nearly critically damped harmonic oscillator, but at the level where the stochastic hits from the air molecules doing the damping is visible.</p><p>In any of these cases, changing the target string is equivalent to shifting the ground state of the system.  The system, if it is within a regime in which it can respond, simply tracks the new target (ground state) with a delay and decays into the new equilibrium position.</p></div></div>
+<div class="comment" id="comment-180854"><p class="comment-meta"><span class="comment-author">KP</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Sander van Driel said:</strong>
+
+I can’t wrap my head around it how Dembski c.s. don’t just DO IT.
+
+</blockquote>
+
+Don't hold your breath.  With what appears to be more than a dozen different models cranked out in 3-4 days here, even if they do come up with one, it will not likely negate the increasing pile of valid models that all conclude on convergence in relatively rapid order.</div></div>
+<div class="comment" id="comment-180855"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+<blockquote><p>And the moral of that is – something about turning the other cheek or casting bread upon the waters</p></blockquote>
+
+True, it is written that when you cast your bread upon the waters it shall return a thousandfold, but sadly, all you ever get back from Dembski is a thousand soggy loaves of bread.
+</blockquote>
+
+But only if the fishes don't get it first. :)
+
+More seriously, having translated Ian Musgrave's QBASIC "Weasle" program into Perl, it's clear that it's not entirely an exact reimplementation of Dawkins' original program. Dawkins applies a finite probability of mutation to each position of his candidate strings, and thus allows for a finite (if vanishingly small) possibility of the whole string changing in one generation. Ian M's program mutates <i>one</i> position in the string in any generation.
+
+We thus have, not a <i>Weasel</i> program, but a whole raft of disparate <i>Mustelid</i> programs.
+
+The interesting thing is that all the variants converge on the right answer.
+
+</div></div>
+<div class="comment" id="comment-180856"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+
+More seriously, having translated Ian Musgrave's QBASIC "Weasle" program into Perl, it's clear that it's not entirely an exact reimplementation of Dawkins' original program. Dawkins applies a finite probability of mutation to each position of his candidate strings, and thus allows for a finite (if vanishingly small) possibility of the whole string changing in one generation. Ian M's program mutates <i>one</i> position in the string in any generation.
+
+We thus have, not a <i>Weasel</i> program, but a whole raft of disparate <i>Mustelid</i> programs.
+
+The interesting thing is that all the variants converge on the right answer.
+
+
+</blockquote>
+
+Actually the only thing these changes do is change the <i>phenomenological</i> probability for the system.  As long as this remains within a proper range, the system converges.
+
+So the programs are equivalent.
+
+
+</div></div>
+<div class="comment" id="comment-180858"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+Actually the only thing these changes do is change the <i>phenomenological</i> probability for the system.  As long as this remains within a proper range, the system converges.
+
+So the programs are equivalent.
+
+
+</blockquote>
+
+However, the "exactly one change per generation" scenario is much less likely get already correct positions to change, because that could only happen in the case where none of the candidate strings "improve" an incorrect position. This would present the appearance of "locking" that certain people are muttering about.
+
+</div></div>
+<div class="comment" id="comment-180859"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><p>If the harmonic oscillator in one of my previous comments seemed like a strained analogy, here is the justification.</p><p>When atoms or molecules condense into a crystal, the mutual potential energy among the molecules begins to form a potential well.  As the molecules or atoms fall deeper into this well, the well itself can be more closely approximated as having a parabolic shape (for those with some math background, a Taylor series expansion of the potential is quadratic in the second-order term, and the higher orders are small enough to be ignored).</p><p>Now, what happens in crystallization is that the atoms or molecules that participate in this are <i>selected</i> (because of the second law of thermodynamics).  Atoms are losing energy through collisions with other atoms that are carrying energy out of the system or by way of photons that escape to infinity.  What remains are ensembles of atoms with smaller and smaller energies, and these start to fall into the mutual attractive potential wells.</p><p>The big hurdle for the ID/Creationists is their carefully constructed misconceptions about the second law.  They have continually propagandized for decades against all efforts of the physics community to correct these misconceptions.  Thus, the ID/Creationists think the second law prevents this selection process from occurring.</p><p>The truth is quite the opposite; the second law is an expression of the fact that this stuff really happens.  It is a description of the way nature behaves, not a demon that steps in and prevents or smashes everything into chaos.</p><p>The Dawkins’ Weasel program captures some of the aspects of stochastic systems settling into a “potential well”.</p></div></div>
+<div class="comment" id="comment-180860"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+<blockquote>
+<strong>Mike Elzinga said:</strong>
+
+Actually the only thing these changes do is change the <i>phenomenological</i> probability for the system.  As long as this remains within a proper range, the system converges.
+
+So the programs are equivalent.
+
+
+</blockquote>
+
+However, the "exactly one change per generation" scenario is much less likely get already correct positions to change, because that could only happen in the case where none of the candidate strings "improve" an incorrect position. This would present the appearance of "locking" that certain people are muttering about.
+
+
+</blockquote>
+
+The “locking”, in the comparison with radioactive decay in the presence of radioactivation, is simply removing the radioactivation. 
+
+In any of the physics analogies, it corresponds to the case of a perfect situation where the more “energetic” particles are never allowed to come back into the system.  In reality, this is not the case.
+
+We are also looking at this in the stochastic regime.  Thus, it should not be surprising that we will see fluctuations that "don't fit the pattern".
+</div></div>
+<div class="comment" id="comment-180861"><p class="comment-meta"><span class="comment-author">Bjarne B</span> &middot; 20 March 2009</p><div class="comment-body"><p>After having heard of it yesterday for the first time, I decided to put together my own weasel program in python.</p><p>Taken that I have written my last program in school in 1993 and that I have never heard about python until yesterday, I am a bit proud on myself :D<br>Unfortunately, I have no place to post the code (and I believe it not to be too elegant anyway).</p><p>Wasn't too hard, actually.</p><p>Examples from an offspring count of 25:</p><p>Generation 0<br>Best fit:JCSVWGU HXVY  RXJADIWENCNRH Similarities:2</p><p>Generation 15<br>Best fit:JCTVIGU IT YS RXJWDBWWNCSEL Similarities:12</p><p>Generation 50<br>Best fit:MJTHIOF IT XS OIFE U WEWSEL Similarities:19</p><p>Generation 79<br>Best fit:METHINK IT IS LIXE A WEXSEL Similarities:25</p><p>Generation 80<br>Best fit:METHINK IT IS LIXE A WEASEL Similarities:26</p><p>Generation 81<br>Best fit:METHDNK IT IS LIXE A WEASEL Similarities:25</p><p>Generation 108<br>Best fit:METHINK IT IS LILE A WEASEL Similarities:26</p><p>Generation 109<br>Best fit:METHINK IT IS LIKE A WEASEL Similarities:27</p></div></div>
+<div class="comment" id="comment-180862"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+<blockquote>
+<strong>Mike Elzinga said:</strong>
+
+Actually the only thing these changes do is change the <i>phenomenological</i> probability for the system. As long as this remains within a proper range, the system converges.
+
+So the programs are equivalent.
+
+
+</blockquote>
+
+However, the "exactly one change per generation" scenario is much less likely get already correct positions to change, because that could only happen in the case where none of the candidate strings "improve" an incorrect position. This would present the appearance of "locking" that certain people are muttering about.
+
+
+</blockquote>
+
+I'm not getting that. The alternative mutation scheme was, IIRC, "change M bases per candidate", not "change M bases per generation". In a quick run of my Monte Carlo setup, changing one base per candidate was no less effective in changing already correct characters than a "u" value of 1/L.
+
+I take apart the "it looks like it was locking" objection <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=5735;st=7530#entry140280">here</a>.</div></div>
+<div class="comment" id="comment-180863"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+<blockquote>
+<strong>Kevin B said:</strong>
+
+However, the "exactly one change per generation" scenario is much less likely get already correct positions to change, because that could only happen in the case where none of the candidate strings "improve" an incorrect position. This would present the appearance of "locking" that certain people are muttering about.
+
+
+</blockquote>
+
+I'm not getting that. The alternative mutation scheme was, IIRC, "change M bases per candidate", not "change M bases per generation". In a quick run of my Monte Carlo setup, changing one base per candidate was no less effective in changing already correct characters than a "u" value of 1/L.
+
+</blockquote>.
+
+
+It's Ian Musgrave's original QBASIC program that only changes one character per generation. Dawkins didn't (in TBW) actually say what his method was, but one of his examples has multiple changes in the first generation.
+
+Ian's program (one changed character per candidate string each generation, 100 candidates, 23 character target string) will rarely find that the "best" string for the next iteration will have changed a previously correct position.
+
+Dawkins ought to have sought the advice his fellow professor, Tony Hoare, on creating a full formal specification of the program.
+
+</div></div>
+<div class="comment" id="comment-180864"><p class="comment-meta"><span class="comment-author">ds1978</span> &middot; 20 March 2009</p><div class="comment-body"><p>Is everyone allowing the most fit critter from each generation to undergo random mutation before breeding?  The source code referenced in wikipedia at:</p><p>http://home.pacbell.net/s-max/scott/weasel.html</p><p>does not.  It will always converge on a solution because it limits the result of each generation to improvement or no improvement.  There is no going backward.  In the biological world of mutation and selection sometimes things fail to converge on a solution and become extinct.</p><p>Another problem with these Weasel programs is they begin from random gibberish.  In the biological world something that is random gibberish to start with doesn't reproduce at all.  Critters start from a highly optimized state and (usually) because of some change in the external environment that diminishes the optimization they adapt through mutation and selection to a better optimized state.</p><p>The Weasel programs would be more realistic if the most fit of each generation is subjected to random mutation like all the others in the population and it would also be more realistic if there was a beginning population of semi-fit critters, say with half the characters correct, and if the number of correct characters in the fittest individual ever fell below one quarter the result would be an extinction.</p><p>This way if the population was too small and/or the mutation rate too high we'd see what often happens in the biological world under such conditions - the species would become extinct.</p><p>On the latching issue that's easy to code.  If you don't mutate the most fit individual and all the others are limited to a single character mutation each (which the above referenced program does) then a new most fit individual would require two mutations of previously incorrect letters to a correct letter.  If no critter in a single generation can have more than one mutation then replacement of a correct character with an incorrect one is not possible.</p><p>It is possible for the program referenced above to unlatch a correct character because of another unrealistic thing that it does.  During breeding the most fit individual from the previous generation (let's call him the "stud") injects a random size portion of itself into a randomly selected one eighth of the population.  The caveat that can allow a correct character to become incorrect is that each individual mating result is evaluated immediately and if the progeny is more fit than the stud then the current stud is immediately replaced by his more fit offspring.  To be more realistic the replacement of one stud by another should wait until all breeding in any one generation has been completed.  The way it is the generation count is misleading, especially with larger populations because within a single generation the stud can be replaced by his offspring multiple times.  You can see this by setting the population number to a half million.  It converges on a solution in less than 10 generations which means an average of almost 3 correct letters are added in each generation.  When mutation of any single individual in a single generation is limited to one character then the minimum number of generations should be very near the character count of the string minus any correct characters that happened to be in the fittest individual of the very first generation of random gibberish strings.</p></div></div>
+<div class="comment" id="comment-180865"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+
+It's Ian Musgrave's original QBASIC program that only changes one character per generation. Dawkins didn't (in TBW) actually say what his method was, but one of his examples has multiple changes in the first generation.
+
+Ian's program (one changed character per candidate string each generation, 100 candidates, 23 character target string) will rarely find that the "best" string for the next iteration will have changed a previously correct position.
+
+Dawkins ought to have sought the advice his fellow professor, Tony Hoare, on creating a full formal specification of the program.
+
+
+</blockquote>
+
+There will always be a threshold that displays chaotic behavior.
+
+Whether one restricts the number of changes per string or the probability of a change per position the result is to produce a <i>phenomenological</i> probability of what will be available in the subsequent generation.  There should eventually be a threshold at which the system becomes chaotic and doesn’t settle into its “ground state” (the target string).
+
+There is nothing weird going on here.
+
+The beauty of Dawkins’ program is its pedagogical simplicity.  The results it produces point to some very important concepts.  If it had been more elaborate, it would lose its value as a teaching tool.
+</div></div>
+<div class="comment" id="comment-180866"><p class="comment-meta"><span class="comment-author">George</span> &middot; 20 March 2009</p><div class="comment-body"><p>I have run the python version now several times and the unlocked, 30 offspring / generation settings do not converge until about 8000-10,000 generations. This is an order of magnitude more than you show above?</p></div></div>
+<div class="comment" id="comment-180868"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+<blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+<blockquote>
+<strong>Kevin B said:</strong>
+
+However, the "exactly one change per generation" scenario is much less likely get already correct positions to change, because that could only happen in the case where none of the candidate strings "improve" an incorrect position. This would present the appearance of "locking" that certain people are muttering about.
+
+
+</blockquote>
+
+I'm not getting that. The alternative mutation scheme was, IIRC, "change M bases per candidate", not "change M bases per generation". In a quick run of my Monte Carlo setup, changing one base per candidate was no less effective in changing already correct characters than a "u" value of 1/L.
+
+</blockquote>.
+
+
+It's Ian Musgrave's original QBASIC program that only changes one character per generation. Dawkins didn't (in TBW) actually say what his method was, but one of his examples has multiple changes in the first generation.
+
+Ian's program (one changed character per candidate string each generation, 100 candidates, 23 character target string) will rarely find that the "best" string for the next iteration will have changed a previously correct position.
+
+Dawkins ought to have sought the advice his fellow professor, Tony Hoare, on creating a full formal specification of the program.
+
+
+</blockquote>
+
+Please read the explanation that I linked to. However one does mutation, so long as the resulting rate is not excessive and the population is not very small, one is going to <i>expect</i> that correct bases from the parent in the previous generation will remain unchanged in the best candidate in the next generation.
+
+With the "change one base per candidate" mutation scheme, my Monte Carlo run is showing that about half of all generations show the "best" string has a change in a previously correct base when N=10 and C=27, and about 0.6 of them when the usual mutation rate procedure is applied where u= 1 / L = 0.0357, N=10, and C=27.
+
+There's nothing magic about the retention of correct bases in a "weasel" run, and it has a lot to do with having a reasonable population size (say, about 50 or more candidates per generation). It is because <i>all</i> of the daughter candidates in a generation must have at least one change to a previously correct base that this situation arises; as the population size N rises, the probability that all candidates have that kind of change drops as (p_c2i)^N. Here's output from my Monte Carlo program for N=100, u = 1/L = 1/23 = 0.0435, K=27:
+
+1000 runs, N=100, u=0.04348, K=27, C=22, p_pop_c2c calc = 1.00000, MC = 1.00000
+
+Proportion of candidates w/C2I bases calc = 0.60974, MC = 0.60990
+
+p_pop_c2c = 1.0 - (0.60974)^100
+
+Note that last... the probability with the above conditions and when C=22 that you will see a "best" candidate change a correct base is <b>once</b> in 3.058E+21 such generations... so don't hold your breath.
+</div></div>
+<div class="comment" id="comment-180869"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 20 March 2009</p><div class="comment-body"><blockquote><p>
+It is possible for the program referenced above to unlatch a correct character because of another unrealistic thing that it does.
+</p></blockquote>
+
+Uh, have you not been paying attention?
+
+<a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=5735;st=7530#entry140280">THERE IS NO LATCHING IN WEASEL.</a>
+
+Not then, not now, not ever.
+</div></div>
+<div class="comment" id="comment-180870"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><p>This is a really interesting thread, but I have to run off to another engagement.  I can only stop by briefly on occasions in the next day or so.</p><p>But here are some characteristics to look for.</p><p>For systems that converge relatively quickly, (deep in the “potential” well), one should see fluctuation magnitudes of the “potential energy” divided by the magnitude of the mean of the potential energy go like the reciprocal of the square-root of the number of generations.  It is in this regime that the semi-log plot should show a straight line as mentioned in a previous comment.</p><p>For systems that converge very slowly (i.e., approaching chaotic behavior), the above rule no longer holds and the fluctuations continue to get larger as the system approaches the chaotic threshold.</p><p>I wish I had thought about using Dawkins’ program as a teaching tool years ago.</p></div></div>
+<div class="comment" id="comment-180871"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 20 March 2009</p><div class="comment-body">90 hours have passed and no weasel programs have been posted at uncommon dissent.
+
+Here's a run using my QBASIC program where all strings are freely mutated, with a population size of 100, which converges in 61 generations (similar to Dawkins 64 step run in "The Blind Watchmaker"), like Dawkins I have presented the most fit string of every 10th generation (and yes, my target string was "methinks it is a weasle".
+<pre>
+rfbhxsdn euqnlcr nlgluw<br/> 
+rfthisdn eu nl a wlglnf<br/> 
+nfthinlt ku nq a wcasnf<br/> 
+nfthinls iu it a weasle<br/> 
+mdthinks iu is a weasle<br/> 
+mdthinks it is a weasle<br/> 
+mfthinks it is a weasle<br/> 
+methinks it is a weasle<br/> 
+</pre>
+
+Presenting it like this is what Dembski claims is evidence for locking. But if you look at the most fit strings of generations 46,47 and 48
+
+<pre>
+mdthinks it is a weasle <br/> 
+mdthjnks it is a weasle<br/> 
+mdthinks it is a weasle<br/> 
+</pre>
+
+Yep, reversion. As Wesley has elegantly demonstrated mathematically reversion is sufficiently rare in the high offspring cases you won't see it if you present every 10th string. Of course, if Dembski had implemented a weasel program he would have seen this by now.
+
+Over at uncommon dissent there is an amusing argument that Dawkins must have used a low mutation rate to get "locking", ignoring the fact that if you do that, you won't get convergence in around 60 generations. </div></div>
+<div class="comment" id="comment-180872"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 20 March 2009</p><div class="comment-body"><p>Gahhh! Why don't PRE tags work properly here!</p></div></div>
+<div class="comment" id="comment-180874"><p class="comment-meta"><span class="comment-author">SteveF</span> &middot; 20 March 2009</p><div class="comment-body"><p>Ian,</p><p>Speaking of uncommon descent, O'Leary links to some frenzied recent activity on Michael Behe's blog.  It concerns this paper:</p><p>Durrett, R. and Schmidt, D. (2008) Waiting for two mutations: with applications to regulatory seqeunce evolution and the limits of Darwinian evolution. Genetics, 180, 1501-1509.</p><p>Behe has a response in Genetics (to which Durrett and Schmidt reply).  He then continues the discussion on his blog:</p><p>http://www.amazon.com/gp/blog/A3DGRQ0IO7KYQ2/ref=cm_blog_dp_artist_blog</p><p>I was wondering if Pandasthumb would be dealing with any of this?  Seems like it might make an interesting series of posts.</p><p>Apologies for being off topic (and good work on the weasel front!).  Cheers.</p></div></div>
+<div class="comment" id="comment-180875"><p class="comment-meta"><span class="comment-author">George</span> &middot; 20 March 2009</p><div class="comment-body"><p>Mr. Elsberry,</p><p>Seems you were not replying to my comment. My comment was noting that the Python unlocked version referenced takes longer to converge than Ian's data as shown. There may be parameters that do not match, but I am interested in trying to match those results.</p><p>The locked version has a bug that I have not worked on - that will need to be a weekend task. So I have no comparison of the two at this time.</p><p>If anyone has run the python version and matched Ian's data I am interesting in the settings for a 30 offspring / generation case.</p><p>thanks</p></div></div>
+<div class="comment" id="comment-180877"><p class="comment-meta"><span class="comment-author">Sander van Driel</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+<b>Anders, Ian, Wesley, and Sander:</b>
+
+These curves are extremely reminiscent of a number of well-known processes in physics and they can be checked with your programs very easily.
+
+Simply change to a semi-log plot and plot your decaying curve directly against the logarithm of the generations.
+</blockquote>
+Good idea. Since I has some time to spare, I've a added <a href="http://www.subco.org/tripwire/weasel/">a logarithmic plot documenting the fitness over generations</a> (not anywhere as fancy as Anders' graphs though). Nothing strange there, just a (somewhat) straight line, as expected. Love it when a plan comes together.
+
+I'm anxiously waiting for UD's death blow to evolution, but so many hours have passed....</div></div>
+<div class="comment" id="comment-180878"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 20 March 2009</p><div class="comment-body"><p>George,</p><p>I'm not sure why my response to "ds1978" has a header saying that it was a response to you.</p><p>What's the link to the implementation of "weasel" that you are having trouble with?</p></div></div>
+<div class="comment" id="comment-180879"><p class="comment-meta"><span class="comment-author">Sander van Driel</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>ds1978 said:</strong>
+Is everyone allowing the most fit critter from each generation to undergo random mutation before breeding?
+</blockquote>
+The fittest 'critter' is a RESULT of random mutation.
+<blockquote>
+It will always converge on a solution because it limits the result of each generation to improvement or no improvement. There is no going backward. In the biological world of mutation and selection sometimes things fail to converge on a solution and become extinct. 
+</blockquote>
+Going backwards, or failure to adapt, will be punished. Fitter 'critters' will be selected instead.
+<blockquote>
+The Weasel programs would be more realistic if the most fit of each generation is subjected to random mutation like all the others in the population (...)
+</blockquote>
+The fittest are the RESULT of a random mutation, and their children will have random mutations too.
+<blockquote>
+(...) and it would also be more realistic if [large list of features]
+</blockquote>
+Sometimes I hate being in the software engineering field. End users always ask for extra features. And when you've done that, more extra features.
+
+The point of the algorithm is its simplicity. We could of course expand it with a ton of complex features, but to what use? It does prove a (pedagogical) point right now, doesn't it?</div></div>
+<div class="comment" id="comment-180880"><p class="comment-meta"><span class="comment-author">George</span> &middot; 20 March 2009</p><div class="comment-body"><p>Mr. Elsberry, (or may I use Wes? Wesely?)</p><p>No worries. I am using Python v3.0.1 - I copied the code from the link provided.</p><p>http://www.cbs.dtu.dk/courses/27615.mol/weasel.php</p><p>I have not tried many options yet as time has been limited. Yet, 8000+ generations to converge for the 30 offspring case is an order of magnatude more than Ian's data.</p></div></div>
+<div class="comment" id="comment-180882"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>SteveF said:</strong>
+
+Ian,
+
+Speaking of uncommon descent, O'Leary links to some frenzied recent activity on Michael Behe's blog.  It concerns this paper:
+
+Durrett, R. and Schmidt, D. (2008) Waiting for two mutations: with applications to regulatory seqeunce evolution and the limits of Darwinian evolution. Genetics, 180, 1501-1509.</blockquote>
+
+Mostly it the same old, same old from them. I was going to deal with it when I got some spare time, if the other PTer's want to get to it first they can do so though.
+
+</div></div>
+<div class="comment" id="comment-180883"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+More seriously, having translated Ian Musgrave's QBASIC "Weasle" program into Perl, it's clear that it's not entirely an exact reimplementation of Dawkins' original program. Dawkins applies a finite probability of mutation to each position of his candidate strings, and thus allows for a finite (if vanishingly small) possibility of the whole string changing in one generation. Ian M's program mutates <i>one</i> position in the string in any generation.
+</blockquote>
+
+It is effectively a 4% probability of a mutation for any given string. In later versions I implemented explicit, used definable per string mutation rates, but for a quick and dirty program a fixed probability of roughly 4% works fine.
+</div></div>
+<div class="comment" id="comment-180884"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 20 March 2009</p><div class="comment-body"><p>George,</p><p>"Wesley" should do fine.</p><p>I got the Python code and ran it with N=30 and the default mutation rate u=0.09. That mutation rate is pretty high. Yes, the simulation tends to run on and on at those settings. It isn't surprising, though...</p><p>1000 runs, N=30, u=0.09000, K=27, C=27, p_pop_c2c calc = 0.93373, MC = 0.93900</p><p>Proportion of candidates w/C2I bases calc = 0.91350, MC = 0.91370</p><p>p_pop_c2c = 1.0 - (0.91350)^30</p><p>A little over 6% of the time, a generation's best candidate will have changed a correct base for an incorrect one. Given that N=30, it also isn't likely that an improvement is going to be found in 16 generations or fewer. Plus this problem is going to be manifested pretty severely prior even to getting to the C=27 level.</p></div></div>
+<div class="comment" id="comment-180885"><p class="comment-meta"><span class="comment-author">SteveF</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Ian Musgrave said:</strong>
+
+<blockquote>
+<strong>SteveF said:</strong>
+
+Ian,
+
+Speaking of uncommon descent, O'Leary links to some frenzied recent activity on Michael Behe's blog.  It concerns this paper:
+
+Durrett, R. and Schmidt, D. (2008) Waiting for two mutations: with applications to regulatory seqeunce evolution and the limits of Darwinian evolution. Genetics, 180, 1501-1509.</blockquote>
+
+Mostly it the same old, same old from them. I was going to deal with it when I got some spare time, if the other PTer's want to get to it first they can do so though.</blockquote>
+
+That would be much appreciated.  Cheers.</div></div>
+<div class="comment" id="comment-180888"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>George said:</strong>
+I have not tried many options yet as time has been limited. Yet, 8000+ generations to converge for the 30 offspring case is an order of magnatude more than Ian's data.
+</blockquote>
+
+What Wes said. Your per string mutation rate is quite high for that number of generations, try u = 0.04 or u =0.03 and you should get what I see. 
+
+</div></div>
+<div class="comment" id="comment-180891"><p class="comment-meta"><span class="comment-author">George</span> &middot; 20 March 2009</p><div class="comment-body"><p>Thanks for the help. I will reduce the mutation rate and run again. Now I will dive into getting the locked code to run.</p></div></div>
+<div class="comment" id="comment-180893"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><blockquote>
+<strong>Sander van Driel said:</strong>
+
+Good idea. Since I has some time to spare, I've a added <a href="http://www.subco.org/tripwire/weasel/">a logarithmic plot documenting the fitness over generations</a> (not anywhere as fancy as Anders' graphs though). Nothing strange there, just a (somewhat) straight line, as expected. Love it when a plan comes together.
+
+I'm anxiously waiting for UD's death blow to evolution, but so many hours have passed....
+</blockquote>
+
+In this particular case, you are plotting the <i>increasing</i> data.  When you plot this on a semi-log plot, subtract your data from 1 first and then plot the result. 
+
+If you already multiplied your output by 100 (as seems to be the case given the scale on your graph), subtract your results from 100.
+
+What we are looking for here is something of the form (1 – e<sup>-kx</sup>) which, if you subtract from 1 gives something of the form y  =  e<sup>-kx</sup>.  Taking the logarithms of this (oops; I already see my dyslexic mistake in my previous post) you get log(y) = - kx.  A plot of y on a semi-log plot automatically takes the log of y.
+
+
+My apologies for my dyslexia.  Actually a semi-log plot <i>is</i> in fact a plot of the log of the dependent variable against the linear representation of the other (often called a log-linear).
+
+When we get into the fractal regime, we might want to start exploring log-log plots of the data to look for fractal dimensions.
+
+What you show is a logarithmic plot.  We can look at these as well.  These may pick up on feedback effects that tend to suppress the mechanisms we are looking at.  We can take that up later.
+
+In one of my previous posts is mentioned the regimes to be explored.  As the system approaches the chaotic threshold, the fluctuations grow and these plots start becoming more and more distorted.  In some systems to which this model might apply, that corresponds to a phase transition; something like a melting phase or a vaporization stage.
+
+</div></div>
+<div class="comment" id="comment-180895"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 20 March 2009</p><div class="comment-body"><p>If there are some here who are not familiar with, or are rusty on some elementary data analysis techniques, here is <a href="http://www.ferris.edu/htmls/colleges/artsands/Biology/ResearchScience/SIPreface.cfm">a beginning tutorial on data analysis </a> that I and a former colleague wrote some years ago.</p><p>Click on the section on Graphical Analysis.</p><p>I have no idea of how it wound up at this site.  I suspect my colleague used it in a summer workshop at some point.</p><p>If you add some graphing output to your programs, make some allowances for semi-log, log-log, and logarithmic plots.</p><p>Then as you explore different convergence regimes in your program, you can start looking for patterns that may point to underlying physical mechanisms this program could mimic.</p></div></div>
+<div class="comment" id="comment-180901"><p class="comment-meta"><span class="comment-author">Anders</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>Kevin B said:</strong>
+
+[...]
+
+Ian's program (one changed character per candidate string each generation, 100 candidates, 23 character target string) will rarely find that the "best" string for the next iteration will have changed a previously correct position.
+
+[...]
+
+</blockquote>
+
+This depends on the population size: Note that with the "one mutation per offspring per generation" setup you will by definition never get offspring that are identical to the parent. That means that the only way fitness can stay the same (or increase) is if the (required) mutation hits an incorrect position. 
+
+With a smallish population size this becomes very unlikely near the end of the run, and you will in fact see frequent reversions and a fitness that fluctuates. With a large population (compared to the length of the target string) on the other hand, one of the many offspring is very likely to have a mutation that has hit an incorrect position, and you will then get the behaviour you describe here.
+</div></div>
+<div class="comment" id="comment-180902"><p class="comment-meta"><span class="comment-author">Anders</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+I got the Python code and ran it with N=30 and the default mutation rate u=0.09. That mutation rate is pretty high. Yes, the simulation tends to run on and on at those settings. It isn't surprising, though...
+
+[...]
+
+</blockquote>
+
+Yes, please note that I used a fairly high mutation rate in the 
+<a href="http://www.cbs.dtu.dk/courses/27615.mol/weasel.php">python programs</a> 
+I put on my site. This was because I wanted to demonstrate the weasel algorithm's ability to experience reversions of correct positions. And Dembski's doubts about this is what <a href="http://pandasthumb.org/archives/2009/03/dembski-weasels.html">started the whole thread</a>. So please play around with other values!
+
+Regarding this (and also see <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=6034;st=#entry139771">thorough investigation by Wesley Elsberry</a>): The lower the mutation rate per site, the higher the probability that at least one offspring in a  generation will be identical to its parent, and fitness will then never drop. Specifically, the probability that any given offspring string will experience zero mutations is: (1-mut_rate)^string_length. For a mutation rate of 0.04 per site and a target string of length 28 that is: 0.96^28 = 0.319, or about 32% chance of zero mutations. If you have 30 such offspring then the probability that at least one of them has no mutations is 1-(1-0.32)^30 = 0.9999900, i.e., a virtual certainty that fitness will never drop. 
+
+Incidentally, note that my python programs are compatible with python version 2.x. I'll put  3.x versions up also (the syntax of the print statement has <a href="http://docs.python.org/dev/3.0/whatsnew/3.0.html">changed</a> in python 3)
+
+</div></div>
+<div class="comment" id="comment-180904"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 21 March 2009</p><div class="comment-body">I should note that the probability that I was interested in wasn't that of having an unchanged copy of the parent in a daughter in a generation, but rather that of having at least one daughter in a generation <i>retain all the correct bases</i> seen in the parent. As C approaches L, those two probabilities will become more similar.
+
+I advised similar parameters to see an obvious loss of a correct base in a best candidate <a href="http://austringer.net/wp/index.php/2008/10/24/the-real-weasel-in-javascript/">some time ago</a>:
+
+<blockquote><p>
+You can set higher mutation rates and smaller population sizes to find values that cause “weasel” to sometimes step back to having worse performance in one generation than it had in the generation just previous. A simple verification can be had by setting the default target string, a population of 30, and a mutation rate of 8% per character. Run that several times, and most times you will see at least one generation that had a stepback in performance.
+</p></blockquote>
+
+But the default values are a population of 100 and mutation rate of 4%. If someone just runs <a href="http://www.antievolution.org/cs/dawkins_weasel">my "weasel"</a>, my thought was that it should use parameters that lead to likely convergence.
+</div></div>
+<div class="comment" id="comment-180905"><p class="comment-meta"><span class="comment-author">ds1978</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>Sander van Driel said:</strong>
+
+<blockquote>
+<strong>ds1978 said:</strong>
+Is everyone allowing the most fit critter from each generation to undergo random mutation before breeding?
+</blockquote>
+The fittest 'critter' is a RESULT of random mutation.
+<blockquote>
+It will always converge on a solution because it limits the result of each generation to improvement or no improvement. There is no going backward. In the biological world of mutation and selection sometimes things fail to converge on a solution and become extinct. 
+</blockquote>
+Going backwards, or failure to adapt, will be punished. Fitter 'critters' will be selected instead.
+<blockquote>
+The Weasel programs would be more realistic if the most fit of each generation is subjected to random mutation like all the others in the population (...)
+</blockquote>
+The fittest are the RESULT of a random mutation, and their children will have random mutations too.
+<blockquote>
+(...) and it would also be more realistic if [large list of features]
+</blockquote>
+Sometimes I hate being in the software engineering field. End users always ask for extra features. And when you've done that, more extra features.
+
+The point of the algorithm is its simplicity. We could of course expand it with a ton of complex features, but to what use? It does prove a (pedagogical) point right now, doesn't it?
+</blockquote>
+
+If simplicity instead of realism is the goal then a simple search algorithm independent of the scoring algorithm is guaranteed to get the the correct answer for any 28 character string using a 28 character alphabet in no more than 784 tries (28 x 28).  You'd do that by varying one character at a time, getting a score, and thus in 28 or fewer tries find the correct character for that position in the string.  Repeat 28 times and you have the solution.  784 tries is far fewer than any implementation of weasel I've seen or read about.
+
+Optimum search performance using an independent fitness function then clearly isn't the goal.  The goal is a realistic yet easily understandable demonstration of random mutation and recombination as the modifier.  I don't think the few changes I suggested are complex to code, difficult for the layman to understand, and will add to the realism very substantially.  Any algorithm that purports to model mutation and selection in any way that can never fail to find a solution and cause the species to become extinct is so unlike nature that model should itself become extinct for being misleading.
+</div></div>
+<div class="comment" id="comment-180906"><p class="comment-meta"><span class="comment-author">ds1978</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+<blockquote><p>
+It is possible for the program referenced above to unlatch a correct character because of another unrealistic thing that it does.
+</p></blockquote>
+
+Uh, have you not been paying attention?
+
+<a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=5735;st=7530#entry140280">THERE IS NO LATCHING IN WEASEL.</a>
+
+Not then, not now, not ever.
+
+</blockquote>
+
+I was responding to the assertion that coding a version that latches characters is far more difficult than one that does not latch.  As I described the referenced program would exhibit character latching if the breeder was replaced by a fitter offspring not immediately after spawning the fitter individual but rather after all breeding for that generation had completed.  I don't believe the program would expand by more than perhaps one local variable and two lines of code and not add one iota of additional computational burden if we overlook the fact that the more realistic breeding will result in more generations required to arrive at a solution.
+ </div></div>
+<div class="comment" id="comment-180907"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>ds1978 said:</strong>
+
+Any algorithm that purports to model mutation and selection in any way that can never fail to find a solution and cause the species to become extinct is so unlike nature that model should itself become extinct for being misleading.
+
+</blockquote>
+
+The Weasel program does have a region that fails.  As I mentioned in my previous comments, many stochastic systems display a convergence region, a chaotic region, and a divergent region.
+
+Some of the questions that can be answered by studying this simple system are some of the same questions physicists and chemists study when looking at relatively small systems in the stochastic regime (where the magnitudes of the fluctuations are approaching the same order of magnitude as the phenomena themselves).
+
+To my knowledge, these kinds of studies haven’t been done using this particular model, which is one of the simplest models that incorporate some fundamental ideas from evolution at the gene level.  Some of the questions that we would like to know is whether these behave at the “microscopic” level in ways that are similar to other physical systems studied at the microscopic level.
+
+Many systems converge, and they can be understood with simple math and coupled differential equations.  But that is at the macroscopic level where all the microscopic activity has been averaged out.  This model shows the stochastic properties of small systems, and we would like to know how activity at that level couples to the macroscopic level.
+
+ <blockquote><p>I was responding to the assertion that coding a version that latches characters is far more difficult than one that does not latch. </p></blockquote>
+
+Again I’m not sure what the latching is that you are talking about.  Over at <a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/"> Uncommonly Dense </a>  they are talking about “latching”, “twinkling”, “combinatorial explosions” and a whole lot of other gibberish.
+
+Are you talking about freezing the individual positions once they are correct?  If so, I think some here are trying that.  As I mentioned before with reference to radioactive decay in the presence of radioactivation; it would be equivalent to removing the activation.
+
+As you can see by following the conversation over at UD, this Weasel program also generates fascinating output from the denizens of UD.  We thus gain some insight into the arcane workings of the ID/Creationist mind.
+</div></div>
+<div class="comment" id="comment-180908"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote><p>If simplicity instead of realism is the goal ... You’d do that by varying one character at a time, getting a score, and thus in 28 or fewer tries find the correct character for that position in the string. Repeat 28 times and you have the solution. 784 tries is far fewer than any implementation of weasel I’ve seen ...</p></blockquote>
+
+As you allude to, you probably wouldn't even need 784 tries.
+
+If you were to start with...
+
+aaaa...
+baaa...
+caaa... 
+
+.... and so forth, statistically, you'd probably get a hit on each position by the 14th letter, or a likely 400 or so tries to find the string. 
+
+But if you <i>really</i> want efficiency, you could stack the deck by searching for common letters first. instead of a, b, c, d your search would start with e (12.7%), t (9.0%), a (8.2%) etc down to z, v and q.
+ 
+eeee...
+teee...
+aeee...
+oeee...
+ieee...
+
+"space" fits in there somewhere, Personally, I think I'd try it first.
+
+With "Methinks it is a weasel" you'd have hit 3 or 4 letters ( e or space ) on the very first try, and be statistically likely to need only 7 or so guesses on each remaining letter (about 200 tries to solve the string)
+
+Lastly, if you <i>really</i> wanted to be fast, you'd try to figure out which letters exist in the final string in the first place.
+
+First, you'd test the strings...
+
+space space space ....
+aaaa...
+bbbb...
+cccc...
+dddd...
+
+etc, and calculate how many of each letter you need for the sentence. True, this might "waste" 28 searches up front, but now you know that, for example, there are no c's d's or n's or f's , you could throw them out saving 100 tries later. 
+
+<i>Then</i> you could do a search starting with common letters, winnowing down the remaining candidates as you go. 
+
+Using these techniques, you'd get the "weasel" string after only about 100 tries.
+
+The worst case string would be...
+
+"zzqxjkvbpygfwmucldrhsnioate "
+
+and even <i>that</i> would only take 405 tries since you'd know you had 2 z's and 1 of everything else. ( 27 + 27 + 26 + 25 etc.. )
+
+</div></div>
+<div class="comment" id="comment-180909"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>ds1978 said:</strong>
+
+Optimum search performance using an independent fitness function then clearly isn't the goal.  The goal is a realistic yet easily understandable demonstration of random mutation and recombination as the modifier.  I don't think the few changes I suggested are complex to code, difficult for the layman to understand, and will add to the realism very substantially.
+
+</blockquote>
+
+Well, it is more like allowing viscous asphalt to fit into a pothole at the microscopic level.
+
+An analogy might be something like a growing crystal fitting into the shape of a container.
+
+If the atoms making up the crystal condensed into position and forever locked there, the crystal would take on the perfect symmetry characteristic of its internal bonding at the atomic level; it would not grow to fit the container.
+
+However, if, say, high energy photons or neutrons or some other mechanism was continually acting in such a way as to “break the symmetry” occasionally so that atoms already locked in place were dislocated, then these dislocations become the seeds for redirecting the rigid crystal growth that would otherwise occur.
+
+Once these “mutations” occur, the crystal can begin to respond to some of the more subtle influences of the containing vessel.  Then the growth begins to settle into the shape of the vessel even though large volumes within the crystal contain the rigid symmetry of the pristine crystalline state.
+</div></div>
+<div class="comment" id="comment-180910"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote><p>Mike writes...
+
+Over at  Uncommonly Dense  they are talking about “latching”, “twinkling”, “combinatorial explosions” and a whole lot of other gibberish.</p></blockquote>
+
+Indeed. If you follow the link, you get...
+
+<blockquote><p>From Bill D, on UD. as of 3/16...
+
+From this it’s clear that once the right letter in the target sequence is latched on to, it locks on and never changes.</p></blockquote>
+
+Sadly, this is easy enough to disprove <i>if you just run the program</i>. 
+
+Yes, sometimes a given letter will seem to "lock" sometimes it won't. Sometimes the solution starts from the right, sometimes the left. It's <i>random</i>.
+
+Had Wild Bill just run the program for himself a couple of times he would have seen this. 
+
+Stunningly pathetic, that not only can a man who has some sort of senior position in something that purports to be a research facility <i>not</i> demonstrate his own experimental results, he can't even be bothered to give the most cursory review to those that <i>can</i> before criticizing them.</div></div>
+<div class="comment" id="comment-180915"><p class="comment-meta"><span class="comment-author">Mikko</span> &middot; 21 March 2009</p><div class="comment-body"><p>Hi all!</p><p>I created another implementation of weasel with Python.</p><p>http://users.tkk.fi/~mtnarjan/weasel.py</p><p>Some here have commented that the "locking" feature is a pain to implement. It isn't necessarily so. I found it very easy to add it as an option. It probably depends on how the non-locking version was done.</p></div></div>
+<div class="comment" id="comment-180916"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 21 March 2009</p><div class="comment-body"><p>It is now over a 100 hours since Dembski said "watch this space", and no one, not Dembski's Evolutionary informatics team, nor any of the Uncommon Dissent commentators has constructed a weasel. Mean why we not only have a bunch of weasel programs here, but people are doing head-to-head comparisons of different implementations of the Dawkins vs Dembski version. Again, this highlights the fact that cdesign proponetists don't get the "test your hypothesis" aspect of science.</p><p>I'm going silent for a while. I'm hunting asteroids in the L5 point (yes, seriously)</p></div></div>
+<div class="comment" id="comment-180918"><p class="comment-meta"><span class="comment-author">ds1978</span> &middot; 21 March 2009</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+<blockquote><p>If simplicity instead of realism is the goal ... You’d do that by varying one character at a time, getting a score, and thus in 28 or fewer tries find the correct character for that position in the string. Repeat 28 times and you have the solution. 784 tries is far fewer than any implementation of weasel I’ve seen ...</p></blockquote>
+
+As you allude to, you probably wouldn't even need 784 tries.
+
+If you were to start with...
+
+aaaa...
+baaa...
+caaa... 
+
+.... and so forth, statistically, you'd probably get a hit on each position by the 14th letter, or a likely 400 or so tries to find the string. 
+
+But if you <i>really</i> want efficiency, you could stack the deck by searching for common letters first. instead of a, b, c, d your search would start with e (12.7%), t (9.0%), a (8.2%) etc down to z, v and q.
+ 
+eeee...
+teee...
+aeee...
+oeee...
+ieee...
+
+"space" fits in there somewhere, Personally, I think I'd try it first.
+
+With "Methinks it is a weasel" you'd have hit 3 or 4 letters ( e or space ) on the very first try, and be statistically likely to need only 7 or so guesses on each remaining letter (about 200 tries to solve the string)
+
+Lastly, if you <i>really</i> wanted to be fast, you'd try to figure out which letters exist in the final string in the first place.
+
+First, you'd test the strings...
+
+space space space ....
+aaaa...
+bbbb...
+cccc...
+dddd...
+
+etc, and calculate how many of each letter you need for the sentence. True, this might "waste" 28 searches up front, but now you know that, for example, there are no c's d's or n's or f's , you could throw them out saving 100 tries later. 
+
+<i>Then</i> you could do a search starting with common letters, winnowing down the remaining candidates as you go. 
+
+Using these techniques, you'd get the "weasel" string after only about 100 tries.
+
+The worst case string would be...
+
+"zzqxjkvbpygfwmucldrhsnioate "
+
+and even <i>that</i> would only take 405 tries since you'd know you had 2 z's and 1 of everything else. ( 27 + 27 + 26 + 25 etc.. )
+
+
+</blockquote>
+
+Yes, it would only take 784 tries if the string were all spaces and that was the last character tested each time.  The average number of tries would be about half that number.  The order in which letters are tested could improve the speed to solution but be foiled by a random target string.  There's some additional realism to be had though by trying more common letters first even when the substitutions are random.  That would simulate codon bias!
+</div></div>
+<div class="comment" id="comment-180919"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 21 March 2009</p><div class="comment-body"><p>Ian,</p><p>It's worse than that. I informed "Atom", the code guy for Dembski and Marks, last November that "weasel" doesn't latch correct characters. He basically said that it didn't matter and blew it off.</p></div></div>
+<div class="comment" id="comment-180925"><p class="comment-meta"><span class="comment-author"><a href="http://cantareus.wordpress.com" rel="nofollow">Brendon Collecutt</a></span> &middot; 21 March 2009</p><div class="comment-body"><p>I'm a lurker no longer, I had to try this. 53 minutes in Java.</p><p>Output at every 30 generations with a mutation rate of 3%<br/><br>Generation &nbsp;30 : HEDLIDKSCIF IS LEYEYAGYMAQEV<br/><br>Generation &nbsp;60 : MESLIDKS II IS LEXEYAGWEAQEL<br/><br>Generation &nbsp;90 : METHIDKS IT IS LIXE AGWEASEL<br/><br>Generation 120 : METHINKS IT IS LIXE AGWEASEL<br/><br>Generation 150 : METHINKS IT IS LIXE A WEASEL<br/><br>Generation 160 : METHINKS IT IS LIKE A WEASEL</p></div></div>
+<div class="comment" id="comment-180927"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 22 March 2009</p><div class="comment-body"><p>I don’t know if the discussion and results on these two threads have anything to do with it, but over at UD there are actually some more recent comments about evolutionary algorithms that appear to recognize that programs like Weasel can model aspects of evolution.  They also know about the antenna designed by a genetic algorithm.</p><p>Haven’t people been thrown off that board for supporting any ideas connected with evolution?</p><p>Some of the people posting there still seem to think along the lines that the intelligence is built into the program because of a specified target.  Another seems to recognize that the target doesn’t have to be known by the programmer.  He doesn’t say so, but he appears to recognize that the target string could be randomly generated by the computer before any other activity starts and the program would converge to that target.</p><p>As I mentioned in an earlier comment, shifting the target string is analogous to shifting the “ground state” and the system tracks with a slight delay.  It’s like a change in the environment reestablishing selective pressures on the population.</p><p>That could easily be demonstrated by having the computer generate a different target string after the population converged and then going through the whole process again.  All it requires is an outside loop that changes the target at the end of the first pass through the loop and then implementing another pass that converges to the new target (environment, “ground state”).</p><p>One could also make only a small change in the target string and allow the population to adjust, make another small change, etc.  That would simply simulate a population responding to a changing environment.  If the environmental changes are relatively small, the population adjustment catches up fairly quickly and is not a lot different from the previous population.</p><p>In a relatively short time one could change a weasel into a walrus. ;-)</p></div></div>
+<div class="comment" id="comment-180929"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 22 March 2009</p><div class="comment-body"><blockquote><p>It is now over a 100 hours since Dembski said “watch this space”, and no one, not Dembski’s Evolutionary informatics team, nor any of the Uncommon Dissent commentators has constructed a weasel.</p><cite>— Ian Musgrave</cite></blockquote>
+
+Maybe "constructed" is the key word. In all these years that the DI has been peddling "design," the only thing I have ever heard from them about "construction" (of those "IC" systems) is Behe's 4-billion-year-old ancestral cell. And even that hypothesis has apparently been abandoned, either because it's so easy to test, or because it conflicts with the models (themselves mutually contradictory) that their creationist fans desperately want validated. If ID's task is not to "connect dots" it may be a long wait for that program.</div></div>
+<div class="comment" id="comment-180930"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 22 March 2009</p><div class="comment-body"><p>BTW, in the rare case that anyone is losing sleep, I have 2 words: "ontogenetic depth".</p></div></div>
+<div class="comment" id="comment-180931"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 22 March 2009</p><div class="comment-body"><p>If anyone is interested in my search for L4 and L5 asteroids, <a href="http://astroblogger.blogspot.com/2009/03/is-this-l4-asteroid.html">have a look at this post</a>.</p></div></div>
+<div class="comment" id="comment-180942"><p class="comment-meta"><span class="comment-author"><a href="http://www.pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 22 March 2009</p><div class="comment-body">Mike Elzinga wrote<blockquote>That could easily be demonstrated by having the computer generate a different target string after the population converged and then going through the whole process again. All it requires is an outside loop that changes the target at the end of the first pass through the loop and then implementing another pass that converges to the new target (environment, “ground state”).</blockquote>The second GA I ever wrote, back in the mid-1980s, was a maze-learner.  I exposed the population to two different mazes in alternate generations.  The interesting outcome was what amounts to speciation: Over generations the population split into two more-or-less equal subpops.  One subpop was pretty good on one maze and not so hot on the other, and the other subpop was pretty good on the second maze and not so hot on the other.
+
+My company's GAs operate in an applied context in which the GAs model a dynamic external environment.  We routinely see 'speciation,' which corresponds to subpops clustering on several (usually half a dozen or so) local peaks in the current selective environment.
+
+One can do an equivalent of what Mike suggests in <a href="http://devolab.msu.edu/">several versions of Avida</a> by suitably setting up the events.cfg file.</div></div>
+<div class="comment" id="comment-180947"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 22 March 2009</p><div class="comment-body"><p>It is now over a 144 hours since Dembski said “watch this space”, and no one, not Dembski’s Evolutionary informatics team, nor any of the Uncommon Dissent commentators has constructed a weasel program.</p><p>It looks like the commentators have accepted, in general, that Dembski's claim is wrong, but now they are describing what Dawkin's program does as "implicit" or "quasi"-locking. All without constructing an actual program to test their ideas. Amazing!</p></div></div>
+<div class="comment" id="comment-180948"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 22 March 2009</p><div class="comment-body"><blockquote><p>Amazing!</p></blockquote>Or maybe not. I think they probably recognize the astounding power of feedback (weasel's original purpose), and understand that "random chance" or "tornado in a junkyard" approaches are NOT a reasonable model of how evolution works. So all that's left is to try to invalidate Dawkins' point while being very careful not to accidentally reinforce it. The thought process is only "quasi"-amazing:
+
+1) Evolution does not happen.
+2) When all models (and reality) demonstrate otherwise, go to step 1)
+</div></div>
+<div class="comment" id="comment-180952"><p class="comment-meta"><span class="comment-author">funkotron</span> &middot; 22 March 2009</p><div class="comment-body"><p>Yeah the whole discussion of "quasi-locking" is amusing.  The claim the parameters are fine tuned such that the program will always converge, which is true.  And they say that the generations are large enough that it is very unlikely to produce a generation where all children are worse than the parent, which is true.  But they don't seem to recognize that those things are THE POINT, not problems.  Thats what random stuff with selection does.</p><p>One funny thing was the guy who claimed that it was easier implement latching than to get the parameters so carefully tuned.  The tuning process took me about 30 seconds... I just upped the generation size till it converged in some reasonable time.</p></div></div>
+<div class="comment" id="comment-180955"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 22 March 2009</p><div class="comment-body"><blockquote>
+<strong>RBH said:</strong>
+
+My company's GAs operate in an applied context in which the GAs model a dynamic external environment.  We routinely see 'speciation,' which corresponds to subpops clustering on several (usually half a dozen or so) <b>local peaks</b> in the current selective environment.
+
+</blockquote>
+
+[Emphasis added]
+
+This raises an interesting point that I think may be some of the source of confusion about what these kinds of programs do.
+
+The Dawkins’ Weasel program is simple enough to illustrate that the target string doesn’t have to be “complex”; it could be something like a string of a single character, including all spaces.
+
+I realize that Dawkins has tried to demonstrate how “Mount Improbable” is climbed.  The fact that he used “Mount Improbable” is related to the complexity of the organisms that are produced by evolution and how they branch into so many different species (cluster about a number of peaks).
+
+The language of an “evolutionary landscape” and “climbing peaks” comes from this focus on complex organisms.  This is a valid and useful perspective, but it also tends to play into the “entropy barrier” misconception.
+
+However, there is a more fundamental underlying perspective that comes from flipping that evolutionary landscape upside down and turning the peaks into “potential wells”.
+
+The reason is that all assemblies of condensed matter are jockeying around filling every potential well available.  This is why the second law of thermodynamic is so important.  That law describes the fact that all matter we see in this universe condenses into increasingly complex structures by shedding energy.
+
+By the time we get way up the complexity ladder to living organism, we have entered a regime in which there are literally “billions and billions” of available energy states.  As long as the energy range in which these things exists lie in the energy range of liquid water, we see a lot of complex systems jockeying into available energy states.  And that, in turn, means more complexity if the flux and variety of matter and energy is in the “Goldilocks zone”.
+
+All the ID/Creationist arguments about matter not being able to become more complex arise because they haven’t grasped the underlying fact that, at every level of complexity, matter is condensing into a myriad of potential wells.
+
+In a simple analogy, a viscous material gradually sags in a gravitational field into the shape of its container.  The adjustments come from the rearrangements of the molecules that remain a part of the viscous material.
+
+In the case of self-replicating systems, these adjustments are accomplished by mutations and variability in the progeny.  In effect, it is simply “replicated viscous material” with the modifications needed to sag into the shape of the “new container”.
+
+So I think most physicists would turn the evolutionary landscape upside down and speak of falling into potential wells.  The result, because this is what matter does, is increasing complexity.
+</div></div>
+<div class="comment" id="comment-180957"><p class="comment-meta"><span class="comment-author"><a href="http://theatavism.blogspot.com" rel="nofollow">david w</a></span> &middot; 22 March 2009</p><div class="comment-body"><p>Another python weasel:<br>http://theatavism.blogspot.com/2009/03/another-weasel.html,</p><p>Quite different than Anders one and doubt a less efficient way to do things (i'm not actually a programmer) but gets the job done, and implementing "locking" requires one additional line...</p><p>I will set it up to do enough runs to compare the locked and unlocked versions at some stage (but I think we all know the results)</p></div></div>
+<div class="comment" id="comment-181016"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger/blogspot.com" rel="nofollow">Ian Musgrave</a></span> &middot; 23 March 2009</p><div class="comment-body"><p>It is now over a 168 hours since Dembski said “watch this space”. The  Dembski’s Evolutionary informatics team has announced that a weasel program has been constructed, and will be available soon (how many have we built and tested in that time?). None of the Uncommon Dissent commentators has constructed a weasel program, but a new commentator, Hazel, has done the maths for them (why did they not do it earlier). In defiance of William of Occam, and the evidence in Dawkins book, they are still insisting that Dawkins book program implements locking.</p><p>Oh yeah, don't feed the trolls folks.</p></div></div>
+<div class="comment" id="comment-181028"><p class="comment-meta"><span class="comment-author">dhogaza</span> &middot; 23 March 2009</p><div class="comment-body"><blockquote>None of the Uncommon Dissent commentators has constructed a weasel program, but a new commentator, Hazel, has done the maths for them (why did they not do it earlier?)</blockquote>
+Because they don't have to match your pathetic level of detail? :)
+</div></div>
+<div class="comment" id="comment-181031"><p class="comment-meta"><span class="comment-author"><a href="http://www.pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 23 March 2009</p><div class="comment-body">Mike Elzinga wrote<blockquote>So I think most physicists would turn the evolutionary landscape upside down and speak of falling into potential wells. The result, because this is what matter does, is increasing complexity. </blockquote>Physicists are from Australia, standing on their heads.  :)
+
+Sure, the conception as phrased in terms of potential wells is wholly appropriate.  What's a sign change between friends?</div></div>
+<div class="comment" id="comment-181036"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 23 March 2009</p><div class="comment-body"><blockquote>
+<strong>RBH said:</strong>
+
+What's a sign change between friends?
+
+</blockquote>
+
+No negative effects on this side of the world. :-)</div></div>
+<div class="comment" id="comment-181039"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 24 March 2009</p><div class="comment-body"><p>I got a couple of hours of programming time on the vanpool to/from Socorro today - <a href="http://www.nmsr.org/weasel.htm">here's my Python implementation of latching and no-latching in Weasels</a>.  The curves show averages of 10 runs each.</p><p>I must say, I'm not surprised anyone at UD has mentioned my 2006 article on Weasels, "Target? TARGET? We don’t need no stinkin’ Target!" (roadmap, <a href="http://pandasthumb.org/archives/2006/09/genetic-algorit.html">here</a>).</p><p>That's the summer that Salvador Cordova represented Uncommon Descent in a Design-off, and was handed his hat by an evolutionary algorithm.</p><p>Anyhow, a fun couple of hours doing the .py coding.</p><p>Cheers, Dave</p></div></div>
+<div class="comment" id="comment-181041"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 March 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+The curves show averages of 10 runs each.
+
+</blockquote>
+
+Dave,
+
+Those plots look like exponential decays (y = Ae<sup>-kx</sup>).  And of course latching causes them to decay faster.  This is very similar to radioactive decay in the presence of radioactivation.  Latching shuts off the activation, making k larger.
+
+Any chance you could plot those curves on a semi-log plot (log vs linear)?  I realize one has to be careful taking the log of zero in these stochastic results, but maybe plot with a small, non-zero offset.
+
+</div></div>
+<div class="comment" id="comment-181048"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 24 March 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+<blockquote>
+<strong>Dave Thomas said:</strong>
+
+The curves show averages of 10 runs each.
+
+</blockquote>
+
+Dave,
+
+Those plots look like exponential decays (y = Ae<sup>-kx</sup>).  And of course latching causes them to decay faster.  This is very similar to radioactive decay in the presence of radioactivation.  Latching shuts off the activation, making k larger.
+
+Any chance you could plot those curves on a semi-log plot (log vs linear)?  I realize one has to be careful taking the log of zero in these stochastic results, but maybe plot with a small, non-zero offset.
+
+
+</blockquote>
+
+I got another quality session on the carpool this morning.  <a href="http://www.nmsr.org/weasel.htm">Here's your answer, Mike</a>.  I went ahead and calculated the K-values for the four analyses.
+
+Cheers, Dave</div></div>
+<div class="comment" id="comment-181053"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 March 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+
+I got another quality session on the carpool this morning.  <a href="http://www.nmsr.org/weasel.htm">Here's your answer, Mike</a>.  I went ahead and calculated the K-values for the four analyses.
+
+
+Cheers, Dave
+</blockquote>
+
+:-)
+
+Very impressive, Dave! 
+
+For the others who are playing around with Weasel, this is the kind of analysis that one can make with many of these programs that simulate a stochastic process in the physical world.
+
+At the stochastic level, it is very difficult to just look at the numbers and come to conclusions.  However, as this example shows, the model <i>is consistent with</i> a known phenomena, in this case, a radioactive material decaying in the presence of activation, and then with the removal of the activation.
+
+It gives a somewhat different perspective on the model in that, even though the model captures a fundamental idea in evolution, that fundamental idea may itself be a part of a larger set of similar phenomena.
+
+As one enters different regimes in this process, for example as we begin to approach the outer edges of convergence, we should be able to see effects relating to fractal behavior.  Log-log plots are often used here to look for power-law behaviors.
+</div></div>
+<div class="comment" id="comment-181055"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 March 2009</p><div class="comment-body"><p>I noticed <a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/">over on UD </a> that they are still stumbling all over the “targeted search” issue.</p><p>That is, in fact, a ghost issue.  If a target is a problem, then all of nature has a problem whenever potential energy is minimized and the second law of thermodynamics is in effect (which it always is, of course).</p></div></div>
+<div class="comment" id="comment-181058"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 24 March 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+I noticed <a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/">over on UD </a> that they are still stumbling all over the “targeted search” issue.
+
+That is, in fact, a ghost issue.  If a target is a problem, then all of nature has a problem whenever potential energy is minimized and the second law of thermodynamics is in effect (which it always is, of course).
+
+</blockquote>
+
+True enough.  At least ROb was able to <a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/#comment-309562">post some sense on this issue at UD</a>, even mentioning my work on the Steiner Problem.  <a href="http://pandasthumb.org/archives/2006/07/target_target_w_1.html">This was my effort to move the discussion beyond simple bashing of "Dawkins' Weasel."</a>
+
+Dave
+
+</div></div>
+<div class="comment" id="comment-181062"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net/tadarwinw.html" rel="nofollow">mrg</a></span> &middot; 24 March 2009</p><div class="comment-body"><p>I am no expert on genetic algorithms but I recall that in CLIMBING MOUNT IMPOSSIBLE Dawkins pointed to programs modeling the evolution of spiderwebs as working perfectly well without specifying any more as a target than "mutate and see if it catches flies better" and if it does, try again.</p><p>Astoundingly, the programs came up with various forms of spiderwebs that looked like different types of real spiderwebs.  Gosh, who knew!</p></div></div>
+<div class="comment" id="comment-181066"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 March 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+
+True enough.  At least ROb was able to <a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/#comment-309562">post some sense on this issue at UD</a>, even mentioning my work on the Steiner Problem.  <a href="http://pandasthumb.org/archives/2006/07/target_target_w_1.html">This was my effort to move the discussion beyond simple bashing of "Dawkins' Weasel."</a>
+
+Dave
+
+
+</blockquote>
+
+And that was a pretty piece of work.
+
+It should have made the point with them, but only a few caught on.
+
+<blockquote><p> Astoundingly, the programs came up with various forms of spiderwebs that looked like different types of real spiderwebs. Gosh, who knew!
+</p><cite>— mrg</cite></blockquote>
+
+It’s hard sometimes to convey to the layperson the abilities of programs such as these to find solutions that can’t be imagined until they are found.
+
+But the underlying fundamentals of these programs have been around for a long time.  They have simply become more powerful as computing power has grown.  Many of us were writing these kinds of things on computers with “enormous memories” of 64K many years ago and wishing we had more memory and speed to work with.
+
+But this Weasel program of Dawkins is such a nice little teaching tool.  It is simple enough to understand.  It incorporates a fundamental concept from biology, and has an implicit connection to many other phenomena that are operating in the universe.
+
+It is by no means outdated.
+</div></div>
+<div class="comment" id="comment-181093"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 24 March 2009</p><div class="comment-body"><p>It is now over a 192 hours since Dembski said “watch this space”. The Dembski’s Evolutionary informatics team has announced that a weasel program has been constructed, but none has been posted on the Evolutionary Informatics site. None of the Uncommon Dissent commentators has constructed a weasel program. In the face of the video evidence and the mathematical evidence, the latest killer argument form the UD crew that Dawkins program really does lock is that <em>Dawkins didn't mention letters reverting in his book</em>, so therefore the program locks.</p><p>You couldn't make this stuff up.</p></div></div>
+<div class="comment" id="comment-181095"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 March 2009</p><div class="comment-body"><blockquote><p>You couldn’t make this stuff up.</p></blockquote>
+Who'd want to?</div></div>
+<div class="comment" id="comment-181107"><p class="comment-meta"><span class="comment-author"><a href="http://theatavism.blogspot.com" rel="nofollow">david w</a></span> &middot; 24 March 2009</p><div class="comment-body"><p>Here's <a href="http://theatavism.blogspot.com/2009/03/on-effects-of-locking-weasels.html">a couple of results of playing around with mutation rates and the like with the locking and non-locking versions</a>.</p><p>As you might expect the 'locked' version performs much better than unlocked with very high mutation rates, since the letters that match the target in the parent string are protected in the offspring. All pretty obvious but it's fun to play around with!</p></div></div>
+<div class="comment" id="comment-181122"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 24 March 2009</p><div class="comment-body">Still an interesting thread. 
+
+FWIW, there is a "Weasel" (i.e. locking) GUI over at the Evolutionary Disinformatics Lab, but AFAIU no link from Uninformed Dissent. I'm not sure if that is what you are waiting for. 
+
+But I think I understand what the antics are playing up to: Marks (w Dembski) has two actual papers in preprint according to Marks' site, that they are going to highlight, or find "useful idiots" like me that likes to criticize their output to do it for them. 
+
+The first is technical, applying the NFL on searches respectively "searches for searches", i.e. looking for convergent methods for the domain of interest. Nothing new, controversial, or actually helpful. 
+
+The second, not yet up on the EIL site, is the "evolution killer". It implies that the programmer specifies the solution of a search, that evolution is a search process, both inaccurate but possible to slide by a reviewer, and finishes with:
+
+<blockquote>
+[...] Computers, despite their speed in performing queries are thus, in the absence of active information, inadequate for resolving even moderately sized search problems. <b>Accordingly, attempts to characterize evolutionary algorithms as creators of novel information are inappropriate.</b> To have integrity, search algorithms, especially computer simulations of evolutionary search, should explicitly state (1) a numerical measure of the difficulty of the problem to be solved, i.e., the endogenous information, and (2) a numerical measure of the amount of problem-specific information resident in the search algorithm, i.e., the active information. [My bold.]
+</blockquote>
+
+That seems to be all there is, nothing about evolution as such. (Even though examples are lifted from actual work on evolution of DNA.) Rather pitiful, if you ask me.
+
+Not that it can't be critiqued. 
+
+For example, the "Weasel" is the same as above and described as partitioned search. The reference is Dawkins "The Blind Watchmaker"; according to Wikipedia Dawkins doesn't seem to describe his program that way but as choosing "however slightly most resembles the target phrase". 
+
+Another problem is when the "monkey at the typewriter" is referred to as "random evolutionary search", when nothing evolutionary (biological or computer science) AFAIU does a random search.
+
+The cake is of course the claim above, in light of that they earlier presented the correct claim "When some offspring are correctly announced as more fit than others, external knowledge is being applied to the search giving rise to active information." 
+
+Well, duh, the genome (or its computer equivalent) is learning from the outside environment (or the specific problem space that the program is applied to) that decides who is fit, or not - their own math shows this, if it isn't in error this time. [They have messed up earlier, but as they don't actually use the math on anything useful this time it is hard to tell if that is the case here too.] <b>Accordingly, evolutionary algorithms find information not inherent in their construction. To have integrity, creationists, especially professors of engineering targeting evolutionary search, should explicitly state that.</b>
+
+I think Marks have gone full circle, and has now resigned himself to be seated with the other mumbling "but <i>I</i> can see that it is design"-ists. </div></div>
+<div class="comment" id="comment-181125"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 24 March 2009</p><div class="comment-body"><p>D'oh, I meant to describe Dawkins program as the Weasel, as opposed to the "Weasel" of creationists. In no way or form did I want to imply that the Weasel is necessarily latching. My apologies.</p></div></div>
+<div class="comment" id="comment-181130"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 24 March 2009</p><div class="comment-body"><p>Actually, if I were a reviewer, I would descend like a hawk deciding who is fit to survive or not on the "especially computer simulations of evolutionary search" in the conclusions. It isn't supported by the paper. Not even by the childish trick of equaling brute search, long existing before the discovery of GA's, as a GA: just because a search is more difficult doesn't mean it is in need of the asked for specification.</p><p>Which specification I would also kick around mightily, since it would fill no practical or scientific purpose, even if it wasn't wrongly applied.</p></div></div>
+<div class="comment" id="comment-181133"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 March 2009</p><div class="comment-body"><blockquote><p> To have integrity, search algorithms, especially computer simulations of evolutionary search, should explicitly state (1) a numerical measure of the difficulty of the problem to be solved, i.e., the endogenous information, and (2) a numerical measure of the amount of problem-specific information resident in the search algorithm, i.e., the active information.</p><cite>— Torbjörn Larsson quoting EIL site</cite></blockquote>
+
+No mention of conforming to reality.  I guess that doesn’t count.
+</div></div>
+<div class="comment" id="comment-181143"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 25 March 2009</p><div class="comment-body"><p>Well, I see <a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/#comment-309732"> over at UD</a> that the Second Law is now being invoked against “locking”. “Errors in genetic transcription are ensured by the Second Law. If you lock certain letters, you are saying the SLoT is suspended for them, but not for others.”</p><p>What Morris and Gish put in place with their meme now dictates the entire thinking process of the ID community.</p><p>It even degrades their programming abilities.  It's not the Second Law doing that.</p><p>Sigh.</p></div></div>
+<div class="comment" id="comment-181158"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 25 March 2009</p><div class="comment-body"><blockquote><p>“Errors in genetic transcription are ensured by the Second Law. If you lock certain letters, you are saying the SLoT is suspended for them, but not for others.”</p></blockquote>
+What the heck do they think locking has to do with the SLoT? As far as I know, SLoT doesn't prevent something from staying the same, outside of temperature shifts if it wasn't in equilibrium. But a change of a letter isn't a change in temperature.
+
+Henry
+
+</div></div>
+<div class="comment" id="comment-181165"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 25 March 2009</p><div class="comment-body"><b>Evolutionary Informatics Lab's "Weasel Ware" is Missing "N" (you know, the "Population Size")</b>
+
+I've been running a few sims over at <a href="http://www.evoinfo.org/WeaselGUI.html">Evolutionary Informatics Lab's "Weasel Ware" page</a>, and I am shocked - <i>shocked I say</i> - at how little this has to do with the version of Dawkins' "Weasel" that I coded in python using the description on <a href="http://www.antievolution.org/cs/dawkins_weasel">Wes's Weasel page</a>.
+
+An example: I plugged in "ABCDE" as the Search Phrase at Evolutionary Informatics Lab's "Weasel Ware" page. Even before running anything, the tab under "Partitioned Search" (the only one of the three algorithms even remotely similar to "Weasel") declares that the "median number of queries" is 54. 
+
+Compare that flat assertion to what I found using my python app for the 5-letter phrase "ABCDE", running 1000 simulations for each scenario:
+<blockquote>
+<b>Population = 100</b>
+<i>With Latching:</i>Average # generations (to convergence)= 15 ± 8.0
+
+<i>Without Latching:</i>Average # generations = 17 ± 9.6
+
+<b>Population = 30</b>
+<i>With Latching:</i>Average # generations = 46 ± 25.4
+
+<i>Without Latching:</i>Average # generations = 53 ± 31.1
+
+</blockquote>
+
+It's obvious that population is an important parameter in "Weasel" - <b><i>yet there is no way to enter "Population" on the Marks/Dembski "Weasel Ware" simulation</i></b>.
+
+One more thing. The only time "latching" has any effect in the actual "Weasel" is in the rare case where one of the strings copied from the last generation's best string has two simultaneous mutations in opposite directions, like this one: 
+<blockquote>
+Gen. 50: METHIQKS IT IS JXKE A WEASEL (# correct = 25)
+
+Gen. 51: METHINKS IT IS RXKE A LEASEL (# correct STILL = 25)
+
+Note methiQks =&gt; methiNks, and Weasel =&gt; Leasel, for a net gain of zero.
+</blockquote>
+
+Situations like this are the only cases where one can see a correct letter reverting to an incorrect letter.
+
+Going over to the EvoLab's "Weasel's Math" page just makes things weirder. Using the maths on that page, I found that the "median number of queries for partitioned search" for the Weasel string ("METHINKS IT IS LIKE A WEASEL", L = 28 and N = 27) is indeed 98.3 queries:
+
+<blockquote>
+L=28
+N=27
+p=0.5
+top=math.log(1.0-pow(p,1.0/L))
+bot=math.log(1.0-1.0/N)
+print top/bot
+ 98.33167127
+</blockquote>
+
+Likewise, the "median number of queries for partitioned search" for the short string ("ABCDE", L = 5 and N = 27) is indeed ~54 queries 
+<blockquote>
+L=5
+N=27
+p=0.5
+top=math.log(1.0-pow(p,1.0/L))
+bot=math.log(1.0-1.0/N)
+print top/bot
+ 54.1718907472
+</blockquote>
+
+Reading the Evolab's <a href="http://www.evoinfo.org/WeaselMath.html">"Weasel Math" page</a> reveals that N is NOT the "population size" as in a real Dawkins Weasel run, but instead <b><i>the number of allowed characters - 26 letters plus a blank space = 27 total.</i></b>
+
+For a Binary alphabet (0,1), N=2; for a "DNA Alphabet" (ATGC), N=4.
+
+There is NO "population size" in the Evolab Weasel.
+
+Can someone ask the folks over at UD to look at what happens when N=30 versus N=100?  That should drive them nuts!</div></div>
+<div class="comment" id="comment-181166"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 25 March 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+<b>Evolutionary Informatics Lab's "Weasel Ware" is Missing "N" (you know, the "Population Size")</b>
+
+</blockquote>
+
+Please, Miss, can I have another weasel? This one's gone "Pop!"
+
+</div></div>
+<div class="comment" id="comment-181167"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 25 March 2009</p><div class="comment-body"><p>Nah, you guys will just have to ferret out your own weasel. :)</p></div></div>
+<div class="comment" id="comment-181172"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 25 March 2009</p><div class="comment-body"><blockquote>
+<strong>Ian Musgrave said:</strong>
+
+Gahhh! Why don't PRE tags work properly here!
+</blockquote>
+
+<code>pre</code> is not recognized. Use <code>blockcode</code>. You can also use <code>verse</code> to turn newlines into linebreaks.
+
+<blockcode>
+I'm a poet
+and I didn't know it.
+
+<verse>
+I'm a poet
+and I didn't know it.
+</verse>
+</blockcode>
+
+Produces:
+
+<blockquote>
+I'm a poet
+and I didn't know it.
+
+<verse>
+I'm a poet
+and I didn't know it.
+</verse>
+</blockquote>
+
+Remember, preview is your friend.
+</div></div>
+<div class="comment" id="comment-181174"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 25 March 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+Going over to the EvoLab's "Weasel's Math" page just makes things weirder. 
+
+</blockquote>
+
+I could see that coming from the conversations over at UD.  I was getting curious about whether or not their misconceptions would manifest themselves in the program; and they sure did.
+
+It’s almost like students “dry-labbing it” (faking results) in their science labs.  When they don’t understand the concepts, the “results” scream loudly that they are fake.
+
+It’s clear they haven’t grasped the concept because it doesn’t show up in the behavior of the program.
+</div></div>
+<div class="comment" id="comment-181175"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 25 March 2009</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote><p>“Errors in genetic transcription are ensured by the Second Law. If you lock certain letters, you are saying the SLoT is suspended for them, but not for others.”</p></blockquote>
+What the heck do they think locking has to do with the SLoT? As far as I know, SLoT doesn't prevent something from staying the same, outside of temperature shifts if it wasn't in equilibrium. But a change of a letter isn't a change in temperature.
+
+Henry
+
+</blockquote>
+
+The analogy of radioactive decay in the presence of radioactivation is an example of “locking”.  It corresponds to a system in a meta-stable state that is decaying into a ground state far below the level of the meta-stable states.
+
+A mechanical analogy would be marbles sitting in dimples at the tops of peaks.  A little vibration can dislodge them and they can tumble down the peaks, but not get back up. Unless the energy flowing into the system is sufficient to pop some of the marbles back up to the tops of the peaks, it’s a one-way trip down.
+
+
+On the other hand, one could have a system with many adjacent dimples with marbles occupying a few of them.  Small vibrations can relocate the marbles among these.  If there is a slight tilt in the plane of the dimples, that tilt can put a slight bias on where the marbles end up.  But energy input could knock some of them back where they came from, or put others in their places.
+
+
+
+</div></div>
+<div class="comment" id="comment-181177"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 25 March 2009</p><div class="comment-body"><p>It is now over a 216 hours since Dembski said “watch this space”. The Dembski’s Evolutionary informatics team has announced that a weasel program has been constructed, but none has been posted on the Evolutionary Informatics site. An actual piece of code is <b>finally</b> being discussed. Unfortunately, Apollo's code <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=5735;st=7920#entry140931">has some errors</a>. Commentator Hazel at UD points this out, and Apollo deals with the fRAND error, but not the other one (seriously, with a offspring number of 500 and 5% mutation rate the thing doesn't converge for over a 1,000 generations, when for a real weasel program, even a population of 30 will converge in less). So, now they are debating the results of an obviously flawed program (sigh). More strength to Hazel and Sal_Gal, who are trying to inject some sense over there.</p></div></div>
+<div class="comment" id="comment-181187"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 25 March 2009</p><div class="comment-body">Dave:
+
+<blockquote><p>
+Situations like this are the only cases where one can see a correct letter reverting to an incorrect letter.
+</p></blockquote>
+
+That's not right. 
+
+A correct base in a previous generation can become an incorrect base in the best candidate from a subsequent generation when the population is small and the mutation rate is relatively high. N=30 and u=0.08 do pretty well in runs that often show at least one stepback in matches to the target.
+
+Have a look at <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=6034;st=#entry140008">this comment</a> from the evolutionary computation thread.
+</div></div>
+<div class="comment" id="comment-181224"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 26 March 2009</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+Dave:
+
+<blockquote><p>
+Situations like this are the only cases where one can see a correct letter reverting to an incorrect letter.
+</p></blockquote>
+
+That's not right. 
+
+A correct base in a previous generation can become an incorrect base in the best candidate from a subsequent generation when the population is small and the mutation rate is relatively high. N=30 and u=0.08 do pretty well in runs that often show at least one stepback in matches to the target.
+
+Have a look at <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?act=ST;f=14;t=6034;st=#entry140008">this comment</a> from the evolutionary computation thread.
+
+</blockquote>
+
+Good point, Wes.  I guess I was attuned to the behavior of larger populations and smaller mutation rates.  Certainly, some "backsliding" (i.e.; anti-latching) behavior can occur for the case I mentioned (good/bad mutations cancel out), but also the rarer cases where the new generation doesn't have even one member as good as the parent.  Of course, backsliding could also accompany an <i>increase</i> in fitness with, say, 2 good and 1 bad mutations on a given copy of the parent (= the previous generation's best).
+
+Cheers, Dave
+</div></div>
+<div class="comment" id="comment-181238"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 26 March 2009</p><div class="comment-body"><p>Latching and stepbacks in fitness of best candidates are two separate things, but having a stepback makes it obvious that latching <i>cannot</i> be happening.</p></div></div>
+<div class="comment" id="comment-181259"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 26 March 2009</p><div class="comment-body"><p><a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/">Over at UD</a> some of the folks are getting a glimmer of the point of Weasel.</p><p>However, it appears that the fact that there is a target string is still a stumbling block.  As long as that is in there, some of them seem to think some sort of teleology is involved, or that the result is somehow connected to design.</p><p>Staring into to the abyss of a “purposeless universe” is going to be a big hurdle for the ID community.  It not only forces them to question sacred dogma, but it also highlights the fallacy of the lottery winner misconception.</p><p>They are going to have to untangle the notions of order/disorder, information, organization, self-organization, complexity, entropy, the second law of thermodynamics, and the fallacy of being special along with all their well-ingrained misconceptions about evolution.</p><p>The decades of intense and well-funded misinformation campaigns by the ID/Creationist institutes have clearly made their mark.  And the science community has to clean it up.  Oh well….</p></div></div>
+<div class="comment" id="comment-181267"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 26 March 2009</p><div class="comment-body"><a href="http://www.uncommondescent.com/evolution/dawkins-weasel-proximity-search-with-or-without-locking/">From over at UD</a>:
+
+<blockquote><p>2. In the latching method, the mutation function does have knowledge of the fitness function while mutating is going on, as it has to know to not mutate a correct letter, so the fitness function does affect the mutation process.</p></blockquote>
+
+Here is an example of the effect of teleological thinking.
+
+I reality, the target string could just simply represent a considerably more stable configuration in nature than any of the current ones.  It doesn’t have to have any particular “complexity” or contain any particular “information”.
+</div></div>
+<div class="comment" id="comment-181285"><p class="comment-meta"><span class="comment-author"><a href="http://astroblogger.blogspot.com/" rel="nofollow">Ian Musgrave</a></span> &middot; 26 March 2009</p><div class="comment-body">It is now over a 240 hours since Dembski said “watch this space”. The Dembski’s Evolutionary informatics team has announced that a weasel program has been constructed, but none has been posted on the Evolutionary Informatics site. The errors in Apollo’s code has been corrected, but still no head to head comparison with "locking" vs non-locked versions has been produced.
+
+In a new post on evolutionary computation Dembski writes 
+<blockquote>Still, some of these evolutionary simulations seem more faithful to biological reality than others. Christoph Adami’s AVIDA, Tom Schneider’s ev, and Tom Ray’s Tierra fall on the “less than faithful” side of this divide. On the “reasonably faithful” side I would place the following three:
+
+Mendel’s Accountant: mendelsaccount.sourceforge.net
+
+MutationWorks: www.mutationworks.com
+
+MESA: www.iscid.org/mesa</blockquote>
+
+Oh, the irony. (if anyone has actually got either Mendel's Accountant or mutation works to work, let me know)</div></div>
+<div class="comment" id="comment-181408"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net/tadarwinw.html" rel="nofollow">mrg</a></span> &middot; 27 March 2009</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+However, it appears that the fact that there is a target string is still a stumbling block.  As long as that is in there, some of them seem to think some sort of teleology is involved, or that the result is somehow connected to design.
+
+</blockquote>
+
+Forgive if this has been brought up, but I was thinking once that the Weasel would be more apt reprsentation of evolution by natural selection if it incorporated rules of language and simply generated any text that made readable sense.
+
+That being incredibly difficult to do, the simple measure would be to give it a text file -- any text file -- and have it replicate a string of text of specified length somewhere from the file.  Might be fun to fill the file full of names of different organisms and see which one it comes up with.
+
+Of course, this an idle thought, it would not impress the UD folks at all, and as all here know it would be a waste of time relative to what Dawkins was actually trying to demonstrate.  
+
+MrG http://www.vectorsite.net</div></div>
+<div class="comment" id="comment-181443"><p class="comment-meta"><span class="comment-author">Divergence of B</span> &middot; 27 March 2009</p><div class="comment-body"><blockquote>See Wesley Elsberries superb Java Weasel as an example!</blockquote>
+
+Wesley Elsberry's Weasel program is JavaScript, not Java. (Java and JavaScript are completely different things.) Sorry, the accuracy ape is on my back and makes me state these things.</div></div>
+<div class="comment" id="comment-181446"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 27 March 2009</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+Forgive if this has been brought up, but I was thinking once that the Weasel would be more apt reprsentation of evolution by natural selection if it incorporated rules of language and simply generated any text that made readable sense.
+
+That being incredibly difficult to do, the simple measure would be to give it a text file -- any text file -- and have it replicate a string of text of specified length somewhere from the file. Might be fun to fill the file full of names of different organisms and see which one it comes up with.
+
+
+MrG http://www.vectorsite.net
+</blockquote>
+
+<a href="http://pandasthumb.org/archives/2009/03/weasles-on-para.html#comment-180942">RBH mentioned some cases</a> of speciation in his programs in an earlier post.
+
+What you suggest is not a difficult as it seems. I’m not a grammarian, so I don’t know how the grammar rules would go. I suppose one could take some hints from the evolution of language. However, there are lots of programs in physics that do essentially what you suggest. The processes have to fill multiple potential wells, or adapt to multiple conditions, or some such similar sets of conditions. The results are multiple, yet interconnected, solutions.
+
+In a different context and different perspective, they could be interpreted as “species”. Some of these programs include some very fancy fluid dynamics or magnetohydrodynamics calculations that generate all sorts of complex emergent phenomena we recognize in these systems. And there is nothing in these programs that tell the programs to make this stuff. It emerges and is relatively stable within certain energy and momentum ranges.
+
+Somewhere on one of these threads (I can’t seem to find it now) I mentioned putting an outer loop in Weasel that would change the target as the population converged. Starting with that now-current population, we would see it track the new target fairly quickly if the target was changed only slightly after convergence. Then you could repeat the outer loop as many times as you wished. As I said in that post, you could gradually see the population evolve from a weasel into a walrus.
+
+If you instead begin putting multiple targets in, and you allow the population to grow enough to have critical numbers to pursue each target, you could generate branching species, see some go extinct, and see others start taking over and crowding out others.
+
+
+</div></div>
+<div class="comment" id="comment-181456"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 27 March 2009</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+Forgive if this has been brought up, but I was thinking once that the Weasel would be more apt reprsentation of evolution by natural selection if it incorporated rules of language and simply generated any text that made readable sense.
+
+That being incredibly difficult to do, the simple measure would be to give it a text file -- any text file -- and have it replicate a string of text of specified length somewhere from the file.  Might be fun to fill the file full of names of different organisms and see which one it comes up with.
+
+Of course, this an idle thought, it would not impress the UD folks at all, and as all here know it would be a waste of time relative to what Dawkins was actually trying to demonstrate.  
+
+MrG http://www.vectorsite.net
+</blockquote>
+
+Also, there's the GA I developed to solve the Steiner Problem.  Interestingly, <a href="http://pandasthumb.org/archives/2006/08/design-challeng-1.html">the algorithm evolved a far superior answer to a public challenge than the best that UD's Salvador Cordova could design. </a>
+
+Dave</div></div>
+<div class="comment" id="comment-181589"><p class="comment-meta"><span class="comment-author"><a href="http://www.uni-bremen.de/~anatol" rel="nofollow">A.S.</a></span> &middot; 28 March 2009</p><div class="comment-body"><p>Much too late to the party, I guess. With my implementation (in R), it takes around 30 generations with locking, around 130 without locking, using the following parameters: 100 offspring per generation, 10 per cent probability for a mutation at any point in the string, only lowercase letters and whitespaces, best match gets selected and mutated again. Clearly, the lower the mutation probability, the less important locking becomes: with a 1 per cent probability, it takes an estimated average of 160 generations without locking and 120 generations with locking. This follows, I guess, from the fact that the lower the mutation probability, the lower the chance that a match once found will mutate again even without locking. On the other hand, with a mutation probablitiy of 99 percent, the target is never reached without locking, but it takes only a dozen generations to reach it with locking. I'm sure mathematicians and biologists have long known this, but to me it was quite surprising though it makes perfect sense after the fact. Also, I find it very funny that Dembski, who thinks he's a mathematician, doesn't understand the program and apparently cannot write a version that might help him understand it, while I, a mere linguist, was able to write my R script in a few hours. (And it can run with and without locking! And generation size, mutation probability, target string, etc. can be freely determined! And it can draw a pretty plot of what it is doing! And if anyone wants it, they can have it!).</p></div></div>
+<div class="comment" id="comment-181597"><p class="comment-meta"><span class="comment-author">IanR</span> &middot; 28 March 2009</p><div class="comment-body"><p><a href="http://sites.google.com/site/excelweasel/">Here</a> I describe a link to an Excel macro weasel program I wrote, and give a run and the actual results that show that a run can revert away from the correct sequence.</p></div></div>
+<div class="comment" id="comment-181618"><p class="comment-meta"><span class="comment-author">Tani Hosokawa</span> &middot; 28 March 2009</p><div class="comment-body"><p>Just so Perl gets a voice:</p><p>http://tanihosokawa.org/pandasthumb/weasel.pl</p><p>takes 5 command line arguments:</p><p>* verbose                  (display the best parent and generation)</p><p>* num_trials             (how many trials to run of locked vs unlocked -- this is slow, bad perl code, don't go too high)</p><p>* target                     (defaults to "methinks it is a weasel")</p><p>* mutation_rate       (% chance of a letter being changed)</p><p>* offspring                (number of offspring per generation)</p><p>I think this took around 20 minutes, but I'm pretty wiped right now.</p></div></div>
+<div class="comment" id="comment-181631"><p class="comment-meta"><span class="comment-author"><a href="http://www.uni-bremen.de/~anatol" rel="nofollow">A.S.</a></span> &middot; 29 March 2009</p><div class="comment-body"><p>Ah, forgot to post the link to the R script, here it is:</p><p>http://www.stefanowitsch.de/anatol/files/weasel.R.zip</p><p>Simply unzip, import into R using</p><p>&gt; source("/YOUR_PATH/weasel.R")</p><p>and you have a new function in R, called <em>weasle</em>. This function has the following arguments:</p><p>weasel(string="SOMESTRING", probability=SOMENUMBER, offspring=SOMENUMBER, locking=(TRUE|FALSE), plot=(TRUE|FALSE))</p><p>The defaults are</p><p>string="methinks it is like a weasel"</p><p>probability=0.1</p><p>offspring=100</p><p>locking=FALSE</p><p>plot=FALSE</p><p>As is, the program can only deal with lowercase characters and whitespace in the string, but this is easily modified in the source code (as is everything else, there are extensive comments). Also, if you use plotting, the program exits without clearing the graphics window, i.e., if you run it again, the new plot will be added to the old. If you don't want this, run</p><p>&gt; par(new=FALSE)</p><p>before running the program again.</p><p>Some examples:</p><p>&gt; weasel()</p><p>This runs the program with the default values.</p><p>&gt; weasel(string="evolution beats design", probability=0.08, offspring=30, plot=TRUE)</p><p>This runs the script with the target string <em>evolution beats design</em>, the mutation probability is 8 per cent, there are thirty offspring per generation, no locking is used, the output will be plotted)</p><p>&gt; weasel(probability=0.01, offspring=250, locking=TRUE, plot=FALSE)</p><p>This runs the script on the default "methinks it is like a weasel", with a mutation probability of 1 per cent, 250 offspring per generation, WITH locking and without a plot.</p></div></div>
+<div class="comment" id="comment-181746"><p class="comment-meta"><span class="comment-author">Ellindsey</span> &middot; 30 March 2009</p><div class="comment-body"><p>The main objection I can see to the Weasel program as not being a good demonstration of evolution is that the target string is embedded in the program from the start.  I realize that the point of the original program was to demonstrate evolutionary generation of that specific string, but real evolution doesn't work towards a specific goal, just one that works.</p><p>Someone suggested that a better demonstration would be to evolve a valid, meaningful sentence.  I don't know how to write a fitness function to test how meaningful a sentence is, but it's easy to test how much of a text string is made up of valid dictionary words.  I have put together a Python script that evolves sentences, staring with random strings and scoring each string based on how close it is to being made up entirely of dictionary words.  It works surprisingly well.  The sentences it makes aren't terribly meaningful (last run's result was "SOW WHY SIZE FOOT ROOT ESCAPE WOOLEN") but it works surprisingly well, taking less than a hundred generations to settle on a valid sentence.  Anyone have a way to mathematically evaluate the meaningfulness of a sentence?</p><p>I can email the code to anyone who wants it, or who (even better) wants to put it up where it can be downloaded.</p></div></div>
+<div class="comment" id="comment-181748"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 30 March 2009</p><div class="comment-body"><p>I have no idea how one could automate an evaluation of meaningfulness, but I'd think the next step would be rules of grammar: distinct subject, verb, object; check that adjectives and adverbs only in appropriate places to modify something; include an object phrase only for verbs that need one, not for those that don't; check that prepositions have an associated object; check that noun phrases appear only as subject, object, or content of prepositional phrases; etc.</p><p>That does however sound like a <i>lot</i> of work to implement.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-181749"><p class="comment-meta"><span class="comment-author">Rilke&#x27;s Granddaughter</span> &middot; 30 March 2009</p><div class="comment-body">You need to actually READ what Dawkins wrote.  The Weasel program IS NOT INTENDED TO DEMONSTRATE EVOLUTION.  It is intended to demonstrate the difference that SELECTION can make.  It's NOT a model of actual evolution; it's a demonstration of how particular concept in evolution.
+
+<blockquote>
+<strong>Ellindsey said:</strong>
+
+The main objection I can see to the Weasel program as not being a good demonstration of evolution is that the target string is embedded in the program from the start.  I realize that the point of the original program was to demonstrate evolutionary generation of that specific string, but real evolution doesn't work towards a specific goal, just one that works.
+
+Someone suggested that a better demonstration would be to evolve a valid, meaningful sentence.  I don't know how to write a fitness function to test how meaningful a sentence is, but it's easy to test how much of a text string is made up of valid dictionary words.  I have put together a Python script that evolves sentences, staring with random strings and scoring each string based on how close it is to being made up entirely of dictionary words.  It works surprisingly well.  The sentences it makes aren't terribly meaningful (last run's result was "SOW WHY SIZE FOOT ROOT ESCAPE WOOLEN") but it works surprisingly well, taking less than a hundred generations to settle on a valid sentence.  Anyone have a way to mathematically evaluate the meaningfulness of a sentence?
+
+I can email the code to anyone who wants it, or who (even better) wants to put it up where it can be downloaded.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-181754"><p class="comment-meta"><span class="comment-author">Ellindsey</span> &middot; 30 March 2009</p><div class="comment-body"><p>I am fully aware of what the Weasel program was intended to simulate, and stated so in my comment.  You need to actually READ what I wrote.</p></div></div>
+<div class="comment" id="comment-181755"><p class="comment-meta"><span class="comment-author">Rilke&#x27;s Granddaughter</span> &middot; 30 March 2009</p><div class="comment-body"><p>Apparently you didn't.</p><p>"Weasel program as not being a good demonstration of evolution is that the target string is embedded in the program from the start. I realize that the point of the original program was to demonstrate <b>evolutionary generation</b> of that specific string, but real evolution doesn’t work towards a specific goal, just one that works."</p><p>Weasel was not intended to demonstrate evolution.  Try again.</p></div></div>
+<div class="comment" id="comment-181757"><p class="comment-meta"><span class="comment-author">Ellindsey</span> &middot; 30 March 2009</p><div class="comment-body"><p>Semantics.  It was intended to generate how that specific string would be generated through mutation and selection.  Which is evolution, although a very specific and limited case of it.</p><p>In any event my point was not to criticize the Weasel program itself.  It's a fine demonstration of the power of selection.  My point was to offer an example which demonstrated selection towards a target not predefined, but determined by a selection function that permits a different solution to be found each time the code is run.  I though people might be interested.</p></div></div>
+<div class="comment" id="comment-181771"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 30 March 2009</p><div class="comment-body"><blockquote>
+<strong>Ellindsey said:</strong>
+
+Semantics.  It was intended to generate how that specific string would be generated through mutation and selection.  Which is evolution, although a very specific and limited case of it.
+
+In any event my point was not to criticize the Weasel program itself.  It's a fine demonstration of the power of selection.  My point was to offer an example which demonstrated selection towards a target not predefined, but determined by a selection function that permits a different solution to be found each time the code is run.  I though people might be interested.
+</blockquote>
+
+I don’t think it is as much a question of semantics as it is of identifying and properly labeling the correct phenomena.
+
+In the Dawkins’ Weasel program, the illustration was how selection means a great deal in the convergence of random variation to some stable state.
+
+It is true that the presence of a target string has been confusing to many in the ID/Creationist community.  However, if this had been program in which energy is gradually dissipated as the particles in question settled into a potential well, the issue might be a little clearer.
+
+For example, how one represents the potential well might be seen as putting in a target.  But if you modeled, say, a flexible cable suspended from its two ends and flopping around in a gravitational field gradually dissipating energy, it would fall into a catenary curve that minimized its potential energy.  The problem could be formulated as minimizing potential energy, finding a catenary, or simply gradually dissipating kinetic energy.
+
+I gathered from your wording of your objective that you may be more interested in a program that generates unanticipated <i>emergent phenomena</i> that is recognizable as some sort of “significant” pattern.
+
+That kind of thing happens in very complex programs in fluid dynamics where vortices emerge but aren’t programmed in.  These kinds of emergent phenomena pop up in many other kinds of programs also.
+
+The question then becomes, “What is meant by a significant pattern; significant to whom?”  And that question gets to the issues of assuming that what emerges is “special” in some way.  That relates to the fallacy of the lottery winner.  The emerging pattern, if it could contemplate its own existence, might think the process had its existence in mind, but in fact, many other emergent phenomena could have occurred also.
+</div></div>
+<div class="comment" id="comment-181774"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 30 March 2009</p><div class="comment-body"><blockquote><p>The emerging pattern, if it could contemplate its own existence, might think the process had its existence in mind, but in fact, many other emergent phenomena could have occurred also. </p></blockquote>
+
+And in the case of biological evolution, several million of them did just that.
+
+Henry
+</div></div>
+<div class="comment" id="comment-181778"><p class="comment-meta"><span class="comment-author">Rilke&#x27;s Granddaughter</span> &middot; 30 March 2009</p><div class="comment-body">Nope.  That's the entire point: IT WAS NOT INTENDED TO MIMIC EVOLUTION.  It was designed to show how selection can radically improve the ability of random change to rech an end.  NOT EVOLUTION.  I'll repeat that; it's not intending to mimic evolution.  Your comment implies that you don't really understand what evolution is.
+<blockquote>
+<strong>Ellindsey said:</strong>
+
+Semantics.  It was intended to generate how that specific string would be generated through mutation and selection.  Which is evolution, although a very specific and limited case of it.
+
+In any event my point was not to criticize the Weasel program itself.  It's a fine demonstration of the power of selection.  My point was to offer an example which demonstrated selection towards a target not predefined, but determined by a selection function that permits a different solution to be found each time the code is run.  I though people might be interested.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-182866"><p class="comment-meta"><span class="comment-author"><a href="http://pastebin.com/m8ac26fb" rel="nofollow">Dirk Esser</a></span> &middot; 10 April 2009</p><div class="comment-body"><p>Sorry, could not resist. <a href="http://pastebin.com/m8ac26fb">Here</a> is a version in Common Lisp. Also included is a creationism-influenced version, which is amazingly fast: it converges in a single generation on average, even with an initial population of 0. So, ID/creationism might actually have a point...</p></div></div>
+<div class="comment" id="comment-182960"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 11 April 2009</p><div class="comment-body"><p>Just in case anyone's watching - it has now been 562 hours since Dembski promised that "Evolutionary Informatics lab was going to try and reproduce Dawkins Weasel Program according to how it was actually written"</p><p>But, the <a href="http://www.evoinfo.org/WeaselGUI.html">"Weasel Ware" page</a> is still unchanged, still mired in the past, still hung up on "latching," still <b><i>wrong</i></b>.</p><p>23 days and counting! Shall we start a pool? I'll pick St. Bartholemew's Day... 2098.<br>Dave</p></div></div>
+<div class="comment" id="comment-182962"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net/tadarwinw.html" rel="nofollow">mrg</a></span> &middot; 11 April 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+... still <b><i>wrong</i></b>. 
+
+</blockquote>
+
+Oh come now, since when did being wrong ever slow them down in the least?  After all, if they had to give up every time they were wrong, they wouldn't be left with much to say.
+
+MrG http://www.vectorsite.net</div></div>
+<div class="comment" id="comment-183246"><p class="comment-meta"><span class="comment-author">learnignpython</span> &middot; 15 April 2009</p><div class="comment-body"><p>I'm teaching myself python.</p><p>Has anyone tried to write a weasel program in python?</p></div></div>
+<div class="comment" id="comment-183248"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 15 April 2009</p><div class="comment-body"><blockquote>
+<strong>learnignpython said:</strong>
+
+I'm teaching myself python.
+
+Has anyone tried to write a weasel program in python?
+</blockquote>
+
+<a href="http://www.cbs.dtu.dk/courses/27615.mol/weasel.php">Here.</a></div></div>
+<div class="comment" id="comment-183296"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 15 April 2009</p><div class="comment-body"><blockquote><p>I’m teaching myself python.
+
+Has anyone tried to write a weasel program in python?</p></blockquote>
+
+Sure, but then the python ate the weasel, which pretty much ended the experiment.
+
+Henry
+</div></div>
+<div class="comment" id="comment-183917"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 22 April 2009</p><div class="comment-body"><blockquote>
+<strong>learnignpython said:</strong>
+
+I'm teaching myself python.
+
+Has anyone tried to write a weasel program in python?
+</blockquote>
+
+And <a href="http://www.nmsr.org/weasel.htm">here</a>.
+Dave</div></div>
+<div class="comment" id="comment-183920"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 22 April 2009</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+<blockquote>
+<strong>learnignpython said:</strong>
+
+I'm teaching myself python.
+
+Has anyone tried to write a weasel program in python?
+</blockquote>
+
+And <a href="http://www.nmsr.org/weasel.htm">here</a>.
+Dave
+</blockquote>
+
+Oops; my apologies, Dave.  Your program was especially pretty.
+
+</div></div>
+<div class="comment" id="comment-193026"><p class="comment-meta"><span class="comment-author">Divergence of B</span> &middot; 29 August 2009</p><div class="comment-body"><blockquote>See Wesley Elsberries superb Java Weasel as an example!</blockquote>
+
+Aaa!
+
+1. s/Elsberries/Elsberry\'s/g
+
+2. s/superb Java Weasel/superb <strong>JavaScript</strong> Weasel/g
+
+Java is not related to JavaScript.
+
+/Aaa!</div></div>
+<div class="comment" id="comment-193060"><p class="comment-meta"><span class="comment-author"><a href="http://localhost" rel="nofollow">Jeb, FCD</a></span> &middot; 29 August 2009</p><div class="comment-body"><p>Anyone got it in Ruby?</p></div></div>
+<div class="comment" id="comment-193146"><p class="comment-meta"><span class="comment-author">Brian Macker</span> &middot; 30 August 2009</p><div class="comment-body"><p>Your argument that a locking version is much harder to program is nonsense.   Just check the character against he target string before you allow mutation.  If it already matches then do not mutate.   A single line test.</p></div></div>
+<div class="comment" id="comment-193151"><p class="comment-meta"><span class="comment-author"><a href="http://dieben.blogspot.com/" rel="nofollow">DiEb</a></span> &middot; 31 August 2009</p><div class="comment-body">Though all of the programs seem to implement the same fitness function (<i>number of correct letters</i>), I'd like to stress the fact that Dawkins's program would work with other functions as well. In his algorithm, he just states: <i>The computer examines the mutant nonsense phrases [..] and chooses the one which, however slightly, most resembles the target phrase</i>. These <i>resembling</i> could mean:
+<ol><li>as above, the number of correct letters</li><li>the length of the longest correct substring</li><li>the number of correct vowels times the number of correct consonants</li><li>how many letters are correct at the beginning of the string</li><li>etc.</li></ol>
+The fitness function could work as an oracle: you send the strings of a generation to it and it delivers back (one of) the best string(s) (here the problem arises of stopping the program).
+But this approach<ul><li>emphasizes the exchange of information between the search algorithm and the search space - something in which  Dembski should be interested</li><li>helps to get rid of the perception that the computer searches something it already knows</li></ul></div></div>
+<div class="comment" id="comment-193152"><p class="comment-meta"><span class="comment-author"><a href="http://dieben.blogspot.com/" rel="nofollow">DiEb</a></span> &middot; 31 August 2009</p><div class="comment-body"><blockquote>
+<strong>Brian Macker said:</strong>
+
+Your argument that a locking version is much harder to program is nonsense.   Just check the character against he target string before you allow mutation.  If it already matches then do not mutate.   A single line test.
+</blockquote>
+
+Yes, that's easy: but you introduce your  knowledge of the target phrase for a second time - not only for calculating the fitness...</div></div>
+<div class="comment" id="comment-193159"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 31 August 2009</p><div class="comment-body">
+
+<blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote><p>“Errors in genetic transcription are ensured by the Second Law. If you lock certain letters, you are saying the SLoT is suspended for them, but not for others.”</p></blockquote>
+What the heck do they think locking has to do with the SLoT? As far as I know, SLoT doesn't prevent something from staying the same, outside of temperature shifts if it wasn't in equilibrium. But a change of a letter isn't a change in temperature.
+
+Henry
+
+</blockquote>
+
+Late to the party again. "Latching" could also represent a survival attribute which has become crucial... like the ability to produce amylase in saliva. :-p</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

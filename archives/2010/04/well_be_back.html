@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>We&#x27;ll Be Back — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">We&#x27;ll Be Back</h1><p class="post-meta">Posted 10 April 2010 by <span class="post-author">Wesley R. Elsberry</span></p><div class="post-body">The server for PT will be physically moving to a new location later today. Along with the new place is a new service account that promises higher upstream bandwidth. But it does mean that PT and other domains served here will be off the air for a while. The DNS entries for all those have to be entered and propagate. Some may see PT again in a couple of hours after it initially goes offline, but DNS changes may not fully propagate for up to 48 hours.</div><section class="comments-section"><h2 class="comments-heading">16 Comments</h2>
+<div class="comment" id="comment-213634"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 10 April 2010</p><div class="comment-body"><p>We'll be here. Waiting. In the dark. Staring at the computer. Naked.</p></div></div>
+<div class="comment" id="comment-213637"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 10 April 2010</p><div class="comment-body"><p>Can you wipe clear the bathroom wall during the change over?</p></div></div>
+<div class="comment" id="comment-213638"><p class="comment-meta"><span class="comment-author">Karen S.</span> &middot; 10 April 2010</p><div class="comment-body"><blockquote>We’ll be here. Waiting. In the dark. Staring at the computer. Naked.</blockquote>
+
+Just shows you what evilution does to a person...</div></div>
+<div class="comment" id="comment-213639"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 10 April 2010</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Can you wipe clear the bathroom wall during the change over?
+</blockquote>
+
+Sheesh!  A whole rainforest of toilet paper soiled with excrement! Shudder.</div></div>
+<div class="comment" id="comment-213645"><p class="comment-meta"><span class="comment-author">Rob</span> &middot; 10 April 2010</p><div class="comment-body"><p>Whole new bathroom needed.</p></div></div>
+<div class="comment" id="comment-213673"><p class="comment-meta"><span class="comment-author">George Martin</span> &middot; 10 April 2010</p><div class="comment-body"><p>I am not sure why it could take up to 48 hours to propagate. It looks like the TTL for pandasthumb.org is 24 hours. That is fairly common. If you are not changing your DNS registrar (and thus its DNS name servers), it should take at most 24 hours for a "local" DNS name server which cached the IP for pandasthumb.org to expire it and look it up again.</p><p>It is common practice that when you know you will be changing an IP, you lower the TTL for the DNS entry a day or two before the change to speed up the propagation of the change.</p><p>George</p><p>dig pandasthumb.org</p><p>;  DiG 9.3.6-P1-RedHat-9.3.6-4.P1.el5_4.2 pandasthumb.org<br>;; global options: printcmd<br>;; Got answer:<br>;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 20159<br>;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 0</p><p>;; QUESTION SECTION:</p><p>;pandasthumb.org. IN A</p><p>;; ANSWER SECTION:</p><p>pandasthumb.org. 86400 IN A 71.170.27.37</p><p>;; AUTHORITY SECTION:</p><p>pandasthumb.org. 86400 IN NS a.ns.joker.com.<br>pandasthumb.org. 86400 IN NS b.ns.joker.com.<br>pandasthumb.org. 86400 IN NS c.ns.joker.com.</p></div></div>
+<div class="comment" id="comment-213680"><p class="comment-meta"><span class="comment-author">386sx</span> &middot; 10 April 2010</p><div class="comment-body"><p>Can we have donuts?</p></div></div>
+<div class="comment" id="comment-213682"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 10 April 2010</p><div class="comment-body"><blockquote><p>Can we have donuts? </p></blockquote>
+Donuts? That theory has holes in it.</div></div>
+<div class="comment" id="comment-213734"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 11 April 2010</p><div class="comment-body"><p>George,</p><p>Joker.com does not allow users of its DNS servers to change TTL. If we could, we would.</p><p>Everybody,</p><p>The email server got moved yesterday. The PT server move should happen today.</p></div></div>
+<div class="comment" id="comment-213775"><p class="comment-meta"><span class="comment-author">Marion Delgado</span> &middot; 12 April 2010</p><div class="comment-body"><p>The up to 48 hours is simply to cover any weirdness, I assume.</p><p>post the ip address and people can go there directly.</p></div></div>
+<div class="comment" id="comment-213782"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 12 April 2010</p><div class="comment-body"><p>Marion,</p><p>The IP address would get you a very boring page. Try it out if you like: 71.123.242.56. The server is set up to handle multiple virtual domains at the same IP address. Good DNS resolution is an absolute necessity.</p><p>I was having trouble myself getting to see PT with my new ISP here. I could watch the server logs and see that other people were being served just fine. I searched a bit and found that my ISP apparently sets up not-so-hot DNS nameservers by default in the router, so I added a few better ones to the network configuration. Bingo, the pages loaded for me, too, then.</p></div></div>
+<div class="comment" id="comment-213796"><p class="comment-meta"><span class="comment-author">Maya</span> &middot; 12 April 2010</p><div class="comment-body"><p>Is anyone else having trouble connecting to AtBC?</p></div></div>
+<div class="comment" id="comment-213855"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 12 April 2010</p><div class="comment-body"><p>On one computer this morning, yes; on another, no. Tonight both reach it fine.</p></div></div>
+<div class="comment" id="comment-213906"><p class="comment-meta"><span class="comment-author">J-Dog</span> &middot; 12 April 2010</p><div class="comment-body"><p>Wes - Thanks for puttin' in the Overtime.  PT and ATBC work just fine for me, but I'm only getting total gibberish - and nothing makes any sense - over at the Uncommonly Dense site...</p><p>Can you also migrate their site to a non-moderated site?</p></div></div>
+<div class="comment" id="comment-214129"><p class="comment-meta"><span class="comment-author">darvolution proponentsist</span> &middot; 14 April 2010</p><div class="comment-body"><p>... <i>from the backseat</i> ...</p><p>Are we there yet ?</p><p>Are we there yet ?</p><p>... I hafta pee ...</p><p>Are we there yet ?</p></div></div>
+<div class="comment" id="comment-214199"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 14 April 2010</p><div class="comment-body"><p>Don't make me come back there...</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapping fitness: protein display, fitness, and Seattle — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Mapping fitness: protein display, fitness, and Seattle</h1><p class="post-meta">Posted 5 February 2011 by <span class="post-author">Steve Matheson</span></p><div class="post-body"><p><img alt="ResearchBlogging.org" src="http://www.researchblogging.org/public/citation_icons/rb2_large_gray.png" align="left" href="http://www.researchblogging.org/" />A couple of months ago we <a href="http://pandasthumb.org/archives/2010/11/mapping-fitness.html">started looking</a> at the concept of fitness landscapes and at some <a href="http://pandasthumb.org/archives/2010/11/mapping-fitness-1.html">new papers</a> that have significantly expanded our knowledge of the maps of these hypothetical spaces. Recall that a fitness landscape, basically speaking, is a representation of the relative fitness of a biological entity, mapped with respect to some measure of genetic change or diversity. The entity in question could be a protein or an organism or a population, mapped onto specific genetic sequences (a DNA or protein sequence) or onto genetic makeup of  whole organisms. The purpose of the map is to depict the effects of genetic variation on fitness.</p>
+<p>Suppose we want to examine the fitness landscape represented by the structure of a single protein. Our map would  show the fitness of the protein (its function, measured somehow) and how fitness is affected by variations in the structure of the protein (its sequence, varied somehow). It's hard enough to explain or read such a map. Even more daunting is the task of creating a detailed map of such a widely-varying space. Two particular sets of challenges come to mind.</p>
+
+<p>1. To make any kind of map at all, we need to match the identity of each of the  variants with its function.</p>
+<p>2. To create a <em>detailed</em> map, we need to examine many thousands -- or millions -- of variants. This means we need to be able to make thousands of variants of the protein.</p>
+<p>So let's take the second challenge first: how do we make a zillion variants of a protein? Well, we can introduce mutations, randomly, into the gene sequence for the protein and use huge collections of those random variants in our analysis. The collection is called a library, and believe it or not, the creation of the library isn't our biggest challenge. Because if the library only contains gene sequences, then it's no use in an experiment on protein fitness. We need our library of gene sequences to be <a href="http://en.wikipedia.org/wiki/Translation_(biology)">translated</a> into a library of proteins. How are we going to do that? And remember the first challenge: we need to be able to identify each variant. So even if we can get our gene sequences made into protein, how will we be able to identify the sequences after we've mapped the fitness of all the variants?</p>
+<p>Or, in simpler terms, here's the problem. It's pretty straightforward to make a library of DNA sequences. And it's pretty straightforward to study the function of a protein. (Note to hard-working molecular biologists and protein biochemists: no, I'm not saying it's easy.) The problem is getting the two together so that we can study the function of the proteins with biochemistry but then identify the interesting variants using the powerful tools of molecular biology. What we need is a bridge between the two.</p>
+<p>The bridge most commonly used in such experiments is a technique called protein display. There are a few different ways to do it, but the basic idea is that the DNA sequence is encapsulated so that it remains linked to the protein it creates. <a href="http://en.wikipedia.org/wiki/Phage_display">One cool way to do this</a> is to hijack a virus and force it to make itself using your library. The virus will use a DNA sequence from your library, dutifully make the protein that is encoded by that DNA sequence, and displaying that protein on its surface. There's our bridge: a virus, with the protein on the surface ready for analysis and the DNA sequence stored inside the same virus. Brilliant, don't you think?</p>
+<p>Yes, but there's one more problem to be solved. We said we want to do this millions of times. That means we have to grab the viruses of interest, get the DNA out of them, and read off the sequence of that DNA. (That's how we can identify the nature of the variation.) Millions of times. Methods of protein display provided the bridge, but until very recently a crippling bottleneck remained: the sequencing of the DNA was too time-consuming to allow the identification of more than a few thousand variants at a time.</p>
+<p>That was then. This is now: the era of <a href="http://en.wikipedia.org/wiki/Next-generation_sequencing#High-throughput_sequencing">next-generation sequencing</a>, in which DNA sequences can be read at blinding speed and at moderate cost. (A currently popular technology is <a href="http://www.illumina.com/technology/sequencing_technology.ilmn">Illumina sequencing</a>.) These techniques have given us unprecedented capacity to decode entire genomes and to assess genetic variation on genome-wide scales. A few months ago, the same methods were used to eliminate that last bottleneck in the use of protein display, demonstrating how a protein fitness map can be generated simply and at very high resolution. The article is &quot;<a href="http://www.nature.com/nmeth/journal/v7/n9/abs/nmeth.1492.html">High-resolution mapping of protein sequence-function relationships</a>&quot; (<a href="dx.doi.org/doi:10.1038/nmeth.1492">doi</a>) from <em><a href="http://www.nature.com/nmeth/index.html">Nature Methods</a></em>, by Douglas Fowler and colleagues in <a href="http://depts.washington.edu/sfields/">Stan Fields' lab</a> at the University of Washington.</p>
+<p>The experiment focused on one interesting segment of one protein. The segment is called a WW domain and it's an interesting building block which is found in various proteins and which mediates <a href="http://www.ncbi.nlm.nih.gov/books/NBK21517/#A5740">interactions between different proteins</a>. (A sort of docking site.) The authors chose the WW domain both for its interesting functions and because it has been used in protein display experiments of the type they performed. Then they created their tools.</p>
+<p>1) They generated a library of more than 600,000 variants of the domain, displayed on the surface of their chosen bridge -- the <a href="http://en.wikipedia.org/wiki/Phage_display">T7 bacteriophage</a> (a virus that targets bacteria).</p>
+<p>2) They designed a means to assess the function of the variants. Because the function of the WW domain is docking, they used docking as their functional criterion, and then devised a straightforward system to detect the strength of the binding of the variants to a typical docking partner. (For the biochemically inclined, they used a simple peptide affinity binding assay on beads.)</p>
+<p>Then the key experimental step: the authors used that system to select the variants that can still bind. In other words, they selected the functional variants. The selection step was moderate in strength, and the idea is that variants that bind really well will be enriched at the expense of variants that bind less well. Variants that don't bind at all will be removed from the library.</p>
+<p>They repeated the selection step six times in succession. So, the original library was subjected to selection, generating a new library, which was subjected to selection again, and so on, until the experimenters had six new libraries. Why the repetition? It's one of the really smart aspects of the experiment and it has to do with the strength of selection. If selection were quite strong, such that only the strongest-binding variants survive, then the analysis will just yield a few strong-binding variants. That's a simple yes-or-no question, providing no information about the spectrum of binding that can be exhibited by the variants. Instead, the authors tuned the system so that selection is moderate, leading to enrichment but not complete dominance of the stronger-binding variants. Recall that binding represents fitness in this experiment; this means that the authors subjected their population to a moderate level of selection in order to map the fitness of a large number of variants. By repeating the selection, they could watch as some variants gradually increased in frequency. Sounds kind of like evolution, doesn't it?</p><img alt="FowlerFig2a.jpg" src="http://pandasthumb.org/archives/2011/02/05/FowlerFig2a.jpg" width="260" height="655" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" />
+<p>Finally, the scientists subjected those libraries to Illumina sequencing, thus closing the loop between function and sequence. (In genetic terms, we would say that they closed the loop between phenotype and genotype.) And at that point they were able to draw fitness landscapes of unprecedented resolution, shown in the graphs on the right. The top graph shows the original library. The height of each peak represents  frequency in the library, and the two horizontal axes represent each possible sequence of that WW domain. Notice that the original library is complex and diverse, as indicated by numerous peaks on the graph. The second and third graphs show the library after three and six rounds of selection. Note the change in the number of peaks and in their relative sizes: selection has reduced the complexity of the library, removing variants that are far less fit and altering the relative amounts of the survivors. The first three rounds of selection reduced the library to 1/4 the original size, and after six rounds it was down to 1/6 original size, but still contained almost 100,000 variants.</p>
+<p>The bottom graph, then, is a fitness landscape, of a segment of a protein, at very high resolution. More technically, it depicts the raw data (relative amounts of surviving variants) that the authors used to determine relative fitness; to make that assessment, they calculated &quot;enrichment ratios&quot; to account for the fact that the initial library didn't contain equal amounts of each variant. These enrichment data enabled them to calculate the extent to which each  point in the sequence is amenable to change, and then to identify the particular changes at those points that led to changes in fitness. Now <em>that's</em> high resolution.</p>
+<p>The power of approaches like this should be obvious: disease-related mutations can be identified in candidate genes, and the same approach can be used to map the landscape of resistance to drugs in pathogens or cancer cells. And, of course, evolutionary questions of various kinds are much more tractable when tackled with methods like this. The authors expect the payoff to be immediate:</p>
+<p><blockquote>Because the key ingredients for this approach -- protein display, low-intensity selection and highly accurate, high througput sequencing -- are simple and are becoming widely available, this approach is readily applicable to many in vitro and in vivo questions in which the activity of a protein is known and can be quantitatively assessed.</blockquote></p>
+<p>Now, given these vast opportunities now available to scientists interested in protein evolution, wouldn't you think that design theorists who write on the topic will be eager to get involved in such studies? I sure would, especially since the lab that did this work is within a short drive of the <a href="http://biologicinstitute.org/">epicenter of intelligent design research</a>, a research insitute headed by <a href="http://biologicinstitute.org/people/">a scientist</a> whose professional expertise and interest lies in the analysis of protein sequence-function relationships. <a href="http://pandasthumb.org/archives/2010/11/mapping-fitness-1.html">As I've repeated throughout this series</a>, there's something strange about a bunch of scientists who want to change the world but who can't be bothered to interact with the rest of the scientific community, a community that in this case is well-represented in active laboratories right down the road. (I'm eager to be proven wrong on this point, by learning that ID scientists have interacted with the Loeb lab or the Fields lab.)</p>
+<p>More to the point, there's something tragically ironic about the fact that the ID movement is headquartered in Seattle, <a href="http://biologicinstitute.org/2011/01/14/breaking-news-from-the-academy-there's-plenty-of-time-for-evolution/">inveighing against &quot;Darwinism&quot;</a> while obliviously amidst a world-class gathering of scientists who are busy tackling the very questions that ID claims to value.</p>
+<p>(Cross-posted at <a href="http://sfmatheson.blogspot.com/2011/02/mapping-fitness-protein-display-fitness.html">Quintessence of Dust</a>.)</p>
+<p>-------</p>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&rft.jtitle=Nature+Methods&rft_id=info%3Adoi%2F10.1038%2Fnmeth.1492&rfr_id=info%3Asid%2Fresearchblogging.org&rft.atitle=High-resolution+mapping+of+protein+sequence-function+relationships&rft.issn=1548-7091&rft.date=2010&rft.volume=7&rft.issue=9&rft.spage=741&rft.epage=746&rft.artnum=http%3A%2F%2Fwww.nature.com%2Fdoifinder%2F10.1038%2Fnmeth.1492&rft.au=Fowler%2C+D.&rft.au=Araya%2C+C.&rft.au=Fleishman%2C+S.&rft.au=Kellogg%2C+E.&rft.au=Stephany%2C+J.&rft.au=Baker%2C+D.&rft.au=Fields%2C+S.&rfe_dat=bpr3.included=1;bpr3.tags=Biology%2CBiotechnology%2C+Evolutionary+Biology%2C+Biochemistry%2C+Molecular+Biology">Fowler, D., Araya, C., Fleishman, S., Kellogg, E., Stephany, J., Baker, D., & Fields, S. (2010). High-resolution mapping of protein sequence-function relationships <span style="font-style: italic;">Nature Methods, 7</span> (9), 741-746 DOI: <a rev="review" href="http://dx.doi.org/10.1038/nmeth.1492">10.1038/nmeth.1492</a></span></div><section class="comments-section"><h2 class="comments-heading">84 Comments</h2>
+<div class="comment" id="comment-247604"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 6 February 2011</p><div class="comment-body"><blockquote>
+More to the point, there's something tragically ironic about the fact that the ID movement is headquartered in Seattle, inveighing against "Darwinism" while obliviously amidst a world-class gathering of scientists who are busy tackling the very questions that ID claims to value.
+</blockquote>
+
+WOT?  Be careful what you ask for:  do you really WANT Casey Luskin to crash the proceedings?
+
+I suppose a case could be made either way, but it would clearly have drawbacks.</div></div>
+<div class="comment" id="comment-247611"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 6 February 2011</p><div class="comment-body"><p>But there are no beneficial mutations!  What?  Oh.</p><p>But the experiment was intelligently designed and ... what?  Oh, never mind.</p></div></div>
+<div class="comment" id="comment-247612"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 6 February 2011</p><div class="comment-body"><p>But selection is just a tautology!  What?  Oh.</p><p>But there is no new information ... what?  Oh, never mind.</p></div></div>
+<div class="comment" id="comment-247660"><p class="comment-meta"><span class="comment-author"><a href="http://itatsi.com" rel="nofollow">midwifetoad</a></span> &middot; 7 February 2011</p><div class="comment-body"><p>It's pretty obvious why ID proponentsists don't want to do this research.</p><p>Their talking point is that fitness peaks are isolated -- you can't get her from there.</p><p>Most importantly, there's no such thing as a functional random sequence.</p></div></div>
+<div class="comment" id="comment-247668"><p class="comment-meta"><span class="comment-author"><a href="http://pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 7 February 2011</p><div class="comment-body"><p>The shape of the gross topography shown on the three figures above depends on the ordering of points on the two horizontal axes.  The original population displays a fitness landscape that looks 'rough' in the parlance of fitness landscapes, with the array of peaks associated with protein variants more or less randomly distributed on the surface.  With increasing rounds of selection it at least superficially appears that more organization of the surface emerges.  Most obviously, the last graph shows a distinct linear series of peaks on the right of the graph with a couple of isolated peaks to the left while the middle of the graph is bereft of significant peaks.</p><p>My question is what is the ordering principle for the points on the two horizontal axes?  Is it something like sequence similarity measured in terms of amino acid differences?  The axis labels are too small for my old eyes to make out.</p></div></div>
+<div class="comment" id="comment-247669"><p class="comment-meta"><span class="comment-author"><a href="http://pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 7 February 2011</p><div class="comment-body"><p>I will add, by the way, that the existence of multiple peaks on the final graph puts the lie (yet again!) to the "one true sequence" notion typically assumed by IDiots' probability calculations.</p></div></div>
+<div class="comment" id="comment-247670"><p class="comment-meta"><span class="comment-author"><a href="http://pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>RBH said:</strong>
+
+I will add, by the way, that the existence of multiple peaks on the final graph puts the lie (yet again!) to the "one true sequence" notion typically assumed by IDiots' probability calculations.
+</blockquote><i>Apropos</i> of this comment, it would be fascinating to see what the topography of the landscape would look like with a replication of the experiment.  Would the same set of peaks emerge (my horseback guess) or would some other set of peaks end up to be dominant in the population?  That would begin to address the question of whether drift played a role in the process along with selection as well as addressing again the 'one true sequence' issue.</div></div>
+<div class="comment" id="comment-247674"><p class="comment-meta"><span class="comment-author">Gromit</span> &middot; 7 February 2011</p><div class="comment-body"><p>I am not sure that some of these small-minded comments are helpful to the credibility of the blog, or this site. I cannot speak for what is going on in Seattle, but I can say that scientists among my own colleagues who suspect that intelligence may have been a factor in encoding the digital software of life, are interested in these things. This aside, I read the blog and the paper by Fowler et al. and found this topic to be very interesting. I would like to make some comments:</p><p>1.	I noticed that they state that their results capture general features of the WW domain evolutionary process. I was pleased to see this, as it is something that seems to be predicted using the evolutionary data available in the web-based Pfam database. Measuring the relative frequencies of each amino acid at each site is not a new thing. I have found that after about 500 sequences, the relative frequencies begin to stabilize and by the time 1,000 or more sequences for the same family are analyzed, there is little change in the frequency distribution of each amino acid at each site, even with the addition of additional sequences. What this suggests is that even though the number of likely functional sequences is far too great to ever adequately sample, evolution has had enough time to sufficiently sample sequence space such that we can get a pretty good idea of what these relative frequencies are from the resulting evolutionary data. Relative frequencies do begin to stabilize within just 500 or a 1,000 sequences.</p><p>2.	What I particularly like about their experiment is that they are generating novel sequences not found in the evolutionary record preserved in Pfam. Since they are generating, selecting, and reading their own novel sequences, the utility of just working with a small domain is obvious. They seem to indicate in a couple places that their results do appear to be consistent with the relative frequencies found in nature.</p><p>3.	I notice that their results also reflect the reality that some sequences are more fit than others. 97.2% of their sequences turned out to be deleterious relative to the wild-type. This underscores an important methodological point. There is a temptation, in measuring the relative frequencies, to remove redundant sequences which then gives each sequence equal value. Of course, this should be done for double or triple entries of the same information, but I am of the opinion that it should not be done for sequences that prove to be identical for different taxonomic groups. I would expect that sequences that confer a higher fitness value to the organism will tend to appear more often in the evolutionary record. Indeed, in Fowler’s experiment, the wild-type increased in abundance by a factor of 1.75. This sort of redundancy in the record is important data and the relative frequencies need to reflect this if one wants to plot the size of functional sequence space for a given family of proteins. Conversely, if all redundant sequences are removed, effectively resulting in all sequences having the same fitness value, which is not the case, as Fowler’s results also show. In real life databases, however, it is easier said than done to weed out double or triple entries, if they appear under different identifiers.</p><p>4.	One last point (and some of the posters on this thread, along with the blogger, may find it disturbing if they follow up on this for themselves), is that the relative frequency distribution for a given protein family (providing sample size was large enough to stabilize the distribution) can provide us with an upper limit for the total number of estimated functional sequences and the size of functional sequence space for that family. I wonder why Fowler et al. did not do that. When that is done, the upper limit for the number of possible functional sequences is truly massive. However, in comparison with the size of overall sequence space, the size of functional sequence space for a typical protein family is disturbingly miniscule. I say ‘disturbingly’, because given the functional target sizes that emerge, an evolutionary search engine, plodding along at physicochemical speeds is vastly underpowered for the search .... and ‘vastly’ is an understatement. Personally, I think it is the elephant in the room that some, like Eugene Koonin have tried to address by postulating an infinite number of universes as a solution. Intelligence can easily encode functional genetic sequences into a genome. Indeed, we have started to build our own artificial proteins. But the notion of an evolutionary search, crawling along at pathetically slow physicochemical search speeds, really does need work in light of the amino acid frequency distributions and what they entail regarding the size of functional sequence space. To summarize, Fowler et al. may not realize it, nor the blogger, but the very next step after determining the frequency distribution for each amino acid at each site is to use that data to compute the target size of functional sequence space for a protein. The blogger may want to do some work on this and ponder his results. That will make for a most interesting blog indeed.</p></div></div>
+<div class="comment" id="comment-247675"><p class="comment-meta"><span class="comment-author">Gromit</span> &middot; 7 February 2011</p><div class="comment-body"><p>I think that RBH does not understand the graphs in Figure 2a in the paper by Fowler et al. If RBH would read the caption to the Figure, he/she will see that the peaks do not represent functional sequences occurring in sequence space/landscape. Rather, they represent the relative frequency of each amino acid at each site. With regard to the repeatability of these peaks, I am very confident that if the experiment were repeated, the same peaks would emerge. I would go further and say that if evolutionary data is used for the WW domain, the same peaks will emerge as well. The graphs have nothing to do with how many functional sequences there are ...... there are likely to be more than we could possibly sample. As I mentioned in my previous post, however, we will get the same peaks with sample sizes of only 500 or 1,000 functional sequences.</p></div></div>
+<div class="comment" id="comment-247676"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+I am not sure that some of these small-minded comments are helpful to the credibility of the blog, or this site. 
+
+</blockquote>
+
+TL:DR</div></div>
+<div class="comment" id="comment-247677"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>RBH said:</strong>
+
+I will add, by the way, that the existence of multiple peaks on the final graph puts the lie (yet again!) to the "one true sequence" notion typically assumed by IDiots' probability calculations.
+</blockquote>
+
+The very progression puts a lie to the ID notion that evolution 'can't get there from here,' i.e., can't bridge gaps in fitness topologies.  In any single generation the relative difference is minor.  It is only over multiple generations that large gaps appear between fitness peaks.  But in the real world, species only navigate this space one generation at a time.
+
+There are different ways to slice fitness data where this observation will not be valid.  But the way this study is looking at fitness landscapes supports the notion that incremental change is certainly possible, while the strawman, saltationist caricature of evolution that Creationists often use (and themselves support with the idea of post-flood hyperevolution!) is far less probable.</div></div>
+<div class="comment" id="comment-247678"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 7 February 2011</p><div class="comment-body"><p>Gromit wrote:</p><p>"When that is done, the upper limit for the number of possible functional sequences is truly massive. However, in comparison with the size of overall sequence space, the size of functional sequence space for a typical protein family is disturbingly miniscule. I say ‘disturbingly’, because given the functional target sizes that emerge, an evolutionary search engine, plodding along at physicochemical speeds is vastly underpowered for the search .… and ‘vastly’ is an understatement."</p><p>Well that might be true if there were only one organism that was evolving.  But the reality is that there are billions, perhaps even trillions of organisms that are evolving or dying.  Since many different variants with adaptive characteristics were recovered from only 600,000 variants, that hardly seems to be prohibitive for evolution.</p><p>So Gromit, when your colleagues, who are interested in such things and yet cannot seem be bothered to perform any experiments such as this, try to pawn off the old one correct protein probability calculations, do you set them straight?  Are you worried about their credibility?</p></div></div>
+<div class="comment" id="comment-247681"><p class="comment-meta"><span class="comment-author"><a href="http://pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+I think that RBH does not understand the graphs in Figure 2a in the paper by Fowler et al. If RBH would read the caption to the Figure, he/she will see that the peaks do not represent functional sequences occurring in sequence space/landscape. Rather, they represent the relative frequency of each amino acid at each site. </blockquote>That's a <i>non sequitur</i>. I was referring to the figure Matheson reproduced in his post, which (according to the post text) is a raw measure of fitness on the vertical axis and "each possible sequence of that WW domain" on the horizontal axes, and I remarked that I cannot read the labels on the horizontal axes and thus don't know how the points on the axes are ordered. I let my subscription to <i>Nature</i> drop a year or so ago and hence don't have access to the original paper until I get to a library.
+
+That the peaks are not isolated in the space after a few rounds of selection is of interest because (contrary to IDiot assumptions), evolution in this sort of system is not a random search of the whole of sequence space but rather is heavily biased to sample the mutational 'neighborhood' of already existing sequences.</div></div>
+<div class="comment" id="comment-247683"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>Gromit the creationist:
+
+However, in comparison with the size of overall sequence space, the size of functional sequence space for a typical protein family is disturbingly miniscule.</blockquote>
+
+Assertion without proof.  And it is also stupid and wrong.
+
+What is important for a protein sequence isn't sampling all of sequence space.  That is irrelevant.  It is being as good or better than its competitors at doing its job.  Natural selection and evolution are blind.
+
+We also know a lot empirically about size of functional sequence space.  The same housekeeping genes are found from mammals down to bacteria in the conventional nested hierarchy predicted by common descent.
+
+The DNA polymerase of a blue green algae can and does differ a huge amount from a mammalian one.  Guess what?  They still work just fine.  By experiment, direct data, the sequence constraints on a protein to work aren't at all restrictive.
+
+<blockquote>gromit making stuff up.
+
+But the notion of an evolutionary search, crawling along at pathetically slow physicochemical search speeds, really does need work in light of the amino acid frequency distributions and what they entail regarding the size of functional sequence space.</blockquote>
+
+This is creationist bullcrap, standard and centuries old Fallacies of Argument from Ignorance and Personal Incredulity.  What is limiting in evolution is ecosystem niche space.  Usually every niche is filled with well adapted species.
+
+Evolution is capable of moving much faster than we commonly see it under normal conditions.  Whenever ecospace opens up, there is a rapid adapative radiation.  When the dinosaurs bought it at the Chicxulub event, the mammals which are an ancient group themselves, took over the entire world in just a few millions of years.
+
+Adaptive radiations are commonly seen, cichlid fish in African lakes, Drosophila in Hawaii, finches in the Galapagos.  One we see every day is well known.  10,000 years ago dogs looked a lot like wolves, which they are descended from.  Today there are a huge variety of breeds, adapted for a myriad of purposes.
+
+<blockquote>Gromit the xian death cultist being brilliant:
+
+I am not sure that some of these small-minded comments are helpful to the credibility of the blog, or this site.</blockquote>
+
+I see you discovered an effective trick of public speakers.  Always start out by insulting your audience.  That always makes them take you seriously.</div></div>
+<div class="comment" id="comment-247684"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>Gromit the creationist:
+
+I cannot speak for what is going on in Seattle, but I can say that scientists among my own colleagues who suspect that intelligence may have been a factor in encoding the digital software of life,...</blockquote>
+
+Oh really?  Who are these scientists?  Computer programmers and engineers at a bible college?  An odd astronomer in Texas?  The hacks and liars at the Dishonesty Institute, Ham's Creation Themepark, or the ICR?  Or merely the voices in your head?
+
+The fact is that over 99% of scientists in the USA with training in relevant fields accept evolution.  It is even higher in Europe.  The few who don't freely admit that they are religious fanatics.
+
+</div></div>
+<div class="comment" id="comment-247687"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 7 February 2011</p><div class="comment-body"><p>Looks like Gromit has been reading STEALTH CREATIONISM FOR DOGS.</p></div></div>
+<div class="comment" id="comment-247688"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>But the notion of an evolutionary search, crawling along at pathetically slow physicochemical search speeds, really does need work in light of the amino acid frequency distributions and what they entail regarding the size of functional sequence space.</blockquote>
+
+This is so silly it deserves another comment.
+
+It is of course, an assertion without proof or data and empirically wrong.
+
+It also misses the point of evolution entirely.  Evolution is massively parallel.  What is the population size of E. coli or yeast in the world today.  Probably on the order of 10exp18 or at any rate some huge number.  The generation time can run as fast as 20 minutes or an hour or two.  Each one of those organisms is born with mutations and may or may not leave descendants, a participant in RM + NS, evolution.
+
+Life on earth is about 3.8 billion years old.
+
+Given the number of billions of years, the number of individuals in a population, and the number of generations a lot can happen.  The end result is all around us.  We call it the biosphere of the planet earth. 
+
+<blockquote>But the notion of an evolutionary search, crawling along at pathetically slow physicochemical search speeds,...</blockquote>
+
+Not sure how useful looking at evolution as a search through sequence space is anyway.  Different sequences are a means to an end.  The end is differential survival and reproduction.</div></div>
+<div class="comment" id="comment-247689"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 7 February 2011</p><div class="comment-body"><p>Man, you guys actually read through that doubletalk?  I would have suffocated before I got to the end of it.</p></div></div>
+<div class="comment" id="comment-247692"><p class="comment-meta"><span class="comment-author">John Vanko</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+<i>"... I cannot speak for what is going on in Seattle, but I can say that scientists among my own colleagues who suspect that intelligence may have been a factor in encoding the digital software of life, are interested in these things. "</i> </blockquote>
+
+Cmon Gromit.  There are genuine, real scientists on this blog.  They beg to differ with you.
+
+You cannot pull the wool over the Pandas' eyes with the "I am a scientist" BS, "listen to me."
+
+Put up or shut up.  Just who ARE your colleagues?  Why hide behind the skirt of anonymity?
+
+If you are a man, tell us who you are.  Take your stand, for God or Jesus or Country, whatever.  
+
+Declare yourself, and stop hiding behind bushes.
+</div></div>
+<div class="comment" id="comment-247694"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 7 February 2011</p><div class="comment-body"><p>"Encoding the digital software of life" pretty much gives it away.</p><p>Gromit, are you Steve P.? <br>Or just Trolling For Grades?</p></div></div>
+<div class="comment" id="comment-247695"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>fnxtr said:</strong>
+
+"Encoding the digital software of life" pretty much gives it away. 
+
+Gromit, are you Steve P.? 
+Or just Trolling For Grades?
+</blockquote>
+If it was Steve P., why would he boast about being in Seattle, and not boast about living in Taipei?
+
+I'd think Gromit is really Michael Behe's moronic impersonator.
+</div></div>
+<div class="comment" id="comment-247696"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 7 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+ Indeed, we have started to build our own artificial proteins. But the notion of an evolutionary search, crawling along at pathetically slow physicochemical search speeds, really does need work in light of the amino acid frequency distributions and what they entail regarding the size of functional sequence space. </blockquote>
+
+You know what would really be helpful for you?  It would be to go back to middle school and take some basic science; then go on to high school and take some physics and chemistry.
+
+Then you might want to think about a real university, particularly a secular one with good science departments; none of that vacation bible college crap.
+
+Jumping into biology without any training in the fundamentals of physics and chemistry and with no training in research is not doing it for you.
+
+You have no idea what you missed by skipping an education.  And you also don’t know why your lack of education is so obvious to those looking on.
+
+</div></div>
+<div class="comment" id="comment-247698"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>fnxtr said:</strong>
+"Encoding the digital software of life" pretty much gives it away. 
+</blockquote>
+
+Well, of course.  Watches and watchmakers are so out of date.  We have to invoke software and programmers these days.
+
+</div></div>
+<div class="comment" id="comment-247699"><p class="comment-meta"><span class="comment-author">Terenzio the Troll</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+[...] scientists among my own colleagues who suspect that intelligence may have been a factor in encoding the digital software of life [...]
+
+</blockquote>
+
+May I ask in which disciplines do they research?
+If your is just a colourful metaphor, is it a rather misleading one. 
+If it has any pretence of being an accurate description, then it is so far off that it has been wrong and now is the the other way out.
+
+I guess that The Old Used Programmer (much respect) might have something to say about it.
+
+Talking of "digital", let us start from the easy bit ;-) : software is not digital nor analogue. It is just software, i.e.: a bunch of information that represent a computation and the data on which to perform it.
+If we move on to consider the genetic code, then, it is not digital either. As you know, you need two (and only two) states to define a binary code: that is why it is called BINARY. Genetic information is encoded using a set of amino acids that is definitely greater than 2: we can define it as discrete, surely not as binary.
+
+As for the "software of life" line...
+Software is intangible. You have a given hardware (without which, no software can "live"), on which an arbitrary number of different softwares can run. You don't have to change the hardware to run a different software: you just change the internal status of the hardware. Systems so specialized that you have to actually change the hardware to make a different computation do not run any software: think for instance to an analogue artillery computer of WWII.
+
+Then we can come to life...
+There is no such a thing as "software" in a cell, as far as my understanding of software goes: it is not possible to take a cell and download a program to make it do something different, keeping at the same time the cell unaltered. 
+If you change the DNA of the cell, you are actually changing the cell itself: after a mutation, it is no longer the same cell, we can safely say that the hardware is different.
+
+This is all the more true if we descend to the level of DNA and proteins: what a protein does and what a protein is, if I am not mistaken, are pretty much linked. 
+
+So much for the "software" analogy even so many legitimate scientists use these days.
+</div></div>
+<div class="comment" id="comment-247700"><p class="comment-meta"><span class="comment-author">Hywel</span> &middot; 8 February 2011</p><div class="comment-body"><p>I am at a loss to argue on any scientific basis, however...I did grow up in a christian family, and had to attend church twice a week, every week until the age of 16.  At 14-15 years old I attended a couple of seminars by the infamous creationist Ken Ham.  Having been nurtured from a young age (before I could form opinions for myself based on alternative theories) I was convinced of the creation story.  Ken Ham is a very effective speaker, and he mixes an appealing sense of humor into his lectures which made us all laugh at the plight of evolutionists.  His approach was convincing and engaging, and listening to his talks within a room of at least another 150-200 christians, it was incredibly easy to embrace his seemingly informed defence of creationism without much thought.  When you come from a background such as mine, you are surrounded by people who all believe creation (and Christianity in its entirety) as complete indisputable fact - and most importantly, it is incredibly difficult to break away from it...which, at long last (I am now 27) I accomplished.  It is a sobering thought to see comments from "Gromit" arguing from a view point that I once held.  The point was, being conditioned to believe ABSOLUTELY that the words of The Bible are completely literal - even to this day, I can still hear that inner voice (so carefully nurtured and maintained in early life by my Christian family) crying out each time I argue against creationism, but through endless questioning and the help of figures such as Dawkins, Hitchins, and funnily enough...a certain James Randi (look him up if you're not already familiar with him!), I managed to finally liberate myself from the beliefs of a religion (just like all religions in my opinion) which excercises its powerful message upon the young and naive.  Gromit...well, you are deluded.  Set yourself free like I did, and rejoice in the sublime beauty of a sunrise from a non-believers perspective...it's more beautiful than it ever was when I believed in Creation.</p></div></div>
+<div class="comment" id="comment-247702"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 8 February 2011</p><div class="comment-body"><p>Hywel,</p><p>Well said and congratulations.  It is important to remind people how liberating it can be to throw off the oppression of indoctrination.  The price is high but the rewards are great.  Just remember that what you have earned is the right to have opinions informed by the evidence.  Automatic rejection of any particular form of argument can lead to just another form of self delusion.</p><p>In this case, all you have to do is ask why Gromit provided only hand waving arguments and vague generalizations about large numbers when trying to impugn a detailed research finding.  The desperation there is obvious.  He simply has to deny evolution at any cost, even when it is staring him in the face.  In this case, the evidence is clear and consistent with modern evolutionary theory.  It is inconsistent with many creationist talking points and you can use this evidence as ammunition if anyone tries to use those fallacious arguments on you.</p></div></div>
+<div class="comment" id="comment-247704"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>raven said:</strong>
+It [Gromit] also misses the point of evolution entirely.  Evolution is massively parallel.  What is the population size of E. coli or yeast in the world today.  Probably on the order of 10exp18 or at any rate some huge number.  </blockquote>
+
+We don't have to estimate, we have Michael Behe's own words to show why Gromit's implication is wrong.
+
+Behe testified at Dover that, according to his published calculations, it would require a population of 10E9 bacteria 10E8 generations to carry out the "impossible" multi-mutational jump required to develop a new disulfide bond.  Then, on the stand, he admitted that the number of bacteria in a single ton of soil was 10E16.
+
+Here's the outtake from Day 12, am session ("Q" denotes Mr. Rothschild, the lawyer, "A" is Behe):
+
+<blockquote>
+Q. And one last other question on your paper. You concluded, it would take a population size of 10 to the 9th, I think we said that was a billion, 10 to the 8th
+generations to evolve this new disulfide bond, that was your conclusion?
+
+A. That was the calculation based on the assumptions in the paper, yes.
+
+MR. ROTHSCHILD: May I approach the witness,
+Your Honor?
+
+THE COURT: You may.
+
+BY MR. ROTHSCHILD:
+
+Q. What I've marked as Exhibit P-756 is an article in the journal Science called Exploring Micro--
+
+A. Microbial.
+
+Q. Thank you -- Diversity, A Vast Below by T.P. Curtis and W.T. Sloan?
+
+A. Yes, that seems to be it.
+
+Q. In that first paragraph, he says, There are more than 10 to the 16 prokaryotes in a ton of soil. Is that correct, in that first paragraph?
+
+A. Yes, that's right.
+
+Q. In one ton of soil?
+
+A. That's correct.
+
+Q. And we have a lot more than one ton of soil on Earth, correct?
+
+A. Yes, we do.
+</blockquote>
+</div></div>
+<div class="comment" id="comment-247707"><p class="comment-meta"><span class="comment-author">Gromit</span> &middot; 8 February 2011</p><div class="comment-body"><p>A few comments:</p><p>1. Lads, sifting through the rubbish posted above, I observe that a good deal of energy is going into ad hominem responses. To help move this discussion along, let us assume that I am an Inmate in the Local Insane Asylum who manages to sneak over to the computer at the nursing station late at night when the nurse is down wing. That way, we will not have to waste time wondering if I am a scientist or not, or even if I am a moron, and can thus focus on the merit of points raised.</p><p>2. I have little interest in, or knowledge of, what transpires in the USA with regard to these discussions. If the above responses are exemplary of how Americans engage this topic, then maybe one or two can grasp why the rest of the world has little interest in this sort of drivel. Given my confession of disinterest in the American controversy over ID, my comments will have to be more general in nature. From what I observe, if the unwashed masses somehow feel that there is something dodgy about certain aspects of Darwinian theory, the problem is staring at you every time you look in the mirror. The public needs a lot more than a stream of rubbish, of the sort we see above, to convince them that you really know what you are talking about. Forget about the creationists; they are not a threat (at least in my experience). The real threat is that you do not know your stuff. Some examples follow below.</p><p>3. No one here seems to have a clue as to how to compute the size of functional sequence space for any given protein family once you have the relative frequencies of each amino acid at each site. If you are going to come up with a story on how an evolutionary search happened to find thousands of protein families, then step one is to determine the size of the search targets. You have all the data you need in web based archives such as Pfam to do that. It is a gold mine of evolutionary search history. Use it. The equations to use are simple and available as well. The software to run the data can easily be coded by even upper school graduates. Once you have the frequency of occurrence of each amino acid at each site in a sequence, it is easy to calculate an upper limit for the frequency of occurrence of functional sequences for a protein family. You need to know that stuff if you are going to convince the public. This sort of American ‘Redneck’ Darwinism that I see on this forum is not all that persuasive.</p><p>4. No one here seems to have actually sat down to calculate how many evolutionary searches could have taken place over the past 4 billion years by the entirety of organic life. You do not have a clue, do you! If you are going to create stories of how functional sequences were discovered, you are going to need to know how many searches or trials you have at your disposal. Get some numbers ready for the public. Perhaps then you will be a wee bit more persuasive.</p><p>5. RBH needs to read the original paper so that he understands the figure used in the initial blog. The figure in the blog is from the paper.</p><p>6. Terenzio the Troll needs to learn how to convert from base 4 to base 2.</p><p>7. Mike Elzinga needs to forget about what education the Inmate in the Asylum has (see my opening) and start putting forth something of substance. Try figuring out (3) and (4). I should not have to spoon-feed him.</p><p>8. Eric needs to stop quoting his hero, Mr. Behe, and learn the difference between evolving a new disulfide bond and locating a novel protein family in sequence space. Big difference, Eric!</p><p>9. Amongst my colleagues er ... fellow inmates at the asylum here, I have never heard of anyone who believes that there is only one, true functional sequence per protein family. A minute or two in Pfam should lay to rest any such delusion. The upper limit for the average 300-residue protein family is many orders of magnitude greater than just one. Good grief! Why do you get your nappies in a knot arguing that there is more than just one true sequence ..... if there are doubters, point them to Pfam ..... and Pfam only lists a minuscule sampling of what is likely to be a set that is numerous orders of magnitude larger.</p><p>10. I’m trying to help you here. Your assignment for tomorrow is to figure out the answers to (3) and (4), and please show your work; do not just give me the answer. If you are going to present a persuasive case to the unwashed masses, you will need to understand how you got those numbers.</p></div></div>
+<div class="comment" id="comment-247708"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 8 February 2011</p><div class="comment-body"><p>Gromit,</p><p>Actually, no we don't.  You are the one who is arguing against the most predictive and most explanatory theory in the history of science.  You are the one who is arguing that something or other is impossible.  The evidence is clear that evolution has indeed happened.  If you dispute that it can happen, the burden of proof is on you to provide evidence that it cannot.</p><p>So I guess that you do set you "colleagues" straight every time they use the one true protein crap.  Good for you.</p><p>Now perhaps you can explain to us why, if the search space is so large, that in a mere 600,000 variants multiple adaptive variants were discovered.  Perhaps you can explain why all of the search space must be explored in order to find any of these adaptive peaks.  Then you can explain all of the other mechanisms, such as gene duplication, that enable more comprehensive searches.  Then you can explain how the number of bacteria in a ton of soil disproves evolution.</p></div></div>
+<div class="comment" id="comment-247709"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+A few comments:
+</blockquote>
+
+TL:DR</div></div>
+<div class="comment" id="comment-247710"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>Gromit lying:
+
+Lads, sifting through the rubbish posted above, I observe that a good deal of energy is going into ad hominem responses.</blockquote>
+
+Never takes long for the lies to come out.
+
+We answered your points as well as we could.  They aren't very coherent so it is hard to even figure out what they are.
+
+The rest is just more incoherent gibberish and isn't worth wasting more time on.
+
+A hint for you, not that you will understand it.
+
+It is useless to prove theoretically that something can't exist or happen when we see it every day.  You are basically arguing the equivalent that self propelled vehicles are impossible and birds can't fly.</div></div>
+<div class="comment" id="comment-247711"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 8 February 2011</p><div class="comment-body"><p>Gromit seems obsessed with explaining IN DETAIL, EXACTLY why the bumblebee can't fly. So far, he says that nobody understands the precise mechanisms of bumblebee flight in any detail, that all possible ways it can fly haven't been explored, and nobody even knows how to explore it. Nobody can specify the number of possible ways that hypothetical bumblebees MIGHT fly, if any actually could. Every possible point in bumblebee space has not been examined. Nobody can specify the degree to which life has explored bumblebee space over billions of years.</p><p>In response, people rather reasonably point out that bumblebees DO fly. Perhaps not very efficiently, or elegantly, or fast, but <i>well enough</i> for their purposes. And that the claim that bumblebees cannot fly is wrong by <i>direct observation</i>, even if nobody knows whether bumblebees actually explored all the ways they might have done it better.</p></div></div>
+<div class="comment" id="comment-247712"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>Gromit the crackpot:
+
+I have little interest in, or knowledge of, what transpires in the USA with regard to these discussions. If the above responses are exemplary of how Americans engage this topic, then maybe one or two can grasp why the rest of the world has little interest in this sort of drivel.</blockquote>
+
+Well, you started out saying something true.  <b>I have little interest in, or knowledge...</b>
+It went downhill from there.
+
+It's no mystery what goes on in the USA.  The internet is worldwide and information moves at the speed of light.
+
+And your claim that you don't know what goes on in the USA is another outright lie.
+
+You are a creationist and this was invented and is led by religious xian death cultists based in the south central USA.  
+
+Creationism is much less popular in the rest of the developed world.  Of 30 developed nations, the USA ranks at the bottom in acceptance of evolution, right above Turkey.
+
+Gromit is screaming "crackpot".  At this point, paying any more attention has to be for cheap amusement only. </div></div>
+<div class="comment" id="comment-247714"><p class="comment-meta"><span class="comment-author">Kevin B</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Stanton said:</strong>
+
+<blockquote>
+<strong>fnxtr said:</strong>
+
+"Encoding the digital software of life" pretty much gives it away. 
+
+Gromit, are you Steve P.? 
+Or just Trolling For Grades?
+</blockquote>
+If it was Steve P., why would he boast about being in Seattle, and not boast about living in Taipei?
+
+I'd think Gromit is really Michael Behe's moronic impersonator.
+
+</blockquote>
+
+I was thinking "Atheistclast" but perhaps they're using a GA to create new pro-ID posts from old ones.</div></div>
+<div class="comment" id="comment-247715"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Flint said:</strong>
+Gromit seems obsessed with explaining IN DETAIL, EXACTLY why the bumblebee can't fly. 
+</blockquote>
+
+"I can't show that I am right in practice, but I can prove that you are wrong in theory."</div></div>
+<div class="comment" id="comment-247716"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>raven said:</strong>
+
+Gromit is screaming "crackpot".  At this point, paying any more attention has to be for cheap amusement only. 
+</blockquote>
+
+Sheesh; these ID/creationists and their attempts at phony erudition.
+
+He is in an asylum alright; it’s his pseudo-science/fundamentalist cult.
+
+No further responses needed.  He just wants attention; much like our other trolls.
+</div></div>
+<div class="comment" id="comment-247721"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Hywel said:</strong>
+
+ At 14-15 years old I attended a couple of seminars by the infamous creationist Ken Ham.  Having been nurtured from a young age (before I could form opinions for myself based on alternative theories) I was convinced of the creation story.  Ken Ham is a very effective speaker, and he mixes an appealing sense of humor into his lectures which made us all laugh at the plight of evolutionists.  His approach was convincing and engaging, and listening to his talks within a room of at least another 150-200 christians, it was incredibly easy to embrace his seemingly informed defence of creationism without much thought.  </blockquote>
+
+<a href="http://blogs.answersingenesis.org/blogs/ken-ham/2011/02/08/bill-nye-doesnt-understand-science/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+KenHam+%28Around+the+World+with+Ken+Ham%29">Here is Ken Ham at his “best.”</a></div></div>
+<div class="comment" id="comment-247725"><p class="comment-meta"><span class="comment-author"><a href="http://scienceavenger.blogspot.com/" rel="nofollow">Science Avenger</a></span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+Get some numbers ready for the public. Perhaps then you will be a wee bit more persuasive.
+</blockquote>
+
+You're joking right?  Because we all know just how riveted the American public is by a robust statistical proof.  As an actuary, the stories I could tell...
+
+Get a clue Gromit.  The ~60% of the American public that rejects evolution doesn't do so because of a lack of rigour in the mathematics.  They wouldn't know mathematical rigour if it bit them on their primate asses.  Most of them can't make change.  They reject evolution because their religion tells them to.  Period.  The rest is just window dressing, which apparently you fell for.  Wise up.</div></div>
+<div class="comment" id="comment-247728"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+If you are going to come up with a story on how an evolutionary search happened to find thousands of protein families, then step one is to determine the size of the search targets.</blockquote>
+
+No, step 1 is to <i>observe</i> the <i>fact</i> that mutation and selection occurs.  That new sequences are produced which lead to novel proteins or conformations, and that the critters which carry these new variants undergo selection, leading to a change in the distribution of alleles over generations.
+
+Step 1 is not to create a model of protein formation, and, when confronted with the fact that reality does not behave the way the model would predict, declare one's model is correct and reality must be wrong.  That's just petulance.
+
+<blockquote>10. I’m trying to help you here. Your assignment for tomorrow is...</blockquote>
+
+Ah, really?  All  this time and you've got nothing better than the standard pseudscientist crowing "If I'm wrong, do the work to prove it!"
+
+No, my child.  That is not how science works.  Your ideas are not right until proven wrong - quite the opposite, they are wrong until you can publish documented evidence for them.  
+
+The only assigment is yours: publish your research in peer reviewed journals.  Then we'll discuss whether it shows what you think it shows.</div></div>
+<div class="comment" id="comment-247735"><p class="comment-meta"><span class="comment-author"><a href="http://circleh.wordpress.com/" rel="nofollow">Dale Husband</a></span> &middot; 8 February 2011</p><div class="comment-body"><p>If Gromit thinks a long post full of crap is any more effective in science than a short post of crap, he is sadly mistaken. He might fool a few people who are scientifically illiterate, of course. That's the people Creationism and the phony claims and arguments supporting it always appeal to.</p></div></div>
+<div class="comment" id="comment-247737"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 8 February 2011</p><div class="comment-body">Gromit, you are confused, and understandably so since it is apparent that you are influenced by the ID literature. While I think you have a point about the hasty lapses into <i>ad hominem</i>, your very basic errors did not earn you instant respect.
+
+You <a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html#comment-247674">write</a>:
+<blockquote>One last point (and some of the posters on this thread, along with the blogger, may find it disturbing if they follow up on this for themselves), is that the relative frequency distribution for a given protein family (providing sample size was large enough to stabilize the distribution) can provide us with an upper limit for the total number of estimated functional sequences and the size of functional sequence space for that family. I wonder why Fowler et al. did not do that.</blockquote>
+1. There's nothing "disturbing" about your point at all, because it is (as has been explained by several commenters here) a red herring born of your profound misconstrual of what an evolutionary search needs to do. You think the search needs to exhaustively explore sequence space. And that's an unjustified (and, IMO, quite foolish) assumption. It's as though you believe that the wonders of biological function are a handful of practically-impossible-to-hit targets in sequence space, and moreover that those targets have to be hit for biology to work. Having made this foolish assumption, you proceed to express amazement that others (me, the authors of the study, several commenters here) can't see how we've missed The Only Thing That Matters. You're right that it doesn't matter whether you're a Christian or a psych-ward denizen, but your mistakes made you look like a fool. They still do.
+
+2. Your claim to "wonder" why Fowler et al. didn't calculate or discuss total sequence space for a WW domain looks really dumb. It only makes sense in light of your bizarre ID-related assumption I just mentioned, but still makes it look like you simply did not understand the paper, which was about facile approaches to high-resolution structure-function mapping in proteins. Their two-paragraph discussion merely pointed out the utility of the approach and made only passing reference to evolutionary analysis (which is one clear application of the methods). And in any case, it should have been obvious that the size of WW domain sequence space is irrelevant to their work (leaving aside the irrelevance of the question for evolution itself).
+
+And you <a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html#comment-247675">wrote</a>:<blockquote>If RBH would read the caption to the Figure, he/she will see that the peaks do not represent functional sequences occurring in sequence space/landscape. Rather, they represent the relative frequency of each amino acid at each site.</blockquote>
+This made me laugh. You strolled in here talking like an expert and lecturing us with your red herrings, then corrected RBH as though he should have known what the graph depicts. One little problem: <b>you are wrong about what the graph depicts</b>. On the x axis is the position of each amino acid (15 to 40) in the region of the WW domain that the authors analyzed. On the y axis is the identity of the amino acid at each position. What the text made clear is that the vast majority of the variants are point mutants, meaning that they differ from the wild-type sequence by a single amino acid. So each peak represents one variant, and the height of the peak represents the commonness of that variant in the library. Your description is completely wrong.
+
+Gromit, you are confused about what evolution has to do. You think it has to discover THE solutions. But it doesn't have to do that, and clearly does not do that. It discovers solutions. The ones it can find. The ones in the neighborhood. If you want to argue otherwise, you need to show that the solutions that evolution has come up with are the ONLY solutions there are. That, my friend, is the assumption that drove your inane comments, and I'm afraid it's nonsense.
+
+So, spare us the lectures. You have a lot to learn. Kudos for your retorts to the religious attacks, but if you want to advance your view of evolution and sequence space, you'll need a lot more than bravado.</div></div>
+<div class="comment" id="comment-247739"><p class="comment-meta"><span class="comment-author">John Vanko</span> &middot; 8 February 2011</p><div class="comment-body"><p>Gromit = self-serving, self-aggrandising arrogance.</p><p>Instructing others to go "do their homework" when he is completely incapable of "doing the homework" himself.</p><p>Reminds me of nothing so much as that blowhard Timothy Wallace, author of TrueOrigins.org - all haughty words, absolutely no substance.</p><p>I think Gromit is Wallace (or at the very least his clone).</p><p>See if you agree.</p></div></div>
+<div class="comment" id="comment-247740"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>Steve Matheson said:</strong>
+While I think you have a point about the hasty lapses into <i>ad hominem</i> ...
+</blockquote>
+
+Well, it is a simple statement of fact that many Pandas regard tact as a defect of character.  
+However, I don't believe that complaints about such can be given any sympathy when the plaintiff came over to Pandaland in an obvious spirit of confrontation and with every intent to pick a fight.  He got one.  Now he complains?
+
+After all, even he admits that his notions are not accepted by the conventional scientific wisdom.  If he was honestly trying to challenge the conventional wisdom, why not take the message to the people who he needs to convince -- instead of trolling the internet to bicker with nobody in particular?  
+
+That in itself calibrates just how seriously he can be taken.</div></div>
+<div class="comment" id="comment-247742"><p class="comment-meta"><span class="comment-author">SWT</span> &middot; 8 February 2011</p><div class="comment-body"><blockquote>
+<strong>John Vanko said:</strong>
+
+I think Gromit is Wallace (or at the very least his clone).
+</blockquote>
+
+<a href="http://www.wallaceandgromit.com/">Ya think?</a>
+
+</div></div>
+<div class="comment" id="comment-247748"><p class="comment-meta"><span class="comment-author">Terenzio the Troll</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+6. Terenzio the Troll needs to learn how to convert from base 4 to base 2.
+
+</blockquote>
+
+Believe it or not, I was actually looking forward to this reply. 
+I even started to insert a line in my original comment addressing this point, but then I thought: "no, just sit and wait".
+
+First of all, I have to notice that you simply ignored my other points, specifically the one about the fallacy of speaking of "software" when referring to DNA and proteins. Evidently, you must have reckoned its validity.
+
+More to the point: allow me a personal question, please. Do you enjoy listening to music? 
+If so, then, most probably you have one form or another of digital music device (MP3 reader, CD or other). This means that music can be represented as a digital signal. 
+Does this make music "digital"?
+
+For sure I can convert a number from base-4 to base-2: something that, as a professional programmer, I happen to do quite often.
+This does not make a number in base 4 any more binary.
+
+Besides, genetic information in DNA is not made up of numbers. Nor of discrete characters. It represents which amino acid links to a specific place in a protein and how. 
+This isn't digital information any more than music is (maybe less).
+
+
+<blockquote> 
+3 [...] The software to run the data can easily be coded by even upper school graduates. 
+</blockquote>
+
+Well, just out of curiosity, why then don't YOU do it and show, numbers at hand, that the authors of the paper (and its reviewers) where utterly wrong?
+
+</div></div>
+<div class="comment" id="comment-247750"><p class="comment-meta"><span class="comment-author">John Vanko</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>SWT said:</strong>
+
+<blockquote>
+<strong>John Vanko said:</strong>
+
+I think Gromit is Wallace (or at the very least his clone).
+</blockquote>
+
+<a href="http://www.wallaceandgromit.com/">Ya think?</a>
+
+
+</blockquote>
+
+Using YEC logic that link constitutes 'proof'! 
+
+(I knew it was true.  Thanks.)</div></div>
+<div class="comment" id="comment-247752"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+<blockquote>
+<strong>Steve Matheson said:</strong>
+While I think you have a point about the hasty lapses into <i>ad hominem</i> ...
+</blockquote>
+
+Well, it is a simple statement of fact that many Pandas regard tact as a defect of character.  
+However, I don't believe that complaints about such can be given any sympathy when the plaintiff came over to Pandaland in an obvious spirit of confrontation and with every intent to pick a fight.  He got one.  Now he complains?
+
+After all, even he admits that his notions are not accepted by the conventional scientific wisdom.  If he was honestly trying to challenge the conventional wisdom, why not take the message to the people who he needs to convince -- instead of trolling the internet to bicker with nobody in particular?  
+
+That in itself calibrates just how seriously he can be taken.
+</blockquote>
+There is a noticeable difference between tact and groveling, and there is a noticeable difference between making <i>ad hominem</i> attacks, and pointing out how someone is an idiot for making profoundly stupid statements.
+
+Creationists and other science-deniers like Gromit do not deign to appreciate these important distinctions.  After all, they feel that, since they know more about science than all of the actual scientists in the world, they deserve to be worshiped for being the trend-bucking mavericks for Jesus that they are.  And any behavior less than mindless worship is an unforgivable insult.
+</div></div>
+<div class="comment" id="comment-247753"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Stanton said:</strong>
+There is a noticeable difference between tact and groveling, and there is a noticeable difference between making <i>ad hominem</i> attacks, and pointing out how someone is an idiot for making profoundly stupid statements.
+</blockquote>
+
+Stanton ... can you recall anyone in your life who ever complimented you on how tactful you are?
+
+"Tact is telling someone to go to hell in a way that they actually look forward to the trip."  Telling them just to go to hell may well be justified depending on circumstances, but it's not tactful.
+
+</div></div>
+<div class="comment" id="comment-247754"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><p>PS:  Besides. Stanton, I wasn't complaining about tactlessness.  I was said the Gromit should have expected as much.</p></div></div>
+<div class="comment" id="comment-247757"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+<blockquote>
+<strong>Stanton said:</strong>
+There is a noticeable difference between tact and groveling, and there is a noticeable difference between making <i>ad hominem</i> attacks, and pointing out how someone is an idiot for making profoundly stupid statements.
+</blockquote>
+
+Stanton ... can you recall anyone in your life who ever complimented you on how tactful you are?
+
+"Tact is telling someone to go to hell in a way that they actually look forward to the trip."  Telling them just to go to hell may well be justified depending on circumstances, but it's not tactful.
+
+
+</blockquote>
+
+I haven't thought of it that way.
+
+Mostly, I have problems with people either conflating mindless, automatic obeisance with respect and tact, or conflating tactlessness and odious social skills with honesty, and reveling in it.</div></div>
+<div class="comment" id="comment-247758"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+PS:  Besides. Stanton, I wasn't complaining about tactlessness.  I was said the Gromit should have expected as much.
+</blockquote>
+
+In cases of trolls like Gromit, my definition of "tact" is simply refraining from physically biting the idiot.</div></div>
+<div class="comment" id="comment-247759"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Stanton said:</strong>
+
+I haven't thought of it that way.
+
+</blockquote>
+
+I'll take that as a "no".</div></div>
+<div class="comment" id="comment-247760"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+However, I don't believe that complaints about such can be given any sympathy when the plaintiff came over to Pandaland in an obvious spirit of confrontation and with every intent to pick a fight.  He got one.  Now he complains?
+
+</blockquote>
+
+The tactic that ID/creationists have used from the very beginning is to drag any argument onto their turf using their misconceptions and definitions. Then they play to the gallery of their followers by taunting scientists to answer the questions they pose from their made-up creationist “science.”
+
+This is supposed to make scientists look stupid and unknowledgeable about things in science that ID/creationists have supposedly noticed and that atheistic scientists haven’t noticed because of their prejudices against the sectarian beliefs of ID/creationists.
+
+It has nothing to do with science; it is “evangelizing” in front of an audience from which the ID/creationist debater gains big points for showing up those bad old scientists.
+
+<a href="http://www.answersingenesis.org/media/video/ondemand/nuclear-strength-apologetics/nuclear-strength-apologetics">Here is Jason Lisle doing it again.</a> (and again, and again, and ...)
+
+The tactic involves throwing so much crap up into the air that nobody in the audience has time to think about what is wrong with a particular assertion before being hit with a dozen other equally ridiculous assertions.
+
+Quite frankly I have lost patience with this tactic; and I tend to be rather blunt about the stupidity of the person attempting this hackneyed shtick.
+
+Anybody stupid enough to practice this shtick to the point of avoiding learning real science doesn’t deserve any courtesy; especially after nearly 50 years of repeating it in every new venue in which these creationist think they can bamboozle someone.
+</div></div>
+<div class="comment" id="comment-247761"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><p>My own specific annoyance with crackpots is the game of:  "You can't convince me I'm wrong!"  That is unarguably true -- when Dorothy Parker was asked to use "horticulture" in a sentence, she replied:  "You can lead a horticulture but you can't make her think." -- but beside the point:  "I have no obligation to listen to you for a second."</p><p>I get over 125,000 unique visitors a month on my website these days, and not one of them has the least interest in it except to the extent I've got something to offer them.  The audience does not serve me, I serve the audience, and if I don't serve them, they leave and there's nothing I can say about it.</p><p>Hubert Humphrey once said:  “The right to be heard does not automatically include the right to be taken seriously.”</p></div></div>
+<div class="comment" id="comment-247762"><p class="comment-meta"><span class="comment-author">Gromit</span> &middot; 9 February 2011</p><div class="comment-body"><p>It is like a dream here! I will close with two points:</p><p>1. It looks like I even have to hold Matheson’s hand who doesn’t seem to have the wit to understand what ‘relative frequency’ is. Read the label on the vertical axis, Mr. Matheson. Note the phrase ‘mutants/total’. ‘Mutants/total’ is the relative frequency of each amino acid at each site for sequences selected for functionality. I get the sense that you are talking about a paper, the methodology of which you do not even understand. One thing is clear, you have no concept of the implications of what one can do with that information. I will say this again and hopefully, there is someone here with enough neurons firing, that he/she will actually be able to grasp this ... once you have the relative frequency of each amino acid at each site for a large set of functional sequences (or for Mr. Matheson’s sake, ‘mutants/total’ for each amino acid at each site in a set of sequences selected for functionality), you are then in a position to compute the total number of functional mutant sequences/total sequences both functional and non-functional. To spoon feed a bit here, Fowler et al. examined a 33 residue sequence. If we use the 20 amino acids most commonly appearing in organic life, that gives us a total set of 20^33 sequences (the set of all possible sequences if there is no requirement for functionality). The target size in sequence space for functional WW domain sequences can be calculated once you have the numbers for the relative frequency of each amino acid at each site for those sequences that are functional (provided your sample size was large enough for the frequencies to stabilize). These data can be obtained either by experimentation, a Fowler et al. did, of by the experimental results provided by evolution, as listed in databases such as Pfam, where one can find multiple sequence alignments of hundreds or thousands of different functional sequences for the same protein family. In the case of the WW domain, Pfam has 2,909 sequences listed, although some may be redundant. I am not going to take the time to run those sequences (it would take me a couple hours to do the computational analysis from start to finish), but based on my work with other short protein sequences, I would estimate that the upper limit for the number of functional sequences for the WW domain would be somewhere around 10^11 (or 100 billion). In other words, I am estimating that the upper limit for the number of functional WWdomain sequences is roughly 100 billion. However, due to pairwise, 3rd order, 4th order, etc. dependencies in the 3D structure, the actual number of functional sequences will probably be several orders of magnitude smaller. Some of the intelligentsia here are greatly encouraged due to the fact that it was so easy for Fowler et al. to find functional sequences for the WW domain. If they will read the paper, however, there were only an average of two mutations/sequence. My own work suggests that an average of 3 different amino acids/site are functional (this is just an average .... some sites are highly conserved and others will permit all 20 amino acids). Given this, if one generates a large number of sequences that differ from the wild type in only two locations, the probability of generating a large number of functional, mutant sequences is very high. 100 billion functional sequences sounds like a lot, but in a 33-residue sequence space, it represents a target size of only 10^-22. That is a sobering thought. That is why Fowler et al. did not use randomly generated 33-residue sequences. Of course, as I stated, my 100 billion functional sequence estimate is only an estimate. I could give you a much more accurate upper limit if I ran the 2,909 sequences listed in Pfam to compute the relative frequencies of each amino acid at each site and then ran the computation to see what the overall relative frequency of entire functional sequences in sequence space are. I have done this for a several protein families, and the paper is now in the review process. You are not going to like the results. As an aside, it will not surprise me if the comprehension level of many in this group was insufficient to complete the reading of this first point and they concluded that this was nothing but sophistry.</p><p>2. I can see that this hooting, chest-thumping group of primates has neither the desire nor the wit to estimate an upper limit for the total number of trials for the evolutionary search engine of life. So much for testable science. As my last act of kindness before I retire from this discussion, I will not do your work for you, but I will give you a reference that you can use. David Dryden et al. published a short paper in the Journal of the <i>Royal Society Interface</i> in 2008, where he estimated an ‘extreme upper limit’ of 4 x 10^43 different amino acid sequences that could have been explored. My own calculations (using 10^30 life forms, 4 billion years, an average genome size, a fast replication rate, and a fast mutation rate) suggest that he has been generous, but that is fine. Dryden suggested that a reduced sequence space has been adequately explored. Actual research, however, is suggesting that most of the 20 amino acids are indispensable for most 3D structural domains, so a reduced search space is not on.</p><p>So there you go; a freebie from me. When it comes to finding the thousands of different protein families of life, you have a total of 10^43 trials. That sounds like a pretty big number, does it not? I expect to see you use this number from now on (though please have the honesty to say that it is an extreme upper limit). With that number, the full diversity and disparity of protein families has been discovered .... at least so it is thought ... but since science is testable, you should be able to test that hypothesis, though I see no hint here that any of this crowd will be involved in doing real, testable science.</p><p><b>Closing comment:</b> I have had it here. I am very disappointed in the nonsense and utter lack of thinking demonstrated in this forum. You could not even start the assignment I gave you yesterday. Hopefully, I have helped you out a wee bit by giving you 10^43 trials to play with, although I very much doubt you will know what to do with it.</p></div></div>
+<div class="comment" id="comment-247763"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+I have had it here. I am very disappointed in the nonsense and utter lack of thinking demonstrated in this forum. 
+</blockquote>
+
+"No need to go away mad.  Just go away."</div></div>
+<div class="comment" id="comment-247764"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>Gromit the crackpot lying:
+
+Closing comment: I have had it here. I am very disappointed in the nonsense and utter lack of thinking demonstrated in this forum.</blockquote>
+
+Doubt it.  Most likely you will be back in minutes, hours, or days with another alias.  It's a crackpot thing.
+
+Gromit is most likely <b>atheistoclast</b> under another name.  Very similar style and location.
+
+It's not worth dissecting his latest roadkill.  It's just the Fallacy of Argument from Ignorance and Personal Incredulity along with proving that birds can't fly.  Boring.
+
+</div></div>
+<div class="comment" id="comment-247765"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 9 February 2011</p><div class="comment-body"><p>Gromit,</p><p>So you reject the one true protein for the "you have to make every conceivable protein starting from just one protein" argument.  Great.  I'm sure everyone is completely fooled by your nonsense.</p><p>Look dude, if you are unwilling to answer questions, why on earth would you expect others to afford to you the same respect you deny to them?  Good bye.</p></div></div>
+<div class="comment" id="comment-247766"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+if one generates a large number of sequences that differ from the wild type in only two locations, the probability of generating a large number of functional, mutant sequences is very high.</blockquote>
+
+That is what evolution does.  It produces variations of what is already there.
+
+<blockquote>100 billion functional sequences sounds like a lot, but in a 33-residue sequence space, it represents a target size of only 10^-22. That is a sobering thought.</blockquote>
+
+It is a totally irrelevant thought because evolution does not sample the entire possible sequence space.  Only (minor)variations on the extant sequence are produced.  
+
+You are making the classic creationist blunder of confusing the "from ab initio to functional sequence in one fell swoop" probability with the "any workable sequence starting from the prior generation" probability.  The former is abysmally low. You are right about that.  But evolution doesn't do that, so it is irrelevant.  It does the latter - the probability of which, as you yourself pointed out, is much higher.
+
+
+<blockquote>As my last act of kindness <strike>before</strike> I retire from this discussion...</blockquote>
+
+There, fixed.
+
+<blockquote><b>Closing comment:</b> I have had it here. I am very disappointed in the nonsense and utter lack of thinking demonstrated in this forum. You could not even start the assignment I gave you yesterday. </blockquote>
+
+You get to give homework after you publish.  Not before.  Have you published this masterpiece of yours?
+
+<blockquote>Hopefully, I have helped you out a wee bit by giving you 10^43 trials to play with, although I very much doubt you will know what to do with it. 
+</blockquote>
+
+I do. [Flussssshhhhhhh]
+</div></div>
+<div class="comment" id="comment-247767"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>raven said:</strong>
+It's a crackpot thing.
+</blockquote>
+
+It's called "flouncing off in a huff."  It's so much fun they have to keep coming back and doing it again.</div></div>
+<div class="comment" id="comment-247768"><p class="comment-meta"><span class="comment-author">SWT</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Gromit,
+
+So you reject the one true protein for the "you have to make every conceivable protein starting from just one protein" argument.  
+</blockquote>
+"Tigers don't know if they like ice cream until they try every kind."
+
+-- Hobbes
+</div></div>
+<div class="comment" id="comment-247769"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Gromit said:</strong>
+
+My own calculations (using 10^30 life forms, 4 billion years, an average genome size, a fast replication rate, and a fast mutation rate) suggest that he has been generous, but that is fine. Dryden suggested that a reduced sequence space has been adequately explored. Actual research, however, is suggesting that most of the 20 amino acids are indispensable for most 3D structural domains, so a reduced search space is not on. 
+
+</blockquote>
+
+So just what the hell does this have to do with anything?
+
+And what does this previous assertion mean?
+
+<blockquote><p>However, in comparison with the size of overall sequence space, the size of functional sequence space for a typical protein family is disturbingly miniscule. I say ‘disturbingly’, because given the functional target sizes that emerge, an evolutionary search engine, plodding along at physicochemical speeds is vastly underpowered for the search .… and ‘vastly’ is an understatement. Personally, I think it is the elephant in the room that some, like Eugene Koonin have tried to address by postulating an infinite number of universes as a solution. Intelligence can easily encode functional genetic sequences into a genome. Indeed, we have started to build our own artificial proteins. But the notion of an evolutionary search, crawling along at pathetically slow physicochemical search speeds, really does need work in light of the amino acid frequency distributions and what they entail regarding the size of functional sequence space. To summarize, Fowler et al. may not realize it, nor the blogger, but the very next step after determining the frequency distribution for each amino acid at each site is to use that data to compute the target size of functional sequence space for a protein. </p></blockquote>
+
+Go out to your nearest mega-mall and walk up and down the isles of the parking lot containing a few hundred cars.  Note the make, model, color, and exact sequence of numbers and letters on the license plates of all the cars you encounter.  Consider where each car owner is in the mall and the particular change in their pockets and purses as well as the colors of clothes they are wearing.
+
+Compute the probability of all that happening; then ask yourself how this particular event could even happen.
+
+Are you therefore suggesting that it is legitimate to conclude that shoppers in shopping malls can’t happen?
+</div></div>
+<div class="comment" id="comment-247770"><p class="comment-meta"><span class="comment-author">John Vanko</span> &middot; 9 February 2011</p><div class="comment-body"><p>Dear god, he does like to hear himself talk.</p><p>And he takes great pleasure in belittling others, nice guy.</p><p>Good riddance.</p></div></div>
+<div class="comment" id="comment-247771"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>John Vanko said:</strong>
+
+Dear god, he does like to hear himself talk.
+
+And he takes great pleasure in belittling others, nice guy.
+
+Good riddance.
+</blockquote>
+I doubt that he's gone for good.
+
+He's probably going to come back under another alias to continue with his science-denial and whiny, yet snotty tone-trolling.
+</div></div>
+<div class="comment" id="comment-247773"><p class="comment-meta"><span class="comment-author">David</span> &middot; 9 February 2011</p><div class="comment-body"><p>OK, here's something I've been wondering for a while now. Gromit, if you care to answer for yourself and your "colleagues" (BTW love the air of mystery-"we have top men working on it right now... top men") go right ahead. If anyone else cares to chime in who’s familiar with the biologic people, all the better.</p><p>So, in Doug Axe’s view, every protein structure is an island, and going from one protein to another, speaking mixaphorically, is like the backwoods of Maine: “you can’t get there from here”. But the only evidence presented is this “the fraction of all possible sequences that fold into this particular structure with this particular function is very small” argument which a) nobody really disputes and b) is completely irrelevant. It’s like using the fact that less than 30% of the earth is dry land to figure out if you can walk from NY to SF without getting your feet wet. This is a really crucial point- what you’re currently standing on tells you a lot more about what’s nearby than just knowing the global average.</p><p>Axe, presumably, in that he trained with very competent scientists, accepts that close orthologs developed from stepwise mutation from some common ancestor. But if that’s plausible, what about orthologs that share 50% or even only 20% identity? And beyond that, what about paralogs with clear remote identity but very different functions, and at that point, what about all sequences in the same family or superfamily?</p><p>I’m not even arguing why drawing the line at any particular point is implausible at this point. I just don’t see any clearly explained criterion for where that line lies. The average prevalence in all of sequence space is a useless statistic here. So where’s the line, and why? I don’t even need to see a peer-reviewed paper, vanity press would be fine, heck, even a supercilious comment in a blog would be a start.</p></div></div>
+<div class="comment" id="comment-247777"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+Anybody stupid enough to practice this shtick to the point of avoiding learning real science doesn’t deserve any courtesy; especially after nearly 50 years of repeating it in every new venue in which these creationist think they can bamboozle someone.
+
+</blockquote>
+
+I keep thinking of that poster of the mountain goat alone on a summit. The caption: "He's so far behind, he thinks he's first."</div></div>
+<div class="comment" id="comment-247781"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>fnxtr said:</strong>
+I keep thinking of that poster of the mountain goat alone on a summit. The caption: "He's so far behind, he thinks he's first."
+</blockquote>
+
+"By being in the rear of the advance, you can be in the forefront of the retreat."
+
+Unfortunately, the retreat doesn't seem likely to start any time soon.</div></div>
+<div class="comment" id="comment-247782"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 9 February 2011</p><div class="comment-body">Gromit, you <a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html#comment-247674">originally wrote</a>:
+<blockquote>If RBH would read the caption to the Figure, he/she will see that the peaks do not represent functional sequences occurring in sequence space/landscape. Rather, they represent the relative frequency of each amino acid at each site.</blockquote>
+This is wrong. It's not even close to right. (The peaks do not represent "the relative frequency of each amino acid at each site." Not even close.) When I <a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html#comment-247737">pointed this out</a>, you <a href="http://pandasthumb.org/archives/2011/02/mapping-fitness-2.html#comment-247762">wrote</a>:
+<blockquote>It looks like I even have to hold Matheson’s hand who doesn’t seem to have the wit to understand what ‘relative frequency’ is. Read the label on the vertical axis, Mr. Matheson. Note the phrase ‘mutants/total’. ‘Mutants/total’ is the relative frequency of each amino acid at each site for sequences selected for functionality. I get the sense that you are talking about a paper, the methodology of which you do not even understand.</blockquote>
+And this means you are dishonest.
+
+The game you're playing is shrewd but repugnant. You know damn well that you misread the graph (and, clearly, the whole paper) but you also know that if you just pour on the words, you can fool some readers (not sure who, exactly) into thinking that you're not a troglodyte.
+
+Or it could be that you really don't understand the graph at all. Then you're dishonest in your wordy pretense to the contrary.
+
+Best wishes in your work, and please greet your colleagues for us.</div></div>
+<div class="comment" id="comment-247787"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote><p>Compute the probability of all that happening; then ask yourself how this particular event could even happen.
+
+Are you therefore suggesting that it is legitimate to conclude that shoppers in shopping malls can’t happen?</p></blockquote>Sigh. Sooner or later, you'd think even creationists would tire of the "every bridge hand is a miracle" fallacy. But hey, maybe with each deal, they are overwhelmed with its impossibility and pray for understanding before they start bidding. Though this logical requirement wouldn't make the duplicate tournament director very happy. 
+
+</div></div>
+<div class="comment" id="comment-247795"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Flint said:</strong>
+
+<blockquote><p>Compute the probability of all that happening; then ask yourself how this particular event could even happen.
+
+Are you therefore suggesting that it is legitimate to conclude that shoppers in shopping malls can’t happen?</p></blockquote>Sigh. Sooner or later, you'd think even creationists would tire of the "every bridge hand is a miracle" fallacy. But hey, maybe with each deal, they are overwhelmed with its impossibility and pray for understanding before they start bidding. Though this logical requirement wouldn't make the duplicate tournament director very happy. 
+
+
+</blockquote>
+
+Years ago, back in the 1970s, I had a student in one of my physics courses come up to me after he got back his exam.  He was extremely angry; and he wanted to prove to me that his calculations were correct and that I was an incredibly stupid instructor.
+
+He whipped out his early Texas Instruments calculator and proceeded to show me that his answers were correct (he hadn’t shown any work; just answers).
+
+Sure enough; he got an answer he had written down on his exam. He didn’t even notice that the answer made no sense.
+
+The calculator he was using could hold four pending operations in its stack.  The problem that he entered had at least seven.  Therefore everything after four operations spilled off the end of the stack.
+
+I attempted to explain this to him (and we had already covered this issue in class) but he would have none of it, and then complained to the administration that they had one of the stupidest physics instructors on the planet.
+
+Looking back on it, I wonder if he was one of those creationists.  This was just around the time these kinds of confrontations were beginning to be advocated by Henry Morris and Duane Gish.
+
+And then we get Dembski who doesn't even know to initialize variables in his computer programs, but he is cock-sure his calculations refute evolution.
+
+Man; you wonder how anyone can operate in such a low gear.
+
+</div></div>
+<div class="comment" id="comment-247796"><p class="comment-meta"><span class="comment-author"><a href="http://circleh.wordpress.com/" rel="nofollow">Dale Husband</a></span> &middot; 9 February 2011</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+<blockquote>
+<strong>Flint said:</strong>
+
+<blockquote><p>Compute the probability of all that happening; then ask yourself how this particular event could even happen.
+
+Are you therefore suggesting that it is legitimate to conclude that shoppers in shopping malls can’t happen?</p></blockquote>Sigh. Sooner or later, you'd think even creationists would tire of the "every bridge hand is a miracle" fallacy. But hey, maybe with each deal, they are overwhelmed with its impossibility and pray for understanding before they start bidding. Though this logical requirement wouldn't make the duplicate tournament director very happy. 
+
+
+</blockquote>
+
+Years ago, back in the 1970s, I had a student in one of my physics courses come up to me after he got back his exam.  He was extremely angry; and he wanted to prove to me that his calculations were correct and that I was an incredibly stupid instructor.
+
+He whipped out his early Texas Instruments calculator and proceeded to show me that his answers were correct (he hadn’t shown any work; just answers).
+
+Sure enough; he got an answer he had written down on his exam. He didn’t even notice that the answer made no sense.
+
+The calculator he was using could hold four pending operations in its stack.  The problem that he entered had at least seven.  Therefore everything after four operations spilled off the end of the stack.
+
+I attempted to explain this to him (and we had already covered this issue in class) but he would have none of it, and then complained to the administration that they had one of the stupidest physics instructors on the planet.
+
+Looking back on it, I wonder if he was one of those creationists.  This was just around the time these kinds of confrontations were beginning to be advocated by Henry Morris and Duane Gish.
+
+And then we get Dembski who doesn't even know to initialize variables in his computer programs, but he is cock-sure his calculations refute evolution.
+
+Man; you wonder how anyone can operate in such a low gear.
+
+
+</blockquote>
+
+Why not simply ban calculators from math exams? I would have EXPELLED that stupid student from my class for cheating, Mike! Pun intended.</div></div>
+<div class="comment" id="comment-247801"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 10 February 2011</p><div class="comment-body"><p>What Gromit doesn't realize is that when he runs away he loses.  He is the one who is trying to convince everyone else that they are wrong and he is right.  So far, he hasn't convinced anyone of anything.  Of course, if he really want to convince scientists, the only way to do that is in the peer reviewed literature.</p><p>This guy hasn't even stated exactly what he think is impossible, let alone why.  Apparently he think that if a single generation of bacteria in a cubic foot of spoil cannot produce every possible protein starting with just a single one that somehow evolution is impossible.  And of course, he hasn't even considered any of the mechanism for generating genetic variation besides simple point mutations.</p><p>No wonder he fixated on a few mildly rude comments and used them as an excuse to run away.  That was all he had left after all the bluster and false bravado.  Does he really think that anyone is going to be fooled by that?</p></div></div>
+<div class="comment" id="comment-247802"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+What Gromit doesn't realize is that when he runs away he loses. 
+</blockquote>
+
+Loses what?  It's just an exercise in wankery, and on that basis he's accomplishing all he wants.  He can't lose credibility because he didn't have any to start with.  If credibility was at all an issue to him, he wouldn't be playing such games.</div></div>
+<div class="comment" id="comment-247803"><p class="comment-meta"><span class="comment-author">harold </span> &middot; 10 February 2011</p><div class="comment-body">DS - 
+
+<blockquote>He is the one who is trying to convince everyone else that they are wrong and he is right.</blockquote>
+
+Well, sort of.
+
+At the conscious level, authoritarian creationists seem to feel that reality is what you can force other people to say it is.  "We create our own reality".
+
+This is why they love the somewhat sophomoric sport of "debating".  Competitive Debate is about "winning" or "losing" http://en.wikipedia.org/wiki/Debating#Competitive_debate.  
+
+Consensus is never reached in a competitive debate match; in fact, accidentally conceding the validity of one of the other team's points is a famously derided way to lose.
+
+However, at another level, the debaters must live in a reality-based world.  They may be proudly able to successfully debate that airplanes can't fly, yet, flying from the dorm rooms of their Christian colleges to the big debate competition, they must hope and accept that airplanes will fly.
+
+At some level, their brains know that there is a difference between "what I say" and "reality".  This level may well be unconscious.
+
+This mental conflict produces cognitive dissonance.
+
+The first response to cognitive dissonance is to try to get rid of the source of it by shutting it up - hence, Gromit showed up.
+
+If that fails, the second response is to flee from the source of it and double down on the self-brainwashing - which is what he has now done.</div></div>
+<div class="comment" id="comment-247804"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+This guy hasn't even stated exactly what he think is impossible, let alone why. </blockquote>
+
+Let me paraphrase.  There are ~20^33 possible sequences of a 33-amino acid polymer!  <b>20^33!!!!!</b>  Without some hypothetical, darwinism-fairy tale "physical process" that might greatly increase the probability that genetic duplication of a working parent sequence will produce a very similar daughter sequence, it would be practically impossible to produce working daughter sequences!</div></div>
+<div class="comment" id="comment-247805"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote><p>Why not simply ban calculators from math exams? I would have EXPELLED that stupid student from my class for cheating, Mike! Pun intended.</p></blockquote>This is silly. Unless the exam is testing one's ability to do basic arithmetic, using a calculator is no worse than using a pencil and paper - provided one understands how to operate it. And calculators have a subtle advantage - they easily and quickly produce idiotic results accurate to 9 decimal places, making them a good starting point for (as Mike implies) understanding the range a sensible answer must fall within, and understanding the absurdity of 9 significant digits when the initial data was only accurate plus or minus 10% or so.
+
+Finally, as I learned from watching such people, it might help get some of them to understand that for some sorts of problems, a calculator is simply the wrong tool regardless of its precision. You can't calculate why you can't seem to attract that girl's attention no matter how many digits you can calculate to.
+
+(And next time I play bridge, I'm going to mention the odds against the particular hands we were all dealt, and point out that such an unlikely event could not possibly have happened at random.)
+
+</div></div>
+<div class="comment" id="comment-247808"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>Flint said:</strong>
+(And next time I play bridge, I'm going to mention the odds against the particular hands we were all dealt, and point out that such an unlikely event could not possibly have happened at random.)
+</blockquote>
+
+Mention that the odds of them getting their hand is the same as being dealt a hand of all 13 spades - see how many players that throws for a loop. :)
+
+Of course, since you are sampling "bridge players" and not "general popluation," the answer to my last question may be "not many."
+</div></div>
+<div class="comment" id="comment-247809"><p class="comment-meta"><span class="comment-author">mrg</span> &middot; 10 February 2011</p><div class="comment-body"><p>"Probability calculations are the last refuge of a scoundrel."  -- Jeff Shallit</p></div></div>
+<div class="comment" id="comment-247810"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 10 February 2011</p><div class="comment-body"><p>Shallit is incorrect; they are the first. :)</p></div></div>
+<div class="comment" id="comment-247811"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>mrg said:</strong>
+
+"Probability calculations are the last refuge of a scoundrel."  -- Jeff Shallit
+</blockquote>
+
+That’s a pretty accurate description of the actual outcomes of their calculations.
+
+There is about a 10<sup>-2</sup> probability that they are doing any calculations correctly; and a 10<sup>-148</sup> probability that the calculations have anything to do with reality.
+</div></div>
+<div class="comment" id="comment-247812"><p class="comment-meta"><span class="comment-author">Shebardigan</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>Flint said:</strong>
+
+<blockquote><p>Why not simply ban calculators from math exams? I would have EXPELLED that stupid student from my class for cheating, Mike! Pun intended.</p></blockquote>
+
+This is silly. Unless the exam is testing one's ability to do basic arithmetic, using a calculator is no worse than using a pencil and paper - provided one understands how to operate it.
+</blockquote>
+
+Back in the early '80s, a good friend who taught Economics and Accounting at a college not too far from Mr Elzinga's residence became disgusted at the tendency of his students to believe whatever glowing red numbers showed up on their calculators.  I believe the "last straw" incident involved someone coming up with a 6,000% return on investment in a situation where a catastrophic loss was actually indicated.
+
+So he made some phone calls, and then recruited me to accompany him on a trip to Grand Rapids, where we purchased all the remaining stock of slide rules at all the book stores, drafting supply houses and other places that had sold them but had stuck them up in the attic instead of discarding them.  In all, we came back with nearly 100 slide rules of various types, having paid about $1.00 each.  Sellers happy, buyers happy, everybody happy.
+
+He then taught his students how to use these antique instruments.  The advantage, of course, is that you have to work through the problem enough to have a reasonably good idea where the decimal point might lie before you actually work your way through the calculation in detail.
+
+I wound up holding on to a couple of classics, including a K&E Analon; these currently fetch several hundred bucks on eBay.  The eight-inch "dinner plate" circular rule was a nifty find, also.
+
+<blockquote><p>Old geeks never die, they just start collecting slide rules.</p></blockquote></div></div>
+<div class="comment" id="comment-247813"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>Shebardigan said:</strong>
+
+He then taught his students how to use these antique instruments.  The advantage, of course, is that you have to work through the problem enough to have a reasonably good idea where the decimal point might lie before you actually work your way through the calculation in detail.
+
+</blockquote>
+
+Indeed.
+
+Over the years I had to develop a series of problems and exercises that could be easily done “by hand” but would defeat a calculator; even the TI89s and the HP48/49/50 series.  I would put these on physics or calculus exams.  It was fun to watch the students whip out their calculators at the beginning of the exams only to push them aside and proceed to work the problems out to the point where the answer was either obvious or needed only a quick, simple calculation on the calculator. 
+
+(I still have my old bamboo Post Versalog from the 1950s, and a couple of bamboo Hemmi slide rules from that same era that I picked up in Japan.  I think my first slide rule was a K&E Log Log Duplex Decitrig made of mahogany.)
+</div></div>
+<div class="comment" id="comment-247814"><p class="comment-meta"><span class="comment-author">Shebardigan</span> &middot; 10 February 2011</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+
+(I still have my old bamboo Post Versalog from the 1950s, and a couple of bamboo Hemmi slide rules from that same era that I picked up in Japan.  I think my first slide rule was a K&E Log Log Duplex Decitrig made of mahogany.)
+
+</blockquote>
+
+My first slide rule came in the monthly "Things Of Science" package; it was a crude thing of wood, white paint and stamped lines, but I was absolutely transfixed.  (Oh, would some power revive Things Of Science.)
+
+I am numerically challenged; I have difficulty counting my fingers and getting the same answer twice in a row.  This marvellous device was an absolute Revelation From Heaven.
+
+Shortly after this miracle, I (to the surprise of all, especially my Algebra teacher) did very well on a state-wide contest exam administered by the Denver Actuarial Society and won a copy of the maths volume from the Rubber Handbook.  I discovered that I loved Mathematics but couldn't do Arithmetic all that well.  
+
+I encountered my first electronic portable calculator (the Miida 606) at a Macy's store in the SF Bay area in 1972.  My colleagues almost needed a power winch to drag me away from the machine.  Now I have both a Miida 606 ($35 on eBay) and a 20-inch mahogany K&E Log-Log Duplex Decitrig (considerably more than $20) to keep me company on long winter nights.
+
+The relevance of this disquisition to matters concerning protein display and fitness is oblique, but not entirely lacking.</div></div>
+<div class="comment" id="comment-247845"><p class="comment-meta"><span class="comment-author">Terenzio the Troll</span> &middot; 11 February 2011</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+
+<blockquote>
+<strong>DS said:</strong>
+This guy hasn't even stated exactly what he think is impossible, let alone why. </blockquote>
+
+Let me paraphrase.  There are ~20^33 possible sequences of a 33-amino acid polymer!  <b>20^33!!!!!</b>  Without some hypothetical, darwinism-fairy tale "physical process" that might greatly increase the probability that genetic duplication of a working parent sequence will produce a very similar daughter sequence, it would be practically impossible to produce working daughter sequences!
+</blockquote>
+
+Ok, I know this has become a cold subject (I am a couple of days late on this), but I wish to write one last response to Gromit.
+
+Others have already clearly stated that his objection is pointless, so I apologize for running through it one more time: please, bear with me.
+
+First of all, despite Gromit's assertions to the contrary, one of the main points in his reasoning is darn close to the One True Sequence fallacy. 
+It does not matter if the "right sequence" count is exactly one, what he is trying to show is that the number of "right sequences" is negligible if compared to the number of possible sequences.
+The fallacy in this, of course, is that there are no "right sequences" whatsoever.
+
+Another weak point is his fascination with computers and algorithms. In his comments, he kept talking of searching and exploration of the phase-space, but this is out of context. 
+One explores to find something that is already there.
+His assumptions about the need of random exploration and exhaustiveness of the search apply nicely to situations like tree traversing or finding a way through a maze.
+In the case of a maze, the walls are already there and there is a limited numbers of exits (typically, one) and hence a limited numbers of routes to them. The task is to find the right route: in this case, the One Right Route is not a fallacy.
+This is not the case with evolution.
+
+Gromit appears to expect that evolution wants to go somewhere, that it actually thrives to obtain a given result. 
+If I am not misrepresenting his point, the reasoning runs like this: "I see that there is a certain protein with a given function today. I know that it can be replaced by a limited number of other proteins with a very similar function. What kind of evolutionary route should I thread to obtain that exact (family of) protein(s) starting from nil?"
+It sounds very close to: "Man is the final product, the goal, and was intended to appear from the very beginning (the exit from the maze). What are the chances of finding the exit from a maze of a given complexity in a given time?"
+
+To close my comment, I would like to propose a counter-example to substantiate the claim that this is not the case with evolution.
+
+Consider, for instance, the opsins.
+
+Opsins are a family of (for my comprehension) complex molecules. What are chances of evolving such complex molecules with that specialized function starting from just random assorted and very short bunches of proteins?
+I expect that this is more or less what Gromit might ask (if not, I am falling for the Straw Man).
+
+Actually, light photons have energies in the range of 3-5 eV. 
+Take any two amino acids that can form a chemical bond together, and that bond is very likely to have a bond energy in the range of a few eV. 
+By the way, this is the reason for the widespread use of light-blocking packages to conserve food, ever since the cavemen.
+
+Do you see the catch?
+
+Opsins were not the predetermined exit from the labyrinth in order to eventually evolve eyes, nor there was any need to explore the whole phase space of 30 kDa molecules to come out with the right answer.
+Whatever the original assemblage of random amino acid was, it was highly probable that at least a few were sensitive to light.
+Given selective pressure, later on, favouring light-aware organism, it was only a matter of time to evolve something more sophisticated and better fitted to the task: exactly what is shown in the paper presented in the post we are commenting.
+
+If the original conditions were only slightly different, we would now have a completely different set of light sensitive molecules in our eyes: the current opsin family was not the only possible outcome to permit vision.
+
+Ok, if this was too long and involved, send it to the BW.</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phylogenomics: Deciphering a Billion-Piece Puzzle  — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Phylogenomics: Deciphering a Billion-Piece Puzzle </h1><p class="post-meta">Posted 6 November 2014 by <span class="post-author">Emily Thompson</span></p><div class="post-body"><i>This is the second in a series of articles for the general public focused on understanding how species are related and how genomic data is used in research. Today, we talk about phylogenomics, the application of whole genome sequencing to understand evolutionary relationships among species.</i>
+
+<figure src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/DNA_chemical_structure.svg/411px-DNA_chemical_structure.svg.png" width="411" height="480" align="right">
+DNA Chemical Structure.  Source: <a href="http://commons.wikimedia.org/wiki/File:DNA_chemical_structure.svg">Madeleine Price Ball</a>
+</figure>
+
+The haploid human genome is 3.2 billion <a href="http://en.wikipedia.org/wiki/DNA">DNA</a> bases long, and each base can be one of four nucleotides: A, T, C, and G.  Uncoiled, the DNA in a single human cell would be 2 meters long, and the DNA in a human body would <a href="http://skeptics.stackexchange.com/a/10612">stretch from the sun to Pluto multiple times</a>.  With 3.2 billion bases, each person's genome is unique, and this plays an essential role in shaping our physical and mental individuality.  However, despite being unique, each human genome is very very similar, due to our shared ancestral heritage.  Similarly, species that share a recent ancestral heritage also have similar genomes.  Species that are distantly related are likely to demonstrate significant differences in their genomes.  This is why, <a href="http://pandasthumb.org/archives/2014/10/the-family-tree.html">as we discussed last week</a>, evolutionary biologists compare traits and genes to determine the relationships of different species.
+
+Unfortunately, some genes give us the wrong answer about how species are related. A section of a gene can be identical for two species due to independent mutations. After all, any given base can only mutate into one of three other bases. Chances are the same mutation could happen twice, or multiple mutations can produce the same sequence. Consider two species that are distantly related; one contains an <code>AGA</code> fragment, while the corresponding fragment in the other species is <code>TGT</code>, i.e. they differ in 2 out of 3 positions.  As these species evolve, by chance the first species may experience a change in the first position such that <code>AGA</code>&#8594;<code>TGA</code>, and the second species may experience a change in the third position such that <code>TGT</code>&#8594;<code>TGA</code>.  Now, these two sequences look the same so you might think the species share a recent common ancestor; however, it is only an accident of biology that they appear closely related. Because some fragments may be identical due to independent mutations and not shared ancestry, estimating species relationships with using whole genomes is better than just a few genes. The more information we have, the more likely we are to figure out species' relationships correctly.
+
+The cost to sequence whole genomes has fallen from $100 million to $1000 in just the past twelve years. It now takes days to sequence a genome compared to the 13 years it took for the first human genome. The challenge now is not to obtain the data but to compare all the billions of base pairs in one genome to those in another. Current sequencing methods, while fast, can only read the genome by dividing it into millions of short fragments, which must be reassembled like an enormous puzzle. Researchers then have to figure out which genes correspond to one another in different species' genomes. These comparisons are challenging because genes in one genome might be in a different order, on different chromosomes, or missing completely in another species' genome.
+
+Biologists are beginning to use genomic information to understand how species are related and measure how fast or slowly different genes evolve. Then in turn allows us to understand how evolution happens. For example, using genomic information we can figure out how genes mutate, characterize and diagnose genetic diseases, and track harmful pathogens. But before that can happen, we need to address the difficulties of analyzing these large genomic datasets. You might think that more data is always better, but having a lot of data can lead us to have very high confidence in the wrong answer. In a pool of thousands of genes, we need to find the ones that tell us the right answer.
+
+<i>Next week, we'll discuss statistical challenges associated with big data analysis, especially as it relates to phylogenomics. This series is supported by NSF Grant #DBI-1356548 to RA Cartwright.</i></div><section class="comments-section"><h2 class="comments-heading">146 Comments</h2>
+<div class="comment" id="comment-336030"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 6 November 2014</p><div class="comment-body"><p>I think there are a few problems with this article. While a three-base section may easily converge by sheer chance, this becomes increasingly unlikely as the fragment becomes longer, and vanishingly unlikely for anything more than a couple of dozen bases long. This is not at all a reason why any single gene may not tell the right story. There are three main reasons for that: first, too much time may have passed, and any historical signal may have been overwritten; second, not enough time may have passed, and there may be too little signal to be decisive; third, the history of the gene may be different (though only slightly so) from the history of the species.</p><p>And you don't need a whole genome to nail down phylogeny. A small percentage of it in the form of a few dozen long, unlinked loci should suffice. The main reason why phylogeny may go genomic is that it's becoming easier to get those few dozen loci by sequencing whole genomes than by amplifying and sequencing just those loci.</p></div></div>
+<div class="comment" id="comment-336038"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 6 November 2014</p><div class="comment-body"><p>Maybe what the analysts need is a computer with associative memory!</p></div></div>
+<div class="comment" id="comment-336043"><p class="comment-meta"><span class="comment-author">rsschwartz</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+I think there are a few problems with this article. While a three-base section may easily converge by sheer chance, this becomes increasingly unlikely as the fragment becomes longer, and vanishingly unlikely for anything more than a couple of dozen bases long. This is not at all a reason why any single gene may not tell the right story. There are three main reasons for that: first, too much time may have passed, and any historical signal may have been overwritten; second, not enough time may have passed, and there may be too little signal to be decisive; third, the history of the gene may be different (though only slightly so) from the history of the species.
+
+And you don't need a whole genome to nail down phylogeny. A small percentage of it in the form of a few dozen long, unlinked loci should suffice. The main reason why phylogeny may go genomic is that it's becoming easier to get those few dozen loci by sequencing whole genomes than by amplifying and sequencing just those loci.
+</blockquote>
+
+(1) If historical signal is overwritten you will end up with no information (a polytomy), not incorrectly estimated relationships.
+(2) If not enough time has passed you get the same result.
+(3) We did not want to explain incomplete lineage sorting for this audience.
+Given 1-3 you still need the true signal. How will you know when you get the true signal if you don't have the whole genome? Are the few dozen loci you sequenced giving you the right answer? What if they conflict? There are a lot of examples of large datasets that produce conflicting results - a few dozen loci isn't always good enough. And yes, this could be due to homoplasy, which is what is discussed in this post. Yes, it's a simple example, but this is a blog! You would not need the whole locus to converge to get this (erroneous) signal.</div></div>
+<div class="comment" id="comment-336048"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>rsschwartz said:</strong>
+(1) If historical signal is overwritten you will end up with no information (a polytomy), not incorrectly estimated relationships.
+(2) If not enough time has passed you get the same result.</blockquote>
+Not generally true, unless you collapse all poorly supported branches and call that a polytomy.
+<blockquote>(3) We did not want to explain incomplete lineage sorting for this audience.
+Given 1-3 you still need the true signal. How will you know when you get the true signal if you don't have the whole genome? Are the few dozen loci you sequenced giving you the right answer? What if they conflict? There are a lot of examples of large datasets that produce conflicting results - a few dozen loci isn't always good enough. And yes, this could be due to homoplasy, which is what is discussed in this post. Yes, it's a simple example, but this is a blog! You would not need the whole locus to converge to get this (erroneous) signal.
+</blockquote>
+Do you realize that you have implicitly invalidated all statistical sampling? That's what you do when you say you need to analyze the entire population to get reliable inferences about that population. The reason I specified long individual sequences is so you can get a robust estimate of phylogeny from each independently. If they conflict, there are two potential reasons: lineage sorting and mass homoplasy due to base composition evolution. There are methods to deal with both of those. Do you know of another reason for concerted homoplasy? And of course if a sample of the genome shows conflicting signal, so would the whole genome. How do you resolve that?
+
+I repeat my earlier claim: you don't need whole genomes to do phylogenetics, just a reasonable but fairly small sample of that genome. These days, it may be that the easiest way to get that sample is to sequence whole genomes and then probe them <i>in silica</i>. You don't even need a complete assembly.
+
+Complete assemblies can be highly useful for other purposes, like studying genome evolution, and there are even new phylogenetic characters you can find that way, like changes in synteny. And whole genomes are nice if you want to investigate complex cases of introgression. But necessary for phyogenetics? I dubious.</div></div>
+<div class="comment" id="comment-336049"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>rsschwartz said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+I think there are a few problems with this article. While a three-base section may easily converge by sheer chance, this becomes increasingly unlikely as the fragment becomes longer, and vanishingly unlikely for anything more than a couple of dozen bases long. This is not at all a reason why any single gene may not tell the right story. There are three main reasons for that: first, too much time may have passed, and any historical signal may have been overwritten; second, not enough time may have passed, and there may be too little signal to be decisive; third, the history of the gene may be different (though only slightly so) from the history of the species.
+
+And you don't need a whole genome to nail down phylogeny. A small percentage of it in the form of a few dozen long, unlinked loci should suffice. The main reason why phylogeny may go genomic is that it's becoming easier to get those few dozen loci by sequencing whole genomes than by amplifying and sequencing just those loci.
+</blockquote>
+
+(1) If historical signal is overwritten you will end up with no information (a polytomy), not incorrectly estimated relationships.
+(2) If not enough time has passed you get the same result.
+(3) We did not want to explain incomplete lineage sorting for this audience.
+Given 1-3 you still need the true signal. How will you know when you get the true signal if you don't have the whole genome? Are the few dozen loci you sequenced giving you the right answer? What if they conflict? There are a lot of examples of large datasets that produce conflicting results - a few dozen loci isn't always good enough. And yes, this could be due to homoplasy, which is what is discussed in this post. Yes, it's a simple example, but this is a blog! You would not need the whole locus to converge to get this (erroneous) signal.
+</blockquote>
+
+Well this is the old "total evidence versus appropriate evidence" problem.  Genes evolve at different rates due to different selective constraints.  Genes that evolve too fast or too slow for a given divergence time produce lots of noise in the data.  Genes that evolve at an appropriate rate give the best signal to noise ratio.  Fortunately, we can know apriori which genes will be the most reliable for which divergence times.  Adding more inappropriate loci just increases the noise, so whole genome data might not be the best approach when analyzing the data, even if it is the most efficient way to obtain the data.
+
+On the other hand, there are also other things besides nucleotide sequences that can serve as characters for phylogenetic analysis.  For example; gene order, overlapping genes, regulatory elements and networks, etc.  The idea is to find the most reliable synapomorphies for any particular divergence time.  These are the characters with the lowest probability of character state reversal and convergence, given the time scale of divergence.  Such characters might be found by whole genome, but that doesn't mean that the whole genome needs to be included in the analysis.</div></div>
+<div class="comment" id="comment-336056"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 7 November 2014</p><div class="comment-body"><p>Damn auto-correct. It consistently tries to change "polytomy" to "polygamy", and managed to change "silico" to "silica" without me noticing. There are plenty of other words it doesn't like too; "speciose" is one; "Hominoidea" is another.</p></div></div>
+<div class="comment" id="comment-336059"><p class="comment-meta"><span class="comment-author">rsschwartz</span> &middot; 7 November 2014</p><div class="comment-body"><p>You "know apriori which genes will be the most reliable for which divergence times."? Please tell because I'm pretty sure the vast majority of researchers would like to know. If you check timetree.org you can see a lot of diversity in divergence date estimates. Clearly a lot of people are selecting the wrong genes.</p><p>I do agree you don't include the whole genome in the analysis. You can't. Too many genes are unalignable or don't exist in all the species you are looking at. But does that mean you should use a dozen genes? two dozen? hundreds? please define reasonable and how you will determine which ones fit that definition? how many genes do you have to sample to find your dozen or hundred reasonable genes? What justification do you have for throwing out the unreasonable genes?</p><p>My comments do not invalidate statistics and sampling. The point of statistics and sampling is to get the best possible estimate of something from a small sample. That doesn't mean a small sample is a good thing, or that it is unbiased. A single gene may give you a perfect species tree. Or a dozen genes may give you almost no information at all. Sampling genes isn't like sampling trees in the forest where a sample is always providing information. Larger sample sizes from imprecise data that are unbiased should give better accuracy. That is true for phylogenetics and true for trees and true for voters. Look at the variation in polling results (on the same day, not over time when minds change) whereas sampling all voters (ie the actual election) provides a perfect answer. Furthermore, a phylogeny is not one relationship, but many over large time scales. Different genes provide information about different relationships. If a few genes are evolving a rate that provides useful information about what happened a million years ago, and a few more about what happened 50 million years ago, and a few more about clade one (due to some evolutionary process), and a few more about clade two, and so, then how many do you need?</p><p>Please also keep in mind this is a short blog post intended for a very general audience. The point was to suggest that there is a valid reason for spending money to sequence more than a few genes because a single gene does not necessarily give the right answer. The goal was not to get into a graduate level explanation of incomplete lineage sorting and methods for species tree estimation. We'll have another post on precision and accuracy with big data in the future.</p></div></div>
+<div class="comment" id="comment-336062"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 7 November 2014</p><div class="comment-body"><p>Emily,</p><p>The questions you ask are all interesting and need to be asked when you're doing phylogenetics. I agree that you should sequence more than a few genes. My point was that you don't need or want the whole genome for phylogenetics. There are other reasons to sequence whole genomes, but you should not make your justification to the public, even in a short blog post, on the basis of phylogenetics. Again, I will repeat my claim that the best way to do phylogenetics with DNA sequences is to sequence a dozen or do unlinked regions on the order of 25KB that each could be expected to present a robust and consistent phylogeny on its own. Mind you, this reflects my experience with birds and may not be optimum for other questions.</p><p>The bit about Timetrees was weird. The variability in estimates has little to do with "selecting the wrong genes". But you can decide what to pick at least to some extent, based on prior experience and at least rough knowledge of the ages of divergence. In looking at the deep nodes in birds, for example, there is evidence that picking intron sequences gives you the most bang for your buck. While introns vary several-fold in evolutionary rates, the average seems to work well.</p><p>I'm afraid we're used to dealing with creationists here and tend to be argumentative. But there's no changing us. You just have to get used to it.</p></div></div>
+<div class="comment" id="comment-336066"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>rsschwartz said:</strong>
+
+You "know apriori which genes will be the most reliable for which divergence times."? Please tell because I'm pretty sure the vast majority of researchers would like to know. If you check timetree.org you can see a lot of diversity in divergence date estimates. Clearly a lot of people are selecting the wrong genes.
+
+I do agree you don't include the whole genome in the analysis. You can't. Too many genes are unalignable or don't exist in all the species you are looking at. But does that mean you should use a dozen genes? two dozen? hundreds? please define reasonable and how you will determine which ones fit that definition? how many genes do you have to sample to find your dozen or hundred reasonable genes? What justification do you have for throwing out the unreasonable genes?
+
+My comments do not invalidate statistics and sampling. The point of statistics and sampling is to get the best possible estimate of something from a small sample. That doesn't mean a small sample is a good thing, or that it is unbiased. A single gene may give you a perfect species tree. Or a dozen genes may give you almost no information at all. Sampling genes isn't like sampling trees in the forest where a sample is always providing information. Larger sample sizes from imprecise data that are unbiased should give better accuracy. That is true for phylogenetics and true for trees and true for voters. Look at the variation in polling results (on the same day, not over time when minds change) whereas sampling all voters (ie the actual election) provides a perfect answer. Furthermore, a phylogeny is not one relationship, but many over large time scales. Different genes provide information about different relationships. If a few genes are evolving a rate that provides useful information about what happened a million years ago, and a few more about what happened 50 million years ago, and a few more about clade one (due to some evolutionary process), and a few more about clade two, and so, then how many do you need? 
+
+Please also keep in mind this is a short blog post intended for a very general audience. The point was to suggest that there is a valid reason for spending money to sequence more than a few genes because a single gene does not necessarily give the right answer. The goal was not to get into a graduate level explanation of incomplete lineage sorting and methods for species tree estimation. We'll have another post on precision and accuracy with big data in the future.
+
+</blockquote>
+
+Well you wouldn't use a slowly evolving gene to study divergence over a short time scale, that would not provide any phylogenetic signal.  You wouldn't use a rapidly evolving gene to study divergence over a long time scale, that would just get you a lot of homoplasy.  We know the time scales from the fossil record and we know the absolute and relative rates of change in many lineages for many genes.  That is why certain genes are used for certain divergence times.  You wouldn't use the same gene for a wide range of divergence times, unless of course it had both slowly and rapidly evolving regions.  The point is that if there is too much character state reversal and convergence, phylogenetic reconstruction will be impaired.  You need to finds enough variation to be informative, but saturation should not have occurred yet for the gene you are using.  Since we know the kinetic of divergence for many regions of many genes, this allows for an informed decision to be made for any divergence time.
+
+For example, if you are looking at divergence at the population or species level, mitochondrial ATPase 6 might be a good choice, if you are looking at the species or  generic level, cytochrome B might be more appropriate.  If you are looking at longer divergence times, cytochrome oxidase I might be the best choice.  For even longer divergences, mitochondrial ribosomal genes might be better, at least if you choose the right regions and do the alignment properly.  This is generally the way that phylogenetics has been done in practice.  You don't just get all the data you can and hope to find a signal.
+
+I hope I'm not being overly critical here.  I'm just trying to point out that one of the advantages of molecular data is that we already have a lot of information about mechanisms of change and rates of change.  This is in fact one of the advantages of molecular data over other types of data.  Why not use this information to make informed choices when choosing genes for phylogenetic analysis?  As for how many genes you need, one good synapomorphy is all you need to establish a relationship.  The more confidence you have in any given character, the fewer you need have confidence in you conclusion.  I'm just saying that including a lot of data that you don't have any confidence in isn't going to help.</div></div>
+<div class="comment" id="comment-336067"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+...
+
+My point was that you don't need or want the whole genome for phylogenetics.
+
+...
+
+</blockquote>
+
+An important point.  Many of my colleagues seem to believe that if you use only half of the genome you lose half of your information about tree topology.  When in fact the first few percent of the genome that you use has a huge effect on accuracy, and then there is less and less effect as more loci are added.
+
+By the way, in my book (in Chapter 13, pages 214-215) I have a crude calculation of the coefficient of variation of the estimate   of branch length under a Jukes-Cantor model.  It is lowest for sequences that are about 46% different.  Subsequently the literature on "phylogenetic informativeness" has become quite elaborate, though some of it is misconceived.  But I would be surprised if the same optimum divergence is not found when the criterion is the ability to discriminate among tree topologies.  The coefficient of variation is fairly good between 30% and 50% fraction of difference between sequences.  If you have some ability to choose sequences that change at different rates, choose the ones whose differences will be in that range for the depth of divergence for which you need answers.</div></div>
+<div class="comment" id="comment-336069"><p class="comment-meta"><span class="comment-author">Reed A. Cartwright</span> &middot; 7 November 2014</p><div class="comment-body"><p>I think we need a <i>Dramatis personÃ¦</i> to get everyone on the same page:</p><p>Emily Thompson is an undergrad writer in my lab.  She is a sophomore biomedical enginnering student at ASU, who is just learning about phylogenetics.</p><p>Rachel Schwartz (rsschwartz) is a research scientist in my lab who is overseeing Emily's training and writing.  Rachel and Emily work through several drafts before Emily begins the upload process to PT.</p><p>Reed Cartwright (me) is the PI/editor who swoops in at the last moment to rewrite and edit the article before it is published.  Often changing the direction of parts of the article to the chagrin of Rachel and Emily.</p></div></div>
+<div class="comment" id="comment-336070"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>An important point. Many of my colleagues seem to believe that if you use only half of the genome you lose half of your information about tree topology. When in fact the first few percent of the genome that you use has a huge effect on accuracy, and then there is less and less effect as more loci are added.</blockquote>
+
+This is a general principle of statistical sampling.  
+
+A larger sample is always more accurate, sure.  A hypothetical perfect census of the entire population is always the most accurate.
+
+However, the marginal improvement of increasing sample size drops off rapidly after a certain point.  
+
+
+</div></div>
+<div class="comment" id="comment-336071"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+<i> personÃ¦</i>
+</blockquote>
+
+Is there any fix in sight for this annoying bug?  TIA.</div></div>
+<div class="comment" id="comment-336073"><p class="comment-meta"><span class="comment-author">Reed A. Cartwright</span> &middot; 7 November 2014</p><div class="comment-body"><p>Yes, I think I know how to fix it, and I will do it on my next server overhaul.</p></div></div>
+<div class="comment" id="comment-336074"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>Reed A. Cartwright said:</strong>
+
+Yes, I think I know how to fix it, and I will do it on my next server overhaul.
+</blockquote>
+
+Thanks again for your work on this site.  I appreciate it.</div></div>
+<div class="comment" id="comment-336075"><p class="comment-meta"><span class="comment-author">rsschwartz</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+The bit about Timetrees was weird. The variability in estimates has little to do with "selecting the wrong genes". But you can decide what to pick at least to some extent, based on prior experience and at least rough knowledge of the ages of divergence. In looking at the deep nodes in birds, for example, there is evidence that picking intron sequences gives you the most bang for your buck. While introns vary several-fold in evolutionary rates, the average seems to work well.
+
+</blockquote>
+
+Yes, you can guess generally which class of markers is more or less useful based on order of magnitude date of divergence and rate. But, how do you know the average works well? To know that a particular method works you would need to be able to compare your sample with the correct answer. Simulations are ideal for this, assuming we know something about intron evolution. I refer you to to Timetree in response to comments by DS because if we really knew which markers "worked well" we would not get differences in divergence date estimates that vary by an order of magnitude (I picked ostrich and hummingbirds at random to check this).
+
+Again I ask why 12 regions? What if your results for 12 are inconsistent with your results for a different 12? This happens all the time. I refer you to two mammal phylogenies published in the same issue of MBE last year. How do you resolve the conflicts? Personally I want more data to examine variation among gene trees and what is causing that variation, whether it is model error, homoplasy/convergence, saturation, etc. Only then might you find the 12 that are most likely to provide true information. So, yes, I think that whole genome sequencing is the most effective way to do phylogenetics. I'm pretty sure I'm not the only one (e.g. see today's issue of Science and the latest insect phylogeny using 2.5Gb of DNA to identify single copy genes), but you are welcome to disagree, although actually it sounds like this is how you get your data as well.
+-Rachel</div></div>
+<div class="comment" id="comment-336078"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>rsschwartz said:</strong>
+Yes, you can guess generally which class of markers is more or less useful based on order of magnitude date of divergence and rate. But, how do you know the average works well? To know that a particular method works you would need to be able to compare your sample with the correct answer. Simulations are ideal for this, assuming we know something about intron evolution. I refer you to to Timetree in response to comments by DS because if we really knew which markers "worked well" we would not get differences in divergence date estimates that vary by an order of magnitude (I picked ostrich and hummingbirds at random to check this).
+</blockquote>
+I think you're conflating two things here: time-calibrations of trees and the trees themselves. Some of the estimates are using bad trees, or even just taxonomy as a substitute for trees. And time-calibration, even with a correct tree, is an enormously complicated process that has little to do with picking the right genes. The way we measure "works well" is by consistency across different, independent data sets.
+<blockquote>
+Again I ask why 12 regions? What if your results for 12 are inconsistent with your results for a different 12?
+</blockquote>
+It should be obvious that 12 is just a number I pulled out of nowhere. You should also note that I intend each of those 12 regions to be an independent estimate of phylogeny, not just something you toss into a combined analysis. Disagreements among sequences can be settled by coalescent methods, though I think simple majority rule will do in most situations. There will be the occasional anomaly zone problem, but I suspect those are rare.
+
+<blockquote> This happens all the time. I refer you to two mammal phylogenies published in the same issue of MBE last year. How do you resolve the conflicts? Personally I want more data to examine variation among gene trees and what is causing that variation, whether it is model error, homoplasy/convergence, saturation, etc. Only then might you find the 12 that are most likely to provide true information. So, yes, I think that whole genome sequencing is the most effective way to do phylogenetics. I'm pretty sure I'm not the only one (e.g. see today's issue of Science and the latest insect phylogeny using 2.5Gb of DNA to identify single copy genes), but you are welcome to disagree, although actually it sounds like this is how you get your data as well.
+-Rachel
+</blockquote>
+If you want to refer me to two phylogenies, you're going to have to give me a citation. Offhand, I don't know how to resolve the conflicts between two analyses I haven't seen. But I'm guessing they offer simply two concatenated data sets. There's no way to decide which of them is right, if either is. But it may be that taking them apart and reassembling them in different ways would help. 
+
+Simple homoplasy is unlikely to produce the sort of systematic error that would cause problems. "Saturation" is an overused term that has no phylogenetic significance; sites that are saturated over the greatest pairwise distances can still be highly informative given sufficient taxon sampling.
+
+It would be a weird world if you had to search the whole genome to find 12 (or however many) usable sequences. I think that's ridiculous overkill. Of course I haven't seen today's issue of Science. Finally, I haven't been getting any data for a while, and when I did it was the old fashioned PCR amplification of a couple thousand bases or less. But if I had the money to gather any data, I might go for whole-genome sequencing. But rather than spend lots of effort on a complete assembly I'd just probe the data with virtual primers; <i>in silico</i> PCR, more or less. That's good enough for phylogenetics. Then again, I might not. It's still more expensive to sequence a genome than to sequence your favorite small pieces of it, and a big taxon sample beats a big genome sample.</div></div>
+<div class="comment" id="comment-336083"><p class="comment-meta"><span class="comment-author">someotherguy86</span> &middot; 7 November 2014</p><div class="comment-body"><p>John,<br>While I'm not sure, I'm guessing the two mammal phylogeny papers in question are</p><p>Romiguier et al. 2013 - http://mbe.oxfordjournals.org/content/30/9/2134.full</p><p>Morgan et al. 2013 - http://mbe.oxfordjournals.org/content/30/9/2145.full</p><p>Also, you should totally check out that insect phylogenomics paper in Science that Rachel mentioned as it seems (to me) very interesting - http://www.sciencemag.org/content/346/6210/763</p></div></div>
+<div class="comment" id="comment-336087"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 7 November 2014</p><div class="comment-body"><p>How long does it take junk DNA to change enough that comparisons become useless for constructing trees? A few million generations, or a few hundred million?</p></div></div>
+<div class="comment" id="comment-336088"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/Nc1GW6MJ2oCtNYp1AyeNOWDWzqdp_cw-#fed84</span> &middot; 7 November 2014</p><div class="comment-body"><p>IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle.  If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over  8 ....Thousand....Years.... to reach the 3.2 billion finish line.  SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME...............AND, even worse news, all the current geeks will become worm food,  well before the first 1 percent of the list is even completed.</p></div></div>
+<div class="comment" id="comment-336089"><p class="comment-meta"><span class="comment-author">someotherguy86</span> &middot; 7 November 2014</p><div class="comment-body"><p>I don't think it's all that common to use "junk dna" in a phylogenomic analysis.  It evolves fast enough that it becomes very difficult to infer the orthology of sequences across even a relatively small number of species.</p></div></div>
+<div class="comment" id="comment-336090"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 7 November 2014</p><div class="comment-body"><blockquote>
+<strong>https://me.yahoo.com/a/Nc1GW6MJ2oCtNYp1AyeNOWDWzqdp_cw-#fed84 said:</strong>
+
+ 
+ IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle.  If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over  8 ....Thousand....Years.... to reach the 3.2 billion finish line.  SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME...............AND, even worse news, all the current geeks will become worm food,  well before the first 1 percent of the list is even completed.
+</blockquote>
+
+Look, SkevieP, we know you've got nothing to contribute.  We understand how ignorant you are, and how frustrated that makes you, and how it's turned you into a drive-by dung-flinger.  You're a sad case, a bitter, helpless loony who can't do anything at all but try to provoke.  You're pitiful.
+
+Of course, if you had some <i>evidence</i> for the existence of your gods, some <i>evidence</i> for the existence of your alleged "design", anything at all beyond your petulant mewling, that would be a different story.
+
+But you don't, do you.  You're a feckless fool.  Go away.</div></div>
+<div class="comment" id="comment-336091"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 8 November 2014</p><div class="comment-body"><p>A Masked Panda (ep4), who is one of the most prolific of our usual trolls, apparently does not know that human genomes can be sequenced rapidly.  His ignorant and contentless taunts should go to the Bathroom Wall.</p><p>Junk DNA sequences change at the rate of mutation, so if the mutation rate is 10^(-8) per base per year parallelism and reversals will become very common after 100 million years.  Sequences start to be difficult to align well before that.  So basically they lose signal once divergence is back in the Cretaceous.  For divergences on that scale or longer one must use protein sequences or more conserved nucleotide sequences such as ribosomal RNA.</p></div></div>
+<div class="comment" id="comment-336093"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 8 November 2014</p><div class="comment-body"><p>The insect phylogeny paper used 1428 genes, so not the entire genome.  I could only access the abstract, so I don't know how they chose the number of genes or the genes to use.</p><p>I agree, Stevie needs to go to the bathroom wall.  He apparently never heard of using a computer to do genetic analysis, even though he used one to post!  He has a pathetic case of science envy and is now reduced to inane late night drive-bys.  Humoring him will only encourage his antisocial behavior.</p></div></div>
+<div class="comment" id="comment-336098"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+How long does it take junk DNA to change enough that comparisons become useless for constructing trees? A few million generations, or a few hundred million?
+
+</blockquote>
+
+<blockquote>
+<strong>someotherguy86 said:</strong>
+
+I don't think it's all that common to use "junk dna" in a phylogenomic analysis.  It evolves fast enough that it becomes very difficult to infer the orthology of sequences across even a relatively small number of species. 
+</blockquote>
+I can speak only from experience. Junk DNA sequences, i.e. neutrally evolving sequences, in my case mostly introns, can be used to trace phylogeny at least over a period of 100 million years, at least in birds. Possibly in crocodylians too, though in fact I'm skeptical that the group is that old. If we randomly suppose the average bird generation to be somewhere around 3 years, that's upwards of 30 million generations.
+
+Pairwise alignment may be a problem over that time period, but multiple alignment is easier if your taxon sample is dense enough.</div></div>
+<div class="comment" id="comment-336100"><p class="comment-meta"><span class="comment-author">someotherguy86</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Henry J said:</strong>
+
+How long does it take junk DNA to change enough that comparisons become useless for constructing trees? A few million generations, or a few hundred million?
+
+</blockquote>
+
+<blockquote>
+<strong>someotherguy86 said:</strong>
+
+I don't think it's all that common to use "junk dna" in a phylogenomic analysis.  It evolves fast enough that it becomes very difficult to infer the orthology of sequences across even a relatively small number of species. 
+</blockquote>
+I can speak only from experience. Junk DNA sequences, i.e. neutrally evolving sequences, in my case mostly introns, can be used to trace phylogeny at least over a period of 100 million years, at least in birds. Possibly in crocodylians too, though in fact I'm skeptical that the group is that old. If we randomly suppose the average bird generation to be somewhere around 3 years, that's upwards of 30 million generations.
+
+Pairwise alignment may be a problem over that time period, but multiple alignment is easier if your taxon sample is dense enough.
+</blockquote>
+
+That's a good point.  I probably overstated things.  I guess I was mostly thinking about sequences that are outside of coding regions.  
+</div></div>
+<div class="comment" id="comment-336101"><p class="comment-meta"><span class="comment-author">Joseph Alden</span> &middot; 8 November 2014</p><div class="comment-body"><p>I agree..... let's make sure SkevieP or ep4 are also drawn and quartered as well........</p><p>Not sure who the hell you in-breds are referring to, however, as always, you are wrong again. The CORRECT tag for me was ed84, but apparently the dear " phhht " was too busy replacing that white tape which holds both of his glass lenses together in the middle.</p><p>Since it looks like you collective morons did not take your Strattera today, I thought I would try to calm your nerves. <br>The ORIGINAL post above by ed84 was nothing other than, .....wait, ......let me take this panda mask off......... Joseph Alden. I used to visit this website from time to time, many moons ago. Got bored, looked it up, saw the article, make a comment, geeks freaked out, just as they did in the past, yada, yada, yada.</p><p>Here's your dilemma. Our friend Emily Thompson, author of this article, says we have a slight problem, hence the title " Deciphering a Billion-Piece Puzzle." And yet you boys &amp; girls seem to have it all figured out. You might want to contact her directly. Save her some time and frustration. What ? You mean you DON'T have all the answers ? Just as I originally stated. Get back to work. You will need to " decipher " them at a rate of 1,000 per day, 365, for about 8,000 years. Let me know how it all turns out. By then, I will be floating on a cloud from above. All of you will be worm food. Not to worry however, I promise to wave as I pass over your tombstone.</p></div></div>
+<div class="comment" id="comment-336102"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+
+I agree..... let's make sure SkevieP or ep4 are also drawn and quartered as well........
+
+Not sure who the hell you in-breds are referring to, however, as always, you are wrong again. The CORRECT tag for me was ed84, but apparently the dear " phhht " was too busy replacing that white tape which holds both of his glass lenses together in the middle.
+
+Since it looks like you collective morons did not take your Strattera today, I thought I would try to calm your nerves. 
+The ORIGINAL post above by ed84 was nothing other than, .....wait, ......let me take this panda mask off......... Joseph Alden. I used to visit this website from time to time, many moons ago. Got bored, looked it up, saw the article, make a comment, geeks freaked out, just as they did in the past, yada, yada, yada.
+
+Here's your dilemma. Our friend Emily Thompson, author of this article, says we have a slight problem, hence the title " Deciphering a Billion-Piece Puzzle." And yet you boys &amp; girls seem to have it all figured out. You might want to contact her directly. Save her some time and frustration. What ? You mean you DON'T have all the answers ? Just as I originally stated. Get back to work. You will need to " decipher " them at a rate of 1,000 per day, 365, for about 8,000 years. Let me know how it all turns out. By then, I will be floating on a cloud from above. All of you will be worm food. Not to worry however, I promise to wave as I pass over your tombstone.
+</blockquote>
+
+So, you came here to sneer?
+
+Okay, feel better now?
+
+DS: <blockquote><p>He apparently never heard of using a computer to do genetic analysis, even though he used one to post!</p></blockquote></div></div>
+<div class="comment" id="comment-336103"><p class="comment-meta"><span class="comment-author">Ron Okimoto</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+I think there are a few problems with this article. While a three-base section may easily converge by sheer chance, this becomes increasingly unlikely as the fragment becomes longer, and vanishingly unlikely for anything more than a couple of dozen bases long. This is not at all a reason why any single gene may not tell the right story. There are three main reasons for that: first, too much time may have passed, and any historical signal may have been overwritten; second, not enough time may have passed, and there may be too little signal to be decisive; third, the history of the gene may be different (though only slightly so) from the history of the species.
+
+And you don't need a whole genome to nail down phylogeny. A small percentage of it in the form of a few dozen long, unlinked loci should suffice. The main reason why phylogeny may go genomic is that it's becoming easier to get those few dozen loci by sequencing whole genomes than by amplifying and sequencing just those loci.
+</blockquote>
+
+It is true that you likely only need on the order of 10 genes to do a decent phylogenetic analysis, but what genomics will do is allow you to pick the best genes for the analysis that you want to do.  If you are dealing with closely related species you can identify all the intron sequences that you want to get the most polymorphic regions.  If you want to deal with more distantly related taxa you can pick very conserved genes and throw out third positions.  If reviewers object that you are cherry picking you can do as many random genes as they think you need to do, but eventually certain gene sets will likely become standard for the taxonomic distances that you are dealing with.  My guess that analysis in the future will deal with specific exons and not even whole genes since you have so much data to plow through you can pick the most informative sequences to work with.
+</div></div>
+<div class="comment" id="comment-336105"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>someotherguy86 said:</strong>
+That's a good point.  I probably overstated things.  I guess I was mostly thinking about sequences that are outside of coding regions.  
+</blockquote>
+I doubt there's a significant difference. Neutral is neutral.
+</div></div>
+<div class="comment" id="comment-336106"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Ron Okimoto said:</strong>
+
+It is true that you likely only need on the order of 10 genes to do a decent phylogenetic analysis, but what genomics will do is allow you to pick the best genes for the analysis that you want to do.  If you are dealing with closely related species you can identify all the intron sequences that you want to get the most polymorphic regions.  If you want to deal with more distantly related taxa you can pick very conserved genes and throw out third positions.  If reviewers object that you are cherry picking you can do as many random genes as they think you need to do, but eventually certain gene sets will likely become standard for the taxonomic distances that you are dealing with.  My guess that analysis in the future will deal with specific exons and not even whole genes since you have so much data to plow through you can pick the most informative sequences to work with.
+</blockquote>
+
+Sure, if it's cheap enough to sequence whole genomes, and in fact if it's cheaper than just sequencing a few genes, no problem. I will admit that I find it difficult to call all birds "closely related species", but perhaps that's my vertebrate bias showing. Still, I deal much more with introns than with exons (hey, autocorrect wanted to change that to "eons"), and  would consider my group (birds, again) a fairly divergent bunch.</div></div>
+<div class="comment" id="comment-336108"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+ The CORRECT tag for me was ed84...
+</blockquote>
+
+So you're using multiple screen identities?
+
+Isn't there a rule about that?</div></div>
+<div class="comment" id="comment-336110"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 8 November 2014</p><div class="comment-body"><p>Eight thousand years to sequence the human genome?  Why that's the most ignorant thing I have ever heard.</p><p>How dare this heretic imply that our six thousand year old Earth will still be here eight thousand years from now?  Judgement Day will happen much sooner than that.</p></div></div>
+<div class="comment" id="comment-336111"><p class="comment-meta"><span class="comment-author">Malcolm</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden Ignorantly blathered:</strong>
+
+Here's your dilemma. Our friend Emily Thompson, author of this article, says we have a slight problem, hence the title " Deciphering a Billion-Piece Puzzle." And yet you boys &amp; girls seem to have it all figured out. You might want to contact her directly. Save her some time and frustration. What ? You mean you DON'T have all the answers ? Just as I originally stated. Get back to work. You will need to " decipher " them at a rate of 1,000 per day, 365, for about 8,000 years. Let me know how it all turns out. By then, I will be floating on a cloud from above. All of you will be worm food. Not to worry however, I promise to wave as I pass over your tombstone.
+</blockquote>
+Why are all godbots so ignorant?
+
+If deciphering the human genome is going to take us so long, how is it that we have already done it?
+
+
+</div></div>
+<div class="comment" id="comment-336113"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+
+
+
+Not sure who the hell you in-breds are referring to
+</blockquote>
+
+I'm referring to YOU, SkevieP.  If you want to convince me you are someone else, you'll have to say something original, something different, something you haven't said before.
+
+You know, like <i>evidence</i>.</div></div>
+<div class="comment" id="comment-336116"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>Joseph Alden said:</strong>
+
+ The CORRECT tag for me was ed84...
+</blockquote>
+
+So you're using multiple screen identities?
+
+Isn't there a rule about that?
+</blockquote>
+
+There sure is.  Posting under multiple user names is grounds for permanent banishment.  I suggest that that is indeed a fitting punishment for someone who has essentially said that he will spit on our graves.</div></div>
+<div class="comment" id="comment-336117"><p class="comment-meta"><span class="comment-author">Joseph Alden</span> &middot; 8 November 2014</p><div class="comment-body"><p>Just chill, Just Bob.  Looks like you failed Reading Comprehension 101.<br>Originally, I signed in as a guest, using my Yahoo account. Sorry you wet your pants, but this IS allowed.<br>THEN, all of you in-breds FREAKED out that I was somehow, someone else.<br>Incorrect again, as always.</p><p>Don't feel bad Just Bob.  Sir Malcolm did much worse. He exposed himself as a classic, schijten for brains. During his delusional, projectile-vomiting, he managed to say " If deciphering the human genome is going to take us so long, how is it that we have already done it?"</p><p>He will soon be contacting Emily Thompson, this thread's author, to inform her of the same. He will obviously tell her how incompetent she must be. He knows all the answers; no need for an article titled " Deciphering a Billion-Piece Puzzle." <br>No need for further research. Malcolm knows all, sees all. Sorry Emily Thompson. Simply ignore him. Continue with your work.  I'll continue to enjoy the comedic antics of the oh so predictable, Lord Charles in-breds.</p></div></div>
+<div class="comment" id="comment-336118"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+Just chill...
+</blockquote>
+
+Yup, that's SkevieP all right.
+
+It's the same old empty, petty invective, the same old tired
+provocation, the same utter absence of rational discussion - and
+the same complete lack of any <i>evidence</i> whatsoever for 
+the existence of his gods.  All he's got is mindless antagonism.
+
+Go away, Skevie.  You're just boring now.</div></div>
+<div class="comment" id="comment-336119"><p class="comment-meta"><span class="comment-author">PA Poland</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>https://me.yahoo.com/a/Nc1GW6MJ2oCtNYp1AyeNOWDWzqdp_cw-#fed84 said:</strong>
+IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle.  If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over  8 ....Thousand....Years.... to reach the 3.2 billion finish line.  SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME...............AND, even worse news, all the current geeks will become worm food,  well before the first 1 percent of the list is even completed.
+</blockquote>
+
+The human genome has been sequenced.
+
+They now have machines that can do 16 complete genomes in 3 days - a far cry from your ignorant blubberings about needing 8000 years of sequencing 1000 bases/day nonstop to get even one.
+
+From http://www.nature.com/news/is-the-1-000-genome-for-real-1.14530
+
+"What has Illumina said the HiSeq X Ten will do?
+
+The HiSeq X is capable of producing up to 1.8 terabases of data â 16 human genomes' worth â per three-day run. Illumina says that each HiSeq X Ten will therefore be capable of sequencing 18,000 human genomes per year. Each genome will be sequenced to the gold standard of 30x, which means that each base will be read by the machine an average of thirty times. And these are whole human genomes we're talking about here â not solely the protein-coding regions, or exomes."
+
+The 'puzzle' in the OP is relatedness of organisms, NOT getting sequence data (as you so delusionally presume).
+
+If you compared human to chimp DNA, the vast majority of those 3.2 billion bases would be the same.  Figuring out which of those differences is relevant is the puzzle.
+
+But, as many others have stated, it is not necessary to know all 3.2 billion bases to figure out which critters are more closely related to others (but generally having more relevant data is better).  The reality-based community has had high quality phylogenies for decades now.
+
+Evolution can explain the patterns of relatedness OBSERVED in living things quite easily; how does your 'alternative' fare ?
+
+Oh, right - it doesn't !  Creatorism in its various disguises doesn't actually explain anything (being ignorance-based, it can only pretend to).</div></div>
+<div class="comment" id="comment-336120"><p class="comment-meta"><span class="comment-author">Malcolm</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+Just chill, Just Bob.  Looks like you failed Reading Comprehension 101.
+Originally, I signed in as a guest, using my Yahoo account. Sorry you wet your pants, but this IS allowed.
+THEN, all of you in-breds FREAKED out that I was somehow, someone else.
+Incorrect again, as always.
+
+Don't feel bad Just Bob.  Sir Malcolm did much worse. He exposed himself as a classic, schijten for brains. During his delusional, projectile-vomiting, he managed to say " If deciphering the human genome is going to take us so long, how is it that we have already done it?" 
+
+He will soon be contacting Emily Thompson, this thread's author, to inform her of the same. He will obviously tell her how incompetent she must be. He knows all the answers; no need for an article titled " Deciphering a Billion-Piece Puzzle." 
+No need for further research. Malcolm knows all, sees all. Sorry Emily Thompson. Simply ignore him. Continue with your work.  I'll continue to enjoy the comedic antics of the oh so predictable, Lord Charles in-breds.
+</blockquote>
+
+I'm sure that Emily Thompson is well aware of the Human Genome Project. Unlike you, she isn't an ignorant buffoon.</div></div>
+<div class="comment" id="comment-336121"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>PA Poland said:</strong>
+
+<blockquote>
+<strong>https://me.yahoo.com/a/Nc1GW6MJ2oCtNYp1AyeNOWDWzqdp_cw-#fed84 said:</strong>
+IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle.  If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over  8 ....Thousand....Years.... to reach the 3.2 billion finish line.  SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME...............AND, even worse news, all the current geeks will become worm food,  well before the first 1 percent of the list is even completed.
+</blockquote>
+
+The human genome has been sequenced.
+
+They now have machines that can do 16 complete genomes in 3 days - a far cry from your ignorant blubberings about needing 8000 years of sequencing 1000 bases/day nonstop to get even one.
+
+From http://www.nature.com/news/is-the-1-000-genome-for-real-1.14530
+
+"What has Illumina said the HiSeq X Ten will do?
+
+The HiSeq X is capable of producing up to 1.8 terabases of data â 16 human genomes' worth â per three-day run. Illumina says that each HiSeq X Ten will therefore be capable of sequencing 18,000 human genomes per year. Each genome will be sequenced to the gold standard of 30x, which means that each base will be read by the machine an average of thirty times. And these are whole human genomes we're talking about here â not solely the protein-coding regions, or exomes."
+
+The 'puzzle' in the OP is relatedness of organisms, NOT getting sequence data (as you so delusionally presume).
+
+If you compared human to chimp DNA, the vast majority of those 3.2 billion bases would be the same.  Figuring out which of those differences is relevant is the puzzle.
+
+But, as many others have stated, it is not necessary to know all 3.2 billion bases to figure out which critters are more closely related to others (but generally having more relevant data is better).  The reality-based community has had high quality phylogenies for decades now.
+
+Evolution can explain the patterns of relatedness OBSERVED in living things quite easily; how does your 'alternative' fare ?
+
+Oh, right - it doesn't !  Creatorism in its various disguises doesn't actually explain anything (being ignorance-based, it can only pretend to).
+</blockquote>
+
+I thought these comments were parody, from a parody troll sounding like Steve P, but now I'm beginning to suspect that they may be serious.  
+
+I seriously try not to be too cruel to stupid people.  People are stupid for many reasons, usually not reflecting their innate ability, and usually not their own fault.  Illness, trauma, or other such things could make any of us stupid at any time.
+
+Having said that, this commenter appears to be so stupid that he - 
+
+1) thinks the human genome hasn't been sequenced and isn't aware of current sequencing technology (which he could have googled about in a few minutes before making comments about it) and 
+
+
+2) thought that the article here was about establishing the sequence of the human genome, even though it obviously isn't.
+
+
+I'm beginning to think that this guy really is this clueless, though.
+
+http://en.wikipedia.org/wiki/Human_Genome_Project
+</div></div>
+<div class="comment" id="comment-336123"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+<blockquote>
+<strong>PA Poland said:</strong>
+
+<blockquote>
+<strong>https://me.yahoo.com/a/Nc1GW6MJ2oCtNYp1AyeNOWDWzqdp_cw-#fed84 said:</strong>
+IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle.  If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over  8 ....Thousand....Years.... to reach the 3.2 billion finish line.  SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME...............AND, even worse news, all the current geeks will become worm food,  well before the first 1 percent of the list is even completed.
+</blockquote>
+
+The human genome has been sequenced.
+
+They now have machines that can do 16 complete genomes in 3 days - a far cry from your ignorant blubberings about needing 8000 years of sequencing 1000 bases/day nonstop to get even one.
+
+From http://www.nature.com/news/is-the-1-000-genome-for-real-1.14530
+
+"What has Illumina said the HiSeq X Ten will do?
+
+The HiSeq X is capable of producing up to 1.8 terabases of data â 16 human genomes' worth â per three-day run. Illumina says that each HiSeq X Ten will therefore be capable of sequencing 18,000 human genomes per year. Each genome will be sequenced to the gold standard of 30x, which means that each base will be read by the machine an average of thirty times. And these are whole human genomes we're talking about here â not solely the protein-coding regions, or exomes."
+
+The 'puzzle' in the OP is relatedness of organisms, NOT getting sequence data (as you so delusionally presume).
+
+If you compared human to chimp DNA, the vast majority of those 3.2 billion bases would be the same.  Figuring out which of those differences is relevant is the puzzle.
+
+But, as many others have stated, it is not necessary to know all 3.2 billion bases to figure out which critters are more closely related to others (but generally having more relevant data is better).  The reality-based community has had high quality phylogenies for decades now.
+
+Evolution can explain the patterns of relatedness OBSERVED in living things quite easily; how does your 'alternative' fare ?
+
+Oh, right - it doesn't !  Creatorism in its various disguises doesn't actually explain anything (being ignorance-based, it can only pretend to).
+</blockquote>
+
+I thought these comments were parody, from a parody troll sounding like Steve P, but now I'm beginning to suspect that they may be serious.  
+
+I seriously try not to be too cruel to stupid people.  People are stupid for many reasons, usually not reflecting their innate ability, and usually not their own fault.  Illness, trauma, or other such things could make any of us stupid at any time.
+
+Having said that, this commenter appears to be so stupid that he - 
+
+1) thinks the human genome hasn't been sequenced and isn't aware of current sequencing technology (which he could have googled about in a few minutes before making comments about it) and 
+
+
+2) thought that the article here was about establishing the sequence of the human genome, even though it obviously isn't.
+
+
+I'm beginning to think that this guy really is this clueless, though.
+
+http://en.wikipedia.org/wiki/Human_Genome_Project
+
+</blockquote>
+
+Also http://en.wikipedia.org/wiki/DNA_sequencing#Next-generation_methods
+</div></div>
+<div class="comment" id="comment-336124"><p class="comment-meta"><span class="comment-author">Joseph Alden</span> &middot; 8 November 2014</p><div class="comment-body"><p>What fun. The Chuck Darwin Delusional Delinquents are always so predictable.</p><p>Now it looks like ALL the in-breds failed their Reading Comprehension course.</p><p>I, Joseph T. Alden, never ONCE mentioned, ANYTHING, about sequencing the Human Genome.</p><p>As always, you simpletons simply IMPLIED that I did. Then, the next in-bred whose next in line, starts tripping over the previous peanut brain. You end up with 16 people wanting to enter the joust at the same time. Same juvenile tactics, just like I predicted. Looks like nothing has changed after all these years.</p><p>I'll try it again, one.......more......time......<br>IF everything has been solved, all the answers identified, then dear, sweet Emily Thompson is wasting everyone's time. To HER credit however, she correctly points out the dilemma. We STILL need to DECIPHER a few things. There are still some minor details we need to solve within the parameters of a small inconvenience, that presents itself, in the form of a 3.2 Billion Piece PUZZLE.</p><p>Here is her direct quote, from Paragraph # 4 above: " The challenge now is not to obtain the data but to compare all the billions of base pairs in one genome to those in another. Current sequencing methods, while fast, can only read the genome by dividing it into millions of short fragments, which must be reassembled like an enormous puzzle. Researchers then have to figure out which genes correspond to one another in different speciesâ genomes. These comparisons are challenging because genes in one genome might be in a different order, on different chromosomes, or missing completely in another speciesâ genome."</p><p>Her point, which I got the first time I read it, was that this is going to take a ................serious..........amount .........of...........TIME.<br>I then challenged the evos inbreds to help her, in her quest, to get to work, solving the many mysteries of a 3.2 Billion Piece Puzzle. Therefore, I suggest you get busy boys and girls.</p></div></div>
+<div class="comment" id="comment-336125"><p class="comment-meta"><span class="comment-author">Malcolm</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+What fun. The Chuck Darwin Delusional Delinquents are always so predictable.
+
+Now it looks like ALL the in-breds failed their Reading Comprehension course.
+
+I, Joseph T. Alden, never ONCE mentioned, ANYTHING, about sequencing the Human Genome.
+
+As always, you simpletons simply IMPLIED that I did. Then, the next in-bred whose next in line, starts tripping over the previous peanut brain. You end up with 16 people wanting to enter the joust at the same time. Same juvenile tactics, just like I predicted. Looks like nothing has changed after all these years.
+
+I'll try it again, one.......more......time......
+IF everything has been solved, all the answers identified, then dear, sweet Emily Thompson is wasting everyone's time. To HER credit however, she correctly points out the dilemma. We STILL need to DECIPHER a few things. There are still some minor details we need to solve within the parameters of a small inconvenience, that presents itself, in the form of a 3.2 Billion Piece PUZZLE.
+
+Here is her direct quote, from Paragraph # 4 above: " The challenge now is not to obtain the data but to compare all the billions of base pairs in one genome to those in another. Current sequencing methods, while fast, can only read the genome by dividing it into millions of short fragments, which must be reassembled like an enormous puzzle. Researchers then have to figure out which genes correspond to one another in different speciesâ genomes. These comparisons are challenging because genes in one genome might be in a different order, on different chromosomes, or missing completely in another speciesâ genome." 
+
+Her point, which I got the first time I read it, was that this is going to take a ................serious..........amount .........of...........TIME.
+I then challenged the evos inbreds to help her, in her quest, to get to work, solving the many mysteries of a 3.2 Billion Piece Puzzle. Therefore, I suggest you get busy boys and girls.
+
+</blockquote>
+
+Here was I thinking that it was just the HGP you were ignorant of. Turns out you don't know anything about bioinfomatics either.</div></div>
+<div class="comment" id="comment-336126"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+
+What fun...
+</blockquote>
+
+Hey SkevieP, what do you think you will accomplish by discrediting evolution?  Do you think that the Kingdom of God will suddenly reign, on Earth as it does in Heaven?
+
+Don't make me laugh.  You can't discredit evolution - it's arguably the single best-supported scientific theory in existence - but even
+if you could, it would do nothing whatsoever to make your delusional gods real.  You'd still have nothing but a non-existent zombie god with a retinue of non-existent sky fairies and non-existent demons and imaginary ghosts and fantasy devils.
+
+You're huffing and puffing and blowing down your own house of straw, Skevie, and it's all futility, all the time.  You're impotent, just like your imaginary gods, because you have no <i>empirical evidence</i> to support your delusions.
+
+All you have is dung-flinging, and childish, angry petulance, and hallucinations of fictional gods who can't do shit here in reality.  Go away, time-waster.   </div></div>
+<div class="comment" id="comment-336127"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>PA Poland said:</strong>
+Evolution can explain the patterns of relatedness OBSERVED in living things quite easily; how does your 'alternative' fare ?
+
+Oh, right - it doesn't !  Creatorism in its various disguises doesn't actually explain anything (being ignorance-based, it can only pretend to).
+</blockquote>
+
+For over 150 years, there has been this challenge to creationism: Simply provide an account of what happens so that things in the world of life turn out the way they do.
+
+The gap between science and anything else was noticeable 150 years ago. While science has made remarkable strides, making the gap relatively larger, the only change reporting from the non-science side has been that there has been retreat from even making claims of being interested in an account. "Intelligent Designed" was crafted, not only in an attempt to avoid legal restrictions on "traditional" creationisms (Old Earth Creationism, Young Earth Creationism), but also to erase any remaining vestiges of having said something. 
+
+I direct your attention to the 1852 essay of Herbert Spencer, "The Development Hypothesis" at Wikisource.org:
+
+<a href="http://en.wikisource.org/wiki/The_Development_Hypothesis">http://en.wikisource.org/wiki/The_Development_Hypothesis</a>
+
+</div></div>
+<div class="comment" id="comment-336128"><p class="comment-meta"><span class="comment-author">riandouglas</span> &middot; 8 November 2014</p><div class="comment-body"><p>Hey Joseph, just what is it you're claiming?<br>It seems you think there is some serious deficiency because science doesn't have an answer to everything. However, if that is your point, it reflects badly on your ignorance, rather than upon science or scientists (hint: what you're talking about does not appear to be what the original post was talking about).</p><p>I did a quick search, and see that you're been making similarly ignorant claims for quite some time, in a range of locations on the web - are you unable to learn, or is your ignorance willful?</p></div></div>
+<div class="comment" id="comment-336132"><p class="comment-meta"><span class="comment-author">mattdance18</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joseph Alden said:</strong>
+I'll try it again, one.......more......time......
+IF everything has been solved, all the answers identified, then dear, sweet Emily Thompson is wasting everyone's time. To HER credit however, she correctly points out the dilemma. We STILL need to DECIPHER a few things. There are still some minor details we need to solve within the parameters of a small inconvenience, that presents itself, in the form of a 3.2 Billion Piece PUZZLE.
+
+Here is her direct quote, from Paragraph # 4 above: " The challenge now is not to obtain the data but to compare all the billions of base pairs in one genome to those in another. Current sequencing methods, while fast, can only read the genome by dividing it into millions of short fragments, which must be reassembled like an enormous puzzle. Researchers then have to figure out which genes correspond to one another in different speciesâ genomes. These comparisons are challenging because genes in one genome might be in a different order, on different chromosomes, or missing completely in another speciesâ genome." 
+</blockquote>
+
+I see. And you think that because doubt remains over various details, that the general picture is poorly understood, and that no partial details are well understood, either, so there' just no way anyone could figure any of this stuff out. -- I mean, for pity's sake: the time required! The time!
+
+Wow, what great arguments. And delivered by such a... staggering intellect. I am in awe.
+
+Why don't you let us know when you've successfully passed the "informal fallacies" unit of freshman logic, and then you can come back and explain why your argument is so <i><b>fucking stupid</b></i>.</div></div>
+<div class="comment" id="comment-336133"><p class="comment-meta"><span class="comment-author">mattdance18</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>riandouglas said:</strong>
+
+Hey Joseph, just what is it you're claiming? ...
+
+I did a quick search, and see that you're been making similarly ignorant claims for quite some time, in a range of locations on the web - are you unable to learn, or is your ignorance willful?
+</blockquote>
+
+Googled "joseph alden evolution." First hit: http://evolutionfacts.com/New-material/Alden's.htm
+
+<b>HAHAHAHAHAHAHAHAHAHAHAHA!!!!!!!!</b>
+
+Just another creationist who's too smart for us.</div></div>
+<div class="comment" id="comment-336134"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>mattdance18 said:</strong>
+
+Googled âjoseph alden evolution.â First hit: http://evolutionfacts.com/New-material/Aldenâs.htm
+Just another creationist who's too smart for us.
+</blockquote>
+Link doesn't seem to work, but googling finds it.</div></div>
+<div class="comment" id="comment-336135"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>mattdance18 said:</strong>
+
+<blockquote>
+<strong>riandouglas said:</strong>
+
+Hey Joseph, just what is it you're claiming? ...
+
+I did a quick search, and see that you're been making similarly ignorant claims for quite some time, in a range of locations on the web - are you unable to learn, or is your ignorance willful?
+</blockquote>
+
+Googled "joseph alden evolution." First hit: http://evolutionfacts.com/New-material/Alden's.htm
+
+<b>HAHAHAHAHAHAHAHAHAHAHAHA!!!!!!!!</b>
+
+Just another creationist who's too smart for us.
+</blockquote>
+
+The "arguments" are <a href="http://evolution-facts.org/New-material/Alden%27s.htm">here.</a>
+
+And you'll never believe this, never in a million years, but guess what - they are variants of god-of-the-gaps!  There is something evolution allegedly cannot explain, so gods (ie the designer, blessed be he) must have done it.
+
+</div></div>
+<div class="comment" id="comment-336136"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 8 November 2014</p><div class="comment-body"><p>And of course, evolution can <a href="http://idexposed.wordpress.com/2008/05/11/plants-that-defy-evolution-datura-stramonium-jimson-weed/">explain</a> it.</p></div></div>
+<div class="comment" id="comment-336137"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 8 November 2014</p><div class="comment-body"><p>I note that ol' dumb Joe has banged his head against the wall <a href="http://pandasthumb.org/archives/2008/05/a-thorny-issue.html">here at PT</a> before.</p></div></div>
+<div class="comment" id="comment-336138"><p class="comment-meta"><span class="comment-author">riandouglas</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+And of course, evolution can <a href="http://idexposed.wordpress.com/2008/05/11/plants-that-defy-evolution-datura-stramonium-jimson-weed/" rel="nofollow">explain</a> it.
+</blockquote>
+
+But the ignorant caricature of evolutionary biology Joseph has in his head can't explain it, so there!</div></div>
+<div class="comment" id="comment-336139"><p class="comment-meta"><span class="comment-author">PA Poland</span> &middot; 8 November 2014</p><div class="comment-body">Ah yes, another example of creationut evasion technique #454354 : the Bellowing Side Step.
+
+Starts with opening insult while creationut pretends to be more intelligent than everyone : 
+
+<blockquote>
+<strong>Joseph Alden said:</strong>
+
+What fun. The Chuck Darwin Delusional Delinquents are always so predictable.
+
+Now it looks like ALL the in-breds failed their Reading Comprehension course.
+
+I, Joseph T. Alden, never ONCE mentioned, ANYTHING, about sequencing the Human Genome.</blockquote>
+
+Do these words look even the slightest bit familiar : 
+
+<blockquote><p>IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle. If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over 8 .â¦Thousand.â¦Years.â¦ to reach the 3.2 billion finish line. SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME.â¦.â¦.â¦â¦AND, even worse news, all the current geeks will become worm food, well before the first 1 percent of the list is even completed.</p></blockquote> 
+
+Nothing about analyzing the sequence, only collectively and correctly identifying the bases.
+
+Which is SEQUENCING.  Which is the only way your calculation would even make sense.
+
+<blockquote>
+As always, you simpletons simply IMPLIED that I did. Then, the next in-bred whose next in line, starts tripping over the previous peanut brain. You end up with 16 people wanting to enter the joust at the same time. Same juvenile tactics, just like I predicted. Looks like nothing has changed after all these years.</blockquote>
+
+You've been an irrelevant, pompous ignoramus for years ?  Not something to be proud of !
+
+When you same something utterly ridiculous, expect a lot of people to point out that you said something utterly ridiculous.  Many voices are required to even have a chance of penetrating the thick skull and reality denial techniques of the standard evo-denier.
+
+Initiating vainglorious posturing bluff in 3.. 2.. 1.. : 
+<blockquote>
+I'll try it again, one.......more......time......
+IF everything has been solved, all the answers identified, then dear, sweet Emily Thompson is wasting everyone's time. To HER credit however, she correctly points out the dilemma. We STILL need to DECIPHER a few things. There are still some minor details we need to solve within the parameters of a small inconvenience, that presents itself, in the form of a 3.2 Billion Piece PUZZLE.
+
+Here is her direct quote, from Paragraph # 4 above: " The challenge now is not to obtain the data but to compare all the billions of base pairs in one genome to those in another. Current sequencing methods, while fast, can only read the genome by dividing it into millions of short fragments, which must be reassembled like an enormous puzzle. Researchers then have to figure out which genes correspond to one another in different speciesâ genomes. These comparisons are challenging because genes in one genome might be in a different order, on different chromosomes, or missing completely in another speciesâ genome." 
+
+Her point, which I got the first time I read it, was that this is going to take a ................serious..........amount .........of...........TIME.</blockquote>
+
+But how, EXACTLY, did you 'determine' that it would take 8000 years ?
+
+Oh, right - you divided the number of bases in a human haploid genome by 1000, then determined how much time in days that was.
+
+The usual crimson whale puffery of standard creationut numerology.
+
+Continuing the bluff : 
+<blockquote>
+I then challenged the evos inbreds to help her, in her quest, to get to work, solving the many mysteries of a 3.2 Billion Piece Puzzle. Therefore, I suggest you get busy boys and girls.
+</blockquote>
+
+Researchers use computers to compare sequences these days - they have for decades.
+
+As many others have stated - you don't need the whole billions of sequence to make valid phylogenies, but having more valid data to work with helps answer more questions.
+
+So - would you care to show the math where you calculated it would take 8000 years to <b>analyze</b> the data, or are you just going to run away screaming about your victory ?</div></div>
+<div class="comment" id="comment-336140"><p class="comment-meta"><span class="comment-author">mattdance18</span> &middot; 8 November 2014</p><div class="comment-body"><blockquote>
+<strong>Just Bob said:</strong>
+
+Link doesn't seem to work, but googling finds it.
+</blockquote>
+
+Sorry, Bob. The paste didn't include the apostrophe and what came after as part of the link. My bad.
+
+Glad you found it, though! Good for a laugh. Granted, a somewhat sad laugh. But a laugh nonetheless.</div></div>
+<div class="comment" id="comment-336141"><p class="comment-meta"><span class="comment-author">mattdance18</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+I seriously try not to be too cruel to stupid people.  People are stupid for many reasons, usually not reflecting their innate ability, and usually not their own fault.</blockquote>
+
+A good policy, generally speaking. But when the stupid person in question is clearly too damn <i><b>lazy</b></i> to do even minimal research, too damn <i><b>arrogant</b></i> to overcome his fundamental intellectual slothfulness, and on top of all that, too damn <i><b>childishly malicious</b></i> to treat anyone else with an ounce of respect...
+
+Well, hey, as he no doubt considers himself a "good Christian," I presume he treats others as he wishes to be treated himself. Quite sufficient to justify a bit of cruelty.</div></div>
+<div class="comment" id="comment-336143"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>mattdance18 said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+I seriously try not to be too cruel to stupid people.  People are stupid for many reasons, usually not reflecting their innate ability, and usually not their own fault.</blockquote>
+
+A good policy, generally speaking. But when the stupid person in question is clearly too damn <i><b>lazy</b></i> to do even minimal research, too damn <i><b>arrogant</b></i> to overcome his fundamental intellectual slothfulness, and on top of all that, too damn <i><b>childishly malicious</b></i> to treat anyone else with an ounce of respect...
+
+Well, hey, as he no doubt considers himself a "good Christian," I presume he treats others as he wishes to be treated himself. Quite sufficient to justify a bit of cruelty.
+</blockquote>
+
+What is interesting is not whether any particular opponent of evolutionary biology is reprehensible, even if that person were one of the stars of the movement. Certainly not so for one of the gadflies. Who cares?
+
+What is interesting that there is <b>nothing</b> to the whole movement. For over a century, and what has it produced, but the advertising slogans of a social-political campaign. Oh, there are those self-contradictory fragments here and there, which are nothing but embarrassments to the rest of the campaign. Those from which others hasten to distance themselves: "We are not creationists". 
+
+A hundred years? Five hundred years and more, and what have they produced? That broken-down cuckoo-clock.  </div></div>
+<div class="comment" id="comment-336145"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>What fun. The Chuck Darwin Delusional Delinquents are always so predictable.
+
+Now it looks like ALL the in-breds failed their Reading Comprehension course.
+
+I, Joseph T. Alden, never ONCE mentioned, ANYTHING, about sequencing the Human Genome.</blockquote>
+
+Yes you did. Anyone can see that you did. You said...
+
+<blockquote>IF the haploid human genome is 3.2 billion DNA bases long, good luck to all the geeks trying to solve this puzzle. If they collectively AND correctly identified them at a rate of 1,000 a day, 365 days a year, non-stop, it would only take them well over 8 .â¦Thousand.â¦Years.â¦ to reach the 3.2 billion finish line. SO, all you geeks better get busy ! This is going to take some time. LOTS of TIME.â¦.â¦.â¦â¦AND, even worse news, all the current geeks will become worm food, well before the first 1 percent of the list is even completed.</blockquote>
+
+However, to your minimal credit, you eventually recognized your incredibly stupid error.
+
+So now you're trying to pretend that you never made such an error. But anyone can see the original quote, and furthermore, you still aren't making any sense.
+
+<blockquote>As always, you simpletons simply IMPLIED that I did. Then, the next in-bred whose next in line, starts tripping over the previous peanut brain. You end up with 16 people wanting to enter the joust at the same time. Same juvenile tactics, just like I predicted. Looks like nothing has changed after all these years.
+
+Iâll try it again, one.â¦â¦more.â¦..time.â¦.. IF everything has been solved, all the answers identified, then dear, sweet Emily Thompson is wasting everyoneâs time. To HER credit however, she correctly points out the dilemma. We STILL need to DECIPHER a few things. There are still some minor details we need to solve within the parameters of a small inconvenience, that presents itself, in the form of a 3.2 Billion Piece PUZZLE.</blockquote>
+
+The number "3.2 billion" makes no sense here unless you're talking about sequencing the human genome (or some other genome of similar size).
+
+<blockquote>Here is her direct quote, from Paragraph # 4 above: â The challenge now is not to obtain the data but to compare all the billions of base pairs in one genome to those in another. Current sequencing methods, while fast, can only read the genome by dividing it into millions of short fragments, which must be reassembled like an enormous puzzle. Researchers then have to figure out which genes correspond to one another in different speciesâ genomes. These comparisons are challenging because genes in one genome might be in a different order, on different chromosomes, or missing completely in another speciesâ genome.â</blockquote>
+
+Well, that's all obviously true.
+
+Here I'd like to comment on something fascinating about the creationist brain. They always see the fact that science proceeds by solving problems as a "weakness" of science. 
+
+<blockquote>Her point, which I got the first time I read it, was that this is going to take a .â¦.â¦.â¦.â¦serious.â¦.â¦..amount .â¦.â¦.of.â¦.â¦â¦TIME. </blockquote>
+
+Your original claim, which I have quoted above, was that sequencing the human genome would take 8000 years. That was based on a correct but nevertheless moronic calculation. Your error was in underestimating the rate at which nucleotide strands can be sequenced. 
+
+That original wrong claim has no relevance to the rate at which the research actually discussed here can be accomplished, except to the extent that we can infer from your original false claim that you are clueless, biased, and hostile, and therefore likely to grossly overestimated any such time figure.
+
+<blockquote>I then challenged the evos inbreds to help her, in her quest, to get to work, solving the many mysteries of a 3.2 Billion Piece Puzzle. Therefore, I suggest you get busy boys and girls.</blockquote>
+
+There's no need for such a challenge. The thread already makes it extremely clear that the Reed Cartwright lab, among many others, is working in this area.
+
+</div></div>
+<div class="comment" id="comment-336146"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 9 November 2014</p><div class="comment-body"><p>Emily,</p><p>This is what happens when you don't send trolls to the bathroom wall.  They completely take over the conversation an all comments revolve around them and their delusions.  If someone does not moderate the thread it is impossible to have a real conversation about science.  That is exactly what the trolls want.  They fear science more than anything, it is their kryptonite.  Let's give them that instead of what they want.</p></div></div>
+<div class="comment" id="comment-336162"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 9 November 2014</p><div class="comment-body"><p>Emily doesn't need to assume full responsibility. You could always try not replying to them.</p></div></div>
+<div class="comment" id="comment-336164"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+Emily doesn't need to assume full responsibility. You could always try not replying to them.
+</blockquote>
+
+Or, maybe it's not that big of a deal that a creationist made a few mistaken comments and his errors were corrected.  I don't see how it's stopping anyone from talking about phylogenomics.  </div></div>
+<div class="comment" id="comment-336165"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+ I don't see how it's stopping anyone from talking about phylogenomics.  
+</blockquote>
+
+It's using up all the electrons!</div></div>
+<div class="comment" id="comment-336169"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+Or, maybe it's not that big of a deal that a creationist made a few mistaken comments and his errors were corrected.  I don't see how it's stopping anyone from talking about phylogenomics.  
+</blockquote>
+I don't see how either. Yet, mysteriously, it is.</div></div>
+<div class="comment" id="comment-336170"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+ I don't see how it's stopping anyone from talking about phylogenomics.  
+</blockquote>
+
+It's using up all the electrons!
+</blockquote>
+
+But, but - conservation of lepton number!
+</div></div>
+<div class="comment" id="comment-336172"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 9 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+Or, maybe it's not that big of a deal that a creationist made a few mistaken comments and his errors were corrected.  I don't see how it's stopping anyone from talking about phylogenomics.  
+</blockquote>
+I don't see how either. Yet, mysteriously, it is.
+</blockquote>
+
+Perhaps all has been said that anyone cares to say on the topic.</div></div>
+<div class="comment" id="comment-336174"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+ I don't see how it's stopping anyone from talking about phylogenomics.  
+</blockquote>
+
+It's using up all the electrons!
+</blockquote>
+
+But, but - conservation of lepton number!
+
+</blockquote>
+
+Oooo; you really leapt on that one. ;-)</div></div>
+<div class="comment" id="comment-336175"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+ I don't see how it's stopping anyone from talking about phylogenomics.  
+</blockquote>
+
+It's using up all the electrons!
+</blockquote>
+
+But, but - conservation of lepton number!
+
+</blockquote>
+
+Don't you know that intelligent designers are not bound by conservation laws? 
+
+</div></div>
+<div class="comment" id="comment-336181"><p class="comment-meta"><span class="comment-author">riandouglas</span> &middot; 10 November 2014</p><div class="comment-body"><p>A little more on topic - how are the fragments reassembled?<br>Do the fragments of DNA overlap at the ends, so the prefix of one is then matched against the suffix of another?</p></div></div>
+<div class="comment" id="comment-336182"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 10 November 2014</p><div class="comment-body"><p>It seems to me that two important issues in phylogenomics were raised here.</p><p>1) Selection of the right genetic sequences for the analysis being done.  This relies on knowing how conserved a given genetic sequence is across lineages, which is essentially a measure of how strongly mutations in that sequence tend to be selected against.</p><p>Even if you decide to compare entire genomes, that will only be meaningful is you know which sequences are homologous across the different genomes, and how conserved those sequences tend to be across time.</p><p>2) Once you know which types of sequences you want to deal with, you encounter the question of which sampling methods should be used.  Should you look at a sample of a few genes?  Multiple samples of different baskets of genes?  Or should you census the entire sequence of the entire genomes of the lineages of interest, investigate for appropriate sequences, and then compare?  Or some combination approach?</p><p>Of course, even if you go with entire genomes, you're still sampling, unless your ambitious goal is to sequence the entire genome of every defined species and compare them all.  Because there are two levels of sampling.  Level one is when you choose which lineages to look at - those are an implied sample of the biosphere.  Level two occurs when you decide how to sample the genetic information of those lineages.</p><p>This problem is not at all unique to phylogenomics.  It is, in fact, a very basic issue in all modern science and in many applied and commercial fields - what level of sampling versus census is ideal for my field?</p><p>The details of which approach gives the best combination of accuracy and pragmatic feasibility probably have to be decided on a project by project basis.</p></div></div>
+<div class="comment" id="comment-336183"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>riandouglas said:</strong>
+
+A little more on topic - how are the fragments reassembled?
+Do the fragments of DNA overlap at the ends, so the prefix of one is then matched against the suffix of another?
+</blockquote>
+
+IANAB but that's the way I understand it.  It's analogous to one of those SAT logic questions, but on a massive scale: If Alice come before Bob, and Charlie comes after Dave and Alice but before Bob...
+</div></div>
+<div class="comment" id="comment-336184"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>riandouglas said:</strong>
+
+A little more on topic - how are the fragments reassembled?
+Do the fragments of DNA overlap at the ends, so the prefix of one is then matched against the suffix of another?
+</blockquote>
+If you meant "prefix" and "suffix" as just "first part" and "last part", then yes. You get a whole bunch of fragments that begin and end at random places and you string together the ones that are identical in large enough regions of overlap. Generally each base appears on many fragments, so you have a continuous overlap throughout the genome. The big problem is that there are many areas of nearly exact repeats, and it can be hard to fit those into the structure.</div></div>
+<div class="comment" id="comment-336185"><p class="comment-meta"><span class="comment-author">riandouglas</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+If you meant "prefix" and "suffix" as just "first part" and "last part", then yes. You get a whole bunch of fragments that begin and end at random places and you string together the ones that are identical in large enough regions of overlap. Generally each base appears on many fragments, so you have a continuous overlap throughout the genome.
+</blockquote>
+Thanks - that is exactly what I meant. I'm a software professional, but have no experience with this sort of thing.
+
+<blockquote>
+The big problem is that there are many areas of nearly exact repeats, and it can be hard to fit those into the structure.
+</blockquote>
+
+<p>How is that issue handled?</p>
+<p>Off the top of my head, I guess you could produce a number of possible sequences, to be further analysed, or perhaps produce a "most likely" sequence using some sort of heuristic for piecing together the fragments which can't be exactly decided (assuming there are some, and I'm not misunderstanding you).</p>
+</div></div>
+<div class="comment" id="comment-336186"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 10 November 2014</p><div class="comment-body"><p>The fragments can be exactly described. That isn't the problem. As an example, there are lots of areas of short repeats: e.g. AGTAGTAGT going on for thousands of bases, with the occasional slight variation, say a missing T. If you got a fragment consisting of AGTAGT (they aren't that short, but you know what I mean), where would you put it? How could you tie it to other fragments that had AGTAGT? Are they the same? Are they connected? I don't know how they're doing it these days. One way is to use a method that gives you longer fragments and target those areas specifically.</p></div></div>
+<div class="comment" id="comment-336187"><p class="comment-meta"><span class="comment-author">riandouglas</span> &middot; 10 November 2014</p><div class="comment-body"><p>Thanks John.</p>
+<p>Just did a quick read of wikipedia. It suggests that string/pattern matching is done with some additional heuristics to speed things along, such as preferring shorter sequences, more precise matches and so on. I believe the problem itself is too large and to be solved "precisely" (I think it's NP-Complete).</p>
+<p>And where there is a reference genome, the new sequence can be matched against that to speed things along further.</p>
+</div></div>
+<div class="comment" id="comment-336188"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>riandouglas said:</strong>
+
+<p>Thanks John.</p>
+<p>Just did a quick read of wikipedia. It suggests that string/pattern matching is done with some additional heuristics to speed things along, such as preferring shorter sequences, more precise matches and so on. I believe the problem itself is too large and to be solved "precisely" (I think it's NP-Complete).</p>
+<p>And where there is a reference genome, the new sequence can be matched against that to speed things along further.</p>
+
+</blockquote>
+
+I'm a programmer who studied inexact string matching, and I would like to know a lot more about the
+algorithms and heuristics used in attacking this problem. Emily
+Thompson, could you write some about those issues?
+
+</div></div>
+<div class="comment" id="comment-336191"><p class="comment-meta"><span class="comment-author">riandouglas</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+I'm a programmer who studied inexact string matching, and I would like to know a lot more about the
+algorithms and heuristics used in attacking this problem. Emily
+Thompson, could you write some about those issues?
+</blockquote>
+Seconded - if anyone here does know about such issues, I'd love to hear more about the techniques.
+</div></div>
+<div class="comment" id="comment-336195"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>riandouglas said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+I'm a programmer who studied inexact string matching, and I would like to know a lot more about the
+algorithms and heuristics used in attacking this problem. Emily
+Thompson, could you write some about those issues?
+</blockquote>
+Seconded - if anyone here does know about such issues, I'd love to hear more about the techniques.
+
+</blockquote>
+
+DNA sequencing methods are an incredibly interesting and current topic.
+
+Of course, Emily Thompson was writing about how to use the sequences to study phylogeny.  In depth discussion of sequencing methods is a different topic.
+
+The Wikipedia article I linked on DNA sequencing is a pretty decent starting point (this statement not intended to imply that any Wikipedia article is ever completely flawless or complete).  For those who want more detail, it will guide you in the right direction.  
+
+In genetics, originally, it was hard to purify enough DNA.  Then PCR solved that.  But it was still hard to sequence DNA, so a vast number of targeted things were sequenced.  Areas of chromosomes involved in translocations were a big one.
+
+Now it's easy to get a bunch of DNA from a small starting source, and fairly easy to sequence it.
+
+The thing is, of course, you still have to decide what to look at and how to look.  A raw sequence of a billion base pairs isn't something the human brain can process.</div></div>
+<div class="comment" id="comment-336196"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>riandouglas said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+I'm a programmer who studied inexact string matching, and I would like to know a lot more about the
+algorithms and heuristics used in attacking this problem. Emily
+Thompson, could you write some about those issues?
+</blockquote>
+Seconded - if anyone here does know about such issues, I'd love to hear more about the techniques.
+
+</blockquote>
+
+I'll pose a specific question.
+
+When you wish to compare two sequences, do you employ one or more <a href="http://en.wikipedia.org/wiki/String_metric">string
+ metrics</a>?  If so, which one(s)?  How are they specialized for DNA comparison?</div></div>
+<div class="comment" id="comment-336198"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+I'll pose a specific question.
+
+When you wish to compare two sequences, do you employ one or more <a href="http://en.wikipedia.org/wiki/String_metric" rel="nofollow">string
+ metrics</a>? If so, which one(s)? How are they specialized for DNA comparison?
+</blockquote>
+It depends on the purpose of the comparison. Often, you want to know the genetic distance, i.e. the amount of evolution that's happened between two homologous pieces. That starts with percent identity at comparable sites, and to do that you first have to know which sites are comparable, and to do that you first need to align the sequences, i.e. decide which sites are comparable.
+
+Then again, if you're just searching a database for sequences that might be homologous, you use BLAST. There are various versions, and I see that Wikipedia explains the algorithm of one of those versions, <a href="http://en.wikipedia.org/wiki/BLAST#Algorithm">here</a>. The great thing about it is that it doesn't require a prior alignment step.</div></div>
+<div class="comment" id="comment-336199"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+I'll pose a specific question.
+
+When you wish to compare two sequences, do you employ one or more <a href="http://en.wikipedia.org/wiki/String_metric" rel="nofollow">string
+ metrics</a>? If so, which one(s)? How are they specialized for DNA comparison?
+</blockquote>
+It depends on the purpose of the comparison. Often, you want to know the genetic distance, i.e. the amount of evolution that's happened between two homologous pieces. That starts with percent identity at comparable sites, and to do that you first have to know which sites are comparable, and to do that you first need to align the sequences, i.e. decide which sites are comparable.
+
+Then again, if you're just searching a database for sequences that might be homologous, you use BLAST. There are various versions, and I see that Wikipedia explains the algorithm of one of those versions, <a href="http://en.wikipedia.org/wiki/BLAST#Algorithm" rel="nofollow">here</a>. The great thing about it is that it doesn't require a prior alignment step.
+</blockquote>
+
+Thanks.  It appears that you do not employ the notion of a string
+metric, at least in BLAST.
+
+</div></div>
+<div class="comment" id="comment-336200"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 10 November 2014</p><div class="comment-body"><p>I have to say that I have no clear idea of what a string metric is.</p></div></div>
+<div class="comment" id="comment-336202"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body"><p>A <a href="http://en.wikipedia.org/wiki/Metric_%28mathematics%29">metric</a> is a distance function on a set of points having certain mathematical properties.  Euclidean distance is an example<br>of a metric on points in a plane.</p><p>A <a href="http://en.wikipedia.org/wiki/String_metric">string metric</a> is a concept from computer science, used to define and calculate<br>distances (differences) between strings (sequences) of symbols.</p><p>It may be that "evolutionary distance" is a metric.  That's not clear to me.</p></div></div>
+<div class="comment" id="comment-336203"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body">At long last, I see this from the article on string metrics:
+
+<blockquote><p>
+A widespread example of a string metric is DNA sequence analysis and RNA analysis, which are performed by optimized string metrics to identify matching sequences.</p></blockquote></div></div>
+<div class="comment" id="comment-336207"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+
+At long last, I see this from the article on string metrics:
+
+<blockquote><p>
+A widespread example of a string metric is DNA sequence analysis and RNA analysis, which are performed by optimized string metrics to identify matching sequences.</p></blockquote>
+</blockquote>
+
+So if anybody knows <i>which</i> string metric(s) are employed, I'm interested.</div></div>
+<div class="comment" id="comment-336208"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+
+
+A <a href="http://en.wikipedia.org/wiki/Metric_%28mathematics%29" rel="nofollow">metric</a> is a distance function on a set of points having certain mathematical properties.  Euclidean distance is an example
+of a metric on points in a plane.  
+
+A <a href="http://en.wikipedia.org/wiki/String_metric" rel="nofollow">string metric</a> is a concept from computer science, used to define and calculate
+distances (differences) between strings (sequences) of symbols.
+
+It may be that "evolutionary distance" is a metric.  That's not clear to me.
+</blockquote>
+Then I would imagine that any given DNA sequence distance is a metric, unless you demand that it satisfy the triangle inequality, which I don't think is always true. The simplest sequence distance is just Manhattan distance.
+</div></div>
+<div class="comment" id="comment-336209"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 10 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+
+
+A <a href="http://en.wikipedia.org/wiki/Metric_%28mathematics%29" rel="nofollow">metric</a> is a distance function on a set of points having certain mathematical properties.  Euclidean distance is an example
+of a metric on points in a plane.  
+
+A <a href="http://en.wikipedia.org/wiki/String_metric" rel="nofollow">string metric</a> is a concept from computer science, used to define and calculate
+distances (differences) between strings (sequences) of symbols.
+
+It may be that "evolutionary distance" is a metric.  That's not clear to me.
+</blockquote>
+Then I would imagine that any given DNA sequence distance is a metric, unless you demand that it satisfy the triangle inequality, which I don't think is always true. The simplest sequence distance is just Manhattan distance.
+
+</blockquote>
+
+Do you mean to say that the string metric employed is <a href="http://en.wikipedia.org/wiki/Taxicab_geometry">Taxicab geometry</a>?  Not a version of <a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> (which I expected)?  Interesting.</div></div>
+<div class="comment" id="comment-336211"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 11 November 2014</p><div class="comment-body"><p>"Distances" used in inference of phylogenies are often not metrics.  For example if out of 100 sites sequences A and B differ at sites 1-10, and sequences B and C differ at sites 11-20, so that difference between A and C is at sites 1-20, the Jukes-Cantor distance between A and C is greater than the sum of the distance between A and B and the distance between B and C.</p><p>Levenshtein metrics are used in sequence alignment, but when there is no actual probabilistic model of insertion, deletion, and substitution of bases it is not easy to use them in inference of phylogenies.</p><p>"Taxicab geometry" is the use of Manhattan distances (L1 distances).  These are used in nonprobabilistic "parsimony" methods for phylogenies.</p><p>... which reminds me of an amusing terminology story.  Robert Sokal and some fellow phenetic clusterers once suggested that numerical taxonomy might be called "taxometrics".  Someone more familiar with Greek then corrected this to "taximetrics".  It was then pointed out that this was in danger of being confused with the study of taxi meters!  The term then disappeared.</p></div></div>
+<div class="comment" id="comment-336213"><p class="comment-meta"><span class="comment-author">Malcolm</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+
+
+A <a href="http://en.wikipedia.org/wiki/Metric_%28mathematics%29" rel="nofollow">metric</a> is a distance function on a set of points having certain mathematical properties.  Euclidean distance is an example
+of a metric on points in a plane.  
+
+A <a href="http://en.wikipedia.org/wiki/String_metric" rel="nofollow">string metric</a> is a concept from computer science, used to define and calculate
+distances (differences) between strings (sequences) of symbols.
+
+It may be that "evolutionary distance" is a metric.  That's not clear to me.
+</blockquote>
+
+I'm not entirely sure that this is what you are after, but I would suggest that you take a look at the various Clustal programs.
+These are commonly used to compare multiple sequences.</div></div>
+<div class="comment" id="comment-336214"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 11 November 2014</p><div class="comment-body"><p>http://en.m.wikipedia.org/wiki/DamerauâLevenshtein_distance</p><p>http://en.m.wikipedia.org/wiki/NeedlemanâWunsch_algorithm</p><p>http://en.m.wikipedia.org/wiki/SmithâWaterman_algorithm</p></div></div>
+<div class="comment" id="comment-336217"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+Do you mean to say that the string metric employed is <a href="http://en.wikipedia.org/wiki/Taxicab_geometry" rel="nofollow">Taxicab geometry</a>?  Not a version of <a href="http://en.wikipedia.org/wiki/Levenshtein_distance" rel="nofollow">Levenshtein distance</a> (which I expected)?  Interesting.
+</blockquote>
+
+Well, they're the same if the strings have one-to-one matching, and we generally align sequences before computing distances and then count only the aligned portions, so there is one-to-one matching. If we had a good model of index evolution we could certainly try to compare the distances between two unaligned sequences. But we don't. And as Joe alludes, when we do that matching we usually try to find not just the minimum possible transformation but the most likely transformation, e.g. some fraction of identical bases have experienced changes that were then reversed, and any proper distance measure should account for that.</div></div>
+<div class="comment" id="comment-336218"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 11 November 2014</p><div class="comment-body"><p>Curse auto-correct. For "index" substitute "indel".</p></div></div>
+<div class="comment" id="comment-336219"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+http://en.m.wikipedia.org/wiki/DamerauâLevenshtein_distance
+
+http://en.m.wikipedia.org/wiki/NeedlemanâWunsch_algorithm
+
+http://en.m.wikipedia.org/wiki/SmithâWaterman_algorithm
+
+<b>To clarify something here:</b></blockquote>
+
+
+I'm sure everyone gets this but a little clarification won't hurt.
+
+Sequencing the DNA from a single lineage is different from comparing selected DNA sequences across lineages.
+
+There is some methodological overlap, in that current sequencing methodologies tend to chop up genomes into pieces and compare the pieces, to see where the overlapping ends are, to sew the whole thing back together in correct order.  That isn't the case with historical methods like Sanger sequencing, though.  It just helps to sequence genomes faster.
+
+If you sequence the mouse genome, that tells you a lot about the mouse genome, but that alone doesn't tell you anything about the phylogenetic relationship between mice and naked mole rats.
+
+If you take a suite of known mouse genes and compare them to known sequences of the homologues of those genes in naked mole rats, that might tell you about the phylogenetic relationship between the lineages.  But it doesn't sequence the rest of the mouse genome (or naked mole rat genome).
+
+</div></div>
+<div class="comment" id="comment-336220"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+http://en.m.wikipedia.org/wiki/DamerauâLevenshtein_distance
+
+http://en.m.wikipedia.org/wiki/NeedlemanâWunsch_algorithm
+
+http://en.m.wikipedia.org/wiki/SmithâWaterman_algorithm
+
+
+
+
+</blockquote>
+
+I don't know why the links were truncated such that clicking on them doesn't work, but you can copy and paste them into your browser and they will work.</div></div>
+<div class="comment" id="comment-336234"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+
+
+A <a href="http://en.wikipedia.org/wiki/Metric_%28mathematics%29" rel="nofollow">metric</a> is a distance function on a set of points having certain mathematical properties.  Euclidean distance is an example
+of a metric on points in a plane.  
+
+A <a href="http://en.wikipedia.org/wiki/String_metric" rel="nofollow">string metric</a> is a concept from computer science, used to define and calculate
+distances (differences) between strings (sequences) of symbols.
+
+It may be that "evolutionary distance" is a metric.  That's not clear to me.
+</blockquote>
+Then I would imagine that any given DNA sequence distance is a metric, unless you demand that it satisfy the triangle inequality, which I don't think is always true. The simplest sequence distance is just Manhattan distance.
+
+</blockquote>
+
+Meaning the genetic "distances" won't consistently obey the rules of Euclidean geometry?
+</div></div>
+<div class="comment" id="comment-336235"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+Meaning the genetic "distances" won't consistently obey the rules of Euclidean geometry?
+</blockquote>
+Yes. Any error in estimating the true number of changes has the potential to violate the triangle inequality.
+
+</div></div>
+<div class="comment" id="comment-336236"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+Do you mean to say that the string metric employed is <a href="http://en.wikipedia.org/wiki/Taxicab_geometry" rel="nofollow">Taxicab geometry</a>?  Not a version of <a href="http://en.wikipedia.org/wiki/Levenshtein_distance" rel="nofollow">Levenshtein distance</a> (which I expected)?  Interesting.
+</blockquote>
+
+Well, they're the same if the strings have one-to-one matching, and we generally align sequences before computing distances and then count only the aligned portions, so there is one-to-one matching. If we had a good model of index evolution we could certainly try to compare the distances between two unaligned sequences. But we don't. And as Joe alludes, when we do that matching we usually try to find not just the minimum possible transformation but the most likely transformation, e.g. some fraction of identical bases have experienced changes that were then reversed, and any proper distance measure should account for that.
+</blockquote>
+
+I don't understand.  If two strings match one-to-one, then any (every) string metric measures the distance between them to be zero, by definition.  
+
+I do wish I understood this better.  </div></div>
+<div class="comment" id="comment-336237"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 11 November 2014</p><div class="comment-body"><p>Not to mention the case where it starts out (A,(B,C)) but a change in a shared gene (that was identical in all three) in B leaves A and C "closer" if one looks only at that gene.</p></div></div>
+<div class="comment" id="comment-336238"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+I don't understand.  If two strings match one-to-one, then any (every) string metric measures the distance between them to be zero, by definition.  
+
+I do wish I understood this better.  
+</blockquote>
+When I said "match one-to-one" I only meant that each base in sequence A corresponds to a base in sequence B, not that they're the same base. There is, for example, a one-to-one match between AGAACGT and ACATCGT. (The Manhattan distance between those sequences is 2, more commonly expressed as a proportion or percentage, e.g. 29%.) There is no such match between sequences of unequal length or sequences that are different enough that they can't be aligned at all. 
+
+<blockquote>
+<strong>Henry J said:</strong>
+Not to mention the case where it starts out (A,(B,C)) but a change in a shared gene (that was identical in all three) in B leaves A and C "closer" if one looks only at that gene.
+</blockquote>
+This is why we don't determine phylogenetic relationships based on "closer", unless you're willing to assume a molecular clock.
+</div></div>
+<div class="comment" id="comment-336239"><p class="comment-meta"><span class="comment-author">phhht</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>phhht said:</strong>
+I don't understand.  If two strings match one-to-one, then any (every) string metric measures the distance between them to be zero, by definition.  
+
+I do wish I understood this better.  
+</blockquote>
+When I said "match one-to-one" I only meant that each base in sequence A corresponds to a base in sequence B, not that they're the same base. There is, for example, a one-to-one match between AGAACGT and ACATCGT. (The Manhattan distance between those sequences is 2, more commonly expressed as a proportion or percentage, e.g. 29%.) There is no such match between sequences of unequal length or sequences that are different enough that they can't be aligned at all. 
+
+<blockquote>
+<strong>Henry J said:</strong>
+Not to mention the case where it starts out (A,(B,C)) but a change in a shared gene (that was identical in all three) in B leaves A and C "closer" if one looks only at that gene.
+</blockquote>
+This is why we don't determine phylogenetic relationships based on "closer", unless you're willing to assume a molecular clock.
+
+</blockquote>
+
+So you use two distinct notions of "match."  One is a notion of
+"correspondence", while the other is a notion of "sameness", and it is the "sameness" notion you use in your definition of string
+metric, but "correspondence" is what you mean when you speak of
+a one-one match.  Right?</div></div>
+<div class="comment" id="comment-336244"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 11 November 2014</p><div class="comment-body"><p>I reckon it's a matter of identifying alleles of the same gene.</p></div></div>
+<div class="comment" id="comment-336246"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote>
+<strong>phhht said:</strong>
+So you use two distinct notions of "match."  One is a notion of
+"correspondence", while the other is a notion of "sameness", and it is the "sameness" notion you use in your definition of string
+metric, but "correspondence" is what you mean when you speak of
+a one-one match.  Right?
+</blockquote>
+Yes, sorry. Poor word choice. We would call those "site homology" and "base identity".
+
+<blockquote>
+<strong>Henry J said:</strong>
+I reckon it's a matter of identifying alleles of the same gene.
+</blockquote>
+
+You reckon what's a matter of identifying alleles of the same gene?</div></div>
+<div class="comment" id="comment-336251"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 11 November 2014</p><div class="comment-body"><blockquote><p>You reckon whatâs a matter of identifying alleles of the same gene?</p></blockquote>
+Deciding which sequence from one sample to line up against which sequence from each other sample to see what changed since divergence. 
+
+Yeah, I know it might be junk DNA or non-coding regulatory stuff which isn't a protein-coding gene, but it still seemed like a good analogy.
+</div></div>
+<div class="comment" id="comment-336255"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 12 November 2014</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote><p>You reckon whatâs a matter of identifying alleles of the same gene?</p></blockquote>
+Deciding which sequence from one sample to line up against which sequence from each other sample to see what changed since divergence. 
+
+Yeah, I know it might be junk DNA or non-coding regulatory stuff which isn't a protein-coding gene, but it still seemed like a good analogy.
+</blockquote>
+I suppose you might call them alleles, though nobody does. Instead we talk about orthology and paralogy.
+</div></div>
+<div class="comment" id="comment-336263"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 12 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote><p>You reckon whatâs a matter of identifying alleles of the same gene?</p></blockquote>
+Deciding which sequence from one sample to line up against which sequence from each other sample to see what changed since divergence. 
+
+Yeah, I know it might be junk DNA or non-coding regulatory stuff which isn't a protein-coding gene, but it still seemed like a good analogy.
+</blockquote>
+I suppose you might call them alleles, though nobody does. Instead we talk about orthology and paralogy.
+
+</blockquote>
+
+I wouldn't call orthologous or paralogous sequences alleles of each other.
+
+(Paralogs are sequences at different loci that are similar because they arose from gene duplication and orthologs are sequences that are similar because they are in different lineages but share a common ancestor, e.g. cat hemoglobin genes and human hemoglobin genes.)
+
+Alleles are versions of <i>the same nucleotide sequence at the same locus, in the same lineage</i>. This isn't a trivial word game, the concept of an allele is very important in medicine and genetics in general. It isn't just a different version of the same gene, it's basically a different version of the same gene at the same locus in the same lineage.  I'm not saying that's a super-strict definition, but to use the term to mean something other than that would invite a great deal of confusion.
+
+The sickle hemoblogin gene is an allele of the human beta hemoglobin gene. At the human beta hemoglobin locus, any of a number of alleles can be present, including normal versions or a sickle allele.
+
+At least some of the various human hemoglobin genes may well be paralogs of each other, derived from a single ancestor hemoglobin gene.
+
+The human hemoglobin genes are very similar to cat hemoglobin genes, as I mentioned above, but those are orthologs.  </div></div>
+<div class="comment" id="comment-336282"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 12 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+I wouldn't call orthologous or paralogous sequences alleles of each other.
+</blockquote>
+Neither would I.
+</div></div>
+<div class="comment" id="comment-336300"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+I wouldn't call orthologous or paralogous sequences alleles of each other.
+</blockquote>
+Neither would I.
+
+</blockquote>
+
+But I would, if they are orthologous copies that are within the same species.  (And particularly if they are different from each other, as we do not usually say that sequence A is an allele of sequence A).
+
+</div></div>
+<div class="comment" id="comment-336305"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 13 November 2014</p><div class="comment-body"><p>Do they have to be in the same species? After all, chimpanzees and humans share many HLA alleles, though of course the same allele in each species has a slightly different sequence. I don't even think there's a word for it, since all the alleles are orthologs.</p></div></div>
+<div class="comment" id="comment-336311"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+Do they have to be in the same species? After all, chimpanzees and humans share many HLA alleles, though of course the same allele in each species has a slightly different sequence. I don't even think there's a word for it, since all the alleles are orthologs.
+</blockquote>
+
+Since all of life is related, boundaries tend to be arbitrary.
+
+Coming from a medical background, I would tend to restrict the term "allele" to things that can occur at the same locus in the same breeding population.
+
+So I wouldn't call the chimpanzee ortholog of a specific human HLA allele an "allele" of that human HLA locus.  I'd call it an ortholog of a specific human HLA allele.
+
+There are undoubtedly countless examples of this in the biosphere.  Closely related but not breeding lineages that not only have orthologs of each others' genes, but orthologs of each others' individual alleles of genes.
+
+Of course, I'm implicitly talking about the use of the word "allele" in populations that are at least diploid and reproduce mainly by meiosis.  The whole concept of an allele is less meaningful in haploid bacteria.  The term can be used, but unless there's a plasmid or something complicating issues, a bacterium basically gets the one gene at the one locus it gets, and so do its offspring except any that get a new mutation.  (Anyone who wants to expand on number of gene copies possible in bacteria is welcome to do so; I'm generalizing to make a point about vocabulary.)
+
+By no means am I trying to be pedant here.  Just trying to be clear about what words mean to me.
+
+To me it isn't an allele of, say, the human hemoglobin beta gene, unless it occurs, has occurred, or could occur, at the human hemoglobin beta gene locus in the human population.  Same for the cat or chimpanzee hemoglobin beta gene.
+
+I agree in advance that someone can invent unusual scenarios that would challenge this.  What if a virus </div></div>
+<div class="comment" id="comment-336312"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 13 November 2014</p><div class="comment-body"><p>Oops, truncated.  Forget the last line.  I'm not interested in inventing convoluted scenarios to challenge my own usage of the term "allele" :)</p></div></div>
+<div class="comment" id="comment-336322"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+Do they have to be in the same species? After all, chimpanzees and humans share many HLA alleles, though of course the same allele in each species has a slightly different sequence. I don't even think there's a word for it, since all the alleles are orthologs.
+</blockquote>
+
+Since all of life is related, boundaries tend to be arbitrary.
+
+Coming from a medical background, I would tend to restrict the term "allele" to things that can occur at the same locus in the same breeding population.
+
+So I wouldn't call the chimpanzee ortholog of a specific human HLA allele an "allele" of that human HLA locus.  I'd call it an ortholog of a specific human HLA allele.
+</blockquote>
+But aren't all alleles at that locus, in both species, orthologs? There really is no name for this relationship, but when corresponding alleles in humans and chimps are referred to, they are commonly called the same allele. I see no sign in the literature that the word "allele" is used only within populations.
+<blockquote>
+To me it isn't an allele of, say, the human hemoglobin beta gene, unless it occurs, has occurred, or could occur, at the human hemoglobin beta gene locus in the human population.  Same for the cat or chimpanzee hemoglobin beta gene.
+</blockquote>
+You stack the deck when you specify "human" above. Is it al allele of the hemoglobin beta gene? There are other complications. Some populations of a single species have private alleles. Are these not to be considered allelic variation in the species because some populations lack it entirely? If two populations each have private alleles, can those be considered alleles, since they can never co-occur? As is so often the case in biology, there are a great many cases that confound any simple definition. I think the chimp HLA case becomes cumbersome to talk about if we can't say "same allele" in the different species; "orthologous" won't do it, and there is no other word. But if allelic structure isn't shared between species, nobody would say that variation between the two species is allelic.</div></div>
+<div class="comment" id="comment-336324"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 13 November 2014</p><div class="comment-body">John Harshman - 
+
+I'm not trying to start a long semantic debate here.
+
+Why would you NOT want to have a word that refers specifically to the alleles that CAN occur as variants at the same locus in the same population?
+
+Why would you NOT want to differentiate that from homologs of the same gene in more distant lineages?
+
+<blockquote>There are other complications. Some populations of a single species have private alleles. Are these not to be considered allelic variation in the species because some populations lack it entirely? If two populations each have private alleles, can those be considered alleles, since they can never co-occur? As is so often the case in biology, there are a great many cases that confound any simple definition. I think the chimp HLA case becomes cumbersome to talk about if we canât say âsame alleleâ in the different species; âorthologousâ wonât do it, and there is no other word. But if allelic structure isnât shared between species, nobody would say that variation between the two species is allelic.</blockquote>
+
+I'm really not trying to argue for some super-restricted use of the term allele.  Of course these are variants of the general concept.  
+
+All I'm saying is that what we mean by "allele" and what we mean by "ortholog" are similar but slightly different concepts.
+
+</div></div>
+<div class="comment" id="comment-336325"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 13 November 2014</p><div class="comment-body"><p>(At risk of setting off too much terminological discussion) There is a similar problem with "gene".  Does it mean a locus, or an allele, or a particular copy?  At my hemoglobin Beta "gene" do I have two "genes", one from my father and one from my mother, and if I am heterozygous does that mean I have two "genes", but only one if I am homozygous?</p><p>And if we solve that tangle, then we could take up what journalists think they mean when they announce excitedly that scientists have "broken the genetic code" for some trait.</p></div></div>
+<div class="comment" id="comment-336329"><p class="comment-meta"><span class="comment-author">Jim Thomerson</span> &middot; 13 November 2014</p><div class="comment-body"><p>When I took introductory genetics in 1959, I had a clear understanding of these terms.  Are you sure we have made progress?</p></div></div>
+<div class="comment" id="comment-336330"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>Jim Thomerson said:</strong>
+
+When I took introductory genetics in 1959, I had a clear understanding of these terms.  Are you sure we have made progress?
+</blockquote>
+
+Everyone has a clear understanding of these terms.  It's just that they don't all have the same understanding of them.</div></div>
+<div class="comment" id="comment-336331"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+All I'm saying is that what we mean by "allele" and what we mean by "ortholog" are similar but slightly different concepts.
+</blockquote>
+Wouldn't you say that "allele" is a subset of "ortholog"? And do you have a word to describe the situation in which multiple allelic lineages are carried through divergence events, as in the human-chimp HLA case? What do you call alleles in two species that predate the separation of those species?
+</div></div>
+<div class="comment" id="comment-336332"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+All I'm saying is that what we mean by "allele" and what we mean by "ortholog" are similar but slightly different concepts.
+</blockquote>
+Wouldn't you say that "allele" is a subset of "ortholog"? And do you have a word to describe the situation in which multiple allelic lineages are carried through divergence events, as in the human-chimp HLA case? What do you call alleles in two species that predate the separation of those species?
+
+</blockquote>
+
+My take is that in the ancestor they are alleles, but the minute the species split, two copies, one from each species, are not alleles.  The same two sequences in one of the species are alleles.  Terminology is weird sometimes.</div></div>
+<div class="comment" id="comment-336334"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+</div></div>
+<div class="comment" id="comment-336340"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 13 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+
+</blockquote>
+
+Orthologs.</div></div>
+<div class="comment" id="comment-336343"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+All I'm saying is that what we mean by "allele" and what we mean by "ortholog" are similar but slightly different concepts.
+</blockquote>
+Wouldn't you say that "allele" is a subset of "ortholog"? And do you have a word to describe the situation in which multiple allelic lineages are carried through divergence events, as in the human-chimp HLA case? What do you call alleles in two species that predate the separation of those species?
+
+</blockquote>
+
+Yes</div></div>
+<div class="comment" id="comment-336344"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+All I'm saying is that what we mean by "allele" and what we mean by "ortholog" are similar but slightly different concepts.
+</blockquote>
+Wouldn't you say that "allele" is a subset of "ortholog"? And do you have a word to describe the situation in which multiple allelic lineages are carried through divergence events, as in the human-chimp HLA case? What do you call alleles in two species that predate the separation of those species?
+
+</blockquote>
+
+My take is that in the ancestor they are alleles, but the minute the species split, two copies, one from each species, are not alleles.  The same two sequences in one of the species are alleles.  Terminology is weird sometimes.
+</blockquote>
+
+This is also my take.
+
+I realize it's not always obvious where a species ends.
+
+</div></div>
+<div class="comment" id="comment-336345"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Jim Thomerson said:</strong>
+
+When I took introductory genetics in 1959, I had a clear understanding of these terms.  Are you sure we have made progress?
+</blockquote>
+
+ Yes.</div></div>
+<div class="comment" id="comment-336346"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+
+</blockquote>
+
+Orthologs.
+</blockquote>
+They're all orthologs. Is there no word to denote the special relationship between the most closely related gene lineages but not the less closely related ones?
+</div></div>
+<div class="comment" id="comment-336349"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+
+</blockquote>
+
+Orthologs.
+</blockquote>
+They're all orthologs. Is there no word to denote the special relationship between the most closely related gene lineages but not the less closely related ones?
+
+</blockquote>
+
+There is no single word, that I know of.  You can talk of clades of orthologs, but there is no 1-word or 2-word term.</div></div>
+<div class="comment" id="comment-336352"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+
+</blockquote>
+
+Orthologs.
+</blockquote>
+They're all orthologs. Is there no word to denote the special relationship between the most closely related gene lineages but not the less closely related ones?
+
+</blockquote>
+
+There is no single word, that I know of.  You can talk of clades of orthologs, but there is no 1-word or 2-word term.
+</blockquote>
+How about "allelologs"</div></div>
+<div class="comment" id="comment-336354"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 14 November 2014</p><div class="comment-body">
+
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+
+</blockquote>
+
+Orthologs.
+</blockquote>
+They're all orthologs. Is there no word to denote the special relationship between the most closely related gene lineages but not the less closely related ones?
+
+</blockquote>
+
+There is no single word, that I know of.  You can talk of clades of orthologs, but there is no 1-word or 2-word term.
+</blockquote>
+
+How about "allelologs"
+
+</blockquote>
+
+The problem is getting the term accepted. As the song says, "nice work if you can do it".
+
+It's made a bit tricky as soon as a copy of allele A in one species undergoes an amino acid substitution, or even a nucelotide substitution, and isn't quite identical to the copies in the other species. Are they still allelologs?
+
+</div></div>
+<div class="comment" id="comment-336355"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+
+
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>John Harshman said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+but the minute the species split, two copies, one from each species, are not alleles.
+</blockquote>
+OK, that's what they aren't. But what <i>are</i> they?
+
+</blockquote>
+
+Orthologs.
+</blockquote>
+They're all orthologs. Is there no word to denote the special relationship between the most closely related gene lineages but not the less closely related ones?
+
+</blockquote>
+
+There is no single word, that I know of.  You can talk of clades of orthologs, but there is no 1-word or 2-word term.
+</blockquote>
+
+How about "allelologs"
+
+</blockquote>
+
+The problem is getting the term accepted. As the song says, "nice work if you can do it".
+
+It's made a bit tricky as soon as a copy of allele A in one species undergoes an amino acid substitution, or even a nucelotide substitution, and isn't quite identical to the copies in the other species. Are they still allelologs?
+
+
+</blockquote>
+I'd say they would be allelologs as long as the multiple allele lineages persist. If the ancestral population had alleles A and B, while the two descendant populations contain, respectively, alleles A' and B', A'' and B'', then A' and A'' are allelologs, as are B' and B''. If, on the other hand, B' and B'' were lost from their populations, it seems to serve no purpose to continue calling A' and A'' allelologs rather than just orthologs. Clearly, allelology is a subset of orthology. 
+
+Hey, has "gametolog" been accepted as standard terminology? (Of course, gametologs are, strictly speaking, neither orthologs or paralogs.)</div></div>
+<div class="comment" id="comment-336356"><p class="comment-meta"><span class="comment-author">Jim Thomerson</span> &middot; 14 November 2014</p><div class="comment-body"><p>How does a gene undergo an amino acid substitution?</p></div></div>
+<div class="comment" id="comment-336357"><p class="comment-meta"><span class="comment-author">someotherguy86</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Jim Thomerson said:</strong>
+
+How does a gene undergo an amino acid substitution?
+</blockquote>
+
+I can't tell if this is a serious or facetious question, so I'll assume that it's serious.
+
+Many (though not all) genes code for proteins, which are of course made of amino acids.  Therefore, any nucleotide substitution at a non-synonymous position of a gene can cause an amino acid substitution in the protein product of that gene. </div></div>
+<div class="comment" id="comment-336358"><p class="comment-meta"><span class="comment-author">Jim Thomerson</span> &middot; 14 November 2014</p><div class="comment-body"><p>I thought that is what was meant to be said.</p></div></div>
+<div class="comment" id="comment-336359"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 14 November 2014</p><div class="comment-body"><blockquote>
+<strong>Jim Thomerson said:</strong>
+
+I thought that is what was meant to be said.  
+</blockquote>
+
+It is true that amino acid substitutions occurring directly in nucleotide sequences are hard to imagine.</div></div>
+<div class="comment" id="comment-336380"><p class="comment-meta"><span class="comment-author">Rolf</span> &middot; 16 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+http://en.m.wikipedia.org/wiki/DamerauâLevenshtein_distance
+
+http://en.m.wikipedia.org/wiki/NeedlemanâWunsch_algorithm
+
+http://en.m.wikipedia.org/wiki/SmithâWaterman_algorithm
+
+
+
+
+</blockquote>
+
+I don't know why the links were truncated such that clicking on them doesn't work, but you can copy and paste them into your browser and they will work.
+</blockquote>
+
+A good idea might be to use Tinyurl. But I have taken it one step further by having a template of a proper link in a MSWord file. I copy and paste the tinyurl, enter the text to be displayed and copy the result to the edit window. But I am a tinkerer.</div></div>
+<div class="comment" id="comment-336381"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 16 November 2014</p><div class="comment-body"><blockquote>
+<strong>Rolf said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+http://en.m.wikipedia.org/wiki/DamerauâLevenshtein_distance
+
+http://en.m.wikipedia.org/wiki/NeedlemanâWunsch_algorithm
+
+http://en.m.wikipedia.org/wiki/SmithâWaterman_algorithm
+
+
+
+
+</blockquote>
+
+I don't know why the links were truncated such that clicking on them doesn't work, but you can copy and paste them into your browser and they will work.
+</blockquote>
+
+A good idea might be to use Tinyurl. But I have taken it one step further by having a template of a proper link in a MSWord file. I copy and paste the tinyurl, enter the text to be displayed and copy the result to the edit window. But I am a tinkerer.
+</blockquote>
+
+There are so many bad guys out there that I am sometimes wary of asking people to trust me, that I might be contributing to an atmosphere of trust which is so easy to exploit.
+
+BTW, it is so irritating to have no prior warning that my sign-in period has expired. Making so absurdly short is bad enough, but at least I ought to be told that I am no longer signed in before trying to comment. Is there some rational reason for this?</div></div>
+<div class="comment" id="comment-336386"><p class="comment-meta"><span class="comment-author">gnome de net</span> &middot; 16 November 2014</p><div class="comment-body"><blockquote>
+<strong>TomS said:</strong>
+
+BTW, it is so irritating to have no prior warning that my sign-in period has expired. Making so absurdly short is bad enough, but at least I ought to be told that I am no longer signed in before trying to comment. Is there some rational reason for this?
+</blockquote>
+
+I share your exasperation with the short sign-in periods, but when my session <i>has</i> expired, I'm always reminded to log in before posting. Perhaps because I always preview my comments? Hmmm...</div></div>
+<div class="comment" id="comment-336393"><p class="comment-meta"><span class="comment-author">Rolf</span> &middot; 16 November 2014</p><div class="comment-body"><blockquote>
+<strong>gnome de net said:</strong>
+
+<blockquote>
+<strong>TomS said:</strong>
+
+BTW, it is so irritating to have no prior warning that my sign-in period has expired. Making so absurdly short is bad enough, but at least I ought to be told that I am no longer signed in before trying to comment. Is there some rational reason for this?
+</blockquote>
+
+I share your exasperation with the short sign-in periods, but when my session <i>has</i> expired, I'm always reminded to log in before posting. Perhaps because I always preview my comments? Hmmm...
+</blockquote>
+So do I. Then I login again, do a few arrow left on Firefox and if it looks OK off it goes.
+</div></div>
+<div class="comment" id="comment-336405"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>Rolf said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+http://en.m.wikipedia.org/wiki/DamerauâLevenshtein_distance
+
+http://en.m.wikipedia.org/wiki/NeedlemanâWunsch_algorithm
+
+http://en.m.wikipedia.org/wiki/SmithâWaterman_algorithm
+
+
+
+
+</blockquote>
+
+I don't know why the links were truncated such that clicking on them doesn't work, but you can copy and paste them into your browser and they will work.
+</blockquote>
+
+A good idea might be to use Tinyurl. But I have taken it one step further by having a template of a proper link in a MSWord file. I copy and paste the tinyurl, enter the text to be displayed and copy the result to the edit window. But I am a tinkerer.
+</blockquote>
+
+Those are good ideas, also, I could have embeded them in html.
+
+I'm addicted to Chrome, even though Google isn't considered cool anymore.  I literally did win an Ipad in a raffle so I also sometimes use Safari.   When I do use Firefox I notice weird issues with this site in particular.  Especially comments.   </div></div>
+<div class="comment" id="comment-336406"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 17 November 2014</p><div class="comment-body"><p>I get the premature timed-out problem too (with Google Chrome).  I have had to train myself to immediately copy the contents of the comment edit box to the system clipboard as soon as I see this.  After logging back in, my comment is gone from the comment box, but I can at least paste the comment back in.</p><p>I get the initial premature logout no matter how quickly I try to submit the comment.  But after that, I do not get another auto-logout for some considerable amount of time.  Clearly this is a bug in the Movable Type software.</p><p>(There, it did it again.)</p></div></div>
+<div class="comment" id="comment-336407"><p class="comment-meta"><span class="comment-author">gnome de net</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+I get the premature timed-out problem too (with Google Chrome).  I have had to train myself to immediately copy the contents of the comment edit box to the system clipboard as soon as I see this.  After logging back in, my comment is gone from the comment box, but I can at least paste the comment back in.
+
+</blockquote>
+
+I use Firefox and I always preview my comments. When I encounter the annoying unexpected need to re-log-in, after logging in I use the back-button drop-down list to go to the last page before the log-in where my comment is always preserved intact in the edit box.</div></div>
+<div class="comment" id="comment-336414"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+I get the premature timed-out problem too (with Google Chrome).  I have had to train myself to immediately copy the contents of the comment edit box to the system clipboard as soon as I see this.  After logging back in, my comment is gone from the comment box, but I can at least paste the comment back in.
+
+I get the initial premature logout no matter how quickly I try to submit the comment.  But after that, I do not get another auto-logout for some considerable amount of time.  Clearly this is a bug in the Movable Type software.
+
+(There, it did it again.)
+</blockquote>
+
+This is exactly what I always do.  All browsers encounter the "says you're logged in but then says you're logged out when you preview" problem.  The issues I had with this site and Firefox were other things.  Not being able to open a comments box at all, so that I could read comments but not post, was one.
+
+I have no doubt that fiddling the settings on Firefox would cure the problems, but I have no reason to bother.  Historically Firefox was amazing as an alternative to crappy IE, but now I generally prefer Chrome anyway.  Different strokes for different folks.  I'm also using IE by necessity right now, and the newer versions are far less detestable.  I could almost live with current IE.<blockquote>
+<strong>gnome de net said:</strong>
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+I get the premature timed-out problem too (with Google Chrome).  I have had to train myself to immediately copy the contents of the comment edit box to the system clipboard as soon as I see this.  After logging back in, my comment is gone from the comment box, but I can at least paste the comment back in.
+
+</blockquote>
+
+I use Firefox and I always preview my comments. When I encounter the annoying unexpected need to re-log-in, after logging in I use the back-button drop-down list to go to the last page before the log-in where my comment is always preserved intact in the edit box.
+</blockquote>
+
+There are other ways to do this, too, such as using the History function, but for me, the second best method is just write the comment, preview, and if I'm not logged in, copy it, log in, and paste it.
+
+The first best method would be to know whether or not I'm logged in, but that's not available.
+
+Some people have the really good habit of writing their comments in a text editor or word processing program.  That's the logical way to go but I often just write the comment and roll the dice on whether or not I'm logged in.</div></div>
+<div class="comment" id="comment-336417"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+Some people have the really good habit of writing their comments in a text editor or word processing program.  
+</blockquote>
+
+The problem with that is that characters which look perfectly normal in the text editor may become very weird when the comment is posted.  Or has that been fixed now?</div></div>
+<div class="comment" id="comment-336422"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+Some people have the really good habit of writing their comments in a text editor or word processing program.  
+</blockquote>
+
+The problem with that is that characters which look perfectly normal in the text editor may become very weird when the comment is posted.  Or has that been fixed now?
+</blockquote>
+
+I'm going to test something; I've used notepad to write this "test sentence" with quite a bit of 'punctuation' in it, we'll see if it creates any weird European letters.</div></div>
+<div class="comment" id="comment-336423"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+<blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+Some people have the really good habit of writing their comments in a text editor or word processing program.  
+</blockquote>
+
+The problem with that is that characters which look perfectly normal in the text editor may become very weird when the comment is posted.  Or has that been fixed now?
+</blockquote>
+
+I'm going to test something; I've used notepad to write this "test sentence" with quite a bit of 'punctuation' in it, we'll see if it creates any weird European letters.
+</blockquote>
+
+Now I've "replied" to myself and I'm going to separately quote the original sentence below.
+
+<blockquote>Iâm going to test something; Iâve used notepad to write this âtest sentenceâ with quite a bit of âpunctuationâ in it, weâll see if it creates any weird European letters.</blockquote></div></div>
+<div class="comment" id="comment-336425"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 17 November 2014</p><div class="comment-body"><p>Also copied and pasted from Notepad - 1!2@3#4$5%6^7&amp;8*9(0)</p><p>Now that's interesting, PT inserted the "amp;" next to the ampersand sign.</p><p>Now I'll paste the same thing from word.</p><p>1!2@3#4$5%6^7&amp;8*9(0)</p><p>No inserted "amp;".</p><p>No doubt the answer to this mystery is as obvious to some people, as a leukoerythroblastic pattern on a peripheral blood smear would be to me. But I'll have to defer to their expertise.</p></div></div>
+<div class="comment" id="comment-336426"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+Also copied and pasted from Notepad - 1!2@3#4$5%6^7&amp;8*9(0)
+
+Now that's interesting, PT inserted the "amp;" next to the ampersand sign.
+
+Now I'll paste the same thing from word.
+
+1!2@3#4$5%6^7&amp;8*9(0)
+
+No inserted "amp;".
+
+No doubt the answer to this mystery is as obvious to some people, as a leukoerythroblastic pattern on a peripheral blood smear would be to me. But I'll have to defer to their expertise.
+</blockquote>
+
+Well, that certainly made me look foolish.  PT insterted something odd in the preview, only for the string from the bare bones text editor Notepad.  But it didn't insert the weirdness into the final comment.</div></div>
+<div class="comment" id="comment-336428"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 17 November 2014</p><div class="comment-body"><p>Weirdness within weirdness.</p></div></div>
+<div class="comment" id="comment-336439"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 17 November 2014</p><div class="comment-body"><blockquote><p>Also copied and pasted from Notepad - 1!2@3#4$5%6^7&amp;8*9(0)
+
+Now thatâs interesting, PT inserted the âamp;â next to the ampersand sign.
+
+Now Iâll paste the same thing from word.
+
+1!2@3#4$5%6^7&amp;8*9(0)
+
+No inserted âamp;â.
+</p></blockquote>
+Wonder if the text in front of the string might have influenced the result?
+
+I can see having cases where &amp; gets amp; stuck onto it; there could well be cases where at least one known browser type might get confused, if it is immediately followed by digits or maybe letters.
+
+Henry
+
+Incidentally, session was expired at time of first preview of this. Also it inserted amp; after the ampersands after complaining about the bad formatting. That makes me wonder if a &amp; followed immediately by a blank would cause that. Yep, it did.
+
+
+</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Target? TARGET? We STILL don&#x27;t need no stinkin&#x27; Target! — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Target? TARGET? We STILL don&#x27;t need no stinkin&#x27; Target!</h1><p class="post-meta">Posted 16 January 2016 by <span class="post-author">Dave Thomas</span></p><div class="post-body"><img src="http://www.nmsr.org/weasel-1.jpg" alt="weasel-1.jpg" width="547" 
+height="216" style="margin: 0 20px 20px 0;" />
+
+
+<p>As part of the year-end Kitzmas festivities, The Discovery Institute's PR organ 
+Evolution News and Views re-posted an earlier article titled <a 
+href="http://www.evolutionnews.org/2015/09/following_dover099671.html" 
+target="_blank">Following Kitzmiller v. Dover, an Excellent Decade for Intelligent 
+Design</a>.</p>
+<p>This uncredited article from September 2015 included the following, which caught 
+my eye:
+<blockquote><i>In fact, the decade since Dover has been an excellent one for ID. Casey 
+Luskin noted some highlights not long ago:... Theoretical peer-reviewed papers taking 
+down alleged <a href="http://bio-complexity.org/ojs/index.php/main/article/view/BIO-
+C.2014.1">computer simulations of evolution</a>, showing that 
+intelligent design is needed to produce new information.</i></blockquote></p>
+<p>The paper which was linked, hereafter <a href="http://bio-complexity.org/ojs/index.php/main/article/view/BIO-
+C.2014.1">Ewert 2014</a>, is titled "<i>Digital Irreducible Complexity: A Survey of 
+Irreducible Complexity in Computer Simulations</i>", and was written by Winston Ewert of 
+the Biologic Institute for a 2014 edition of the institute's open-access journal 
+BIO-Complexity.</p>
+<img src="http://www.nmsr.org/weasel.jpg" alt="weasel.jpg" width="300" 
+height="267" style="float: right; margin: 20px 20px 20px 20px;" class="mt-image-right" />
+<p>Ewert claims that Michael Behe's concept of "Irreducible Complexity" is a 
+stumbling block for evolutionary algorithms, and that several computer models of the evolution of 
+irreducibly complex structures all fail to falsify Behe's concept. Ewert examines 
+five models: Lenski's Avida, Schneider's Ev, my own Steiner Trees, Sadedin's 
+Geometric Model, and Thompson's Digital Ears program.</p>
+<p>I won't speak for the other models, but I can say this about Ewert's discussion of 
+Steiner solutions to network problems: it's a massive strawman fallacy, a desperate 
+"bait and switch" in which the problem my algorithm was solving, Steiner networks, 
+was "replaced" with a much simpler problem, Minimum Spanning Trees. This ruse enabled Ewert to launch a (straw) attack on my genetic algorithm for solving Steiner's 
+problem.</p>
+<p>The Steiner Genetic Algorithm was the subject of a heated blog war, the "War of 
+the Weasels," occurring between Panda's Thumb and Uncommon Descent during the summer 
+of 2006. It all began with my post of July 5th, 2006, <a href="http://www.pandasthumb.org/archives/2006/07/target_target_w_1.html">Target? TARGET? We don't need no stinkin' Target!</a>
+It seemed the War of the Weasels ended in the fall of 2006, after Uncommon 
+Descent's top programmers were unable to out-design the Steiner genetic algorithm 
+during a public design challenge. But with Ewert's 2014 article, and an earlier 2012 
+piece in BIO-Complexity by Ewert, Dembski and Marks, it's clear that no ceasefire 
+exists.</p>
+<p>The War of the Weasels is back! More below the fold.</p>
+
+The "War of the Weasels" got its start with <a 
+href="http://www.pandasthumb.org/archives/2006/07/target_target_w_1.html">this post 
+on PT</a>. Why "Weasels"? Well, Richard Dawkins' 1987 book "The Blind Watchmaker" used a very simplified genetic algorithm to demonstrate that <i>cumulative</i> selection was much more powerful than <i>random</i> selection. Dawkins' demonstration involved comparing various strings to the known phrase from Shakespeare's "Hamlet," "<i>Methinks it is like a weasel</i>." Cumulative selection was demonstrated by basing the new "generation" of guesses for the phrase on the closest-matching member of the previous generation; in a few dozen generations, the target phrase was matched. By contrast, when random (e.g. no) selection was employed, the program floundered endlessly. 
+
+Even though Dawkins explicitly warned his readers that "<i>Life isn't like that. Evolution has no long-term goal. There is no long-distance target, no final perfection...</i>", Dembski, Meyer and others consistently say that <b><i>all</i></b> genetic algorithms, just like Dawkins' "Weasel", must have the answers fed into the program -- if not explicitly, then surreptitiously via supplying "active information" or "front loading." 
+
+Both young-earth creationists and ID theorists attempt to smear <b>all</b> genetic algorithms using the "Weasel" brush. It's been that way for decades. To truly appreciate the depths to which the leaders of the ID movement are obsessed with Dawkins and "weasel," read Ian Musgrave's PT posts <a 
+href="http://pandasthumb.org/archives/2009/03/dembski-weasels.html">"Dembski Weasels Out"</a> and <a href="http://pandasthumb.org/archives/2009/03/weasles-on-
+para.html">"Weasles on Parade."</a>
+
+The purpose of my July 2006 PT "Target" post was to discuss a genetic algorithm I'd developed that solved a difficult math conundrum, "Steiner's Problem." For any arbitrary collection of <i>n</i> points, the Steiner solution is the minimum-length set of straight-line segments connecting the given points to each other, and to additional variable-position "interchange" points.
+
+I picked Steiner's problem specifically to counter the "Weasel" charge that genetic algorithm answers were being fed into the programs. Because Steiner's problem applies to <i>any</i> configuration of points, I designed my program so that <i>new</i> configurations could be considered -- problems with no known answers. Imagine that.
+
+The topic was the subject of a vigorous blog war in the summer of 2006, between Panda's Thumb and Uncommon Descent, culminating in the <a 
+href="http://www.pandasthumb.org/archives/2006/08/take_the_design.html">"Design 
+Challenge."</a> In that August 14, 2006 post, I challenged ID theorists and the general public to derive or devise the Steiner solution for six points arranged in a 3x2 rectangle; since the creationists were saying I was "front loading" the algorithm via my fitness function, I published that function, along with the <a href="http://www.pandasthumb.org/archives/2006/07/steiner-genetic.html">complete program</a>, and challenged them to reverse-engineer the solution. I knew it would be a good problem, because the solution my genetic algorithm came up with earlier truly surprised me. 
+
+While Uncommon Descent's Salvador Cordova attempted to "design" the Steiner solution, he ended up falling short, coming up with only a "MacGyver" solution: a network that connects the given points with a short, <b><i>but not the minimal</i></b> network.  It cannot be emphasized enough that so-called "MacGyver" solutions (named after the TV show "MacGyver", in which the hero would save the day using imperfect, klugy solutions to escape dangerous situations) are <i><b>not</b></i> "Steiner" solutions; they are simply imperfect networks that get close to the answer, but which do <b>not</b> achieve Steiner "perfection."
+
+<a href="http://www.pandasthumb.org/archives/2006/08/design_challeng_1.html">
+Several correct Steiner solutions, along with some creative MacGyver solutions</a>, were submitted in the Design Challenge by non-ID contestants; some of these were designed, while others got the answer(s) from their own versions of a Steiner Genetic Algorithm.
+
+There's a road map to the summer's "War of the Weasels" in the summary post <a 
+href="http://pandasthumb.org/archives/2006/09/genetic-algorit.html">Genetic Algorithms for Uncommonly Dense Software Engineers</a>. The upshot of it all was that Cordova and the Uncommon Descent software Team learned Leslie Orgel's aphorism the hard way: <i>"Evolution is smarter than you are."</i> Not <b>one</b> ID supporter could derive the solution which was obtained by multiple independent versions of a genetic algorithm for Steiner's problem. 
+
+The affair was also described in an <a href="http://www.csicop.org/si/show/war_of_the_weasels">article</a> I wrote for the May-June 2010 
+issue of Skeptical Inquirer, "<i>War of the Weasels: An Evolutionary Algorithm Beats Intelligent Design</i>", Skept Inq 43:42-46 <a 
+href="http://www.physics.smu.edu/pseudo/ID/War_of_the_Weasels.pdf">(PDF)</a>.
+
+As mentioned above the fold, the paper <a href="http://bio-complexity.org/ojs/index.php/main/article/view/BIO-C.2014.1/BIO-C.2014.1">Ewert 2014</a> caught my eye. Ewert's Figure 2 has a deceptive title, "<i>A depiction of a Steiner tree</i>." The network shown is a connected graph, and <i>almost</i> a "minimal spanning tree" as well, but it is most definitely <b>not</b> a Steiner Tree!
+<img src="http://www.nmsr.org/weasel-2.jpg" alt="weasel-2.jpg" width="399" 
+height="241" style="float: left; margin: 0 20px 20px 0;" class="mt-image-left" />
+
+Ewert says the following about the Steiner algorithm:
+<blockquote><i>Dave Thomas presented his model as a genetic algorithm that evolves solutions to the Steiner tree problem [Skept Inq 43:42-46.], a problem that can be viewed as how to connect a number of cities by a road network using as little road as possible. In his model Thomas penalizes excess roads and disconnected cities; the fitness function assesses a small penalty for each length of road and a large penalty for leaving any city disconnected. Thomas claims that his model can evolve an irreducibly complex system</i>:
+
+<blockquote>And finally, two pillars of ID theory, "irreducible complexity" and "complex specified information" were shown not to be beyond the capabilities of evolution.
+[Skept Inq 43:42-46] </blockquote> 
+
+<i>He makes this claim because removal of any roads in Figure 2 disconnects the network, and makes it impossible to travel between some of the cities. According to Thomas,  the roads are therefore the parts of an irreducibly complex system. It should be noted, however, that obtaining a connected road network is actually trivial--a connected network can be achieved by random chance alone. A depiction of such a network can be seen in Figure 2. The difficulty in the Steiner tree problem is in trying to minimize the amount of road used [<a 
+href="http://bio-complexity.org/ojs/index.php/main/article/view/50">EDM 2012</a>], not in 
+getting a connected network. Therefore we can say that there are no intermediate 
+evolutionary stages in obtaining such a network</i>.
+</blockquote>
+
+This is the bait and switch. True Steiner solutions are not only Irreducibly Complex, they have <i>Complex Specified Information</i>, as they are specific solutions of an NP-hard math problem. But Ewert simply <b>discards the requirement that the network be minimal length</b>, and substitutes a far easier problem, Minimum Spanning Trees. Since random chance selections can happen upon Minimal Spanning Trees fairly easily, Ewert says the solutions are thus trivial, and thus not really "irreducibly complex" as per Behe's concept. 
+
+Ewert refers to an earlier 2012 paper he wrote along with William Dembski and Robert J. Marks II, <i>Climbing the Steiner tree--Sources of active information in a genetic algorithm for solving the Euclidean Steiner tree problem. BIO-Complexity 2012(1):1-14</i>, hereafter <a 
+href="http://bio-complexity.org/ojs/index.php/main/article/view/50">EDM 2012</a>. This paper has some of the same errors as the newer one, and some additional whoppers as well. As in the later paper, EDM find ways to rationalize the Steiner Problem into the Minimum Spanning Tree problem, and attack the latter, a classic strawman fallacy. In the process, EDM omit key solutions, and misrepresent others.
+
+One whopper occurs on the second page, when EDM deride the problem-solving capability of genetic algorithms, and say that all such programs need "assistance" with their searches. Then EDM say "<i>The Darwinist claim is that no such assistance is required. Rather, <b>natural selection is innately capable of solving any biological problem that it faces</b></i>." As pointed out by the Skeptical Zone <a href="http://theskepticalzone.com/wp/review-climbing-the-steiner-tree/">in a review of EDM 2012</a>, "<i>No 'Darwinist' (a term that reflects ID's creationist roots) claims this. <b>Extinction</b> is known to happen.</i>"
+
+The worst flaw in EDM comes around their Figures 3 and 4, where the authors perform the switch of the actual Steiner problem with the much simpler Minimum Spanning Tree problem. Here is EDM's Figure 3, which applies to the 5-point Steiner problem discussed on PT during the summer of 2006. 
+
+<img src="http://www.nmsr.org/weasel-3.jpg" alt="weasel-3.jpg" width="380" height="316" /> The Fix is in with EDM's Figure 3, but it's not apparent unless you can see the actual shapes EDM are discussing, taken directly from the <a href="http://www.pandasthumb.org/archives/2006/07/target_target_w_1.html">We don't need no stinkin' Target!</a> opening post in the blog war. These are reproduced below. What are the errors? First, EDM's Figure 3 completely omits the "Best MacGyver" shape with a length of 1217; in fact, this key solution appears <i><b>nowhere</b></i> in EDM 2012, with the exception of an un-labeled graph point in their Figure 4.
+
+EDM's Fig. 3 does include the "2nd-Best MacGyver" shape with a length of 1224, the "Minimum Spanning Tree" solution with a length of 1246, and the Steiner Solution itself (labeled simply "optimal solution"), with a minimum path length of 1212.
+<img src="http://www.nmsr.org/weasel-4.gif" alt="weasel-4.gif" width="500" height="193" />
+
+Smoke and Mirrors are used to even greater lengths two pages after EDM's Fig. 3; a portion of page 6 appears below. 
+
+<img src="http://www.nmsr.org/weasel-5.jpg" alt="weasel-5.jpg" width="393" height="302" />
+
+In the passage above, EDM make math mistakes on the order of "1246 less than 1217; 1246 less than 1224". EDM say that the "MacGyver" solutions for the five-point problem are "<i><b>more expensive</b></i>" (longer) than the "minimum spanning tree solution." As the shapes from the original "Target" post" show, however, EDM are so obsessed with trying to downgrade the Steiner problem into the Minimum Spanning Tree problem, they somehow convinced themselves that the Minimum Spanning Tree is <i>second only to the Steiner, and better (shorter) than the "MacGyvers."</i> This is astonishing, because in their Figure 3, EDM displayed one of these MacGyvers (2nd-best MacGyver, with a length of 1224), which is greater than the Steiner (length 1212) but <i>much shorter</i> than the Minimum Spanning Tree, with its length of 1246. Curiously, the Minimum Spanning Tree was displayed in EDM's Figure 3, but its greater length, 1246, <i>was omitted from the figure</i>. It is acknowledged elsewhere in EDM's text. Not so for the "Best MacGyver" of length 1217; this is implied in EDM's Figure 4, but not drawn or referenced explicitly anywhere in EDM 2012. When EDM say "<i>the other two (MacGyver) solutions... are more expensive</i>", they are painfully, obviously <b>wrong</b>. The 1st and 2nd MacGyvers were <b>less</b> expensive than the Minimum Spanning Tree. 
+
+I also showed two MacGyver solutions that were <i>longer</i> than the Minimum Spanning Tree (1252, 1264), but that doesn't help EDM. EDM simply ignored the 1st MacGyver (length 1217) and misrepresented the 2nd MacGyver (length 1224), and declared that both were of length more than 1246.
+
+Are EDM wrong? Of course. It's as easy as "1217 exists, and it's less than 1246. 1224 is also less than 1246."
+
+More smoke and mirrors are employed in EDM's Figure 4, which compares genetic algorithm results to random queries.
+
+
+<img src="http://www.nmsr.org/weasel-6.jpg" alt="weasel-6.jpg" width="388" 
+height="275" />
+
+I have annotated their diagram with stick figures showing the horizontal coordinates (lengths, with 1212 being the Steiner solution) and MacGyver (NON-STEINER)
+solutions they are discussing, as well as the elephant in the Room: the actual Steiner Solution <i>itself</i>, which was omitted completely from EDM's Figure 4! (Lower left in the annotated figure.)
+<img src="http://www.nmsr.org/weasel-7.jpg" alt="weasel-7.jpg" width="505" 
+height="322" />
+
+EDM spend most of their efforts justifying switching the actual problem with a much simpler one. While the actual Steiner Solution for the 5-points-in-a-pentagon problem requires three additional "interchange" points, EDM dismiss the importance of interchanges. Perhaps they think that if there is one fixed interchange in the 5-point problem, then that can be treated as finding the minimum spanning tree for a six-point problem? Don't they realize that the positions of interchanges is as critical as the number of such interchanges? 
+
+Why did they pick the one position for their "interchange" point which was <i>shown to be successful by my genetic algorithm</i>? EDM's confusing and tortured arguments fill the air with smoke, which, as it dissipates, reveals only one conclusion: 
+<blockquote><i>Repeated random queries will quickly find the minimum spanning tree with high probability. As a result, having a search algorithm find it is no great success.</i>
+</blockquote> 
+
+The smoke and mirrors are revealed! This is the subtle "bait and switch" whereby EDM turn the truly difficult Steiner Problem into the boringly trivial Minimum Spanning Tree problem.
+
+EDM 2012 has pages and pages of <a href="http://www.lhup.edu/~DSIMANEK/cargocul.htm">"cargo-cult science"</a> charts and equations, but falls short on actual substance. They make a big point of how my algorithm pre-located interchanges more in the center, and that this was introducing "active information." What they overlooked, however, was that this was a feature of the slow FORTRAN version <b>only</b>, and was removed (as quite un-necessary) in the much faster C++ version. If anything, EDM inadvertently showed genetic algorithms can get by with <i>less</i> active information!
+
+Upon looking at the 6-point figure used in both Ewert 2014 and EDM 2012, I realized that EDM were clueless about the nature of Steiner solutions, and so I set out to find out what the real Steiner Tree looked like for the connected graph used by Ewert et.al. I digitized the points in Ewert's tree, and fed them into my Steiner genetic algorithm, and sat back awaiting the results. After a few minutes, my suspicions were proved correct: the EDM 6-point "minimal spanning tree" wasn't even a minimal spanning tree, but rather just a lowly connected graph. And, the other MacGyvers that came out of the algorithm were all "less expensive" than the EDM figure.
+
+Steiner Algorithm results appear below. Starting at the upper left, EDM's supposed "Steiner" is 132 units longer than the actual Steiner Solution (bottom right, length of 575 units), and over 60 units longer than the actual "Minimum Spanning Tree" (middle top, length = 1642 units). The remaining three MacGyver solutions are all less expensive than the Minimum Spanning Tree (lengths of ~1595, 1592, and 1588). The supposed "Steiner Tree" iconically displayed in both Ewert 2014 and EDM 2012 is <i>not</i> a Steiner tree; it isn't even the "Minimum Spanning Tree" for those 6 points! This is truly a pathetic spectacle.
+<img src="http://www.nmsr.org/weasel-8.gif" alt="weasel-8.gif" width="600" 
+height="379" style="margin: 0 20px 20px 0;" class="mt-image-center" />
+In the end, EDM have only wisps of smoke to show for all their efforts. The Steiner Genetic Algorithm remains an effective demonstration that genetic algorithms can produce irreducibly-complex, specified-information solutions of problems with no known answers.
+We <b><i>STILL</i></b> don't need no stinkin' Target!
+<img src="http://www.nmsr.org/weasel-9.gif" alt="weasel-9.gif" width="290" 
+height="130" style="margin: 0 20px 20px 0;" class="mt-image-center" /></div><section class="comments-section"><h2 class="comments-heading">63 Comments</h2>
+<div class="comment" id="comment-349114"><p class="comment-meta"><span class="comment-author">Jeffrey Shallit</span> &middot; 16 January 2016</p><div class="comment-body"><p>Re Ewert's paper:  that's the quality of work you get when you publish in a fake "journal" that publishes hardly anything at all, with an editorial board that consists of nothing but people who think alike.  You don't get any genuine peer review.</p></div></div>
+<div class="comment" id="comment-349115"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>The Steiner Genetic Algorithm remains an effective demonstration that genetic algorithms can produce irreducibly-complex, specified-information solutions of problems with no known answers.</blockquote>
+
+Well, that addresses a false claim that the theory of evolution isn't adequate to explain the diversity and relatedness of the biosphere.  
+
+But even if the theory of evolution couldn't do this, it would not mean that ID wins as default.  
+
+What are some positive, testable claims of ID?
+
+1) What did the designer do, and how can we test this?
+
+2) When did the designer do it, and how can we test this?
+
+3) How did the designer do it, and how can we test this?
+
+4) What is an example of something that the designer didn't design?
+
+5) What is a method I can use to determine whether something was designed by the designer?
+
+6) Who is the designer?
+
+7) Here's a big one - what is an experiment we could do that would differentiate between biological evolution and intelligent design?  What result would design predict?
+
+8) How do you explain the results of Lenski's bacteria experiments?  Why didn't the designer give the bacteria the ability to metabolize citrate the instant Lenski introduced it?  Why is the designer constrained?</div></div>
+<div class="comment" id="comment-349116"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 16 January 2016</p><div class="comment-body"><p>In partial answer to <b>harold</b>'s (8), <i>Why is the designer constrained?</i></p><p>To design is to recognize constraints.</p><p>If there are no constraints, there is no design. To design is to specify doing such-and-such, in order to accomplish so-and-so. If one doesn't do such-and-such, then so-and-so won't happen. That is the constraint that necessitates design.</p><p>Necessity is the mother of invention.</p><p>For example, if the vertebrate eye didn't have the lenticular shape to the lens, then it wouldn't focus the image. That design of the lens is constrained by the laws of optics. If the designer weren't so constrained, then the lens could be any shape, of any material, or it could be dispensed with altogether.</p><p>If designers weren't constrained, they wouldn't be designers.</p></div></div>
+<div class="comment" id="comment-349117"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 16 January 2016</p><div class="comment-body"><p>I haven't looked into Ewert's âDigital Irreducible Complexity: A Survey of Irreducible Complexity in Computer Simulationsâ again, but I reread "Climbing the Steiner treeâSources of active information in a genetic algorithm for solving the Euclidean Steiner tree problem", and in that paper, the authors seem to use the correct definitions of the Steiner tree problem:</p><p>The optimal solution is missing from Figure 4, as they claim that none of their 5615 distinct simulations (using 2000 generations of a population of size 2000) resulted in this solution.</p><p>In your article "Target? TARGET? We donât need no stinkinâ Target!", you write that .5% of "hundreds of simulations" lead to the optimal result. DEM seem to be especially unlucky to miss it - it would be nice to see their code....</p><p>DEM recognize that the spanning tree isn't the Steiner tree, but it is a result of many of their simulations....</p></div></div>
+<div class="comment" id="comment-349118"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 16 January 2016</p><div class="comment-body"><p>Ever since Morris and Gish, ID/creationists have been bending and breaking scientific concepts to fit sectarian dogma.  The resulting pseudoscience they produce has absolutely nothing to do with the physical universe.</p><p>Even Dawkin's pedagogical Weasel program has its roots in fundamental physics.  Physical systems in this universe - and that includes biological systems - are immersed in environments in which an "action integral" is finding an extremum subject to physical constraints.  Even soft matter systems - i.e., systems that are close to their melting temperatures - are exploring extrema consistent with the underlying potential energy distributions and thermal kinetic energies of the constituents making up the system.</p><p>For example, in the soap bubble solution to the Steiner problem, the action that is being minimized is proportional to the total internal stress of the soap bubbles, which can also be expressed as a potential energy subject to the boundary conditions set by the positions of the posts.  The difference is only a scale factor.</p><p>In the case of Weasel, the so-called "target" is simply a model of a minimum potential energy configuration.  Comparing the  current offspring with a target is a measurement of a "potential energy difference" from the current offspring to a "surrogate offspring" that represents the minimum of that difference.</p><p>In every one of these cases, the underlying process governing the trend toward an extremum is the second law of thermodynamics; condensed matter systems find these extrema by shedding energy to the surrounding environment. If that energy were to be constantly reflected back into the system, the system could never find an extremum.</p><p>As I have been noting ever since I was giving talks on ID/creationism back in the 1970s and 80s, ID/creationists get the basic concepts of science wrong at the high school level, and most are struggling with the facts they were taught about science in middle school; and that includes the "PhDs" of this socio/political movement.</p><p>ID/creationists have to get the concepts wrong and do wrong and irrelevant calculations in order to "argue"  in a public debate forum.  Over the years, they have come to believe their own pseudoscience and can no longer think about solving problems using the real concepts in science.  They have to get answers that fit sectarian dogma.</p><p>Contrast ID/creationist attempts at calculating the probabilities of molecular assemblies with the work of the real scientists who won the 2013 Nobel Prize in chemistry.</p><p>The only "usefullness" of ID/creationist misconceptions and misrepresentations of science is in tracking their effects on society in the spreading of memes that impede learning math and science.</p></div></div>
+<div class="comment" id="comment-349119"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+I haven't looked into Ewert's âDigital Irreducible Complexity: A Survey of Irreducible Complexity in Computer Simulationsâ again, but I reread "Climbing the Steiner treeâSources of active information in a genetic algorithm for solving the Euclidean Steiner tree problem", and in that paper, the authors seem to use the correct definitions of the Steiner tree problem:
+
+The optimal solution is missing from Figure 4, as they claim that none of their 5615 distinct simulations (using 2000 generations of a population of size 2000) resulted in this solution.
+
+In your article "Target? TARGET? We donât need no stinkinâ Target!", you write that .5% of "hundreds of simulations" lead to the optimal result. DEM seem to be especially unlucky to miss it - it would be nice to see their code....
+
+DEM recognize that the spanning tree isn't the Steiner tree, but it is a result of many of their simulations....
+</blockquote>
+
+While they may have given lip service to the concept that the Steiner Tree is not the same as the Minimal Spanning Tree, their basic point is that <i>it might as well be</i>:
+
+<blockquote>Repeated random queries will quickly find the minimum spanning tree with high probability. As a result, having a search algorithm find it is no great success.</blockquote>  </div></div>
+<div class="comment" id="comment-349120"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 16 January 2016</p><div class="comment-body"><p>It seems that I am the <i>advocatus dembskii</i> - what a strange place...</p><p>"Repeated random queries will quickly find the minimum spanning tree with high probability. As a result, having a search algorithm find it is no great success." That is an absolutely true statement: For comparison, they generated 2000x1000=2,000,000 genomes at random. As "at least one in 5120 genomes<br>corresponds to this minimum spanning tree solution", you are quite sure to find the "minimum spanning tree" in this set of genomes.</p><p>A genetic algorithm which uses 2000 generations Ã¡ 1000 individuals (not 2000, as I said earlier - sorry) should do better than this: and your algorithm does far better.</p><p>So, the question is: why doesn't their implementation of the algorithm work?</p></div></div>
+<div class="comment" id="comment-349121"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 16 January 2016</p><div class="comment-body"><p>Well if they think the last decade was excellent, here's hoping that the next one is just as excellent.  Really, they haven't had a single success in the last ten years, not in the lab, not in court and not in their fake journal either.</p><p>I do want to point out however that the paper in question was probably "peer reviewed".  It's just that in this case the work was so flawed that their "peers" were essentially clueless also.  Now what so you think would have happened if they had submitted this to a real journal, with say, Dave THomas as a reviewer?  I think we all know what would have happened.  Until they can accomplish this Herculean (or maybe Sisiphian) task, they really shouldn't be crowing about anything.  After all, they got caught in a lie, smacked down hard and walked away bruised and battered,.  How stupid do you have to be to declare victory after that kind of a beating?  HOw can they still claim the information is "front loaded" when they couldn't get the right answer given the program?</p></div></div>
+<div class="comment" id="comment-349122"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+For example, in the soap bubble solution to the Steiner problem, the action that is being minimized is proportional to the total internal stress of the soap bubbles, which can also be expressed as a potential energy subject to the boundary conditions set by the positions of the posts.  The difference is only a scale factor.
+
+</blockquote>
+
+Just to clarify for this particular case of the Steiner problem; note that all the joining angles are <i>internal</i> to a concave arrangement of posts.  Note that all joining angles are 120 degrees.  This makes all the tensions equal in every connecting segment (because at each junction, 2<i>T</i> cos 120 = <i>T</i>).
+
+With the tensions in each segment all equal, the total stress is proportional to the sum of the areas represented by each segment.  Force times area is the same as potential energy times width.  If the widths are all constant, then minimizing the total of the lengths minimizes the total potential energy.</div></div>
+<div class="comment" id="comment-349123"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Well if they think the last decade was excellent, here's hoping that the next one is just as excellent.  Really, they haven't had a single success in the last ten years, not in the lab, not in court and not in their fake journal either.
+
+I do want to point out however that the paper in question was probably "peer reviewed".  It's just that in this case the work was so flawed that their "peers" were essentially clueless also.  Now what so you think would have happened if they had submitted this to a real journal, with say, Dave THomas as a reviewer?  I think we all know what would have happened.  Until they can accomplish this Herculean (or maybe Sisiphian) task, they really shouldn't be crowing about anything.  After all, they got caught in a lie, smacked down hard and walked away bruised and battered,.  How stupid do you have to be to declare victory after that kind of a beating?  HOw can they still claim the information is "front loaded" when they couldn't get the right answer given the program?
+</blockquote>
+
+And, while as always it had the side effect of provoking excellent discussion, as always, it's an effort to <b>change the subject.</b>
+
+Let's look at the big picture here.
+
+1) <i>Aguillard v Edwards</i> clarified that it is illegal to teach "Biblical" creationism as science in public schools in the US, so the idea of trying to disguise the Biblical part and calling the resulting pap "intelligent design theory" was born.  As an aside, I note that the ID/creationist assumption is always that if it isn't outright illegal to teach their pet crap, it has to be taught.  No actual merit has to be shown.  We'll come back to that.
+
+2) The 100% objective of ID is to claim that biological evolution is false.  That has been their focus since day one.  They get money by implying that they can get denial of biological evolution into public schools. 
+
+3) An early ID peddler, Behe, claimed that "irreducibly complex things can't evolve".  Note that if true this would not be evidence <b>for</b> "intelligent design theory", merely a problem with the theory of biological evolution.
+
+4) But it isn't even true and and the work Dave Thomas discusses here is one of many demonstrations of that.
+
+5) Unfortunately, the creationist response is to exploit the situation as a chance to dissemble.  They go on an on that Dave Thomas has not actually demonstrated that a genetic algorithm can give an irreducibly complex solution in this specific instance.  They're full of crap, but more to the point, there's also an obvious "So What?" situation here.
+
+6) This is the pro-ID argument that has been offered here, in a very fair paraphrase - "Dave Thomas says that his genetic algorithm produces an irreducibly complex result, but we say nah, nah, nah, we won't admit that Dave Thomas is right, so ID wins".  This is not a strong argument.
+
+Come on ID advocates, where's the positive evidence?
+
+1) What did the designer do, and how can we test this?
+
+2) When did the designer do it, and how can we test this?
+
+3) How did the designer do it, and how can we test this?
+
+4) What is an example of something that the designer didnât design?
+
+5) What is a method I can use to determine whether something was designed by the designer?
+
+6) Who is the designer?
+
+7) Hereâs a big one - what is an experiment we could do that would differentiate between biological evolution and intelligent design? What result would design predict?
+
+8) How do you explain the results of Lenskiâs bacteria experiments? Why didnât the designer give the bacteria the ability to metabolize citrate the instant Lenski introduced it? Why is the designer constrained?</div></div>
+<div class="comment" id="comment-349124"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>
+<strong>TomS said:</strong>
+
+In partial answer to <b>harold</b>'s (8), <i>Why is the designer constrained?</i>
+
+To design is to recognize constraints. 
+
+If there are no constraints, there is no design. To design is to specify doing such-and-such, in order to accomplish so-and-so. If one doesn't do such-and-such, then so-and-so won't happen. That is the constraint that necessitates design. 
+
+Necessity is the mother of invention.
+
+For example, if the vertebrate eye didn't have the lenticular shape to the lens, then it wouldn't focus the image. That design of the lens is constrained by the laws of optics. If the designer weren't so constrained, then the lens could be any shape, of any material, or it could be dispensed with altogether. 
+
+If designers weren't constrained, they wouldn't be designers.
+</blockquote>
+
+But of course TomS is a pro-science commenter, so this reply <b>should not be taken as an excuse, by ID/creationism advocates, to evade my question</b>.
+
+ID/creationists I want to hear what <b>YOU</b> have to say in response to the obvious questions I posted.</div></div>
+<div class="comment" id="comment-349125"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+It seems that I am the <i>advocatus dembskii</i> - what a strange place...
+
+"Repeated random queries will quickly find the minimum spanning tree with high probability. As a result, having a search algorithm find it is no great success." That is an absolutely true statement: For comparison, they generated 2000x1000=2,000,000 genomes at random. As "at least one in 5120 genomes
+corresponds to this minimum spanning tree solution", you are quite sure to find the "minimum spanning tree" in this set of genomes. 
+
+A genetic algorithm which uses 2000 generations Ã¡ 1000 individuals (not 2000, as I said earlier - sorry) should do better than this: and your algorithm does far better.
+
+<strong>So, the question is: why doesn't their implementation of the algorithm work?</strong>
+</blockquote>
+
+Thanks for clarifying. I agree, that's a great question.
+
+Just to clarify, though, I am convinced that Ewart, Dembski and Marks are equivocating Steiner versus Minimum Spanning Trees.
+
+In Ewart's Figure 2, "A depiction of a Steiner tree," the figure shown is <b>not a Steiner Tree</b>. EDM subtly argue that the "important" thing is simply connecting the cities (nodes); they casually dismiss the <i>difficult</i> part of the Steiner problem, getting a <i>minimum length network</i>. That's the setup for them to attack the Steiner as being "trivial" (like their substitute, the Minimum Spanning Tree).
+
+<blockquote>A depiction of such a network ["Steiner Tree"] can be seen in Figure 2. The difficulty in the Steiner tree problem is in trying to minimize the amount of road used [EDM 2012], not in getting a connected network. Therefore we can say that there are no intermediate evolutionary stages in obtaining such a network.
+</blockquote>
+
+Smoke and Mirrors, all the way down. Sheesh.</div></div>
+<div class="comment" id="comment-349126"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 16 January 2016</p><div class="comment-body"><p>By the way, it's spelled Ew<b>e</b>rt.</p></div></div>
+<div class="comment" id="comment-349129"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 16 January 2016</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+By the way, it's spelled Ew<b>e</b>rt.
+</blockquote>
+
+Ooops, thanks!
+
+</div></div>
+<div class="comment" id="comment-349132"><p class="comment-meta"><span class="comment-author">https://me.yahoo.com/a/w0tdZONn0dj5M1SAsJ0Cvfjm1SfgNLT6Flo-#45ac9</span> &middot; 16 January 2016</p><div class="comment-body"><p>Dave,<br>This was the set of postings that started me reading Panda's Thumb. Back then, the ID folks made at least some token attempts at discussing their ideas.</p><p>I would like to see this challenge done with more dots (cities?) and in random locations.  I realize that that would somewhat void the refuting to the âIrreducible Complexityâ and âcomplex specified informationâ but an evolutionary algorithm would crush anything else. It would be so much more fun if we could find some ID advocates to play along.</p><p>-AR.</p></div></div>
+<div class="comment" id="comment-349135"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 16 January 2016</p><div class="comment-body"><p>Someone should mention a couple of other cases of genetic algorithms that do not have any detailed specification of the goal genotype of phenotype built in, but achieve remarkable adaptations:<br><br>(1) Karl Sims (site <a href="http://karlsims.com">here</a>) had a genetic algorithm that described organisms made of blocks and links that existed in a simulated physics.  They were under selection (to pick a dramatic case) to swim through the medium to the right.  Starting with phenotypes that could barely wiggle, they evolve to "swim" in all sorts of fascinating ways.  Sims's code is not available but there is an imitation of it called <code>breve</code> that is available from Jonathan Klein (<a href="http://www.spiderland.org/s/">here</a>).<br><br>(2) A similar effort called <code>Boxcar2d</code> evolves imaginary vehicles that move to the right across a 2-dimensional landscape.  It will be found <a href="http://boxcar2d.com">here</a>.</p></div></div>
+<div class="comment" id="comment-349136"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 16 January 2016</p><div class="comment-body"><p>Ewert's argument comes from the work of Dembski. Ewert, and Marks who attempt to show that information that makes organisms well-adapted cannot come to be in the genome unless it was already in existence, for example in the shape of the fitness surface.  The implication is that just any old fitness surface will not do that.  That's why it is so important for them to show that genetic algorithms have some goal built in.<br><br>DEM's argument is mathematical, and is impressive until you look more closely.  You then find that as soon as there is a population of organisms that can reproduce, they do much better than typical members of DEM's space of "searches".   So once there are organisms evolving, they get a lot of DEM's "Active Information" for free.  Tom English and I have deconstructed this Active Information argument (<a href="http://pandasthumb.org/archives/2015/03/fitness-surface.html">here</a> and <a href="http://pandasthumb.org/archives/2015/11/why-id-advocate.html">here</a>).</p></div></div>
+<div class="comment" id="comment-349146"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 18 January 2016</p><div class="comment-body"><p>PT was latched up for a couple days, but things are working again, thanks to Reed's fix of an odd glitch.<br>Cheers, Dave</p></div></div>
+<div class="comment" id="comment-349147"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 19 January 2016</p><div class="comment-body"><p>I looked up Winston Ewert's "Digital Irreducible Complexity: A Survey of Irreducible Complexity in Computer Simulations". Indeed, I got the impression that he is wrong there - he really describes spanning trees of minimal length (and even get the illustration wrong, as you said) instead of the Steiner problem. His characterization that "[t]he Steiner and Geometric models are similar in that each part is either on or off, controlled by a single bit" misses out on the representation of what you call "variable nodes".</p><p>However, "Climbing the Steiner TreeâSources of Active Information in a Genetic Algorithm for Solving the Euclidean Steiner Tree Problem" is free of such errors. The authors there are aware of the optimal solution of length 1212 which needs two additional variable nodes and their analysis of parts of your FORTRAN an your C++ program show that they understand the Steiner Tree Problem correctly.</p></div></div>
+<div class="comment" id="comment-349148"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 19 January 2016</p><div class="comment-body"><p>...three additional variable nodes...</p></div></div>
+<div class="comment" id="comment-349150"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 19 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+I looked up Winston Ewert's "Digital Irreducible Complexity: A Survey of Irreducible Complexity in Computer Simulations". Indeed, I got the impression that he is wrong there - he really describes spanning trees of minimal length (and even get the illustration wrong, as you said) instead of the Steiner problem. His characterization that "[t]he Steiner and Geometric models are similar in that each part is either on or off, controlled by a single bit" misses out on the representation of what you call "variable nodes". 
+
+However, "Climbing the Steiner TreeâSources of Active Information in a Genetic Algorithm for Solving the Euclidean Steiner Tree Problem" is free of such errors. The authors there are aware of the optimal solution of length 1212 which needs two additional variable nodes and their analysis of parts of your FORTRAN an your C++ program <b>show that they understand the Steiner Tree Problem correctly</b>.
+
+</blockquote>
+
+So, I guess that shows that Ewert, an author on both papers, is committing deliberate deception. 
+
+In other words, just another example of your typical Intelligent Design science betrayal.</div></div>
+<div class="comment" id="comment-349153"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 19 January 2016</p><div class="comment-body"><p>I wouldn't phrase it thus harshly: Ewert is the most junior of the authors, it isn't clear how deeply he was involved in the first one.</p></div></div>
+<div class="comment" id="comment-349154"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 19 January 2016</p><div class="comment-body"><b><i>Not</i></b> a valid excuse, IMHO.<blockquote>
+<strong>DiEb said:</strong>
+
+I wouldn't phrase it thus harshly: Ewert is the most junior of the authors, it isn't clear how deeply he was involved in the first one. 
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-349155"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 19 January 2016</p><div class="comment-body"><p>SUMMARY -</p><p>1) On the relatively narrow question dealt with in this thread - "Are ID advocates correct when they say something is wrong with computer programs that use genetic algorithms to solve a mathematical problem, resulting in a solution that meets ID advocates own definition of irreducibly complex" - the answer is, "No, ID advocates are not correct".</p><p>2) Since there are ID advocates, this implies that there should be some sort of positive evidence for ID, but as I bothered to note, there isn't.  Even if they had found something wrong with some computer programs, they'd be wasting their time.</p></div></div>
+<div class="comment" id="comment-349156"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 19 January 2016</p><div class="comment-body"><p>Dave, I assume that the additional nodes of your pleasantly symmetrical solution have the coordinates (350,473), (500,560) and (650,473) - which results in a length of   1212.6166.</p><p>However, what about (348,539), (412,379) and (631,347)? I think this network may be slightly shorter (1212.6082).</p><p>Perhaps I got the coordinates of your solution wrong?</p></div></div>
+<div class="comment" id="comment-349158"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 19 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+I wouldn't phrase it thus harshly: Ewert is the most junior of the authors, it isn't clear how deeply he was involved in the first one. 
+</blockquote>
+
+It may be "harsh" or "blunt," but the issues goes far deeper.
+
+ID/creationism has been going on for something like 50 years.  In <i>every single example </i> of an ID/creationist "mathematical/scientific" paper or book - no exceptions ever across the spectrum from Morris and Gish to the perpetrators of the morph of "scientific" creationism into ID - the ID/creationists keep getting basic concepts in science <i>dead wrong</i>; egregiously dead wrong, even after repeated corrections from the scientific community.
+
+No young researcher stands a chance of becoming a productive scientist by immersing himself in ID/creationist "science" because none of the ID/creationist concepts apply to the real universe.  Any such young individual will always be off on the wrong track from the very beginning and not have any inkling of why.
+
+It is far better to plunge into the crucible of real peer review early on in one's career and accept the challenges of purging oneself of misconceptions while beefing up one's knowledge of the history and ongoing research that is taking place in the scientific community.  ID/creationsts don't do this; they take their "ideas" to the naive public instead; and the feedback they get from their naive followers simply reinforces the misperceptions that ID/creationist have of themselves that they are persecuted geniuses going up against a repressive cabal.
+
+Most, if not all, ID/creationists need to return to high school level science and start over with getting the basic concepts right. Attempting to get this point across to ID/reationists over a period of 50 years has apparently been completely ineffective; and the reason seems to be that ID/creationists care more about their sectarian dogma than they do about getting the science right.</div></div>
+<div class="comment" id="comment-349159"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 19 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+Dave, I assume that the additional nodes of your pleasantly symmetrical solution have the coordinates (350,473), (500,560) and (650,473) - which results in a length of   1212.6166.
+
+However, what about (348,539), (412,379) and (631,347)? I think this network may be slightly shorter (1212.6082). 
+
+Perhaps I got the coordinates of your solution wrong?
+
+</blockquote>
+
+Because of roundoff to discrete values from 1 to 1000, the best solutions will cluster around the ideal Steiner solution.  I am not going to fuss over a 0.2 difference; the distance of over 30 units between 5-node Steiner and minimum spanning tree (length = 1246) is much more relevant.
+
+Concern Troll much? </div></div>
+<div class="comment" id="comment-349175"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 19 January 2016</p><div class="comment-body"><p>Dave, sorry, I got carried away ... I implemented an EA(1+1) algorithm in R based on your encoding   and was pleased to see that it worked rather well. For me, it was a surprise to get a solution which  fared better than the symmetrical one. Even if the original points form a regular pentagon, the best solution seems to be slightly asymmetric!</p><p>While the fitness of those solutions is only slightly smaller, the shapes are quite different.</p></div></div>
+<div class="comment" id="comment-349177"><p class="comment-meta"><span class="comment-author">Matt G</span> &middot; 19 January 2016</p><div class="comment-body"><p>I propose a new term to refer to the sum of all in-house (and friendly) publishing of ID "research" articles: the illiterature.</p></div></div>
+<div class="comment" id="comment-349193"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 20 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+Dave, sorry, I got carried away ... I implemented an EA(1+1) algorithm in R based on your encoding   and was pleased to see that it worked rather well. For me, it was a surprise to get a solution which  fared better than the symmetrical one. Even if the original points form a regular pentagon, the best solution seems to be slightly asymmetric!
+
+While the fitness of those solutions is only slightly smaller, the shapes are quite different.
+</blockquote>
+
+Thanks for the explanation. I think I was reacting to your apparent willingness to let Ewert off the hook. And I think deep down, Ewert is still conflicted on Steiners versus Minimum Spanning Trees.
+
+Congrats on getting your algorithm going. I poked around my old Steiner folders, and wasn't able to find the text file with the actual solutions from 2006. I refurbished the app to analyze the actual Steiner solution for Ewert's 6-node tree last month, so I might be able to just re-do the 5-node solution.  Not on the top of my to-do list, however, and there's no guarantee it would be the exact same solution as in 2006. Close, yes; exact, not so much.
+
+</div></div>
+<div class="comment" id="comment-349197"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 20 January 2016</p><div class="comment-body"><blockquote>
+<strong>Matt G said:</strong>
+
+I propose a new term to refer to the sum of all in-house (and friendly) publishing of ID "research" articles: the illiterature.
+</blockquote>
+
+LOL  Thanks for that Matt.</div></div>
+<div class="comment" id="comment-349228"><p class="comment-meta"><span class="comment-author">Eric Carr</span> &middot; 21 January 2016</p><div class="comment-body"><blockquote>
+<strong>Jeffrey Shallit said:</strong>
+
+Re Ewert's paper:  that's the quality of work you get when you publish in a fake "journal" that publishes hardly anything at all, with an editorial board that consists of nothing but people who think alike.  You don't get any genuine peer review.
+</blockquote>
+
+The "1217 &gt; 1246" slip was probably overlooked because creationist peer reviewers rarely investigate numbers under 8000. It is numbers that reach into the millions or billions that provoke the critical creationist eye.</div></div>
+<div class="comment" id="comment-349230"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 21 January 2016</p><div class="comment-body"><blockquote>
+<strong>Dave Thomas said:</strong>
+
+<blockquote>
+<strong>DiEb said:</strong>
+I think I was reacting to your apparent willingness to let Ewert off the hook. And I think deep down, Ewert is still conflicted on Steiners versus Minimum Spanning Trees.
+</blockquote>
+</blockquote>
+
+No, I don't want to let W. Ewert of the hook. It is just a question of motives.
+
+I think that W. Dembski and R. Marks are the smoke-and-mirrors guys: they know enough maths to see the flaws of their product, but use various tactics to ignore any critique - especially by claiming that they have  to address counterarguments only if those are given in a peer-reviewed article. I was quite surprised that they chose to react to your article!
+
+W. Ewert seems to be the true believer - which implies that he isn't as good at maths as his mentors. When he interchanged spanning trees for Steiner trees, I think that was an honest mistake. That doesn't make him less wrong, or the paper less faulty - or the graph looking less incredibly stupid. 
+
+Well, he is used to put errata to papers, perhaps the experience of retracting a paper would make him more attentive (though I don't see that in the immediate future...)
+</div></div>
+<div class="comment" id="comment-349231"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 21 January 2016</p><div class="comment-body"><p>Sigh... mixed up the quotations...</p></div></div>
+<div class="comment" id="comment-349233"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 21 January 2016</p><div class="comment-body"><blockquote>
+<strong>Eric Carr said:</strong>
+
+<blockquote>
+<strong>Jeffrey Shallit said:</strong>
+
+Re Ewert's paper:  that's the quality of work you get when you publish in a fake "journal" that publishes hardly anything at all, with an editorial board that consists of nothing but people who think alike.  You don't get any genuine peer review.
+</blockquote>
+
+The "1217 &gt; 1246" slip was probably overlooked because creationist peer reviewers rarely investigate numbers under 8000. It is numbers that reach into the millions or billions that provoke the critical creationist eye.
+</blockquote>
+
+It seems that creationists think that "peer review"  means having some of your friends peer at the paper for a while.  That's how you get illiterature.</div></div>
+<div class="comment" id="comment-349240"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 21 January 2016</p><div class="comment-body"><p>Maybe they should do pier review, so as to avoid missing the boat again?</p></div></div>
+<div class="comment" id="comment-349242"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 21 January 2016</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+Maybe they should do pier review, so as to avoid missing the boat again?
+
+</blockquote>
+
+That ship has sailed.</div></div>
+<div class="comment" id="comment-349243"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 21 January 2016</p><div class="comment-body"><p>Gives "founder effect" a whole new meaning.</p></div></div>
+<div class="comment" id="comment-349251"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 21 January 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+<blockquote>
+<strong>Dave Thomas said:</strong>
+
+<blockquote>
+<strong>DiEb said:</strong>
+I think I was reacting to your apparent willingness to let Ewert off the hook. And I think deep down, Ewert is still conflicted on Steiners versus Minimum Spanning Trees.
+</blockquote>
+</blockquote>
+
+No, I don't want to let W. Ewert of the hook. It is just a question of motives.
+
+I think that W. Dembski and R. Marks are the smoke-and-mirrors guys: they know enough maths to see the flaws of their product, but use various tactics to ignore any critique - especially by claiming that they have  to address counterarguments only if those are given in a peer-reviewed article. I was quite surprised that they chose to react to your article!
+
+W. Ewert seems to be the true believer - which implies that he isn't as good at maths as his mentors. When he interchanged spanning trees for Steiner trees, I think that was an honest mistake. That doesn't make him less wrong, or the paper less faulty - or the graph looking less incredibly stupid. 
+
+Well, he is used to put errata to papers, perhaps the experience of retracting a paper would make him more attentive (though I don't see that in the immediate future...)
+
+</blockquote>
+
+They're all just authoritarian thinkers who chose a "side" and can't accept that they could be wrong.
+
+The essence of science is having the ability to let the evidence tell you that you were wrong.
+
+Nobody likes it.  As a pathologist, my favorite event is making a bold preliminary call and then having a bunch of evidence back me up.  My absolute least favorite thing in the world is having to admit I was wrong.  But it's worth it on many levels for me to be able to.
+
+Dembski doesn't work like that.  Very few of them do.  If Dembski was a true con man he'd be either much more successful, in prison, or possibly a combination.
+
+His brain says "I am against evolution, if I study it too closely I might start to think it makes sense which would be weakness.  My job is to take every word I ever encounter that could be said to be 'in favor of evolution' and rapidly spit out sound bites that attack it."  Everyone always notices that creationists won't listen.  In sixteen years of awareness of creationists, the number of times I have heard one accurately describe the basics of the science they deny is - zero.  I've heard that Todd Wood admits that there is evidence, but even doesn't, to the best of my knowledge, permit himself to openly describe it in his own words.
+
+That is how these guys work.  They can't allow themselves to look at the evidence.
+
+The pope is going to convert to Mormonism before these guys let go.  For examples of ideological commitment, look at what some of the soldiers on the losing sides in WWII were willing to go through rather than give up.  To avoid Godwin's Law, look at the Japanese.  Check out some WWII history.
+
+The "name" ID guys have invested their ego in ID/creationism.  And they have burned bridges with the mainstream.  They can't turn back.
+
+I argue against their crap because there are people reading who need to be shown that it's crap.
+
+The funny thing is that the producers of ID bilge act in many ways like deliberate liars.  They use many of the same tactics.  But they almost certainly are self-deluded and using defenses.  It's just that the two things lead to the same outcome.
+</div></div>
+<div class="comment" id="comment-349252"><p class="comment-meta"><span class="comment-author">Joe Felsenstein</span> &middot; 22 January 2016</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+...
+
+Everyone always notices that creationists won't listen.  In sixteen years of awareness of creationists, the number of times I have heard one accurately describe the basics of the science they deny is - zero.  I've heard that Todd Wood admits that there is evidence, but even doesn't, to the best of my knowledge, permit himself to openly describe it in his own words.
+
+...
+
+</blockquote>
+
+Unfair to Todd Wood.   My understanding is that he acknowledges that the scientific evidence favors evolution, and he teaches that evidence.  He then personally chooses not to believe it because of prior religious commitment, but he presents the evidence fairly to his students.
+
+<a href="http://toddcwood.blogspot.com/">Here</a> is his blog.  Go back and look at his discussion of specific issues in evolutionary biology and let me know what you find.</div></div>
+<div class="comment" id="comment-349254"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 22 January 2016</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+...
+
+Everyone always notices that creationists won't listen.  In sixteen years of awareness of creationists, the number of times I have heard one accurately describe the basics of the science they deny is - zero.  I've heard that Todd Wood admits that there is evidence, but even doesn't, to the best of my knowledge, permit himself to openly describe it in his own words.
+
+...
+
+</blockquote>
+
+Unfair to Todd Wood.   My understanding is that he acknowledges that the scientific evidence favors evolution, and he teaches that evidence.  He then personally chooses not to believe it because of prior religious commitment, but he presents the evidence fairly to his students.
+
+<a href="http://toddcwood.blogspot.com/" rel="nofollow">Here</a> is his blog.  Go back and look at his discussion of specific issues in evolutionary biology and let me know what you find.
+</blockquote>
+
+It's possible, and he seems like a nice guy, but I'm under-impressed.  I'd like to personally see him rebut some wrong arguments by other creationists and/or do some kind of "Here's what we're up against" project that really lays out the strength of the theory of evolution, not switching to "kinds" until it is exhaustively demonstrated.  A sincere evolution denier should be exquisitely familiar with the theory of evolution.  
+
+In the interest of consensus, though, I will happily retract his name.  He does seem like a good guy and much more honest and competent than the others. 
+
+The rest of my comment absolutely stands.
+
+I was going to note that it's of interest that both Dembski and Casey Luskin have publicly moved away from their ID activities.  Not remotely by coming to their senses of course.  In both cases I personally suspect (my subjective opinion) that it is semi-voluntary at best.  Dembski hasn't been obviously making money from ID for a while (not saying he makes nothing off it, just saying he hasn't been racking up heavy book sales, paid interviews or lectures that are easy for non-creationists to find out about, or highly desirable jobs, on that basis, of late).  Luskin rather mysteriously abruptly left the DI without an announced specific new destination.  It's not really anyone's business why.  However, my reason for mentioning these is to note that, even when it may not be paying the bills, committed people are not going to publicly acknowledge doubts.  
+
+My real point was that none of them are likely to be outright con artists in the conscious sense.  It's just that self-deluded ideologues, ironically, end up using a technique set that overlaps with the technique set that caught liars use (subject changing, bluffing, cherry picking what to respond to, distorting opposing view with quote mines and straw man misrepresentations, etc).  When you lie to yourself, you come across like one who lies to others.</div></div>
+<div class="comment" id="comment-349255"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 22 January 2016</p><div class="comment-body"><p>Harold wrote:</p><p>"A sincere evolution denier should be exquisitely familiar with the theory of evolution."</p><p>This is a very good point.  When someone attacks science out of ignorance, that's bad enough.  But when someone makes an entire career out of attacking science and absolutely refuses to ever learn anything about what he is attacking, that's just blatantly dishonest.  If you were sincerely interested in the truth you would honestly consider the position of the opposition.  Failure to do so removes you from the realm of rational discussion.  When creationist demonstrate that they have not read the scientific literature they are displaying fundamental dishonesty .  When they refuse to read the literature they they should be ridiculed.  Behe and his classic statement in the Dover trial is a prime example.  And it doesn't even matter if they sincerely believe the nonsense they spout, it's still disingenuous to refuse to believe something you don't even understand.</p><p>A wise man once said that ignorance is a temporary condition, stupid is forever.  Once again, I was right.</p></div></div>
+<div class="comment" id="comment-349256"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 22 January 2016</p><div class="comment-body"><p>I cannot appreciate the argument that one must follow the clear statemets of Scripture even against the evidence and reasoning of modern science - when one seemingly selectively applies that. When one uses that to reject evolution while ignores that in accepting heliocentrism.</p><p>ISTM that the Bible clearly supports geocentrism, as can seen by the universal acceptance of the straightforward geocentric reading of the Bible for something close to two thousand years.</p><p>It is at least as clear as anything about fixity of species or the meanings of the days of Genesis 1.</p><p>As far as the scientific evidence, ISTM that the evidence for common descent is at least as accessible to the general public as the evidence for the orbital motion of the Earth.</p></div></div>
+<div class="comment" id="comment-349258"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 22 January 2016</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Harold wrote:
+
+"A sincere evolution denier should be exquisitely familiar with the theory of evolution."
+
+This is a very good point.  When someone attacks science out of ignorance, that's bad enough.  But when someone makes an entire career out of attacking science and absolutely refuses to ever learn anything about what he is attacking, that's just blatantly dishonest.  If you were sincerely interested in the truth you would honestly consider the position of the opposition.  Failure to do so removes you from the realm of rational discussion.  When creationist demonstrate that they have not read the scientific literature they are displaying fundamental dishonesty .  When they refuse to read the literature they they should be ridiculed.  Behe and his classic statement in the Dover trial is a prime example.  And it doesn't even matter if they sincerely believe the nonsense they spout, it's still disingenuous to refuse to believe something you don't even understand.
+
+A wise man once said that ignorance is a temporary condition, stupid is forever.  Once again, I was right.
+</blockquote>
+
+Yes, it's incredible.  For any intellectually honest person, the first thing you do before you argue against a well-supported position is fully understand what you are arguing against.
+
+Even a competent attorney whose objective is to make the best case for one side makes sure they understand the arguments of the other side.  No wonder ID/creationists disgrace themselves in court.  
+
+Even if most ID/creationists were expert in evolutionary biology, the fact that output by people who distort and misunderstand it is tolerated in their community would highly discredit them.  The fact that this is the norm is devastating.  They have a developmentally stunted "high school debate" mentality.  All they care about is barking sound bites that superficially seem, to the totally ignorant observer, to cast doubt on some valid piece of evidence against them.  
+
+<b>They quite literally do not know what they are talking about.</b>
+
+</div></div>
+<div class="comment" id="comment-349260"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 22 January 2016</p><div class="comment-body"><p><b>They quite literally do not know what they are talking about.</b></p><p>That is true in more than one sense.</p><p>For as much mistaken their ideas about their opposition, the situation is even worse when it comes to "intelligent design", "creation", "alternative explanations", "baramins", etc.</p></div></div>
+<div class="comment" id="comment-349264"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 22 January 2016</p><div class="comment-body"><blockquote>
+<strong>TomS said:</strong>
+
+<b>They quite literally do not know what they are talking about.</b>
+
+That is true in more than one sense. 
+
+For as much mistaken their ideas about their opposition, the situation is even worse when it comes to "intelligent design", "creation", "alternative explanations", "baramins", etc. 
+</blockquote>
+
+This is why I always remind myself that our objectives are - 
+
+1) To defend our rights against those who would teach anti-scientific sectarian dogma as "science" at taxpayer expense, 
+
+2) To promote understanding of science by rebutting creationist arguments (which includes demonstrating their lack of reasonable alternate positive claims as well as showing that their attacks on science are false), for the benefit of third party readers who may be able to be convinced.
+
+3) Toying with the more interactive creationists can be amusing to some, but this is less important objective.
+
+Those who drank the Kool-Aid often enough are not going to be convinced.
+
+One thing the internet has taught me...<b>If someone demonstrates at the beginning of a conversation that they are completely unreasonable, it is overwhelmingly likely to certain that they will remain completely unreasonable, no matter how many valid, civil arguments are presented to them.</b>
+
+They don't know the trivial basics of evolution, they don't know Bible scholarship, and their concocted schemes like ID and baraminology are internally inconsistent ad hoc blatherings.  It is completely unreasonable for them to be discussing the topic of evolution at all.  They already chose not to learn about it and then to spew crap that doesn't make sense about it, so you're not going to convince them.  </div></div>
+<div class="comment" id="comment-349267"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 22 January 2016</p><div class="comment-body"><p>And of course the reason that they don't become educated is that they are sure they are right and they somewhere, deep down inside, they realize that their beliefs will not withstand an honest examination of the evidence.  So, once again, fundamental dishonesty, not just ignorance is involved.</p></div></div>
+<div class="comment" id="comment-349275"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 23 January 2016</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+And of course the reason that they don't become educated is that they are sure they are right and they somewhere, deep down inside, they realize that their beliefs will not withstand an honest examination of the evidence.  So, once again, fundamental dishonesty, not just ignorance is involved.
+</blockquote>
+
+Yes, needless to say, that is unequivocally the reason why.  If they accurately describe the science, it makes too much sense, and that causes them unbearable anxiety.
+
+The people they are most dishonest with are themselves.  
+
+Now, for the Phillip Johnson generation, feted as "conservative intellectuals", an element of self-serving hypocrisy is evident.
+
+For the younger ones, I'm beginning to happily notice that they haven't gained much.  They haven't had to work very hard for what they have gained, but they have mainly harmed their careers. Dembski hasn't made terribly good use of a competitive PhD.  Most lawyers who also have expertise in the industrially important field of geology are probably doing better than Casey Luskin overall.  Jason Lisle is limited to creationist organization and Bible college jobs; he may think that's okay but didn't need a PhD in Astrophysics for that.  Behe made a few bucks but is overall not much better off than he would be as a respected scientist, and a decent science book for lay people might have made him as much money, without torpedoing his scientific standing.  Egnor is fine because he knows how to do brain surgery, but his case is merely proof that if you become a competent brain surgeon, you can be a little crazy on the side and still do well.  The wingnut welfare gravy train has been a bumpy ride for ID/creationists.  The gravy keeps getting thinner all the time.
+
+</div></div>
+<div class="comment" id="comment-349276"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 23 January 2016</p><div class="comment-body"><p>To rely on reason and evidence is to lose control.</p></div></div>
+<div class="comment" id="comment-349280"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 23 January 2016</p><div class="comment-body"><blockquote>
+<strong>harold said:</strong>
+
+... if you become a competent brain surgeon, you can be a little crazy on the side and still do well.  
+
+</blockquote>
+
+... Now why does that ring a bell?</div></div>
+<div class="comment" id="comment-349282"><p class="comment-meta"><span class="comment-author">Yardbird</span> &middot; 23 January 2016</p><div class="comment-body"><blockquote>
+<strong>Just Bob said:</strong>
+
+<blockquote>
+<strong>harold said:</strong>
+
+... if you become a competent brain surgeon, you can be a little crazy on the side and still do well.  
+
+</blockquote>
+
+... Now why does that ring a bell?
+</blockquote>
+
+I think you've got to be a little crazy to figure you can cut the top off people's heads without killing them.</div></div>
+<div class="comment" id="comment-349284"><p class="comment-meta"><span class="comment-author">harold</span> &middot; 23 January 2016</p><div class="comment-body"><blockquote>
+<strong>TomS said:</strong>
+
+To rely on reason and evidence is to lose control.
+</blockquote>
+
+I believe I can state that creationist evolution denial is "denial" in every sense of the word.</div></div>
+<div class="comment" id="comment-349285"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 23 January 2016</p><div class="comment-body"><blockquote>
+<strong>Yardbird said:</strong>
+
+
+I think you've got to be a little crazy to figure you can cut the top off people's heads without killing them.
+</blockquote>
+
+I have a friend who is a physician, and he tells me that he's always amused by the phrase "It isn't brain surgery"
+
+He explains that, from his point of view, brain surgery is actually pretty easy. 
+
+Unlike, say, cardiac surgery, you don't do a lot of damage just getting in, and don't have to repair much on the way back out. You barely have to use any anesthesia (it's sometimes done with the patient awake).
+
+In thoracic surgery you can spend the whole day figuring which bits have to get patched to other bits as you re-route peoples plumbing on the fly, but brain surgery typically has a straightforward instruction manual "Everybody's brain looks pretty much the same, if you get in there and you see something that you haven't seen before, take it out."
+
+True, he says, you have to be pretty careful, since one slip and can wipe out someone's whole fifth grade, but it's a cakewalk compared to the <i>really</i> delicate work, like reattaching severed fingers.
+</div></div>
+<div class="comment" id="comment-349286"><p class="comment-meta"><span class="comment-author">Just Bob</span> &middot; 23 January 2016</p><div class="comment-body"><blockquote>
+<strong>stevaroni said:</strong>
+
+True, he says, you have to be pretty careful, since one slip and can wipe out someone's whole fifth grade, but it's a cakewalk compared to the <i>really</i> delicate work, like reattaching severed fingers.
+
+</blockquote>
+
+Dang, do you suppose they could wipe my junior high years?</div></div>
+<div class="comment" id="comment-349591"><p class="comment-meta"><span class="comment-author">Doc Bill</span> &middot; 3 February 2016</p><div class="comment-body">Young master Ewert has replied!  (over at Evo Whine and Snooze) Apparently a new generation of IDiots has been produced by Baylor.  Good to know the school's reliable.  The best part of Ewert's tedious whine is at the end where he writes:
+
+<blockquote>
+Thomas's critique fails. He does raise a couple of legitimate flaws. However, he focuses on raising nonsense objections and offering unsupportable misreadings of my papers. Thomas has not demonstrated the evolution of irreducible complexity. He has not demonstrated the natural production of complex specified information. He has not demonstrated a genetic algorithm that can produce large amounts of active information without teleology. Thomas's efforts notwithstanding, our conclusions stand.
+</blockquote>
+
+I would suggest changing "irreducible complexity" to "bullshit."  Same with CSI.  Ditto with "produce large amounts of bullshit without teleology."
+
+It appears that master Ewert is off to a fine start as an IDiot.  My only advice to him would be to have lunch with the former Attack Gerbil and find out how his career is going to turn out.  Hint:  not good.</div></div>
+<div class="comment" id="comment-349605"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 3 February 2016</p><div class="comment-body">Dr. Ewert writes:
+<blockquote>However, my usage is consistent with the literature. It is common to describe the optimal Steiner tree as the optimal or minimal Steiner tree, and refer to various non-optimal Steiner trees simply as Steiner trees. As a sample, see how the term is used in the following papers:
+
+ Jesus M, Jesus S, MÃ¡rquez A. Steiner Trees Optimization using Genetic Algorithms. 2004.</blockquote>
+Here errs Ewert: Jesus, Jesus &amp; MÃ¡rquez define: <blockquote>In fact, a Steiner Tree (StT) of S is obtained by adding to the original set S some special located additional points (the Steiner points) and computing the MSpT of this new collection.</blockquote>
+So, for them a Steiner Tree is a Minimal Spanning Tree of the original tree <b>to which at least one point is added</b>.  Dr. Ewert fails on both accounts:
+
+1) He describes the points in his tree as the "cities", so it is clear that no Steiner-point was added, ergo, it is the original tree, not an augmented one
+
+2) The depicted tree is not a minimal spanning tree (MSpT), again, the definition isn't matched.</div></div>
+<div class="comment" id="comment-349606"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 3 February 2016</p><div class="comment-body"><blockquote>Thomas is correct that the optimal solution is missing. This was due to a bug that was discovered shortly after publication. I have published an erratum with corrected figures. The corrected figure does, in fact, contain the optimal solution.</blockquote>
+Unfortunately, "Bio Complexity" doesn't list errata with the articles, but under <a href="http://bio-complexity.org/ojs/index.php/main/announcement">announcements</a>. Amusingly, you won't find a link from the announcement to the article...
+
+Perhaps it would be even better to print them out and tape them to Dr. Marks's office door.... </div></div>
+<div class="comment" id="comment-349608"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 3 February 2016</p><div class="comment-body"><p>Way back when this all started, Dave showed <a href="http://www.pandasthumb.org/archives/2006/07/target_target_w_1.html">some soap bubble solutions to this problem</a> right up front.</p><p>The soap bubble solution has been known for many decades if not for a hundred years or more.  It has been a frequent demonstration in hands-on museums because it falls into the catagory of analog solutions to complex potential energy distribution problems.  Other examples include fluid dynamic solutions using potassium permanganate streaks to map out field lines in fluid analogs of electric fields.</p><p>Back before fast computers, scientists and engineers used all sorts of analog methods to solve complex, "uncomputable" problems.  These ideas have been around for hundreds of years.</p><p>I find it rather revealing that the people over at UD don't understand the significance of the soap bubble solutions and recognize that there is more to this problem than just a minimal spanning tree.  I suspect this is another indicator of their rather shallow levels of understanding of the interrelationships among all the sciences.  When ID/creationists reveal that they don't understand basic concepts and mechanisms in evolution, they are also revealing that they don't understand basic concepts and mechanisms in physics and chemistry either.</p></div></div>
+<div class="comment" id="comment-349609"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 3 February 2016</p><div class="comment-body"><a href="http://bio-complexity.org/ojs/index.php/main/announcement">From their surreptitiously posted "erratum" for Ewert, et. al.</a>
+
+<blockquote><p>We conclude that the corrections and clarifications presented here do not alter our original conclusion, which was that âThomasâs algorithm, far from exhibiting the power of natural selection, merely demonstrates that an intelligent agent, in this case a human programmer, possesses the ability to incorporate into such algorithms the information necessary for successful search.â </p></blockquote>
+
+What better demonstration of the fact that they still don't get it?</div></div>
+<div class="comment" id="comment-349788"><p class="comment-meta"><span class="comment-author">DiEb</span> &middot; 9 February 2016</p><div class="comment-body"><blockquote>
+<strong>DiEb said:</strong>
+
+Dr. Ewert writes:
+<blockquote>However, my usage is consistent with the literature. It is common to describe the optimal Steiner tree as the optimal or minimal Steiner tree, and refer to various non-optimal Steiner trees simply as Steiner trees. As a sample, see how the term is used in the following papers:
+
+ Jesus M, Jesus S, MÃ¡rquez A. Steiner Trees Optimization using Genetic Algorithms. 2004.</blockquote>
+Here errs Ewert: Jesus, Jesus &amp; MÃ¡rquez define: <blockquote>In fact, a Steiner Tree (StT) of S is obtained by adding to the original set S some special located additional points (the Steiner points) and computing the MSpT of this new collection.</blockquote>
+So, for them a Steiner Tree is a Minimal Spanning Tree of the original tree <b>to which at least one point is added</b>.  Dr. Ewert fails on both accounts:
+
+1) He describes the points in his tree as the "cities", so it is clear that no Steiner-point was added, ergo, it is the original tree, not an augmented one
+
+2) The depicted tree is not a minimal spanning tree (MSpT), again, the definition isn't matched.
+</blockquote>
+
+Second Try:
+
+The other two articles use "Steiner Tree" in the sense of "any spanning tree of the original points and some (or none) additional Steiner points". In this sense, Fig.2 depicts a "Steiner Tree",
+
+David Thomas, in his postings, uses "Steiner Tree" synonymously to "Steiner Solution" - here, Fig.2 is not a "Steiner Tree".
+
+At best, the literature is inconsistent, therefore you cannot be consistent with it....</div></div>
+<div class="comment" id="comment-349790"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 9 February 2016</p><div class="comment-body"><p>I wonder how Dembski, Ewert, and Marks would explain the soap bubble solution to the "Steiner Problem." They can't claim that the solution was placed by intelligence into the program because the array of molecules that form the soap film are not "thinking" about how to solve the problem.</p><p>Without understanding the idea that computer programs can simulate the laws of physics, D,E,&amp;M continue to believe that the solution to the problem is "smuggled in" whenever a genetic algorithm of any type is implemented. But where is the smuggling-in when it comes to soap bubbles? And if we can mimic soap bubbles on a computer, how does that make soap bubbles intelligent?</p></div></div>
+<div class="comment" id="comment-349800"><p class="comment-meta"><span class="comment-author">Dave Thomas</span> &middot; 10 February 2016</p><div class="comment-body"><p>Great comments, keep 'em coming!</p></div></div>
+<div class="comment" id="comment-349991"><p class="comment-meta"><span class="comment-author">Richard B. Hoppe</span> &middot; 14 February 2016</p><div class="comment-body"><p>I was inspired by this post to re-read my <a href="http://pandasthumb.org/archives/2014/04/once-again-desp.html">Once again, desperately dissing Avida</a> post from two years ago. It describes another example of Ewert's misunderstandings and misrepresentations of research. He's learned well from his teachers, Marks and Dembski.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

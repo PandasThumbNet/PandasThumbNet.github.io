@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calling ID&#x27;s Bluff, Calling ID&#x27;s Bluff... — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Calling ID&#x27;s Bluff, Calling ID&#x27;s Bluff...</h1><p class="post-meta">Posted 16 August 2006 by <span class="post-author">Dave Thomas</span></p><div class="post-body">In July, I described a <a href="http://www.pandasthumb.org/archives/2006/07/target_target_w_1.html">Genetic Algorithm</a> that, unlike Dawkins' "Weasel" experiment, specifies no fixed "Target" for the simulation, but instead rewards those members of the current population which use fewer or shorter segments to connect a fixed set of points.  As the algorithm progresses, it finds a multitude of answers for the math problem called "Minimization of Steiner Trees," i.e. the shortest possible straight-line networks connecting the fixed points.
+
+Last  Monday, I posted <a href="http://www.pandasthumb.org/archives/2006/08/take_the_design.html">Take the Design Challenge</a>, wherein I called for solutions to a tricky little 6-point network. Next Monday, I will announce the winners (there are 20 entries already, several with true Steiner Solutions, and others with almost-as-good "MacGyver" solutions).
+
+Imagine my surprise, then, when I found Salvador Cordova at Uncommon Descent spewing blatant falsehoods about this work.  I was shocked - <b>shocked, I say </b> - to catch the UD Software Engineers in a lie.  And quite a lie it is - with the help of mathematicians like <a href="http://en.wikipedia.org/wiki/Gauss">Carl Gauss</a>, I'm going to lift the veil from the obfuscations of IDers, and prove it's a Lie, much as you would prove a mathematical theorem.
+
+In his <a href="http://www.uncommondescent.com/index.php/archives/1316">reply to the Design Challenge</a>, Mr. Cordova describes a genetic algorithm of his own devising, for solving the problem of adding up all the integers from 1 to, say, 1000.  (The result is 500,500, by the way). Cordova writes
+
+<blockquote><p>The following computational theatrics are akin to what Dave Thomas performed:</p></blockquote>
+
+and then links to his GA code, <a href="http://smartaxes.com/docs/ud/tautologies/ga.c">here</a>.
+
+Salvador adds later in his post that 
+<blockquote><p>   <quote>  ofro wrote:
+    What I don't understand is the basic premise of your example, which apparently already has an explicit solution of the problem built into the program.</p></blockquote> 
+I'm afraid that isn't quite correct because if you go to <a href="http://smartaxes.com/docs/ud/tautologies/ga.c">ga.c</a>, and do a text search for 500500 you won't find it. The solution was never explicitly stored anywhere.</quote>
+
+It seems Sal is implying that his sum-of-integers genetic algorithm has no "fixed target," and is akin to my work on Steiner Trees.
+
+That is patently False.  Cordova's algorithm is <i>exactly</i> like Dawkins' "Weasel", with the major difference being that, while Dawkins was searching for the specific target "METHINKS IT IS LIKE A WEASEL," Cordova is searching for the specific sequence of numbers 251, 252, 253, ... 750.  When these are summed and doubled, the result is the sum of the numbers from 1 to 1000: 500,500.
+
+Another oddity was that Cordova's code wouldn't even compile -- it took me a couple of hours to reverse engineer it and figure out what in tarnation he was doing.  As an exercise in Smoke and Mirrors, Cordova's algorithm is remarkable.  But, unlike my program, it is definitely looking for one, and only one, Answer.  
+
+<b>PROOF</b>
+
+Cordova's program loops from 1 through half the desired end-number; if the sum of the first N integers is desired, and N=1000 (as in Cordova's listing), then he loops from 1, 2, 3, up to 500 (=N/2).
+
+For each of the 500 numbers, Cordova stores a number that represents a "Midpoint Distance" (I'll call this MidPoint[i] for short, where i is any number in the sequence 1, 2, 3, ... N/2.)
+
+Initially, his Midpoint Distances are generated randomly, with values anywhere from -2N to +2N (e.g. -2000 to +2000).  Then, he loops through each of the N/2 numbers once per generation, and repeats the process over many generations.  For a given generation, and a given looping number from that generation (such as i=37, with value MidPoint[37]), Cordova calculates a "pseudo-euclidean distance":
+
+<blockquote><p>double pseudo_euclidian_distance( double x1, double x2, double y)
+{
+return (x1-y) * (x1-y)  + (x2-y)*(x2-y);
+}</p></blockquote>
+
+Here's how he uses this distance.  At each step in the loop (from 1 to N/2), the "distance" to the current MidPoint value is examined, and a "mutated" MidPoint distance is also derived, always within a few units (plus or minus 2.5) of the original "distance".  If the Mutated "distance" is shorter, that distance then replaces the current value, MidPoint[i].  Otherwise, the current value is retained.  So, something is definitely being minimized, but what?
+
+<i>Aside: if you think this exposition is getting too wordy, please do try to figure out <a href="http://smartaxes.com/docs/ud/tautologies/ga.c">Cordova's Code</a> for yourself.  I'll wager you'll be back here before you know it!</i> 
+
+If the pseudo-Euclidean distance is called D, then Cordova is trying to minimize D = (x1-y)^2 + (x2-y)^2.  To see where this will lead, one can take the derivative of D with respect to y, and set it to zero to find the extremum (which is indeed a minimum, but I'll leave that detail to the reader):
+
+D' = 2 (x1-y)(-1) + 2(x2-y)(-1) === 0, => (x1-y) + (x2-y) === 0, => y = (x1 + x2)/2.
+
+Whatever x1 and x2 are, Cordova's function will be minimized when the value of y (which turns out to be a MidPoint value) equals the <b>average</b> of x1 and x2.
+
+Delving deeper into Sal's Nightmare, one finds that, if you are on the ith number in the loop (say, i = 37), what gets sent down as x1 and x2 are just the index i itself, and that same index + N/2.  Thus, for i=37, it turns out that x1 = 37, and x2 = 537.  Not coincidentally, the average of 37 and 537 is 287, or simply 37 + 250.
+
+And that's almost all there is to it.  Even if the value for the 37th midpoint was far off at the beginning (say, -1634), as the generations proceed, any mutations that serve to bring the midpoint closer to the intended value (=287) are accepted, and those that don't are rejected.
+
+Formally substituting i for x1, and i+N/2 for x2, we see that midpoints are drawn inexorably to the value 
+y = (x1 + x2)/2 = (i + i + N/2)/2 = (2i + N/2)/2 = i + N/4.
+
+If N is 1000, N/4 is 250.  The first midpoint (for loop index i=1) is drawn to 251 (=1 + 250), while the 37th midpoint is drawn to 287 (=37 + 250), and the final index's midpoint is drawn to 750 (=500 + 250).
+
+All that remains is to evaluate the final "estimate," which is just the sum of the 500 (or N/2) midpoints, doubled.
+
+Here follows the proof that this sum is just a roundabout way of calculating the sum of the first N integers, which the brilliant Gauss found useful as a child to escape some boring math drills: instead of adding the numbers up, Gauss realized the sum of the first N numbers was just (N*(N+1)/2).
+
+<img alt="midpoint.gif" src="http://www.pandasthumb.org/archives/target/midpoint.gif" width="422" height="300" />
+
+And that's that.  Unlike the normal he-said/she-said arguments, this disagreement boils down to basic Math.
+
+The Software Engineering Team of Uncommon Descent has been caught lying - Q.E.D.</div><section class="comments-section"><h2 class="comments-heading">79 Comments</h2>
+<div class="comment" id="comment-94693"><p class="comment-meta"><span class="comment-author"><a href="http://www.mythusmageopines.com/wp" rel="nofollow">Alan Kellogg</a></span> &middot; 16 August 2006</p><div class="comment-body"><p>Could one express it as...</p><p>1 + 10^Nth x 1/2 10^Nth ?</p><p>Thus 1+10,000=10,001 x5,000= 50,050,000</p></div></div>
+<div class="comment" id="comment-94697"><p class="comment-meta"><span class="comment-author">Matt Peterson</span> &middot; 16 August 2006</p><div class="comment-body"><p>*golf clap*</p></div></div>
+<div class="comment" id="comment-94703"><p class="comment-meta"><span class="comment-author">Parse</span> &middot; 16 August 2006</p><div class="comment-body"><p>Okay.  I've seen better looking code in the Obfuscated C competition, but enough with the ad hominems.<br>Cordova's claim of "I'm afraid that isn't quite correct because if you go to ga.c, and do a text search for 500500 you won't find it. The solution was never explicitly stored anywhere." is technically true.  Or at least, everything in that after the word "because" is true.  It's equivalent to running a genetic algorithm, where the fitness is determined by how close the ROT13 of the phrase is to "ZRGUVAXF VG VF YVXR N JRNFRY".  You won't find "METHINKS IT IS LIKE A WEASEL" in that, but it is comparing it to a specific goal.  The fact that goal is calculated - without any randomness added - from constant inputs for a given value means that the goal is hardcoded into the algorithm.  You can try to slice it up, or hide it, but it will still be there.</p></div></div>
+<div class="comment" id="comment-94704"><p class="comment-meta"><span class="comment-author">khan</span> &middot; 16 August 2006</p><div class="comment-body"><p><i>In his reply to the Design Challenge, Mr. Cordova describes a genetic algorithm of his own devising, for solving the problem of adding up all the integers from 1 to, say, 1000. (The result is 500,500, by the way). </i></p><p>I derived & proved a formula for such when I was a 16 year old math nerd.</p><p>And I certainly was not the first.</p><p>n(n/2 + 1/2) = sum(n...1)</p><p>(Yes, the symbols might not be correct.)</p><p>What does that have to do with evolution?</p></div></div>
+<div class="comment" id="comment-94708"><p class="comment-meta"><span class="comment-author">IanC</span> &middot; 16 August 2006</p><div class="comment-body">Looking at the code for what is called a GA, I was suprised to notice that it isn't. It's not a GA at all, it is just hill climbing with simulated annealing, surely? Or at least a simpler form.
+
+The post is just ridiculous:
+<blockquote><p>The major front loading is in how selection is made. With the wrong selection description, the wrong target of opportunity, if any, will be hit. Simple!</p></blockquote>
+Well yes, the selection method is important. Just like nature selecting for better breeders AMAZINGLY manages to evolve better breeders. Praise be to the Lo^H^Hdesigner!
+
+
+Oh, and I did like this:
+<blockquote><p>Dave counts on a bit of obfuscation to make his work unreadable. He chooses an antiquated computer language known as FORTRAN to make his demands.</p></blockquote>
+Dave, you fiend! Next time write it in malbolge.
+
+<blockquote><p>What does that have to do with evolution?</p><cite>— khan</cite></blockquote>
+Nothing, absolutely nothing.</div></div>
+<div class="comment" id="comment-94713"><p class="comment-meta"><span class="comment-author">Don Baccus</span> &middot; 16 August 2006</p><div class="comment-body"><blockquote><p>Imagine my surprise, then, when I found Salvador Cordova at Uncommon Descent spewing blatant falsehoods about this work. I was shocked</p></blockquote>
+No you weren't, no more than I!  I know you say this tongue in cheek, but you're going to be quote-mined as being in the camp of those who believe that Sal isn't a lying-for-Jesus scum-of-the-earth charlatan and, well, might even have a chance at gaining entry to ... "heaven", I think they call it.
+</div></div>
+<div class="comment" id="comment-94715"><p class="comment-meta"><span class="comment-author">W. Kevin Vicklund</span> &middot; 16 August 2006</p><div class="comment-body"><blockquote><p>That is patently False. Cordova's algorithm is exactly like Dawkins' "Weasel", with the major difference being that, while Dawkins was searching for the specific target "METHINKS IT IS LIKE A WEASEL," Cordova is searching for the specific sequence of numbers 250, 251, 252, ... 750. When these are summed and doubled, the result is the sum of the numbers from 1 to 1000: 500,500.</p><cite>— Dave</cite></blockquote>
+
+Slight correction, the start of the sequence is 251, not 250.
+
+To generalize what Sal has done, he is searching for the specific string of numbers that meets the following algorithm: (N/4)+1, (N/4)+2, (N/4)+3, ... (3N/4), where N is the number in question.  For odd numbers, the string will be non-integers (all will end with #.5), even numbers will have integer strings.</div></div>
+<div class="comment" id="comment-94716"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 16 August 2006</p><div class="comment-body"><p>So. If Salvador doesn't understand what a GA is, should he criticize it?</p><p>Well, for our laughs, perhaps. He also believes that the code in a GA may be randomly changed, so that is another 'test' his code must pass.</p></div></div>
+<div class="comment" id="comment-94731"><p class="comment-meta"><span class="comment-author">BC</span> &middot; 17 August 2006</p><div class="comment-body">Yeah, I'm not a big fan of lying interpretation.  It's much easier to point out that the work was (at the very least) incompetent, and it's useful to point out that Sal doesn't really understand GAs, but that doesn't stop him from criticizing them.
+
+By in large, I think Sal didn't even get much support over at UD (despite saying that the engineers could "see through the charade").  His arguments just weren't very convincing or thought out - though, I think that's largely due to the fact that he's arguing against reality.
+
+Here's the problems I've seen with the arguments over at UD and why all of them fall flat:
+
+<blockquote>"Avida promoters claim they refuted Behe's notion of irreducible complexity (IC) with their Avida computer simulation."</blockquote>
+Actually, no.  What GAs show is that it is possible to create systems via evolutionary mechanisms where the removal of any component makes the entire system fail.  Really, there are two classes of IC then: "Class A" systems which can be constructed incrementally, but (at some later stage) fail if one piece is removed, and "Class B" systems which cannot be constructed incrementally and fail entirely if one piece is removed.  Simply pointing out that a biological system fails if one piece is removed doesn't tell you whether you're dealing with a class A system (which evolution can create) or a class B system (which evolution cannot create).  Careful research is needed to differeniate between then two, and IDists want to jump to the conclusion that any IC system is actually a class B system.  GAs illuminated the fact that not all IC systems are class B systems (as IDists would like to argue).
+
+By in large, Sal's general argument seems to be that GAs, whether or not there is an explicit target, employ a very specific and limited strategy to find a specific solution.  What Sal misses is the fact that GAs are much more capable he gives them credit for.  First of all, Sal's "GA" (if you can call it that) is specifically setup to hone-in on a solution to a problem that has one and only one solution.  Actual GAs, on the other hand, are well known to be able to find completely different solutions (on different runs) to a single problem - they aren't secretly preprogrammed with the solution, hard-coded to hone-in on that solution, or merely deriving the solution through a series of deterministic mathematical steps.  GAs are moving through complex space and finding varieties of solutions that satisfy it's goal.
+
+<blockquote>"Is the selection process in Thomas's code natural or intelligently designed?"</blockquote>
+The selection process is intelligently designed.  However, that isn't particularly relevant when you understand how GAs work.  The selection process (or fitness function) is used to determine which organisms (real or digital) go on to reproduce.  The descendent organisms are similar to the parents that they descend from.  Thus, a selection process gets evolution moving in a particular direction.  Since we want a particular outcome (e.g. shortest route between six points), we want each subsequent generation to be closer to that goal and so we allow the best ones to have children.  It's not the goal that gets the organisms to evolve in a particular direction, but it's actually the survival differential that makes them evolve.  The GA goal is simply used to determine who reproduces and who doesn't - in other words, it determines how the survival differential is applied across the population.  In the absence of a goal, the organisms can evolve in a particular direction simply by having a survival differential - provided that the differential is non-random.  In the real world, organisms are hunters, prey (by predators and micro-organisms), and competing for mates.  This produces a somewhat stable (and non-random) survival differential that allows real-world organisms to evolve.  Hence, it's really not necessary to have an goal for evolution to work.  (Another way to look at it is to say that nature does have a goal, and that goal is to produce organisms that reproduce - of which survival is an important part.)
+
+<blockquote>"Thank you for responding. Can you, for the benefit of the reader explain what would happen to this algorithm in the absence of
+1. intelligent design of the selection process
+2. intelligent design of the "creatures" such that they are amenable to intelligently designed selection"</blockquote>
+GAs generally aren't used to create ecologies of organisms that need to eat, hunt, evade predators, or compete for mates.  In the absence of a goal or any of those needs, GAs won't create anything at all because there's nothing to create a survival differential (no goal, no competition, no starvation) - everybody survives, everybody reproduces (on average) at similar levels, and that means nobody evolves.  You don't need a goal to have GAs evolve, but you do need a survival differential (or more accurately a reproductive differential) in order to have evolution.
+
+<blockquote>"Rather, this circuitous route serves the anti-design case by sneaking away the fine-tuning into the things you just listed: CPU, OS, GA engine, etc."</blockquote>
+The CPU and OS aren't "sneaking" anything into the simulation.  They are analogous to having a universe that works by laws.  Being allowed to alter them is a little bit like saying that you should be allowed to alter fundamental forces of the universe and still have biological evolution work while you (for example) alter the binding properties of carbon, make hydrogen an unstable element, turn nitrogen into a noble gas, or increase or decrease the electromagnetic or gravitational forces by several magnitudes.  While it would theoretically be possible to sneak things in via the GA engine, the engine is right there for everyone to see and scrutinize.  It still works when nobody is pulling any sneaky business.  The purpose of GAs isn't to answer the question of whether the universe is designed or not, but it illuminates the question of whether GAs can, in the presence of stable fundamental laws, create CSI.  Under those conditions, the answer is "yes".  Further, you can verify in the code that we are maintaining a relatively hands-off approach to the system and allowing a few simple rules (random mutation, selection, reproduction) to create our complexity.  If there is a breach of this (for example, if we alter the organisms' genome by inserting pre-designed information), you are entitled to complain, but there isn't one.
+
+(BTW, I'm posting this at UD, but I think I've been banned for disagreeing with Denyse's post claiming that evolution is a cult.  If it doesn't appear there, you'll know why.)
+</div></div>
+<div class="comment" id="comment-94737"><p class="comment-meta"><span class="comment-author"><a href="http://www.alethian.org/wp/" rel="nofollow">Mark Nutter</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>That's nice work, but I think one of your conclusions is overdrawn. There is a difference between "it seems Cordova is <i>implying</i>" something untrue, and "Cordova is <i>lying</i>."</p><p>It sounds to me like Cordova is saying only that the answer itself (500,500) is not part of the code, but his primary point is the argument that one can specify an answer without explicitly spelling out the answer. Indeed, his whole point is that simulations like this are merely exercises in using an algorithm to obscure the fact that the outcome is programmed in. You have elucidated that this is the case in Cordova's algorithm, but that does not, in itself, diminish his point.</p><p>Not that I agree with Cordova's criticisms of genetic algorithms either, of course. I just think perhaps you rushed to a conclusion regarding "lying." Let's just say his criticism is irrelevant, since your example finds a truly unknown solution, as opposed to coding for a specific predetermined answer to the problem.</p></div></div>
+<div class="comment" id="comment-94738"><p class="comment-meta"><span class="comment-author"><a href="http://www.srcf.ucam.org/~ajl59/" rel="nofollow">Corkscrew</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>Mind if I just run through a few definitions to get this all clear in my head?</p><p>There are two major divisions of genetic algorithm fitness function: extrinsic and intrinsic. Extrinsic ones are ones which are imposed by means of an explicit fitness function (this algorithm would be an example). Intrinsic ones are ones where the organisms follow behavioural rules and these rules themselves give rise to a sort of fitness value for the organism (examples include the Tierra simulation and the Real World [tm]).</p><p>What we're discussing here is a further subdivision between extrinsic fitness functions that are locally or globally described. The former is more biologically realistic in that it simulates "blind" evolution better. The latter is less realistic, and is usually only used for demo purposes. The difference is that, if you know the global fitness function, using a GA is completely redundant.</p><p>It is of course possible for all three types of fitness to describe the same landscape. For example in the case of the Steiner solution, the same fitness landscape could be described by the following approaches:</p><p>1) Extrinsic/global - a complete listing of the lengths of the network for all conceivable patterns of nodes and lines</p><p>2) Extrinsic/local - a fitness function which selects possibilities on the basis of their length</p><p>3) Intrinsic - consider a population of line/node patterns, plus a population of "predator" organisms. These could be short lines which appear at random and "eat" anything they fall on. This would create a strong selective pressure towards shorter lines.</p><p>All three approaches describe the same landscape, and examples like this are the reason why it's generally considered valid to use GAs with extrinsic/global fitness functions as examples.</p><p>Can anyone with more knowledge than me confirm whether that's broadly accurate?</p></div></div>
+<div class="comment" id="comment-94756"><p class="comment-meta"><span class="comment-author">ah_mini</span> &middot; 17 August 2006</p><div class="comment-body"><p>Have to say I agree with a couple of other posters. It's one thing to say that someone's critique of your original post was inadequate, incompetent, incorrect, etc. It's another to say that your critic is a liar. That requires a whole different level of proof which, quite frankly, is not evident in your post. I think maybe you should go back and tone down some of the indignation as, other than that, it was a very revealing read as to why ID criticisms of GAs are bankrupt.</p></div></div>
+<div class="comment" id="comment-94758"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>What sort of person writes what is supposed to be a non-deterministic algorithm, but only provides one fixed and immutable pathway down which it may travel? Salvador Cordova is such a person, apparently. I was surprised to find that Cordova's code returned exactly the same answer on multiple runs, so I had a look inside. His idea of pseudo-random number seeding was this:</p><p>srand(0);</p><p>If you add</p><p>#include &lt;time.h&gt;</p><p>and change that other line to</p><p>srand(time(NULL));</p><p>then at least you don't get exactly the same number out on every run.</p></div></div>
+<div class="comment" id="comment-94759"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>Cordova apparently also either made a sloppy guess on the number of generations to run, or very carefully tuned that number so that his program would *not* converge on the correct result.</p><p>A little exploration finds that 6650 generations mostly fails to reach convergence on 500500, while 6660 generations often succeeds in reaching convergence. Coincidence?</p><p>If you return to the brain-dead "srand(0)" initialization, 6515 is the number of generations at which the program converges.</p></div></div>
+<div class="comment" id="comment-94761"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p>
+It's another to say that your critic is a liar. That requires a whole different level of proof which, quite frankly, is not evident in your post.
+</p></blockquote>
+
+You are wrong. Dave's post does have that level of proof. 
+
+Return your attention to what Dave quoted that Cordova was responding to:
+
+<blockquote><p>
+What I don't understand is the basic premise of your example, which apparently already has an explicit solution of the problem built into the program.
+</p><cite>— ofro</cite></blockquote>
+
+An "explicit solution" is not just the literal numeric constant "500500" as Cordova misleadingly responds. Dave does show that, yes, Cordova's program does indeed include an explicit solution to the problem. Cordova's response to "ofro" is an explicit falsehood. If you want to grant that it was a falsehood caused by stupidity rather than intention, that remains the only other alternative available that I see. Myself, I think the congruence between apparent intent and result makes "lie" by far the smarter pick.</div></div>
+<div class="comment" id="comment-94765"><p class="comment-meta"><span class="comment-author">Salvador T. Cordova</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote>
+My challenge to Salvador and the UD Software Engineering Team is simple and straightforward: if the Target's "shirt" (a stated desire for the shortest connected straight-line networks) is indeed as "CLOSE" to the "Target" itself (the actual Steiner Solution for the given array of fixed points) as you say it is, then you and your Team should be easily able to deduce the proper answer, and send it along.
+
+I'll be waiting! See you next Monday, August 21st. - Dave
+</blockquote>
+
+
+Thomas mis-describes the sense of my argument.  The specification of a problem solving STRATEGY and successfully implementing that STRATEGY will yield solutions equivalent to some or all of the solutions in the solution space (or maybe good enough).  Thomas mis-describes my position again.  Aiming for the shirt versus the person is like aiming to find the right strategy.  That's what I meant.  If he mis-understood for whatever reason be it me or him, I hope this helps clarify the issue.
+
+With respect to my ga.c, of course I knew the program was rigged.  I knew the seach strategy would work.  Searching for a strategy is like finding a sufficient aimpoint.  I provided 4 inexplicit strategies:  
+
+brute.c
+gauss.c 
+recurs.c
+ga.c
+
+Each is a different strategy for hitting the same target.  4 different sets of driving directions leading to Rome from 4 different starting points, so to speak.
+
+<b>Of course the programs fitness function was rigged, and it's no less rigged than the Steiner-solving GA's.  That's the whole point.</b>  Did Dave Thomas not know in advance his fitness function would have a chance of being marginally successful (in a MacGeyver sense at least), or did he have some monkey code his fitness functions or describe the fitness function to him?
+
+By the way, I'm honored to see Dave is effectively calling me liar.
+
+
+cheerio guys,
+Sal
+PS
+computing Fermat points is a bit tedious, if I have inclination I might provide them and finish of my speculation for a solution to his problem
+</div></div>
+<div class="comment" id="comment-94766"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 17 August 2006</p><div class="comment-body">Re Don Baccus's query about my being "shocked," do go out and see "Casablanca" with Humphrey Bogart and Ingrid Bergman - it's a cultural reference thing.
+
+Re Kevin Vicklund's note about the series starting with 251, not 250 - it's been corrected.  Thanks.
+
+Re several comments to the effect that using the "Lie" word was not justified - I'm with Wes on this.  Cordova has repeatedly described my claims that the Steiner genetic algorithm does not have its answers hard-wired in as a "sham," "Orwellian Double speak," and so on.  (Details are <a href="http://www.pandasthumb.org/archives/2006/08/take_the_design.html">here</a>.)
+
+The specific Lie this post discusses is found <a href="http://www.uncommondescent.com/index.php/archives/1316">here</a>, where Cordova wrote the following about his genetic algorithm for summing N numbers, ga.c:
+<blockquote><p>This program will give the answer to question, "What is the sum of the numbers from 1 to 1000?" through a genetic algorithm. ... <b><i>The following computational theatrics are akin to what Dave Thomas performed</i></b>:
+</p></blockquote>
+
+Cordova's genetic algorithm to sum the first N integers is a sham and a hoax, as I've shown.  It gives the <i>appearance</i> of getting to a solution without a specified Target, but there is indeed just such a Target.  The "Lie" is that Cordova is claiming that my Steiner genetic algorithm is doing the exact same thing, just not "overtly."  That is simply false, as we all will see next Monday, when the winners of the Design Challenge contest are announced.
+
+Sometime soon I'll post on a few coding tricks which Uncommonly Dense Software Engineers can use to determine if their genetic algorithms have a fixed Target, or not.
+
+Wes, my version of the Cordova Code, using srand(0) for the seed, gets the answer 500,500 by generation 4108.  Maybe our compilers have different random generators?
+
+Dave</div></div>
+<div class="comment" id="comment-94768"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 17 August 2006</p><div class="comment-body">Sal's comment appeared while I was composing, so I didn't see it before my last comment.
+
+I do thank him for repeating his prevarication again, in bold no less:
+<blockquote><p><b>Of course the programs fitness function was rigged, and it's no less rigged than the Steiner-solving GA's. That's the whole point.</b>
+</p></blockquote>
+
+My program is "rigged" only in the sense that it has been developed to solve math problems without known or given answers.  Cordova complains that if I suddenly starting switching lines in my code, it wouldn't work.  But what does that prove?  All my program does is show that, given a suitable <i>environment</i> (such as "shorter/connected networks are preferred"), evolutionary processes can indeed find effective solutions.
+
+Go ahead with your Fermat point, Sal.  When you get that figured out, you'll finally get to Third Place (as you'll see on Monday next).
+
+Dave</div></div>
+<div class="comment" id="comment-94770"><p class="comment-meta"><span class="comment-author">steve s</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p>Comment #120142
+
+Posted by BC on August 17, 2006 04:25 AM (e) | kill
+
+(BTW, I'm posting this at UD, but I think I've been banned for disagreeing with Denyse's post claiming that evolution is a cult. If it doesn't appear there, you'll know why.)
+</p></blockquote>
+
+So THAT's why Wesley keeps us in these damn pyjamas!</div></div>
+<div class="comment" id="comment-94771"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>Dave,</p><p>I'm using GCC:</p><p>gcc version 2.95.3 20010315 (release) [FreeBSD]</p></div></div>
+<div class="comment" id="comment-94772"><p class="comment-meta"><span class="comment-author">ofro</span> &middot; 17 August 2006</p><div class="comment-body"><p>Thomas, Elsberry, Cordova (anybody else?):</p><p>Guys, could you please tone it down with your polemic!  I realize that you are'nt exactly the best of buddies.  I knew I didn't get the most truthful of answers from Cordova, and I was going to consult with my son to analyze the code and prepare a reply.  You saved me that trouble.  At the same time, if I had known that my comment/answer was going to be exploited that much, ....</p><p>You are taking the fun out of telling the folks over at UD about experimental facts that the hard-core don't want to hear, but maybe some visitors will listen and think if arguments are handled in a more civized manner.  I have to admit UD's civility is a design feature that I appreciate even if the content makes me cringe at times.</p><p>(And I won't admit that in my younger years I probably would have adopted a more raucus style, too)</p></div></div>
+<div class="comment" id="comment-94774"><p class="comment-meta"><span class="comment-author"><a href="http://www.alethian.org/wp/" rel="nofollow">Mark Nutter</a></span> &middot; 17 August 2006</p><div class="comment-body">Dave and Wes,
+
+<blockquote><p>Cordova's genetic algorithm to sum the first N integers is a sham and a hoax, as I've shown. It gives the appearance of getting to a solution without a specified Target, but there is indeed just such a Target. The "Lie" is that Cordova is claiming that my Steiner genetic algorithm is doing the exact same thing, just not "overtly." That is simply false, as we all will see next Monday</p></blockquote>
+
+Just because he made a false statement doesn't necessarily mean that he knows it to be false and is attempting to deliberately trick people into believing a known falsehood. The key point to make is that Cordova's claim is false -- to accuse him of deliberately lying is to risk diverting the reader's attention from this point to a less-provable (and less important) point about whether or not this is deliberate.
+
+Maybe he is wrong because he knows the truth and hates it so much he wants to trick other people into believing a lie. But I doubt it. I think it's more likely that he has rationalized this to himself, and finds his argument to be the best way to avoid acknowledging natural mechanisms capable of mimicking ID. That would be self-deception, not lying. A slight but significant difference.
+
+I think your point is much stronger if you focus on the incorrectness of the claim, rather than on the inferred motives of the claimant. Science does not currently provide us with a means of objectively detecting an intent behind the behavior given only the evidence of the behavior itself. You may subjectively suspect a deliberate intent to deceive, but you cannot actually prove it, for the same reason you can't make ID scientific.</div></div>
+<div class="comment" id="comment-94775"><p class="comment-meta"><span class="comment-author"><a href="http://tinyurl.com/b8ykm" rel="nofollow">Glen Davidson</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>All of this is good, of course.  But we would do well not to forget the big picture, which is that evolution (by known/knowable mechanisms) is an explanation, the only meaningful one, for what we see in the organic world.  Genetic algorithms are attempts to mimic what has been reasonably inferred from the evidence, and have been generally adapted to serve our own purposes rather than to reproduce the meaningless yet amazing complexity that we observe in the world of organisms.</p><p>That is to say, the template for all genetic algorithms, the explanatory theory of evolution by known (perhaps by some yet unknown as well) mechanisms is what is really at issue.  RM + NS (+ the rest) is what fits the data found in biology, the neutral rates of evolution, the lack of rational design in organisms, the derivative nature of all of biology.  No known designer, or any other phenomenon, has ever produced anything like it.</p><p>Genetic algorithms using essentially RM + NS typically reproduce the patterns that we see in undirected evolution--divergences, derivation, non-rational design.  This is what they are good at showing, whether or not they are directed toward some goal.  The lack of goals in biological evolution only makes the search space much wider, something that Sal would prefer to smother over with meaningless challenges to replicate evolution computationally.  That is to say, IDists like to put evolution into question using non-empirically-based challenges, rather than to deal with the actual evidence that gave us the idea of genetic algorithms in the first place.</p><p>We have a superb example of undirected evolution in the biological realm.  No goal or rational design has ever been demonstrated there, while the endless evidence of derivation is the almost the entire theme of biology.  So I applaud Dave Thomas's excellent work at coming up with an undirected evolutionary analogy to use in computers, however I don't want the squabble with those who avoid empirical modeling like the plague to obscure the fact that Sal et al haven't in the slightest dealt with the success of undirected RM + NS + in explaining what we see in ourselves and in our world.</p><p>We have an explanation (one that is well beyond exact duplication--don't think that isn't the reason why they demand such a duplication), they have none.  It's no wonder that Sal turns away from the actual biological evidence in order to deny the fact that we have a very good explanation, yet it is only a measure of how unscientific his thinking is.  He is not trying to come up with an explanation in order to help us understand the details of what we see, he is only trying to prevent the use and propagation of the successful explanation that has been partly adapted for our own use--because it comes up with solutions that humans would not readily think of.</p><p>Why do we want to use genetic algorithms at all, Sal?  Surely if the organic realm were chock full of rationally-designed mechanisms we would have little reason to try to mimic an evolution that simply provides the same sort of rational designs that humans and computers produce.  No, we looked at organisms, saw that they are not rationally-designed, yet often enough had useful alternatives to rational designs that we thought we would do well to supplement intelligent design with a measure of evolution, and so we came up with mimics in order to supplement intelligent design.  <b>We use genetic algorithms to mimic the non-intelligent designs produced by evolution, so that we can supplement our intelligent rational design with solutions similar to what we observe in the organic world</b>.  All genetic algorithms create patterns analogous with the patterns found in life reproduces important aspects of RM + NS +, and non-teleological genetic algorithms only come closer to making a true mimic.</p><p><b><i>Why use evolutionary processes at all if they only produce what is indistinguishable from intelligent designs anyhow?</i></b>.  Can Sal differentiate between evolutionary processes and rational intelligent design processes, as well as to identify the differences in their results?</p><p>He is trying very hard not to be able to do either one.</p><p>Glen D<br>http://tinyurl.com/b8ykm</p></div></div>
+<div class="comment" id="comment-94776"><p class="comment-meta"><span class="comment-author"><a href="http://tinyurl.com/b8ykm" rel="nofollow">Glen Davidson</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>All of this is good, of course.  But we would do well not to forget the big picture, which is that evolution (by known/knowable mechanisms) is an explanation, the only meaningful one, for what we see in the organic world.  Genetic algorithms are attempts to mimic what has been reasonably inferred from the evidence, and have been generally adapted to serve our own purposes rather than to reproduce the meaningless yet amazing complexity that we observe in the world of organisms.</p><p>That is to say, the template for all genetic algorithms, the explanatory theory of evolution by known (perhaps by some yet unknown as well) mechanisms is what is really at issue.  RM + NS (+ the rest) is what fits the data found in biology, the neutral rates of evolution, the lack of rational design in organisms, the derivative nature of all of biology.  No known designer, or any other phenomenon, has ever produced anything like it.</p><p>Genetic algorithms using essentially RM + NS typically reproduce the patterns that we see in undirected evolution--divergences, derivation, non-rational design.  This is what they are good at showing, whether or not they are directed toward some goal.  The lack of goals in biological evolution only makes the search space much wider, something that Sal would prefer to smother over with meaningless challenges to replicate evolution computationally.  That is to say, IDists like to put evolution into question using non-empirically-based challenges, rather than to deal with the actual evidence that gave us the idea of genetic algorithms in the first place.</p><p>We have a superb example of undirected evolution in the biological realm.  No goal or rational design has ever been demonstrated there, while the endless evidence of derivation is the almost the entire theme of biology.  So I applaud Dave Thomas's excellent work at coming up with an undirected evolutionary analogy to use in computers, however I don't want the squabble with those who avoid empirical modeling like the plague to obscure the fact that Sal et al haven't in the slightest dealt with the success of undirected RM + NS + in explaining what we see in ourselves and in our world.</p><p>We have an explanation (one that is well beyond exact duplication--don't think that isn't the reason why they demand such a duplication), they have none.  It's no wonder that Sal turns away from the actual biological evidence in order to deny the fact that we have a very good explanation, yet it is only a measure of how unscientific his thinking is.  He is not trying to come up with an explanation in order to help us understand the details of what we see, he is only trying to prevent the use and propagation of the successful explanation that has been partly adapted for our own use--because it comes up with solutions that humans would not readily think of.</p><p>Why do we want to use genetic algorithms at all, Sal?  Surely if the organic realm were chock full of rationally-designed mechanisms we would have little reason to try to mimic an evolution that simply provides the same sort of rational designs that humans and computers produce.  No, we looked at organisms, saw that they are not rationally-designed, yet often enough had useful alternatives to rational designs that we thought we would do well to supplement intelligent design with a measure of evolution, and so we came up with mimics in order to supplement intelligent design.  <b>We use genetic algorithms to mimic the non-intelligent designs produced by evolution, so that we can supplement our intelligent rational design with solutions similar to what we observe in the organic world</b>.  All genetic algorithms create patterns analogous with the patterns found in life reproduces important aspects of RM + NS +, and non-teleological genetic algorithms only come closer to making a true mimic.</p><p><b><i>Why use evolutionary processes at all if they only produce what is indistinguishable from intelligent designs anyhow?</i></b>.  Can Sal differentiate between evolutionary processes and rational intelligent design processes, as well as to identify the differences in their results?</p><p>He is trying very hard not to be able to do either one.</p><p>Glen D<br>http://tinyurl.com/b8ykm</p></div></div>
+<div class="comment" id="comment-94778"><p class="comment-meta"><span class="comment-author">steve s</span> &middot; 17 August 2006</p><div class="comment-body"><p>Hey Glen, do you know where I can find <a href="http://www.crystallik.com/images/misc_images/forumpics/cliffnotes.jpg">this</a>?</p></div></div>
+<div class="comment" id="comment-94779"><p class="comment-meta"><span class="comment-author">sparc</span> &middot; 17 August 2006</p><div class="comment-body"><p>Maybe it would help if Salvador quits his computer for a while, orders a peptide (e.g. Methinksitislikeaweasel) and a phage display library (NEB # E8121L, 1480,-$) and tries some phage panning. Media and plastic ware are inexpensive and the experiments can easily carried out by people not too experienced with wet experiments. Even if DI had to buy the necessary equipment (which seems quite likely if one looks at the number of experimental papers they have published) less then 5000$ should be sufficient to set up the lab for this purpose. If one of you guys would invite him in his lab less then 2000,-$ will be sufficient for the complete experiment. Indeed he would have enough material for WDÂ´s research assistant to run the experiments in parallel.<br>He would experience everything important in evolution: randomness (phage library), selection (panning) and reproduction (amplification of selected phages in bacterial host cells).<br>However, I am afraid that he would deny this, because the suggested library contains all possible heptapeptides, which he would interpret as front loaded.</p></div></div>
+<div class="comment" id="comment-94780"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 17 August 2006</p><div class="comment-body">Good points, people.  Tell you what - if Sal wishes to stop misrepresenting my work by saying things like this in <a href="http://www.uncommondescent.com/index.php/archives/1464">today's new UD post</a>:
+<blockquote><p>
+I fully take pride in the smoke and mirrors I used, I never pretended otherwise. In contrast, Thomas refuses to admit he's also using smoke and mirrors in his GA.
+</p></blockquote>
+then I will take back my charges of lying, and apologize.
+
+But that won't happen until Cordova actually admits that I'm <b><i>not</i></b> feeding <i>specific solutions</i> into my algorithm.  In Cordova's genetic algorithm (GA), there is one unique answer hard-wired in.  In mine, there is not.  That's the main bone of contention.
+
+As long as Sal continues to insist that my Steiner genetic algorithm is rigged <i>in the same way that his Gaussian sum genetic algorithm was rigged</i>, as he says in comment #120215 above, I've got a problem.
+
+My GA produces multiple answers, occasionally stumbling onto the correct one(s).  Cordova's GA is specifically engineered to produce <b>ONE</b> answer, exactly as Dawkins's "Weasel" GA.
+
+Until Cordova acknowledges that there <i>is</i> a difference between these two approaches, I'll be reluctant to withdraw my conclusion that he's not telling the truth.
+
+Should he make this acknowledgment, I'll be happy to change my tune.
+
+Dave</div></div>
+<div class="comment" id="comment-94781"><p class="comment-meta"><span class="comment-author">T_U_T</span> &middot; 17 August 2006</p><div class="comment-body"><p>I've just finished dissecting Sam's "masterpiece", and, Ouch ! methinks , the "incompetent and unaware of it" article was written exactly about him.  This is not even a genetic algorithm the guy produced at all ! What a shame...</p></div></div>
+<div class="comment" id="comment-94783"><p class="comment-meta"><span class="comment-author">Steviepinhead</span> &middot; 17 August 2006</p><div class="comment-body"><p>As has been said before, even on this thread, there is some heuristic utility to demonstrating to the doubtful, untutored, or fence-sitters that ID is a sham (and most of its best-known practitioners shameless shamsters).</p><p>The same cast of poseurs has every vested interest--psychological, religious, and at times professional and financial--to engage in obfuscation, misdirection, fact-fudging, logic-twisting, and outright prevarication, as they attempt to slither off the well-set hook.  However "polite" and "politic" it might be to pretend to ignore this deeply-engrained habit of falsehood, it would neither be fair, ethical, or truthful to do so.</p><p>In Sal's case, however, we also seem to be dealing with some rare species of psuedo-intellectual masochist.</p><p>The demands of ethics are thus rendered more complex: clearly we must continue to expose the vacuousness and illegitimacy of his "arguments."</p><p>Whether it is "better" to continue enabling Sal's self-flagellation by assiduously exposing his <i>moral</i> vacuousness--or whether one should refrain from further fueling his perverse pleasures--is a delicate moral question indeed, perhaps best left to the discretion and scruples of each individual.</p></div></div>
+<div class="comment" id="comment-94784"><p class="comment-meta"><span class="comment-author"><a href="http://www.alethian.org/wp/" rel="nofollow">Mark Nutter</a></span> &middot; 17 August 2006</p><div class="comment-body">Dave,
+
+<blockquote><p>My GA produces multiple answers, occasionally stumbling onto the correct one(s). Cordova's GA is specifically engineered to produce ONE answer, exactly as Dawkins's "Weasel" GA.
+
+Until Cordova acknowledges that there is a difference between these two approaches, I'll be reluctant to withdraw my conclusion that he's not telling the truth.
+
+Should he make this acknowledgment, I'll be happy to change my tune.</p></blockquote>
+
+You're quite free to say that he's not telling the truth, as far as I'm concerned. If what he says happens to be untrue, then it's perfectly fair to say he's not telling the truth. And I agree that it's only fair to judge him by the same standards as you are judged: if you shouldn't accuse him of lying, then he shouldn't accuse you of deliberately refusing to admit the truth, for the same reasons.
+
+My only point is that people think psychologically more often than logically. If your side of the argument is that Cordova is deliberately and intentionally spreading lies, people who are ID-friendly or ID-neutral will be tempted to think that your side has lost if you cannot prove Cordova's statements are <i>intentionally</i> deceptive. Since that's nearly impossible to prove, you can be 100% about Cordova's inaccuracy, and yet people may still conclude that Cordova won the argument. It's much more effective to focus on the facts, and draw people's attention to the discrepancy between what Cordova claimed, and what we actually find in the evidence.</div></div>
+<div class="comment" id="comment-94786"><p class="comment-meta"><span class="comment-author"><a href="http://www.alethian.org/wp/" rel="nofollow">Mark Nutter</a></span> &middot; 17 August 2006</p><div class="comment-body">Ugh, "You're quite free to..." sounds so pretentious :(  What I mean was, you'd be perfectly right to...
+
+Anyway...
+
+<blockquote><p>The same cast of poseurs has every vested interest---psychological, religious, and at times professional and financial---to engage in obfuscation, misdirection, fact-fudging, logic-twisting, and outright prevarication, as they attempt to slither off the well-set hook. However "polite" and "politic" it might be to pretend to ignore this deeply-engrained habit of falsehood, it would neither be fair, ethical, or truthful to do so</p></blockquote>
+
+Agreed, however I think it is both politic and sufficient to say "not telling the truth" rather than making a presumptive claim of deliberate lying. They might, for example, be rationalizing, self-deceiving, in denial, etc. Still a significant issue if one is concerned about accuracy, but morally not the same as lying. Why bring up a disputable charge (intent to deceive) that will be difficult or impossible to prove, when it is just as telling to point out the demonstrable untruthfulness of what they say?</div></div>
+<div class="comment" id="comment-94787"><p class="comment-meta"><span class="comment-author">Caledonian</span> &middot; 17 August 2006</p><div class="comment-body"><p>Don't give me this "we don't know he was intentionally trying to deceive" garbage.</p><p>Cordova is either a complete and utter incompetent, or he is lying.  Which of these two possibilities do you find *more* insulting?  There's not much to pick between them in my view, but I suppose I'd prefer to be accused of being a liar instead of a fool.</p></div></div>
+<div class="comment" id="comment-94788"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 17 August 2006</p><div class="comment-body"><p>Good point, Mark. While I do know that Sal is saying things that are patently false, I can't prove that <i>he</i> knows it himself.  Some people can really get tied in knots trying to accommodate their "world view lenses."</p><p>The reason I played the "Lie" card is that Sal is not being true to his own discipline of computer programming.  I have proved that my Steiner GA is quite different from the Dawkins "Weasel" style GA's; but, Cordova has said that my GA is <i>no</i> different than "Weasel" GA's; and, Cordova provided an example of a number-summing GA he says is <i>akin</i> to mine, and further, that in his GA, "<i>The solution was never explicitly stored anywhere</i>," making it supposedly "different" than Weasel.</p><p><b>That</b> is the lie that has me bugged.  That is why I went to the trouble of proving that Cordova's summation GA is just another "Weasel" style fixed target algorithm, with one unique answer hard-coded in.</p><p>Does Sal know he's not speaking the truth?  In reality, probably not.  I was hoping that a rigorous proof that his GA is just another "Target" algorithm <i><b>quite unlike my Steiner Tree GA</b></i> might shake him loose,  but from today's comments at UD, that doesn't appear at all likely.</p><p>Sad, really.  But Sal will have a harder time continuing to fool himself once I publish my post on "Genetic Algorithms for UD Software Engineers," probably next week.</p></div></div>
+<div class="comment" id="comment-94790"><p class="comment-meta"><span class="comment-author">T_U_T</span> &middot; 17 August 2006</p><div class="comment-body"><p><i>Cordova's summation GA</i></p><p>Cordova's (sic)ga.c is not a GA in the first place. It is a badly mangled version of simulated annealing with T=0 from the start on.</p></div></div>
+<div class="comment" id="comment-94791"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p>Yeah, I'm not a big fan of lying interpretation. It's much easier to point out that the work was (at the very least) incompetent, and it's useful to point out that Sal doesn't really understand GAs, but that doesn't stop him from criticizing them.</p></blockquote>
+What's the difference between:
+
+1. Stating something as true when one knows it to be false
+2. Stating something as true when one is coincidentally ignorant as to whether it is true or not, and
+3. Stating something as true when one is willfuly ignorant as to whether it is true or not?
+
+I say, 1 and 3 are both "lying", and 2 is simple mistake. But if 2 keeps on happening over and over again with the same person, I say then what we're dealing with is really number 3.
+
+After the last five years of politics, I am <i>really tired</i> of fundamental dishonestly masking itself as incompetence. If someone consistently isn't willing to stand by their arguments after they're held up to scrutiny, one begins to wonder why they stood by such uncertain arguments in the first place. (Though this way of looking at it, of course, assumes someone who is at least honest enough to admit fault in his arguments once they've become obvious. Cordova is not one of these people, and prefers to just re-spin his previous comments into something else.) Having constructed your argument so sloppily one "didn't know" one was wrong is a crappy form of plausible deniability and no substitute for having just been honest about what you do and don't know in the first place.
+
+Cordova clearly either doesn't know or is pretending not to know basically anything relevant to the subject of genetic algorithms, yet UD is allowing him to stand forward as their expert on the subject. What does this say?</div></div>
+<div class="comment" id="comment-94795"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p>
+Just because he made a false statement doesn't necessarily mean that he knows it to be false and is attempting to deliberately trick people into believing a known falsehood.
+</p></blockquote>
+
+Between Cordova's response to "ofro" about an explicit solution not being in his code and his later comments that having an explicit solution in his code being his point, yes, we do know that Cordova knowingly made a false statement. I don't see any shade of gray there.
+</div></div>
+<div class="comment" id="comment-94796"><p class="comment-meta"><span class="comment-author">Alann</span> &middot; 17 August 2006</p><div class="comment-body">This may sound crazy but I think I get the problem:
+
+The argument from the design side seems to be that a mutation and selection example is <i>expected to work</i> on the premise that the selection piece is <i>designed</i>. Since the selection piece is designed the model itself is a model of intelligent design.
+
+This raises several question in my mind: 
+<ul>
+<li>Is the determination of selectability in natural selection considered a random process?</li>
+<li>Is it a problem if it is considered a designed process? </li>
+<li>What are the options other than random and designed since natural selection seems to be neither? </li>
+<li>How could you represent natural selection in a computer model without being designed selection?</li>
+</ul>
+
+I think the argument is reasonable, because I don't think determining fitness in terms of most efficient should be considered a designed selection.
+
+Oh, and as for the summation problem I want to share the explanation of the solution I was taught that was so elegant I never forgot it.
+
+Take&nbsp;&nbsp;the&nbsp;&nbsp;series&nbsp;&nbsp;of&nbsp;&nbsp;numbers:
+&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;n-2&nbsp;&nbsp;&nbsp;&nbsp;n-1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;&nbsp;&nbsp;&nbsp;
+Place&nbsp;&nbsp;beneath&nbsp;&nbsp;it&nbsp;&nbsp;the&nbsp;&nbsp;series&nbsp;&nbsp;in&nbsp;&nbsp;reverse&nbsp;&nbsp;order:
+&nbsp;&nbsp;n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n-1&nbsp;&nbsp;&nbsp;&nbsp;n-2&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;
+Add&nbsp;&nbsp;the&nbsp;&nbsp;two&nbsp;&nbsp;lines&nbsp;&nbsp;together:
+n+1&nbsp;&nbsp;&nbsp;&nbsp;n+1&nbsp;&nbsp;&nbsp;&nbsp;n+1&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;n+1&nbsp;&nbsp;&nbsp;&nbsp;n+1&nbsp;&nbsp;&nbsp;&nbsp;n+1&nbsp;&nbsp;
+
+Note that each value is n+1, that there are n columns, and that this represent the sum of two copies of the series.
+So the total of any one copy would of course be ((n+1)*n)/2.
+</div></div>
+<div class="comment" id="comment-94797"><p class="comment-meta"><span class="comment-author">Alann</span> &middot; 17 August 2006</p><div class="comment-body"><p>Correction: I meant to say <i>un</i>reasonable.</p></div></div>
+<div class="comment" id="comment-94799"><p class="comment-meta"><span class="comment-author"><a href="http://tinyurl.com/b8ykm" rel="nofollow">Glen Davidson</a></span> &middot; 17 August 2006</p><div class="comment-body">A distinction that I sometimes make is that between personal honesty and intellectual honesty.  There may be a number of IDists who are personally honest, but I doubt that any are intellectually honest, i.e., consistent in their use of evidence and reasoning across the disciplines.
+
+I wouldn't personally call most of them liars most of the time, not without making the distinction between personal and intellectual honesty anyway (and then I'd typically call them liars without using that word).  Dave Thomas was provoked by personal attack, however (which he pointed out full well), so that between the personal nature of Sal's offense and the rather blatant intellectual dishonesty that constantly pervades his "evaluations", I have no complaints about Thomas' characterization at this juncture.
+
+Here's something from the past:
+
+<blockquote><p><quote>Has any intelligent designer ever been shown to produce designs that are like the forms and "machines" that we find in organisms?
+
+I just thought I'd ask this simple and basic question, the sort of essential question that IDists should answer before we even begin to consider anything else that Sal or other IDists have to say
+
+Glen D</p></blockquote>
+
+<blockquote><p>[Sal]Yes, and even before we knew they existed in the cell:
+
+1. Turing Machines
+2. Analog to Digital Converters
+3. Compilers
+4. Operating Systems
+5. Digital Error Correction
+6. Spectral Analyzers
+7. Feed Back Control Circuits
+8. Rotary Motors
+9. Aritificial Languages constructed with Backus-Normal Forms
+
+etc.</p></blockquote>
+
+[Glen again]So I guess the answer is "no", you do not know of any intelligent designer that produces the forms and "machines" that we find in living organisms. However, you do not mind calling one thing by the name of another and basing a pseudoscience upon those words.
+
+Not only did religious folk know the difference between machines and living organisms well even in ancient times, but there are virtually no scientists today who would confuse the two. IDists must confuse the two to make a pretense at science, but they can't show a single organ that is anything like what known intelligent designers produce---the exhibit of this fact is above.</quote>
+
+Now was Sal's answer to my question anything like an honest response?  Not to mention that he turned around and attacked me in a later post for restating the question in a different manner (probably careless of me, but the restatement didn't change anything--my point was simply that he didn't respond with anything at all "like" the forms and "machines" existing in organisms), when it had nothing to do with the fact that he didn't answer my question in an intellectually honest manner in the least.  In fact, in the second paragraph at the end of the block quote above, I simply reverted to the "like" language again, thus his charge of changing the question was another bit of dishonesty, advertent or not.  
+
+The reference for this particular exchange is the PT thread "Vacuity of ID:  Comments on Irreducible Complexity".
+
+My question is, how many times are we to accept less than honest responses to honest questions, and false charges against ourselves, while constantly giving the benefit of the doubt to them because they are obviously not very knowledgeable and are psychologically committed to an intellectually dishonest set of beliefs?  It may not be politic to call them liars most of the time, but I fail to see it to be uncalled-for on some occasions, particularly at the times when the IDists are making personal attacks.
+
+The fact of the matter is that, although I do make the distinction between personal and intellectual dishonesty, the two are not entirely separate for most people (they may be in the very naive and ignorant), and are especially not separate among those who are trumpeting ID.  IDist preachers are claiming to be above psychological effects, sanctimoniously claiming to be the ones who are correcting the "biased scientists", and as such should be held personally liable for their intellectual dishonesty.  This is true even when we are not calling them "liars" or words to that effect.  
+
+That their entire "science" fails to be honest in any way is at issue in these "discussions".
+
+Many times we must be more politic than to call them liars.  There are times when just flat-out calling their lies "prevarications" is justified.  This is likely one of those cases.
+
+Glen D
+http://tinyurl.com/b8ykm</div></div>
+<div class="comment" id="comment-94800"><p class="comment-meta"><span class="comment-author">T_U_T</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p>The argument from the design side seems to be that a mutation and selection example is expected to work on the premise that the selection piece is designed. Since the selection piece is designed the model itself is a model of intelligent design.</p><cite>— Alann</cite></blockquote>
+
+The same logic : I've thrown/kicked/dropped all stones I have caused to fall down, so all falling stones are thrown/kicked/dropped by someone.</div></div>
+<div class="comment" id="comment-94802"><p class="comment-meta"><span class="comment-author">alienward</span> &middot; 17 August 2006</p><div class="comment-body">ofro wrote:
+
+<blockquote><p>You are taking the fun out of telling the folks over at UD about experimental facts that the hard-core don't want to hear, but maybe some visitors will listen and think if arguments are handled in a more civized manner. I have to admit UD's civility is a design feature that I appreciate even if the content makes me cringe at times. </p></blockquote>
+
+Hey you PT heathens, you better start being civilized like those fine creationists at UD like Sal who wrote this in a 8/15/2006 post titled  "Tautologies and Theatrics (part 2): Dave Thomas's Panda Food":
+
+<blockquote><p>In contrast to the spectacular computation theatrics of Avida, Dave Thomas of Pandas Thumb put together a far less entertaining but no less disingenuous "proof" of the effectiveness of Darwinian evolution. Every now and then, the Panda faithful need some food to help them sustain their delusions about naturalistic evolution. This food I call Panda food, and chef Dave Thomas cooked up a pretty nice recipe to feed delusions to the faithful Pandas at our rival weblog. Perhaps if Dave Thomas refines his Panda food recipes, he should consider opening a restaurant chain, and maybe he should call it Panda's. </p></blockquote></div></div>
+<div class="comment" id="comment-94804"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p>This may sound crazy but I think I get the problem:
+
+The argument from the design side seems to be that a mutation and selection example is expected to work on the premise that the selection piece is designed. Since the selection piece is designed the model itself is a model of intelligent design.</p></blockquote>
+That... could be the problem.
+
+But my personal opinion would be that the <i>real</i> problem is that the argument from the design side changes every ten minutes.
+
+Seriously, what are we even discussing anymore? I can't even tell anymore what exactly "the UD side" is trying to object to in Dave Thomas's "Design Challenge" article. It seems to have something to do with fighter jets. I thought before it had something to do with t-shirts, but now Cordova seems to be backing off from that. I fear that Cordova's goal at this point is just to do whatever is necessary to distract everyone from the original topic of GAs-- and this new article thread which makes Cordova the center of the argument (rather than GAs) may well be helping that goal.</div></div>
+<div class="comment" id="comment-94808"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 17 August 2006</p><div class="comment-body">Well, I had another look at Sal's response to "ofro" when the latter asked specifically if Cordova had "an explicit solution of the problem built into the program." :
+<blockquote><p>I'm afraid that isn't quite correct because if you go to ga.c, and do a text search for 500500 you won't find it. <b>The solution was never explicitly stored anywhere.</b></p></blockquote>
+
+This shows that Cordova <i>did</i> claim that he did not have an explicit solution of the problem in his code. But today, Cordova has stated <a href="http://www.uncommondescent.com/index.php/archives/1464"> on UD</a> that having an explicit solution in his code was precisely the point of his program:
+<blockquote><p>I fully take pride in the smoke and mirrors I used, I never pretended otherwise. ... At least I alert the readers of where the trickery is, but Thomas would rather have his faithful congregation at Pandas Thumb believe that mindless evolution can truly work magic.
+</p></blockquote>
+
+It's really hard for me to see that as anything besides a <b>deliberate</b> falsehood.
+
+So perhaps calling a Lie a Lie is indeed warranted in this case.  Even <i>if</i> Salvador somehow doesn't realize he has lied, deep down, he <b>should</b> know, and that's the problem.
+
+But, either way, this exercise has certainly demonstrated again that ID is much more about obfuscation than about illumination.
+
+Dave</div></div>
+<div class="comment" id="comment-94811"><p class="comment-meta"><span class="comment-author">Sir_Toejam</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote><p> rival weblog</p></blockquote>
+
+rival weblog?
+
+he should take a look at the stats on alexa some time.
+
+It's like comparing the distribution of the local small town paper to that of the Los Angeles times.
+
+but then creobots ALWAYS like to overinflate their own importance.
+
+"I'm important! I've been on TV for a whole 5 minutes!!"
+
+*snicker*
+
+</div></div>
+<div class="comment" id="comment-94813"><p class="comment-meta"><span class="comment-author">Dave Cerutti</span> &middot; 17 August 2006</p><div class="comment-body"><p>OK, I agree with you that Sal's algorithm is merely minimizing a series of 500 numbers.  In each of 500 elements of an array, he picks a number that's randomly higher or lower than the current guess, and if it's closer to the midpoint, which is indeed defined in the code, then he takes it.  And he just repeats this guess-check 5000 times for each of the 500 elements of the array.  Indeed, there is no genetics here, no populations of changing answers, just variables with names that sound like a GA.</p><p>But, I'm not sure how, in your Steiner network, the solution is not somehow somehow imbedded in the statement of the problem itself.  Is it because, in a given solution, there could be numerous collinear nodes generated along the way to constructing the solution such that there are many (infinitely) many ways of creating a solution of the same overall shape?  I guess my hangup is that there seems to be one correct shape to the Steiner solution (discounting symmetry in the problem), which would ultimately be found by any given algorithm with the scoring function stated in the problem provided sufficient search time.</p></div></div>
+<div class="comment" id="comment-94815"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 17 August 2006</p><div class="comment-body">Dave Cerutti wrote
+<blockquote><p>I guess my hangup is that there seems to be one correct shape to the Steiner solution (discounting symmetry in the problem), which would ultimately be found by any given algorithm with the scoring function stated in the problem provided sufficient search time.</p></blockquote>
+
+The purpose of the Steiner GA is really about showing what kinds of structures can evolve when subjected to selective pressures.  The program always finds A solution, but not necessarily THE Solution.  On occasion, it manages to find THE Solution.  By doing so, it topples the Design claims that "irreducible complexity" or "complex specified information" are inherently impossible to obtain via evolution of a population that is subjected to selective pressures.
+
+Hey Wes, forgot to mention I'm using MFC C++ version 6.0.
+
+Cheers, Dave</div></div>
+<div class="comment" id="comment-94819"><p class="comment-meta"><span class="comment-author">Brit</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote>The solution was never explicitly stored anywhere.</blockquote>
+
+It's true that Sal's code never included the answer anywhere, but only in the sense that "10 + 10" is not the same as writing "20" into the code.  If you use a little elementary-level math, Sal's code did include the answer.  It was a simple program to deterministically arrive at an answer using elementary math.  Dave's program, on the other hand, actually searched and tried things, which is why it doesn't always give the same answer.  Clearly, if Sal was in school to learn about Genetic Algorithms, his professor would flunk him, because Sal doesn't know or understand what a genetic algorithm is or does.  (But, wasn't I saying earlier that IDists remind me of bad students I've been in class with who don't understand the subject material and claim that the professor and the textbooks are the ones who have it all wrong?)
+</div></div>
+<div class="comment" id="comment-94822"><p class="comment-meta"><span class="comment-author"><a href="http://www.srcf.ucam.org/~ajl59/" rel="nofollow">Corkscrew</a></span> &middot; 17 August 2006</p><div class="comment-body"><p><i>Did Dave Thomas not know in advance his fitness function would have a chance of being marginally successful (in a MacGeyver sense at least), or did he have some monkey code his fitness functions or describe the fitness function to him?</i></p><p>Of course he knew that it would be at least marginally successful at the task it was set - that's what evolution <i>does</i>.</p><p>I think that the key take-home point of Dave's demonstration is that selective processes <i>can</i> achieve results which are complex, high-information and specified - as long as your specification in some way derives from the fitness function. So, in this case, the specification "Steiner tree" derives quite clearly from the selection criterion "shortest network".</p><p>Let's apply this to, say, the bacterial flagellum. What's the selection criterion operating on the bacteria? Ability to reproduce. Can the ability to move around ever provide a boost to an organism's fitness? Why, I believe it can. Is the flagellum very efficient at moving the organism? I do believe it is. So, in specifying the flagellum as our target space, are we accidentally choosing a target space that's at a local maximum of the fitness function? Apparently so.</p><p>Oops.</p></div></div>
+<div class="comment" id="comment-94844"><p class="comment-meta"><span class="comment-author">Don Baccus</span> &middot; 17 August 2006</p><div class="comment-body">(from UD):
+<blockquote><p>"So there has to be a more specific goal of some form. This higher-level goal was to write the code such that it mimicked, as well as possible for simplifying computer model, a certain process, namely the randomness that is assumed to underlie mutations in nature."
+
+And this is the problem in a nutshell. The "assumptions of each side are different, therefore we talk across each other with little insight at times.
+
+In Daves case the assumption is that it would lead to evolution and survival. Yet it is guided by conditional processing - which is itself a hallmark of design.</p><cite>— michael7</cite></blockquote>
+This sums up the UD argument.
+
+Since all simulation programs require conditional processing, and since conditional processing is a hallmark of design, once you've simulated something you've proved that something's designed.
+
+Or something.
+</div></div>
+<div class="comment" id="comment-94847"><p class="comment-meta"><span class="comment-author">djmullen</span> &middot; 17 August 2006</p><div class="comment-body"><p>/* ga.c */<br>/* this program will answer <b>to</b> question, "What is the sum of the numbers from 1 to 1000?"<br>through a genetic algorithm.   The algorithm pairs up numbers <b>form</b> 1 to 1000. Rather than compute the midpoint<br>via a simple calculation it takes a random number as a starting point and then mutates the random number and<br>uses a fitness function to  select between the mutant and the original number to give the current best midpoint estimate.<br>The process is repeated with increasing refinement.  Twice the sum of the midpoints then becomes the <b>some</b> we are seeking.<br>Snapshots of the algorithms progress are given along the way.</p><p>He can't even get his comments right.</p></div></div>
+<div class="comment" id="comment-94855"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 17 August 2006</p><div class="comment-body"><p>BC:<br>"Careful research is needed to differeniate between then two, and IDists want to jump to the conclusion that any IC system is actually a class B system."</p><p>I think it is impossible to do this research. IC is illdefined and we can't know when something is 'irreducibly complex'.</p><p>Algorithmic complexity theory says that:<br>"given a system S, you cannot in general show that there is no smaller/simpler system that performs the same task as S. ... Godel just came in and threw a wrench into the works. There is absolutely no way that you can show that any system is minimal - the idea of doing it is intrinsically contradictory." ( http://scienceblogs.com/goodmath/2006/06/the_problem_with_irreducibly_c_1.php )</p><p>If we embed creationistic complexity in its actual context of identifying a certain smallest system, we find that simplicity isn't welldefined, so neither is this "complexity". It is a - wait for it - *vacuous* concept! :-)</p><p>So if we find a system to be removably failing, we can't distinguish between class A or class B systems. Any number of scaffolding and exaptation could give us class A.</p><p>Wesley:<br>"Myself, I think the congruence between apparent intent and result makes "lie" by far the smarter pick."</p><p>Point. But there is also the idea that cognitive dissonance prohibits people to see the obvious. Salvador could have been constructing what he thought a GA was, because he can't face the truth.</p><p>But I can live with a consensus opinion from people who has been engaging him more. At some point it gets more offensive to pick stupidity instead of lying. (Not that I would ever suggest Cordova has passed that point - or wouldn't I? ;-) And cognitive dissonance is lying anyway - to oneself.</p></div></div>
+<div class="comment" id="comment-94857"><p class="comment-meta"><span class="comment-author">Sam Garret</span> &middot; 17 August 2006</p><div class="comment-body"><blockquote>Since all simulation programs require conditional processing, and since conditional processing is a hallmark of design, once you've simulated something you've proved that something's designed.</i>
+
+Meteorological simulations exist
+Therefore - the weather is intelligently designed.</div></div>
+<div class="comment" id="comment-94859"><p class="comment-meta"><span class="comment-author">Sam Garret</span> &middot; 17 August 2006</p><div class="comment-body"><p><i>Since all simulation programs require conditional processing, and since conditional processing is a hallmark of design, once you've simulated something you've proved that something's designed.</i></p><p>1) Meteorological simulations exist<br>2) Therefore the weather is intelligently designed</p></div></div>
+<div class="comment" id="comment-94861"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 17 August 2006</p><div class="comment-body"><p>Mark:<br>"I think your point is much stronger if you focus on the incorrectness of the claim, rather than on the inferred motives of the claimant. Science does not currently provide us with a means of objectively detecting an intent behind the behavior given only the evidence of the behavior itself. "</p><p>"If your side of the argument is that Cordova is deliberately and intentionally spreading lies, people who are ID-friendly or ID-neutral will be tempted to think that your side has lost if you cannot prove Cordova's statements are intentionally deceptive. Since that's nearly impossible to prove, you can be 100% about Cordova's inaccuracy, and yet people may still conclude that Cordova won the argument. It's much more effective to focus on the facts, and draw people's attention to the discrepancy between what Cordova claimed, and what we actually find in the evidence."</p><p>Also good points.</p><p>So I think I will flip-flop here on the lying, and error on the cautious side.</p><p>Tune in tomorrow for next exciting episode in our show - is an IDiot unintentionally or intentionally lying? And how much do we care? :-)</p></div></div>
+<div class="comment" id="comment-94863"><p class="comment-meta"><span class="comment-author">bill Farrell</span> &middot; 18 August 2006</p><div class="comment-body"><p>What I'm going to suggest is very disgusting but bear with me.  Go out to UncommonDescent (into madness) and read the Cordova thread.  Then, take a shower.  You'll need it.</p><p>UncommonDescent into prevarication I'd call it.  I think that Sal genuinely believed that he pulled a fast one with ga.c but once unmasked scurried to weave a tissue of lies to cover his original deceit.  Oh, just street theatre!</p><p>It's all Vintage Sal, vintage ID.  A poorly thought out posting followed by frantic backpedaling followed by the Clinton Defense, that is, arguing over the placement of commas and the definition of the word "is" in the blizzard of retorts.  And in the end retreating behind banned and lost replies because they're so hurtful, I mean, truthful.  Well, same thing.</p><p>I must say, though, he follows his master's footsteps faithfully.</p><p>These clowns think they're going to "topple Darwinism?"  Give me an effing break.</p></div></div>
+<div class="comment" id="comment-94865"><p class="comment-meta"><span class="comment-author">RBH</span> &middot; 18 August 2006</p><div class="comment-body">Corkscrew wrote<blockquote><i>Did Dave Thomas not know in advance his fitness function would have a chance of being marginally successful (in a MacGeyver sense at least), or did he have some monkey code his fitness functions or describe the fitness function to him?</i>
+
+Of course he knew that it would be at least marginally successful at the task it was set - that's what evolution does.
+
+I think that the key take-home point of Dave's demonstration is that selective processes can achieve results which are complex, high-information and specified - as long as your specification in some way derives from the fitness function. So, in this case, the specification "Steiner tree" derives quite clearly from the selection criterion "shortest network".</blockquote>And all that, of course, was demonstrated more than three years with the publication of <a href="http://myxo.css.msu.edu/papers/nature2003/">The Evolutionary Origin of Complex Features</a>.  Available at the link are 23 MacGyvers, all evolved in the same selective environment, all of them different ways of "solving" the same evolutionary 'problem'.  The current hoorah accurately reflects the same creationist objections that were made then.  See <a href="http://www.pandasthumb.org/archives/2004/03/evolving_complex_stuff_darwinian_evolution_and_irreducible_complexity.html">here</a> and <a href="http://www.pandasthumb.org/archives/2005/09/desperately_dis.html">here</a> for desctriptions of that work.
+
+An irony is that the Avida results offer a perfect test platform for evaluating the "design detection" methodology of ID, but on at least one occasion on ARN Salvador told me he wasn't interested in that.  He'd rather talk about how he managed to break the program.
+
+RBH</div></div>
+<div class="comment" id="comment-94870"><p class="comment-meta"><span class="comment-author">caligula</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>But, I'm not sure how, in your Steiner network, the solution is not somehow somehow imbedded in the statement of the problem itself. Is it because, in a given solution, there could be numerous collinear nodes generated along the way to constructing the solution such that there are many (infinitely) many ways of creating a solution of the same overall shape?</p><cite>— Dave Cerutti</cite></blockquote>
+
+No, that would be Weasel. In the Weasel program, you can come up with "METHINKS IT IS A WEASEL" via countless pathways from the same initial string. This only demonstrates the explosive power of cumulative selection, but is not a valid simulation of evolution. That's because a single target has been fixed in advance, and evolution has no foresight.
+
+In Dave Thomas' problem there is a vast number of targets or "MacGyvers". (Solutions which look as if the program had "understood" the basic principles of the problem: they don't have additional dots around the polygon formed by the cities, they don't add redundant roads, etc. You know, things trivial to an ID.) What's more, these targets are not by any means located in a single, connected area. There are MacGyvers of all shapes, so that a solution almost as short as the formal solution might structurally have almost nothing in common with it (except for the qualities of "MacGyvers", which are also shared by the formal solution). This kind of varitety in structure but near-equalness in function is observed because Thomas' program <i>is</i> a proper evolutionary simulation. Each lineage in Thomas' program may, at any generation, step aside from the collection of pathways leading to the formal solution. They are then doomed to get stuck in a local optimum instead. A local optimum which might be, DNA-wise, far away from the formal solution.
+
+According to Thomas, most of the time even the winning lineage never reaches the formal solution. It is ironic that sometimes such a winning lineage may kill off other lineages that had a much better chance of <i>eventually</i> hitting the formal solution; unfortunately, midway through the race lineages on their way to local optimums happened to beat the crap out lineages which might well have proved "perfect" at the <i>end</i> of the race, had they only survived.
+
+<blockquote><p>I guess my hangup is that there seems to be one correct shape to the Steiner solution (discounting symmetry in the problem), which would ultimately be found by any given algorithm with the scoring function stated in the problem provided sufficient search time.</p></blockquote>
+
+I hope the above discussion shows that this impression of yours is plain and simply false.</div></div>
+<div class="comment" id="comment-94880"><p class="comment-meta"><span class="comment-author">Michael Suttkus, II</span> &middot; 18 August 2006</p><div class="comment-body"><p>A few years back, I programmed (in VBA because it was available at the time) something similar using poker hands.  The computer randomly generated a ten by ten grid of five card hands.  I assigned each a score based on it's value in poker, and let them reproduce, mutate and compete with each other.  Mutation was restricted to regulation poker hands (i.e., producing a hand with two queens of spades was forbidden), but otherwise free and as random as the compiler could produce (no randomize 0 for me!).</p><p>The answers were all pretty similar.  Pairs occur fairly often and have reproductive advantage over the general random hand.  Eventually the pair mutates into a three-of-a-kind and then a four-of-a-kind.  The playing field is eventually dominated by 4oaks in almost every simulation.</p><p>What interested me is what the playing field wasn't dominated by:</p><p>1.  It wasn't particularly dominated by high 4oaks.  Sure, there was a slightly higher than average result due to pairs of higher cards having a higher value than pairs of lower (since more than one pair is likely to show up in a random 100 poker hands), but selective pressure worked far better to increase the number of cards and very badly for increasing the value of the cards.</p><p>2.  The highest possible poker hand, a royal straight, never appeared.  If "the solution" was hard coded into the selection routine, this should have been it, but it never appeared in all the times I ran the simulation.  This makes sense, of course.  Building pairs allows step by step improvement, but in poker a four-card straight isn't particularly better than a three-card straight.  You either have a full five-card straight or you don't.  Similarly, there's no success for flushes.  If a flush or a straight appeared at random in the first generation, then they had great success and would dominate the board, but that wasn't common.  Even then, however, straights had no pressure to become straight flushes and flushes only had a low pressure towards increasing the value of the cards towards maximum, which would eventually result in a straight flush but never did in the times I ran the simulations.</p><p>As genetic algorhythm programs go, it was fairly primitive, but I was pleased it emulated some of the pitfalls of natural selection rather well and certainly showed that natural selection and mutation can produce improvements by however local fitness is defined.</p></div></div>
+<div class="comment" id="comment-94884"><p class="comment-meta"><span class="comment-author">Ric</span> &middot; 18 August 2006</p><div class="comment-body"><p>Because they wouldn't let me post the following over at UD, I will post it here.</p><p>Let me first note the irony of people who are always crying about their views being suppressed so readily suppressing the views of others.</p><p>Okay, now my comments:</p><p>Sal Cordova's response to Dave Thomas' program is continuously to say, "It can't prove evolution because the law of nature (i.e. natural selection) that the program relies on was programmed in by a human being.  This is evidence of intelligent design."  That is, of course, laughable.</p><p>Don't we have evidence that human beings can clearly code programs to replicate laws of nature?  Physics programs replicate forces like friction and velocity all the time.  That the predictions generated by these programs apply to the real world is proven every time a plane or bridge behaves as it is supposed to when friction and velocity are applied. So by Sal's logic, these programs shouldn't be valid, or they should be evidence that some intelligent force created friction and velocity.</p><p>Of course, any one without fish to fry would conclude simply that human beings can code a virtual representation of a natural force, and the ability to do so doesn't say anything about whether or not that natural force is the result of intelligence.</p></div></div>
+<div class="comment" id="comment-94893"><p class="comment-meta"><span class="comment-author">Edward Braun</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>Sal Cordova's response to Dave Thomas' program is continuously to say, "It can't prove evolution because the law of nature (i.e. natural selection) that the program relies on was programmed in by a human being. This is evidence of intelligent design." That is, of course, laughable.</p><cite>— Ric</cite></blockquote>
+
+Ric deserves a cigar (or something he would really dig). That statement summarized the whole point of the discussion!
+
+Imagine a constant environmental gradient - one that <b>remains</b> constant over long periods of time. Let's imagine further that the gradient reflects something unrelated to the organisms - e.g., a temperature gradient as one moves up the side of the mountain. One would expect organisms that move from one end of gradient (e.g., sea level) and colonize the higher altitude environments to experience differential mortality. If any of the phenotypic variance responsible for differential mortality is heritable, we have evolution - exactly like a genetic algorithm.
+
+Does the fact that the hypothetical environmental gradient is constant somehow make it front-loaded? Of course not. How exactly does the hypothetical environmental gradient differ from the defined optimum in a genetic algorithm?
+
+In principle, one could alter the fitness function periodically in a genetic algorithm. This would make it more "realistic" as a simulation of evolution, but it might be less useful from the standpoint of some problem solving. But unless ID proponents can explain how an "intelligently designed" fitness function differs from a fitness function that arises from natural forces the front-loading argument is unconvincing.
+
+I would suggest a simple way of distinguishing front-loaded from non-front-loaded: if the full answer - including the way to arrive at that answer - is in the program, the program is front-loaded. This is the case for the "Methinks 'tis like a weasel" type programs. The Steiner tree program (if I understand the program correctly) only includes the points to be connected and a cost function (treelength). The actually answer - the tree - is not specified <b>in any direct way</b>. As such, it was not front-loaded.</div></div>
+<div class="comment" id="comment-94897"><p class="comment-meta"><span class="comment-author">Jake</span> &middot; 18 August 2006</p><div class="comment-body"><p>Could any loop cantaining an if/then be considered a genetic algorithm? If that's the case, they are everywhere.</p></div></div>
+<div class="comment" id="comment-94899"><p class="comment-meta"><span class="comment-author"><a href="http://justscience.org.uk" rel="nofollow">Chris Hyland</a></span> &middot; 18 August 2006</p><div class="comment-body"><p>I think multi-objective genetic algorithms are a better example, where there are multiple fitness functions and so a single optimal solution is never found. Instead you get a population of solutions that are a compromise of the different functions.</p><p>http://img235.imageshack.us/img235/3395/paretohz9.png</p><p>That way you can't complain as much that the solution is coded in the algorithm.</p></div></div>
+<div class="comment" id="comment-94901"><p class="comment-meta"><span class="comment-author">ofro</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>Michael Suttkus said:
+
+The highest possible poker hand, a royal straight, never appeared.</p></blockquote>
+
+I wonder how long it will take until this is taken as proof that mutations cannot produce IC.
+</div></div>
+<div class="comment" id="comment-94902"><p class="comment-meta"><span class="comment-author">KC</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>Sal Cordova's response to Dave Thomas' program is continuously to say, "It can't prove evolution because the law of nature (i.e. natural selection) that the program relies on was programmed in by a human being. This is evidence of intelligent design." That is, of course, laughable.</p></blockquote>
+
+Sal and the IDers must respond this way, no matter what. To give even an inch on this point demolishes their entire premise. 
+
+  </div></div>
+<div class="comment" id="comment-94904"><p class="comment-meta"><span class="comment-author">Tyrannosaurus</span> &middot; 18 August 2006</p><div class="comment-body"><p>Sal could be said to be either a liar, a fool or an ignorant. Which one is "less" insulting? It makes no difference since a person who in his field of studies cannot or is not willing to see the errors of his line of thinking even after been provided with the evidence does not deserve any respect at all.</p></div></div>
+<div class="comment" id="comment-94907"><p class="comment-meta"><span class="comment-author">Tyrannosaurus</span> &middot; 18 August 2006</p><div class="comment-body"><p>Comment #120349<br>Posted by caligula on August 18, 2006 02:53 AM (e)</p><p>I agree with you in the way Dave's GA is a more close descriptor of evolution. The point in which Sal shows deception or willfull ignorance (take your pick) is in arguing that you have A SOLUTION as a target. Since the IDiots like Sal will program their models to arrive to that one solution hence arguing against evolution. ToE on the other hand will arrive at <b>solutions</b> that may or may not be the optimum but are good enough.</p></div></div>
+<div class="comment" id="comment-94909"><p class="comment-meta"><span class="comment-author">Registered User</span> &middot; 18 August 2006</p><div class="comment-body"><p>My favorite Sal Cordova lie was when he claimed that some professors (plural) had made some favorable comments about some ID peddling video or something, then when asked to give the names he suddenly switched to the singular and pretended that he had merely added an "s" accidentally.</p><p>Prior to that, I suspected that Sal was morally bankrupt before that because of his habit of bragging about converting kids with his false incomprehensible baloney.  But when it became clear that Sal would lie about *anything* if he suspected he could get it away with, then the picture of Sal's pathology really crystallized.</p><p>There's something pathetic about watching people discuss science with Sal.  It's like watching a documentary film about a mentally ill person who is slowly killing himself.</p></div></div>
+<div class="comment" id="comment-94912"><p class="comment-meta"><span class="comment-author">secondclass</span> &middot; 18 August 2006</p><div class="comment-body"><p>I'm hoping that Salvador can address the fact that Dave's program generates CSI. Dembski's definition of CSI entails a pattern that's tractably recognizable by a human, so even if a solution or near-solution is "embedded" in the program, it doesn't constitute CSI unless we can look at the program and <i>see</i> the solution there.  Dave's program does not exhibit CSI, but the output of the program does.  How do explain that, Salvador?</p></div></div>
+<div class="comment" id="comment-94915"><p class="comment-meta"><span class="comment-author">Anonymous_Coward</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>There's something pathetic about watching people discuss science with Sal. It's like watching a documentary film about a mentally ill person who is slowly killing himself.</p></blockquote>
+
+I don'e know about that.
+
+I think I would be sympathetic for the mentally ill person.
+
+To be more specific, I meant the mentally ill person in the documentary.</div></div>
+<div class="comment" id="comment-94917"><p class="comment-meta"><span class="comment-author">Anonymous_Coward</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>Dave's program does not exhibit CSI, but the output of the program does. How do explain that, Salvador?</p></blockquote>
+
+Has Dembski even retracted his views about SETI and credit card numbers using/exhibiting CSI yet?</div></div>
+<div class="comment" id="comment-94919"><p class="comment-meta"><span class="comment-author">Coin</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>There's something pathetic about watching people discuss science with Sal. It's like watching a documentary film about a mentally ill person who is slowly killing himself.</p></blockquote>
+That's what it looks like to you or me, surely. But here's the frightening bit: What do you suppose that it looks like from the perspective of someone who lacks sufficient specific familiarity with the underlying science/math/CS/whatever discipline to immediately grasp which side is the one that knows what it is talking about?</div></div>
+<div class="comment" id="comment-94922"><p class="comment-meta"><span class="comment-author">Ric</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>That's what it looks like to you or me, surely. But here's the frightening bit: What do you suppose that it looks like from the perspective of someone who lacks sufficient specific familiarity with the underlying science/math/CS/whatever discipline to immediately grasp which side is the one that knows what it is talking about?</p><cite>— coin</cite></blockquote>
+
+And that's what Cordova and the IDers are counting on.
+
+...
+
+And thanks for the cigar, Edward.</div></div>
+<div class="comment" id="comment-94923"><p class="comment-meta"><span class="comment-author">steve s</span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>Has Dembski even retracted his views about SETI and credit card numbers using/exhibiting CSI yet?</p></blockquote>
+
+Dembski doesn't have to retract sh*t. Watch this.
+
+(puts on Dembski mask)
+
+"Hey guys, I just proved the square root of 3 is 'chair'!"
+
+Salvador: "Good job boss!"
+
+DonaldM: "That's fantastic! Damn you PvM!" (shakes fist)</div></div>
+<div class="comment" id="comment-94928"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 18 August 2006</p><div class="comment-body"><blockquote><p>
+Point. But there is also the idea that cognitive dissonance prohibits people to see the obvious. Salvador could have been constructing what he thought a GA was, because he can't face the truth.
+</p></blockquote>
+
+Um, that doesn't address the point I was talking about, which was Cordova telling "ofro" that his code did not include an explicit solution, when we  -- and Cordova, self-admittedly -- know that it does.</div></div>
+<div class="comment" id="comment-94973"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 19 August 2006</p><div class="comment-body"><p>"Um, that doesn't address the point I was talking about, which was Cordova telling "ofro" that his code did not include an explicit solution, when we --- and Cordova, self-admittedly --- know that it does."</p><p>I can't see that he says so. He admits that he has used a "formula" (Gauss formula), but he doesn't claim that this is an explicit solution. Instead he says: "I pointed out what explit meant in my usage, that means explictly using the string "500500â€³ in the program. The route toward that outcome was indirect, and inexplicit, or shall I say implicit." ( http://www.uncommondescent.com/index.php/archives/1464 , comment 5.)</p><p>So I see room for a possible dissonance. He may think he implemented a GA as he may believe they work since he didn't frontload the solution but a sufficiently deterministic algorithm. IanC suggests "simulated annealing" which seems to me a reasonable description. (Very little annealing.)</p><p>But I'm not sure how meaningful it is to discuss this if people know from other threads that Cordova is in fact lying.</p></div></div>
+<div class="comment" id="comment-94988"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 19 August 2006</p><div class="comment-body"><blockquote>ofro wrote
+
+I wonder how long it will take until this is taken as proof that mutations cannot produce IC.</blockquote>
+
+From a survival standpoint, mutations might not want to produce IC. In the real world, organisms are "reduced" all the time from all kinds of mishaps, and often they go on living (and reproducing) just fine anyhow because living things have enough spare capacity to adapt. 
+
+Somehow, for example, I've known a several three-legged cats over the years that all got along just fine - oddly, IIRC, they were all named "tripod".
+
+In a truly optimized animal, where every part was perfectly designed so as not to waste material and energy, such a mishap might be catastrophic (well, more catastrophic). How many three-wheeled cars could go on in any meaningful sense?</div></div>
+<div class="comment" id="comment-95006"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 19 August 2006</p><div class="comment-body"><blockquote><p>
+But I'm not sure how meaningful it is to discuss this if people know from other threads that Cordova is in fact lying.
+</p></blockquote>
+
+I think Sal's comment here clinches it. You don't. I can't make you see it. That appears to be the end of the discussion.
+</div></div>
+<div class="comment" id="comment-95281"><p class="comment-meta"><span class="comment-author">Popper&#x27;s ghost</span> &middot; 22 August 2006</p><div class="comment-body"><blockquote><p>The highest possible poker hand, a royal straight, never appeared. If "the solution" was hard coded into the selection routine, this should have been it, but it never appeared in all the times I ran the simulation. This makes sense, of course. Building pairs allows step by step improvement, but in poker a four-card straight isn't particularly better than a three-card straight. You either have a full five-card straight or you don't.</p></blockquote>
+
+This is the most significant comment here, as it completely puts the lie to Sal's BS.  This point about the unevolvability of straights is the <i>true</i> version of creationist canard "what good is half an eye?" -- an argument that Sal conveniently ignores in this case.  Simply stating the optimization criterion -- shortest network, highest hand, or accurate image formation -- isn't sufficient to reach it, there has to be an <i>evolutionary path</i>, as there is for Steiner networks and eyes but not for poker hands.  If the optimal Steiner network is implicit in Dave Thomas's GA, then the eye is implicit in biological evolution.  If Dave Thomas's GA is a case of "smoke and mirrors", then so is biological evolution.  But in any case, biological evolution is capable of producing the biological systems we observe, and the IDist arguments against it are thoroughly refuted.</div></div>
+<div class="comment" id="comment-96472"><p class="comment-meta"><span class="comment-author"><a href="http://www.nmsr.org" rel="nofollow">Dave Thomas</a></span> &middot; 29 August 2006</p><div class="comment-body"><p><b>COMMENTS ARE NOW CLOSED</b></p><p>I'm closing comments on this post, but do stay tuned for a follow-up post, "Genetic Algorithms for Uncommonly Dense Software Engineers."</p><p>Thanks for the discussion!</p><p>Cheers, Dave</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

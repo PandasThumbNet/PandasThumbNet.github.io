@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Improving the Accuracy of Genomic Data — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Improving the Accuracy of Genomic Data</h1><p class="post-meta">Posted 19 February 2015 by <span class="post-author">Emily Thompson</span></p><div class="post-body">Imagine that you want to analyze the 3.2 billion bases of the human genome. If you recruited every undergraduate student at ASU, all 70,000 of us, to type those data into a spreadsheet, it would still take about 13 hours. So you develop a computer program that analyzes the data for you. But then you find out that your huge data set amplified small errors in your algorithm and gave you the wrong answer. This is the issue facing evolutionary biologists using genomic data, a practice that is becoming standard to construct reliable phylogenies (see our previous posts about the new <a href="http://pandasthumb.org/archives/2015/01/phylogenomics-r.html">bird</a> and <a href="http://pandasthumb.org/archives/2015/01/delving-into-th.html">insect</a> phylogenies). <a href="http://cartwrig.ht">Our lab</a>, working under Dr. Reed Cartwright, has developed a novel method to quickly analyze genomic data and produce an accurate phylogeny that improves upon previous techniques.
+
+<figure
+src="http://pandasthumb.org/archives/2015/02/19/Bai_yun_giant_panda.jpg" width="250" height="375" align="right">
+
+The giant panda genome was assembled using <i>de novo</i> techniques in 2010, but better methods of phylogeny construction are in development.
+Image: Wikipedia
+</figure>
+
+
+
+Historically, scientists have compensated for potential inaccuracies in genomic-size data in two ways: by using better statistical tools to analyze the data after they have been acquired or by acquiring fewer, more informative data. 
+
+
+
+In the first method, you start with sequenced genomes in the form of short fragments (about 100 base pairs) and develop computational algorithms to compare those sequences to a reference genome for reassembly, like <a href="http://eichlerlab.gs.washington.edu/primategenome/Liu_etal.pdf">Liu et al.</a> did in their 2003 analysis of primate genomes. The reference genome is one that we know with a high level of confidence; for example, the human genome is reliably known and often used as a reference. If, however, a reference is unavailable or unreliable, you could use a computer program to assemble the sequences with a process known as <a href="http://en.wikipedia.org/wiki/De_novo_transcriptome_assembly"><i>de novo</i> assembly</a>, which <a href="http://www.nature.com/nature/journal/v463/n7279/full/nature08696.html">Li et al.</a> used to construct the giant panda genome in 2010. These programs, called assemblers, use graphical techniques (for example, <a href="http://www.cs.jhu.edu/~langmea/resources/lecture_notes/assembly_dbg.pdf">De Brujin graphs</a>) to remove errors in phylogenetic trees and resolve repeated data that are harder to determine in short sequences than longer ones.  Algorithms like this can greatly improve the accuracy of conclusions made from genomic data, but <i> de novo </i> assembly without a reference genome requires high quality annotation of the sequences and, once the genome is reconstructed, time-consuming alignments of similar sequences to produce a phylogenetic tree. 
+
+
+
+Alternatively, you could acquire fewer data in the first place. You would need to determine which markers in a genome are informative and necessary to draw certain conclusions and then only obtain those data. By reducing the size of the data set and eliminating unnecessary information, we improve the accuracy without having to implement sophisticated analytical techniques. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3317156/"> McCormack et al.</a> used this principle in 2012 to determine the tree of placental mammals from certain markers. However, the major drawback of this method is that markers appropriate for a particular project or species most likely cannot be reused for other projects. The ability to recycle genomic data reduces the cost and time of phylogenomic studies. 
+
+Our lab is working on a program that constructs phylogenetic trees more quickly and easily than either of these methods. The program, called SISRS, combines genome assembly with identification of homologous genes to rapidly reconstruct phylogenies without the need of a reference genome or annotation. In the next post, we'll go into detail about how SISRS works and what makes it a better way to analyze genomic data.
+
+<i>This series is supported by NSF Grant #DBI-1356548 to RA Cartwright.</i></div><section class="comments-section"><h2 class="comments-heading">5 Comments</h2>
+<div class="comment" id="comment-338842"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 19 February 2015</p><div class="comment-body"><p>If this is anything like <i>in silico</i> PCR, then I'm all for it.</p></div></div>
+<div class="comment" id="comment-338843"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 19 February 2015</p><div class="comment-body"><p>Thanks for the McCormack reference.  It's the perfect example of appropriate data versus complete data.  Of course the kind of data they used is not going to be useful for phylogenetic inference at every level of divergence, no data is.  But that doesn't mean that this is not the right approach to take when addressing specific phylogenetic issues.</p></div></div>
+<div class="comment" id="comment-338844"><p class="comment-meta"><span class="comment-author">https://www.google.com/accounts/o8/id?id=AItOawl30lI0y4I-EF3HUTblY5lhVnxhcj1stbE</span> &middot; 19 February 2015</p><div class="comment-body"><p>For those who want to look at / use SISRS go to https://github.com/rachelss/SISRS/tree/develop</p></div></div>
+<div class="comment" id="comment-338845"><p class="comment-meta"><span class="comment-author">John Harshman</span> &middot; 19 February 2015</p><div class="comment-body"><p>Actually, the McCormack et al. sort of data might in fact be useful at every level, since the sequence conservation is near-complete within the ultraconserved elements themselves (hence the name) but falls off gradually on either side to, eventually, neutral levels. So there's some spot within that continuum for everybody's needs.</p></div></div>
+<div class="comment" id="comment-338861"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 21 February 2015</p><div class="comment-body"><blockquote>
+<strong>John Harshman said:</strong>
+
+Actually, the McCormack et al. sort of data might in fact be useful at every level, since the sequence conservation is near-complete within the ultraconserved elements themselves (hence the name) but falls off gradually on either side to, eventually, neutral levels. So there's some spot within that continuum for everybody's needs.
+</blockquote>
+
+Absolutely.  That's the point.  You don't just throw in all the data and hope for the best.  The signal to noise ratio is not going to be good enough for that approach to work.  You have to subdivide the data and use the data appropriate for any given level of divergence.  That way you get a good signal to noise ratio for every level of divergence.  This is why other types of molecular data such a SINE insertions and mitochondrial gene order have become so popular.  We know a priori what level of divergence such data is likely to be useful for.
+
+The power of genomics is not that you can use whole genomes for phylogenetic analysis, but that you can get markers useful at every level of divergence quickly and cheaply.  The important thing is to use the appropriate data for the question being addressed.</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

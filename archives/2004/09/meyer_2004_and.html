@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meyer 2004 and Deja Vu All Over Again — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Meyer 2004 and Deja Vu All Over Again</h1><p class="post-meta">Posted 8 September 2004 by <span class="post-author">Wesley R. Elsberry</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2004/09/meyer-2004-and.html">https://pandasthumb.org/archives/2004/09/meyer-2004-and.html</a></p><div class="post-body"><p>Whilst reading Stephen C. Meyer&#8217;s latest <a href="http://www.pandasthumb.org/pt-archives/000430.html" target="_self">publication</a>, I had the strangest feeling that I had seen it before somewhere. Well, given that Meyer is an &#8220;intelligent design&#8221; advocate, the feeling that one is not getting a pure feed of innovative, novel prose is perhaps simply to be expected. It didn&#8217;t take long to find the source of a substantial chunk of the &#8220;new&#8221; paper: </p>
+
+<blockquote> <p>S.C. Meyer, M. Ross, P. Nelson, & P. Chien. 2003. The Cambrian explosion: biology&#8217;s big bang. Pp. 323&#8212;402 in I. A. Campbell & S. C. Meyer, eds., Darwinism, design and public education. Michigan State University Press, Lansing.</p> </blockquote>
+
+<p>That reference comes right from the citations in Meyer 2004. It is cited in the paper in support of a couple of specific claims. It is not noted as a substantial source of the text of the Meyer 2004 article.</p>
+
+<p>But Meyer et al. 2003 <b>is</b> a source of a substantial proportion of the Meyer 2004 text. Read on for the details&#8230;</p>
+
+ 
+<blockquote> <p class="quoteauthor">Lord Kelvin wrote:</p>
+<p><i>In physical science the first essential step in the direction of learning any subject is to find principles of numerical reckoning and practicable methods for measuring some quality connected with it. I often say that when you can measure what you are speaking about, and express it in numbers, you know something about it; but when you cannot measure it, when you cannot express it in numbers, your knowledge is of a meagre and unsatisfactory kind; it may be the beginning of knowledge, but you have scarcely in your thoughts advanced to the state of Science, whatever the matter may be.</i></p> </blockquote>
+
+<p>It&#8217;s one thing to say that it looks like there are similarities between two texts, and another to produce a measure of how much similarity there is. So I wasn&#8217;t satisfied with just noting a few close correspondences. I wanted to find out just how much cutting-and-pasting occurred between the two texts.</p>
+
+<p>Nick Matzke looked around for some plagiarism-detection software solutions, but the stuff available appeared to either lack features or require the payment of cold, hard cash. So I decided to write my own Perl script to do the job.</p>
+
+<p>It has taken a few days of debugging, but I have a version that I am pretty satisfied with now. It will take two file names from the command line and read both in. The first is treated as the text which may be copied in part from the second file. Words of some length <i>i</i> or longer are matched across the two texts. At every point of a match, the script tries to find the longest run of words possible with some <i>m</i> words perhaps deleted or inserted at a time. If the number of words in a run meets or exceeds some number <i>n</i>, the matching text is saved for a report. Since every potential match is examined, false negatives should be absent. (I won&#8217;t guarantee that the script never has a false negative; after all, I&#8217;m not a perfect coder.) A simple test to see if a potentially matching word is already part of an identified run helps keep down redundant processing. </p>
+
+<p>Now. about false positives&#8230; the script certainly does have those. The important thing to do is to characterize the rate at which false positives may appear, such that when one considers the results, one may adjust the findings in light of the false positive rate. How many false positives are seen depends upon the lengths of the texts that are compared and the vocabulary used in the texts.</p>
+
+<p>Having said all that, here are the numbers for various comparisons.</p>
+
+<div>
+<font size="+1">
+<pre>
+Meyer 2004
+(13,534 words) vs.   | Total words | Run length | Matches | Words |  %  |
+---------------------+-------------+------------+---------+-------+-----+
+Moby Dick            |  218,623    |    n>=5    |      37 |   187 |  1  |
+Origin of Species    |  209,176    |    n>=5    |     170 |   873 |  6  |
+Budd and Jensen 2000 |   32,184    |    n>=5    |      75 |   402 |  3  |
+Meyer et al. 2003    |   28,481    |    n>=5    |     455 | 6,280 | 46  |
+---------------------+-------------+------------+---------+-------+-----+
+Moby Dick            |  218,623    |    n>=10   |       0 |     0 |  0  |
+Origin of Species    |  209,176    |    n>=10   |       4 |    49 |  0  |
+Budd and Jensen 2000 |   32,184    |    n>=10   |       2 |    47 |  0  |
+Meyer et al. 2003    |   28,481    |    n>=10   |     163 | 5,192 | 38  |
+
+OoS (209,176 words) vs. | Total words | Run length | Matches | Words |  %  |
+------------------------+-------------+------------+---------+-------+-----+
+Moby Dick               |  218,623    |   n>=10    |       6 |    72 |  0  |
+</pre>
+</font>
+</div>
+
+<p>It can readily be seen from the results above that the script finds that over a third of Meyer 2004 has been lifted from Meyer et al. 2003. The tightening-up of results given the longer n&gt;=10 run length indicates that the true proportion is over 33%.</p>
+
+<p>Here are some examples of matches found between Meyer 2004 and Meyer et al. 2003:</p>
+
+<div>
+<table border="1">
+<tr>
+<td>
+Match 2 (1):
+Reference (000556 .. 000590, of 13533):
+</td>
+<td>
+Subject (008921 .. 008956, of 28480):
+</td>
+</tr>
+<tr>
+<td>
+the situation starting in the 1970s many biologists began questioning its neo Darwinism s adequacy in explaining evolution Genetics might be adequate for explaining microevolution but microevolutionary changes in gene frequency were not seen as
+</td>
+<td>
+Synthesis is a remarkable achievement However starting in the 1970s many biologists began questioning its adequacy in explaining evolution Genetics might be adequate for explaining microevolution but microevolutionary changes in gene frequency were not seen as
+</td>
+</tr>
+</table>
+
+<table border="1">
+<tr>
+<td>
+Match 10 (1):
+Reference (001911 .. 002032, of 13533):
+</td>
+<td>
+
+Subject (003150 .. 003274, of 28480):
+</td>
+</tr>
+<tr>
+<td>
+bases Since each of the four bases has a roughly equal chance of occurring at each site along the spine of the DNA molecule biologists can calculate the probability and thus the information carrying capacity of any particular sequence n bases long The ease with which information theory applies to molecular biology has created confusion about the type of information that DNA and proteins possess Sequences of nucleotide bases in DNA or amino acids in a protein are highly improbable and thus have large information carrying capacities But like meaningful sentences or lines of computer code genes and proteins are also specified with respect to function Just as the meaning of a sentence depends upon the specific arrangement of the letters in
+
+</td>
+<td>
+
+a linear array Since each of the four bases has a roughly equiprobable chance of occurring at each site along the spine of the DNA molecule biologists can calculate the probability and thus the information carrying capacity of any particular sequence n bases long The ease with which information theory applies to molecular biology has created confusion about the type of information that DNA and proteins possess Sequences of nucleotide bases in DNA or amino acids in a protein are highly improbable and thus have a large information carrying capacity But like meaningful sentences or lines of computer code genes and proteins are also specified with respect to function Just as the meaning of a sentence depends upon the specific arrangement of the letters in
+</td>
+</tr>
+</table>
+
+<table border="1">
+<tr>
+<td>
+Match 39 (1):
+Reference (003591 .. 003777, of 13533):
+</td>
+<td>
+
+Subject (015807 .. 015994, of 28480):
+</td>
+</tr>
+<tr>
+<td>
+natural selection acting to preserve small advantageous variations in genetic sequences and their corresponding protein products Dawkins 1996 for example likens an organism to a high mountain peak He compares climbing the sheer precipice up the front side of the mountain to building a new organism by chance He acknowledges that his approach up Mount Improbable will not succeed Nevertheless he suggests that there is a gradual slope up the backside of the mountain that could be climbed in small incremental steps In his analogy the backside climb up Mount Improbable corresponds to the process of natural selection acting on random changes in the genetic text What chance alone cannot accomplish blindly or in one leap selection acting on mutations can accomplish through the cumulative effect of many slight successive steps Yet the extreme specificity and complexity of proteins presents a difficulty not only for the chance origin of specified biological information i e for random mutations acting alone but also for selection and mutation acting in concert Indeed mutagenesis experiments cast doubt on each of the two scenarios by which neo Darwinists envisioned new information arising
+</td>
+<td>
+
+natural selection acting to preserve small advantageous variations in genetic sequences and their corresponding protein products Richard Dawkins for example likens an organism to a high mountain peak 95 He compares climbing the sheer precipice up the front side of the mountain to building a new organism by chance He acknowledges that this approach up Mount Improbable will not succeed Nevertheless he suggests that there is a gradual slope up the backside of the mountain that could be climbed in small incremental steps In his analogy the backside up Mount Improbable corresponds to the process of natural selection acting on random changes in the genetic text What chance alone cannot accomplish blindly or in one leap selection acting on mutations can accomplish through the cumulative effect of many slight successive steps Yet the extreme specificity and complexity of proteins present a diffi culty not only for the chance origin of specified biological information that is for random mutations acting alone but also for selection and mutation acting in concert Indeed mutagenesis experiments cast doubt on each of the two scenarios by which neo Darwinists envision new information arising
+</td>
+</tr>
+</table>
+
+<table border="1">
+<tr>
+<td>
+Match 41 (1):
+Reference (003794 .. 003889, of 13533):
+</td>
+<td>
+
+Subject (016004 .. 016101, of 28480):
+</td>
+</tr>
+<tr>
+<td>
+either arise from non coding sections in the genome or from preexisting genes Both scenarios are problematic In the first scenario neo Darwinists envision new genetic information arising from those sections of the genetic text that can presumably vary freely without consequence to the organism According to this scenario non coding sections of the genome or duplicated sections of coding regions can experience a protracted period of neutral evolution Kimura 1983 during which alterations in nucleotide sequences have no discernible effect on the function of the organism Eventually however a new gene sequence will arise that
+</td>
+<td>
+
+either new functional genes arise from noncoding sections in the genome or functional genes arise from preexisting genes Both scenarios are problematic In the first scenario neo Darwinists envision new genetic information arising from those sections of the genetic text that can presumably vary freely without consequence to the organism According to this scenario noncoding sections of the genome or duplicated sections of coding regions can experience a protracted period of neutral evolution in which alterations in nucleotide sequences have no discernible effect on the function of the organism Eventually however a new gene sequence will arise that
+</td>
+</tr>
+</table>
+
+<table border="1">
+<tr>
+<td>
+Match 140 (1):
+Reference (011258 .. 011352, of 13533):
+</td>
+<td>
+
+Subject (020800 .. 020892, of 28480):
+</td>
+</tr>
+<tr>
+<td>
+At every level of the biological hierarchy organisms require specified and highly improbable arrangements of lower level constituents in order to maintain their form and function Genes require specified arrangements of nucleotide bases proteins require specified arrangements of amino acids new cell types require specified arrangements of systems of proteins body plans require specialized arrangements of cell types and organs Organisms not only contain information rich components such as proteins and genes but they comprise information rich arrangements of those components and the systems that comprise them Yet we know based on our present experience
+</td>
+<td>
+
+At every level of the biological hierarchy organisms require specified and highly improbable arrangements of lower level constituents in order to maintain their form and function Genes require specified arrangements of nucleotide bases proteins require specified arrangements of amino acids new cell types require specified arrangements of proteins and systems of proteins new body plans require specialized arrangements of cell types and organs Organisms not only contain information rich components such as proteins and genes but they comprise information rich arrangements of those components and the subsystems that comprise them Based on experience
+</td>
+</tr>
+</table>
+
+</div>
+
+<p>(For the complete set of matches found at word runs of length 10 or more, see<br />
+<a href="http://www.antievolution.org/people/meyer_sc/meyer2004_bio_info/mnr_bbb_comp.html" target="_blank">http://www.antievolution.org/people/meyer_sc/meyer2004_bio_i&#8230;</a>)</p>
+
+<p>As a check, I also ran the Perl Algorithm::Diff package&#8217;s &#8220;traverse_sequences&#8221; routine, and found the following result for comparing Meyer 2004 to Meyer et al. 2003:</p>
+
+<p>5,484 words out of 13,534 match, 40.5 %</p>
+
+<p>As yet another check of my script&#8217;s sensitivity, I compared two review articles on the same subject by the same first author published three years apart. In looking for runs of 10 words or more, there were two matches comprising some 28 words, or 1% of the total length of the more recent paper. (Nonaka, Masaru, and Yoshizaki, Fumiko. 2004. <i>Evolution of the complement system</i>. Molecular Immunology Volume 40, Issue 12, February 2004, Pages 897-902 compared to Nonaka, Masaru. 2001. <i>Evolution of the complement system</i>. Current Opinion in Immunology Volume 13, Issue 1, 1 February, Pages 69-73.)</p>
+
+<p>As a philosopher of science, Meyer should know a thing or two about scientific custom when it comes to journal articles. One custom is that <i>one does not submit for publication in a peer-reviewed publication work that has already been substantially published in another peer-reviewed publication</i>. Now, I don&#8217;t think that this applies in this case, but Stephen Meyer <i>ought to</i>. After all, the Discovery Institute bills the book that Meyer et al. 2003 appears in as &#8220;peer reviewed&#8221;.</p>
+
+<blockquote> <p>SEATTLE&nbsp; Darwinism, Design and Public Education (DDPE) is a peer-reviewed book published by Michigan State University Press that presents a multi-faceted scientific case for the theory of intelligent design while also examining the legal and pedagogical arguments for teaching students about the scientific controversies that surround the issue of biological origins. Contributors to the book include both leading scientific proponents of intelligent design and neo-Darwinism.</p> </blockquote>
+
+<p>(Source: <a href="http://www.discovery.org/scripts/viewDB/index.php?program=News-CSC&command=view&id=1694" target="_blank">http://www.discovery.org/scripts/viewDB/index.php?program=Ne&#8230;</a>)</p>
+
+<p>ID fans are fond of saying that you don&#8217;t get any more information in two copies of a newspaper than in one. This is of course false, as <a href="http://www.antievolution.org/people/wre/papers/eandsdembski.pdf" target="_blank">Elsberry and Shallit 2003</a> note. But the germ of truth in it is that you don&#8217;t get any more <i>misinformation</i> in two ID papers than in one: it&#8217;s the same old same old.</p></div><section class="comments-section"><h2 class="comments-heading">35 Comments</h2>
+<div class="comment" id="comment-7323"><p class="comment-meta"><span class="comment-author">Great White Wonder</span> &middot; 8 September 2004</p><div class="comment-body"><p>Wesley,</p><p>I'm sure it was all on innocent accident on Dr. Meyer's part.  His assistant was supposed to proof-read the document to find these self-plagiarized passages and remove them.  There was, unfortunately, a failure to communicate and the offending text was inadvertently published twice.  We all make mistakes, and we all know that all creationists make more mistakes than all of us combined.  Dr. Meyer (an obvious pseudoynum for a precocious 12 or 13 year old) is much too young to be expected to understand all of the "arbitrary" "rules" to which we scientists adhere.  Let us forgive Dr. Meyer and move on to a discussion of the substance of his paper, which surely is filled with new and challenging ideas that evolutionary biologists must address immediately, lest the fruits of their nascent enterprise rot on the ancient vines of science.</p></div></div>
+<div class="comment" id="comment-7326"><p class="comment-meta"><span class="comment-author">Tom Ames</span> &middot; 8 September 2004</p><div class="comment-body"><p>Interestingly, I posted a link to this article on ARN and was banned without any warning.</p><p>You must have hit a nerve here.</p></div></div>
+<div class="comment" id="comment-7331"><p class="comment-meta"><span class="comment-author">Steve</span> &middot; 8 September 2004</p><div class="comment-body"><p>Science journals usually require one to affirm that they aren't republishing previous material.</p></div></div>
+<div class="comment" id="comment-7332"><p class="comment-meta"><span class="comment-author">Art</span> &middot; 8 September 2004</p><div class="comment-body"><p>I wonder if that works with grants.</p></div></div>
+<div class="comment" id="comment-7343"><p class="comment-meta"><span class="comment-author">Matt</span> &middot; 9 September 2004</p><div class="comment-body"><p>Wes, is there any way to have the text matching appear like a BLAST alignment?  I think that would make the homology look more obvious.</p></div></div>
+<div class="comment" id="comment-7349"><p class="comment-meta"><span class="comment-author"><a href="http://www.arbor.edu" rel="nofollow">Michael Buratovich</a></span> &middot; 9 September 2004</p><div class="comment-body"><p>My thesis advisor was editor of Developmental Biology (Peter Bryant).  Peter found a paper that was published in another journal that had been published, word-for-word, in another journal.  Peter worked like crazy to get the authors to retract the DB paper.  They refused and Peter sought to take legal action against them, but Academic Press felt that these slimes were little fish in a huge pond and not worth the lawyers fees.</p><p>I share this to give you an idea of how seriously scientists take this sort of thing.  Clearly the ethical thing for Meyer to do is to retract his paper or retract it until a rewritten version of it, that is not plargiarized from an earlier manuscript, is deemed publishable by the editor in chief.  Even though not all of Meyer's paper is cut and pasted from his other book chapter, enough of it is to warrant serious concerns.</p></div></div>
+<div class="comment" id="comment-7350"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick</a></span> &middot; 9 September 2004</p><div class="comment-body"><blockquote><p>Wes, is there any way to have the text matching appear like a BLAST alignment?  I think that would make the homology look more obvious.</p><cite>— Matt</cite></blockquote>
+
+You can tell you're a biologist when...
+
+The difficulty here would be in display, I think -- each text is thousands of words long.  Perhaps you can think of a way around this other than Wes's side-by-side method...</div></div>
+<div class="comment" id="comment-7352"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 9 September 2004</p><div class="comment-body"><p>You could probably adapt genome alignment algorithms.  You know the things that look for conserved gene arrangements.</p></div></div>
+<div class="comment" id="comment-7353"><p class="comment-meta"><span class="comment-author">Steve</span> &middot; 9 September 2004</p><div class="comment-body">Multiple publication and salami slicing is a hidden problem caused by unethical researchers. See also <blockquote><p>M Tramèr et al. Effect of covert duplicate publication on meta-analysis; a case study. BMJ 1997 315: 635-40.</p></blockquote></div></div>
+<div class="comment" id="comment-7354"><p class="comment-meta"><span class="comment-author">Great White Wonder</span> &middot; 9 September 2004</p><div class="comment-body"><p>If you listen closely you can hear the rustling and click-clacking of Meyer and his cohorts scrambling to conduct the same sort of analysis on the Pandas Thumb crew.  I can hardly wait to see the results.</p><p>In addition to the similarities noted above, it'd be interesting to know whether any substantive or rhetorical changes were made to the self-plagiarized text in light of intervening events.  Or was it just sloppily cut and pasted like some teenage English student trying to finish his term paper at 4 a.m.???</p></div></div>
+<div class="comment" id="comment-7360"><p class="comment-meta"><span class="comment-author">RBH</span> &middot; 9 September 2004</p><div class="comment-body">GWW asked<blockquote><p>In addition to the similarities noted above, it'd be interesting to know whether any substantive or rhetorical changes were made to the self-plagiarized text in light of intervening events.  Or was it just sloppily cut and pasted like some teenage English student trying to finish his term paper at 4 a.m.???</p></blockquote>Wesley gave <a href="http://www.antievolution.org/people/meyer_sc/meyer2004_bio_info/mnr_bbb_comp.html"><b>the url</b></a> for the full set of matches.  I see no "improvements."
+
+RBH</div></div>
+<div class="comment" id="comment-7378"><p class="comment-meta"><span class="comment-author">joyful</span> &middot; 10 September 2004</p><div class="comment-body"><p>Tom Ames is AndyG?</p></div></div>
+<div class="comment" id="comment-7380"><p class="comment-meta"><span class="comment-author">Andrea Bottaro</span> &middot; 10 September 2004</p><div class="comment-body"><p>Bah.  I think "self-plagiarism" is just a minor sin in the great scheme of things, like self-quoting (and other self-activities ;-) ) .  It is however a telling sign of intellectual laziness and poor scholarship standards on Meyer's part, but didn't we already know that, from much more significant indicators?</p></div></div>
+<div class="comment" id="comment-7384"><p class="comment-meta"><span class="comment-author">Andy Groves</span> &middot; 10 September 2004</p><div class="comment-body"><p>No, I'm not Tom Ames. I  was just a little more subtle.</p></div></div>
+<div class="comment" id="comment-7386"><p class="comment-meta"><span class="comment-author"><a href="http://www.designinference.com" rel="nofollow">Bill Dembski</a></span> &middot; 10 September 2004</p><div class="comment-body"><p>Hi Wes,</p><p>Try doing your analysis on Niles Eldredge's _Triumph of Evolution_ and his _Monkey Business_ from two decades earlier. You'll find paragraphs lifted whole.</p><p>--WmAD</p></div></div>
+<div class="comment" id="comment-7387"><p class="comment-meta"><span class="comment-author"><a href="http://www.crank.net/" rel="nofollow">A Steve, not a Bill</a></span> &middot; 10 September 2004</p><div class="comment-body"><p>Dude, those commentaries are <B><I>books</I></B>. The latest provides updates on the earlier one.</p><p>A lot of scientific journals just don't want to waste space on articles with subjects like "Wheels: Confirmed to function better when round" or "2+2 still equals 4", or "Rehashed criticisms, rearranged". Something to do with their goal to publish novel or original "discoveries", I guess.</p><p>Great White Wonder was spot-on in comment #7532, above.</p></div></div>
+<div class="comment" id="comment-7391"><p class="comment-meta"><span class="comment-author">Alan Gourant</span> &middot; 11 September 2004</p><div class="comment-body"><p>Re: comment 7576 by Dembski. Why to refer to Eldredge?  Dembski could as well refer to his own output. "Lifting whole" (Dembski's expression) from his earlier publications seems to be his favorite method of multiplying his appearances in print. There are many examples of his repeating verbatim whole sections of his earlier papers not just twice, but several times.  Of course, compared with other tricks he routinely uses  (some of which he himself described - like posting preliminary texts to get response from potential critics, and then removing the fallacious points thus disarming the critics) his self-plagiarism is a minor offence.  More importantly, whatever he is recirculating in his numerous publications, is often crock, as has been shown more than once by his critics, but he continues to push the same discredited ideas time and time again.</p></div></div>
+<div class="comment" id="comment-7394"><p class="comment-meta"><span class="comment-author"><a href="http://www.discovery.org/csc" rel="nofollow">Paul A. Nelson</a></span> &middot; 11 September 2004</p><div class="comment-body"><p>Wesley, I pulled some of Richard Lewontin's papers from my files.  "Sociobiology as an Adaptationist Program," <i>Behavioral Science</i> 24 (1979):5-14, and "Adaptation," <i>Scientific American</i> 239 (1978):212-230, have at least one long paragraph that is pretty much the same between the two publications.</p><p>I'm sure I could find other examples from the evolutionary literature.  But what's the point?  Lewontin (a hero of mine) wanted to put the same important information in front of two different audiences.  Big deal.  I agree with Andrea Bottaro: self-quoting may be an unseemly shortcut, in some instances, anyway; in others, it's not.  In either case, it's just not worth the alarums.</p></div></div>
+<div class="comment" id="comment-7396"><p class="comment-meta"><span class="comment-author">Amiel Rossow</span> &middot; 11 September 2004</p><div class="comment-body"><p>Meyer's self-plagiarism could be easily forgiven - indeed it is not an uncommon phenomenon on both sides of the controversy - had he repeated something of value. The point is that what he regurgitates is a collection of easily repudiated fallacious assertions.</p></div></div>
+<div class="comment" id="comment-7399"><p class="comment-meta"><span class="comment-author"><a href="http://medstat.med.utah.edu/kw/osteo/hurd/apage.htm" rel="nofollow">Gary Hurd</a></span> &middot; 11 September 2004</p><div class="comment-body"><p>There used to be a joke about the "new quantification of science literature." It was the LPU, or "Least Publishable Unit."</p><p>A paper contra Dembski that I want to finish soon uses chunks of my hammer argument from my chapter in WIDF.  Sometimes, I would have new data that expanded on something, and I used basically the same lit review.  So, I would disagree that is is always unethical to re-use your own work. Maybe this is because I am "guilty." However, I would write two or three articles, and then fold them into a book chapter. If the articles had had co-authors I did one of two things- I made them co-authors of the book chapter, or I sent them copies, and asked them if they thought they should be co-authors.  I always cited the earlier publications.  Meyer seems to have taken this in the opposite direction and that is a dis-service to the journal.</p><p>The question to be raised by Wesely's text matching seems to me to be, "Does the recycled text actually represent the effort of Meyer, or did he incorporate the work of former co-authors?"</p><p>Otherwise, Meyer's use of old text is far from the major problems of the paper.</p><p>Gary</p></div></div>
+<div class="comment" id="comment-7409"><p class="comment-meta"><span class="comment-author"><a href="http://www.crank.net/" rel="nofollow">A Steve, not a Bill</a></span> &middot; 12 September 2004</p><div class="comment-body"><p>Hey Paul Nelson! I notice that you gave a talk at the same small seminar series as Richard v. Sternberg ("Evolution, Intelligent Design, and the Future of Biology"  at the Palmenia Centre for Continuing Education of University of Helsinki). Do you happen to know of any articles or presentations by Dr. von Sternberg that are particularly critical of creationism?</p></div></div>
+<div class="comment" id="comment-7414"><p class="comment-meta"><span class="comment-author"><a href="http://www.antievolution.org" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 13 September 2004</p><div class="comment-body"><p>Copying between peer-reviewed publications happens and depending on the circumstances may be taken quite seriously.</p><p>My intent was to get beyond "some copying exists between these two works" to "the extent of copying from this work to this other work is of this proportion".</p><p>In general, etext is not available for recently-published books. If Dr. Dembski would care to provide the etext for particular books he would like compared, I'll be happy to run my script on them and make public the results. Further, I would find it very helpful to be able to produce a "variorum" style document of various of Dr. Dembski's arguments. I'd be willing to put in the work of doing so if Dr. Dembski would provide the text of his books, "The Design Revolution", "No Free Lunch", "Intelligent Design", and "The Design Inference", and any others that give differing glosses on his concepts.</p></div></div>
+<div class="comment" id="comment-7421"><p class="comment-meta"><span class="comment-author"><a href="http://www.antievolution.org" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 13 September 2004</p><div class="comment-body">Niles Eldredge's "<i>The Triumph of Evolution and the Failure of Creationism</i>" includes on its copyright page this acknowledgement:
+
+<blockquote><p>
+Portions of this text have been previously published in the author's <i>The Monkey Business: A Scientist Looks at Creationism</i> (Washington Square Press).
+</p></blockquote>
+
+I think that brings that particular issue to a close.
+</div></div>
+<div class="comment" id="comment-7424"><p class="comment-meta"><span class="comment-author"><a href="http://www.antievolution.org" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 13 September 2004</p><div class="comment-body">"A Steve, Not a Bill" wrote:
+
+<blockquote><p>
+A lot of scientific journals just don't want to waste space on articles with subjects like "Wheels: Confirmed to function better when round" or "2+2 still equals 4", or "Rehashed criticisms, rearranged". Something to do with their goal to publish novel or original "discoveries", I guess.
+</p></blockquote>
+
+There is a sense in which this is a bit of a problem. Studies independently replicating prior work need to be published, and this sometimes proves difficult to do. Overall, scientists don't get enough support or credit to encourage them, in general, to do replication studies.
+</div></div>
+<div class="comment" id="comment-7425"><p class="comment-meta"><span class="comment-author"><a href="http://www.discovery.org/csc" rel="nofollow">Paul A. Nelson</a></span> &middot; 13 September 2004</p><div class="comment-body"><p>Hello A Steve not a Bill -- Not yet: the University of Helsinki seminar on ID and evolution at the Palmenia Centre is scheduled for next month (22-23 October 2004).  I'll ask Rick Sternberg if he's published anything critical of creationism.</p></div></div>
+<div class="comment" id="comment-7430"><p class="comment-meta"><span class="comment-author"><a href="http://medstat.med.utah.edu/kw/osteo/hurd/apage.htm" rel="nofollow">Gary Hurd</a></span> &middot; 13 September 2004</p><div class="comment-body"><p>I wonder if the mouth pieces for the Discovery Institute wouldn't respond to Tom Ames?  He posted to the DI supported ARN about this topic and was banned.  Creationists are well known censors of dissenting viewpoints, and the loudest whiners that they are oppressed.</p><p>The best reason to block the religious right from government position is the Inquisition  Or,  maybe better, the Salem witch burning.  No, the best three reasons to block the religious right from government position is the Inquisition, the Salem witch burning, and the German Holocaust.</p><p>And, al-Qaeda ...</p></div></div>
+<div class="comment" id="comment-7444"><p class="comment-meta"><span class="comment-author">A Steve, not a Bill</span> &middot; 15 September 2004</p><div class="comment-body">Wesley Elsberry:
+<blockquote><p>Studies independently replicating prior work need to be published, and this sometimes proves difficult to do. Overall, scientists don't get enough support or credit to encourage them, in general, to do replication studies.</p></blockquote>
+
+"Me too!" is not enough but non-replicated results can get published alone. 
+Replicated experiments do get printed but typically as part of an extension or a derivative of the original work. Some lab managers require replication of experiments with a different set of hands before publishing. Healthy paranoia IMHO.
+
+What would be more useful than a journal of replicated results would be a journal of negative results.
+
+Paul Nelson:
+<blockquote><p>I'll ask Rick Sternberg if he's published anything critical of creationism.</p></blockquote></div></div>
+<div class="comment" id="comment-7459"><p class="comment-meta"><span class="comment-author">Gav</span> &middot; 15 September 2004</p><div class="comment-body"><p>Gary Hurd, remember also "Tuez-les tous. Dieu reconnaitra les siens!"</p><p>Why the German Holocaust though? Blaming religious fundamentalists for this makes no more sense than blaming poor old Darwin. Incidentally, can anyone explain why those supporters of eugenics who invoked "survival of the fittest" and advocated some very un-natural selection to effect this, couldn't see the inherent contradiction in what they were saying? Can't just be because they were bonkers; where would be the selective advantage in that?</p><p>Is it fair to bracket modern Christian fundamentalists with Al Quaeda, though? Unless you have evidence that they're in the same line of business, then it's naughty to imply that they are, even as a wind-up.</p><p>A Steve not a Bill - Journals of negative results - you mean this kind of thing http://www.jnrbm.com/home/ ? See also http://www.inpharma.com/news/news-NG.asp?id=52907 . Welcome news for anyone struggling with meta-analysis.</p></div></div>
+<div class="comment" id="comment-7460"><p class="comment-meta"><span class="comment-author">Great White Wonder</span> &middot; 15 September 2004</p><div class="comment-body"><blockquote><p>Incidentally, can anyone explain why those supporters of eugenics who invoked "survival of the fittest" and advocated some very un-natural selection to effect this, couldn't see the inherent contradiction in what they were saying? Can't just be because they were bonkers; where would be the selective advantage in that?</p></blockquote>
+
+There is no selective advantage to such bogus beliefs, as John Lennon made clear several decades ago.</div></div>
+<div class="comment" id="comment-7461"><p class="comment-meta"><span class="comment-author"><a href="http://medstat.med.utah.edu/kw/osteo/hurd/apage.htm" rel="nofollow">Gary Hurd</a></span> &middot; 15 September 2004</p><div class="comment-body"><p>There was a MontyPython skit about the Spanish Inquisition.  I was aping it for humor. It might have been better under the Social Darwinism topic.  I failed to be humorous, a too common experience.  However, all four instances I cite were, or are, the product of religious fanatics weilding secular power.  The Nazi anti-Semitic programs were well established in Lutheranism, and the Roman Church before and after Luther.</p><p>Any more should be take elsewhere.  My aplogies to Wesley for straying so far from the topic at hand.</p></div></div>
+<div class="comment" id="comment-7501"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkdesign.org" rel="nofollow">Nick</a></span> &middot; 17 September 2004</p><div class="comment-body">Thanks, Wes, for pointing out that Eldredge followed common practice and acknowledged previous source material for his book <i>Triumph of Evolution</i>:
+
+<blockquote><p>Portions of this text have been previously published in the author's The Monkey Business: A Scientist Looks at Creationism (Washington Square Press).</p></blockquote>
+
+With prior acknowledgement, you can copy from yourself as much as you want (acknowledgement ensures that publishers and readers have no misunderstanding).  So, strike 1 for the IDists in this thread.
+
+Paul Nelson gave it another stab:
+
+<blockquote><p>Wesley, I pulled some of Richard Lewontin's papers from my files.  "Sociobiology as an Adaptationist Program," Behavioral Science 24 (1979):5-14, and "Adaptation," Scientific American 239 (1978):212-230, have at least one long paragraph that is pretty much the same between the two publications.  
+
+I'm sure I could find other examples from the evolutionary literature.  But what's the point?  Lewontin (a hero of mine) wanted to put the same important information in front of two different audiences.  Big deal.  I agree with Andrea Bottaro: self-quoting may be an unseemly shortcut, in some instances, anyway; in others, it's not.  In either case, it's just not worth the alarums.</p><cite>— Paul Nelson</cite></blockquote>
+
+Perhaps it has been too obvious to point out, but <i>Scientific American</i> is a popular science magazine that often (usually, actually) publishes articles wherein scientists give popular presentations of their technical work.  So, strike 2.
+
+Anyone want another swing?
+
+There are some technical reasons why redundant publication is not a good thing (such as skewing statistical analyses in medicine where results from multiple papers are aggregated), but the one that's relevant here is simply that of artificially inflating the "peer-reviewed" publication count.  In 2003, <i>Nature</i> published an article, "<a href="http://www.nature.com/cgi-bin/doifinder.pl?URL=/doifinder/10.1038/421209a">Journals: redundant publications are bad news</a>," and therein they wrote,
+
+<blockquote><p>Duplicate publications are unethical. They waste the time of unpaid, busy peer reviewers and of editors; inflate further the already over-extensive scientific literature; waste valuable production resources and journal pages; lead to flawed meta-analysis; exaggerate the significance of a particular set of findings; distort the academic reward system and copyright laws; and bring into question the integrity of medical research. Republication of data yields no benefit other than to the authors.</p></blockquote>
+
+Notably, the Discovery Institute has been touting both Meyer 2004 and Meyer et al. 2003, as if they were independent "peer-reviewed" publications.  As Wesley pointed out in the opening post, Meyer is technically off the hook since <i>Darwinism, Design, and Public Education</i> is particularly dubiously "peer-reviewed" -- <a href="http://www.discovery.org/scripts/viewDB/index.php?program=News-CSC&amp;command=view&amp;id=1694">according to the DI advertisement</a>, by a philosopher of science, rhetoric (<i>rhetoric?!?</i>), and an "an Ivy-league professor of biological sciences" -- experts on the Cambrian all, I imagine.  But since both Meyer et al. 2003 and Meyer 2004 are touted loudly by the DI as "peer-reviewed" (<a href="http://www.discovery.org/scripts/viewDB/index.php?program=News-CSC&amp;command=view&amp;id=1694">here</a> and <a href="http://www.discovery.org/scripts/viewDB/index.php?command=view&amp;id=2193">here</a>, respectively), the IDists, at least, <i>should</i> be concerned.
+
+PS: Coincidentally, one of the reviewers of Meyer 2004 <a href="http://www.discovery.org/scripts/viewDB/index.php?command=view&amp;id=2193">is also described in the DI article as</a> a "biological disciplines" faculty member "at an Ivy League university."</div></div>
+<div class="comment" id="comment-7507"><p class="comment-meta"><span class="comment-author"><a href="http://www.discovery.org/csc" rel="nofollow">Paul A. Nelson</a></span> &middot; 17 September 2004</p><div class="comment-body">Nick wrote:
+
+<blockquote><p>Perhaps it has been too obvious to point out, but Scientific American is a popular science magazine that often (usually, actually) publishes articles wherein scientists give popular presentations of their technical work.</p></blockquote>
+
+Look at the dates (years) of the publications.  Lewontin's "popular" presentation (<i>Scientific American</i>) appeared first; the "technical" version (<i>Behavorial Science</i>) later.</div></div>
+<div class="comment" id="comment-7513"><p class="comment-meta"><span class="comment-author">Andrea Bottaro</span> &middot; 17 September 2004</p><div class="comment-body"><blockquote><p>Look at the dates (years) of the publications.  Lewontin's "popular" presentation (Scientific American) appeared first; the "technical" version (Behavorial Science) later.</p></blockquote>Actually, according to Pubmed the Behav Sci article appeared in the January issue of that journal, so it must have been submitted long before then.  
+The SciAm paper came out in September.  Giving possible allowance for longer peer review and editing of the Behav Sci paper than Sci Am's, I'd say it is likely they were written at the same time, or perhaps even that the Behav Sci paper was written first.  Do you have copies of the original papers, and do they show the submission date?
+</div></div>
+<div class="comment" id="comment-7523"><p class="comment-meta"><span class="comment-author">Randy</span> &middot; 17 September 2004</p><div class="comment-body"><p>Andrea,<br>the Behav Sci paper was submitted Sept. 1978, published as you said Jan 1979. so they were likely written around the same time.  Neither one claim to be original arguments, but rather true reviews of the field (as I saw it, but I did not read the Behav Sci paper carefully)</p><p>Given that both the Behav Sci paper and Sci Am paper are review articles and that both were likely commissioned (as most Sci Am articles are and many other review papers are as well), Paul is still mixing apples and oranges.  Comparing soliticed and unsolicted works in not valid</p><p>Secondly, no one calls Sci Am papers peer reviewed in the sense that we refer to original research papers.  Sci Am articles are simply ego strokes.</p><p>Thirdly, review articles are often commissioned on the same topic by many journals for editor's purpose of bringing the ideas to their readership.  No one would argue that they had two peer reviewed papers (as in signs of productivity) becuase they had two review articles published. Though one might point this out as evidence that you are well thought of in your discipline (and clearly Steve Meyer is well thought of as an ID bulldog)</p><p>and lastly,  even when one publishes multiple review articles, one does not say that they are publishing new and original thoughts and arguements with each review.  If one is making new and unique arguements, one might "lift" a paragraph or two from a previous report and rework it only slightly, but one should not simply 'reedit' a previous piece and submit it to a new journal as if it was a new piece.  At the very least (and maybe this did happen), the author should let the editors know of the previous piece and inform them that this work had been previously published, and this should be noted somewhere in the published paper (at least an acknowledgement to the first publishers for allowing the work to be republished.</p></div></div>
+<div class="comment" id="comment-7524"><p class="comment-meta"><span class="comment-author"><a href="http://www.dererumnatura.us/" rel="nofollow">Reed A. Cartwright</a></span> &middot; 17 September 2004</p><div class="comment-body"><p>And, of course, Lewontin could simply been wrong to publish two reviews on the same subject so close together.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

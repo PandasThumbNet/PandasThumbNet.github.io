@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapping fitness: landscapes, topographic maps, and Seattle — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Mapping fitness: landscapes, topographic maps, and Seattle</h1><p class="post-meta">Posted 20 November 2010 by <span class="post-author">Steve Matheson</span></p><div class="post-body"><div class="kw-format"><p>The concept of a "fitness landscape" is a fundamental idea in
+evolutionary biology, first introduced and established during the
+so-called "evolutionary synthesis" in the early 20<sup>th</sup>
+century. It was the great Sewall Wright who pictured adaptation as a
+"walk" through a landscape (pictured below), where the walking is done by variants
+(of an organism or a molecule) and the landscape is a theoretical
+representation of the relative fitness of the variants. (J.B.S.
+Haldane did similar work around the same time, but <a href="http://www.blackwellpublishing.com/ridley/classictexts/wright.asp" rel="external ">Wright's
+paper</a> is much better known perhaps because it's more accessible
+to non-experts. See <a href="http://www.pnas.org/content/107/suppl.1/1747.full" rel="external ">Carneiro
+and Hartl</a> in <em>PNAS </em>earlier this year for more.)</p>
+
+
+<p class="kw-img-center"><img src="http://pandasthumb.org/archives/2010/11/20/SewallWrightLandscape1932-300px.gif" alt="SewallWrightLandscape1932-300px.gif" width="300" height="220" style="float: right; margin: 0 0 20px 20px;" class="mt-image-right" /></p>
+
+<p>It's a simple concept, and a helpful one, though sometimes subject
+to over-interpretation. And it helps to frame some of the big
+questions in evolutionary genetics. One of those big questions is
+this one, stated somewhat simplistically: how do the variants
+navigate to fitness peaks, if there are fitness valleys that separate
+the peaks? (The ideas is that fitness is higher on the peaks, and so
+a population would be unlikely to descend from a local peak into a
+valley.) In other words, given a particular fitness landscape, what
+are the evolutionary trajectories by which variation can explore that
+landscape?</p>
+
+
+<p>Such a question calls out for an experiment. It would be so nice
+to be able to map fitness landscapes using hard data, so as to design
+and perform experiments on the navigation of adaptive walks.
+Specifically, this would facilitate an empirical examination of the
+genetic structure underlying the fitness landscape, and that's how a
+lot of the interesting questions about evolutionary exploration will
+be addressed. Of course, biologists have been working on this for a
+long time, and we've <a href="http://www.nature.com/nature/journal/v445/n7126/abs/nature05451.html">learned a lot about real fitness landscapes</a> over
+the decades. But detailed maps of such landscapes require detailed
+knowledge of the genetics of the landscape, and that has presented a
+significant technical challenge. Because of these technical
+limitations, examination of fitness landscapes have been either
+highly focused on very small landscapes (say, the fitness of a small
+number of variants) or have described the landscapes at very low
+resolution (by analyzing a tiny subset of the possible variants).</p>
+
+
+<p>It's worth taking some time to understand the problem before we
+look at how new techniques and approaches are changing the situation.</p>
+
+
+<p>Look at Wright's drawing. It looks like a <a href="http://en.wikipedia.org/wiki/Topographic_map" rel="external ">topographical
+(topo) map</a>, with dotted lines indicating parts of the landscape
+that represent equal fitness. And it looks smooth, like a topo map of
+rolling hills or dunes. The elevations represent fitness, but what do
+the lateral distances represent? They represent variation: more
+specifically, each point on the map represents one particular genetic
+variant. It doesn't matter whether we're talking about a whole genome
+navigating a complex fitness landscape or a single protein navigating
+a map of one specific function. Either way, each point on the map is
+a different variant. And, importantly, each point on the map is
+adjacent to many other points on the map, such that a tiny change (a
+single nucleotide change in a DNA sequence, for example) results in a
+step from one point to an adjacent point. This means that a map
+like Wright's is likely to depict the postulated fitness of enormous
+numbers of variants: even a seemingly simple map of the function of one molecule, in order to be a complete map, would have to account
+for millions of potential variants. (For example, an average-sized protein composed of 400 amino acids can be made 20<sup>400</sup> different
+ways.) Even if the map only seeks to account for the function of a
+small part of a protein, say, 10 amino acids, that's still 20<sup>10</sup>
+different possibilities. That's a lot of possibilities.</p>
+
+
+<p>And that's a problem for at least one reason. Wright's map shows a
+smooth landscape, in which changes in fitness happen in small
+increments as the variants diverge from each other. His map creates
+the impression that closely-related variants will differ only
+slightly in fitness from each other. But reality could be completely
+different in a given case. It could be that the real landscape is a
+crazy cacophony of varying fitnesses, with an aerial topography more
+like downtown Manhattan than like the dunes of West Michigan. And it
+could be a mixture of both: smoothly varying overall topography that
+arises from more dramatically varying local topography.</p>
+
+
+<p>To tackle such a problem, we would need to be able to measure the
+fitness of zillions of variants, in such a way as to be able to link
+the fitness measurement to the exact genetic makeup of each variant.
+In more technical terms, we need to describe/measure phenotypes of
+zillions of genotypes, and we need to know both the phenotype and the
+genotype of each of those zillions of variants. How can this be
+accomplished, or is it even possible?</p>
+
+
+<p>Three recent papers serve as excellent examples of how scientists
+are working on questions like this. One notable thing about the
+papers is, of course, the fact that they have tackled this seemingly
+intractable problem. Another is the technological advance
+(<a href="http://genome.cshlp.org/content/18/10/1638.abstract">next-generation DNA/RNA sequencing</a>) that largely explains the
+breakthrough success of two of the research groups. And another is
+the fact that all three labs are located in <a href="http://maps.google.com/maps?hl=en&amp;q=seattle&amp;ie=UTF8&amp;hq=&amp;hnear=Seattle,+King,+Washington&amp;gl=us&amp;ei=_0boTM66DYjNngeQ_OijDQ&amp;oi=geocode_result&amp;ved=0CC4Q8gEwAA&amp;t=h&amp;z=10">one particular
+metropolitan area</a>, an area that is home to an anti-scientific think
+tank that claims to be interested in the very same questions.</p>
+
+
+<p>We'll explore those three papers in three subsequent posts. But if
+you want to get started now, here are the articles to read:</p>
+
+
+<p><a href="http://www.pnas.org/content/107/3/1154" rel="external ">Optimization of
+DNA polymerase mutation rates during bacterial evolution</a>. Loh et
+al., <em>PNAS</em>.</p>
+
+
+<p><a href="http://www.nature.com/nmeth/journal/v7/n9/abs/nmeth.1492.html" rel="external ">High-resolution
+mapping of protein sequence-function relationships</a>. Fowler et
+al., <em>Nature Methods</em>.</p>
+
+
+<p><a href="http://www.sciencemag.org/content/330/6002/376.short" rel="external ">Rapid
+Construction of Empirical RNA Fitness Landscapes</a>. Pitt and
+Ferré-D'Amaré, <em>Science</em>.</p><p>(Cross-posted at <a href="http://sfmatheson.blogspot.com/2010/11/mapping-fitness-landscapes-topographic.html">Quintessence of Dust</a>.)</p>
+
+</div></div><section class="comments-section"><h2 class="comments-heading">59 Comments</h2>
+<div class="comment" id="comment-239103"><p class="comment-meta"><span class="comment-author">Olorin</span> &middot; 20 November 2010</p><div class="comment-body"><p>A topographical fitness map is smplistic.  Creationists look at ti and ask how evolutionary travels between the peaks when it must travel downward between them.</p><p>If we represent such a map more realistically in dozens or even hundreds of dimensions, there are no such things as "peaks" and "valleys."  (Ask a mathematician.)  For more than just a few dimensions, there is always a way to move upward in at least one dimension.</p><p>Secondly, the fitness landscape changes in time.  It is not only possible but likely that what is  now a peak will become a slope that leads upward toward a new peak, even in a few dimensions.</p><p>Representing a fitness landscape as a static 2-dimensional map is deceiving.</p></div></div>
+<div class="comment" id="comment-239104"><p class="comment-meta"><span class="comment-author">OgreMkV</span> &middot; 20 November 2010</p><div class="comment-body"><p>While agreeing with Olorin, I'll point out that at least two times that I'm aware of, experiments show that a mutation that reduces fitness ultimately led to a variation that was waaay more efficient than the original.</p><p>So, within that simplistic frame, a deleterious mutation can actually be useful, if it's required to 'traverse' to a higher peak on the fitness landscape.</p></div></div>
+<div class="comment" id="comment-239105"><p class="comment-meta"><span class="comment-author"><a href="http://www.talkingsquid.net" rel="nofollow">Chris Lawson</a></span> &middot; 20 November 2010</p><div class="comment-body"><p>My understanding of fitness landscapes is that in real life they change all the time -- finch beak length changing year-by-year as droughts or rains come in is a good example -- and also the process of adapting to the fitness landscape changes the landscape itself (e.g. foxes getting more efficient at hunting rabbits changes the population dynamics). I predict that this will be a fertile area of research for some time!</p></div></div>
+<div class="comment" id="comment-239106"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 20 November 2010</p><div class="comment-body"><p>Thanks for the references.  I found the first one particularly interesting.</p><p>It's great to know that creationists are finally getting around to doing real science and rigorously testing their, ... what?  Wait ... never mind.</p><p>Oh well, at least I'm sure they will read these papers with interest and ... what?  Wait, ... never mind again.</p></div></div>
+<div class="comment" id="comment-239107"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 20 November 2010</p><div class="comment-body"><p>Olorin is right that the landscape metaphor can be misleading when misused (intentionally or not), but wrong to suggest that it is inherently deceiving. Olorin should read the Carneiro & Hartl paper, especially the last paragraph. Heck, everyone should read that last paragraph (or, better, the whole paper) before wading into discussions of adaptive landscapes. Suffice it to say that Olorin's comments are accurate, but as criticisms of the metaphor or of the topic at hand, they are simplistic.</p></div></div>
+<div class="comment" id="comment-239109"><p class="comment-meta"><span class="comment-author"><a href="http://pandasthumb.org" rel="nofollow">RBH</a></span> &middot; 20 November 2010</p><div class="comment-body"><p>As a slightly off-topic comment, I love how the Carneiro and Hartl paper puts the lie to Dembksi's interminable invocation of evolution as random search in his recent stuff with Marks.</p></div></div>
+<div class="comment" id="comment-239110"><p class="comment-meta"><span class="comment-author">Doc Bill</span> &middot; 20 November 2010</p><div class="comment-body"><p>The (deliberate) misunderstanding of a fitness landscape, it appears to me, led Dembski to believe there was a Target (tm) out there that organisms strived to find.  Foolishness, but he wrote a book trying to prove that Fool's Gold point.  Of course, there is no target.</p><p>Furthermore, the landscape is dynamic, changing every moment.  To me it's more akin to an equilibrium where quantities that shift on one end of the equation affect products on the other, achieving balance.  Simplistic in the biological sense, I realize, but in concept I think the same.  Thus a local maximum or minimum might be OK, as opposed to one that is "better", but OK is good enough for today and hopefully there's a tomorrow.</p></div></div>
+<div class="comment" id="comment-239117"><p class="comment-meta"><span class="comment-author">John Kwok</span> &middot; 20 November 2010</p><div class="comment-body"><p>Great post Steve and am glad you are doing a fine job illustrating for most of the PT readership what is meant by an adaptive landscape. In the past I have used the topographic map analogy myself (appropriate since I have a background in geology), but I have rarely seen it presented in as lucid a manner as you have done.</p></div></div>
+<div class="comment" id="comment-239134"><p class="comment-meta"><span class="comment-author">Frank J</span> &middot; 21 November 2010</p><div class="comment-body"><blockquote>
+<strong>DS said:</strong>
+
+Thanks for the references.  I found the first one particularly interesting.  
+
+It's great to know that creationists are finally getting around to doing real science and rigorously testing their, ... what?  Wait ... never mind.  
+
+Oh well, at least I'm sure they will read these papers with interest and ... what?  Wait, ... never mind again.
+</blockquote>
+
+Not so fast on the last one. Some of them will read them to mine quotes.</div></div>
+<div class="comment" id="comment-239139"><p class="comment-meta"><span class="comment-author">JGB</span> &middot; 21 November 2010</p><div class="comment-body"><p>The Hartl paper gives the reference for Wright's biography.  I highly recommend it.  It fits perfectly well with other fascinating science biographies from the early 20th century.</p></div></div>
+<div class="comment" id="comment-239149"><p class="comment-meta"><span class="comment-author">Renee Jones</span> &middot; 21 November 2010</p><div class="comment-body"><p>All this fitness landscape stuff has the same problem as the fictional supply and demand curves in economics. You have to understand that fitness is a <i>vector</i> quantity, not a scalar. So, in reality, fitness maps <i>do not exist.</i> They are a scalar approximation to a vector valued function, and a very high-dimensional vector at that.</p><p>The truly amazing thing is that these fictions, so far from any reality, have any usefulness at all. But they are definitely fictions, so if one obtains any questionable results at all, one would be wise to abandon these results immediately in favor of facts.</p></div></div>
+<div class="comment" id="comment-239151"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 21 November 2010</p><div class="comment-body"><blockquote>
+<strong>Renee Jones said:</strong>
+
+All this fitness landscape stuff has the same problem as the fictional supply and demand curves in economics. You have to understand that fitness is a <i>vector</i> quantity, not a scalar. So, in reality, fitness maps <i>do not exist.</i> They are a scalar approximation to a vector valued function, and a very high-dimensional vector at that.
+
+The truly amazing thing is that these fictions, so far from any reality, have any usefulness at all. But they are definitely fictions, so if one obtains any questionable results at all, one would be wise to abandon these results immediately in favor of facts.
+</blockquote>
+
+I had the same thought.  In physics it would correspond to projecting multi-dimensional vectors onto one or two dimensions.
+
+It’s not clear in such a complex biological system, in which genotype and phenotype are involved, that one can find an orthogonal basis set.  Many vectors in such a system would not – in fact, could not - remain linearly independent at every stage in the evolution of such a system.
+
+Even worse, as the system evolves and other emergent phenomena come into play, such a basis set could not possibly span the same number of dimensions.  The dimensions of the space would most likely increase as the system became more complex.</div></div>
+<div class="comment" id="comment-239154"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 21 November 2010</p><div class="comment-body"><p>Mike and Renee, I suspect that Carneiro and Hartl had objections like yours in mind when they wrapped up their paper. They could have added something about the difference between "metaphor" and "fiction" but they might have thought that should be obvious.</p></div></div>
+<div class="comment" id="comment-239199"><p class="comment-meta"><span class="comment-author"><a href="http://dvunkannon.blogspot.com" rel="nofollow">David vun Kannon, FCD</a></span> &middot; 21 November 2010</p><div class="comment-body"><p>Steve, The question of the shape of evolutionary trajectories does not need to wait on our technical skill in biology to be investigated well. Genetic algorithms are evolution, just as much wet biology. Experiments with GA show these trajectories quite well, across all kinds of landscapes, including noisy, deceptive, and time-varying landscapes.</p></div></div>
+<div class="comment" id="comment-239213"><p class="comment-meta"><span class="comment-author">Dave Wisker</span> &middot; 22 November 2010</p><div class="comment-body"><p>I've always thought the analogy works better as a seascape than as a landscape. In fact, David Merrell published book a book on the concept in 1994: "The Adaptive Seascape"</p></div></div>
+<div class="comment" id="comment-239231"><p class="comment-meta"><span class="comment-author">John Kwok</span> &middot; 22 November 2010</p><div class="comment-body">I'd probably become too comfortable with Wright's concept of an adaptive landscape to view it only via the lens of a topographic map, but I think yours may be the better analogy simply for dealing better with rapid fluctuations in population size and dispersal:
+
+<blockquote>
+<strong>Dave Wisker said:</strong>
+
+I've always thought the analogy works better as a seascape than as a landscape. In fact, David Merrell published book a book on the concept in 1994: "The Adaptive Seascape" 
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-239235"><p class="comment-meta"><span class="comment-author"><a href="http://pleion.blogspot.com" rel="nofollow">Bjørn Østman</a></span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>You have to understand that fitness is a vector quantity, not a scalar. </blockquote>
+
+Right.... fitness is not a number, but a vector. That makes a lot of sense in... what way, exactly? But seriously, fitness is indeed a scalar that describes a single measure of reproductive fitness.
+
+<blockquote>If we represent such a map more realistically in dozens or even hundreds of dimensions, there are no such things as “peaks” and “valleys.” (Ask a mathematician.) For more than just a few dimensions, there is always a way to move upward in at least one dimension.</blockquote>
+
+What?! Utter BS. Whether a landscape contains peaks and valleys is not a function of the dimensionality, but of the amount of interaction between the dimensions (epistasis). Unless there is no epistasis whatsoever, the landscape will be epistatic, and there will be local and suboptimal peaks.
+
+As for fitness landscapes being metaphors... of course they are. They are models of reality, just like any other component of any other theory is.
+
+Forgive me for pointing to two of my own papers on the subject:
+
+<a href="http://arxiv.org/abs/0909.3506">Impact of Epistasis and Pleiotropy on Evolutionary Adaptation</a>
+
+<a href="http://arxiv.org/abs/1006.2908">Critical properties of complex fitness landscapes</a></div></div>
+<div class="comment" id="comment-239242"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 22 November 2010</p><div class="comment-body"><p>I'm seeing some statements I disagree with:</p><p>1. Steve Matheson, each point on the Wright diagram is not necessarily a different genotype, or even a different allele.  The diagram is vague, but usually adaptive surfaces are plotted against gene frequencies, so we have gene frequencies at two loci in a 2-dimensional diagram.</p><p>2. I agree with Bjorn &Oslash;stman contra Renee Jones that fitness is (in all usual models) a scalar number.</p><p>3. Also I agree with &Oslash;stman that Olorin is not justified in saying that there is always a way uphill if one is in high dimensions.   Just ask a biologist.</p><p>A story somewhat off these points: around 1980 I sent Sewall Wright a preprint of a paper defending one of his models against some criticism.   He sent back a reprint of the 1932 International Congress of Genetics paper (the one containing the figure in this posting).  I was astonished and was sure I must have received one of the last few precious reprints.   Later I heard of a student getting another one, and I got suspicious.  I asked Will Provine.  He said Wright proudly had that paper reprinted many times, and when Wright died will said there was a large stack of them remaining.</p><p>Of course all these models are oversimplifications, but they do help us to understand the messy reality.</p></div></div>
+<div class="comment" id="comment-239243"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 22 November 2010</p><div class="comment-body"><p>Oops, apologies to &ldquo;Bjorn&rdquo; who is really Bj&oslash;rn.</p></div></div>
+<div class="comment" id="comment-239245"><p class="comment-meta"><span class="comment-author">raven</span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>Creationists look at ti and ask how evolutionary travels between the peaks when it must travel downward between them.</blockquote>
+
+I asked that exact question once.
+
+There are several answers.  The population itself isn't a point.  It is a cloud hovering about the fitness peak.  All members of a population don't have the same genotype or phenotype.  Or stated in terms creationists can understand.  We humans all look different from each other and different from our parents and our children.
+
+The cloud is large enough that if the fitness peak shifts through time or another fitness peak arises, some members of the cloud will be able to reach it.
+
+Or it it isn't, well 8 out of 10 species end up going extinct without descendants.
+
+Another point is that the fitness landscape isn't stable through time.  It is constantly in a state of minor and major change.  We now know what happens to the fitness landscape when a 10 mile diameter asteroid hits the earth or an ice age happens. 
+</div></div>
+<div class="comment" id="comment-239251"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>
+<strong>Bjørn Østman said:</strong>
+
+<blockquote>You have to understand that fitness is a vector quantity, not a scalar. </blockquote>
+
+Right.... fitness is not a number, but a vector. That makes a lot of sense in... what way, exactly? But seriously, fitness is indeed a scalar that describes a single measure of reproductive fitness.
+
+<blockquote>If we represent such a map more realistically in dozens or even hundreds of dimensions, there are no such things as “peaks” and “valleys.” (Ask a mathematician.) For more than just a few dimensions, there is always a way to move upward in at least one dimension.</blockquote>
+
+What?! Utter BS. Whether a landscape contains peaks and valleys is not a function of the dimensionality, but of the amount of interaction between the dimensions (epistasis). Unless there is no epistasis whatsoever, the landscape will be epistatic, and there will be local and suboptimal peaks.
+
+As for fitness landscapes being metaphors... of course they are. They are models of reality, just like any other component of any other theory is.
+
+Forgive me for pointing to two of my own papers on the subject:
+
+<a href="http://arxiv.org/abs/0909.3506">Impact of Epistasis and Pleiotropy on Evolutionary Adaptation</a>
+
+<a href="http://arxiv.org/abs/1006.2908">Critical properties of complex fitness landscapes</a>
+</blockquote>
+
+I suspect that there are some language bridges that need to be built.  In physics, a thermodynamic system can be described by a state that is composed of a number of system conditions such as temperature, pressure, volume, number of particles, magnetization, etc.  But there are billions of underlying microstates contributing to the overall state of the macroscopic system, and there is a term called entropy that tells how many of these microstates are consistent with that macroscopic state.
+
+Quantum mechanical systems are described by state vectors composed of all the current values of the system variables.  Transitions among states are achieved by a matrix that operates on that vector producing another state (it’s basically linear algebra).
+
+What Renee Jones and I were thinking is that the fitness of an organism can be described by a set of specific values that describe the current state of the organism.  And yes, the organism sits in a local quasi-stable point in that multidimensional space just long enough to acquire a description as a specific organism (or state).
+
+But each of the components of the vector pointing to that state is influenced by many factors, including what is going on with other components (hence, my comment about the vectors not being a linearly independent set or not being able to span the space as the dimensionality increases with increasing complexity).
+
+
+From your abstract of “Critical properties of complex fitness landscapes”
+
+<blockquote><p>These networks undergo a percolation phase transition as a function of minimum peak height, which indicates that evolutionary trajectories that take no more than two mutations to shift from peak to peak can span the entire genetic space. These networks have implications for evolution in rugged landscapes, allowing adaptation to proceed after a local fitness peak has been ascended.</p></blockquote>
+
+Percolation is another term used in physics.  While one can picture specific examples of water seeping into sand and forming more and more dendritic pathways as it goes, more generally, it refers to a set of branching pathways conecting one state of a system to another.
+
+So in this case, one can either take the point of view that a number of separate states are evolving from a single state, or one can sum the probabilities of each pathway between states in order to derive the probability that a given state emerges from the first state.
+
+I’m not a biologist; but I am guessing that similar language and conceptual issues in modeling complex systems are occurring in this biology as have occurred in physics.
+</div></div>
+<div class="comment" id="comment-239260"><p class="comment-meta"><span class="comment-author"><a href="http://pleion.blogspot.com" rel="nofollow">Bjørn Østman</a></span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+What Renee Jones and I were thinking is that the fitness of an organism can be described by a set of specific values that describe the current state of the organism.  And yes, the organism sits in a local quasi-stable point in that multidimensional space just long enough to acquire a description as a specific organism (or state).</blockquote>
+
+If you really want to build bridges, please explain what you mean by "just long enough to acquire a description as a specific organism." 
+
+<blockquote>But each of the components of the vector pointing to that state is influenced by many factors, including what is going on with other components (hence, my comment about the vectors not being a linearly independent set or not being able to span the space as the dimensionality increases with increasing complexity).</blockquote>
+
+Hmm. What if I told you that temperature is really a vector, because the state of the system is determined by the interaction of many components? Makes about as little sense.
+
+<blockquote>Percolation is another term used in physics.  While one can picture specific examples of water seeping into sand and forming more and more dendritic pathways as it goes, more generally, it refers to a set of branching pathways conecting one state of a system to another.</blockquote>
+
+We did indeed borrow the concept from physics, of course. If you're interested, here's a paper about the similarity between evolutionary dynamics and thermodynamics: <a href="http://www.pnas.org/content/102/27/9541.full">The application of statistical physics to evolutionary biology</a>.
+
+</div></div>
+<div class="comment" id="comment-239271"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>
+<strong>Bjørn Østman said:</strong>
+
+<blockquote>
+<strong>Mike Elzinga said:</strong>
+
+What Renee Jones and I were thinking is that the fitness of an organism can be described by a set of specific values that describe the current state of the organism.
+</blockquote> 
+
+Hmm. What if I told you that temperature is really a vector, because the state of the system is determined by the interaction of many components? Makes about as little sense.
+</blockquote>
+
+Agree. Fitness is a scalar which is a function of all the variables that indicate the state of the organism.
+</div></div>
+<div class="comment" id="comment-239287"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>
+<strong>Bjørn Østman said:</strong>
+
+If you really want to build bridges, please explain what you mean by "just long enough to acquire a description as a specific organism." 
+
+</blockquote>
+
+Living systems are not the only kinds of systems that change through time.  But if one can specify a set of numbers that describe such a system at any given time, each of those numbers will be functions of time, and the collection of these numbers could be a vector that describes the current state of the system.  If the current state already has a familiar name, then the name gets attached to that vector (more likely to the length of that vector).
+
+The issue I and Rene were alluding to is whether or not living systems could be adequately analyzed in terms of such a set.  If so, then the “fitness landscape” consists of sets of identifiable vectors that correspond to a given organism, or protein, or whatever it is that constitutes a familiar description of the system. 
+
+<blockquote><p>Hmm. What if I told you that temperature is really a vector, because the state of the system is determined by the interaction of many components? Makes about as little sense.</p></blockquote>
+
+Temperature is a state variable; it is only one component of a set that describes the state of a system.  Others are pressure, volume, number of particles, or any of a number of other variables considered adequate enough to describe a system.
+
+Very often these variables are interconnected (e.g., <i>pV = nRT</i> for an ideal gas), so these wouldn’t necessarily form an independent basis set.  But a subset of these could be.
+
+On the other hand, the collection of microstates that are consistent with the macroscopic state of the system can be cast in the form of a set of basis vectors.  If each microstate is essentially independent of all others, they could be an orthonormal set.  And there would be many combinations of these that would add up to a vector whose <i>length</i> sweeps out a hypersurface corresponding to that given length (e.g., energy, which is a scalar quantity).
+
+Thus, what are referred to as hills in an adaptive landscape are surfaces of constant resultant length in this higher dimensional space.
+
+This game can be taken to a meta-level by having a collection of systems making up a larger system.  If this is going to be described in the kind of language used in linear algebra or quantum mechanics, then each element in the array of elements in the matrix that operates on the state function of such a system is itself a Hamiltonian.
+
+<blockquote><p>We did indeed borrow the concept from physics, of course. If you’re interested, here’s a paper about the similarity between evolutionary dynamics and thermodynamics: The application of statistical physics to evolutionary biology.</p></blockquote>
+
+ One of the problems I have seen over the years – and these have apparently contributed to assertions by creationists that there are some additional “top-down” laws directing the evolution of systems – is the linking of system variables in a way reminiscent of the kinds of interactions known in physics and chemistry.
+
+In physics and chemistry there is always some known Hamiltonian involving kinetic and potential energies related to the known forces in nature.  If one attempts to move beyond those known forces, one implicitly enters the realm of vitalism.  Better to acknowledge only a strong <i>correlation</i> which may or may not be linked to deeper physical/chemical processes.
+
+By the way, if I am remembering my history correctly, it was the biologists who taught physicists about stochastic variation in the presence of selection leads to much more rapid “solutions” in complex systems.
+
+
+<blockquote author="Joe Felsenstein"> Agree. Fitness is a scalar which is a function of all the variables that indicate the state of the organism.</blockquote>
+
+ Yes, it could be described as the <i>magnitude</i> of a resultant vector.  This is the same kind of usage found in quantum mechanics in which the magnitude of a vector has a physical meaning, but the components of that vector are subject to underlying physical states that change the length of the resultant through time under the action of some kind of Hamiltonian.
+</div></div>
+<div class="comment" id="comment-239290"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 22 November 2010</p><div class="comment-body"><blockquote>
+<strong>Bjørn Østman said:</strong>
+
+We did indeed borrow the concept from physics, of course. If you're interested, here's a paper about the similarity between evolutionary dynamics and thermodynamics: <a href="http://www.pnas.org/content/102/27/9541.full">The application of statistical physics to evolutionary biology</a>.
+
+
+</blockquote>
+
+I downloaded a copy of the paper.  Thank you for the reference.  It already looks quite interesting.
+
+I see that analogies to Hamiltonians are things like the probabilities of fixations.  This is indeed one of the ways to map a potential well in physics, so at least the phenomenological physics and chemistry are folded into what in statistical mechanics are referred to as partition functions.
+
+There is a corresponding Boltzmann factor <i>e<sup> - vi – x</sup></i> for the probability of a population being fixed with genotype <i>i</i> and an “additive fitness” <i>v</i> corresponding to energy <i>E</i>. 
+
+I understand the probabilities of fixation corresponding to potential energies; but I still don’t understand the validity of the analogy of “additive fitness” to energy (or the negative of energy, since fitness is supposed to be maximized).  That use of fitness seems more to me like an inverted potential well.
+
+As to the “Boltzmann factor” itself; in physics that comes from a thermodynamic system being in contact with a “heat bath.”  What is the corresponding analogy to a “heat bath” in fitness?
+</div></div>
+<div class="comment" id="comment-239332"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 23 November 2010</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+<blockquote author="Joe Felsenstein"> Agree. Fitness is a scalar which is a function of all the variables that indicate the state of the organism.</blockquote>
+
+ Yes, it could be described as the <i>magnitude</i> of a resultant vector.  This is the same kind of usage found in quantum mechanics in which the magnitude of a vector has a physical meaning, but the components of that vector are subject to underlying physical states that change the length of the resultant through time under the action of some kind of Hamiltonian.
+
+</blockquote>
+
+No.  The length of the vector which describes the system is not fitness.  All that physics is fine and good, but fitness is fitness.  It is defined in terms of expected numbers of offspring and probability of survival.
+
+Look, suppose you wrote a big description of the state of an automobile.  Is the speed of the car the length of that vector?  Of course not.
+</div></div>
+<div class="comment" id="comment-239347"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 23 November 2010</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+Look, suppose you wrote a big description of the state of an automobile.  Is the speed of the car the length of that vector?  Of course not.
+
+</blockquote>
+
+Yes, my use of the length of a vector having something to do with fitness is totally off the wall.  That was a bad use of the word on my part.  I seem to be getting too old to compose thoughts on an overfilled schedule.
+
+I do in fact understand the concept of fitness as being related to the expected number of offspring and survival. I was grasping for another idea and grabbed the word fitness inappropriately.
+
+I don’t know the biological term for the concept I was attempting to describe; but what I had in mind would correspond to a <i>state</i> in physics or chemistry.  I suppose phenotype comes close, but I had some notion that there was another term.
+
+Fitness perhaps corresponds to a concept of a physical system that gives it a higher probability of settling-in to changes in potential.  There are various terms from physics and engineering, such as <i>pliability</i>, <i>compliance</i>, <i>conductance</i>, etc. that reflect the fact that a system can easily reach an adjacent state from its current state. 
+
+Whether such changes are the result of a system being able to change its configuration or whether those changes can be passed on to surrogate systems - some of which contain the requisite changes in configurations - would not, I suspect, affect the overall idea. The ability to replicate replaces individual longevity and adaptability.
+
+Systems that are frozen into their lowest energy states have little capacity for change.  They have to exist near their melting temperatures in order to adjust.  But they cannot be completely melted because they have no identifiable characteristics or states at any given time.  And it is no coincidence that living organisms as we know them exist within the energy ranges of liquid water, i.e., near their own melting points.
+
+(Sorry about all this nerdy mucking around with this stuff; but it is interesting.  If I had a chance to come back in another life and choose another line of research, this would be an area I wouldn’t mind exploring.)
+</div></div>
+<div class="comment" id="comment-239367"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu" rel="nofollow">Joe Felsenstein</a></span> &middot; 23 November 2010</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+
+Fitness perhaps corresponds to a concept of a physical system that gives it a higher probability of settling-in to changes in potential.  There are various terms from physics and engineering, such as <i>pliability</i>, <i>compliance</i>, <i>conductance</i>, etc. that reflect the fact that a system can easily reach an adjacent state from its current state. 
+</blockquote>
+
+Well, one has to be cautious as the organism is a much higher-level entity than the individual molecules, as you know.  Consider two individuals with different genotypes.  Each has many molecules interacting and bouncing around (and out of) potential wells.  But there may be no easy correspondence between the molecular energy calculations and the fitness.   One individual might be of higher fitness because it was smaller than the other, and that might be just because there were more small food items around than larger ones.  I don't think that will be easy to predict from the molecular energy potentials.
+
+Of course, it is never a bad idea to <i>try</i> to connect these concepts.</div></div>
+<div class="comment" id="comment-239374"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 23 November 2010</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+ But there may be no easy correspondence between the molecular energy calculations and the fitness.   One individual might be of higher fitness because it was smaller than the other, and that might be just because there were more small food items around than larger ones.  I don't think that will be easy to predict from the molecular energy potentials.
+
+Of course, it is never a bad idea to <i>try</i> to connect these concepts.
+</blockquote>
+
+Yeah; this is why I didn’t think <i>phenotype</i> was right description I was reaching for.  Genotype and phenotype are tangled up together, and in any complex system, emergent phenomena may become the dominant factors in further evolution or perpetuation of the system.
+
+But the idea of meta-stable states goes back to potential wells in a more general sense.  If one observes any tendency of a system to remain in a somewhat stable configuration (meaning that it has a tendency to persist for a “significant” period of time), then we tend to see it as a system nestled in a local minimum that is a phenomenological manifestation of all the “forces” returning the system to this current configuration.
+
+Now forces in physics are derivatives (negative gradients) of potentials relative to spatial location.  But one can speak of “generalized forces” that are the gradients of some other parameter of the system.  These generalized forces and the parameters from which they are derived are usually called “conjugate pairs.”  Usually these find their way back to the more fundamental forces - i.e., they are not metaphorical - but most often it becomes easier and more instructive to speak of the more complex system in those terms.
+
+So I would expect that further development of the concepts of evolution could benefit from finding such conjugate pairs.  Since these are physical/chemical systems immersed in a temperature bath, I would suspect such pairs could be found once such systems are seen in a different perspective.
+
+If such pairs are found and tend to be fairly robust descriptions of living systems in general, then perhaps they could be linked to physics and chemistry more clearly.  There are many examples of these kinds of processes occurring in physics (superconductivity comes to mind most immediately).
+</div></div>
+<div class="comment" id="comment-239375"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 23 November 2010</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+But the idea of meta-stable states goes back to potential wells in a more general sense.  If one observes any tendency of a system to remain in a somewhat stable configuration (meaning that it has a tendency to persist for a “significant” period of time), then we tend to see it as a system nestled in a local minimum that is a phenomenological manifestation of all the “forces” returning the system to this current configuration.
+
+Now forces in physics are derivatives (negative gradients) of potentials relative to spatial location.  But one can speak of “generalized forces” that are the gradients of some other parameter of the system.  These generalized forces and the parameters from which they are derived are usually called “conjugate pairs.”  Usually these find their way back to the more fundamental forces - i.e., they are not metaphorical - but most often it becomes easier and more instructive to speak of the more complex system in those terms.
+
+So I would expect that further development of the concepts of evolution could benefit from finding such conjugate pairs.  Since these are physical/chemical systems immersed in a temperature bath, I would suspect such pairs could be found once such systems are seen in a different perspective.
+
+If such pairs are found and tend to be fairly robust descriptions of living systems in general, then perhaps they could be linked to physics and chemistry more clearly.  There are many examples of these kinds of processes occurring in physics (superconductivity comes to mind most immediately).
+
+</blockquote>
+
+Well, <i>maybe</i>.   Two frogs sit by a pond.  One does nothing as insects fly by.   The other is more reactive, when it sees an insect flying by, it flicks out its tongue and eats it.   The former is more stable.  The latter is better-fed.
+</div></div>
+<div class="comment" id="comment-239376"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 23 November 2010</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+Well, <i>maybe</i>.   Two frogs sit by a pond.  One does nothing as insects fly by.   The other is more reactive, when it sees an insect flying by, it flicks out its tongue and eats it.   The former is more stable.  The latter is better-fed.
+
+</blockquote>
+:-)
+
+LOL!</div></div>
+<div class="comment" id="comment-239407"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 24 November 2010</p><div class="comment-body">Joe Felsenstein, aka "The Resident Expert," wrote:
+<blockquote>Steve Matheson, each point on the Wright diagram is not necessarily a different genotype, or even a different allele. The diagram is vague, but usually adaptive surfaces are plotted against gene frequencies, so we have gene frequencies at two loci in a 2-dimensional diagram.</blockquote>
+Thanks for the clarification, Joe. I know that landscape diagrams like Wright's often depict population-level walks (speaking colloquially here), so that points on the landscape represent allele/gene frequencies in populations. I was hoping the general term "variants" and my deliberate focus on general applications of landscape metaphors would communicate the flexibility of the tool, especially since the work I will discuss does involve fitness/function of specific and individually identifiable identifiable variants. In any case, I'm glad you're peer-reviewing our work here; if nothing else it exhibits the kind of intellectual accountability we demand of creationist think tanks.</div></div>
+<div class="comment" id="comment-239423"><p class="comment-meta"><span class="comment-author">John Kwok</span> &middot; 24 November 2010</p><div class="comment-body">Joe isn't just "The Resident Expert". When I was in graduate school, I read papers authored (or co-authored) by him on molecular systematics. We are fortunate to have someone of his stature - based on his work in evolutionary genetics and molecular systematics - willing to devote time to online commentary here at Panda's Thumb:
+
+<blockquote>
+<strong>Steve Matheson said:</strong>
+
+Joe Felsenstein, aka "The Resident Expert," wrote:
+<blockquote>Steve Matheson, each point on the Wright diagram is not necessarily a different genotype, or even a different allele. The diagram is vague, but usually adaptive surfaces are plotted against gene frequencies, so we have gene frequencies at two loci in a 2-dimensional diagram.</blockquote>
+Thanks for the clarification, Joe. I know that landscape diagrams like Wright's often depict population-level walks (speaking colloquially here), so that points on the landscape represent allele/gene frequencies in populations. I was hoping the general term "variants" and my deliberate focus on general applications of landscape metaphors would communicate the flexibility of the tool, especially since the work I will discuss does involve fitness/function of specific and individually identifiable identifiable variants. In any case, I'm glad you're peer-reviewing our work here; if nothing else it exhibits the kind of intellectual accountability we demand of creationist think tanks.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-239428"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 24 November 2010</p><div class="comment-body"><blockquote>
+<strong>Steve Matheson said:</strong>
+
+In any case, I'm glad you're peer-reviewing our work here; if nothing else it exhibits the kind of intellectual accountability we demand of creationist think tanks.
+</blockquote>
+
+I’ll second that as well.
+
+People studying biological systems are taking on some of the most challenging problems in science. 
+
+As a physicist, I’ve looked at biology and felt intimidated; and I am sure many of my colleagues have felt the same way.  I became a physicist because physics was simple; and if you don’t remember specifics, all you have to do is follow a few simple rules to get to where you want to go.
+
+With the complex systems in biology, one has to know much more, keep track of many more interrelationships, and discern patterns that are far more subtle than those found in chemistry and physics.
+
+This may be one of the reasons – besides the problems fundamentalists have with evolution – that biology is so easy to attack.  A ruthless huckster can appear to be able to dispute so many different things because there is so much to know and so many details that require expertise that few people have.
+
+But even though biological systems are complex and intimidating, they are also an alluring challenge to understand in a more quantitative way.  I suppose a physicist’s hubris in thinking this can be done might be due to the simple-mindedness of physicists, but there have been enough successes with other complex systems and the increasing capabilities of computer modeling that it still seems like a reachable goal.
+
+Whether it’s naive hubris or simply the optimism of scientists in general, it is still a preferable state of mind than the state of mind that wants to declare it was done by some deity and we can stop wondering about it and submit.
+</div></div>
+<div class="comment" id="comment-239430"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 November 2010</p><div class="comment-body"><blockquote><p>With the complex systems in biology, one has to know much more, keep track of many more interrelationships, and discern patterns that are far more subtle than those found in chemistry and physics.</p></blockquote>
+Yep. 
+
+Physics: a few dozen fundamental particle types, with no persistent differences between particles of the same type. (And those can be grouped into families, in each of which the members differ only in mass and maybe some other variables, and those differences come in discrete amounts.)
+
+Chemistry: 118 elements (the count last time I checked), with only one mode of persistent difference between atoms of the same element. That one difference is the number of neutrons, which chemists can usually ignore. (Also the last several of those elements can be ignored by chemists also, since they're made by physicists, and then only one or a few atoms at a time, and those promptly decay.)
+
+Biology: millions of still living species, maybe a billion extinct ones, with considerable variability between individuals within the same species, and also a distinct blurring of the boundaries between closely related species. (Or is "distinct blurring" an oxymoron? :) )
+</div></div>
+<div class="comment" id="comment-239432"><p class="comment-meta"><span class="comment-author"><a href="http://sfmatheson.blogspot.com" rel="nofollow">Steve Matheson</a></span> &middot; 24 November 2010</p><div class="comment-body">John Kwok writes:
+<blockquote>Joe isn’t just “The Resident Expert”. When I was in graduate school, I read papers authored (or co-authored) by him on molecular systematics. We are fortunate to have someone of his stature - based on his work in evolutionary genetics and molecular systematics - willing to devote time to online commentary here at Panda’s Thumb.</blockquote>
+Well, that's precisely what I meant. I hope no one else thought that my dubbing him "The Resident Expert" was in any way sarcastic. You're right that we're lucky to have him hanging with us.</div></div>
+<div class="comment" id="comment-239435"><p class="comment-meta"><span class="comment-author">John Kwok</span> &middot; 24 November 2010</p><div class="comment-body">I knew you were kidding, but there are those reading this thread who may not know that Joe Felsenstein is among our most prominent evolutionary biologists, and he is prominent for the very reasons I have stated:
+
+<blockquote>
+<strong>Steve Matheson said:</strong>
+
+John Kwok writes:
+<blockquote>Joe isn’t just “The Resident Expert”. When I was in graduate school, I read papers authored (or co-authored) by him on molecular systematics. We are fortunate to have someone of his stature - based on his work in evolutionary genetics and molecular systematics - willing to devote time to online commentary here at Panda’s Thumb.</blockquote>
+Well, that's precisely what I meant. I hope no one else thought that my dubbing him "The Resident Expert" was in any way sarcastic. You're right that we're lucky to have him hanging with us.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-239454"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 25 November 2010</p><div class="comment-body"><p>Thanks, folks, flattery will get you everywhere.</p><p>Let me clarify a little about adaptive topographies. Actually, as Steve Matheson implies, they do vary somewhat in their meaning. Here are three versions:</p><p>1. Mean fitness plotted as a function of gene frequency, usually one axis per locus.</p><p>2. Mean fitness plotted as a function of mean phenotype, where there is one character per axis, with the character varying because of variation at many loci, and implicitly the variances of the characters not changing as their population means change.</p><p>3. In some of Sewall Wright's mid-1930s papers, he makes a sort of lattice, with a vertical dimension that is fitness, and the points individual genotypes. Not explicitly an adaptive surface but close.</p><p>It's a good teaching metaphor, but you have to watch out. The first one ignores linkage disequilibrium, implicitly. The second doesn't convey whether the characters covary within the population, though they might. The third is not really continuous in space, and the population does not necessarily climb it.</p></div></div>
+<div class="comment" id="comment-239458"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 25 November 2010</p><div class="comment-body"><p>I have a (quite probably) dumb question.</p><p>How does one determine the “closeness” of two genotypes or phenotypes independently of fitness?  In other words, if fitness comes far down a chain of events after a change in genotype, how would one know without knowing fitness where to place a genotype – or even a phenotype, for that matter – on a horizontal axis?</p><p>I can see taking a genotype that is known to have a high fitness as the location of a fitness peak, but how does one know where to place other genotypes on such a landscape without knowing their fitness ahead of time?</p><p>Or is the point to use fitness to map the closeness of genotypes or phenotypes?</p></div></div>
+<div class="comment" id="comment-239460"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 25 November 2010</p><div class="comment-body"><blockquote>
+<strong>Mike Elzinga said:</strong>
+How does one determine the “closeness” of two genotypes or phenotypes independently of fitness?  In other words, if fitness comes far down a chain of events after a change in genotype, how would one know without knowing fitness where to place a genotype – or even a phenotype, for that matter – on a horizontal axis?
+
+I can see taking a genotype that is known to have a high fitness as the location of a fitness peak, but how does one know where to place other genotypes on such a landscape without knowing their fitness ahead of time?
+
+Or is the point to use fitness to map the closeness of genotypes or phenotypes?
+</blockquote>
+
+For the case with gene frequencies as the scale on the axis, the populations that are all one allele (say all the <i>aa</i> genotype) are at one end of the scale, at 0, and the population with all <i>AA</i> at the other end, at 1.  Anywhere in between is a frequency <i>p</i> of the <i>A</i> allele which gives the usual Hardy-Weinberg frequencies of  <i>p<sup>2</sup></i> of <i>AA</i>, <i>2p(1-p)</i> of <i>Aa</i>, and <i>(1-p)<sup>2</sup></i> of <i>aa</i>, and that mixture of genotypes corresponds to being a fraction <i>p</i> of the way from 0 to 1.
+
+For the lattice of genotypes, those differing only at one copy of the gene at only one locus are connected.</div></div>
+<div class="comment" id="comment-239544"><p class="comment-meta"><span class="comment-author">Arlin</span> &middot; 26 November 2010</p><div class="comment-body"><p>Whether the dimensions of a "landscape" are genotypes or allele frequencies is profoundly important and signals deep and unresolved issues in evolutionary thinking.  If the dimensions are allele frequencies, then movement on the "landscape" poses no problems and makes perfect sense: it is movement of a population by changes in its allelic frequencies.   In a population of size N, the smallest shift is 1 part in N.  If N is large, these are infinitesimal shifts.  A shift in any direction can be accomplished simply by changing the numbers of individuals with each type of allele.  It is also evident that any of the population-genetic "forces" (selection, drift, mutation, migration) in principle, could cause any conceivable shift.</p><p>In other words, the metaphor is coherent and relevant with respect to a particular way of looking at change and the "forces" that cause it.</p><p>Bringing in the idea of new mutations, and discrete "genotype" dimensions, confuses things in a way that the metaphor simply cannot survive.  It was designed for a different way of thinking about evolution that has gone down the memory hole.</p><p>What was that way of thinking?  In a paper in 1996, Patrick Philips wrote about "phase 0" of the shifting balance process.  He called it "phase 0" because it represents a prior stage that Wright had not included.  Phase 0 consists of waiting for a new mutation.  Wright did not include this phase because, in his view, it was not important to understand the dynamics of evolution.</p><p>The architects of the Modern Synthesis simply did not think of evolution as a process of the random occurrence of a new mutation, followed by its acceptance or rejection (by selection and drift in combination).  This would have made them "mutationists" like TH Morgan.  Morgan's view was reasonable, but the architects of the Modern Synthesis deliberately rejected it as  contrary to their Darwinian beliefs.  They believed each species has a "gene pool" that automagically provides abundant infinitesimal variation, so that "selection" never has to "wait for a new mutation".  On this basis, they redefined "evolution" to mean "shifting gene frequencies", the way it is defined implicitly by Wright's metaphor.  I have provided extensive documentary evidence of this theory in Stoltzfus, 2006 (Evol & Dev paper).</p><p>Mutationism re-entered evolutionary thinking with studies on molecular evolution.  Evolutionary theory has not come to grips with its implications.  This is a case in point.</p><p>Arlin</p></div></div>
+<div class="comment" id="comment-239545"><p class="comment-meta"><span class="comment-author">Arlin</span> &middot; 26 November 2010</p><div class="comment-body"><p>(correction) smallest shift is 1 part in N for haploids, or 1 part in 2N for diploids.  Please pardon my prokaryotic bias.</p><p>arlin</p></div></div>
+<div class="comment" id="comment-239552"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote>
+<strong>Arlin said:</strong>
+
+Whether the dimensions of a "landscape" are genotypes or allele frequencies is profoundly important and signals deep and unresolved issues in evolutionary thinking.  Arlin
+</blockquote>
+
+It may be more than just shifts in perspective by researchers in the biological community.  There has been an enormous campaign of misinformation and misconceptions propagated by ID/creationists for nearly 50 years now.
+
+Those of us outside any particular specialty are bound to be confused by all the memes about evolution propagating in the public square.
+
+I am intimately familiar with this kind of misinformation being spread about topics in my own areas of expertise; and we have had some discussions about this on other threads.
+
+And, since I am not as familiar with all of the nuances in thinking about evolution that have taken place within the biology, I can understand what it feels like to be confused by the additional misinformation and misconceptions spread by ID/creationists.  These people have done far more damage to public perceptions of science across the board than is evident to specialists in any given area of science.  It is relatively easy to see why when one considers that there are at least three well-funded organizations that have been playing this misinformation game intensively for this many years.
+
+This is why I really like these kinds of discussions where those of us who don’t have expertise in a particular area can ask stupid questions of experts who not only know the jargon, but who also know the history.  One can’t take an entire set of courses in any particular science here; but at least we can be pointed in the right directions.
+</div></div>
+<div class="comment" id="comment-239562"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 26 November 2010</p><div class="comment-body"><blockquote>
+<strong>Arlin Stolzfus said:</strong>
+
+Whether the dimensions of a "landscape" are genotypes or allele frequencies is profoundly important and signals deep and unresolved issues in evolutionary thinking. 
+
+...
+
+Bringing in the idea of new mutations, and discrete "genotype" dimensions, confuses things in a way that the metaphor simply cannot survive.  It was designed for a different way of thinking about evolution that has gone down the memory hole.   
+</blockquote>
+
+I should note that the diagram with genotypes as points, and connections between those that differ by one allele, and with a vertical dimension of fitness, is not new.  Sewall Wright made such a diagram in one of his mid-1930s papers (they are in Journal of Genetics which I cannot access on line).  He also republished the diagram in his 1968 first volume (I think) of his 4-volume brain dump.  (This is not a disparaging description -- the NSF supported the publication of that series of volumes precisely so we would have a Sewall Wright brain-dump for posterity).
+
+<blockquote>
+<b>Arlin also said:</b>
+
+What was that way of thinking?  In a paper in 1996, Patrick Philips wrote about "phase 0" of the shifting balance process.  He called it "phase 0" because it represents a prior stage that Wright had not included.  Phase 0 consists of waiting for a new mutation.  Wright did not include this phase because, in his view, it was not important to understand the dynamics of evolution.  
+
+...
+
+Mutationism re-entered evolutionary thinking with studies on molecular evolution.  Evolutionary theory has not come to grips with its implications.  This is a case in point.  
+</blockquote>
+
+Arlin is one of the main modern proponents of mutationism -- add Masatoshi Nei to that list.   Rather than try to settle the whole issue, I just want to point out that among the issues are:
+
+1. How often the organism is &ldquo;waiting for a new mutation&rdquo; as opposed to using variation that is already present.
+
+2. To what extent the accidental presence or absence of particular alleles as a result of the mutation process biases the outcome.
+
+3. Whether giving mutation a much more prominent role is a sufficiently large change to describe it as invalidating the Modern Synthesis.
+
+4. To what extent these modern mutationist views are or are not the same as the mutationism of people like Bateson.
+
+The one thing I think (and hope) that the modern mutationists would disavow is the idea that natural selection then plays an insignificant role in explaining how organisms can be so well adapted. 
+</div></div>
+<div class="comment" id="comment-239565"><p class="comment-meta"><span class="comment-author">Arlin</span> &middot; 26 November 2010</p><div class="comment-body"><p>I agree that this is a good synopsis of some key issues.</p><p>Another issue, relevant to the "landscape" discussion, has to do with "forces".  According to the textbooks, evolutionary theory is a theory of population-genetic "forces", and (according to philosophers, at least) this is what makes modern evolutionary theory so rigorous.</p><p>This conception of forces depends on the idea of a common currency of causation.  In physics, the common currency is the capacity to displace a particle in space over time.  Various forces can do this.  This puts them all on the same playing field.  Even though each force is distinct, their instantaneous effects on a particle can be combined and separated.  We can compare them directly and quantitatively-- which one is stronger or weaker in a given case, how each force affects a trajectory.</p><p>The "forces" conception in the Modern Synthesis is similar, but the common currency is the capacity to shift an allele frequency.  Evolution is "shifting gene frequencies", so anything that can "shift frequencies" is an "evolutionary force".  This is what puts all the "forces" in the same role and allows questions about comparing and combining forces.</p><p>The rub is that mutation is the only process that can shift an allele frequency from 0 to 1/N (1/2N for diploids).  This was not a problem in the Modern Synthesis, because new mutations weren't important-- in the MS, "evolution" is defined as "shifting gene frequencies" in the "gene pool", which supplies abundant variation in all directions.  The common playing field for the forces of "evolution" is the domain of frequencies between 1/N and 1, like in the original Wrightian landscape.</p><p>Once one recognizes the importance of new mutations in evolution, this "forces" conception becomes inadequate.</p><p>Arlin</p></div></div>
+<div class="comment" id="comment-239568"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote>
+<strong>Arlin said:</strong>
+
+
+Another issue, relevant to the "landscape" discussion, has to do with "forces".  According to the textbooks, evolutionary theory is a theory of population-genetic "forces", and (according to philosophers, at least) this is what makes modern evolutionary theory so rigorous. 
+
+Arlin
+</blockquote>
+
+It is this kind of vocabulary that makes it hard for laypersons and non-experts to zero in on how concepts are being used in biology.  I see the same issues in vocabulary and the use of metaphorical ideas in popularizations of physics.
+
+From a physicist’s perspective, any physical system is subject to “forces”, or more appropriately, particle interactions.  The general concept of accessible states in used to describe situations in which energy distributions, and often spatial configurations, are possible as a result of those interactions.  There is a tendency in popularizations and metaphorical descriptions to forget about particle interactions because they are implicitly assumed to be occurring.
+
+When new available states open up as a result of changes in the environment in which the system resides, particle interactions continue to populate these newly accessible states with whatever probability distributions apply to the system and its environment.  If the system becomes completely isolated (no exchanges of matter and energy with the environment), then eventually all of those system states become equally probable.
+
+With systems immersed in a background heat bath, depending on the relative magnitudes of <i>kT</i> relative to the various binding energies of system constituents, there can be a distribution of energy states as well as energy driven processes that are coordinated because of particle interactions.  Take away the heat bath, and these activities eventually cease and the system settles into whatever accessible states are available.
+
+One can arrive at the same kinds of conclusions using concepts in physics as those arrived at in biology with the concepts of variation and selection.
+
+I think most physicists would prefer that the use of ideas like “forces” be more closely related to or derivable from the more fundamental concept of forces in physics.  This was the point I was offering when speaking of conjugate pairs of variables in which one was a (spatial) derivative of the other.  If there <i>are</i> such concepts in biological systems – and presuming they are robust descriptions of real phenomena – then one would expect that these would eventually find linkages to more basic concepts in physics and chemistry (e.g., analogous to Le Chatellier’s principle in chemistry). 
+
+I am a non-expert in evolution who is frequently confused by the uses of “fitness” as a description of a population.  There are times when it seems analogous to a potential well (e.g., that paper referred to earlier by Østman) and when it seems like a rate of flow.
+
+Biology has suffered more abuse at the hands of ID/creationists than has physics and chemistry.  Given how badly they have screwed up basic physics, the situation is more complicated for biology where there are more complex ideas that have to be understood.
+
+I think this is partly the reason ID/creationists like to attack biology more than physics.  In physics it is much easier to shoot them down.
+</div></div>
+<div class="comment" id="comment-239570"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote><p>I think this is partly the reason ID/creationists like to attack biology more than physics. In physics it is much easier to shoot them down. </p></blockquote>Don't kid yourself. Poe's Law doesn't exist for nothing. If physics directly conflicted with the foundation of their faith, they'd be jumping up and down about not just thermodynamics but everything else imaginable (and some you'd never have dreamed of).
+
+And as you're aware, they often say things about biology that are so obviously wrong that even the simplest non-biologist can see it. Doesn't deter them a bit. Faith provides one model, facts provide another - and the faith model is the only one against which any claim is compared.
+
+</div></div>
+<div class="comment" id="comment-239572"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote><p>If physics directly conflicted with the foundation of their faith, they’d be jumping up and down</p></blockquote>
+radiometric dating?</div></div>
+<div class="comment" id="comment-239573"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote>
+<strong>Henry J said:</strong>
+
+<blockquote><p>If physics directly conflicted with the foundation of their faith, they’d be jumping up and down</p></blockquote>
+radiometric dating?
+</blockquote>
+
+And <a href="http://www.answersingenesis.org/contents/379/arj/v3/anisotropic_synchrony_convention.pdf">relativity.</a></div></div>
+<div class="comment" id="comment-239574"><p class="comment-meta"><span class="comment-author">Mike Elzinga</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote>
+<strong>Flint said:</strong>
+
+And as you're aware, they often say things about biology that are so obviously wrong that even the simplest non-biologist can see it. Doesn't deter them a bit. Faith provides one model, facts provide another - and the faith model is the only one against which any claim is compared.
+
+
+</blockquote>
+
+I think it is easier to get away with bluff and bluster in biology (also geology and paleontology) because biology is intrinsically a more complex field filled with empirical observations and relationships that have not found their way back to solid <i>mathematical</i> theories as is the case with physics.
+
+In biology and geology there are more details one has to be aware of that can become the grist for mud-wrestling on the part of ID/creationists.  It’s not that these details are any less rigorous or scientific than details in physics; it’s that they require descriptions that make use of concepts that are more efficiently expressed in words than in a mathematical theoretical structure.  And ID/creationists love word-gaming; it comes naturally to them from their sectarian upbringing.
+
+ It is not as easy to get away with this in physics because the link to the fundamental and mathematical theoretical structure is far, far shorter.  If an ID/creationist wants to attempt to bullshit about some fact in physics, the inconsistency in such an attack will immediately be linked to a large web of other facts by that fundamental theoretical foundation.
+
+I suspect that the reason Morris and Gish got away with their “thermodynamics” argument for so long is because early on physicists tended to stay out of the war thinking it was the biologist’s fight.  And that was also partly because physicists didn’t understand enough biology to make any significant contributions anyway.  I remember discussions with my physics colleagues; and looking back, I think we thought the whole issue was too silly and not worth the effort. This was not exactly a proud moment on our part.  It wasn’t until some famous court cases and the alarm raised in such forums as <i>Science</i> that physicists started recognizing more was at stake.  By then, Morris’s “thermodynamics” memes were up and running and physicists were playing catch-up.
+</div></div>
+<div class="comment" id="comment-239578"><p class="comment-meta"><span class="comment-author">Flint</span> &middot; 26 November 2010</p><div class="comment-body"><blockquote><p>biology is intrinsically a more complex field filled with empirical observations and relationships that have not found their way back to solid mathematical theories as is the case with physics.</p></blockquote>I understand what you're saying, and I think you have a good point. But as we've noted, there are more than just the silly thermodynamics arguments. Some otherwise sensible people continue to misunderstand probabilities, a misunderstanding on which Guillermo Gonzalez makes his living. The consistent argument that "the odds are simply to big" to explain this or that event isn't really a biological argument. I call it the "every bridge hand is a miracle" argument, and you see it all the time.
+
+And I don't think the inability to understand scaffolding is inherently biological either. Nor are feedback mechanisms intrinsically biological.
+
+But I certainly agree with you about the word games. I think such games are built into magical systems - you have to get the incantations right. If you keep losing in court, it CAN'T be on the merits, it must be because you didn't phrase things right, or because you used the wrong codewords.
+
+</div></div>
+<div class="comment" id="comment-239581"><p class="comment-meta"><span class="comment-author"><a href="http://evolution.gs.washington.edu/felsenstein.html" rel="nofollow">Joe Felsenstein</a></span> &middot; 27 November 2010</p><div class="comment-body"><p>Arlin --</p><p>Perhaps this is exactly what you have been saying about the adaptive topographies, but it strikes me that the one that connects genotypes has a natural role in a mutationist approach.   If we assume (for the sake of simplicity) that fitnesses of heterozygotes are somewhere in between those of the corresponding homozygotes, and we consider only the homozygotes (and hence only the haplotypes, in effect) we can have a diagram that has fully homozygous genotypes, connected whenever a single locus changes from homozygosity for one allele to homozygosity for another.</p><p>Thus we would connect   <i>AABBccDD</i> with <i>AAbbccDD</i> but not directly with <i>aaBBccdd</i>, which would be two steps away.  Each time a population makes a substitution (such as, here, of <i>b</i> for <i>B</i>) it would make one move in that graph.  The vertical dimension would be fitness and that would show whether each move climbed uphill.   That seems to be a natural structure for a mutationist approach.</p></div></div>
+<div class="comment" id="comment-239583"><p class="comment-meta"><span class="comment-author">Arlin</span> &middot; 27 November 2010</p><div class="comment-body"><p>Joe--</p><p>In general, yes.  If we have a discretized "space" like "sequence space" or "genotype space", we may as well think of it as a graph in which nodes are possible states of the evolving system, and edges are evolutionary changes.</p><p>My earlier point-- and I suspect we have moved beyond this already-- is that this breaks the "landscape" metaphor.  The mojo of the "moving on a landscape" metaphor depends on the fact that space is continuous and homogeneous, so that a movement of distance d is possible for any value of d, and a movement of d from point (x,y) is (in some sense) equivalent to that from (x',y').  When I take a walk, I can take a small step or a big step, and I will go just as far regardless of the direction I choose.  This remains true (in a sense) on a Wrightian landscape of allele frequencies  (its all a matter of adding and removing some numbers of individuals with certain genotypes), but not on a landscape of genotypes.</p><p>In any case, getting back to Joe's model, evolution will trace a path through the graph, based on events of evolutionary change that move the system from one node to another.  I don't agree that its very helpful to say that changes via a double mutation are impossible-- they simply occur at a lower rate.  But that's a separate issue.</p><p>Whether or not this is a mutationist view depends on how we treat the rates or probabilities of movements between nodes.  I've never seen anyone try to work this out for a neo-Darwinian view, where "selection" and "chance" determine outcomes, within what is allowed by "constraints".</p><p>But for a (simplified) mutationist view, we could just render these probabilities based on a mutation-fixation process with a rate of the form u * N * Prob_fixation.  I've used this conception before in simulations of adaptation.  Its also the basis for the "mutational landscape" model used in the parallel evolution study by Rokyta, et al, hailed by Bull & Otto (http://www.nature.com/ng/journal/v37/n4/full/ng0405-342.html) as "the first empirical test of an evolutionary theory".</p><p>Arlin</p></div></div>
+<div class="comment" id="comment-239584"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 27 November 2010</p><div class="comment-body"><p>As has been pointed out elsewhere on PT, I don't think that the complexity of biology or geology wrt physics is the main difficulty that makes them amenable to attack. Rather, it is time. You can "do" physics in a high school science lab. You can see the changes to physical systems in "real time" (ie, "human time"). You can't "do" biology or geology in "real time". You can sample the current state of a small point in the system, but you can't "see" the changes in the system over geologic time. More than the complexity, that seems to be a more fundamental psychological barrier to comprehension.</p></div></div>
+<div class="comment" id="comment-239585"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 27 November 2010</p><div class="comment-body"><p>Please forgive the naive question. I'm no expert in either physics or biology, and didn't do well in statistics. But this is the first I've heard of a "mutationist", as a concept distinct from the Modern Synthesis (MS).</p><p>If I understand what you're saying, the MS describes selection "pressures" that operate on an existing (perhaps fixed?) set of variations within a population, whereas a Mutationist would want to include in that description the change over time of the set of available mutations within the population. Is that (very roughly) the distinction being described?</p><p>(BTW, I much prefer such discussions where I'm just barely able to keep up, to those typical troll-lead PT "discussions". There's only a small, finite amount that one can learn from a one-dimensional point of view. :-)  Thanks.)</p></div></div>
+<div class="comment" id="comment-239662"><p class="comment-meta"><span class="comment-author">Arlin</span> &middot; 28 November 2010</p><div class="comment-body"><p>Its not a naive question.  The distinction of fixtation-of-new-mutations vs. shifting gene frequencies is a good start.  The architects of the MS said very clearly that evolution works in the latter way and not in the former, even though they could not possibly have known that for certain.</p><p>But ultimately its more complex than that.  Indeed, why would the architects of the MS advocate a position they could not prove?  The answer is that they were committed Darwinians.  The MS represents a set of discretionary Darwinian doctrines-- discretionary in the sense of not being required by the facts.  In my analysis of original sources (your mileage may vary), the doctrines that distinguish mutationism from the MS relate to discontinuity, creativity, direction, and initiative.  For instance, the mutationists said that evolutionary change was *initiated* by a new mutation, where the MS architects said that it was *initiated* by a change in environment that brings on selection of available variation at many loci.  This idea of initiative affects one's views on whether the dynamics of evolution are determined externally or (at least partly) internally.</p><p>What some might find more contentious (assuming that anyone is paying attention) is my argument that these doctrines remain deeply entrenched in evolutionary thinking, in ways that experts have not yet learned to recognize, and in ways that we need to change in order to move ahead.</p><p>For instance, "forces" are an example.  The results from the work by Rokyta, et al  that I cited above reveal an excess of parallel evolution that is readily understandable as an effect of a mutational bias in the origin of new alleles.  But this same effect cannot be understood in terms of classic "forces".</p><p>You won't find any knowledgeable evolutionary geneticist who would dismiss the study by Rokyta, et al.</p><p>But at the same time, there has been no deep thought about how this study challenges prevailing concepts. What we tend to get in response to such results are IMHO very silly and unsatisfactory invocations of "contingency" or "chance".  Several authors absurdly refer to the underlying mutationist models as models of "Darwinian" adaptation.</p><p>So, in spite of cutting-edge research published in a top journal that-- if anyone bothered to think it through-- would undercut the "forces" view, you are still going to be taught the "forces" view in your next evolutionary genetics class.  You will learn to talk about selection as though it were the creative principle in evolution, because the language for talking about mutation as a creative principle has not been invented.</p><p>In a nutshell, this is the current situation: superficially, the evolution community accepts mutationist models of adaptation while referring to them as "Darwinian".  But this has had no impact on evolutionary theory, because evolutionist have been lulled by the belief that the MS somehow covers everything.  I honestly do not know the extent to which evolutionists truly are devoted to Darwinian doctrines.  I know some who aren't devoted to these doctrines, but that continue to use a language of causation designed for a view that they do not accept.  All of which is holding us back (IMHO).</p><p>sorry for writing such a long post.</p><p>Arlin</p></div></div>
+<div class="comment" id="comment-239674"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 28 November 2010</p><div class="comment-body"><p>Arlin, I appreciate your response.  I'm not a biologist, but it seems your description hinges on the definition of "evolutionary change".</p><p>Mutations happen.  Some more, some less.  Some have a "noticeable" effect on the organism, some don't.  If a mutation has no noticeable effect on the organism, has there been an "evolutionary change"?  I imagine that some mutations are reversible, such as most point-mutations.  If such a mutation happens, and is later "reversed" or even "corrected", have two "evolutionary changes" occurred?</p><p>As for "selection", my limited understanding is that "selection" is based on environmental factors, typically external to the organism.  "Selection" can only select from a set of alleles; the set of alleles that exist at the time the "selection" is made.  This is, of course, a simplification, as the "selection" process happens over time in a population, and (through mutation) the set of alleles also varies over time in that population, possibly (even likely) in response to the "selection" process itself.  I imagine squeezing on a liquid filled balloon (the simpler model), but where the elasticity of the balloon and the malleability of its contents can vary over time, possibly even in response to being squeezed (the more complex, time-varying model), something like non-Newtonian fluids.</p><p>Is that sort of what you're getting at wrt fixation-of-new-mutations vs. shifting gene frequencies?  From what little I understand, it seems that the "fixation" of new mutations is a specific "path" (if you will) or set of "paths" within a larger space of gene frequencies that are shifting over time.  For "evolutionary change" to occur, a mutation has to become stable within the flow of shifting gene frequencies.  In terms of transient changes, the mutation at least has to remain stable long enough to have some influence on the flow of gene frequencies.  (One transient change enabling another, etc)</p><p>How does one view preclude the other?  Or rather, how does one view obscure important considerations that the other does not?</p><p>Thanks for your help and patience.</p></div></div>
+<div class="comment" id="comment-239726"><p class="comment-meta"><span class="comment-author">Arlin</span> &middot; 29 November 2010</p><div class="comment-body"><blockquote>
+<strong>Scott F said:</strong>
+it seems your description hinges on the definition of "evolutionary change".
+</blockquote>
+No, not really.  Evolutionary theories cannot be subsumed by definitions, which are just short-cuts to an understanding that only can be obtained by deeper study.  I wish it were not so, but the fact is that, for better or worse, evolutionary theories are not axiomatized in concise form (except for the Neutral Theory).  There is no formula or essence or definition to explain the MS.  It is a big messy historical construction, like a building or a piece of software that has been renovated several times.  Continuing with the software metaphor, the MS struggled to keep the look-and-feel of Darwinism 1.0 that users found so appealing, but they had to re-engineer it completely to fit the new "Mendel" operating system. 
+
+Anyway, here is how to understand the difference.  If faced with some significant phenotypic change over a long period of time, both mutationists and neo-Darwinians would agree that there have been new mutations as well as subsequent changes in frequencies of alleles.   But the mutationists and neo-Darwinians they would tend to offer different explanations for the shape and direction of the observed change. Mutationists would put the emphasis on the creative, initiating role of individual events of mutation.  The Darwinist talks (and presumably, thinks) as though the outcome of evolution is a match to some pre-conceived "solution" to an environmental "problem", the mutationist does not think this way.  Mutation proposes distinct variations that seem very idiosyncratic to us, but which reflect the organism's make-up.   What happens in evolution is shaped by the character of these variations.  Bateson's early research program was based on the idea that we could only truly understand evolution by deciphering the laws governing the production of new variations.  
+
+By constrast, neo-Darwinians emphasized a smooth and largely deterministic process of shifting driven by selection of infinitesimal variations.  When Mayr and other architects of the Modern Synthesis said that evolution does not depend on the chance occurrence of idiosyncratic new mutations, they did not mean that it does not *ultimately* depend on new mutations, but that the character of the mutations does not determine the shape or direction of evolution, which instead is determined by selection acting on abundant available variation.  Each variation is individually insignificant.  Any significant phenotypic change is made up of many individual shifts orchestrated by selection.  Dobzhansky said literally that, by analogy to the physics of gases, individual mutations were like random motions of individual atoms, while selection was analogous to an ensemble property, a high-level force.  
+
+BTW, I'm referring to the 20th century MS.  Most evolutionists today don't understand the MS as a theory distinct from other theories-- they just have a sense of what is accepted by the research community, and they assume that this is the same as the MS (thus adding further confusion to what constitutes a "theory"-- its now become indistinguishable from "what most people think"). 
+<blockquote>
+How does one view preclude the other?  Or rather, how does one view obscure important considerations that the other does not?
+</blockquote>
+
+Again, the axes along which we may distinguish these two views can be described in terms of initiative, creativity, direction, and discontinuity.  For a deeper discussion, see Stoltzfus, 2006 (http://www.molevol.org/sites/default/files/s06ed.pdf). 
+</div></div>
+<div class="comment" id="comment-239944"><p class="comment-meta"><span class="comment-author">Scott F</span> &middot; 1 December 2010</p><div class="comment-body"><p>Arlin,<br>I'll give your paper a try.  Thanks.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

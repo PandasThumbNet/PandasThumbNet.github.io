@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Information content of DNA — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Information content of DNA</h1><p class="post-meta">Posted 22 October 2008 by <span class="post-author">PvM</span></p><div class="post-body">The information content of DNA is much harder to determine than merely looking at the number of base pairs and multiplying it by 2 to get the size in bits (remember that each site can have up to 4 different nucleotides, or 2 bits). However, this approach can provide us with a zeroth order estimate of the maximum possible information that can be stored in said sequence which for the human genome with 3 billion base pairs would amount to 6 billion bits or 750 Mbytes.
+
+However, information theory shows that random sequences have the lowest information content and that well preserved sequences contain the maximum information content. In other words, the actual information content ranges from zero for totally random sequences to 2 bits for conserved sequences. 
+
+Another way to look at this is to compress the DNA sequence using a regular archive utility. If the sequence is random, the compression will be minimal, if the sequence is fully regular, the compression will be much higher. 
+
+So how does one obtain a better estimate of the information content of DNA? By estimating the entropy per triplet (3 base pairs) which has a maximum entropy of 6 and for coding regions a value of 5.6 and for non-coding regions 5.82. This means that the information content for coding regions is 0.4 bit per triplet and for non-coding regions .18 bit per triplet. For 3 billion base pairs, or 1 billion triplets, this gives us an actual information content of 0.4 billion bits or 50 Mbytes  assuming the best case scenario that all DNA is coding or about 24 Mbytes if all the DNA is non-coding.
+
+Now how does this compare with evolutionary theory? In a 1960 paper "Natural selection as the process of accumulating genetic information in adaptive evolution", Kimura calculated that the amount of information added per generation was around 0.29 bits or since the Cambrian explosion some 500 million years ago, on the order of 10<sup>8</sup> bits or 12.5 Mbytes assuming that the geometric mean of the duration of one generation is about 1 year.
+
+As a side note, Kimura reasoned that about 10<sup>7</sup> or 10<sup>8</sup> bits bits of information would be necessary to specify human anatomy.(Source: Adaptation and Natural Selection  By George Christopher Williams)
+
+So is this a reliable way to determine the information content of DNA? Perhaps not, and a better way is to take a large sample DNA from different people and determine for each base pair, how variable it is. A preserved site will have the maximum of 2 bits of information while a totally random site will have zero bits of information. 
+
+The problem is to understand how much information is contained by these 'bits'. For instance, the total number of electrons is about 10<sup>79</sup> <b>and finding one 'preferred' one' amongst these</b> <s>which</s> translates to about 250 bits. This means that in 1000 generations, natural selection can achieve something far more improbable than this. 
+
+<hr />
+<br />
+
+<b>Update Oct 26</b>: I have to take responsibility for not clarifying that my usage of information is based on Shannon's theory of information according to which 
+<center>
+I(y)=H<sub>max</sub> - H(Y)
+</center>
+where I(Y) is the amount of information, H(Y) is the entropy of the received sequence and H<sub>Max</sub> is the maximum entropy (basically the entropy of uniform distributed sequence). 
+
+See <a href="http://www.pandasthumb.org/archives/2004/05/shannon-entropy.html">Shannon entropy applied</a> where I described how Shannon entropy is applied in biology with references to the work by Chris Adami and Tom Schneider.</div><section class="comments-section"><h2 class="comments-heading">94 Comments</h2>
+<div class="comment" id="comment-170767"><p class="comment-meta"><span class="comment-author">tresmal</span> &middot; 22 October 2008</p><div class="comment-body"><p>I don't know why you posted this. I can't imagine anyone being interested. :)<br><br>"As a side note, Kimura reasoned that about 10^7 or 10^8 bits bits of information would be necessary to specify human anatomy.(Source: Adaptation and Natural Selection By George Christopher Williams)"</br> <br><br>I have no idea why I cut and pasted that quote.</br></p></div></div>
+<div class="comment" id="comment-170768"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body"><p>I happened to read Kimura's paper while researching why Dembski seems to be unfamiliar with the history of the concept of information in biology and found Kimura's 1961 comments to be quite relevant.</p></div></div>
+<div class="comment" id="comment-170769"><p class="comment-meta"><span class="comment-author"><a href="http://www.gs.washington.edu/faculty/felsenstein.htm" rel="nofollow">Joe Felsenstein</a></span> &middot; 23 October 2008</p><div class="comment-body"><p>Now you've set yourself up for getting a lot criticism. Speaking as an expert on informaton and evolution, I can say that *everyone* who posts here is sure that they are an expert on information and evolution (which is how I know I am too).  And some of them will no doubt argue vehemently that random sequences have the *most* information, not the least. Enjoy.</p></div></div>
+<div class="comment" id="comment-170770"><p class="comment-meta"><span class="comment-author">Bill Gascoyne</span> &middot; 23 October 2008</p><div class="comment-body"><p>I'm going to throw my $.02 in, but I'm not sure I'm able to express this in a sufficiently coherent manner.</p><p>I submit that describing DNA in terms of information is rather like describing electrons and such in terms of waves and/or particles. An electron is what it is, and describing it as wave-like or particle-like is a human analogy that helps us understand it and does not mean that the electron is actually a wave or a particle. Similarly, DNA is what it is, and describing it in terms of information content doesn't mean that DNA consists of information that is used in the way that a computer uses information.</p></div></div>
+<div class="comment" id="comment-170771"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body">Shannon or Kolmogorov sense?
+
+The real question is does Bobby knows the difference :-)
+
+
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+Now you've set yourself up for getting a lot criticism. Speaking as an expert on informaton and evolution, I can say that *everyone* who posts here is sure that they are an expert on information and evolution (which is how I know I am too).  And some of them will no doubt argue vehemently that random sequences have the *most* information, not the least. Enjoy.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170774"><p class="comment-meta"><span class="comment-author">novparl</span> &middot; 23 October 2008</p><div class="comment-body"><p>Last sentence of essay seems to have a word missing.</p><p>The complexity of DNA proves evolution. It must be easy for 6 billion bits to evolve over 4 billion years.</p><p>To my "friends" - what do you guys think of NOMA? Dawkins or Gould?</p></div></div>
+<div class="comment" id="comment-170776"><p class="comment-meta"><span class="comment-author">SteveF</span> &middot; 23 October 2008</p><div class="comment-body">Interesting discussion PvM.  
+
+I wouldn't be surprised if we see an appearence by creationist Kirk Durston at this point so here's a bit of background for discussion.  He's kind of looking at things from the Douglas Axe point of view (evolution not being able to cross sequence space) and he's doing a bioinformatics kind of PhD and claims to be usefully applying information to evolution.  Here's one of his papers as part of this research:
+
+A Functional Entropy Model for Biological Sequences.
+
+http://www.newscholars.com/papers/Durston&Chiu%20paper.pdf
+
+Here's the kind of argument he uses in relation to evolution:
+
+<blockquote><p>Darwinian theory also requires another prediction:
+
+P2- Since an average, 300 amino acid protein requires approximately 500 bits of functional information to encode, and even the simplest organism requires a few hundred protein-coding genes, variation and natural selection should be able to consistently generate the functional information required to encode a completely novel protein.
+
+Functional information is information that performs a function. When applied to organisms, functional information is information encoded within their genomes that performs some biological function. Typically, the amount of functional information required to encode an average, 300 amino-acid protein is in the neighborhood of 500 bits and most organisms contain thousands of protein-coding genes in their genome. Most combinations of amino acids will not produce a stable, three dimensional folded protein structure. Furthermore, the sequence space that encodes a stable folding protein tends to be surrounded by non-folding sequence space. Thus, to generate a novel protein with a stable fold, an evolutionary pathway must cross non-folding sequence space via a random walk, where natural selection will be inoperative. Thus, it requires functional information to properly specify a biological protein with a stable secondary structure. Recent computer simulations have failed to generate 32 bits of functional information in 2 x 10^7 trials, unless the distance between selection points is kept to 2, 4, and 8-bit steps. Such small gaps between selection points are highly unrealistic for biological proteins, which tend to be separated by non-folding regions of sequence space too large for the evolution of a novel protein to proceed by selection. Organic life requires thousands of different proteins, each requiring an average of 500 bits to encode. 32 bits is far too small to encode even one, average protein. An approximate and optimistic upper limit can be computed for the distance between selection points that could be bridged over the history of organic life if we postulate 1030 bacteria, replicating every 30 minutes for 4 billion years, with a mutation rate of 10-6 mutations per 1000 base pairs per replication. The upper limit falls between 60 and 100 bits of functional information, not sufficient to locate a single, average folding protein in protein sequence space. The Darwinian prediction P2, therefore, appears to be falsified. Variation and natural selection simply does not appear to have the capacity to generate the amount of functional information required for organic life.</p></blockquote>
+
+A recent appearance at Larry Moran's blog provided the following discussion of information and evolution:
+
+<blockquote><p>In response to Mike Haubrich's proposed challenge:"Explain to me what sort of 'information' you are referring to. You can do it in a five page report, and give references, please."
+
+I would suggest that functional information is what Haubrich is looking for. As long as it doesn't matter if the information is gibberish or not, either Shannon information or Komolgorov Complexity will do. But Szostak pointed out that for biological life, it does matter a great deal whether the information encoded in the genomes of life is functional or not, so he proposed that it was time for biologists to start analyzing biolpolymers in terms of 'functional information' (see Szostak JW, 'Functional information: Molecular messages', Nature 2003, 423:689.) Four years later, Szostak et al. published a paper laying out the concepts of functional information, with application to biological life (see Hazen, R.M., Griffin, P.L., Carothers, J.M. and Szostack, J.W., 'Functional information and the emergence of biocomplexity', PNAS 2007, 104: 8574-8581. Going over their paper, I could see that they made some simplifying assumptions, that they did not state in their paper, including a) amino acids functional at a particular site occur with equal probability and b) all functional sequences occur with equal probability. They also do not consider the time variable in their equation so that one can measure the change in functional information as the set of functional sequences evolve. Nevertheless, their method does give an approximation of the functional information for a given biopolymer, although there are more sophisticated methods out there. I wrote some software that would calculate the functional information required to encode a given protein family that does take into consideration variable probabilities of amino acids at each site as computed from existing aligned sequence data. For example, I ran 1,001 sequences for EPSP Synthase through and obtained a value of 688 bits of functional information required to fall within the set of functional sequences. Of course, there is likely to be alignment errors in the Pfam data base where I obtained my alignment. The effect of any alignment errors will give an artificially low result. I've also looked at what functional information means in terms of the structure and function of a given protein family and have found some very interesting results.</p></blockquote>
+
+http://sandwalk.blogspot.com/2008/10/what-questions-about-evolution-can.html
+
+Also see a previous discussion at Jeffrey Shallit's blog, with, amongst others, PandasThumbs very own Art Hunt:
+
+http://recursed.blogspot.com/2008/06/oh-inanity-slack-in-scientist.html</div></div>
+<div class="comment" id="comment-170780"><p class="comment-meta"><span class="comment-author"><a href="http://opisthokont.blogspot.com" rel="nofollow">Opisthokont</a></span> &middot; 23 October 2008</p><div class="comment-body"><p>To some degree, of course, this is all a red herring.  DNA alone does not "specify human anatomy"; a lot of anatomy is in fact epigenetic.  This means, strictly speaking, that it is inherited but not encoded in DNA; one of the best-studied mechanisms for this is the interactions between cells during development.  Both cells could become the same thing, but one cell's signalling molecule tells an adjacent cell to become something else, and in turn that cell may change which signalling molecules it uses.  Depending on the pattern of signalling molecules, both spatially and temporally, the results of development can differ significantly.  (What starts it all? one might ask.  There are a number of mechanisms known for this as well, many of which are external to the embryo, often being set up by the mother.)  The signals themselves are often highly evolutionarily conserved, such that the <i>Pax6</i> gene homologue from a fruit fly, which (among other things) specifies eyes, can make eyes grow in places where it is injected into a developing frog.  This is not to say that DNA is unimportant, of course, just that it is not the only part of the story (at least with eukaryotes).</p><p>That said, this is a nice article, and an important investigation into one of ID's primary claims.</p></div></div>
+<div class="comment" id="comment-170781"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net" rel="nofollow">iml8</a></span> &middot; 23 October 2008</p><div class="comment-body"><p>There are questions in here folded into questions.<br>First question:  is there some "magic ratio" of the<br>number of bits in a "program" to the complexity<br>it produces?  "Yes, the value of the ratio is ... 0.42!"</p><p>I don't think anybody's figured out any such ratio.  And <br>even if they had, nobody's figured out how to mathematically<br>determine the complexity of an organism to permit<br>such a calculation.</p><p>Even comparing the same program written in different <br>computer languages is tricky.  Some languages may be able<br>to do particular tasks in much less code than others.  <br>And even when it comes to the binary executable program,<br>it's hard to make comparisons.  For a large program, <br>the executable for an interpreted system is much smaller<br>than the executable for a compiled system (if much slower as well).  And among<br>compiled systems the size of the executable depends on <br>the compiler and the processor.  A specialized processor<br>will probably need much less code for a task tailored<br>to it than a general-purpose processor.</p><p>And that's only comparing the SAME program.  Comparing<br>different programs?  Writing a little toy demo program<br>to draw even a simple picture is a pain; a toy demo<br>program to draw an elaborate fractal pattern is shorter,<br>and it can produce as much fractal detail as one likes<br>just by changing the count of the number of iterations.<br>Incidentally, the growth of organisms seems to have<br>fractal features, and fractal algorithms are noted for<br>ability to generate lots of elaboration for a small<br>amount of code.</p><p>Then ... comparing "programs" between two different<br>systems that don't have any real resemblance to each <br>other and don't perform the same functions is out in<br>hyperspace.</p><p>Are there not enough bits in the human<br>genome to encode the human body?  For all we know I<br>could insist that there's FOUR TIMES as many bits<br>as required, and dare anyone to prove me wrong:  "You<br>see, because of the Binary Coding Efficiency [it's nice<br>to make up impressive-sounding phrases here] of the<br>human system its Binary Coding Ratio is vastly better<br>than that of a personal computer ... "</p><p>But at least I would be being silly on purpose.</p><p>White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html</p></div></div>
+<div class="comment" id="comment-170782"><p class="comment-meta"><span class="comment-author">Jeffrey Shallit</span> &middot; 23 October 2008</p><div class="comment-body"><p>Actually, in the Kolmogorov theory, random sequences are highly likely to have maximum or near-maximum information content.  Furthermore, compression experiments with DNA suggest that it is quite difficult to achieve significant compression, suggesting they are close to random and have very high Kolmogorov information content.</p></div></div>
+<div class="comment" id="comment-170788"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>iml8 said:</strong>
+Writing a little toy demo program
+to draw even a simple picture is a pain; a toy demo
+program to draw an elaborate fractal pattern is shorter,
+and it can produce as much fractal detail as one likes
+just by changing the count of the number of iterations.
+Incidentally, the growth of organisms seems to have
+fractal features, and fractal algorithms are noted for
+ability to generate lots of elaboration for a small
+amount of code.
+</blockquote>
+
+Yes. Another example would be a series representation of Pi - a finite, relatively compact formula producing an infinitely long number.  I don't know why our creationist friends can't see the possible analogy to a relatively compact DNA string producing a huge amount of complexity via iteration.
+
+And this complexity is changed by the pre-existing environment (as Opisthokont pointed out), so unlike mathematical formula, the information content of a biological structure is not equivalent to the content of the instruction set that produced it.  Its more.
+
+I think questions about DNA information content bring us back to the phenotype/genotype error again.  Creationists are confusing the information content of a molecule-by-molecule description of the cake with the information content of the recipe, and on top of that they make the error of forgetting we are making souffle - the environment in which the instructions are carried out makes a difference to the end product.  :)
+</div></div>
+<div class="comment" id="comment-170789"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 23 October 2008</p><div class="comment-body"><p>Your post seems to be lacking a conclusion, but I find this subject interesting, because I recently had a look at a presentation of a supposedly new ID theory, in which the supposed scientist presenting it believes that 'functional information' is an indicator of intelligence.</p><p>Problem is, he defines it as 'the negative log to base 2 of, the number of ways to perform a function acceptably well divided by the total number of ways it can be performed', or I = -log2[M/N], which is a kind of equation you'll be familiar with, as it's basically the same as Dembski's.</p><p>Problem is, this doesn't even try to give an estimate of information content - rather, it is saying 'Given a list of all the ways to do something, this will give you the minimum information required to pick one from that list'.</p><p>Post is <a href="http://www.antievolution.org/cgi-bin/ikonboard/ikonboard.cgi?s=49008fbf7e9731d3;act=ST;f=14;t=5819">here</a>. I'm glad to see, at least, that scientists have been doing real science on this matter long before the ID people.</p></div></div>
+<div class="comment" id="comment-170790"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net" rel="nofollow">iml8</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+
+I don't know why our creationist friends can't see the possible analogy to a relatively compact DNA string producing a huge amount of complexity via iteration.
+
+</blockquote>
+
+The odd thing is that as such this isn't really a 
+creationist argument, or if it is, it's a stretch even
+by those standards:  "I maintain that the genome isn't
+big enough to encode all the complexity of the organism."
+
+"Well, OK, but we don't know of any
+other mechanism for encoding the blueprint for an 
+organism -- so if you say it can't, feel free to 
+engage in a research project to show what else can.
+Sorry, don't know where you'll get a research grant.
+Send me a report when you're done -- nah, on second
+thought, put it up on your website and I'll look it 
+over if I get the time."
+
+I suppose this MIGHT be a creationist argument if the
+development of an individual organism was supposedly
+only explainable by Supernatural Intervention, but I
+don't think even most Darwin-bashers would try to 
+make such a claim.  Otherwise, this argument simply
+invokes unknown sources of developmental information and
+says nothing about Darwin one way or another.
+
+The "information theory" argument takes the 
+approach of claiming that Darwin can't account for the
+information actually contained in the genome.  It's hard
+to see any real linkage between that and the notion
+that the genome isn't big enough to do the job.  That's
+just an exercise in muddying the waters.
+
+White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html</div></div>
+<div class="comment" id="comment-170793"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body">Yes, I was suprised that the entropy of coding and non-coding sequences was quite similar. As I pointed out, a more useful measure in the Shannon sense is to look at what sites are strongly conserved across the population rather than look at the compressibility of a single genome. Are you aware of any ways to reconcile Kolmogorov and Shannon approaches?
+
+<blockquote>
+<strong>Jeffrey Shallit said:</strong>
+Actually, in the Kolmogorov theory, random sequences are highly likely to have maximum or near-maximum information content.  Furthermore, compression experiments with DNA suggest that it is quite difficult to achieve significant compression, suggesting they are close to random and have very high Kolmogorov information content.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170794"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body">Of course it is, and this is something I have been trying to explain to Bobby who argued that the information content of the genome was somehow too low to be able to explain how an embryo forms. 
+Since Bobby lacked any solid data, I have attempted to show how to more reliably estimate 'information' in the genome and how to relate it to the information in the human body. 
+
+<blockquote>
+<strong>Opisthokont said:</strong>
+
+To some degree, of course, this is all a red herring.  DNA alone does not "specify human anatomy"; a lot of anatomy is in fact epigenetic.  This means, strictly speaking, that it is inherited but not encoded in DNA; one of the best-studied mechanisms for this is the interactions between cells during development.  Both cells could become the same thing, but one cell's signalling molecule tells an adjacent cell to become something else, and in turn that cell may change which signalling molecules it uses.  Depending on the pattern of signalling molecules, both spatially and temporally, the results of development can differ significantly.  (What starts it all? one might ask.  There are a number of mechanisms known for this as well, many of which are external to the embryo, often being set up by the mother.)  The signals themselves are often highly evolutionarily conserved, such that the <i>Pax6</i> gene homologue from a fruit fly, which (among other things) specifies eyes, can make eyes grow in places where it is injected into a developing frog.  This is not to say that DNA is unimportant, of course, just that it is not the only part of the story (at least with eukaryotes).
+
+That said, this is a nice article, and an important investigation into one of ID's primary claims.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170796"><p class="comment-meta"><span class="comment-author">TomS</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>Joe Felsenstein said:</strong>
+I can say that *everyone* who posts here is sure that they are an expert on information and evolution </blockquote>
+
+I feel out of place, because I am sure that I am not.
+
+I don't understand whether information is an extensive or intensive property of a physical object. Do two identical DNA molecules have twice the information, or the same information? Is the information in a DNA molecule greater than, less than, or equal to the sum of the information in each of its atoms? ... in each of its constituent quarks and electrons?</div></div>
+<div class="comment" id="comment-170800"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>SteveF said:</strong>
+
+Interesting discussion PvM.  
+
+I wouldn't be surprised if we see an appearence by creationist Kirk Durston at this point so here's a bit of background for discussion.  He's kind of looking at things from the Douglas Axe point of view (evolution not being able to cross sequence space) and he's doing a bioinformatics kind of PhD and claims to be usefully applying information to evolution.  Here's one of his papers as part of this research:
+
+A Functional Entropy Model for Biological Sequences.
+
+http://www.newscholars.com/papers/Durston&Chiu%20paper.pdf
+
+Here's the kind of argument he uses in relation to evolution:
+
+<blockquote><p>Darwinian theory also requires another prediction:
+
+P2- Since an average, 300 amino acid protein requires approximately 500 bits of functional information to encode, and even the simplest organism requires a few hundred protein-coding genes, variation and natural selection should be able to consistently generate the functional information required to encode a completely novel protein.
+
+Functional information is information that performs a function. When applied to organisms, functional information is information encoded within their genomes that performs some biological function. Typically, the amount of functional information required to encode an average, 300 amino-acid protein is in the neighborhood of 500 bits and most organisms contain thousands of protein-coding genes in their genome. Most combinations of amino acids will not produce a stable, three dimensional folded protein structure. Furthermore, the sequence space that encodes a stable folding protein tends to be surrounded by non-folding sequence space. Thus, to generate a novel protein with a stable fold, an evolutionary pathway must cross non-folding sequence space via a random walk, where natural selection will be inoperative. Thus, it requires functional information to properly specify a biological protein with a stable secondary structure. Recent computer simulations have failed to generate 32 bits of functional information in 2 x 10^7 trials, unless the distance between selection points is kept to 2, 4, and 8-bit steps. Such small gaps between selection points are highly unrealistic for biological proteins, which tend to be separated by non-folding regions of sequence space too large for the evolution of a novel protein to proceed by selection. Organic life requires thousands of different proteins, each requiring an average of 500 bits to encode. 32 bits is far too small to encode even one, average protein. An approximate and optimistic upper limit can be computed for the distance between selection points that could be bridged over the history of organic life if we postulate 1030 bacteria, replicating every 30 minutes for 4 billion years, with a mutation rate of 10-6 mutations per 1000 base pairs per replication. The upper limit falls between 60 and 100 bits of functional information, not sufficient to locate a single, average folding protein in protein sequence space. The Darwinian prediction P2, therefore, appears to be falsified. Variation and natural selection simply does not appear to have the capacity to generate the amount of functional information required for organic life.</p></blockquote>
+
+A recent appearance at Larry Moran's blog provided the following discussion of information and evolution:
+
+<blockquote><p>In response to Mike Haubrich's proposed challenge:"Explain to me what sort of 'information' you are referring to. You can do it in a five page report, and give references, please."
+
+I would suggest that functional information is what Haubrich is looking for. As long as it doesn't matter if the information is gibberish or not, either Shannon information or Komolgorov Complexity will do. But Szostak pointed out that for biological life, it does matter a great deal whether the information encoded in the genomes of life is functional or not, so he proposed that it was time for biologists to start analyzing biolpolymers in terms of 'functional information' (see Szostak JW, 'Functional information: Molecular messages', Nature 2003, 423:689.) Four years later, Szostak et al. published a paper laying out the concepts of functional information, with application to biological life (see Hazen, R.M., Griffin, P.L., Carothers, J.M. and Szostack, J.W., 'Functional information and the emergence of biocomplexity', PNAS 2007, 104: 8574-8581. Going over their paper, I could see that they made some simplifying assumptions, that they did not state in their paper, including a) amino acids functional at a particular site occur with equal probability and b) all functional sequences occur with equal probability. They also do not consider the time variable in their equation so that one can measure the change in functional information as the set of functional sequences evolve. Nevertheless, their method does give an approximation of the functional information for a given biopolymer, although there are more sophisticated methods out there. I wrote some software that would calculate the functional information required to encode a given protein family that does take into consideration variable probabilities of amino acids at each site as computed from existing aligned sequence data. For example, I ran 1,001 sequences for EPSP Synthase through and obtained a value of 688 bits of functional information required to fall within the set of functional sequences. Of course, there is likely to be alignment errors in the Pfam data base where I obtained my alignment. The effect of any alignment errors will give an artificially low result. I've also looked at what functional information means in terms of the structure and function of a given protein family and have found some very interesting results.</p></blockquote>
+
+http://sandwalk.blogspot.com/2008/10/what-questions-about-evolution-can.html
+
+Also see a previous discussion at Jeffrey Shallit's blog, with, amongst others, PandasThumbs very own Art Hunt:
+
+http://recursed.blogspot.com/2008/06/oh-inanity-slack-in-scientist.html
+</blockquote>
+
+That's what I get for not reading... Kirk Dunston is the chap who I was also referring to. If you follow the link you can see a video of him giving a talk about his functional information.</div></div>
+<div class="comment" id="comment-170801"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 23 October 2008</p><div class="comment-body"><p>I also apparently can't tell the difference between an r and an n, so I've misspelt his name several times. Silly me.</p></div></div>
+<div class="comment" id="comment-170802"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net" rel="nofollow">iml8</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>PvM said:</strong>
+
+Yes, I was suprised that the entropy of coding and non-coding sequences was quite similar. 
+
+</blockquote>
+
+A maybe simpler way of looking at this is to think of
+bitmap image files.  Take a set of bitmap files with the
+same resolution -- say 300 x 300 pixels -- and the same
+color depth -- 24-bit full color.  In an uncompressed
+image file format (like .BMP) every such image file 
+is exactly the same size in kilobytes.  
+
+Now convert the files to a compressed format (like .PNG
+-- a lossless format, no information is thrown out like
+in .JPG).  The actual information in each of those image
+files is more or less reflected in the size of the 
+compressed file.  If the image is simple, say a matrix
+of colored squares, the compressed file is small --
+there's not much information in the file, it's mostly
+"air", so it squeezes down a lot.  
+
+If the image is elaborate, say of a flower garden, the
+compressed file is big, there's more information in the
+file.  It has nothing to do with the subject matter of
+the image, only that the image is "busy".  Get an image
+consisting of nothing but a random scattering of lots of
+colored dots and the compression is slight.  There's no
+"air" in it to squeeze out.
+
+The trick is that the information content of these images
+has absolutely nothing to do with what the images are 
+of, or what they communicate to a viewer.  The only 
+issue is the number of bits that it takes to fully
+create the image.  If the image is "busy", full of 
+noisy variations, there's a lot of information in it.
+
+From what I can see of KC entropy, it's basically a
+"quantity" measurement.  It says nothing about what the
+information does or how well it does it.   If you want
+to compress an image file (or any other file for that
+matter), if it's got a high KC entropy it doesn't compress
+very well.  It has nothing to do with the function of the
+file.
+
+White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html</div></div>
+<div class="comment" id="comment-170806"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body">Good point, the many repeats in non-coding DNA also may help explain why its information content may not be that dissimilar from coding DNA. Which returns me to a population measure of information. Take N human genomes and align them. Find the distribution for every single nucleotide at a given spot and use Shannon information concept to assign a number between 0 and 2 bits depending on how conserved the site is. This at least would link information to conserved sites which are likely to be related to function unless we have a recent bottleneck? 
+
+It's the intractable nature of 'information' which makes ID's arguments so vacuous. If ID cannot even address the information content of let's say the formation of a protein, how can it make any arguments other than stating in Dembskian fashion that 'it looks complex' thus evolutionary processes cannot explain it and even if they can, they still need an information rich source. Of course when pointed out that the environment provides such a source much like breeders in artificial selection, the argument becomes one of: But where does the information in the environment come from. As if the information provided by intelligent designers does not require a similar explanation?
+
+Who are they fooling?
+
+<blockquote>
+<strong>iml8 said:</strong>
+
+<blockquote>
+<strong>PvM said:</strong>
+
+Yes, I was suprised that the entropy of coding and non-coding sequences was quite similar. 
+
+</blockquote>
+
+A maybe simpler way of looking at this is to think of
+bitmap image files.  Take a set of bitmap files with the
+same resolution -- say 300 x 300 pixels -- and the same
+color depth -- 24-bit full color.  In an uncompressed
+image file format (like .BMP) every such image file 
+is exactly the same size in kilobytes.  
+
+Now convert the files to a compressed format (like .PNG
+-- a lossless format, no information is thrown out like
+in .JPG).  The actual information in each of those image
+files is more or less reflected in the size of the 
+compressed file.  If the image is simple, say a matrix
+of colored squares, the compressed file is small --
+there's not much information in the file, it's mostly
+"air", so it squeezes down a lot.  
+
+If the image is elaborate, say of a flower garden, the
+compressed file is big, there's more information in the
+file.  It has nothing to do with the subject matter of
+the image, only that the image is "busy".  Get an image
+consisting of nothing but a random scattering of lots of
+colored dots and the compression is slight.  There's no
+"air" in it to squeeze out.
+
+The trick is that the information content of these images
+has absolutely nothing to do with what the images are 
+of, or what they communicate to a viewer.  The only 
+issue is the number of bits that it takes to fully
+create the image.  If the image is "busy", full of 
+noisy variations, there's a lot of information in it.
+
+From what I can see of KC entropy, it's basically a
+"quantity" measurement.  It says nothing about what the
+information does or how well it does it.   If you want
+to compress an image file (or any other file for that
+matter), if it's got a high KC entropy it doesn't compress
+very well.  It has nothing to do with the function of the
+file.
+
+White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170808"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 23 October 2008</p><div class="comment-body"><p>Ugh. I've just read that paper of Kirk Durston's, above, and I can't believe they're <i>still</i> trying the tornado-in-a-junkyard ploy (or as Kirk says, he 'assumes that evolution is a random walk'). Still, while they're not coming up with new stuff, it's easier to debunk I guess.</p></div></div>
+<div class="comment" id="comment-170809"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body">I find their work hardly that novel as scholars like Kimura and more recently Adami, Schneider, Ofria and others have since long proposed the use of Shannon information. The problem is with converting the number of bits to probabilities, which assume a random search rather than something which more accurately represents evolutionary processes.
+
+For instance the authors suggest that for 26 bits of information to arise, 4*10<sup>19</sup> trials would be needed. That of course ignores any evolutionary processes and the work by <a href="http://www.lecb.ncifcrf.gov/~toms/paper/ev/blog-ev.html">Schneider</a> has shown that the number of actual trials can be much lower.
+In fact, Dembski and Marks, in their paper addressing Schneider's Ev made similar errors, compounded by additional errors to conclude that a random search outperforms an evolutionary search. Now anyone who understands the mathematics involved would have frowned at such a conclusion. And yet it took the work of Schneider and a person with the alias "2ndclass" to find these errors.
+
+<blockquote>
+<strong>SteveF said:</strong>
+
+Interesting discussion PvM.  
+
+I wouldn't be surprised if we see an appearence by creationist Kirk Durston at this point so here's a bit of background for discussion.  He's kind of looking at things from the Douglas Axe point of view (evolution not being able to cross sequence space) and he's doing a bioinformatics kind of PhD and claims to be usefully applying information to evolution.  Here's one of his papers as part of this research:
+
+A Functional Entropy Model for Biological Sequences.
+
+http://www.newscholars.com/papers/Durston&Chiu%20paper.pdf
+
+Here's the kind of argument he uses in relation to evolution:
+
+<blockquote><p>Darwinian theory also requires another prediction:
+
+P2- Since an average, 300 amino acid protein requires approximately 500 bits of functional information to encode, and even the simplest organism requires a few hundred protein-coding genes, variation and natural selection should be able to consistently generate the functional information required to encode a completely novel protein.
+
+Functional information is information that performs a function. When applied to organisms, functional information is information encoded within their genomes that performs some biological function. Typically, the amount of functional information required to encode an average, 300 amino-acid protein is in the neighborhood of 500 bits and most organisms contain thousands of protein-coding genes in their genome. Most combinations of amino acids will not produce a stable, three dimensional folded protein structure. Furthermore, the sequence space that encodes a stable folding protein tends to be surrounded by non-folding sequence space. Thus, to generate a novel protein with a stable fold, an evolutionary pathway must cross non-folding sequence space via a random walk, where natural selection will be inoperative. Thus, it requires functional information to properly specify a biological protein with a stable secondary structure. Recent computer simulations have failed to generate 32 bits of functional information in 2 x 10^7 trials, unless the distance between selection points is kept to 2, 4, and 8-bit steps. Such small gaps between selection points are highly unrealistic for biological proteins, which tend to be separated by non-folding regions of sequence space too large for the evolution of a novel protein to proceed by selection. Organic life requires thousands of different proteins, each requiring an average of 500 bits to encode. 32 bits is far too small to encode even one, average protein. An approximate and optimistic upper limit can be computed for the distance between selection points that could be bridged over the history of organic life if we postulate 1030 bacteria, replicating every 30 minutes for 4 billion years, with a mutation rate of 10-6 mutations per 1000 base pairs per replication. The upper limit falls between 60 and 100 bits of functional information, not sufficient to locate a single, average folding protein in protein sequence space. The Darwinian prediction P2, therefore, appears to be falsified. Variation and natural selection simply does not appear to have the capacity to generate the amount of functional information required for organic life.</p></blockquote>
+
+A recent appearance at Larry Moran's blog provided the following discussion of information and evolution:
+
+<blockquote><p>In response to Mike Haubrich's proposed challenge:"Explain to me what sort of 'information' you are referring to. You can do it in a five page report, and give references, please."
+
+I would suggest that functional information is what Haubrich is looking for. As long as it doesn't matter if the information is gibberish or not, either Shannon information or Komolgorov Complexity will do. But Szostak pointed out that for biological life, it does matter a great deal whether the information encoded in the genomes of life is functional or not, so he proposed that it was time for biologists to start analyzing biolpolymers in terms of 'functional information' (see Szostak JW, 'Functional information: Molecular messages', Nature 2003, 423:689.) Four years later, Szostak et al. published a paper laying out the concepts of functional information, with application to biological life (see Hazen, R.M., Griffin, P.L., Carothers, J.M. and Szostack, J.W., 'Functional information and the emergence of biocomplexity', PNAS 2007, 104: 8574-8581. Going over their paper, I could see that they made some simplifying assumptions, that they did not state in their paper, including a) amino acids functional at a particular site occur with equal probability and b) all functional sequences occur with equal probability. They also do not consider the time variable in their equation so that one can measure the change in functional information as the set of functional sequences evolve. Nevertheless, their method does give an approximation of the functional information for a given biopolymer, although there are more sophisticated methods out there. I wrote some software that would calculate the functional information required to encode a given protein family that does take into consideration variable probabilities of amino acids at each site as computed from existing aligned sequence data. For example, I ran 1,001 sequences for EPSP Synthase through and obtained a value of 688 bits of functional information required to fall within the set of functional sequences. Of course, there is likely to be alignment errors in the Pfam data base where I obtained my alignment. The effect of any alignment errors will give an artificially low result. I've also looked at what functional information means in terms of the structure and function of a given protein family and have found some very interesting results.</p></blockquote>
+
+http://sandwalk.blogspot.com/2008/10/what-questions-about-evolution-can.html
+
+Also see a previous discussion at Jeffrey Shallit's blog, with, amongst others, PandasThumbs very own Art Hunt:
+
+http://recursed.blogspot.com/2008/06/oh-inanity-slack-in-scientist.html
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170810"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 23 October 2008</p><div class="comment-body">Yes, not very novel indeed but wrapped inside just enough 'scientific' sounding language that it may confuse the uninformed reader as to its relevance.
+
+<blockquote>
+<strong>Venus Mousetrap said:</strong>
+
+Ugh. I've just read that paper of Kirk Durston's, above, and I can't believe they're <i>still</i> trying the tornado-in-a-junkyard ploy (or as Kirk says, he 'assumes that evolution is a random walk'). Still, while they're not coming up with new stuff, it's easier to debunk I guess.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170815"><p class="comment-meta"><span class="comment-author">Venus Mousetrap</span> &middot; 23 October 2008</p><div class="comment-body"><p>And then, like the professionals they are, they go straight to claiming that there must be a conspiracy against them which is preventing their work being accepted.</p><p>Even without the alarmingly large amount of evidence that there IS something incredibly fishy behind the ID scenes (Wedge Document, presentations to Christian groups, association with creationists, creationist arguments, creationist websites, etc)... even without all that, they won't accept that their failings are entirely their own.</p></div></div>
+<div class="comment" id="comment-170817"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com/" rel="nofollow">Daniel Gaston</a></span> &middot; 23 October 2008</p><div class="comment-body"><p>Great Discussion so far, and great comments from PvM and Joe.</p><p>I've always found this topic pretty interesting, mostly because of the absolutely horrendous abuses of math in general, but probability and information theory in particular, that guys like Dembski are doing. Does any of the more knowledgeable folks here, like Joe, have an opinion of this "Functional Information" as used by Szostack (and I am presuming misused by Durston)? Is it useful at all?</p><p>I think PvM is quite right in the difficulty of properly probabilsitically modeling the growth of information content of a genome in that it isn't really random walk, although one supposes that it does have a random walk-like element to it. Some sort of bounded random walk/Markov Process would better emulate an evolutionary search pattern of that type in my opinion.</p><p>I would also suggest that as well as population level information measures of a given gene that measures across evolutionary diversity are also useful, and we use that sort of Entropy score already in a Shannon Information sense when looking at aligned homologs from diverse taxa.</p></div></div>
+<div class="comment" id="comment-170820"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>Venus Mousetrap said:</strong>
+
+And then, like the professionals they are, they go straight to claiming that there must be a conspiracy against them which is preventing their work being accepted.
+
+Even without the alarmingly large amount of evidence that there IS something incredibly fishy behind the ID scenes (Wedge Document, presentations to Christian groups, association with creationists, creationist arguments, creationist websites, etc)... even without all that, they won't accept that their failings are entirely their own.
+</blockquote>
+
+Such as the fact that the primary reason why Intelligent Design "papers" are not published is because Intelligent Design proponents have expressed absolutely no desire to do any research for any paper, pro Intelligent Design or otherwise, in the first place?</div></div>
+<div class="comment" id="comment-170823"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>iml8 said:</strong>
+From what I can see of KC entropy, it's basically a
+"quantity" measurement.  It says nothing about what the
+information does or how well it does it.   If you want
+to compress an image file (or any other file for that
+matter), if it's got a high KC entropy it doesn't compress
+very well.  It has nothing to do with the function of the
+file.
+</blockquote>
+
+Understanding this definition also demonstrates that the secondary creationist argument - that nature cannot produce information - is just complete bunkum.   Its not even logically self-consistent, as the exact same point substitution mutation in different places can lead to more or less compressability.  Consider a toy example, substituting CGC for CAC in the following two strings:  cgcgCACgc (makes it more compressible) cacaCACac (makes it less compressible)
+
+<blockquote>
+<strong>Venus Mousetrap said:</strong>
+And then, like the professionals they are, they go straight to claiming that there must be a conspiracy against them which is preventing their work being accepted.
+</blockquote>
+
+Being rejected  by two fields is clear evidence that the Biological-Industrial Complex has gotten to mathematicians, too. :)
+
+eric
+
+
+
+
+
+
+</div></div>
+<div class="comment" id="comment-170824"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote><p>although one supposes that it does have a random walk-like element to it.</p></blockquote>
+
+Especially in the areas not constrained by having an affect on reproductive success (i.e., subject to natural selection).
+</div></div>
+<div class="comment" id="comment-170825"><p class="comment-meta"><span class="comment-author"><a href="http://www.gs.washington.edu/faculty/felsenstein.htm" rel="nofollow">Joe Felsenstein</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>Daniel Gaston said:</strong>
+
+Great Discussion so far, and great comments from PvM and Joe.
+
+I've always found this topic pretty interesting, mostly because of the absolutely horrendous abuses of math in general, but probability and information theory in particular, that guys like Dembski are doing. Does any of the more knowledgeable folks here, like Joe, have an opinion of this "Functional Information" as used by Szostack (and I am presuming misused by Durston)? Is it useful at all?
+
+</blockquote>
+
+I think Hazen, Griffin and Szostak's "functional information" is essentially the same as the concept of "specified information" developed by Leslie Orgel, and used by Dembski.  I also (in 1978) described an "adaptive information" that is similar.  I think these are useful, though Dembski's proofs using them happen to be wrong.
+
+The disagreements over whether a big stretch of DNA that is basically
+random (say a megabase of total junk) has lots of information or has little information depends on what you expect the calculation to do for you.  A message that length is 2,000,000 bits, so Shannon-wise, has lots of information.  A program that computes that 2,000,000-bit number has to be almost 2,000,000 bits long, so the Kolmogorov complexity is large.  But if it is random stuff, it has almost no "functional" or "specified" or "adaptive" information, as it has no joint information about phenotypes that make you highly fit.  So in that sense it carries little information.
+</div></div>
+<div class="comment" id="comment-170828"><p class="comment-meta"><span class="comment-author">Stephen</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>Do two identical DNA molecules have twice the information, or the same information?</blockquote>
+
+Neither. Two identical molecules have two bits more information than one, two bits being sufficient to represent the number "two". (Actually one can quibble that in this case it's only 1 bit extra, but that's not very important in the context of a few megabytes.) 42 identical copies would have 6 bits more information than a single copy, and so on.</div></div>
+<div class="comment" id="comment-170834"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com/" rel="nofollow">Daniel Gaston</a></span> &middot; 23 October 2008</p><div class="comment-body">Thanks Joe, that's what I was thinking. Functional Information in that sense did sound a lot like the original idea of Specified Complexity. I have the PDF's open but haven't read them yet. Currently scratching my head trying to implement some covariance calculations for pair-wise contact energy changes due to point mutation. 
+
+All great fun.
+
+<blockquote>
+<strong>Joe Felsenstein said:</strong>
+
+<blockquote>
+<strong>Daniel Gaston said:</strong>
+
+Great Discussion so far, and great comments from PvM and Joe.
+
+I've always found this topic pretty interesting, mostly because of the absolutely horrendous abuses of math in general, but probability and information theory in particular, that guys like Dembski are doing. Does any of the more knowledgeable folks here, like Joe, have an opinion of this "Functional Information" as used by Szostack (and I am presuming misused by Durston)? Is it useful at all?
+
+</blockquote>
+
+I think Hazen, Griffin and Szostak's "functional information" is essentially the same as the concept of "specified information" developed by Leslie Orgel, and used by Dembski.  I also (in 1978) described an "adaptive information" that is similar.  I think these are useful, though Dembski's proofs using them happen to be wrong.
+
+The disagreements over whether a big stretch of DNA that is basically
+random (say a megabase of total junk) has lots of information or has little information depends on what you expect the calculation to do for you.  A message that length is 2,000,000 bits, so Shannon-wise, has lots of information.  A program that computes that 2,000,000-bit number has to be almost 2,000,000 bits long, so the Kolmogorov complexity is large.  But if it is random stuff, it has almost no "functional" or "specified" or "adaptive" information, as it has no joint information about phenotypes that make you highly fit.  So in that sense it carries little information.
+
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170835"><p class="comment-meta"><span class="comment-author">L Zoel</span> &middot; 23 October 2008</p><div class="comment-body"><p>This stuff really becomes interesting when you realize that DARPA is interested in it as well:</p><p>"Mathematical Challenge Fourteen:  An Information Theory for Virus Evolution<br>Can Shannon’s theory shed light on this fundamental area of biology?"</p><p>( https://www.fbo.gov/index?s=opportunity&mode=form&id=c120bc7171c203aa5f4b3903aa08e558&tab=core&_cview=0&cck=1&au=&ck= )</p><p>Now we just have to wait and see if it's an ID advocate, a biologist or a mathematician who finally cracks this problem.</p><p>As a math major, I can't help but lean towards the latter.</p></div></div>
+<div class="comment" id="comment-170836"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net" rel="nofollow">iml8</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+
+Understanding this definition also demonstrates that the secondary creationist argument - that nature cannot produce information - is just complete bunkum.   
+
+</blockquote>
+
+This is what is called the "Law of Conservation Of 
+Information (LCI)", which is either stated as "only an intelligence can create information" or (usually more
+discreetly but equivalently as) "random events cannot
+produce information."  
+
+If you mean KC entropy, random events are very GOOD at
+creating information ... anyway, the LCI is really 
+nothing more than a modernized version of the old 
+"Second Law of Thermodynamics" Darwin-basher Barbie doll
+("you can't get something for nothing")
+redressed in century-21 clothes.  Darwin-bashers 
+seem to merely imply the LCI and
+not come right out and say it, knowing perfectly well 
+that there is no LCI.  The exception is Dembski, who in
+good "damn the pathetic details full steam ahead" fashion
+went and declared one.
+
+The interesting thing is that a case could be made for
+necessity of some decision-making process to create functional 
+information, but evolutionary selection can do the job,
+choosing between the ONE that survives and the ZERO 
+that dies out.  It's a nice, very deterministic binary
+decision.
+
+Of course the argument that the genome isn't big enough
+is not this argument.  I was wading through Gerald
+Posner's CASE CLOSED, his very effective takedown of 
+Kennedy assassination theories, and noticed how 
+conspiracy theorists like to play the "smoking gun"
+game.  They find some slight betraying detail and run
+with it.
+To be sure a slight betraying detail might
+in principle be the "lead that blows open the case",
+but only if it helps produce not-so-slight new evidence.
+What the conspiracy theorists do instead is start piling
+up contrived assumptions onto a lead that actually didn't
+go anywhere.  
+
+The "genome isn't big enough" argument
+isn't even that good a "smoking gun".  The relatively
+small size of the human genome compared to, say,
+MS Vista, is a mildly interesting factoid, but all it
+does is lead to some puzzling over developmental biology.
+
+White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html
+</div></div>
+<div class="comment" id="comment-170837"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com/" rel="nofollow">Daniel Gaston</a></span> &middot; 23 October 2008</p><div class="comment-body">I'm thinking it will be a Mathematician and Biologist working in collaboration, a Biologist who has picked up a really good Mathematics ability, or a Mathematician with extensive exposure to Biology. Luckily there are quite a few of those three working in molecular evolution!
+
+<blockquote>
+<strong>L Zoel said:</strong>
+
+This stuff really becomes interesting when you realize that DARPA is interested in it as well: 
+
+"Mathematical Challenge Fourteen:  An Information Theory for Virus Evolution
+Can Shannon’s theory shed light on this fundamental area of biology?"
+
+( https://www.fbo.gov/index?s=opportunity&mode=form&id=c120bc7171c203aa5f4b3903aa08e558&tab=core&_cview=0&cck=1&au=&ck= )
+
+Now we just have to wait and see if it's an ID advocate, a biologist or a mathematician who finally cracks this problem.
+
+As a math major, I can't help but lean towards the latter.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170841"><p class="comment-meta"><span class="comment-author"><a href="http://behefails.wordpress.com" rel="nofollow">Glen Davidson</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote><p>This is what is called the “Law of Conservation Of Information (LCI)”, which is either stated as “only an intelligence can create information” or (usually more discreetly but equivalently as) “random events cannot produce information.” </p></blockquote>
+
+Or in other words, intelligence is magic.
+
+The fact is that ID is superstition to its very core, and is ultimately a threat to the neurosciences and the computational sciences.  
+
+Indeed, its whole excuse for having no constraints for (hence no results from) its "science" is that intelligence is simply magic for which no laws or rules exist.  In a sense, ID rests on the fundamental assumption (which they would never question) that intelligence did not evolve--which is one reason why no amount of discussion of evolution and its evidence can dissuade someone like Dembski.  For how could intelligence evolve if it follows no rules at all?
+
+Btw, in that way Berlinski is an IDist, even if he recognizes the uselessness of ID.  For he denies that "mind" is subject to the laws of thermodynamics (which I brought up in a letter to <em>Commentary</em>), so of course it could never have evolved.  Their denials of the intelligibility of intelligence precludes evolution, and vice versa, in an endless looop.
+
+Glen D
+
+<p>http://tinyurl.com/2kxyc7</p></div></div>
+<div class="comment" id="comment-170843"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 23 October 2008</p><div class="comment-body"><p>Even if the <i>mind</i> didn't evolve, the mechanisms that mind uses to <i>implement</i> the designs would have to come from somewhere. Or in other words, even with a design, some method of engineering is necessary as well.</p><p>Henry</p></div></div>
+<div class="comment" id="comment-170844"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>iml8 said:</strong>
+The relatively
+small size of the human genome compared to, say,
+MS Vista, is a mildly interesting factoid, but all it
+does is lead to some puzzling over developmental biology.
+</blockquote>
+
+Not true.  In a rational world it would also lead folks to puzzle over Vista. Heh.
+
+</div></div>
+<div class="comment" id="comment-170847"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote><p>Not true. In a rational world it would also lead folks to puzzle over Vista. Heh.</p></blockquote>
+Oh, you mean that people would be puzzling over whether Vista was intelligently designed or not? :p
+</div></div>
+<div class="comment" id="comment-170849"><p class="comment-meta"><span class="comment-author"><a href="http://www.xectorsite.net" rel="nofollow">iml8</a></span> &middot; 23 October 2008</p><div class="comment-body"><blockquote>
+<strong>eric said:</strong>
+
+In a rational world it would also lead folks to puzzle over Vista. Heh.
+
+</blockquote>
+
+I'm running Vista now.  I rather like it, it has some nice
+features.  It may not be
+a revolution compared to Windows XP, however.
+Anyway, the comparison between Vista and the genome is
+skewed in many more ways than one.  Vista took less than
+a decade to develop.  Evolutionary selection has been
+tinkering with the genome for about eight orders of
+magnitude longer.  
+
+That necessarily leads back to Paley-type arguments about
+the refinement of nature versus machines, but that's
+a nowhere game.  As Orgel put it:  "Natural selection is
+cleverer than we are."
+
+White Rabbit (Greg Goebel) http://www.vectorsite.net/gblog.html</div></div>
+<div class="comment" id="comment-170866"><p class="comment-meta"><span class="comment-author">Maxwell&#x27;s Daemon</span> &middot; 23 October 2008</p><div class="comment-body"><p>It seems to me that the crux of the "not accessible to Darwinian evolution" argument hinges on the terrain map of codon/protein space.  This is the fundamental argument against DE given by Dembski, Durston , Behe, ,Axe and others.  Namely that functional proteins exist as isolated islands in the codon sequence to protein mapping, as in the quote from Durston above:</p><p>"Most combinations of amino acids will not produce a stable, three dimensional folded protein structure. Furthermore, the sequence space that encodes a stable folding protein tends to be surrounded by non-folding sequence space. Thus, to generate a novel protein with a stable fold, an evolutionary pathway must cross non-folding sequence space via a random walk, where natural selection will be inoperative. Thus, it requires functional information to properly specify a biological protein with a stable secondary structure."</p><p>Seems to me that for this to be true, this implies that nearly all single nucleotide-amino acid substitutions would render a functional, folded protein into a non-folded functionless protein.<br>  This is obviously absurd. A single amino acid substitution is most UNlikely to to significantly affect protein folding, which depends mainly on long-sequence behavior of the amino acid chain, and is relatively insensitive to short-sequence changes.<br>  Single substitutions in the core region of the protein, on the other hand, while not affecting the overall shape of the protein, could have a significant impact on the enzymatic function of said protein.<br> In other words, every functional protein, instead of being an "island" surrounded by a non-functional "sea" is in fact connected through a large number of functional links, mostly neutral to selection, to other functional nodes with different, selectable functionality.<br>  What naively appears to be a serious impediment to Darwinian evolution, is in fact, a feature capable of being exploited by the Darwinian process to generate new functionality using very little in the way of probability resources, and offers a clear alternative to the "tornado in a junkyard" scenario so favored by the anti-evolution argument.</p></div></div>
+<div class="comment" id="comment-170882"><p class="comment-meta"><span class="comment-author">SMgr</span> &middot; 23 October 2008</p><div class="comment-body"><p>...Kimura calculated that the amount of information added per generation was around 0.29 bits or since the Cambrian explosion some 500 million years ago..</p><p>One thing I'm wondering:  I've heard that our genome has doubled in size several times in our history, so a n average value per year may not reflect the actual way information is accumulated.  A doubling of the genome, by itself, would not be much of an increase in information.  However, once there are duplicates of each gene, this would allow far more neutral selection (e.g. noise) to accumulate in the genome just after the doubling occurs since changes to the copies of these genes would be less likely to have delterious results.   It would seem then that the rate of information accumulated would tend to spike after a genome doubling event.  There would also be more "surface area" to accumulate random changes in non-coding regions.</p><p>Do I have that right?</p></div></div>
+<div class="comment" id="comment-170883"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 23 October 2008</p><div class="comment-body"><blockquote><p>What naively appears to be a serious impediment to Darwinian evolution, is in fact, a feature capable of being exploited by the Darwinian process to generate new functionality using very little in the way of probability resources,... </p></blockquote>
+Not only that, but as I understand it, biologists don't really expect truly novel proteins anyway. 
+
+I suppose there could be "islands" of possible proteins that would be functional if found, but which can't be reached from current protein "islands", but it's up to the anti-evolution "scientists" to produce evidence that such are in use by living species.
+
+Henry
+</div></div>
+<div class="comment" id="comment-170890"><p class="comment-meta"><span class="comment-author"><a href="http://www.care2.com/c2c/group/evolution_education" rel="nofollow">Dale Husband</a></span> &middot; 23 October 2008</p><div class="comment-body"><p>I'd like to offer these videos for discussion:</p><p>How Evolution Causes an Increase in Information, Part I</p><p>http://www.youtube.com/watch?v=I14KTshLUkg</p><p>How Evolution Causes an Increase in Information, Part II</p><p>http://www.youtube.com/watch?v=i9u50wKDb_4</p><p>Enjoy!</p></div></div>
+<div class="comment" id="comment-170901"><p class="comment-meta"><span class="comment-author">mr silly</span> &middot; 24 October 2008</p><div class="comment-body"><p>random has the lowest information content? bull crap</p></div></div>
+<div class="comment" id="comment-170929"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com/" rel="nofollow">Daniel Gaston</a></span> &middot; 24 October 2008</p><div class="comment-body"><blockquote>
+<strong>Maxwell's Daemon said:</strong>
+
+It seems to me that the crux of the "not accessible to Darwinian evolution" argument hinges on the terrain map of codon/protein space. This is the fundamental argument against DE given by Dembski, Durston , Behe, ,Axe and others. Namely that functional proteins exist as isolated islands in the codon sequence to protein mapping, as in the quote from Durston above:
+
+"Most combinations of amino acids will not produce a stable, three dimensional folded protein structure. Furthermore, the sequence space that encodes a stable folding protein tends to be surrounded by non-folding sequence space. Thus, to generate a novel protein with a stable fold, an evolutionary pathway must cross non-folding sequence space via a random walk, where natural selection will be inoperative. Thus, it requires functional information to properly specify a biological protein with a stable secondary structure."
+
+ Seems to me that for this to be true, this implies that nearly all single nucleotide-amino acid substitutions would render a functional, folded protein into a non-folded functionless protein.
+ This is obviously absurd. A single amino acid substitution is most UNlikely to to significantly affect protein folding, which depends mainly on long-sequence behavior of the amino acid chain, and is relatively insensitive to short-sequence changes.
+ Single substitutions in the core region of the protein, on the other hand, while not affecting the overall shape of the protein, could have a significant impact on the enzymatic function of said protein.
+ In other words, every functional protein, instead of being an "island" surrounded by a non-functional "sea" is in fact connected through a large number of functional links, mostly neutral to selection, to other functional nodes with different, selectable functionality.
+ What naively appears to be a serious impediment to Darwinian evolution, is in fact, a feature capable of being exploited by the Darwinian process to generate new functionality using very little in the way of probability resources, and offers a clear alternative to the "tornado in a junkyard" scenario so favored by the anti-evolution argument.
+
+</blockquote>
+
+Not to mention that it, as always, completely ignores biological mechanisms thought to be VERY important for genome evolution and the evolution of protein families, namely gene duplication and divergence. Having a functional copy while a second copy is relatively released from evolutionary constraints and able to mutate much more freely is signficicant in terms of evolutionary searching over the protein sequence -&gt; structure/function landscape.
+
+</div></div>
+<div class="comment" id="comment-170930"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body"><blockquote>
+<strong>Daniel Gaston said:</strong>
+
+Not to mention that it, as always, completely ignores biological mechanisms thought to be VERY important for genome evolution and the evolution of protein families, namely gene duplication and divergence. Having a functional copy while a second copy is relatively released from evolutionary constraints and able to mutate much more freely is signficicant in terms of evolutionary searching over the protein sequence -&gt; structure/function landscape.
+
+
+</blockquote>
+
+Indeed, there are several other pathways which are often habitually ignored by ID proponents, including the above mentioned gene duplication, the work by Gavrilets who showed that a multi dimensional landscape is more like a 'holey landscape', the existence of 'promiscuous' genes, the evolution of regulatory genes etc. etc.
+
+ID proponents often call such hypotheses 'just so stories', showing a failure on their part to appreciate and comprehend how science works.
+
+Ask yourselves this question: What has Intelligent Design contributed in a non trivial manner to our scientific understanding? The answer should shock you.
+</div></div>
+<div class="comment" id="comment-170933"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body">Let's look at <i>C. Elegans</i> to understand how science has proceeded
+
+<blockquote><p>
+The C. elegans genome size is relatively small (9.7 x 10<sup>7</sup> base pairs or 97 Megabases), when compared to the human genome which is estimated to consist of 3 billion base pairs (3 X 10<sup>9</sup> bp or 3000 Megabases). The entire C. elegans genome has been sequenced. 
+</p></blockquote>
+
+This means that the genome size for C. elegans is 1/30th of the size of the human genome. So how does science link the genetic information to the morphological information?
+
+
+<blockquote><p>
+C. elegans is easy to maintain in the laboratory (in petri dishes) and has a fast and convenient life cycle. Embryogenesis occurs in about 12 hours, development to the adult stage occurs in 2.5 days, and the life span is 2-3 weeks. The development of C. elegans is known in great detail because this tiny organism (1 mm in length) is transparent and the developmental pattern of all 959 of its somatic cells has been traced. 
+</p></blockquote>
+
+The developmental patterns of all 959 of its somatic cells has been traced. Now that is a fascinating feat.
+
+what does this mean in simple language (you know for whom...)
+
+<blockquote><p>
+In other words, the developmental pattern of each somatic cell is known, from the zygote to the adult worm. Thus, a scientist can identify any cell at any point in development, and know the fate of that particular cell.
+</p></blockquote>
+
+
+See for some high level background information <a href="http://users.rcn.com/jkimball.ma.ultranet/BiologyPages/C/Caen.elegans.html">these pages</a> as well as for instance this 2008 paper
+
+Lee I, Lehner B, Crombie C, Wong W, Fraser AG, Marcotte EM. <b>A single gene network accurately predicts phenotypic effects of gene perturbation in Caenorhabditis elegans.</b> Nat Genet. 2008 Feb;40(2):181-8. Epub 2008 Jan 27.
+
+<blockquote><p>The fundamental aim of genetics is to understand how an organism's phenotype is determined by its genotype, and implicit in this is predicting how changes in DNA sequence alter phenotypes. A single network covering all the genes of an organism might guide such predictions down to the level of individual cells and tissues. To validate this approach, we computationally generated a network covering most C. elegans genes and tested its predictive capacity. Connectivity within this network predicts essentiality, identifying this relationship as an evolutionarily conserved biological principle. Critically, the network makes tissue-specific predictions-we accurately identify genes for most systematically assayed loss-of-function phenotypes, which span diverse cellular and developmental processes. Using the network, we identify 16 genes whose inactivation suppresses defects in the retinoblastoma tumor suppressor pathway, and we successfully predict that the dystrophin complex modulates EGF signaling. We conclude that an analogous network for human genes might be similarly predictive and thus facilitate identification of disease genes and rational therapeutic targets.</p></blockquote>
+
+
+
+
+</div></div>
+<div class="comment" id="comment-170934"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 October 2008</p><div class="comment-body"><p>But it's still just a worm!11!!!one!!</p><p>Do they always have that same exact number of cells?</p></div></div>
+<div class="comment" id="comment-170936"><p class="comment-meta"><span class="comment-author">tresmal</span> &middot; 24 October 2008</p><div class="comment-body"><p>IIRC yes they do always have the same number of cells. Same number of nerve cells, muscle cells etc.. It would be hard to come up with a better model for studying development. IMO C elegans isn't as well known as it should be.</p></div></div>
+<div class="comment" id="comment-170940"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body"><blockquote>
+<strong>tresmal said:</strong>
+
+IIRC yes they do always have the same number of cells. Same number of nerve cells, muscle cells etc.. It would be hard to come up with a better model for studying development. IMO C elegans isn't as well known as it should be.
+</blockquote>
+
+<blockquote><p>
+Studies of the nematode worm Caenorhabditis elegans have led to the widely held belief that individuals of a given nematode species are characterized by a property known as eutely, in which all individuals have the same total number of cells1. This property, which is peculiar to nematodes and a few other phyla, has raised the question of whether the developmental mechanisms of nematodes differ from those of larger metazoans. Here we show that many, perhaps most, nematode species are not eutelic in at least one organ, the epidermis, and that in this respect they resemble other model organisms such as fruitflies and mice.</p></blockquote>
+
+Source: Ana Cunha, Ricardo B. R. Azevedo, Scott W. Emmons and Armand M. Leroi <b>Developmental biology: Variable cell number in nematodes</b> Nature 402, 253 (18 November 1999)
+
+
+</div></div>
+<div class="comment" id="comment-170941"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body">And this fascinating example
+
+<blockquote><p>The nematode vulva is an ideal system to study changes in cell signaling. The nematode vulva is a complex structure through which eggs are laid; it connects the uterus to the outside environment and is an essential component of the nematode body plan. As such, it is presumably a homologous structure among all nematodes. In C. elegans, the vulva is composed of the descendents from three epidermal cells. The principal cell interactions that coordinate vulval development in C. elegans involve only these three cells and an organizing cell of the gonadal primordium, i.e. four cells in total. The development of the vulva in many other nematodes also involves a small number of homologous cells. Yet despite the homology of the vulva and the cells involved among nematode species, a large number of changes have been noted in the signaling that occurs between these cells to regulate development of the adult structure.</p></blockquote></div></div>
+<div class="comment" id="comment-170942"><p class="comment-meta"><span class="comment-author">Russ</span> &middot; 24 October 2008</p><div class="comment-body"><p>As much as I love treating DNA as a string I think that it is difficult to actually rationalize this when we consider the enzymatic active of RNA. For example take Trypanosoma brucei whose Mini-chromosomes interact with DNA as it is being transcribed allowing for an extreme variability that is slightly stochastic. I don't think a Shannon's can be applied just to the sequence without applying it to all of the probable messages that it can express as well (taking into account probabilistic models on how often that sequence is created).</p></div></div>
+<div class="comment" id="comment-170944"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body">Indeed, estimating the amount of information in the genome based on Shannon information does not truly address the amount of information that can be expressed during the development.
+
+as others have already noted, epigenetics play a large role in the developmental process.
+
+<blockquote>
+<strong>Russ said:</strong>
+
+As much as I love treating DNA as a string I think that it is difficult to actually rationalize this when we consider the enzymatic active of RNA. For example take Trypanosoma brucei whose Mini-chromosomes interact with DNA as it is being transcribed allowing for an extreme variability that is slightly stochastic. I don't think a Shannon's can be applied just to the sequence without applying it to all of the probable messages that it can express as well (taking into account probabilistic models on how often that sequence is created). 
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170945"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 October 2008</p><div class="comment-body"><p>Where <a url="http://tolweb.org/Nematoda/2472">Nematoda aka roundworms </a> are on the tree of life.</p></div></div>
+<div class="comment" id="comment-170946"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 October 2008</p><div class="comment-body"><p>Where Nematoda aka roundworms are on the tree of life: http://tolweb.org/Nematoda/2472</p></div></div>
+<div class="comment" id="comment-170949"><p class="comment-meta"><span class="comment-author">DS</span> &middot; 24 October 2008</p><div class="comment-body"><p>PvM wrote (or quoted):</p><p>"The principal cell interactions that coordinate vulval development in C. elegans involve only these three cells and an organizing cell of the gonadal primordium, i.e. four cells in total. The development of the vulva in many other nematodes also involves a small number of homologous cells. Yet despite the homology of the vulva and the cells involved among nematode species, a large number of changes have been noted in the signaling that occurs between these cells to regulate development of the adult structure."</p><p>(Begin sarcasm ...</p><p>Sure, but unless you can explain in one short sentence, without using any big sciency words, exactly how the exact shape of the vulva is determined then "Darwinism" is completely wrong - for some unknown reason that I don't have to explain.  I ain't gonna read no dang papers neither and you can't make me.  Sides, everybody knows that there just ain't enough information in that there itty bitty genome to make the whole critter.  Must be magic.  Sure ain't no computer type program.</p><p>... end sarcasm).</p><p>Seems that some developmental systems are indeed well understood at the molecular level.  Who would have thunk it?</p></div></div>
+<div class="comment" id="comment-170960"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 24 October 2008</p><div class="comment-body"><blockquote><p>Here we show that many, perhaps most, nematode species are not eutelic in at least one organ, the epidermis,</p></blockquote>
+
+That would make sense, what with skin being the first defense in case of injury. I suppose it's not like in larger animals though, where skin grows continually from the inside, while the outermost skin cells die, flake off, and accumulate on the furniture as piles of dust, or as dust bunnies under the bed.
+
+Henry
+</div></div>
+<div class="comment" id="comment-170962"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body">Gene duplication followed by neo or subfunctionalization is an important contributor to the genome's information content. In addition, genome size is not directly related to 'complexity' as some 'simple organisms' have much larger genomes. Genome size can also be an indication of other aspects of the organism such as selection pressures and mutation rates. A larger genome for instance can provide some robustness as mutations may be more likely to occur in neutral areas of the genome. 
+Science is slowly exploring the fascinating aspects.
+
+
+<blockquote>
+<strong>SMgr said:</strong>
+
+...Kimura calculated that the amount of information added per generation was around 0.29 bits or since the Cambrian explosion some 500 million years ago..
+
+One thing I'm wondering:  I've heard that our genome has doubled in size several times in our history, so a n average value per year may not reflect the actual way information is accumulated.  A doubling of the genome, by itself, would not be much of an increase in information.  However, once there are duplicates of each gene, this would allow far more neutral selection (e.g. noise) to accumulate in the genome just after the doubling occurs since changes to the copies of these genes would be less likely to have delterious results.   It would seem then that the rate of information accumulated would tend to spike after a genome doubling event.  There would also be more "surface area" to accumulate random changes in non-coding regions.
+
+Do I have that right?
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-170963"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 24 October 2008</p><div class="comment-body"><p>The nematode model above is interesting as it involves approximately 400,000 interactions between 16,000 genes. So let's estimate the number of bits needed here</p><p>log(2) (16,000) = 14 bits or 28 bits to describe the interaction from one gene with another. 28*4*10<sup>5</sup> or about 11 Mbits. Assume that the linkage is represented by 32 bits and we have 3*10<sup>8</sup> bits to describe the genetic network. Now these are just estimates of the amount of information needed to represent the phenotypic expression. <br>There may be a more compact representation of the model but this seems a rough estimate of the amount of information.</p></div></div>
+<div class="comment" id="comment-171016"><p class="comment-meta"><span class="comment-author"><a href="http://entropicexistence.blogspot.com" rel="nofollow">Daniel Gaston</a></span> &middot; 25 October 2008</p><div class="comment-body"><p>PvM:</p><p>As a PhD student in molecular evolution who has been following the issue for a few years it definitly wouldn't shock me, because ID has contributed absolutely nothing non-trivial to science. :) Especially to Evolutionary Biology.</p></div></div>
+<div class="comment" id="comment-171072"><p class="comment-meta"><span class="comment-author">stevaroni</span> &middot; 25 October 2008</p><div class="comment-body"><blockquote>
+<strong>mr silly said:</strong>
+
+random has the lowest information content? bull crap
+</blockquote>
+
+No. It's absolutely true. 
+
+Imagine a PC scanner. Place a copy of the Gettysburg Address on the scanner, and then explore all the ways to transmit the actual information contained therin. 
+
+You'll find that the most effective way is to use an OCR program to "read" it, and then send the resulting information as an formatted Ascii string. It'll take a few thousand characters, max. That's the actual information content, everything else is duplication or format artifact.
+
+Now, put a close up of variegated sand and beach gravel on the scanner (essentially random information) and repeat the exercise. The only way you're going to transmit the picture without loosing vast amounts of information is by sending a very high resolution tiff file or something similar. It's just not an image that will compress to any degree since there's not much repetition. 
+
+While somewhat counter-intuitive, this is a bedrock basis of Shannon information theory, developed for the express purpose of sending the most information through the smallest possible channel. "Random" is as packed as you can get, anything manifestly simpler is wasting channel space.
+
+
+
+</div></div>
+<div class="comment" id="comment-171073"><p class="comment-meta"><span class="comment-author"><a href="http://avancna.deviantart.com" rel="nofollow">Stanton</a></span> &middot; 25 October 2008</p><div class="comment-body"><blockquote>
+<strong>Daniel Gaston said:</strong>
+
+PvM:
+
+As a PhD student in molecular evolution who has been following the issue for a few years it definitly wouldn't shock me, because ID has contributed absolutely nothing non-trivial to science. :) Especially to Evolutionary Biology.
+</blockquote>
+
+As far as I can tell, there has been extreme difficulty for Intelligent Design to make even trivial contributions to science.</div></div>
+<div class="comment" id="comment-171078"><p class="comment-meta"><span class="comment-author">Pimp Van Pickle</span> &middot; 25 October 2008</p><div class="comment-body"><blockquote>However, information theory shows that random sequences have the lowest information content</blockquote>
+
+Which information theory books are you reading?
+
+By definition, random sequences have the highest information content.
+
+Sequences that never change would have the lowest information content.  
+
+Shame shame, Mr. Ph.D.</div></div>
+<div class="comment" id="comment-171079"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 25 October 2008</p><div class="comment-body">Depends on the definition of information you use, you are correct in a Kolmogorov sense but wrong in a Shannon sense and I believe the person was describing the Shannon sense.
+
+I believe that Shannon information has a better applicability. Or are you trolling?
+<blockquote>
+<strong>Pimp Van Pickle said:</strong>
+
+<blockquote>However, information theory shows that random sequences have the lowest information content</blockquote>
+
+Which information theory books are you reading?
+
+By definition, random sequences have the highest information content.
+
+Sequences that never change would have the lowest information content.  
+
+Shame shame, Mr. Ph.D.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-171082"><p class="comment-meta"><span class="comment-author">Pimp Van Pickle</span> &middot; 25 October 2008</p><div class="comment-body"><p>Do the math.  Consider a coin:</p><p>H(y)=SUM(1,n,p(yi),log2(p(yi))</p><p>This <a href="http://en.wikipedia.org/wiki/Image:Binary_entropy_plot.svg">graph</a> shows that as the coin becomes fair, the information conveyed in each *random* flip is maximized.</p><p>I believe the equation was developed by Shannon, but that is a minor point.</p></div></div>
+<div class="comment" id="comment-171086"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 25 October 2008</p><div class="comment-body">That's the entropy, often confused by information which in fact is H<sub>max</sub>-H(Y) which means that it is zero when H(Y) is maximum, which means when the distribution is random.
+
+No worries, many people confuse entropy and information. Read the work by Adami or Schneider. Let me know if you need additional links
+
+
+<blockquote>
+<strong>Pimp Van Pickle said:</strong>
+
+Do the math.  Consider a coin:  
+
+H(y)=SUM(1,n,p(yi),log2(p(yi))
+
+This <a href="http://en.wikipedia.org/wiki/Image:Binary_entropy_plot.svg">graph</a> shows that as the coin becomes fair, the information conveyed in each *random* flip is maximized.
+
+I believe the equation was developed by Shannon, but that is a minor point.  
+
+
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-171089"><p class="comment-meta"><span class="comment-author">Pimp Van Pickle </span> &middot; 26 October 2008</p><div class="comment-body">What you arrogantly call a "common mistake" is more correctly termed <em>convention</em>.  For example, consider:
+
+<blockquote>This measure of amount of information is called <em>entropy</em><sup>(Pierce 1961)</sup></blockquote>
+
+
+Indeed, it is the definition.  It is probably best to go to the definer (a person you erroneously claimed supported your viewpoint).
+
+
+<blockquote>The quantity H has a number of interesting properties which further substantiate it as a reasonable measure of choice or information.<sup>(Shannon 1948)</sup></blockquote>
+
+<strong>References</strong>
+
+<ul>
+Pierce, John R. (1961) <em>An Introduction to Information Theory</em> Dover Publications, New York, NY
+
+
+Shannon, Claude E. (1948) <a href="http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf"><em>A Mathematical Theory of Communication</em></a> The Bell System Technical Journal
+</ul>
+
+</div></div>
+<div class="comment" id="comment-171140"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 26 October 2008</p><div class="comment-body">Which is why I called it Shannon information which is commonly described as 
+
+I(Y) = H<sub>Max</sub> - H(Y)
+
+See Adami, Schneider or various others. Call me arrogant for sticking to definitions which differentiate between entropy and information
+
+<blockquote><p>Using information theory to understand evolution and the information content of the sequences it gives rise to is not a new undertaking. Unfortunately, many of the earlier attempts (e.g., refs. 12–14) confuse the picture more than clarifying it, often clouded by misguided notions of the concept of information (15). An (at times amusing) attempt to make sense of these misunderstandings is ref. 16. </p></blockquote>
+
+<b>Source</b>: Christoph Adami, Charles Ofria and Travis C. Collier <b>Evolution of biological complexity</b> PNAS  April 25, 2000   vol. 97  no. 9  4463-4468 
+
+<blockquote><p>
+In Shannon's information theory (22), the quantity entropy (H) represents the expected number of bits required to specify the state of a physical object given a distribution of probabilities; that is, it measures how much information can potentially be stored in it
+</p></blockquote>
+
+For the rest see <a href="http://www.pandasthumb.org/archives/2004/05/shannon-entropy.html">this PT article</a>
+
+Similarly Schneider <a href="http://www.lecb.ncifcrf.gov/~toms/paper/ev/blog-ev.html">Evolution of Biological Information</a> describes how information in the genome can be calculated.
+
+Let's give an example: A perfectly random coin with probabilities head and tail = 0.5
+
+Before you toss the coin, the amount of entropy is 1 bit, after the coin is tossed, the entropy is 1 bit leading to a total of 0 bits of information transferred.
+
+Now a loaded coin where P(head)=0 P(tail)=1. Before the coin is tossed you have uncertainty of 1 bit, after the coin is tossed you have an uncertainty of 0 bit since the coin is always a tail. Information transfer is 1 bit.
+
+Needless to say, information in shannon sense versus entropy has been an ongoing source of confusion.
+
+<blockquote>
+<strong>Pimp Van Pickle  said:</strong>
+
+What you arrogantly call a "common mistake" is more correctly termed <em>convention</em>.  For example, consider:
+
+<blockquote>This measure of amount of information is called <em>entropy</em><sup>(Pierce 1961)</sup></blockquote>
+
+
+Indeed, it is the definition.  It is probably best to go to the definer (a person you erroneously claimed supported your viewpoint).
+
+
+<blockquote>The quantity H has a number of interesting properties which further substantiate it as a reasonable measure of choice or information.<sup>(Shannon 1948)</sup></blockquote>
+
+<strong>References</strong>
+
+<ul>
+Pierce, John R. (1961) <em>An Introduction to Information Theory</em> Dover Publications, New York, NY
+
+
+Shannon, Claude E. (1948) <a href="http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf"><em>A Mathematical Theory of Communication</em></a> The Bell System Technical Journal
+</ul>
+
+
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-171150"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 26 October 2008</p><div class="comment-body">Some references
+
+<a href="http://www.swarthmore.edu/NatSci/math_stat/webspot/Larson,Jessica/Shannon_Index/index.html">Genetics and the Shannon Index</a>
+
+<blockquote><p>
+Information and uncertainty deal with the process of selecting an object from a larger set of objects. Before and object is selected, we are uncertain as to what will appear. Once an object is selected, the information regarding the object increases, and our uncertainty decreases. Shannon studied this process and derived the following formula for H, entropy, or the degree of randomness (uncertainty): H = -Pi Sum log2 Pi (bits per symbol). We can use this formula to determine the amount of information—the decrease in uncertainty—about a particular system: I = Hmax - H. 
+
+
+Tom Schneider <a href="http://www.lecb.ncifcrf.gov/~toms/paper/primer/latex/index.html">Information Theory Primer </a>
+
+<quote>In the beginning of this primer we took information to be a decrease in uncertainty. Now that we have a general formula for uncertainty, (8), we can express information using this formula. Suppose that a computer contains some information in its memory. If we were to look at individual flip-flops, we would have an uncertainty Hbefore bits per flip-flop. Suppose we now clear part of the computer's memory (by setting the values there to zero), so that there is a new uncertainty, smaller than the previous one: Hafter. Then the computer memory has lost an average of
+
+ 
+R = Hbefore - Hafter 	(20)
+
+</p></blockquote>
+</quote></div></div>
+<div class="comment" id="comment-171151"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 26 October 2008</p><div class="comment-body"><p>Or     <br>Jan T. Kim, Thomas Martinetz  and Daniel Polani <b>Bioinformatic principles underlying the information content of transcription factor binding sites</b> J. theor. Biol. (2003) 220, 529–544</p></div></div>
+<div class="comment" id="comment-171170"><p class="comment-meta"><span class="comment-author">Pimp Van Pickle</span> &middot; 27 October 2008</p><div class="comment-body">The most interesting part of this post is the idea that the entropy of one part of a sequence is different than the entropy of another part of the sequence.  You've called these <em>coding</em> and <em>non-coding</em> regions.
+
+Given your unconventional use of the term "information", I have to ask for the sake of clarity, do you mean the entropy of the coding regions is higher than the non-coding regions?  I assume probilities are based on observed frequency distributions of various combinations of triplets, etc.? 
+
+In information theory, communication theory, cryptography, and other fields, high entropy conventionally indicates information, not lack of information.  
+
+If you have a quote in which Shannon repudiated the statement made in his seminal work--the one I quoted above-- or indeed a quote from a person who has published a paper in the IEEE transactions on information theory, or a quote from a knowledgeable person outside of biology, I'd be interested.  
+
+Regarding your blog entry, could you define what you mean by "conserved sequence"?  
+
+Also,
+
+<blockquote>Another way to look at this is to compress the DNA sequence using a regular archive utility.  If the sequence is random, the compression will be minimal, if the sequence is fully regular, the compression will be much higher.</blockquote>
+
+Other possibilities exist...if DNA sequences do not compress much, it could mean that:
+
+<ul>
+<li>They are completely random.  (Random source)</li>
+<li>They have been corrupted by noise.  (Random interferance)</li>
+<li>They represent optimally (efficiently) encoded messages.</li>
+<li>They have been encrypted.</li>
+<li>The compression algorithm cannot recognize the pattern in the sequences, which can be remedied with a better and perhaps novel compression algorithm.</li>
+<li>Any number of combinations of the above</li>
+<li>...other possibilities probably exist</li>
+</ul>
+
+Likewise, if most DNA sequences do compress well, it by itself could indicate:
+
+<ul>
+<li>It has low information content (the genetic language is redundant).</li>
+<li>It has error correction and detection built into the code.</li>
+<li>It has been encrypted.  (Code is not intended to be broken)</li>
+<li>It has been obfuscated</li>
+<li>...other possibilities probably exist</li>
+</ul>
+
+Strictly speaking, compressibility or entropy calculations cannot tell you how much information (in the English language sense of the word) actually exists in the DNA sequence, or how much of it is "random".  
+
+However, compressibility is one tool in providing a possible upper bound on the information content of genetic sequences, assuming the genetic alphabet can legitimately be thought of as an alphabet, and the sequences can be legitimately thought of as messages.
+
+P.S.  Schneider's R is a suspect application of information rate of a binary symmetric memoryless channel (BSC).  But I am not sure how that bolsters your incorrect argument that entropy and information are inversely related.  Noise reduces channel capacity.  So what?</div></div>
+<div class="comment" id="comment-171171"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 27 October 2008</p><div class="comment-body">First of all, the definition is hardly that unconventional but I do accept why you may have been confused.
+
+As to coding and non-coding regions they entropy was higher for non-coding than coding.
+
+As I pointed out, calculating the information content from a single genome seems suboptimal. Ideally one gets many genome samples from the same species and determines the nucleotide frequency for any particular location.
+<blockquote>
+<strong>Pimp Van Pickle said:</strong>
+
+The most interesting part of this post is the idea that the entropy of one part of a sequence is different than the entropy of another part of the sequence.  You've called these <em>coding</em> and <em>non-coding</em> regions.
+
+Given your unconventional use of the term "information", I have to ask for the sake of clarity, do you mean the entropy of the coding regions is higher than the non-coding regions?  I assume probilities are based on observed frequency distributions of various combinations of triplets, etc.? 
+
+</blockquote>
+
+<blockquote><p>
+P.S. Schneider’s R is a suspect application of information rate of a binary symmetric memoryless channel (BSC). But I am not sure how that bolsters your incorrect argument that entropy and information are inversely related. Noise reduces channel capacity. So what?</p></blockquote>
+
+I am not sure why you call the application to be suspect however, the argument is straightforward namely that one should not confuse entropy and information which is the reduction is uncertainty.
+Before one receives information about a particular nucleotide, the best assumption is one of uniform distribution, when the nucleotide is received, the reduction in uncertainty is what is commonly referred to as 'information'.
+
+As simple example: coin which is random. The before uncertainty is 2 bits, the after uncertainty is 2 bits, resulting in a zero information. However if the coined is biased to result in always resulting in the coin resulting in heads. The before uncertainty is 2 bits, the after uncertainty is zero bits, resulting in 2 bits of information.
+
+One may disagree about the definition of information but as I explained, I am working with the common usage of information as the reduction in uncertainty.
+
+
+</div></div>
+<div class="comment" id="comment-171172"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 27 October 2008</p><div class="comment-body"><blockquote><p>Strictly speaking, compressibility or entropy calculations cannot tell you how much information (in the English language sense of the word) actually exists in the DNA sequence, or how much of it is “random”.</p></blockquote>
+
+Hence my suggestion as to a better estimate of information in the genome which is how well certain nucleotides are conserved across members of the species.</div></div>
+<div class="comment" id="comment-171178"><p class="comment-meta"><span class="comment-author"><a href="http://austringer.net/wp/" rel="nofollow">Wesley R. Elsberry</a></span> &middot; 27 October 2008</p><div class="comment-body"><blockquote><p>
+Imagine a PC scanner. Place a copy of the Gettysburg Address on the scanner, and then explore all the ways to transmit the actual information contained therin.
+
+You’ll find that the most effective way is to use an OCR program to “read” it, and then send the resulting information as an formatted Ascii string.
+</p></blockquote>
+
+Hmmm... does the ASCII string contain the information that will allow a handwriting expert to distinguish between the writing of the person who authored the Gettysburg address and those who didn't, or might there be more information present in the original than you are accounting for?
+</div></div>
+<div class="comment" id="comment-171180"><p class="comment-meta"><span class="comment-author">Dave Lovell</span> &middot; 27 October 2008</p><div class="comment-body"><blockquote>
+<strong>Wesley R. Elsberry said:</strong>
+
+<blockquote><p>
+Imagine a PC scanner. Place a copy of the Gettysburg Address on the scanner, and then explore all the ways to transmit the actual information contained therin.
+
+You’ll find that the most effective way is to use an OCR program to “read” it, and then send the resulting information as an formatted Ascii string.
+</p></blockquote>
+
+Hmmm... does the ASCII string contain the information that will allow a handwriting expert to distinguish between the writing of the person who authored the Gettysburg address and those who didn't, or might there be more information present in the original than you are accounting for?
+
+</blockquote>
+
+I take your point, but it is an observation only about the analogy. (I'll ignore the fact that an ASCII string would be a long way short of the most effective way to send the data.) Surely with DNA the information content is limited to that which can be reliably passed from one cell to another due to self replication of the DNA</div></div>
+<div class="comment" id="comment-171185"><p class="comment-meta"><span class="comment-author">Pimp Van Pickle</span> &middot; 27 October 2008</p><div class="comment-body"><blockquote>
+<strong>PvM said:</strong>
+
+As simple example: coin which is random. The before uncertainty is 2 bits, the after uncertainty is 2 bits, resulting in a zero information. However if the coined is biased to result in always resulting in the coin resulting in heads. The before uncertainty is 2 bits, the after uncertainty is zero bits, resulting in 2 bits of information.
+</blockquote>
+
+You really don't seem to understand rudimentary information theory.  
+
+Conveying the result of a single coin-flip provides a maximum of 1 bit of information, not 2 bits.  
+
+If the coin is double headed, conveying the result provides zero information, or 0-bits of information, as the result is known a priori:  heads.
+
+Beating a dead horse horse isn't exactly fun, and I'm starting be embarrassed on your behalf, so I will leave you in your confusion on this point, and trust that you will go back and read Shannon someday and make better sense out of it.  
+
+However, that being said, it is still, I think, interesting and noteworthy that two different regions of a DNA squence consistently have different entropies.  It would be nice to read those studies.  Do you have reference on this?  Your contention on this point sounds plausible, and I really would like to consider the result in greater detail.
+
+Adding a reference to the blog entry itself would probably help others, too.</div></div>
+<div class="comment" id="comment-171186"><p class="comment-meta"><span class="comment-author">eric</span> &middot; 27 October 2008</p><div class="comment-body"><p>I draw a larger point from this discussion about Shannon vs. Kolmogorov (vs. other definitions of information), entropy vs. information.  Which is that the ID claim that 'evolution cannot produce new information' is <i>at best</i> vague and ill-defined, because there are multiple, legitimate, yet different ways to define 'information' yet IDers do not state which definition they are using.</p><p>But 'its vague' is the kindest thing you could say.  'Nonsensical' is a more apt description of the ID argument since multiple conflicting definitions mean there will be mutations that increase information under one definition but decrease information under another.</p><p>As if choosing between conflicting definitions weren't enough of a problem, IDers also have to contend with the follow-on issue that scientists may use whatever definition is best for solving the specific (scientific) problem at hand, without philosophically committing to any one definition as an ultimate or objective truth.  I'm arguing that our mathematical descriptions of the concept 'information' are powerful tools in the toolbox, but they remain tools, not paradigms or deeply-held premises.  So the bedrock assumption needed for the ID argument to even make sense - that there is <i>only one, objective definition</i> of information by which DNA content should be measured - is rendered false, making the entire ID claim philosophically meaningless.</p></div></div>
+<div class="comment" id="comment-171192"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 27 October 2008</p><div class="comment-body">ouch 1 bit. I have been dealing too long with dna. As to familiarizing myself with Shannon and you being embarrassed on my behalf, let me reassure you that I have done to former and that there is no reason to be embarrassed for being right. You confused entropy and information, as I showed it is the reduction in entropy which conveys information. I have provided several references that show how Shannon information is to be applied.
+You may disagree with the application but that merely indicates that I should have not presumed that the reader were familiar with my usage of Shannon information as it is commonly applied in biology.
+
+That Shannon's information is all about reduction in entropy may come as a surprise to some but it is hardly to be embarrassed about, it's just that we are talking about two different interpretations of information. 
+
+
+<blockquote>
+<strong>Pimp Van Pickle said:</strong>
+
+<blockquote>
+<strong>PvM said:</strong>
+
+As simple example: coin which is random. The before uncertainty is 2 bits, the after uncertainty is 2 bits, resulting in a zero information. However if the coined is biased to result in always resulting in the coin resulting in heads. The before uncertainty is 2 bits, the after uncertainty is zero bits, resulting in 2 bits of information.
+</blockquote>
+
+You really don't seem to understand rudimentary information theory.  
+
+Conveying the result of a single coin-flip provides a maximum of 1 bit of information, not 2 bits.  
+
+If the coin is double headed, conveying the result provides zero information, or 0-bits of information, as the result is known a priori:  heads.
+
+Beating a dead horse horse isn't exactly fun, and I'm starting be embarrassed on your behalf, so I will leave you in your confusion on this point, and trust that you will go back and read Shannon someday and make better sense out of it.  
+
+However, that being said, it is still, I think, interesting and noteworthy that two different regions of a DNA squence consistently have different entropies.  It would be nice to read those studies.  Do you have reference on this?  Your contention on this point sounds plausible, and I really would like to consider the result in greater detail.
+
+Adding a reference to the blog entry itself would probably help others, too.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-171194"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 27 October 2008</p><div class="comment-body"><p>A final reference other than Schneider, Adami</p><p>Chen et al, Divergence and Shannon Information in Genomes, Physical Review Letters, 94, 178103, 2005</p><p>They show that there are two perspectives to information, one is the fidelity of the transmission, the other one is the information in the received message itself. Pointing out that information increases with a decrease in uncertainty (entropy) they define Shannon Information as the difference between before and after. The uncertainty before is, lacking any further data, a uniform distribution (leading to max uncertainty / entropy) followed by a reduction in uncertainty after the message is received.</p><p>So in case of my coin example, the toss of 10 coins, with all head leads to a before estimate of uncertainty of 10 bits and an after the coins are tossed, an uncertainty of zero bits, where the reduction of 10 bits is the Shannon information.</p><p>Hope this clarifies two different ways of looking at information.</p></div></div>
+<div class="comment" id="comment-172238"><p class="comment-meta"><span class="comment-author">Shepherd Moon</span> &middot; 6 November 2008</p><div class="comment-body"><p>Most of this discussion is over my head when it comes to the details of calculating information content or the relevance of information content to creationist arguments.</p><p>I will say that the argument does come up on the creationist forums in which I participate. The main debates along these lines have included the following. I will sum up the position of the creationist in question. This is not to imply that I've won the debates - I'm sure someone here could do better against these arguments.</p><p>1. Differences in chimpanzee and human DNA<br>My opponent presents a two-pronged case, both prongs of which may in fact contradict each other.</p><p>First, he argues that the evidence for 98% similarity between chimpanzee and human DNA is not convincing. He presents some calculations that the similarity is closer to 88% or 90%.</p><p>Second, he presents calculations for the amount of information (2 bits per base) in human and chimpanzee DNA. Then he say that the difference - however many K or MB - does not explain how humans can display so much more complexity if the information difference between the species is relatively small. He can't see how all of this complexity it squeezed into 1 or 2 MB.</p><p>My counterarguments were:</p><p>A. 88% or 90% similarity is still very high. That suggests either (1) humans are less complex than he thinks or (2) chimpanzees are more complex than he thinks.</p><p>B. DNA may encode shorthand instructions or some other way of yielding complex behavior without having to encode all the resulting behavior in the DNA. For example, War and Peace can be written by a human without having to have the entire information content of War and Peace in his DNA, even though we still do need to explain how DNA can result in the creation of a complex object such as War and Peace.</p><p>C. If my opponent is arguing that the chimanzee-human similarity is greater, then that greater difference provides more available space to store the complexity he is claiming won't fit. So can my opponent quantify how much information content humans have *in total* so that we can see the difference with chimpanzees more clearly and decide whether the actual information content differences really are too big.</p><p>2. Whether information has any "weight" or other tangible property.<br>I did not weigh in on this debate but simply noted it. The argument was basically this:</p><p>a. Take a box of fine sand.</p><p>b. Weigh the box and record the result.</p><p>c. Write a message in the box of sand with a stick.</p><p>d. Weigh the box and record the result.</p><p>e. Shake the box to erase the message.</p><p>f. Weigh the box and record the result.</p><p>If the box weighs the same before and after the message has been erased, then how can one say that information has any material existence? The responses by the other creationists all affirmed that the fact that no weight difference is detected is proof that information is not material or tangible. Thus support is perceived for the existence of the supernatural.</p><p>My counterargument (to myself, because again, I did not reply to that thread) is that it takes energy to write the message in the sand and energy to erase it. So if one had a scale sensitive enough to measure such minutes changes in energy, one would probably detect differences in the results, if not in weight then perhaps in temperature.</p><p>I would also ask the author to give an example of information that is not encoded in matter or energy. For even if the purported source of information is supernatural or the information is not measurable by conventional material tools, in order for us to perceive the information it has to be presented to our senses, and our senses function with measurable data as input.</p><p>3. Whether mutations add any information to DNA</p><p>The argument in this case is based almost completely on Lee M. Spetner's book Not by Chance!. Basically, the author and my opponent take the view that the probability of a mutation that adds information is so ridiculously low (something like 2.7×10^-2,739) that Darwinian evolution has been refuted on statistical grounds.</p><p>My counterargument, such as it was, was that I suspect a probability trick or mistake whereby the author is multipying probabilities too much - something like the case I heard about where a lawyer used 10 or 11 properties described by witness to claim that the odds against a defendant were 10^11 to 1 against, when in fact the probabilities were not really independent.</p><p>I would be eager to learn if there are rebuttals to the arguments above that I could make note of and use in the future. But I wanted to post them here because I enjoyed your article and can tell you from experience that creationsts are relying heavily on arguments that involve the information content of DNA. And given that the subject is so complicated, I think it would be beneficial to come up with well-illustrated and easily digestible refutations, where they exist, of the creationist arguments.</p><p>Cheers,</p><p>Shepherd Moon</p></div></div>
+<div class="comment" id="comment-172241"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 6 November 2008</p><div class="comment-body">Shepherd Moon,
+
+This might help: <a url="http://www.talkorigins.org/indexcc/index.html">An Index to Creationist Claims </a>
+
+I'll look at a few of those questions, though the experts here can give a lot more detail than I can.
+
+<blockquote><p>First, he argues that the evidence for 98% similarity between chimpanzee and human DNA is not convincing. He presents some calculations that the similarity is closer to 88% or 90%.</p></blockquote>
+
+The exact percentage depends on what is being measured. If what's counted is differences in base pairs in sequences common to both species, it gives one result. If sequences present in one but not the other are counted, it gives a larger percentage difference. If the number of genes having <i>any</i> differences is used, that gives a much larger percentage difference.
+
+Whichever method is used though, it's not the % difference between just two species that matters, it's how it compares when lots of species are compared to each other. Closer related species should show smaller differences than more distantly related species, when the same method of measurement is used consistently.
+
+<blockquote><p>Then he say that the difference - however many K or MB - does not explain how humans can display so much more complexity if the information difference between the species is relatively small.</p></blockquote>
+
+Humans are not biologically any more (or less) complex than chimpanzees - same body parts, same overall arrangement, same tissue types, same proteins. The principle difference is simply in relative proportions of some of the parts, plus some differences in proteins.
+
+<blockquote><p>even though we still do need to explain how DNA can result in the creation of a complex object such as War and Peace.</p></blockquote>
+
+The DNA generates a network of nerve cells that learns stuff, and sometimes learns how to rearrange what it's learned to produce new stuff. That's not a result of more information in the DNA itself, it's more a result of producing a larger number of neural cells and connections in the brain.
+
+<blockquote><p>Whether information has any “weight” or other tangible property.</p></blockquote>
+
+Information is encoded in the relationships among objects, not in the total mass. The encoding is certainly tangible; your counterargument covered that.
+
+<blockquote><p>was that I suspect a probability trick or mistake whereby the author is multiplying probabilities too much</p></blockquote>
+
+That is a standard tactic of anti-evolutionists. Mutations can change individual base pairs in DNA (analogous to changing a pair of bits in computer memory), delete strings of DNA, duplicate strings, rearrange the order of strings, invert strings. Notice that for any kind of mutation, there's another kind that does just the opposite. Ergo, for most any reasonable definition of information, some of those will decrease it, and others will increase it. (Exactly which ones increase or decrease the information depends on exactly what definition of information one is using; anti-evolutionists are usually rather vague on that point.)
+
+Henry</div></div>
+<div class="comment" id="comment-172264"><p class="comment-meta"><span class="comment-author"><a href="http://blog.mauveweb.co.uk/" rel="nofollow">Daniel Pope</a></span> &middot; 7 November 2008</p><div class="comment-body"><p>That last citation is completely right but I don't think you've understood it fully, PvM. You've stated all the definitions right but applied them wrongly.</p><p>Let's go back the coin example, which you misstated slightly. A fair coin has a maximum entropy of 1 bit. If you flip the coin, it's randomised such that its entropy is still 1 bit. I = H_max - H = 1 - 1 = 0. So the information is 0 bits. So far so good.</p><p>But suppose I deliberately turn the coin to heads. The probability that it reads heads is 1. So its entropy is 0. So I = H_max - H = 1 - 0 = 1 bit.</p><p>What I think you've misunderstood is that you're not conveying information by just flipping coins. You convey information by deliberately trying to set coins. If I've got a line of 1000 coins, I can set them to heads or tails and convey up to 1000 bits of information. If I have a small probability of making a mistake, I have a higher received entropy. But I can still convey information, just less efficiently. If there's a 1% chance we miscommunicate (I set the coins wrong or you read the coins wrong), the receiving entropy is 0.08 bits.</p><p>Incidentally, it's not entropy "before" and "after" (something which has also been said in this thread). There's only one observation of the information - the "after". I can still convey the same information if the 1000 coins were all set to heads beforehand. The H_max is the entropy you know the message to have. If you know in advance that I'm going to be setting 90% of the coins to heads, you receive less information per coin - only 0.47 bits per coin. If we also make 1% mistakes, we can only communicate 0.38 bits per message.</p><p>To extend this to DNA is fairly easy. You state that you know that the entropy per coding triplet is 5.6 bits, but knowing with exact certainty the value of the triplet means the received entropy is 0. So the information we can read is 5.6 bits per triplet.</p><p>What we've just discussed is the information we gain by recording a natural (coding) DNA strand exactly, base-for-base. I'm not a biologist (I'm a computer scientist) so here's where I'm on shakier ground. I believe a DNA triplet has 64 possible states but those only code for 20 amino acids, and a "stop" code, right? RNA polymerase can only read those 21 symbols. Also it has no statistical information about the distribution of codons, but the coding does amount to statistical information about amino acids. Looking at the number of codons for each symbol (http://en.wikipedia.org/wiki/Codon), the entropy of DNA is computed as follows (in Python):</p><p>&gt;&gt;&gt; cf<br/><br>{'Cys': 2, 'Asp': 2, 'Ser': 6, 'Gln': 2, 'Lys': 2, 'Trp': 1, 'Pro': 4, 'STOP': 3, 'Thr': 4, 'Ile': 3, 'Ala': 4, 'Phe': 2, 'Gly': 4, 'His': 2, 'Leu': 6, 'Arg': 6, 'Met': 1, 'Glu': 2, 'Asn': 2, 'Tyr': 2, 'Val': 4}<br/><br>&gt;&gt;&gt; sum(cf.values())<br/><br>64<br/><br>&gt;&gt;&gt; [(v/64.0)*log(v/64.0)/log(2) for v in cf.values()]<br/><br>[-0.15625, -0.15625, -0.32015976555739162, -0.15625, -0.15625, -0.09375, -0.25, -0.20695488277869584, -0.25, -0.20695488277869584, -0.25, -0.15625, -0.25, -0.15625, -0.32015976555739162, -0.32015976555739162, -0.09375, -0.15625, -0.15625, -0.15625, -0.25]<br/><br>&gt;&gt;&gt; -sum(_)<br/><br>4.2181390622295662</p><p>So the information extracted from DNA by RNA polymerase is 4.218 bits per codon.</p></div></div>
+<div class="comment" id="comment-172287"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 7 November 2008</p><div class="comment-body">On the contrary, I applied them quite consistently with how biologists have applied them.
+
+<blockquote>
+<strong>Daniel Pope said:</strong>
+
+That last citation is completely right but I don't think you've understood it fully, PvM. You've stated all the definitions right but applied them wrongly.
+
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-172346"><p class="comment-meta"><span class="comment-author"><a href="http://blog.mauveweb.co.uk/" rel="nofollow">Daniel Pope</a></span> &middot; 8 November 2008</p><div class="comment-body"><blockquote>
+<strong>PvM said:</strong>
+
+On the contrary, I applied them quite consistently with how biologists have applied them.
+</blockquote>
+
+If other biologists have applied information theory in the way you've done then they are also wrong. 0.4 bits per triplet is simply wrong.
+
+6 bits per triplet and 5.6 bits per triplet are different interpretations of the same quantity. You can't subtract them - it's meaningless. It's a tiny bit like weighing an apple and an orange, and then subtracting the weight of the apple from that of the orange and saying "Apples weigh 0.4 grams!". What you should have done is subtracted the reading when there's nothing on the scale from the reading when the apple was on the scale.
+
+6 bits per triplet is the entropy if you know nothing about what's encoded on the DNA: if it could contain MPEG video or the works of Shakespeare or a one-time pad.
+
+5.6 bits per triplet is the entropy if you know the DNA codes for an organism.
+
+Either way the entropy drops to 0 when you are certain of the DNA sequence.</div></div>
+<div class="comment" id="comment-172384"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 8 November 2008</p><div class="comment-body">That's the problem with the comparison. Let's for instance look at the evolution of binding sites. Initially the binding sites are random, maximum entropy, now a binding site evolves and the binding site nucleotides become more and more fixed across the population. Now we see how information increases in the binding sites which before had a maximum entropy and now a lower entropy. The difference is the information
+
+As with your example: 6 bits per triplet is what the 'average' entropy would be before you get the information that the triplet is conserved across the population, after which the entropy drops to zero for an information increase of 6 bits.
+
+
+
+<blockquote>
+<strong>Daniel Pope said:</strong>
+
+<blockquote>
+<strong>PvM said:</strong>
+
+On the contrary, I applied them quite consistently with how biologists have applied them.
+</blockquote>
+
+If other biologists have applied information theory in the way you've done then they are also wrong. 0.4 bits per triplet is simply wrong.
+
+6 bits per triplet and 5.6 bits per triplet are different interpretations of the same quantity. You can't subtract them - it's meaningless. It's a tiny bit like weighing an apple and an orange, and then subtracting the weight of the apple from that of the orange and saying "Apples weigh 0.4 grams!". What you should have done is subtracted the reading when there's nothing on the scale from the reading when the apple was on the scale.
+
+6 bits per triplet is the entropy if you know nothing about what's encoded on the DNA: if it could contain MPEG video or the works of Shakespeare or a one-time pad.
+
+5.6 bits per triplet is the entropy if you know the DNA codes for an organism.
+
+Either way the entropy drops to 0 when you are certain of the DNA sequence.
+</blockquote>
+
+</div></div>
+<div class="comment" id="comment-172552"><p class="comment-meta"><span class="comment-author"><a href="http://blog.mauveweb.co.uk/" rel="nofollow">Daniel Pope</a></span> &middot; 9 November 2008</p><div class="comment-body"><blockquote>
+<strong>PvM said:</strong>
+
+That's the problem with the comparison. Let's for instance look at the evolution of binding sites. Initially the binding sites are random, maximum entropy, now a binding site evolves and the binding site nucleotides become more and more fixed across the population. Now we see how information increases in the binding sites which before had a maximum entropy and now a lower entropy. The difference is the information
+</blockquote>
+
+No. You've subtracted a H_max from a H_max, not an H from a H_max. I'm not sure I understand all of the biological aspects of what you've just said but I think I've understood the information-theoretic aspects well enough.
+
+I'll break down what you've said:
+
+<em>"Initially the binding sites are random, maximum entropy":</em> You mean the H_max is a maximum 6 bits per triplet. Here I think you don't just mean random, you mean uniformely distributed. Anyway, the nucleotides may be random, but that just means the information is garbage, not that there's less information to read.
+
+<em>"binding site nucleotides become more and more fixed across the population."</em>: by fixed, you mean less uniformely distributed? They were fixed before, but just in useless locations.
+
+<em>"Now we see how information increases in the binding sites which before had a maximum entropy and now a lower entropy"</em>: You mean the entropy in the binding sites decreases, not that the information increases. You've stated the conclusion in the middle of your working.
+
+<em>"The difference is the information"</em>
+No. In the latter case, the H_max is lower. The H is zero both before and after a period of evolution, because you can always read a DNA strand and be in no doubt as to its contents. So actually, there's <strong>less</strong> information, assuming you know what the new distribution is. But this is OK because the information is now not garbage. Note that you're comparing two different quantities of information: the information in a DNA strand before and after. But looking at the difference is meaningless. There's no such thing as conservation of information, so if an amount of information changes it's meaningless to ask where it has come from or gone to.
+
+By analogy, if I have a hard drive full of photos, and then delete them all, it's meaningless to ask where the information in those photos has gone.
+
+<blockquote>
+As with your example: 6 bits per triplet is what the 'average' entropy would be before you get the information that the triplet is conserved across the population, after which the entropy drops to zero for an information increase of 6 bits.
+</blockquote>
+
+It would be 5.6 bits given what you've stated about the entropy of DNA, but yes. But that's 5.6 bits total, across the whole population. Not 5.6 bits per individual. </div></div>
+<div class="comment" id="comment-172555"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 November 2008</p><div class="comment-body"><blockquote>
+<strong>Daniel Pope said:</strong>
+
+<blockquote>
+<strong>PvM said:</strong>
+
+That's the problem with the comparison. Let's for instance look at the evolution of binding sites. Initially the binding sites are random, maximum entropy, now a binding site evolves and the binding site nucleotides become more and more fixed across the population. Now we see how information increases in the binding sites which before had a maximum entropy and now a lower entropy. The difference is the information
+</blockquote>
+
+No. You've subtracted a H_max from a H_max, not an H from a H_max. I'm not sure I understand all of the biological aspects of what you've just said but I think I've understood the information-theoretic aspects well enough.
+
+I'll break down what you've said:
+
+<em>"Initially the binding sites are random, maximum entropy":</em> You mean the H_max is a maximum 6 bits per triplet. Here I think you don't just mean random, you mean uniformely distributed. Anyway, the nucleotides may be random, but that just means the information is garbage, not that there's less information to read.
+</blockquote>
+
+You are correct uniformly distributed
+
+<blockquote>
+<em>"binding site nucleotides become more and more fixed across the population."</em>: by fixed, you mean less uniformely distributed? They were fixed before, but just in useless locations.
+</blockquote>
+
+I mean that some of the nucleotides, rather than uniformly distributed now become 'fixed' in other words, their distribution, becomes more likely to be one of the 4 nucleotides A, C, T or G.
+
+<blockquote>
+<em>"Now we see how information increases in the binding sites which before had a maximum entropy and now a lower entropy"</em>: You mean the entropy in the binding sites decreases, not that the information increases. You've stated the conclusion in the middle of your working.
+</blockquote>
+
+Entropy decreases, information increases, the two go hand in hand.
+
+<blockquote>
+<em>"The difference is the information"</em>
+No. In the latter case, the H_max is lower. The H is zero both before and after a period of evolution, because you can always read a DNA strand and be in no doubt as to its contents. So actually, there's <strong>less</strong> information, assuming you know what the new distribution is. But this is OK because the information is now not garbage. Note that you're comparing two different quantities of information: the information in a DNA strand before and after. But looking at the difference is meaningless. There's no such thing as conservation of information, so if an amount of information changes it's meaningless to ask where it has come from or gone to.
+</blockquote>
+
+Nope, in both cases H_max is 2 bits for a binding site nucleotide. The H in the first case is 2 bits, in the second case is 0 bits, their differences, information, is 0 and 2 bits respectively. Looking at the differences is not meaningless as it shows increase in information in the binding sites. 
+
+
+<blockquote>By analogy, if I have a hard drive full of photos, and then delete them all, it's meaningless to ask where the information in those photos has gone.
+</blockquote>
+
+I am not sure why you raise this as I never made such claims.
+
+<blockquote>
+As with your example: 6 bits per triplet is what the 'average' entropy would be before you get the information that the triplet is conserved across the population, after which the entropy drops to zero for an information increase of 6 bits.
+</blockquote>
+
+It would be 5.6 bits given what you've stated about the entropy of DNA, but yes. But that's 5.6 bits total, across the whole population. Not 5.6 bits per individual. 
+
+
+</div></div>
+<div class="comment" id="comment-172558"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 9 November 2008</p><div class="comment-body"><p>Perhaps the following references can help you understand my viewpoint</p><p>Adami <a href="http://www.pnas.org/content/97/9/4463.full">Evolution of Complexity</a><br>Schneider <a href="http://www-lmmb.ncifcrf.gov/~toms/paper/ev/">Evolution of Biological Information</a></p></div></div>
+<div class="comment" id="comment-172632"><p class="comment-meta"><span class="comment-author"><a href="http://blog.mauveweb.co.uk/" rel="nofollow">Daniel Pope</a></span> &middot; 10 November 2008</p><div class="comment-body"><blockquote>
+<strong>PvM said:</strong>
+
+Entropy decreases, information increases, the two go hand in hand.
+</blockquote>
+
+Absolutely, when we're talking about decreasing entropy by communication. Not when we're talking about picking a completely different random variable that happens to have a lower entropy.
+
+I have to admit, those two papers do use the formulae in the way you have. The usage is not consistent with Shannon though. I honestly hope that other biological texts aren't make the same mistake.
+
+Adami et al is the easier to challenge. On the first page they state
+
+<blockquote>"...any arrangement of symbols might be
+viewed as potential information (also known as entropy in
+information theory), but acquires the status of information
+only when its correspondence, or correlation, to other physical
+objects is revealed."</blockquote>
+
+which directly contradicts <a href="http://cm.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf">Shannon 1948</a> which in the introduction states 
+
+<blockquote>"Frequently the messages have meaning; that is they refer
+to or are correlated according to some system with certain physical or conceptual entities. These semantic
+aspects of communication are irrelevant to the engineering problem."</blockquote>
+
+Perhaps that's a minor note, but to me it suggests they don't understand information theory very well. What they refer to as "potential information", information theory calls just "information".
+
+They go on to incorrectly state "A site stores maximal information if, in DNA, it is perfectly conserved across an equilibrated ensemble" citing Schneider.
+
+I'm sorry to say the Schneider paper uses too much biological jargon for me to understand. What I do note is use of the 'before' and 'after' subscripts, stating the Shannon noisy channel equation as
+
+R = H<sub>before</sub> - H<sub>after</sub>
+
+This 'before' and 'after' usage is not in the Shannon paper: he gives it as
+
+R = H(x) - H<sub>y</sub>(x)
+
+I think it may be those intuitive subscripts which are causing confusion. As I noted earlier, it's not a before and after, it's a message and the entropy when the message is received. Looking around Schneider's site I found an <a href="http://www.ccrnp.ncifcrf.gov/~toms/paper/primer/latex/index.html">Information Theory primer</a>, which I was interested to read. If his understanding of information theory is wrong, I reasoned, it would be reflected in that primer. Nothing is completely wrong, though it does introduce the before/after usage in an example which could be misinterpreted. Incidentally, the subsequent example, of the noisy channel, is a textbook example of the theorem.
+
+So the
+
+R = H<sub>before</sub> - H<sub>after</sub>
+
+equation is perhaps the crux of it. What he's actually computed is the difference in information between memory with data and zeroed memory.
+
+What he's actually written is correct, but missing a step. I'd also insist on a delta, because after all he's stated this equation as information 'lost' (ie. a difference).
+
+∆R = R<sub>before</sub> - R<sub>after</sub> = (H<sub>before</sub> - H<sub>y<sub>before</sub></sub>) - (H<sub>after</sub> - H<sub>y<sub>after</sub></sub>)
+
+If the noise is the same before and after (H<sub>y<sub>before</sub></sub> = H<sub>y<sub>after</sub></sub>), we get
+
+∆R = H<sub>before</sub> - H<sub>after</sub>
+
+Of course with the delta, it's easier to understand that this is not an absolute measure of information, it's a difference between quantities of information. It's equal to the information before <strong>in this case</strong> because the information after is zero. If I randomised the bytes instead of zeroing them, I could arrange that ∆R is 0, but it's irrelevant to computing R<sub>before</sub>, which is probably what we were interested in.
+
+I don't know if Schneider's misunderstood information theory, or wrote the primer first and misconstrued it when he referred back to it, but from what I can understand of the ev paper that before/after thing is possibly misused. Then Adami et al have parrotted that interpretation.
+
+I assure you that the interpretation you've used does not correspond to Shannon information, it corresponds to a difference in Shannon information.</div></div>
+<div class="comment" id="comment-172643"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 November 2008</p><div class="comment-body"><blockquote>
+<strong>Daniel Pope said:</strong>
+
+I assure you that the interpretation you've used does not correspond to Shannon information, it corresponds to a difference in Shannon information.
+</blockquote>
+
+I was hoping that the papers would clarify your confusions, as both Adami and Schneider are quite well versed in information theory. You argue that the interpretation given by Schneider and Adami is not information and that information is what is known as entropy when in fact, information and entropy are related but different concepts where information is the reduction in information entropy. Confusing the two leads to a disagreement between your interpretation and how these scientists interpret information.
+
+As Schneider explains in his Information Theory FAQ
+
+<blockquote><p>Information and Uncertainty
+
+Information and uncertainty are technical terms that describe any process that selects one or more objects from a set of objects. We won't be dealing with the meaning or implications of the information since nobody knows how to do that mathematically. Suppose we have a device that can produce 3 symbols, A, B, or C. As we wait for the next symbol, we are uncertain as to which symbol it will produce. Once a symbol appears and we see it, our uncertainty decreases, and we remark that we have received some information. That is, information is a decrease in uncertainty. How should uncertainty be measured? The simplest way would be to say that we have an ``uncertainty of 3 symbols''. This would work well until we begin to watch a second device at the same time, which, let us imagine, produces symbols 1 and 2. The second device gives us an ``uncertainty of 2 symbols''. If we combine the devices into one device, there are six possibilities, A1, A2, B1, B2, C1, C2. This device has an ``uncertainty of 6 symbols''. This is not the way we usually think about information, for if we receive two books, we would prefer to say that we received twice as much information than from one book. That is, we would like our measure to be additive. </p></blockquote>
+
+Referring to Shannon
+
+<blockquote><p>
+Shannon gave an example of this in section 12 of [10] (pages 33-34 of [13]). A system with two equally likely symbols transmitting every second would send at a rate of 1 bit per second without errors. Suppose that the probability that a 0 is received when a 0 is sent is 0.99 and the probability of a 1 received is 0.01. ``These figures are reversed if a 1 is received.'' Then the uncertainty after receiving a symbol is H<sub>after</sub> = - 0.99 log<sub>2</sub> 0.99 - 0.01 log<sub>2</sub> 0.01 = 0.081$, so that the actual rate of transmission is R = 1 - 0.081 = 0.919 bits per second.3 The amount of information that gets through is given by the decrease in uncertainty, equation (20). </p></blockquote>
+
+[10]C. E. Shannon. A mathematical theory of communication. Bell System Tech. J., 27:379-423, 623-656, 1948. http://cm.bell-labs.com/cm/ms/what/shannonday/paper.html. 
+
+[13] N. J. A. Sloane and A. D. Wyner. Claude Elwood Shannon: Collected Papers. IEEE Press, Piscataway, NJ, 1993. 
+
+</div></div>
+<div class="comment" id="comment-172644"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 November 2008</p><div class="comment-body"><blockquote><p>What he’s actually computed is the difference in information between memory with data and zeroed memory.</p></blockquote>
+
+No, he has computed the difference in entropy between a genome where the binding sites are uniformly distributed (not 'zeroed' memory) and the entropy where the binding sites become 'fixed' or non-uniformly distributed.
+</div></div>
+<div class="comment" id="comment-172651"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 10 November 2008</p><div class="comment-body">Perhaps this will clarify
+
+<blockquote><p>Adaptation = increase in the mutual information between the system and the environment.
+
+“Evolution increases the amount of information a population harbors about its niche" (Adami)
+
+I (Environment, Population) = Entropy (Population) – Entropy (Population | Environment) =
+
+entropy in the absence of selection (Max Population Entropy) - diversity tolerated by selection in the given environment =
+
+how much data can be stored in the population - how much data irrelevant to environment is stored
+</p></blockquote>
+
+
+I(X:Y) = H(X) - H<sub>y</sub>(x) = H(y) - H<sub>x</sub>(y) = H(x) + H(Y) - H(x,y)
+
+Where H(x,y) is the mutual entropy and H<sub>x</sub>(x) is the conditional entropy
+</div></div>
+<div class="comment" id="comment-201090"><p class="comment-meta"><span class="comment-author">Abdul Sattar Real</span> &middot; 12 December 2009</p><div class="comment-body"><p>Excellent. Thank you very much</p></div></div>
+<div class="comment" id="comment-201546"><p class="comment-meta"><span class="comment-author">Simon B</span> &middot; 17 December 2009</p><div class="comment-body"><p>Given the way you have addressed the information content of the human genome in this article, could one address the information content of the 32 volume 2010 edition of the Encyclopedia in the same way?</p><p>And what sort of value for storage of the EB's information content would be arrived at?</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

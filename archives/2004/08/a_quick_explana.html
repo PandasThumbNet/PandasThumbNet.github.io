@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A quick explanation of Wasserstein Metric — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">A quick explanation of Wasserstein Metric</h1><p class="post-meta">Posted 12 August 2004 by <span class="post-author">PvM</span></p><p class="post-canonical">&#8599; The current version of this post is on the live site: <a href="https://pandasthumb.org/archives/2004/08/a-quick-explana.html">https://pandasthumb.org/archives/2004/08/a-quick-explana.html</a></p><div class="post-body"><p><b>Note that Dembski has uploaded a <a href="http://www.designinference.com/documents/2004.08.Variational_Information.pdf" target="_blank">revised manuscript</a> which now correctly attributes the measure to Renyi and thanks the many critics for their contributions</b></p>
+
+<p>I am not a mathematician but let me give it a try and others can amend and revise my comments.</p>
+
+<p>The Kantorovich/Wasserstein distance metric is also known under such names as the Dudley, Fortet Mourier, Mallows and is defined as follows.</p>
+
+<p>d_p(F,G) = \overset{\inf}{\tau_{x,y}} \lbrace E |x-y|^{\frac{1}{p}} \rbrace</p>
+
+<p>where E(x) refers to the expectation of the random variable x and \inf means that the minimum is sought on all random variables X which take a distribution F and random variables Y which take a distribution G.</p>
+
+<p>where \tau_{x,y} is the set of all joint distributions of random variables X and Y whose marginal distributions are F and G.</p>
+
+ 
+<p>These metrics define a &#8216;distance&#8217; between two stochastic distributions and are one of many such metrics that have been mathematically defined. There is a good paper on many of these metrics <a href="http://www.math.hmc.edu/~su/papers.dir/metrics.pdf" target="_blank">On Choosing and Bounding Probability Metrics</a>.&nbsp; Different circumstances ask for different distance metrics.</p>
+
+<p>These metrics have found applicability in non-linear equations,&nbsp; variational approaches to entropy dissipation, <a href="http://www.pnas.org/cgi/content/full/100/12/6922" target="_blank">Phase transitions and symmetry breaking in singular diffusion</a>, random walks, Markov processes and many more. Needless to say these metrics are quite commonly applied in a variety of applications. Applications of this metric to Markov processes may be of interest to evolutionary theory.</p>
+
+<p>Adapted from <a href="http://www.statslab.cam.ac.uk/Reports/2004/2004-04.pdf" target="_blank">Central Limit Theorem and convergence to stable laws in Mallows distance</a></p>
+
+<p>Another way of looking at this is by assuming one has two samples X and Y of the same size X=\lbrace x_1,&#8230;,x_n \rbrace and Y=\lbrace y_1,&#8230;,y_n \rbrace. The Mallows distance between empirical distributions is</p>
+
+<p>d_p(X,Y)= ( \frac{1}{n} \overset{min}{(j_1,&#8230;,j_n)} \sum_{i=1}^{n} \lvert x_i - y_i \rvert&nbsp; )^\frac{1}{p}</p>
+
+<p>where the minimum is taken over all possible permutations of \lbrace 1, &#8230;, n \rbrace</p>
+
+<p>Rachev, S. T. (1984), The Monge-Kantorovich problem on mass transfer and<br />
+its applications in stochastics, Theor. Probab. Appl., 29, 647-676. </p>
+
+<p>As far as some interesting applications are concerned</p>
+
+<p><a href="http://www.math.missouri.edu/~calvin/entropyfiles/ABC.pdf" target="_blank">Minimal Entropy Probability Paths Between Genome Families</a></p></div><section class="comments-section"><h2 class="comments-heading">6 Comments</h2>
+<div class="comment" id="comment-6272"><p class="comment-meta"><span class="comment-author"><a href="http://www.arbor.edu" rel="nofollow">Michael Buratovich</a></span> &middot; 13 August 2004</p><div class="comment-body"><p>PvM,</p><p>Thanks for that explanation.  I quit math after linear algebra and differential equations. which means that I am not a mathematician either.  I am still trying to figure out why Dembski brought this up in his reply.  I am also completely unsure why this method has more probabalistic power over the Renyi equation that was discussed.  I know I'm a math idiot, but can one of you demi-gods out there help on this one.</p><p>MB</p></div></div>
+<div class="comment" id="comment-6277"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 13 August 2004</p><div class="comment-body"><p>As I am starting to 'understand' these issues, the Wasserstein metric presents a <a href="http://en.wikipedia.org/wiki/Weak_topology">weak topology</a> onto space. While the original Renyi measure provides what Demsbki calls "variational information" it needs to be tied in with the nature of the actual path(s) taken.<br>Thus he attempts to 'coordinate the variational information with the topology of the underlying probability space".</p><p>Where is Dembski going with this? I see this as working towards a measure that may be helpful in suggesting if there exist "probability paths". Probably to show that there exist 'irreducibly complex' systems to which the probability paths may be lacking. But so far I have failed to see how any of these measures may be helpful here.</p></div></div>
+<div class="comment" id="comment-6287"><p class="comment-meta"><span class="comment-author">steve</span> &middot; 13 August 2004</p><div class="comment-body"><p>Pim, I think the broad outline of the argument is:</p><p>1 The dead-ends so vastly outnumber the workable arrangements evolution can find, if it searches randomly, it can't find them quickly enough</p><p>2 Evolution randomly searches all possibilities</p><p>3 Therefore, it couldn't have found all these workable arrangements</p><p>His critics seem to have said that 1 isn't certain, but 2 is just plain wrong. Since lots of smart people like Wolpert say his arguments are failures, I haven't bothered to study them in depth myself. Life is short.</p></div></div>
+<div class="comment" id="comment-6363"><p class="comment-meta"><span class="comment-author">hmmm</span> &middot; 16 August 2004</p><div class="comment-body"><p>that paper on minimum entropy probability paths between genome families is pretty funny. (I figure you probably googled it and didn't have the chance to read it).</p><p>those guys have a total lack of understanding of biology. their basic idea is to take a DNA sequence, compute an AGTC frequency vector, and then talk about "minimizing the entropy path integral" during a sequence of base pair substitutions en route to a destination DNA sequence.</p><p>"Minimizing the entropy path integral"?!?</p><p>where did that come from? it seems these guys really think that the overall composition is influenced *not* by horizontal transfer conditions, or, say, the rest of the genome's base-pair content (reasonable speculations)....but by the idea that base pair frequencies stay away from an entropy maximizing (.25,.25.,25.25) during the move from one sequence to another. DUBIOUS, to say the least. it's more likely that base pair frequencies will track the genome content as a whole, or that local area of the chromosome.</p><p>But the best part of the whole paper is when they claim that the *advantage* of their approach is that "this allows us to compare sequences based on their composition as a whole, rather than by sequence alignment". jeeez...as if throwing away all the order information is going to *improve* your understanding of evolutionary relationships between sequences! In these guys' world, AGTC and ACTG are equivalent. Forget sequencing the genome, guys...let's just go back to chargaff's rules!</p></div></div>
+<div class="comment" id="comment-6364"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 16 August 2004</p><div class="comment-body">I have looked at the paper and its approaches seem quite interesting. 
+
+They state
+
+<blockquote><p>
+The variational principle which we are formulating is that the most efficient transition between probability state vectors is the probability path which minimizes the line integral of the entropy function.
+</p></blockquote>
+
+An interesting working assumption which makes sense from the perspective that an admissable path is likely not going through a stage in which the genome is at maximum entropy. Seems to me that they are looking at a genome mostly under selective pressures
+
+<blockquote><p>
+measures. Preferred functions will take into account the 'conserved nature' of the distributions. A distribution is least conserved when each of the t possible alphabet characters occurs with frequency 1/t and more conserved when one or two alphabet characters dominate. Two distributions should be judged closer if they share the same conserved characters than otherwise. A simple example of a function which disregards conserved nature is variational distance, the sum of di®erences in frequency for each letter in the distributions.
+</p></blockquote>
+
+They then point out that a variety of entropy based distance measures have been proposed but most of them seem to suffer from a variety of problems.
+
+The idea that a probability path will avoid randomizing the genome quite interesting. Perhaps Hmmm can help us understand his objections better?</div></div>
+<div class="comment" id="comment-6367"><p class="comment-meta"><span class="comment-author">Pim van Meurs</span> &middot; 16 August 2004</p><div class="comment-body"><p>See also "A new distance measure for comparing sequence profiles based on path lengths along an entropy surface" by Gary Benson which explains the motivations for this new measure</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

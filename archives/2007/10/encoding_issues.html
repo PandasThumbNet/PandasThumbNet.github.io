@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Encoding Issues Fixed — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Encoding Issues Fixed</h1><p class="post-meta">Posted 9 October 2007 by <span class="post-author">Reed A. Cartwright</span></p><div class="post-body">I think that I've fixed most of the encoding issues that I am aware of.  I had to edit a few lines of MT code and add some new logic to my MT-Dispatcher.
+
+Parts of the database are still "corrupted" because of the bug.  I can fix most of it, but I won't do it right away.</div><section class="comments-section"><h2 class="comments-heading">37 Comments</h2>
+<div class="comment" id="comment-131136"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright is not Torbjörn</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>Checking Torbjörn encoding</p></div></div>
+<div class="comment" id="comment-131137"><p class="comment-meta"><span class="comment-author">Reed A. Cartwright is not Torbjörn</span> &middot; 9 October 2007</p><div class="comment-body"><p>Checking</p></div></div>
+<div class="comment" id="comment-131138"><p class="comment-meta"><span class="comment-author">David Fickett-Wilbar</span> &middot; 9 October 2007</p><div class="comment-body"><p>Am I the only one bothered by the unnecessary apostrophe in "Panda's Only?"</p></div></div>
+<div class="comment" id="comment-131139"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright is not Torbjörn</a></span> &middot; 9 October 2007</p><div class="comment-body"><blockquote>
+<strong>David Fickett-Wilbar:</strong>
+
+   Am I the only one bothered by the unnecessary apostrophe in "Panda's Only?"
+</blockquote>
+
+Talk to the Alaska DOT.
+
+Personally, I think it refers to "Panda's Only Ole-Fashioned Malt Liqueur"</div></div>
+<div class="comment" id="comment-131140"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>in my browser (latest firefox), the accented o in Torbjorn looks like a smeary diamond shaped road sign.</p><p><i>Am I the only one bothered by the unnecessary apostrophe in “Panda’s Only?”</i></p><p>that's the way the sign was printed; it's not an encoding issue, it's an actual photograph of a sign, IIRC.</p></div></div>
+<div class="comment" id="comment-131143"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright is not Torbjörn</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>testing</p></div></div>
+<div class="comment" id="comment-131145"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright is not Torbjörn</a></span> &middot; 9 October 2007</p><div class="comment-body"><p>bumpage</p></div></div>
+<div class="comment" id="comment-131153"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>still seeing the same "diamond shape" on my end, for whatever that's worth.</p></div></div>
+<div class="comment" id="comment-131155"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>...copying and pasting shows it to actually be a black diamond with a question mark in the middle.</p><p>is there perhaps something that needs to be enabled within the browser to see foreign characters?</p></div></div>
+<div class="comment" id="comment-131156"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>In IE, it shows up as a blank white box.</p></div></div>
+<div class="comment" id="comment-131157"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Häggström is not Reed A. Cartwright </a></span> &middot; 9 October 2007</p><div class="comment-body"><p>No.  For some reason, on some pages, the blog software is converting some characters from UTF-8 encoding to ISO-8859-1 encoding.  This a new error.</p></div></div>
+<div class="comment" id="comment-131158"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>hmm.  ISO-8859-1 is the default character encoding used by firefox when the webpage itself does not define which to use.</p><p>if that helps any, it sounds like the script is not putting in a definition for which character encoding package to use when it builds the page?</p></div></div>
+<div class="comment" id="comment-131159"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>no.  that can't be, since if i force the browser to use UTF-8, it still looks the same</p></div></div>
+<div class="comment" id="comment-131160"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>interestingly, it appears correctly over on the "recent comments" section.</p></div></div>
+<div class="comment" id="comment-131161"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Häggström is not Reed A. Cartwright </a></span> &middot; 9 October 2007</p><div class="comment-body"><p>The problem is that they are ISO-8859-1 characters on a UTF-8 page.  They show up correctly if in firefox you do "View:Character Encoding:Western".</p></div></div>
+<div class="comment" id="comment-131162"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>sure enough.</p><p>that being the case, why is the script for the page defining the character set to use to be UTF-8?</p><p>I see that the script builds the UTF definition into the header, can't you just change that to the standard western ISO?</p></div></div>
+<div class="comment" id="comment-131164"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>no, better yet, looking at the form code (I assume it needs to have UTF-8 characters defined for it?), it should work to simply strip the reference to the code definition from the portion of the page script that generates the header.</p><p>leave the header definition blank, and let the specific references take care of themselves.</p><p>IOW, where the script is set to generate this tag:</p><p>meta http-equiv="Content-Type" content="text/html; charset=utf-8"</p><p>simply strip out the reference to the charset entirely.</p><p>that shouldn't fubar any references to using a specific character set in later instances, yes?</p></div></div>
+<div class="comment" id="comment-131166"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Häggström is not Reed A. Cartwright </a></span> &middot; 9 October 2007</p><div class="comment-body"><p>I'm not going to do that.</p></div></div>
+<div class="comment" id="comment-131168"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>hmm, I just tried that on a local copy of this page, and it correctly defaults to the ISO standard, but then the foreign characters show up as just plain question marks.</p><p>so if the charset isn't defined in the primary header, it does seem to break the resulting form data.</p><p>but then, I'm not actually accessing the database to generate the page, so it might still work on your end?</p></div></div>
+<div class="comment" id="comment-131169"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p><i>I’m not going to do that.</i></p><p>good luck to you then.  you do need to somehow force the main body content NOT to use the UTF8 encoding, however.</p></div></div>
+<div class="comment" id="comment-131170"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 9 October 2007</p><div class="comment-body"><p>I suspect these two issues (encoding forcing and recoding UTF as ISO) are general problems for many default blog scripts.</p><p>Some ScienceBlogs have these issues (more often the former), and I specifically remember GMBM having the current problem fixed (as he is a CS he couldn't leave it alone :-). For some reason it is the name input box, so it may be some industry error that is hereditary spread.</p><p>In any case, the current situation is similar to what happens on quite a few blogs.</p><p>Forcing of change in view (in Firefox) often happens when I comment, I think. Dunno how it happens, and I have the habit of reading the next blog while waiting for the comment update, so it may be unrelated.</p><p>As we have reached the point of diminishing returns, being a small problem for a few individuals, I can live with the current situation.</p></div></div>
+<div class="comment" id="comment-131171"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 9 October 2007</p><div class="comment-body"><p>don't you have a backup version of the site to play with?</p></div></div>
+<div class="comment" id="comment-131176"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Häggström is not Reed A. Cartwright </a></span> &middot; 9 October 2007</p><div class="comment-body"><p>The current issue has to do with how pages are written from the database.  Everything is being entered properly, but is being output improperly.</p><p>MT has some code dealing with encoding issues and I am certain that the encoding fixes that I put together earlier today are now conflicting with one of those encoding checks.</p></div></div>
+<div class="comment" id="comment-131189"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright </a></span> &middot; 10 October 2007</p><div class="comment-body"><p>I made another patch to the MT code and it appears to fix the final encoding issues.</p></div></div>
+<div class="comment" id="comment-131237"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright is not Torbjörn</a></span> &middot; 10 October 2007</p><div class="comment-body"><p>bump</p></div></div>
+<div class="comment" id="comment-131252"><p class="comment-meta"><span class="comment-author">David Fickett-Wilbar</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote>
+
+
+<i>Am I the only one bothered by the unnecessary apostrophe in “Panda’s Only?”</i>
+
+that's the way the sign was printed; it's not an encoding issue, it's an actual photograph of a sign, IIRC.
+
+
+
+
+</blockquote>
+
+   I'm sure it is.  I was just being crotchety, and this seemed as good a thread as any to be it on.
+</div></div>
+<div class="comment" id="comment-131274"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright is not Torbjörn</a></span> &middot; 10 October 2007</p><div class="comment-body"><p><a href="http://scit.us/">Checking</a></p></div></div>
+<div class="comment" id="comment-131281"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 10 October 2007</p><div class="comment-body"><blockquote><p>why is the script for the page defining the character set to use to be UTF-8?</p></blockquote>
+
+Presumably so it can display characters from a wide range of languages, not just the European ones covered by ISO-8859-1.
+</div></div>
+<div class="comment" id="comment-131287"><p class="comment-meta"><span class="comment-author">Ichthyic</span> &middot; 10 October 2007</p><div class="comment-body"><p>appears fixed today.</p><p>whee!</p><p>nice job, Reed.</p></div></div>
+<div class="comment" id="comment-131325"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM is not Reed</span> &middot; 11 October 2007</p><div class="comment-body"><p>Yes, even the crotchety home page shows UTF-8 OK.</p><p>Thanks for all the hard work, Reed!</p><p>An internationalized web site is all the better. (Well, it needs content posters from at least 3 time zones distributed across the globe to be really editorially international, but you know what I mean.)</p><p>And now I know that MT may handle database issues somewhat poorly. (Doesn't seem the likeliest explanation for <i>ScienceBlogs</i> varying issues, though.)</p></div></div>
+<div class="comment" id="comment-131403"><p class="comment-meta"><span class="comment-author">Bill Gascoyne</span> &middot; 11 October 2007</p><div class="comment-body"><p>Speaking of encoding issues, how is one supposed to create a carriage return without leaving a blank line?  HTML-style "br between angle brackets" doesn't work.</p></div></div>
+<div class="comment" id="comment-131409"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 11 October 2007</p><div class="comment-body"><p>The CR handling does seem to be busted; not even &lt;code&gt; or &lt;pre&gt; protects them.</p></div></div>
+<div class="comment" id="comment-131410"><p class="comment-meta"><span class="comment-author"><a href="http://dererumnatura.us/" rel="nofollow">Reed A. Cartwright </a></span> &middot; 11 October 2007</p><div class="comment-body"><blockquote>
+<strong>Bill Gascoyne:</strong>
+
+Speaking of encoding issues, how is one supposed to create a carriage return without leaving a blank line?  HTML-style "br between angle brackets" doesn't work.
+</blockquote>
+
+Then try XHTML-style &lt;br/&gt;.
+
+<blockquote>
+<strong>Popper's Ghost:</strong>
+
+The CR handling does seem to be busted; not even &lt;code&gt; or &lt;pre&gt; protects them.
+
+</blockquote>
+
+&lt;pre&gt; is not recognized.  &lt;code&gt; now does the same thing as XHTML's code tag.  &lt;blockcode&gt; is what you are looking for.
+
+</div></div>
+<div class="comment" id="comment-131413"><p class="comment-meta"><span class="comment-author">Popper&#x27;s Ghost</span> &middot; 11 October 2007</p><div class="comment-body"><p>Thanks Reed, for the response and all your hard work.</p></div></div>
+<div class="comment" id="comment-131417"><p class="comment-meta"><span class="comment-author">Bill Gascoyne</span> &middot; 11 October 2007</p><div class="comment-body"><p>OK, I'll try <br/><br>that and see if <br/><br>it works.</p></div></div>
+<div class="comment" id="comment-131854"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson, OM</span> &middot; 15 October 2007</p><div class="comment-body"><p>Testing<br/><br>and<br/><br>learning.</p><p>So,<br/><br>it<br/><br>is<br/><br>evidently<br/><br>time<br/><br>to<br/><br>learn<br/><br>some<br/><br>XHTML!</p></div></div>
+<div class="comment" id="comment-132050"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 17 October 2007</p><div class="comment-body"><blockquote><p>So,
+it
+is
+evidently
+time<br/>
+to
+learn
+some
+XHTML!</p></blockquote>
+
+Just as long as there's not a quiz on the stuff... :p</div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>

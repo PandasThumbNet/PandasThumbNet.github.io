@@ -1,0 +1,15 @@
+{
+  "preset_id": "pandasthumb-default",
+  "site": "pandasthumb.net",
+  "query_kind": "document_search",
+  "active_corpora": [
+    "pandasthumb_mt",
+    "talkorigins_indexcc"
+  ],
+  "optional_corpora": [
+    "talkorigins_main",
+    "talkdesign_main",
+    "pandasthumb_main"
+  ],
+  "notes": "Default corpus set for Panda's Thumb search tooling."
+}

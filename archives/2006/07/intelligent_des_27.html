@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intelligent Design Explained: Free Noodle Soup — The Panda's Thumb (Legacy Archive)</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+<span class="site-name"><a href="/">The Panda's Thumb</a></span>
+<span class="site-tagline">Legacy Archive — pandasthumb.net</span>
+</header>
+
+<main>
+<h1 class="post-title">Intelligent Design Explained: Free Noodle Soup</h1><p class="post-meta">Posted 12 July 2006 by <span class="post-author">PvM</span></p><div class="post-body">In an earlier posting on the <a href="http://www.pandasthumb.org/archives/2006/06/intelligent_des_28.html">No Free Lunch Theorems and random search</a>, I stated that
+
+<blockquote><p>It should not come as a surprise that the "No Free Lunch Theorems" have more unfortunate surprises in store for Intelligent Design. More on that later...</p><cite>— PvM</cite></blockquote>
+
+Now it is later and I present: Erik Tellgren, freshly returned from a trip,  who has combined the results for random search and the work by Gavrilet to show 
+
+
+<blockquote><p>The original NFL theorem and rugged fitness landscapes are briefly reviewed and it is pointed out that the assumptions behind the former lead to the latter type of fitness landscape. Furthermore, it is stressed that for these fitness landscapes, the absolute performance of evolution is not prohibitively bad, that high-fitness regions tend to be well-connected, and that the difficulty of finding high-fitness regions does not increase with the size of the search space. (PDF format.)</p><cite>— Tellgren</cite></blockquote>
+
+Concluding that:
+
+<blockquote><p>To summarize, the implications of the assumption of a randomly chosen fitness function do not just include Wolpert and Macready's NFL result, but also the results
+<list  type="*">
+<li> that the absolute performance of any search for high-fitness genotypes is fairly good and, importantly, independent of the size of the genotype space, and</li>
+<li>the set of high-fitness genotypes is well-connected and the connectedness ncreases with increasing dimensionality of the genotype space.</li>
+</list>
+More metaphorically, the NFL scenario may deny biological evolution a free lunch, but once the lunch break is over it hands evolution a large free bowl of noodle soup.
+Acknowledgement:</p><cite>— Tellgren</cite></blockquote>
+
+
+Read more at <a href="http://talkreason.org/index.cfm?category=featured">TalkReason:Free Noodle Soup</a></div><section class="comments-section"><h2 class="comments-heading">30 Comments</h2>
+<div class="comment" id="comment-91612"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 12 July 2006</p><div class="comment-body"><p>Noodle soup? Interesting choice of menu there. :)</p></div></div>
+<div class="comment" id="comment-91621"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 12 July 2006</p><div class="comment-body"><p>I didn't understand how Tellgren could assume that "the values of the function f at different points are chosen independently of each other" without having a discrete fitness problem.</p><p>Indeed, he refers to "C. A. Macken, P. S. Hagan, and A. S. Perelson. Evolutionary walks on rugged landscapes. SIAM Journal on Applied Mathematics, 51(3):799---827,<br>June 1991." which says in the abstract: <br>"It is assumed that a fitness can be assigned to each sequence in ${\bf S}$; for the immune response the fitness is just the chemical affinity of the antibody for the immunizing antigen." He is looking at problems with discrete searches.</p><p>Is the worst case random scenario realistic? What prevents the affinity to vary gradually as the amino acid sequence varies at the active site(s) of an antibody? (At least several antibodies have response to the same antigen. Not the same, but compelling.)</p></div></div>
+<div class="comment" id="comment-91627"><p class="comment-meta"><span class="comment-author">E. Tellgren</span> &middot; 12 July 2006</p><div class="comment-body"><blockquote><p>I didn't understand how Tellgren could assume that "the values of the function f at different points are chosen independently of each other" without having a discrete fitness problem.</p><cite>— Torbjörn Larsson</cite></blockquote>
+I guess I could have been clearer on this.
+
+Like Wolpert and Macready in their 1997 article, I do indeed have in mind fitness functions f:X-->Y for which both the search space (X) and the range (Y) are discrete, finite sets. I think weaker assumptions might do, but for the purpose of studying search algorithms and models of evolution finite (but possibly humongously large) search spaces and ranges are enough. Sorting out mathematical subtleties with such weaker assumptions was not my intent.</div></div>
+<div class="comment" id="comment-91635"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 12 July 2006</p><div class="comment-body"><p>Erik,</p><p>Very interesting. I think you might want to say explicitly what topology of the space of genotypes you assume. I gather from the references that it is an n-cube. Perhaps it would help to explain the Swiss cheese and the noodle soup in terms of the n-cube.</p></div></div>
+<div class="comment" id="comment-91638"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 12 July 2006</p><div class="comment-body"><p>Hi Tom,</p><p>Your website tomenglishproject.com has been offline to me for a while. Are you planning on hosting your research somewhere?</p></div></div>
+<div class="comment" id="comment-91645"><p class="comment-meta"><span class="comment-author">Torbjörn Larsson</span> &middot; 12 July 2006</p><div class="comment-body"><p>"I guess I could have been clearer on this."</p><p>Oh, I don't know if that was really neccessary.</p><p>I'm just not used to these problems, not being a biologist and all, so if I have seen a discrete problem (probably) I had completely forgotten. A few seconds collision between the statement of "independent" and my assumption of "continuous" generated a new view on what fitness problems should be in a larger context.</p><p>That is one kind of learning where the result sticks.</p></div></div>
+<div class="comment" id="comment-91646"><p class="comment-meta"><span class="comment-author">Caledonian</span> &middot; 12 July 2006</p><div class="comment-body"><p>The bowl of noodle soup is of course the body and blood of our Lord and Savior, the Flying Spaghetti Monster.</p><p>Ramen!</p></div></div>
+<div class="comment" id="comment-91661"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 12 July 2006</p><div class="comment-body"><p>On further thought, the results in the paper really surprise me. Almost all fitness functions are Kolmogorov random or nearly so, and I would have expected the typical set of good genotypes to look more like alphabet soup with a few noodles thrown in than ramen.</p><p>Of course, Bill Dembski evades all of this by changing from a uniform distribution on the set of all fitness functions (<i>No Free Lunch</i>) to a distribution on a set of "needle in a haystack" functions ("Searching Large Spaces").</p><p>P.S. PvM, I didn't think anyone would miss my site. I'll see what I can do to get another up.</p></div></div>
+<div class="comment" id="comment-91663"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 13 July 2006</p><div class="comment-body"><p>Tom,<br>If you want to host your files and papers, I am sure that sites like talkreason or talkdesign may be more than willing to host them. They are very relevant and interesting reading although they do often reach a level of mathematics which exceeds my level of understanding.</p></div></div>
+<div class="comment" id="comment-91665"><p class="comment-meta"><span class="comment-author">PvM</span> &middot; 13 July 2006</p><div class="comment-body"><blockquote><p>Of course, Bill Dembski evades all of this by changing from a uniform distribution on the set of all fitness functions (No Free Lunch) to a distribution on a set of "needle in a haystack" functions ("Searching Large Spaces").
+
+</p><cite>— Tom</cite></blockquote>
+
+Could you elaborate as this seems quite relevant</div></div>
+<div class="comment" id="comment-91670"><p class="comment-meta"><span class="comment-author">hehe</span> &middot; 13 July 2006</p><div class="comment-body"><p>Gavrilets (not "Gavrilet") has a great site at http://www.tiem.utk.edu/~gavrila</p></div></div>
+<div class="comment" id="comment-91698"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 13 July 2006</p><div class="comment-body">In the original NFL theorems, domain X is finite and codomain Y is a finite set of fitness values. All  functions from X to Y are equally likely. In "Searching Large Spaces," Dembski effectively states that X is very large and Y is {0, 1}. That is, fitness is all-or-nothing, and Dembski restricts himself to fitness functions with very few fit points. The fit points, which he calls the target, are uniformly distributed over X.
+
+Dembski's distribution of functions is very, very different from the uniform distribution of Wolpert and Macready. For instance, every function with a small target is highly compressible (i.e., its Kolmogorov complexity is low). In contrast, almost every function from X to {0, 1} has a target that includes about half of the points in X, and is incompressible or nearly so (i.e., its Kolmogorov complexity is high).
+
+Dembski says of his NFL theorem in "Searching Large Spaces":
+
+<blockquote><p>This, in measure-theoretic terms, restates the No Free Lunch theorems of Wolpert and Macready (1997), which say that when averaged over all fitness functions (whether time-dependent or time-independent fitness functions), no evolutionary search procedure outperforms any other.</p></blockquote>
+
+Again, defining the target to be uniform on the search space does not implicitly define a uniform distribution on the set of all fitness functions. Dembski states <b>a</b> No Free Lunch theorem in the paper, but he is not justified in saying he has given another proof of the <b>original</b> NFL theorems.
+
+In short, the original NFL scenario is dominated by Kolmogorov random fitness functions. The noodle soup reported by Erik is apparently a consequence of that. Dembski, with his small optimization targets, gives us a bowl of hot water with a few gnats stirred in.
+
+</div></div>
+<div class="comment" id="comment-91716"><p class="comment-meta"><span class="comment-author">E. Tellgren</span> &middot; 13 July 2006</p><div class="comment-body"><blockquote><p>I think you might want to say explicitly what topology of the space of genotypes you assume. I gather from the references that it is an n-cube.</p><cite>— Tom English</cite></blockquote>
+The specific result equation for the percolation threshold was taken from Gavrilets's TREE article and holds for a topology corresponding to diploid genomes with n loci and k alleles in each. However, if the fitness values at different points are statistically independent and we have a topology corresponding roughly to A^d, with A an alphabet and two points being nearest neighbours at least when their Hamming distance is 1, then I think the percolation threshold will generally be of the same order of magnitude as 1 / (d |A|). In other words, the details shouldn't be important for order-of-magnitude estimates.
+<blockquote><p>In "Searching Large Spaces," Dembski effectively states that X is very large and Y is {0, 1}. That is, fitness is all-or-nothing, and Dembski restricts himself to fitness functions with very few fit points. The fit points, which he calls the target, are uniformly distributed over X.</p><cite>— Tom English</cite></blockquote>
+The fit points would be a set of the form
+
+T_f = {x in X | f(x) >= c},
+
+which depends heavily on f and as we vary f to take the uniform NFL average, the set T_f will vary as well. What Dembski calls "target" in that text seems to be held fixed during the averaging procedure and therefore cannot be defined in terms of a fitness function. As far as I can tell, the results in "Searching Large Spaces" lack a consistent interpretation in terms of optimization.</div></div>
+<div class="comment" id="comment-91724"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 13 July 2006</p><div class="comment-body">Erik,
+
+Thanks for the explanation. I confess I have trouble seeing the noodles. ;)
+
+I have just reread Dembski's paper, and I recall no thresholding of the fitness function. It appears to me that fitness is implicitly the characteristic function of target T: f(x) = 1 for x in T, f(x) = 0 otherwise.
+
+<blockquote><p>For each sampling event, success at reaching the target is all-or-nothing.</p><cite>— Dembski</cite></blockquote>
+
+<blockquote><p>To characterize assisted search, let us again employ the services of Alice and Bob. As before, Bob has a full grasp of the target T, so that for any proposed solution x in Î©, he is able to answer whether x is in T. Alice, on the other hand, knows only Î© and whatever information Bob is willing to divulge that might help her to find a solution in T.</p><cite>— Dembski</cite></blockquote>
+
+Here Î© is what we have referred to as X, the search space. Dembski constructs an oracle (which he does not identify as an oracle), Bob, that supplies guiding information to the search agent, Alice. Oracles are fine in theoretical analysis, but Dembski attempts to smuggle Bob into the real world.</div></div>
+<div class="comment" id="comment-91745"><p class="comment-meta"><span class="comment-author"><a href="http://www.geocities.com/lflank" rel="nofollow">&#x27;Rev Dr&#x27; Lenny Flank</a></span> &middot; 13 July 2006</p><div class="comment-body"><blockquote><p>T_f = {x in X | f(x) >= c},</p></blockquote>
+
+
+Oooh, math --- my head hurts.    
+
+;>
+
+I was once told by an editor that each page containing a mathematical formula in a popular science book decreases sales by roughly five percent.
+
+But then, books with pictures usually far outsell books without them.
+
+
+</div></div>
+<div class="comment" id="comment-91754"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 13 July 2006</p><div class="comment-body"><blockquote><p>
+Here Î© is what we have referred to as X, the search space. Dembski constructs an oracle (which he does not identify as an oracle), Bob, that supplies guiding information to the search agent, Alice. Oracles are fine in theoretical analysis, but Dembski attempts to smuggle Bob into the real world.</p><cite>— Tom English</cite></blockquote>
+I gave up on that paper at the point where Dembski required Bob's information at each step to tell Alice whether or not she's on the target point, thus prohibiting the very Easter egg hunt example he used as archetype of the "assisted search" in the first place.</div></div>
+<div class="comment" id="comment-91767"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 14 July 2006</p><div class="comment-body"><p>Okay, this is getting silly. I can't be the only one that thinks that arguing against thousands of scientist-years of empirical analysis with theoretical math is just absolute bullshit.</p></div></div>
+<div class="comment" id="comment-91775"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 14 July 2006</p><div class="comment-body"><p>What's all the stuff about search spaces, anyway? A species doesn't go off searching space, it only checks the regions immediately adjacent to where it is already. If it does better in one of the adjacent regions it extends that way (perhaps like an amoeba). If in part of the already occupied "territory" it does less well, it recedes from there. (If the receding catches up with the extending, it goes extinct.)</p></div></div>
+<div class="comment" id="comment-91785"><p class="comment-meta"><span class="comment-author"><a href="http://tinyurl.com/b8ykm" rel="nofollow">Glen Davidson</a></span> &middot; 14 July 2006</p><div class="comment-body"><blockquote><p>Okay, this is getting silly. I can't be the only one that thinks that arguing against thousands of scientist-years of empirical analysis with theoretical math is just absolute bullshit.</p></blockquote>
+
+That's just it.  We answer BS too often, and let mere silence be <i>their answer</i> to the evidence for evolution.  
+
+We ought to counter them more often by challenging them to give real explanation for evolutionary evidence.  Like, we should insist that they give us an actual explanation for homologies, and an explanation for telling non-homologous structures like bat wings (compared with bird wings--that is to say, homologous structures exist in each, but the only homologies are with vertebrate forelimbs, not with wing adaptations) and mitochondrial processes.
+
+And analogies--IDists wish to claim them as "common design", while neglecting to tell us why the genes for analogous organs are homologous with functionally dissimilar organs.
+
+We allow them to be on the offensive too much, and while we marvel at their stupidity, the audience they're aiming at is at least as much convinced by the IDist twaddle as by refutations.  Responding to their "challenges" means that their side gets attention of serious scientists, which seems like a success to many of the rubes.
+
+We don't take the offensive because it's all so obvious and they're so stupid.  Hence the really telling evidence, like analogous structures which have homologies with functionally dissimilar organs, is largely left to the IDists to selectively spin as "similar design" (they don't care that the "fundamental structure" is far from what a rational, intelligent designer would produce).
+
+Dealing with "search spaces" allows IDists to dictate the venue of the discussion, when they haven't begun to deal with evidence in an empirical manner.  They want to define evolution as impossible, and thus to ignore all of the evidence.  And while they are indeed singularly inept at backing up their definition--evolution=impossibility--their primary goal of creating illegitimate doubts about evolution is fairly successful.
+
+Let's put it this way:  They aren't trying to explain data at all.  They don't care about the patterns, and the "exceptions that prove the rule".  They don't care that analogous organs are made from dis-analogous information, because they aren't interested in doing any science.  They don't want to explain anything at all, merely to say that God does explain everything.  And while we scoff, we often forget that the dream of such a simple and profound "explanation" is much more attractive to many than are the rigors of science.  Like a philosophy teacher of mine commented, wouldn't it truly be wonderful if we could read a book, or books, which would give us all of the answers (or all that we need to know)?
+
+Nevertheless, if we would take the offensive and show how senseless "common design" is, how organismic structure and function fails to come up to the level of humanity's rational designs, we could cause some people to doubt that "Goddidit" is sufficient.  They may not be willing to allow that God didn't do it, but they might ask "how God did it".  Perhaps God set up the universe to "self-assemble"?  Sure, it's a superfluous addition, yet harmless enough to science as long as "how did it happen?" is the live question in people's minds.
+
+The ID offensive is excellent propaganda because, of course, we can't actually show how any number of evolutionary processes occurred.  Fine, we knock down Dembski's woeful caricatures of science, and still the question of 'how it could have evolved' remains in people's minds.  They need to ask, 'how could an intelligent and rational agent design anything as non-rationally "designed" as an organism?'
+
+If you ever deal with people at UD, you can see how they have all of their talking points, their "questions" that they think have to be answered before evolution even becomes a reasonable hypothesis.  What never even enters their minds is to ask how best to address and explain the evidence that is so compelling, the taxonomic hierarchies, analogous organs whose homologies are with functionally dis-analogous structures, the lack of convincing rational design in organisms, and the "neutral mutations" that track with evolution as much as any adaptive (designed, in their vocabulary) mutations do.
+
+As long as scientifically-illiterate know-nothings like Dembski drive the discussion with offensives that deliberately by-pass all of the questions raised <b>by the evidence</b>, we are not going to make much headway outside of the courts.  Forget that Sal, Behe, and Dembski are personally and scientifically unworthy of being challenged in intellectual matters, go ahead and actually challenge them to explain analogies, the lack of rational design in organisms, and the "neutral evolution" that completes the picture of adaptive evolution.  Challenge them to demonstrate anything that differentiates between "designed structures" and "evolved structures" (<b>not</b> complexity, which by itself is hardly a distinctive mark of design), particularly any sort of break in the evolutionary continuity that appears to have produced the various genomes.
+
+We all know what they do with challenges, of course, which is to ignore all of the crucial details while spinning a pre-scientific "explanation" for selected aspects of the evidence.  Or they just ignore the challenge entirely, and use their empiricism-free mathematical models to "disprove evolution".  Nevertheless, we ought to be pushing empirical matters as strenuously as they avoid empiricism, for when we can get them to "answer" any of our empirical challenges with their inadequate conceptions, we have managed to force the discussion into areas where there is evidence that needs explanation.  And their inadequacies show up around evidence much more than when we're arguing abstract mathematical models, for at best we can only demonstrate the meaninglessness of these models by attacking them.
+
+Glen D
+http://tinyurl.com/b8ykm</div></div>
+<div class="comment" id="comment-91791"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 14 July 2006</p><div class="comment-body"><p>"Right, director, stop this equation right now, it's silly. It started off as a nice little equation about probability, but now it's just got silly. Director, on the word cut - WAIT FOR IT! - we'll go to some actual science.  And.... CUT!"</p></div></div>
+<div class="comment" id="comment-91805"><p class="comment-meta"><span class="comment-author">Henry J</span> &middot; 14 July 2006</p><div class="comment-body"><p>Re "It started off as a nice little equation about probability,"</p><p>Probability (organism being other than slightly different than its parent or a recombination of its parents) = very low.</p><p>Is that the equation? :)</p></div></div>
+<div class="comment" id="comment-91833"><p class="comment-meta"><span class="comment-author">E. Tellgren</span> &middot; 14 July 2006</p><div class="comment-body"><blockquote><p> I confess I have trouble seeing the noodles. ;) </p><cite>— Tom English</cite></blockquote>
+Can you be more precise? What is it that you think is unclear or wrong?
+<blockquote><p> I have just reread Dembski's paper, and I recall no thresholding of the fitness function. It appears to me that fitness is implicitly the characteristic function of target T: f(x) = 1 for x in T, f(x) = 0 otherwise. </p><cite>— Tom English</cite></blockquote>
+I agree that there is no thresholding of a fitness function and I consider this lack of thresholding part of the problem. I shall try to explain using the novel terminology introduced in that text:
+
+* A fixed <u>target</u> seems to be taken as given.
+* An <u>information function</u> j(x1,x2,...,xN) that appears to be regarded as constrained so that it takes a particular value if and only if xN is in the target.
+* A <u>strategy function</u> that decides which point to sample next.
+* An <u>assisted search</u> defined as a pair of a strategy function and an information function.
+
+As a heuristic simplification, assisted searches are mapped (many-to-one) to a real number q<sub>m</sub> with the interpretation that 1-(1-q<sub>m</sub>)^m is the probability that the target has been sampled after m tries. Then a higher-order target is defined as all probability measures that assign at least the probability q_m to the target and, via the many-to-one mapping, these probability measures represent more efficient assisted searches. This higher-order target will contain variation of both the strategy function and the information function.
+
+Since the target is not defined in terms of a cost/objective/fitness function, it is not clear to me how to relate the framework to optimization. At first sight the information function could seem analogous to a cost function and the strategy function analogous to Wolpert & Macready's search algorithm, but I don't think such an interpretation is tenable. For one thing, the performance is measured on an all-or-nothing basis depending on whether or not the j-value assigned the target has been found, rather than the best j-value so far. For another thing, it is odd to simultaneously vary both the strategy function and the information function while holding the target fixed. Normally a cost function arises as a description of the problem at hand and the search algorithm as a way to find solutions to the problem at hand. One can vary the cost function to see how general the search algorithm is or one can vary the search algorithm to benchmark different search algorithms. But varying both the cost function and the search algorithm seems to not make much sense. So whatever it is that Dembski has formalized, it does not appear to be optimization. Perhaps the framework can be used to study how well an agent/process (strategy function) and its environment (information function) match each other, but it is a curious sort of matching since the target is simply given beforehand rather than being determined from the way the agent/process and the environment interact. Because of such disanalogies with optimization, I have not been able to think of a consistent and reasonable interpretation of the results in "Searching Large Spaces".</div></div>
+<div class="comment" id="comment-91856"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 15 July 2006</p><div class="comment-body"><blockquote><p>
+* An information function j(x1,x2,...,xN) that appears to be regarded as constrained so that it takes a particular value if and only if xN is in the target.</p><cite>— E. Tellgren</cite></blockquote>
+
+Could be wrong, but I believe the constraint Dembski put on it (by claiming that it can be  composed with a second function to return 1 if xN is on target and 0 otherwise) is weaker: the set of values the information function may take for xN on target is disjoint from the set of values it may take otherwise.
+
+It's a <i>silly</i> constraint, and in itself means he's failed to properly formalize the kind of assisted search concept he wants, but I <i>think</i> that's the constraint he's demanding.</div></div>
+<div class="comment" id="comment-91857"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 15 July 2006</p><div class="comment-body"><blockquote><p>
+Okay, this is getting silly. I can't be the only one that thinks that arguing against thousands of scientist-years of empirical analysis with theoretical math is just absolute bullshit.</p><cite>— fnxtr</cite></blockquote>
+
+Well yeah, but it's a source of endless entertainment to some of us just how <i>bad</i> Dembski's attempts at that theoretical math can be.
+
+That, and I believe a lot of laypeople think that overturning tons of empirical analysis with theoretical math is how science is <i>supposed</i> to work:  eccentric genius with bad hair scribbles some stuff on a blackboard, exclaims, "By Jove, I've proven that electrons don't actually exist!" and off everyone runs to rewrite the textbooks.  
+
+In the mind of the average American, relativity and QM seem to be summarized as, "Some scientists used crazy math to prove that the universe makes no sense and everything we think it does is an illusion."
+
+Math envy is--regrettably--a big part of popular culture.  Sure, Dembski's claims would imply that tens of thousands of practicing biologists over the last 100 years have been either criminally stupid or insane.  But in my (admittedly not all that extensive) discussions with folks who aren't die-hard creationists but are kind of intrigued by ID, they don't really see that as a warning sign.  What <i>does</i> give them pause is when you point out that about 1% of mathematicians start laughing when they hear Dembski's name, and the other 99% say "Who?"</div></div>
+<div class="comment" id="comment-91862"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 15 July 2006</p><div class="comment-body"><blockquote><p>Can you be more precise? What is it that you think is unclear or wrong?</p><cite>— Erik</cite></blockquote>
+
+Again, I was glad to read your note. I simply meant  to say that visualization is inherently difficult in the space you described. I believe I understand the noodles and cheese from your verbal description.
+
+<blockquote><p>Since the target is not defined in terms of a cost/objective/fitness function, it is not clear to me how to relate the framework to optimization.</p><cite>— Erik</cite></blockquote>
+
+Indeed, Dembski never mentions any of the conventional terms, and this is rather confusing. But on page 6 he defines the <i>indicator function</i> as an information function that returns 1 if the most recently visited point is in the target and 0 otherwise. Finding an element of the target is certainly the objective, and this is equivalent to maximizing the indicator function. 
+
+<blockquote><p>Let us, therefore, define an <i>assisted search</i> as any search procedure that provides more information about candidate solutions than a blind search.</p><cite>— Dembski</cite></blockquote>
+
+Dembski fails to observe that a blind search is one in which the information function is the indicator function for the target. On page 6, he defines the notion of an information function strictly augmenting the indicator function, but he never uses it. The general idea is that the information function "says more" than the indicator function, but continues to indicate whether the last visited point is in the target. My best guess is that Dembski made the definition because he intended to require that in assisted search <i>every</i> information function strictly augment the indicator function for the target. Without this requirement, it is indeed difficult to see in what sense the indicator function is optimized according to the strategy.
+
+As a whole, the assisted search procedure is not a search procedure. The name is highly misleading. No search procedure is informed in advance of the solutions it is searching for.
+
+<blockquote><p>For another thing, it is odd to simultaneously vary both the strategy function and the information function while holding the target fixed.</p><cite>— Erik</cite></blockquote>
+
+Interesting point. I'll have to think about this.
+
+</div></div>
+<div class="comment" id="comment-91881"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 15 July 2006</p><div class="comment-body"><blockquote><p>Well yeah, but it's a source of endless entertainment to some of us just how bad Dembski's attempts at that theoretical math can be.</p><cite>— Anton Mates</cite></blockquote>
+
+Bill Dembski is probably an excellent mathematician. But his faith puts him in a bind. He believes that complex biological structures could not have arisen on earth unless spiritual agents purposefully guided natural processes. He believes that science should be consistent with this Truth, but he has no empirical evidence to draw upon. His quickest route to a claim that he is doing science is to formulate a deductive model of "unembodied" intelligence guiding material processes and to argue that it applies to natural evolution. That's a tough bill to fill.
+
+<blockquote><p>That, and I believe a lot of laypeople think that overturning tons of empirical analysis with theoretical math is how science is supposed to work: eccentric genius with bad hair scribbles some stuff on a blackboard, exclaims, "By Jove, I've proven that electrons don't actually exist!" and off everyone runs to rewrite the textbooks.</p><cite>— Anton Mates</cite></blockquote>
+
+Funny you should bring that up. Last summer, a New York Times reporter asked me what it would take for Dembski to convince scientists that ID had scientific validity. I reminded him that in the case of Einstein's theory of special relativity, scientists spent years validating the theory by comparing its predictions to empirical observations.
+
+Incidentally, many Christians were opposed to relativity in its early days. Can you imagine Einstein engaging in political action to rush relativity into high school physics texbooks? "Newtonian mechanics is the bane of Western civilization. Oi vey!"</div></div>
+<div class="comment" id="comment-91892"><p class="comment-meta"><span class="comment-author">Anton Mates</span> &middot; 16 July 2006</p><div class="comment-body"><blockquote><p>
+Bill Dembski is probably an excellent mathematician. </p><cite>— Tom English</cite></blockquote>
+I haven't seen much evidence of that.  Minimally competent, sure--he got a Ph.D. and has published <a href="http://www.pandasthumb.org/archives/2004/05/dembskis_mathem.html">two peer-reviewed research papers in mathematics in the last eighteen years.</a>  That's better than, say, I've done so far, but it's not very impressive for a middle-aged mathematician.  He <i>could</i> be a genius who just doesn't have time or inclination to publish, of course, but I'm leaning against it.
+
+<blockquote><p>But his faith puts him in a bind. He believes that complex biological structures could not have arisen on earth unless spiritual agents purposefully guided natural processes. He believes that science should be consistent with this Truth, but he has no empirical evidence to draw upon. His quickest route to a claim that he is doing science is to formulate a deductive model of "unembodied" intelligence guiding material processes and to argue that it applies to natural evolution. That's a tough bill to fill.</p></blockquote>
+True, and I think he's aware of this, which is why his work has some very elementary errors.  He probably <i>could</i> make it more rigorous and consistent if he tried, but why bother if he knows he's attempting the impossible?  Provided it <i>looks</i> enough like math to keep laypeople thinking he's on to something, he's good.
+
+
+<blockquote><p>Funny you should bring that up. Last summer, a New York Times reporter asked me what it would take for Dembski to convince scientists that ID had scientific validity. I reminded him that in the case of Einstein's theory of special relativity, scientists spent years validating the theory by comparing its predictions to empirical observations.</p></blockquote>
+And Einstein's own renown as a physicist is largely based on his talent for experimental design.  He was quite good at explaining how we'd know if he was wrong.
+
+<blockquote><p>Incidentally, many Christians were opposed to relativity in its early days. Can you imagine Einstein engaging in political action to rush relativity into high school physics texbooks? "Newtonian mechanics is the bane of Western civilization. Oi vey!"</p></blockquote>
+Most of the modern anti-relativity cranks I've read about are conservative Christians too, for whatever reason.  I dunno if they conflate it with moral relativism or what.</div></div>
+<div class="comment" id="comment-91899"><p class="comment-meta"><span class="comment-author">fnxtr</span> &middot; 16 July 2006</p><div class="comment-body"><p>Could someone with a firmer grasp of these algorithms please explain in layman's terms whether Demski's modelling includes the reality of the constantly fluctuating local maxima and minima in the <i>real world</i>, things like climate (seasonal weather and long term changes) and a dynamic ecosystem (food supply, predation, competition, disease), catastrophes....</p><p>The determinist school really doesn't get that in the natural world <i>there are no goals</i>. Including survival. Survival is not a goal, it's a <i>result</i> of a successful variation. No teleology involved. At all.</p></div></div>
+<div class="comment" id="comment-91908"><p class="comment-meta"><span class="comment-author">Tom English</span> &middot; 16 July 2006</p><div class="comment-body">Anton,
+
+When I said Dembski is "probably an excellent mathematician," I had competence in mind, not performance. His vita clearly shows that he has chosen, consciously or not, an academic career as theologian and philosopher. If he were the Isaac Newton of Information Theory, he would disentangle his claims about information and intelligence from his claims about evolution, and would publish them in a journal on information theory.
+
+<blockquote><p>And Einstein's own renown as a physicist is largely based on his talent for experimental design. He was quite good at explaining how we'd know if he was wrong.</p><cite>— Anton</cite></blockquote>
+
+That's a gem of an observation.</div></div>
+<div class="comment" id="comment-91909"><p class="comment-meta"><span class="comment-author">steve s</span> &middot; 16 July 2006</p><div class="comment-body"><p>While Dembski claims that he has no interest in publishing papers in mainstream journals, I bet he tried to, in the beginning. I would <i>love</i> to see the peer-review comments on those things.</p></div></div></section>
+</main>
+<footer class="site-footer">
+This is a static legacy archive of <em>The Panda&#8217;s Thumb</em> blog (pre-2016 Movable Type era), preserved at <a href="https://pandasthumb.net/">pandasthumb.net</a>.<br>
+The current blog is at <a href="https://pandasthumb.org/">pandasthumb.org</a>.
+</footer>
+</body>
+</html>
