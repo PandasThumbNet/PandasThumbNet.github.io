@@ -352,6 +352,37 @@ body > footer {
   color: #aaa;
 }
 
+/* ── Static Search ────────────────────────────────────── */
+
+.pagefind-ui {
+  --pagefind-ui-scale: 0.95;
+  --pagefind-ui-primary: var(--blue);
+  --pagefind-ui-text: var(--ink);
+  --pagefind-ui-background: var(--panel);
+  --pagefind-ui-border: rgba(28, 35, 48, 0.2);
+  --pagefind-ui-tag: rgba(33, 79, 148, 0.08);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 10px;
+  --pagefind-ui-font: "Helvetica Neue", Arial, sans-serif;
+}
+
+.pagefind-ui__form::before {
+  background-color: var(--muted);
+}
+
+.pagefind-ui__search-input {
+  box-shadow: none;
+}
+
+.pagefind-ui__result {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(28, 35, 48, 0.12);
+}
+
+.pagefind-ui__result-link {
+  color: var(--blue-deep);
+}
+
 /* ── Responsive ───────────────────────────────────────── */
 
 @media (max-width: 600px) {

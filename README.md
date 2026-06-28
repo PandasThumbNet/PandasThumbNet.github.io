@@ -13,3 +13,14 @@ It was generated from the local static `public_html` snapshot and includes `CNAM
 
 Server-side scripts, CGI directories, logs, and private web-server files are excluded from the publish copy.
 Review `PAGES_STATIC_RISK_REPORT.md` before DNS cutover.
+
+## Static Search
+
+Search is provided by Pagefind. Build the browser-only search bundle before publishing:
+
+```bash
+npm install
+npm run build:search
+```
+
+Commit the generated `_pagefind/` directory with the site. GitHub Pages then serves search as static files; no backend service is required.
