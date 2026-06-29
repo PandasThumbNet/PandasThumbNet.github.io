@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build:search": "pagefind --site . --output-path _pagefind --exclude-selectors \".comments-section, .site-header, .site-footer\""
+    "build:search": "pagefind --site . --output-path _pagefind --exclude-selectors \".site-header, .site-footer\""
   },
   "devDependencies": {
     "pagefind": "^1.3.0"

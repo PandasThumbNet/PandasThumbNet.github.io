@@ -24,3 +24,4 @@ npm run build:search
 ```
 
 Commit the generated `_pagefind/` directory with the site. GitHub Pages then serves search as static files; no backend service is required.
+The Panda's Thumb corpus intentionally includes recovered reader comments, since comment search is part of the value of this legacy archive.
